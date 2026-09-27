@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  * { box-sizing: border-box; }
+  .diagram {
+    width: 1000px;
+    background: #ffffff;
+    padding: 14px 16px 10px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-family: 'Inter', 'Liberation Sans', Arial, sans-serif;
+  }
+  .section-label {
+    font-size: 16px; font-weight: 800; letter-spacing: 2.5px;
+    color: #7e7c74; text-transform: uppercase; margin: 5px 2px 3px 2px;
+  }
+  .card {
+    background: #f6f5f3;
+    border: 1px solid #d8d4c9;
+    border-radius: 8px;
+    padding: 6px 14px;
+    min-width: 0;
+  }
+  .title-row { display: flex; align-items: baseline; gap: 9px; margin-bottom: 2px; }
+  .tag {
+    font-size: 16px; font-weight: 800; letter-spacing: 1.5px;
+    color: #a48e4b; flex-shrink: 0;
+  }
+  .node-title { font-size: 22px; font-weight: 700; color: #151513; line-height: 1.15; }
+  .node-desc { font-size: 18.5px; font-weight: 400; color: #55534c; line-height: 1.24; }
+
+  /* scattered-results band */
+  .scattered {
+    background: #f4f2ee;
+    border: 2px dashed #b8b2a2;
+    border-radius: 8px;
+    padding: 8px 16px;
+  }
+  .scattered .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+  .scattered .chip {
+    background: #ffffff; border: 1px solid #c5bfac; border-radius: 6px;
+    padding: 4px 11px; font-size: 17px; font-weight: 700; color: #55534c;
+    white-space: nowrap;
+  }
+  .scattered .verdict {
+    font-size: 16.5px; line-height: 1.28; color: #6b5d3f; background: #f7f3e9;
+    border-left: 3px solid #b3a26b; border-radius: 4px; padding: 5px 10px;
+  }
+
+  /* laws ladder */
+  .chain .card { border-left: 4px solid #92761f; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .chain .src { font-size: 16.5px; color: #7e7c74; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
+  .arrow-row { display: flex; align-items: center; gap: 10px; height: 24px; padding-left: 26px; }
+  .arrow-col { display: flex; flex-direction: column; align-items: center; }
+  .down-arrow { width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 9px solid #b3a26b; }
+  .status {
+    font-size: 16.5px; font-weight: 700; border-radius: 999px; padding: 2px 12px;
+    white-space: nowrap; border: 1px solid #d8d4c9;
+  }
+  .status.derived { color: #8a5f13; background: #f6edd9; border-color: #cfa945; }
+  .status.theorem { color: #1d6a85; background: #e2eff4; border-color: #7fb8cc; }
+  .status.hypo { color: #8a4a3a; background: #f7ede9; border-color: #b08a7a; }
+  .link-note { font-size: 16.5px; color: #55534c; }
+  .cert-bar {
+    background: #4e4732; border-radius: 8px; padding: 7px 14px; color: #f6f5f3;
+    font-size: 17.5px; line-height: 1.22; text-align: center;
+  }
+  .cert-bar .tag2 { color: #d5c080; font-weight: 800; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+<div class="diagram">
+
+  <div class="section-label">The corpus as it stands &mdash; proved, scattered</div>
+  <div class="scattered">
+    <div class="chips">
+      <div class="chip">no right adjoint</div>
+      <div class="chip">no universal evaluator</div>
+      <div class="chip">AAK floor &sigma;<sub>k+1</sub></div>
+      <div class="chip">66% non-reversion</div>
+      <div class="chip">&Sigma;<sup>3</sup>-complete capability</div>
+      <div class="chip">0.697 contraction</div>
+      <div class="chip">flat width &ge; 4/3</div>
+    </div>
+    <div class="verdict">All true, all proved, all scattered: no single statement governs them. The constructive turn legislates them &mdash; the way the pile of engine facts became the laws of thermodynamics.</div>
+  </div>
+
+  <div class="section-label" style="margin-top:10px;">The four laws of bounded observation</div>
+  <div class="chain">
+    <div class="card">
+      <div>
+        <div class="title-row"><span class="tag">00</span><span class="node-title">Equilibrium blindness</span></div>
+        <div class="node-desc">at equilibrium the observer&rsquo;s obstruction is inert &mdash; no distortion produced, no arrow of time detectable, the bottleneck invisible from inside</div>
+      </div>
+      <div class="src">Cherny&ndash;Spohn &middot; no-freeze degenerate case &middot; ECOMOD eigenvalue</div>
+    </div>
+    <div class="arrow-row">
+      <div class="arrow-col"><div class="down-arrow"></div></div>
+      <span class="status derived">DERIVED + PREDICTION</span>
+      <span class="link-note">off equilibrium, obstruction becomes observable &mdash; and productive</span>
+    </div>
+    <div class="card">
+      <div>
+        <div class="title-row"><span class="tag">01</span><span class="node-title">Conservation of obstruction</span></div>
+        <div class="node-desc">ignorance relocates (repair), refines (descent), prices (rate&ndash;distortion) &mdash; never dies; leakage &delta;(e) = e&sup2; &minus; 1, multiplicative along cascades</div>
+      </div>
+      <div class="src">Theorem I &middot; intercept &middot; no-programming &middot; Borsuk&ndash;Ulam</div>
+    </div>
+    <div class="arrow-row">
+      <div class="arrow-col"><div class="down-arrow"></div></div>
+      <span class="status theorem">THEOREM I</span>
+      <span class="link-note">the conserved quantity makes the no-go theorems its instances</span>
+    </div>
+    <div class="card">
+      <div>
+        <div class="title-row"><span class="tag">02</span><span class="node-title">Distortion production</span></div>
+        <div class="node-desc">nonzero obstruction &rArr; irreversible distortion at Cesaro rate <i>Ḋ</i>, floored by the AAK tail; off equilibrium, Ḋ is the observer&rsquo;s entropy production</div>
+      </div>
+      <div class="src">Theorem III &middot; slope 1.00 &middot; 3/2 fatigue &middot; replica gap 0.0224</div>
+    </div>
+    <div class="arrow-row">
+      <div class="arrow-col"><div class="down-arrow"></div></div>
+      <span class="status theorem">THEOREM III &middot; (d3) CONJECTURE</span>
+      <span class="link-note">the arrow of time for bounded observers &mdash; five witnesses across three subcorpora</span>
+    </div>
+    <div class="card">
+      <div>
+        <div class="title-row"><span class="tag">03</span><span class="node-title">Unattainability</span></div>
+        <div class="node-desc">zero obstruction at finite price is unreachable: the spectral tail prices the approach, compactness failure prices the certificate search &mdash; two walls, one phenomenon</div>
+      </div>
+      <div class="src">WKL / PA degrees &middot; PostBQP &middot; AAK tail &middot; Borsuk&ndash;Ulam</div>
+    </div>
+  </div>
+
+  <div class="cert-bar">
+    <span class="tag2">FOUR LAWS</span>&nbsp; each grounded in proved results on one side and a falsifiable prediction on the other &mdash; the refuters are named in Table 3
+  </div>
+
+</div>
+</body>
+</html>

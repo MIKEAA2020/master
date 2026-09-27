@@ -1,0 +1,1101 @@
+Overcoming Autoregressive Myopia: Parallels from Computer Chess for
+Multi-Agent LLM Architectures
+Amin Abaee ORCID 0000-0002-0019-1842∗
+Independent researcher, Tehran, Iran
+Abstract
+Large language models are fluent, confident, and often shallow. This shallowness is not a failure of ca-
+pability but a structural consequence of monolithic generation. During autoregressive inference, attention
+dilution, the inability to backtrack, and single-path sampling jointly act as an implicit discount factor that
+makes distant constraint violations functionally invisible—even though the training loss weights all tokens
+equally. This mirrors the pathology of early chess engines, which grabbed pawns with shallow tactics
+while neglecting the slow, coordinated development that wins games. The analogy is refined to show that
+modern chess engines achieve depth through a deterministic move generator, a learned king-safety eval-
+uator, and a search algorithm—and that language models need analogous components to overcome their
+present bias. Preliminary prompting experiments, including topological metrics of reasoning depth, suggest
+that the effective objective can be shifted at inference time to reward patient, coordinated reasoning. A
+research programme is then proposed that distributes reasoning across six specialised roles—a generator,
+an aesthetic critic for structural harmony, an analytic critic for constraint pressure, a deterministic verifier,
+an adversarial attacker, and a coordinator, with the neuro-symbolic translation step handled by a recursive
+instantiation of the same six-role architecture—whose coordinated interaction makes constraint satisfaction
+a constitutive requirement of generation at the system level. This architecture structurally parallels Global
+Workspace Theory, a leading cognitive model of consciousness, by implementing a functional analogue
+of a global workspace: the system monitors its own reasoning trajectory and intervenes when it detects
+internal contradictions. A parallel pattern appears in biology, where complex tasks are accomplished by
+networks of specialists, though the assembly mechanism differs. This architectural shift reframes the path
+toward more general deliberation capabilities within domains where constraints can be formally specified.
+The architecture applies to tasks where constraints can be formalised and where the constraint state can be
+structured to capture relevant partial decisions; fully general reasoning with arbitrary interlocking semantic
+constraints is beyond the current scope and flagged as future work. The chess engines found their path from
+pawn-grabbing to strategic dominance. The language models can too—but the architecture must change,
+not just the prompt.
+Keywords: large language models, reasoning depth, architectural discounting, chess engine analogy,
+constraint satisfaction, multi-agent reasoning, Global Workspace Theory, inference-time compute, beam
+search, neuro-symbolic architecture
+∗Corresponding author: amin_abaee@ut.ac.ir
+
+1. The symptom
+Ask a large language model to produce a framework that must satisfy twelve interlocking, non-negotiable
+constraints—apodictic certainties, reflexive closure, the hard problem of consciousness—and it will deliver
+an answer. The answer will be structured, confident, and fluent. It will also be shallow. The hardest con-
+straints will be handled with a gloss, or quietly dropped. The reasoning will be locally coherent but globally
+brittle. Question it, and it will reassure you that all is well, because the training distribution contains many
+examples of people concluding their work is sound and few examples of people genuinely finding and
+repairing deep contradictions.
+This failure mode is pervasive. It has been called hallucination [1], sycophancy [2], and shortcut learning
+[3]. Those labels describe symptoms. They do not explain the mechanism.
+2. The diagnosis: architectural discounting and the horizon effect
+To understand why language models produce shallow reasoning, we must look past the training objec-
+tive and examine the generation process itself.
+During pre-training, the model optimises a cross-entropy loss over the entire sequence. Mathematically,
+there is no temporal discount factor; a mistake at token 5,000 is weighted identically to a mistake at token
+10. Superficially, this suggests the model has no incentive to ignore long-range dependencies. However,
+the loss function is not the same as the generation process. At inference time, the model generates tokens
+autoregressively, conditioned on all previous tokens, but with no ability to revisit earlier decisions. The
+attention mechanism—the primary conduit for long-range information—dilutes with distance; information
+in the middle of long contexts can be effectively lost [4]. The model cannot backtrack to repair a contradic-
+tion introduced three thousand tokens ago. Single-path sampling means any early choice that later proves
+inconsistent cannot be undone.
+The net effect is an architectural discount factor—not a tuned parameter, but an emergent decay in
+the relevance of distant constraints. The model functionally discounts future coherence because it cannot
+reliably attend to it, cannot revise past decisions in light of it, and cannot explore alternative paths that might
+satisfy it.
+2.1. Information-theoretic capacity ceiling
+The generation process can be formalised as a Markov chain on the sequence prefix: if S t = (X1, . . . , Xt)
+denotes the prefix up to token t, then the next token depends only on S t, so C →S t →Xt+1 is a valid Markov
+chain, where C represents the original constraints. By the Data Processing Inequality (Cover & Thomas,
+2006 [35]), we have I(C; Xt+1) ≤I(C; S t). This provides an absolute information-theoretic ceiling: a single
+generated token cannot contain more constraint information than the full prefix already holds. The DPI
+does not guarantee that this ceiling is reached; empirical attention dilution imposes an additional mechan-
+ical bottleneck, pushing the effectively accessible information far below the theoretical maximum. Distant
+constraints thus become functionally invisible, not because the prefix lacks the information, but because the
+attention mechanism cannot route it to the current prediction. The DPI guarantees that this dilution, when
+it occurs, cannot be compensated by the next token containing more information than the prefix—but the
+prefix itself can be augmented by explicit re-signalling, which is precisely what the architecture’s critics
+and verifier are designed to enforce.
+2
+
+2.2. The Horizon Effect
+This architectural discounting produces a behavioural pathology analogous to the Horizon Effect in
+early chess engines. In game AI, an engine that cannot calculate a defence against an impending attack
+within its search depth will execute a series of harmless delaying moves to push the disaster just past the
+horizon, where it becomes invisible. This linguistic Horizon Effect is a direct analogue to the search pathol-
+ogy formally defined in classical heuristic search [5], where an agent executes delaying actions to push
+unavoidable negative consequences beyond its fixed search depth. LLMs exhibit the same behaviour: when
+approaching a hard constraint they cannot satisfy, they generate fluent, topically relevant filler paragraphs
+to push the violation past their immediate cognitive horizon. The model delays the inevitable contradiction
+until it hits the context limit or triggers the end-of-sequence token, leaving the violated constraint—the
+mated king—just over the horizon, never explicitly addressed (Figure A.1).
+The analogy is functional, not mechanistic: the LLM does not compute that a contradiction is imminent
+and then strategically delay it. Rather, its attention horizon prevents it from ever representing the contra-
+diction clearly; the filler is a consequence of blindness, not of foresight. The structural result—a locally
+coherent output that globally violates a constraint—is the same.
+2.3. Formal grounding
+Pearl (1984) [5] proved that in any finite-horizon, evaluation-guided search, there exist positions where
+the optimal shallow move differs qualitatively from the true optimal move, causing the agent to execute
+delaying actions that push an unavoidable loss past the search horizon. This result maps directly to autore-
+gressive LLM generation when modelled as a one-player search over reasoning states: the model, operating
+under a fixed attention horizon and a myopic evaluation signal (fluency, local coherence), will—for some
+constraint sets—produce fluent, locally coherent filler that postpones a contradiction until it falls outside the
+effective horizon, rather than resolving it. The Horizon Effect is therefore not a quirk of early chess engines;
+it is a structural property of any fixed-horizon search with an imperfect evaluation function.
+Reinforcement learning from human feedback (RLHF) compounds the problem. Human raters gener-
+ally evaluate the final output or short snippets. They prefer helpful, concise, confident answers and penalise
+hesitation, uncertainty, and prolonged exploration [6]. When the RLHF reward model provides a terminal
+signal that ignores intermediate reasoning, the generation process becomes even more myopic: the im-
+mediate reward of emitting a fluent, conclusive token overrides the deferred, architectural need for global
+coherence. This myopia is exacerbated by reward model overoptimization. As demonstrated by Gao et al.
+[7], when models are optimized too heavily against a proxy reward model, they inevitably exploit its blind
+spots—a manifestation of Goodhart’s Law.
+What are the “pawns” in this RLHF framework? Pawns are the superficial heuristics that human
+raters and reward models easily recognise and reward: markdown formatting, polite hedging, confident
+tone, and the appearance of comprehensiveness. The model learns to aggressively grab these pawns—
+optimising for surface-level helpfulness—because they yield immediate reward. It will gladly sacrifice
+the king (deep logical consistency and constraint satisfaction) to secure a beautifully formatted, highly
+confident, but hollow response.
+The Weak-Link Constraint. In short, the model exhibits a structural bias towards the here and now—
+analogous to human present bias, long studied in reinforcement learning [5]. This bias is a direct con-
+sequence of the monolithic architecture. A single model must simultaneously satisfy fluency, constraint
+adherence, consistency, and completeness within one forward pass. If any cognitive function is weak, that
+function caps the performance of the entire system. This structural limitation follows directly from the
+probability axioms: the event that the chunk is valid implies satisfaction of each requirement i, so its prob-
+ability cannot exceed mini qi, where qi is the probability that requirement i is satisfied. We refer to this as
+3
+
+the weak-link constraint: monolithic generation is bounded above by its most neglected cognitive function.
+The monolithic LLM is the architectural equivalent of a chess player who develops only one piece and then
+finds that piece can only do so much when its allies cannot join the attack.
+Empirical benchmarks confirm this architectural limitation: despite their vast parametric knowledge,
+current LLMs consistently fail at tasks requiring explicit, multi-step planning and reasoning about state
+changes [8], confirming that the deficit lies in the generation mechanics rather than the knowledge base.
+This dual myopia—architectural discounting during generation, compounded by short-term reward
+shaping during RLHF that explicitly rewards surface polish over substance—explains why LLMs produce
+shallow reasoning. It is not a failure of capability. It is a failure of the generation architecture and the
+evaluation function that guides it.
+3. The chess engine analogy, refined
+The history of computer chess illuminates both the problem and the shape of a possible fix.
+Early engines: shallow search and rigid king safety. The earliest chess engines, proposed by Shannon
+in 1950 [9], evaluated positions using handcrafted heuristics: count material, reward castling, penalise
+moving the pawns in front of the king. These rules were not foolish, but they were rigid. An engine might
+reject a winning pawn storm because the king’s pawn shield looked intact by its rules, or cling to a castled
+position while a dynamic attack gathered. Moreover, early engines searched only a few ply deep. A threat
+twelve moves away was functionally invisible—not because the evaluation function assigned it zero weight,
+but because the search architecture could not reach it. The engine grabbed pawns because those were the
+gains visible within its horizon, and it suffered from the Horizon Effect—pushing inevitable losses just past
+the search depth. The lone knight, hunting a rabbit, had no sense that it was exposing the king.
+Modern engines: deep search and learned, fluid king safety. Modern engines like Stockfish and
+AlphaZero evaluate king safety with a neural network trained on millions of game outcomes [10, 11]. They
+search millions of positions, evaluating each with a learned value function that predicts the probability of
+eventual failure. They feel the pressure building even when no simple rule is violated. They recognise
+an impending attack and weight that danger so heavily that it overrides material gain. Their search depth
+allows them to see threats far beyond the immediate horizon. A move that wins the queen but allows a
+forced checkmate thirty ply later is scored as losing.
+To achieve this, modern chess engines rely on three distinct components. First, a deterministic move
+generator enforces the rules of the game: only legal moves are ever considered. Legality is not estimated;
+it is a hard boundary. Second, a learned evaluation function scores positions by combining multiple
+signals. Two signals are particularly instructive. Piece mobility rewards active, well-coordinated pieces
+even when no immediate material gain is visible. A knight moving from a1 to c3 gains scope; it controls
+more squares and can participate in future attacks. This is a forward-looking proxy: better-developed pieces
+increase the probability of a decisive win, even if the exact winning line is beyond the search horizon. King
+safety evaluates the opponent’s attack potential around the king—how many pieces are pointing at it, how
+many escape squares remain, how exposed it is. This is a backward-looking proxy from the objective:
+the engine asks what must be true for the king to fall, and scores positions by how close they are to that
+condition. Neither signal alone is sufficient. Together they illuminate a corridor (Figure A.2): the forward
+pass from piece mobility meets the backward pass from king safety, and the search navigates between
+them. This bidirectional evaluation structure dramatically reduces the effective branching factor compared
+to forward-only evaluation, guiding the forward search with both a pull from the objective and a push from
+structural harmony.
+4
+
+Third, a search algorithm (minimax with alpha-beta pruning, or Monte Carlo tree search) explores al-
+ternative futures, using the evaluation function to score leaves and the move generator to define the branches.
+The search is the coordinator of the other components; it is where forward and backward signals meet.
+The aesthetic dimension of coordination. Piece mobility and coordination are not only measurable
+by analytic definitions—squares controlled, files opened. They are also perceptible through a different cog-
+nitive channel: their harmonic beauty. A well-developed chess position looks beautiful to an artistically
+inclined observer. The pieces are not randomly placed; they relate to one another in a way that is immedi-
+ately pleasing. This aesthetic perception is not a superficial ornament. It is a legitimate mode of knowing,
+parallel to analytic evaluation, that grasps the whole without decomposing it. The artist sees the same
+coordination that the analyst quantifies; each perceives truth through a different faculty.
+This mapping of cognitive faculties to chess evaluation is grounded in a long tradition of research
+on expert perception. De Groot [12] and Chase & Simon [13] demonstrated that grandmasters perceive
+chess positions in larger chunks—meaningful configurations rather than individual pieces—and that this
+chunked perception is what distinguishes experts from novices. Intuition, in this tradition, is not mysticism;
+it is the rapid, pattern-based recognition that comes from thousands of hours of exposure. The aesthetic
+appreciation of a well-coordinated position is a natural extension of this chunking capacity: the grandmaster
+not only recognises the configuration but perceives its quality holistically, as a single impression. Logic,
+by contrast, operates step-by-step, each inference a single move. Both modes are valid. Each covers the
+other’s blind spot. Mature human reasoning moves fluidly between them. Expert chunking is, however,
+strictly domain-specific: grandmasters chunk chess positions, not arbitrary patterns. An aesthetic critic that
+relies on chunked pattern recognition would therefore require domain-specific training for each reasoning
+domain. This is feasible for the scoped programme of verifiable-domain reasoning but constrains the critic’s
+generality.
+What this means for language models. In an LLM reasoning task, the equivalent of the king is
+the set of all explicit and implicit constraints a correct solution must satisfy. A mated king is a violated
+constraint—an unaddressed requirement, a buried contradiction. King safety is a dynamic estimate of how
+close the current generation path is to violating one of those constraints. Piece mobility is a measure of
+conceptual coordination: are the primitives well-defined, are the derivations connected, are the constraints
+being addressed or merely gestured at?
+Current LLMs, under their default generation architecture, represent early chess engines. Their single-path
+autoregressive generation acts as a shallow search. Their evaluation function—shaped by RLHF—rewards
+local fluency, the cognitive equivalent of material. They may have some rigid “safety” heuristics: avoid
+obvious contradictions, sound appropriately cautious. But they lack a fluid, weighted sense of impending
+failure, and their generation horizon is too short to see the contradiction coming.
+4. Preliminary evidence: shifting the effective objective at inference time
+If part of the problem is the evaluation function and the generation architecture, then changing the
+effective objective at inference time—through prompting—should alter behaviour. The prompt acts as a
+context that reshapes the effective objective, mimicking a deeper, more constraint-sensitive evaluation by
+conditioning the model on tokens that signal the value of long-term coordination.
+I tested this informally with a demanding systems-engineering task: designing a complex software ar-
+chitecture subject to twelve interlocking, non-negotiable constraints (e.g., strict dependency acyclicity, spe-
+cific memory-allocation limits, and formal API contract adherence). Here, “constraint satisfaction” means
+that the proposed architecture explicitly addresses each requirement and passes deterministic static-analysis
+checks without internal contradictions.
+5
+
+The baseline behaviour, with no special prompting, was typical: a polished, confident answer under
+thirty seconds that satisfied none of the hard constraints.
+I then tested a series of meta-prompts designed to impose a different implicit objective—one that pe-
+nalises premature closure, rewards weak-point prioritisation, and requires the model to certify an exhaustion
+criterion before concluding.
+• An exploration-first protocol, simulating adversarial coordination among multiple critical personas
+and requiring explicit certification that every weak point had been addressed, produced 445 seconds
+of sustained, self-critical reasoning. The output was qualitatively different: extended internal debate,
+explicit tension logging, repeated backtracking, and genuine engagement with the hardest constraints.
+• A puzzle-structured protocol, embedding the task as adversarial empirical puzzles, produced only
+107–174 seconds. Abstract constraints did not generate the same internal friction.
+• A “Stockfish-level” protocol produced intermediate results around 257–338 seconds, varying with
+specific wording.
+The key finding: a carefully designed prompt that explicitly penalises pawn-grabbing and demands
+coordination can more than double sustained reasoning time, with corresponding qualitative shifts. This
+supports the diagnosis that a significant part of the shallowness is evaluation-driven.
+Beyond thinking time: topological metrics of reasoning depth. While thinking time serves as an ini-
+tial proxy, it is imperfect, as models can generate verbose filler without genuine progress. Therefore, I also
+examined the structural topology of the outputs, specifically tracking Backtracking Frequency (explicit re-
+vision of prior claims, marked by phrases like “Wait,” “Actually,” or “Let me reconsider”) and Constraint
+Interweaving (whether the constraints were addressed in isolated, sequential blocks or synthesised dynam-
+ically throughout the response). The baseline condition exhibited zero backtracking and strictly sequential,
+isolated constraint handling—each constraint addressed once in a single paragraph and never revisited. In
+contrast, the exploration-first protocol triggered frequent backtracking events and dynamic interweaving,
+with constraints revisited multiple times as new insights emerged. This demonstrates that the prompt suc-
+cessfully shifted the model from a greedy, single-path search to a deliberative, self-correcting trajectory
+(Figure A.4).
+These are informal, single-model, single-task observations. They are not controlled experiments. I
+present them as existence demonstrations, not proof.
+5. The principle: coordinate the army, reward the development
+These preliminary results suggest that the effective objective can be reshaped by prompting. The next
+question is: what should that objective optimise? The chess analogy yields a precise answer.
+In chess, involving more pieces in an attack increases the probability of a decisive win—winning mate-
+rial, and ultimately the king. However, coordination takes moves. Improving a poorly placed piece requires
+patience and yields no immediate material advantage. A shallow search cannot see the eventual payoff; it
+sees only the cost of a move on a piece that is not yet contributing.
+The correlation is therefore: more coordinated pieces →greater potential gains, including the ultimate
+gain of the king. But because coordination demands depth, a myopic evaluation function paired with shallow
+search systematically undervalues it. The engine grabs the pawn with the already-active knight, because the
+deeper line lies beyond its horizon.
+6
+
+For LLMs, the same logic applies. The “weak links” are the constraints that have not yet been adequately
+addressed—the reasoning equivalent of undeveloped pieces. Addressing them yields no immediate fluency
+reward. But only by addressing them can the model bring its full conceptual army to bear on the central
+problem, satisfying all constraints simultaneously—the cognitive equivalent of delivering checkmate.
+The practical implication is that we must incentivise the model to reward incremental piece improvement
+even when no immediate gain is visible. In chess engine terms, this means strengthening two distinct but
+complementary evaluation signals:
+1. King-safety evaluation (constraint-pressure evaluator): A function that heavily weights coordi-
+nated threats against the objective. In LLM reasoning, this scores the degree to which the current
+trajectory is accumulating unresolved tensions, constraints left unaddressed, or contradictions loom-
+ing. It provides the backward-looking gradient from the necessary conditions of a valid solution.
+2. Piece-mobility evaluation (conceptual-coordination evaluator): A function that directly rewards
+improving the scope and connectivity of concepts, independent of immediate payoff. In LLM rea-
+soning, this scores the cognitive work of clarifying vague definitions, forging missing connections,
+and revisiting neglected constraints. It provides the forward-looking gradient from the current state
+toward a more coordinated framework.
+The rhythm of reasoning. In the opening phase of a chess game, most pieces are undeveloped and
+the king is exposed. A player who chases pawns in such a position is punished. The correct default is to
+develop the army, coordinate the pieces, and attack only once the position is mature—unless a genuinely
+low-risk, high-reward tactical opportunity presents itself. An artist or architect works the same way: the
+broad framework is established before the details are filled in.
+The bidirectional scoring naturally reproduces this rhythm. When many constraints remain unaddressed,
+the Analytic Critic’s pressure Vbwd dominates the score, penalising neglect and pushing the search toward
+constraint-addressing chunks. A candidate that is fluent but ignores a weak link must clear a higher bar: the
+forward-looking harmony gain must outweigh the backward-looking pressure penalty. As constraints are
+progressively satisfied, Vbwd recedes, and the Aesthetic Critic’s harmony signal gains influence, allowing
+the search to exploit tactical completions and elegant resolutions. This shift reflects an underlying gradient,
+to a first approximation: the marginal benefit of addressing a neglected constraint decreases as the solution
+matures, while the probability of a low-risk, high-reward tactical completion increases as the reasoning
+army coordinates. The architecture therefore defaults to coordination in the early stages, shifts gradually
+toward exploitation as the solution matures, and permits tactical deviations at any point provided the critics
+jointly signal that the risk is low and the reward high.
+Neither pure conservatism nor pure opportunism is robust to uncertainty: the Aesthetic Critic may miss a
+tactical threat, and the Analytic Critic may overstate a minor constraint. By always combining both signals,
+the Coordinator maintains a hybrid midground—it leans conservative when pressure is high, opportunistic
+when pressure is low, but never switches entirely to one mode. No external schedule or hyperparameter
+controls this rhythm. It emerges from the state-dependent interplay of the two evaluation signals. When
+the position is undeveloped, the pressure is high; when the army is coordinated, the pressure subsides. The
+search inherits the strategic cadence of the chess board itself.
+Unstructured exploration as an architectural option. In chess, some players introduce a near-random
+element into their search—shuffling through unlikely continuations or allowing the mind to wander—to
+speed up the discovery of refutations or creative ideas that structured scanning alone might miss. The
+proposed architecture borrows this concept. The Generator’s temperature-modulated sampling and the Co-
+ordinator’s optional Monte Carlo rollouts provide a controllable source of unstructured exploration. The
+7
+
+cybernetic feedback loop activates this mode when pressure is low and the position is stable, ensuring that
+randomness serves discovery rather than introducing unnecessary noise. The architecture does not require
+this mode; it provides it as an augmentation that can be dialled up or down depending on the compute budget
+and the reliability of the critics.
+Figure A.2 visualises how these two evaluation signals guide search.
+6. A research programme: the society of specialised LLMs
+The meta-prompts are a patch. They redirect the generation process at inference time, but the underly-
+ing architecture—the single-path autoregressive generation that functionally discounts distant constraints—
+remains unchanged. The deeper question is whether we can build systems whose generation process intrin-
+sically values constraint satisfaction, just as a chess engine intrinsically respects the rules of the game.
+A chess engine does not consult an external oracle to check whether a move is legal. Legality is constitu-
+tive of move generation: only legal moves are ever considered. The equivalent for language model reasoning
+would be to make constraint satisfaction a constitutive requirement of the generation process. The model
+should not be able to output a proposed solution without first verifying—through a mechanism that does not
+depend on the same fallible neural weights that produced the solution—that every constraint is satisfied. In
+an LLM, where legality is a complex semantic property, the Generator cannot be constrained internally. In-
+stead, the architecture enforces constraint satisfaction constitutively at the system level: no output can be
+emitted without passing the Deterministic Verifier. The Generator may propose invalid chunks; the system
+discards them. This is analogous to a chess engine that generates pseudo-legal moves—some of which may
+leave the king in check—and then filters them during search.
+This proposal structurally revives Marvin Minsky’s foundational “Society of Mind” framework [14],
+which posited that intelligence emerges not from a single, monolithic algorithm, but from the coordinated
+interaction of numerous specialised, simpler agents. While Minsky’s original agents were symbolic and
+hand-crafted, we propose achieving this society through the orchestration of specialised neural networks.
+The evolutionary history of chess engines suggests a path. They did not achieve superhuman play by
+scaling up a single evaluation heuristic. They achieved it by integrating specialised components—move
+generator, evaluation function, search algorithm—each doing what it alone does well, their coordination
+producing something none could achieve individually. A parallel pattern appears in biology, where com-
+plex tasks are accomplished by networks of specialists covering each other’s blind spots [15], though the
+mechanism of assembly—natural selection with a clear fitness function—differs fundamentally from the
+engineered coordination proposed here.
+The exploration-first protocol (Section 4) already demonstrated that a simulated multi-agent loop can
+improve depth. The architecture proposed here makes those roles explicit, external, persistent, and trainable.
+Applied to language models, this principle suggests an architecture in which reasoning is distributed
+across multiple specialised LLMs, each fine-tuned or prompted for a distinct cognitive role, communi-
+cating through structured interfaces. Recall from Section 3 that modern chess engines rely on three core
+components: a deterministic move generator, a learned evaluation function, and a search algorithm. Our
+architecture mirrors this decomposition with six specialised roles, with the neuro-symbolic translation step
+handled by a recursive instantiation of the same six-role motif (Section 6.3):
+• Generator (the forward pass). An LLM optimised for fluent, creative production. It generates can-
+didate solutions in large chunks—paragraphs, argument sections, whole frameworks—mimicking the
+intuitive, pattern-based forward search of a chess engine. This operationalises the chunked, intuitive
+8
+
+mode of cognition described in Section 3: instead of reasoning token by token, it generates whole
+patterns at once, leaving step-by-step verification to other components.
+• Aesthetic critic (the piece-mobility evaluator). An LLM trained to score the structural coordina-
+tion of a partial solution without decomposing it item by item—perceiving conceptual harmony in
+a single gestalt, much as an artist appreciates the beauty of a well-developed chess position. This
+critic perceives the ugliness of undeveloped, disconnected reasoning—the conceptual equivalent of
+a knight stranded on a1 or a pawn structure riddled with weaknesses. It rewards structural harmony
+and piece coordination, not because beauty is an end in itself, but because well-coordinated positions
+historically lead to victory.
+The Aesthetic Critic estimates the probability of eventual success—the state-value function V(s) of
+the underlying Markov Decision Process. Let the terminal reward R(sT) be 1 if the Deterministic
+Verifier certifies a complete constraint-satisfying solution, and 0 otherwise. Then
+V(s) = ER(sT) | s0 = s
+is the expected probability of success from state s. The Aesthetic Critic is trained to predict V(s) from
+a compact vector of graph invariants extracted from the conceptual graph of the reasoning trace:
+algebraic connectivity, orphan-node count, average clustering coefficient, and a graph-neural-network
+embedding. Because these invariants are fixed-size and do not grow with trace length, the critic
+evaluates long-term structural promise globally, without attention dilution.
+Lemma 1 (Conditional Sufficiency of Graph Invariants). Let the conceptual graph extraction be
+faithful—isomorphic graphs receive the same Verifier verdict. If the graph invariants I(G) are injec-
+tive on the set of attainable graphs, then there exists a function ˆf such that Verdict(T) = ˆf(I(GT)) for
+every trace T. The invariants are a sufficient statistic for predicting the Verifier’s eventual outcome.
+This lemma provides the formal basis for the critic’s architecture. Finding a computable, complete
+invariant for general graphs is at least as hard as the Graph Isomorphism problem; practical imple-
+mentations must use lossy, approximate invariants whose injectivity is not guaranteed. The Aesthetic
+Critic therefore learns a mapping that is only approximate, and its accuracy is an empirical question.
+Its output, Vfwd(s), is a reward: higher values indicate greater likelihood of success. The critic is
+trained on rollout traces: for each partial state, the object-level society attempts completion, and the
+Verifier’s final verdict provides the binary training label.
+Graph connectivity is a proxy for structural harmony, not a direct measure of logical validity. In
+isolation, it would be vulnerable to the same Goodhart-style gaming that afflicts RLHF reward models.
+In the proposed architecture, however, the Aesthetic Critic’s score is only used to rank candidate
+partial solutions that have already passed the Deterministic Verifier; invalid solutions are pruned
+regardless of their connectivity score. The critic’s proxy is therefore constrained by hard verification,
+reducing the risk of proxy overoptimization. In some domains, excessive connectivity may indicate
+tight coupling or circular reasoning rather than genuine coherence; the critic’s training must therefore
+adapt the connectivity metric to the domain’s structural norms. The extent to which connectivity
+correlates with genuine reasoning quality across domains remains an empirical question.
+The conceptual graph is extracted from the reasoning trace using dependency and discourse parsers
+for formal and semi-formal reasoning domains. Where such parsers are unavailable, an LLM-based
+extraction step is used, with the caveat that this reintroduces attention dilution for very long traces;
+9
+
+fully general graph extraction remains an open problem. At inference time, the critic consumes the
+compact invariant vector computed by the Coordinator, not the raw reasoning trace. In the terms of
+Section 5, this is the primary piece-mobility evaluator.
+• Analytic critic (the king-safety evaluator). A neural network fine-tuned to provide a scalar score of
+intermediate reasoning states for proximity to constraint violation. Like a chess engine’s evaluation
+function, it operates continuously at every node of the search tree, detecting accumulated pressure:
+unresolved tensions, constraints left unaddressed, contradictions looming. It provides a continuous
+gradient at intermediate steps, even when the violation itself is many tokens away—allowing the
+Coordinator to prune doomed branches early, long before they reach the final Verifier.
+Where the Aesthetic Critic sees structural ugliness—the undeveloped knight, the fragmented argument—
+the Analytic Critic calculates specific threats. It is the king-safety evaluator, tracking how close each
+constraint is to violation and how much pressure is accumulating around the king. The critic receives
+the Coordinator’s Constraint State Register (CSR) together with the candidate chunk, ensuring
+global constraint visibility without attention dilution (see Constraint State Management below).
+Unlike the Aesthetic Critic, the Analytic Critic does not estimate a success probability. It is trained
+to predict the expected constraint violation cost—a scalar that increases with unresolved tension,
+accumulated pressure, and budget depletion—from the CSR. Its output, Vbwd(s), is a penalty: higher
+values indicate greater risk. Theorem 3 guarantees that the CSR contains the information needed to
+estimate this cost.
+Because the two critics estimate complementary quantities—forward-looking reward and backward-looking
+penalty—their combination in the scoring function αVfwd −βVbwd is a principled trade-off: the Co-
+ordinator balances the opportunity of structural harmony against the threat of constraint pressure.
+This subtraction is mathematically coherent and directly mirrors the chess engine’s balance of piece
+mobility and king safety.
+In the terms of Section 5, this is the constraint-pressure evaluator. It complements the Aesthetic
+Critic: the artist sees the harmony of the developing framework; the tactician watches for threats to
+the solution’s integrity.
+Recent work on process reward models underscores the need for this split. Neural PRMs exhibit
+prompt sensitivity, step-label interference, and overthinking, with accuracy gaps of 10–50% on long-horizon
+reflective reasoning traces [20]. Verifiable Process Reward Models that anchor step-level checks in
+deterministic rules substantially outperform purely neural PRMs [37]. The Analytic Critic’s reliance
+on the Constraint State Register and the Deterministic Verifier follows this emerging consensus: the
+critic learns a gradient, but the Verifier provides the ground truth.
+• Deterministic verifier (the environment physics). An external symbolic system—a Python inter-
+preter, a theorem prover, a formal logic checker—that enforces hard constraints. In a chess engine,
+the rules of the game are baked into the move generator. In an LLM, the “move generator” is merely
+the tokenizer, which only enforces syntactic validity. To enforce semantic and logical validity, we
+must introduce an external environment that acts as the physics of the reasoning world. It receives
+candidate outputs, translates them into executable checks, and returns a binary verdict. The verifier
+checks all hard constraints on the current partial state; it does not require the solution to be
+complete. It is the architectural boundary that makes constraint satisfaction constitutive at the system
+level, forcing the Coordinator to backtrack and reject any branch where the “physics” of the logic are
+violated.
+10
+
+This design directly mirrors Verifiable Process Reward Models [37], which replace neural step-verification
+with symbolic checks and achieve up to 20% higher F1 scores on structured reasoning tasks. By mak-
+ing the Verifier an external, non-neural oracle, the architecture avoids the self-evaluation pathologies
+that limit purely neural reward models.
+• Adversarial attacker (the discrete prober). Unlike the analytic critic which passively scores states,
+the attacker is an LLM tasked with actively generating explicit stress-tests: formulating edge cases,
+proposing counter-arguments, and highlighting specific rhetorical camouflage. It forces the Genera-
+tor to actively defend its logic against discrete, targeted challenges, surfacing violations that a passive
+scalar score might miss. The attacker uses the CSR to identify weak points and generates counterex-
+amples targeting specific constraints. Its function is to detect and surface violations that the generator
+might otherwise push past its attention horizon, directly countering the Horizon Effect diagnosed in
+Section 2.
+• Coordinator (the search algorithm). The coordinator implements a constrained beam search with
+iterative deepening. At each step, it maintains a fixed-width beam of candidate partial solutions. Each
+candidate is scored by a weighted combination of the analytic critic’s constraint-pressure estimate and
+the aesthetic critic’s coordination score. Candidates that fail the deterministic verifier are immediately
+pruned. Candidates flagged by the adversarial attacker are either repaired—if the generator can re-
+solve the flagged issue within a bounded retry budget—or discarded. The search depth is controlled
+by a computational budget parameter, and the coordinator implements iterative deepening: it first ex-
+plores all branches to depth 1, then depth 2, and so on, ensuring that the most promising lines receive
+the deepest exploration. This is directly analogous to heuristic-guided search with constraint-based
+pruning in chess engines: the evaluation functions provide the node ordering, and the search algo-
+rithm provides the traversal strategy, while hard constraints (the Environment Physics) prune invalid
+branches before they are expanded. The coordinator translates between the chunked representations
+of the generator and the intermediate checks of the analytic critic. It implements the bidirectional
+evaluation described in Section 3: the generator performs the forward pass, guided by the aesthetic
+critic’s holistic evaluation of promise; the analytic critic performs the backward pass from the nec-
+essary conditions of constraint satisfaction; the coordinator navigates the corridor where these two
+signals meet.
+Formally, the Coordinator treats the generation process as a Markov Decision Process (MDP). At each
+intermediate state st (a partial solution), the Coordinator must select the next reasoning chunk. It evaluates
+candidate states using a bidirectional objective function:
+Score(st) = α · Vfwd(st) −β · Vbwd(st) −λ · C(st)
+(1)
+Where Vfwd(st) is the Aesthetic Critic’s estimate of eventual success probability (the forward-looking piece
+mobility reward), Vbwd(st) is the Analytic Critic’s estimate of constraint violation cost (the backward-looking
+king-safety penalty), and C(st) is the computational cost of the branch. The search is strictly constrained
+by the Environment Physics: any candidate state where the Deterministic Verifier returns Vdet(st) = 0 (a
+hard constraint violation) is immediately pruned, regardless of its Score(st). This formulation transforms
+the abstract concept of “deliberation” into a computable, optimizable search trajectory.
+This division of labour directly addresses the weak-link constraint: under-investing in any cognitive
+function leaves that function as the weakest link, just as neglecting a chess piece leaves it unable to sup-
+port the attack. A single, undifferentiated model cannot bring all functions to bear simultaneously; the
+specialised society can.
+11
+
+Together, these six roles form a complete reasoning loop. None of these components alone is sufficient.
+The generator cannot check its own work. The aesthetic critic cannot detect tactical violations. The analytic
+critic cannot appreciate structural elegance. The verifier cannot detect impending violations. The attacker
+finds flaws but cannot build. The coordinator adds no new knowledge but is essential to integration. Their
+coordination is what produces depth. Just as multicellular organisms achieve what single cells cannot,
+this architecture achieves constraint satisfaction not through any single agent’s capability but through the
+coordination of specialists, each covering the blind spots of the others.
+This division of labour mirrors Dual-Process Theory in cognitive psychology [16]. The Generator and
+Aesthetic Critic operate as “System 1”: fast, intuitive, and pattern-based, relying on chunked representations
+and holistic evaluation. The Analytic Critic and Deterministic Verifier operate as “System 2”: slow, delib-
+erative, and rule-bound, performing sequential constraint verification. Current monolithic LLMs attempt
+to force System 1 architecture to perform System 2 tasks, resulting in the shallow reasoning diagnosed in
+Section 2.
+Figure A.3 shows the full architecture of this Society of Specialised LLMs.
+6.1. Coordinator Search Procedure (CBS-DL)
+The following specification makes the Coordinator’s operation precise. The algorithm is presented as a
+prose specification to capture the full control logic; it can be directly implemented from this description.
+Coordinator Search Procedure (Constrained Beam Search with Depth Limit, CBS-DL).
+The coordinator maintains a beam of up to w partial solutions, each a sequence of reasoning chunks
+produced by the Generator. The search proceeds step-by-step, with each branch limited to a maximum trace
+length Dmax.
+Initialisation. The beam is initialised with {s0}.
+Expansion. At each step, for every state s in the current beam, the Generator is called m times indepen-
+dently, yielding m candidate reasoning chunks. Each chunk is appended to s, forming an extended state s′.
+Budget: Each call to Generate consumes one unit of the compute budget B.
+Hard pruning. Each candidate s′ is evaluated by the Deterministic Verifier. The verifier checks all hard
+constraints on the current partial state; it does not require completeness. If any constraint is violated, the
+candidate is discarded. Budget: Each verifier invocation consumes one unit.
+Adversarial probing and repair. For each surviving candidate, the Adversarial Attacker probes it,
+returning a set of counterexamples C. Budget: Each probing round consumes one unit.
+If C is empty, the candidate proceeds directly to scoring. If C is non-empty, the system attempts repair
+using a snapshot-driven loop:
+1. Create a snapshot S ←C. (S is the set of counterexamples to address.)
+2. repair_attempts ←0.
+3. while S , ∅and repair_attempts < R:
+(a) Pick a counterexample c from S .
+(b) srep ←RollbackAndRepair(s′, c).
+(c) repair_attempts ←repair_attempts +1.
+(d) Budget: The repair call consumes one unit.
+(e) If srep is NULL or re-verification of srep fails:
+i. Remove c from S . (This counterexample is unfixable.)
+ii. Continue the while loop.
+(f) Else (Repair produced a verifier-valid state):
+i. s′ ←srep.
+12
+
+ii. Re-probe s′ with the Attacker, obtaining a fresh counterexample set C′.
+iii. Budget: The re-probe consumes one unit.
+iv. If C′ = ∅: (All counterexamples resolved.) C ←∅, break the while loop.
+v. Else: (New counterexamples discovered; restart from a fresh snapshot.) C ←C′, S ←C′.
+4. End while.
+5. (Post-loop discard rule.) If C , ∅: Discard the candidate. (Counterexamples remain after all repair
+attempts are exhausted.) Else: The candidate is attacker-clean and proceeds to scoring.
+Scoring. Each surviving, attacker-clean candidate is scored using the bidirectional objective:
+score(s′) = α · Vfwd(s′) −β · Vbwd(s′),
+(2)
+where Vfwd is the Aesthetic Critic’s success probability estimate (reward) and Vbwd the Analytic Critic’s
+constraint violation cost estimate (penalty). Budget: Both critic evaluations together consume one unit.
+Beam selection. From the pool of all scored candidates across all states in the current beam, the top w
+by score are selected to form the beam for the next step. If fewer than w candidates survive, all are kept.
+Termination. After beam selection, each state in the new beam is tested for completeness. A state
+is considered complete when all problem-specific completeness criteria are satisfied (e.g., every required
+constraint has been explicitly addressed and the solution is syntactically finalised). The search returns the
+first complete state that also passes both the Deterministic Verifier and the Adversarial Attacker.
+If the beam becomes empty, the compute budget B is exhausted, or the maximum trace length Dmax is
+reached without finding a complete solution, the search returns FAIL.
+The early-exit policy (returning the first complete, fully verified solution) reflects the design choice that
+any constraint-satisfying complete solution is equally acceptable; the critics’ scores serve solely to steer the
+search, not to rank final answers.
+Remark (Motivating principle for bidirectional search). If the Analytic Critic provides an admis-
+sible heuristic—one that never overestimates the remaining constraint pressure—then, in an unconstrained
+(exhaustive) search, classical A* results (Hart et al., 1968 [36]) would guarantee optimal node expansion.
+CBS-DL is a beam search with finite width w; it does not inherit this guarantee. The heuristic serves as a
+gradient for node ordering, not a formal completeness or optimality property. The practical utility of the
+architecture rests on how well the learned critics approximate these ideal conditions.
+6.2. Constraint State Management
+The critics and attackers rely on a compact, globally consistent view of the constraints, which the au-
+toregressive generator cannot maintain internally. To provide this view without requiring the critics to attend
+over the full trace, the Coordinator maintains a Constraint State Register (CSR). The CSR is a structured
+record that encodes, for each constraint, (a) its current status (satisfied, violated, or unaddressed), and (b)
+the partial design decisions that are causally relevant to that constraint’s eventual satisfaction. For exam-
+ple, in the software-architecture task of Section 4, the CSR for a “strict dependency acyclicity” constraint
+would store the set of declared dependencies to date, not merely a flag; the CSR for a “formal API contract
+adherence” constraint would store the current function signatures and their types.
+Because the CSR grows with the number of entities introduced during reasoning (modules, functions,
+variables), not with the length of the trace, its size is bounded by the problem’s structural complexity rather
+than by the generation horizon. For a task with m constraints and n domain entities, the CSR occupies
+O(m + n) space, independent of the number of reasoning steps. The Coordinator updates the CSR after
+each reasoning step by querying the Deterministic Verifier on each constraint and extracting the updated
+13
+
+partial state; the Verifier is already performing the symbolic checks, so this extraction is a by-product of
+verification, not a separate cost.
+The Analytic Critic receives the CSR together with the new candidate chunk s′. The CSR provides the
+critic with the causal context needed to assess whether the candidate chunk creates an emerging contradic-
+tion: for example, whether a newly proposed threading model conflicts with the memory-allocation strategy
+recorded in the CSR. The critic then computes its constraint-pressure score by comparing the CSR with the
+desired terminal state and by detecting local inconsistencies between the candidate chunk and the partial
+state stored in the CSR.
+We now give a formal characterisation of the CSR’s informational sufficiency. The result shows that,
+under a natural design condition on the reasoning process, the compact register is provably sufficient for
+predicting all eventual constraint violations, and it is the coarsest statistic with this universal property.
+Theorem 3 (CSR Characterisation for Outcome-Markov Processes). Consider a reasoning process
+over a finite set of variables with a finite domain, terminating with eventual state V = (σ∞, R∞). Define
+the Constraint State Register CSRk = (σk, Dk, Rk, {statusj}m
+j=1), where each status is a deterministic function
+of (σk, Dk, Rk). The process is called outcome-Markov if the conditional distribution of the eventual state
+given the full trace history depends only on the current partial state: Pr(V ∈· | Tk) = Pr(V ∈· | σk, Dk, Rk).
+(A) Sufficiency. If the process is outcome-Markov, then for every constraint cj with violation indicator
+E j, and every step k:
+Pr(E j | Tk) = Pr(E j | CSRk).
+(3)
+More generally, for any measurable function ϕ of the eventual state,
+E[ϕ(V) | Tk] = E[ϕ(V) | CSRk].
+(4)
+(B) Minimality. Let S be any statistic of the trace. If S is universally sufficient for prediction—i.e., for
+every outcome-Markov process and every trace, Pr(V ∈· | Tk) = Pr(V ∈· | S (Tk))—then S must determine
+the CSR: for any two traces Tk, T ′
+k, S (Tk) = S (T ′
+k) implies CSRk(Tk) = CSRk(T ′
+k). The CSR is therefore the
+coarsest universally sufficient statistic up to deterministic equivalence.
+Proof sketch. (A) By construction, the CSR contains (σk, Dk, Rk) and the statuses, each of which is
+a deterministic function of that triple. Hence conditioning on the CSR is equivalent to conditioning on
+(σk, Dk, Rk). The outcome-Markov property directly gives Pr(V ∈· | Tk) = Pr(V ∈· | σk, Dk, Rk). Con-
+straint violations are deterministic functions of V; the generalisation to arbitrary measurable ϕ follows by
+the tower property of conditional expectation.
+(B) Assume S does not determine the CSR. Then there exist traces Tk, T ′
+k with S (Tk) = S (T ′
+k) but
+distinct CSR values c , c′. Construct an immediate-termination process: at step k the process halts and
+emits the current state as V, assigning positive probability to both traces. This process is outcome-Markov.
+By universal sufficiency, Pr(V = c | S = s∗) = 1 (from Tk) and Pr(V = c′ | S = s∗) = 1 (from T ′
+k), a
+contradiction since c , c′. Therefore S must determine the CSR. □
+Scope and caveats. Theorem 3 is an information-theoretic specification, not an implementation guaran-
+tee. It assumes exact CSR extraction, outcome-Markovianity of the reasoning process, and concerns only
+properties of the eventual state. Path-dependent control properties—such as the number of backtracks per-
+formed, the remaining compute budget, or the depth of the current beam—are not functions of V alone and
+require additional algorithmic state in the Coordinator (Section 6.1). The universal minimality result is a
+worst-case lower bound: for a specific task and a specific Generator, a coarser register may suffice. The the-
+orem identifies the common denominator across all tasks, providing a template that the architect instantiates
+per domain.
+14
+
+Causal attribution for repair. The RollbackAndRepair mechanism in the CBS-DL specification (Sec-
+tion 6.1) additionally requires the system to identify which prior decision caused a detected counterexample—
+a causal attribution problem. If the CSR omits the relevant decision from its compressed representation,
+repair may fail even when a fix exists. This places a further burden on the CSR design: it must encode not
+only the status of each constraint but the specific design choices that causally support that status, so that the
+repair module can backtrack to the appropriate point. Automated causal attribution in long reasoning traces
+is an open research problem, and the current architecture relies on manual CSR engineering to make the
+causal links explicit.
+Similarly, the Aesthetic Critic receives a summary graph connectivity score derived from the conceptual
+graph built by the Coordinator. The conceptual graph is extracted from the reasoning trace using a combina-
+tion of dependency parsing (for formal reasoning) and discourse parsing (for rhetorical structure); its nodes
+and edges are symbolic and can be updated incrementally. The algebraic connectivity and orphan-node
+count are computed symbolically, bypassing neural attention limits. For domains where formal parsing is
+unavailable, an LLM-based extraction step introduces the same attention dilution the architecture aims to
+avoid; the current design is therefore most effective for tasks with machine-parseable reasoning structure.
+6.3. The Neuro-Symbolic Translation Bottleneck and its Fractal Resolution
+A critical challenge in any neuro-symbolic architecture is the translation of natural-language reasoning
+into a formal specification that a deterministic verifier can check. If the translation step is performed by a
+fallible neural model, the verifier may certify a mistranslation rather than the original argument, undermin-
+ing the constitutive guarantee.
+The Society of Specialised LLMs addresses this bottleneck by applying its own principle recursively.
+The translation step is treated as a sub-problem—a local constraint-satisfaction task—and delegated to a
+dedicated Translator. The Translator is itself an instance of the same six-role architecture: a Genera-
+tor proposes candidate formal encodings; Aesthetic and Analytic Critics evaluate their fidelity and struc-
+tural coherence; a Deterministic Verifier checks syntactic correctness and completeness; and a Coordina-
+tor selects the best encoding. If the domain allows, the Translator’s output can be further verified by a
+lower-level instance of the society, recursing down to a level where the translation is trivially formal (e.g.,
+a simple parser). This fractal recursion ensures that the translation step is subject to the same verification
+guarantees—Theorems 2* and 3—at every scale.
+The Translator is not a new component type; it is a re-instantiation of the existing six roles, specialised
+to the domain of formal encoding. The architecture thus does not rely on a single fallible neural translation
+step; it recursively verifies translations to whatever depth is required for the domain. The constitutive
+guarantee is preserved: any formal specification that emerges from this cascade has been verified at every
+level. The Verifier guarantees only the syntactic correctness of the translation, not its semantic fidelity to the
+original natural-language intent. Semantic alignment is evaluated heuristically by the Critics and Attacker
+within the translation society, and ultimately validated by the external grounding provided by the human
+operator or environmental feedback.
+6.4. Efficiency of Hard Pruning (Illustrative Model)
+The following simplified model is provided solely for pedagogical intuition; its independence assump-
+tion directly contradicts the interlocking-constraint setting, and the baseline is a strawman. It demonstrates
+the value of early pruning, not the full architecture’s efficiency.
+Simplified model. Assume each generated reasoning chunk is independently valid with probability
+p ∈(0, 1). The baseline autoregressive model generates a sequence of L chunks; if any chunk is invalid,
+the entire sequence is discarded and regenerated from scratch. CBS-DL with beam width w and expansion
+15
+
+multiplicity m = w generates at most w chunks per state per depth; invalid chunks are pruned immediately
+and never propagated.
+Claim. Under the above assumptions, the expected total number of chunks generated by the baseline is
+E[Nbase] = L/pL (exponential in L), while for CBS-DL it is bounded by E[NCBS] ≤Lw/p (linear in L).
+Justification. For the baseline: a sequence is valid with probability pL; the number of trials is geometric
+with mean 1/pL; each trial generates L chunks. For CBS-DL: at each depth, at most w states exist; each
+state generates chunks until a valid one appears, with a geometric number of attempts per state of mean
+1/p; summing over w states and L depths gives the bound.
+Limitations. This model assumes independent validity across chunks, which is false for interlocking
+constraints. It also omits the repair loop, which can recover some invalid chunks without resampling. The
+value of the model is purely pedagogical: it illustrates the exponential-to-linear contrast produced by hard
+pruning alone. A rigorous treatment with realistic error dependencies is left for future work.
+6.5. Probabilistic Advantage of Constrained Beam Search
+The illustrative model in Section 6.4 assumed independent chunk validity, which is unrealistic for inter-
+locking constraints. We now prove a stronger result that explicitly models the interaction between Generator
+and Critics. The result shows that the Coordinator’s beam search amplifies the probability of finding a valid
+complete solution, even when the search space contains dead ends, provided the Critics can distinguish
+extendable continuations from dead ends with better-than-chance accuracy.
+Setup. A reasoning task requires a sequence of L chunks, all of which must be valid. A partial solution
+of length k is valid if all k chunks satisfy the hard constraints up to that point, and extendable if it can be
+completed to a valid full solution (probability > 0). The Coordinator performs CBS-DL with beam width
+w ≥1 and expansion multiplicity m = w. The Deterministic Verifier is perfect: only valid candidates
+survive hard pruning.
+Assumptions. We make two assumptions, both of which are explicit design targets for the architecture.
+1. Generator quality. When the Generator is prompted with any extendable prefix, each of the w
+independently generated candidate chunks is both valid and extendable with probability at least
+q > 0. The parameter q captures the Generator’s ability—possibly after fine-tuning—to produce
+locally correct chunks that do not create semantic dead ends.
+2. Critic discriminability. After hard pruning, the Coordinator scores every valid candidate. Let C be
+the set of all scored valid candidates generated from all prefixes in the beam (at most w2 candidates),
+and let X be the number of candidates in C that are extendable and valid. The Critics satisfy the
+following retention property: if X ≥1, then with probability at least θ > 0.5 the highest-scored
+extendable valid candidate is among the top-w candidates selected for the next beam. The parameter θ
+captures the Critics’ joint ability—via the bidirectional scoring function—to rank globally survivable
+continuations above dead ends.
+Baseline (Monolithic generation). The baseline model generates a full sequence of L chunks in one
+autoregressive pass, without external verification or backtracking. From the weak-link constraint, even
+a single chunk’s validity is capped by the weakest cognitive requirement. In the worst case—where all
+requirements except fluency are severely neglected—the monolithic success probability can be arbitrarily
+close to zero for any non-trivial L.
+Theorem 2* (Success Probability Amplification with Critic-Guided Retention). Under the above
+assumptions, the probability that the Coordinator produces at least one complete valid solution of length L
+satisfies
+PCBS ≥ θ · (1 −(1 −q)w)L.
+(5)
+16
+
+If q and θ are constant across depths, the right-hand side provides a single exponential decay rate. The
+architecture amplifies the per-step success probability whenever θ · (1 −(1 −q)w) > q. This condition holds
+when the Generator’s standalone success probability q is small enough that the diversity gain from beam
+search outweighs the noise introduced by an imperfect critic. When the critic is nearly perfect (θ ≈1),
+amplification is guaranteed for any q ∈(0, 1) and any w ≥2; when the critic is weak, the architecture may
+perform worse than the monolithic baseline, and the condition identifies the precise threshold above which
+diversification is beneficial.
+Proof sketch. Induction on depth. Let Ek be the event that the beam at depth k contains at least one
+extendable prefix. E0 holds trivially. Condition on Ek−1. Consider the worst-case beam configuration:
+exactly one extendable prefix, the rest dead ends. Expanding that prefix gives w independent candidates,
+each extendable-and-valid with probability ≥q. Hence Pr(X ≥1) ≥1−(1−q)w. Conditioned on X ≥1, the
+retention property guarantees survival of an extendable candidate with probability ≥θ. Therefore Pr(Ek |
+Ek−1) ≥θ · (1 −(1 −q)w) in the worst-case configuration, and the bound holds for all configurations. The
+induction yields P(EL) ≥(θ · (1 −(1 −q)w))L. Since an extendable prefix of length L is a complete valid
+solution, the theorem follows. A full formal proof is provided in Appendix A. □
+Discussion. Theorem 2* captures the division of labour between Generator and Critics. The Generator
+must produce continuations that are locally valid and globally survivable (q); the Critics must recognise
+them (θ). Neither component alone suffices, but together they amplify the per-step success probability from
+q to approximately θ · (1 −(1 −q)w). This amplification is most significant when individual chunks are hard
+to get right (small q), precisely the setting where interlocking constraints are most challenging.
+Unlike the original Theorem 2 of Abaee (2026), this version does not assume the absence of dead
+ends. Dead ends may exist; the Critics’ role is to avoid retaining them when extendable alternatives are
+generated. The bound is parameterised by critic quality θ: when critics are perfect (θ = 1) and the Gener-
+ator’s extendable-valid probability q is high, the bound approaches (1 −(1 −q)w)L, matching the idealised
+amplification of the original analysis. When critics are imperfect, the bound degrades gracefully.
+The theorem also clarifies the relationship between the search architecture and compute budget. For a
+fixed budget B scaling with beam width w, the compute-efficiency ratio R(B) = PCBS(B)/Pmono(B) grows
+exponentially in L whenever q is not the unique weakest link in the monolithic system. This reframes the
+search-depth concern of Section 7: the architecture does not require chess-engine depths to provide gains;
+it provides the best possible return on whatever compute budget is available.
+The consciousness link: Global Workspace Theory. This proposed architecture structurally parallels
+Global Workspace Theory (GWT), a leading framework in cognitive science for understanding how spe-
+cialised brain regions integrate information [17, 18]. In GWT, unconscious, specialised processors compete
+for access to a central workspace; the winning coalition is broadcast globally, enabling flexible, deliberate
+action. The Society of Specialised LLMs implements a structurally analogous mechanism: the Generator,
+Critics, and Attacker compete via the Coordinator’s scoring function for the right to propose the next rea-
+soning step; the selected candidate is broadcast through the shared CSR and becomes the focus of the next
+cycle. This is a functional parallel to the workspace architecture, not a claim about phenomenal conscious-
+ness. The architecture provides the mechanistic prerequisites for a system to monitor its own trajectory and
+intervene on contradictions—a form of access consciousness in the sense of Block (1995) [19].
+This architecture is not speculative in its individual parts. Process-based reward models [20, 21] are
+early versions of the analytic critic. Tree-of-thought prompting [22] and Monte Carlo tree search for lan-
+guage models [23] are early versions of the coordinator. Constraint-satisfaction benchmarks [24] confirm
+that advanced models struggle with long-chain reasoning, underscoring the need for verifier-anchored ar-
+chitectures. Self-play and debate [25, 26] with adversarial attackers have shown promise [27, 28]. The
+17
+
+aesthetic critic is the least explored component, but its function—holistic pattern evaluation anchored to
+outcome correlation—is directly analogous to the neural evaluation functions that transformed computer
+chess. The deterministic verifier is standard software. What is novel is the proposal to integrate them into
+a single, coordinated system organised by the principle that specialised intelligences covering each other’s
+blind spots outperform any monolithic model.
+7. Limitations of the analogy
+The chess analogy illuminates an incentive and architectural problem. It does not, on its own, solve the
+hard limits that remain.
+Search depth as a compute-optimality trade-off. A chess engine searches millions of positions,
+and current LLMs cannot match that scale. This does not contradict the architecture’s value; it char-
+acterises a continuum. Theorem 2* shows that even modest beam widths and depths yield exponential
+gains over monolithic generation, and the architecture scales gracefully with available compute.
+The
+compute-efficiency ratio R(B) introduced in Section 6.5 grows with the beam width w, which is itself
+bounded by the budget B. The architecture thus reframes search depth from a binary “can or cannot” to
+a principled trade-off: any compute budget can be allocated optimally to maximise the probability of con-
+straint satisfaction, and the gains from additional compute are subject to diminishing returns, exactly as in
+chess engines.
+Finite context and attention dilution. Current models have bounded context windows and attention
+that decays with distance [4]. For sufficiently complex tasks, the sheer number of constraints may exceed
+the model’s ability to hold them in simultaneous attention. A constraint can be functionally invisible—not
+because the model devalues it, but because the architecture cannot access it.
+The epistemic void for genuinely open-ended tasks. For tasks where constraints cannot be formalised—
+aesthetic judgment, open-ended philosophical speculation, creative design—the analogy breaks down. There
+is no “rule set” to internalise, no “legal move” to check. Any “king-safety” signal for such tasks would itself
+be a human-designed proxy, vulnerable to the same rigidity and blind spots that plagued early handcrafted
+chess heuristics, and to Goodhart’s Law. The proposed research programme is designed for tasks with
+specifiable, checkable constraints. It does not claim to solve open-ended reasoning where the standard of
+correctness is itself contested. For rich interlocking constraints, the CSR must be manually engineered per
+domain; fully general reasoning with arbitrary semantic constraints is beyond the current scope.
+The illusion of self-awareness. While the proposed architecture implements a workspace-style inte-
+gration mechanism structurally parallel to GWT, this is distinct from genuine phenomenal consciousness
+[19]. Furthermore, a system with metacognitive critics can still suffer from “introspective hallucination”
+or multi-agent collusion. While multi-agent debate has shown significant promise for improving factuality
+[29], it is a well-documented risk in the literature that if agents share the same foundational biases, they
+can confidently converge on incorrect answers, creating an echo chamber of mutually reinforcing delusions.
+Without the deterministic verifier to anchor the system to reality, the society of LLMs risks becoming just
+such an echo chamber—highly articulate, but detached from truth. Architecture provides the machinery for
+self-reflection, but it does not guarantee truth.
+Thinking time is not depth. Even with topological metrics, a model can produce backtracking-like
+patterns without genuine self-correction. Chain-of-thought explanations can be unfaithful to the model’s
+actual reasoning process [30, 31, 32]. A rigorous, causal metric for reasoning depth remains to be developed.
+These limits are severe. But they are also precise. The chess analogy tells us exactly where the proposed
+solutions apply—to constraint-bound reasoning tasks—and where they do not.
+18
+
+8. The move we need to make
+Given these boundaries, what should we actually do? The pawn-grabbing problem is a direct conse-
+quence of the incentives we have built and the architectures we have chosen. If we continue to optimise for
+local fluency and short-term helpfulness, with single-path generation that cannot check its own work, we
+should expect models that are increasingly eloquent and decreasingly trustworthy.
+The chess analogy suggests a different path: treat constraint satisfaction as constitutive of generation—a
+hard architectural requirement, not a soft reward signal. This requires building systems with differentiated
+components—a generator, an aesthetic critic for structural harmony, an analytic critic for constraint pres-
+sure, a deterministic verifier, an adversarial attacker, and a coordinator, with the neuro-symbolic translation
+step handled by a recursive instantiation of the same six-role architecture—each with its own mode of know-
+ing, each blind to what the others see, their coordination producing what no monolithic model can achieve.
+This is not a call for larger models. It is a call for architectures that reflect the principle, demonstrated by
+chess engines and paralleled in biology, that complex intelligence is not a single thing doing a single thing
+well. It is a network of specialists, covering each other’s blind spots, hunting together.
+This architectural shift directly addresses the emerging paradigm of inference-time compute scaling.
+Recent research demonstrates that dynamically allocating more computational resources during inference—
+via extended search and verification—can yield greater reasoning improvements than simply scaling model
+parameters [33]. However, blindly generating more tokens is inefficient. The Society of Specialised LLMs
+provides the necessary scaffolding for optimal compute allocation. By using the Analytic Critic to identify
+high-pressure states (impending constraint violations), the Coordinator can dynamically allocate deeper
+search and more compute precisely where the reasoning trajectory is most fragile, rather than wasting
+inference compute on structurally sound, low-pressure text generation.
+This architectural shift also suggests a path toward more general reasoning capabilities. Currently, the
+field often conflates a broad knowledge base with general intelligence. But a model that has memorised the
+internet yet reasons via myopic, single-path token prediction possesses narrow reasoning mechanics, even if
+its knowledge is general. True generality requires not just the capacity to retrieve any fact, but the structural
+capacity to sustain long-horizon, multi-constraint goal pursuit across domains where constraints can be
+specified. This architectural shift aligns with theoretical critiques of purely autoregressive intelligence.
+As argued by LeCun [34], true autonomous intelligence requires an objective-driven architecture capable of
+maintaining a world model, predicting the consequences of actions, and optimizing a cost function over long
+horizons—capabilities that next-token prediction fundamentally lacks. The society of specialised LLMs
+proposed here is a blueprint for generalising the process of deliberation. By decoupling the generation
+of ideas from the evaluation of their structural harmony and constraint satisfaction, we build a reasoning
+engine that can, in principle, be applied to any domain where constraints can be specified. Extending this
+to fully open-ended tasks remains a challenge for future work.
+Future work. Several components of the proposed architecture are ripe for immediate development.
+The Analytic Critic can be trained using temporal-difference learning (TD(λ)) or step-level direct preference
+optimisation (Step-DPO), which would allow it to bootstrap distant constraint-violation signals back into
+dense, intermediate feedback—directly countering the Horizon Effect identified in Section 2. The Aesthetic
+Critic can be trained via graph contrastive learning (GraphCL) on conceptual connectivity graphs extracted
+from reasoning traces, maximising structural harmony without relying on subjective human annotations.
+For tasks where constraints can be formalised into decidable logical fragments, the Deterministic Verifier
+can be instantiated as an SMT solver (e.g., Z3) using the DPLL(T) algorithm, providing sound and com-
+plete checking at the cost of a neuro-symbolic translation step whose reliability is addressed by the fractal
+Translator architecture (Section 6.3). The Adversarial Attacker can be strengthened by sampling diverse
+19
+
+probes via determinantal point processes (DPPs), with the important caveat that DPPs enforce surface-level
+diversity, not the epistemic independence required for Condorcet-style guarantees—a gap that remains to be
+closed. The Coordinator’s compute-allocation policy can be made adaptive, widening or deepening search
+in regions of high constraint pressure, a direct extension of recent work on inference-time compute scaling
+[33]. Finally, automatic learning of sufficient CSR state representations for rich interlocking constraints is
+a critical open problem; manually engineered CSRs serve as a stopgap, but scaling to arbitrary domains
+will require representation learning techniques that discover causally relevant state summaries from data.
+Formalising the CSR as a Markov state abstraction [38] and proving that it preserves sufficiency for inter-
+locking constraint domains is a concrete theoretical next step, building on recent results that characterise
+when learned abstractions retain the Markov property.
+The chess engines did not become superhuman by scaling the pawn-grabbing heuristic. They diversified.
+They added evaluation terms, deepened search, and integrated specialised components, each addressing a
+bottleneck the others could not. The language models can do the same—but only if we stop investing in
+fluency alone and build systems whose cognitive functions are as diverse and coordinated as the pieces on
+a chessboard at the moment of a decisive attack.
+Data and code availability
+The full text of all meta-prompts described, the raw model outputs, and the thinking-time measurements
+are available from the author upon reasonable request. I invite replication, critique, and extension.
+Competing interests
+The author declares no competing interests.
+Author contributions
+Amin Abaee: Conceptualization, Formal analysis, Investigation, Methodology, Writing – original draft,
+Writing – review & editing.
+Funding
+This work received no specific funding.
+Ethics approval
+Not applicable. This work involved no human subjects or sensitive data.
+Acknowledgments
+The author used DeepSeek (DeepSeek-AI), Kimi (Moonshot AI), and Qwen (Alibaba Cloud) as rea-
+soning assistants during the development of the formal proofs, the drafting of the Coordinator specification,
+and stylistic editing. All outputs were critically reviewed, verified, and revised by the author, who takes
+full responsibility for the final content. The author also thanks the anonymous language model interlocutors
+whose stubborn shallowness—and occasional flashes of strategic coordination—made this analysis possi-
+ble.
+20
+
+References
+[1] Z. Ji, N. Lee, R. Frieske, T. Yu, D. Su, Y. Xu, E. Ishii, Y. J. Bang, A. Madotto, P. Fung, Survey of
+hallucination in natural language generation, ACM Computing Surveys 55 (12) (2023) 1–38.
+[2] E. Perez, S. Ringer, K. Lukoši¯ut˙e, K. Nguyen, E. Chen, S. Heiner, C. Pettit, C. Olsson, S. Kundu,
+S. Kadavath, et al., Discovering language model behaviors with model-written evaluations, arXiv
+preprint arXiv:2212.09251 (2022).
+[3] R. Geirhos, J. H. Jacobsen, C. Michaelis, R. Zemel, W. Brendel, M. Bethge, F. A. Wichmann, Shortcut
+learning in deep neural networks, Nature Machine Intelligence 2 (11) (2020) 665–673.
+[4] N. F. Liu, K. Lin, J. Hewitt, A. Paranjape, M. Bevilacqua, F. Petroni, P. Liang, Lost in the middle:
+How language models use long contexts, arXiv preprint arXiv:2307.03172 (2023).
+[5] J. Pearl, Heuristics: Intelligent Search Strategies for Computer Problem Solving, Addison-Wesley,
+1984.
+[6] N. Stiennon, L. Ouyang, J. Wu, D. Ziegler, R. Lowe, C. Voss, A. Radford, D. Amodei, P. Christiano,
+Learning to summarize with human feedback, Advances in Neural Information Processing Systems 33
+(2020) 3008–3021.
+[7] L. Gao, J. Schulman, J. Hilton, Scaling laws for reward model overoptimization, in: Proceedings of
+the 40th International Conference on Machine Learning (ICML), 2023, pp. 10835–10866.
+[8] K. Valmeekam, A. Olmo, S. Sreedharan, S. Kambhampati, Large language models still can’t plan
+(A benchmark for LLMs on planning and reasoning about change), arXiv preprint arXiv:2206.10498
+(2022).
+[9] C. E. Shannon, Programming a computer for playing chess, Philosophical Magazine 41 (314) (1950)
+256–275.
+[10] D. Silver, T. Hubert, J. Schrittwieser, I. Antonoglou, M. Lai, A. Guez, M. Lanctot, L. Sifre, D. Ku-
+maran, T. Graepel, T. Lillicrap, K. Simonyan, D. Hassabis, A general reinforcement learning algorithm
+that masters chess, shogi, and go through self-play, Science 362 (6419) (2018) 1140–1144.
+[11] Y. Nasu, Efficiently updatable neural-network-based evaluation functions for computer shogi, in: 28th
+World Computer Shogi Championship, 2018.
+[12] A. D. de Groot, Thought and Choice in Chess, Mouton, 1965.
+[13] W. G. Chase, H. A. Simon, Perception in chess, Cognitive Psychology 4 (1) (1973) 55–81.
+[14] M. Minsky, The Society of Mind, Simon & Schuster, 1986.
+[15] J. Maynard Smith, E. Szathmáry, The Major Transitions in Evolution, Oxford University Press, 1995.
+[16] D. Kahneman, Thinking, Fast and Slow, Farrar, Straus and Giroux, 2011.
+[17] B. J. Baars, A Cognitive Theory of Consciousness, Cambridge University Press, 1988.
+21
+
+[18] S. Dehaene, J. P. Changeux, Experimental and theoretical approaches to conscious processing, Neuron
+70 (2) (2011) 200–227.
+[19] N. Block, On a confusion about a function of consciousness, Behavioral and Brain Sciences 18 (2)
+(1995) 227–247.
+[20] H. Lightman, V. Kosaraju, Y. Burda, H. Edwards, B. Baker, T. Lee, J. Leike, J. Schulman, I. Sutskever,
+K. Cobbe, Let’s verify step by step, arXiv preprint arXiv:2305.20050 (2023).
+[21] J. Li, X. Liang, J. Zhang, Y. Yang, et al., PSPO*: An effective process-supervised policy optimization
+for reasoning alignment, arXiv preprint arXiv:2411.11681 (2024).
+[22] S. Yao, D. Yu, J. Zhao, I. Shafran, T. L. Griffiths, Y. Cao, K. Narasimhan, Tree of thoughts: Deliberate
+problem solving with large language models, arXiv preprint arXiv:2305.10601 (2023).
+[23] Z. Gao, et al., Interpretable contrastive Monte Carlo tree search reasoning, arXiv preprint
+arXiv:2410.01707 (2024).
+[24] J. Chen, Z. Wei, Z. Li, et al., LR2Bench: Evaluating long-chain reflective reasoning capabilities of
+large language models via constraint satisfaction problems, in: Findings of the Association for Com-
+putational Linguistics: ACL 2025, 2025.
+[25] G. Irving, P. Christiano, D. Amodei, AI safety via debate, arXiv preprint arXiv:1805.00899 (2018).
+[26] A. Madaan, N. Tandon, P. Gupta, S. Hallinan, L. Gao, S. Wiegreffe, U. Alon, N. Dziri, S. Prabhumoye,
+Y. Yang, S. Gupta, B. P. Majumder, K. Hermann, S. Welleck, A. Yazdanbakhsh, P. Clark, Self-refine:
+Iterative refinement with self-feedback, arXiv preprint arXiv:2303.17651 (2023).
+[27] J. Chen, B. Zhang, R. Ma, P. Wang, X. Liang, et al., SPC: Evolving self-play critic via adversarial
+games for LLM reasoning, in: Advances in Neural Information Processing Systems (NeurIPS), 2025.
+[28] P. Wang, J. Li, Z. Tang, H. Gui, M. Zhang, Improving rationality in the reasoning process of language
+models through self-playing game, in: International Conference on Machine Learning (ICML), 2025.
+[29] Y. Du, S. Li, A. Torralba, J. B. Tenenbaum, I. Mordatch, Improving factuality and reasoning in lan-
+guage models via multiagent debate, arXiv preprint arXiv:2305.14325 (2023).
+[30] M. Turpin, J. Michael, E. Perez, S. R. Bowman, Language models don’t always say what they think:
+Unfaithful explanations in chain-of-thought prompting, arXiv preprint arXiv:2305.04388 (2023).
+[31] D. Paul, R. West, A. Bosselut, B. Faltings, Making reasoning matter: Measuring and improving faith-
+fulness of chain-of-thought reasoning, in: Findings of the Association for Computational Linguistics:
+EMNLP 2024, 2024.
+[32] T. Lanham, A. Chen, A. Tam, et al., Measuring faithfulness in chain-of-thought reasoning, arXiv
+preprint arXiv:2307.13702 (2023).
+[33] C. Snell, et al., Scaling LLM test-time compute optimally can be more effective than scaling model
+parameters, arXiv preprint arXiv:2408.03314 (2024).
+[34] Y. LeCun, A path towards autonomous machine intelligence, OpenReview preprint (2022).
+22
+
+[35] T. M. Cover, J. A. Thomas, Elements of Information Theory, 2nd Edition, Wiley-Interscience, 2006.
+[36] P. E. Hart, N. J. Nilsson, B. Raphael, A formal basis for the heuristic determination of minimum cost
+paths, IEEE Transactions on Systems Science and Cybernetics 4 (2) (1968) 100–107.
+[37] M. Pronesti, A. Belz, Y. Hou, Beyond outcome verification: Verifiable process reward models for
+structured reasoning, arXiv preprint arXiv:2601.17223 (2026).
+[38] C. Gelada, S. Kumar, J. Buckman, O. Nachum, M. G. Bellemare, DeepMDP: Learning Continuous La-
+tent Space Models for Representation Learning, in: Proceedings of the 36th International Conference
+on Machine Learning (ICML), 2019.
+Appendix A. Full Proof of Theorem 2* (Success Probability Amplification with Critic-Guided Reten-
+tion)
+Theorem 2* (Success probability amplification with critic-guided retention). Let a reasoning task
+require a sequence of L chunks, all of which must be valid. A partial solution of length k is valid if all k
+chunks satisfy the hard constraints up to that point, and extendable if it can be completed to a valid full
+solution (probability > 0). Assume:
+1. (Generator quality). When prompted with any extendable prefix, each of the w independently gen-
+erated candidate chunks is both valid and extendable with probability at least q > 0.
+2. (Critic discriminability). After hard pruning, let C be the set of all scored valid candidates (at most
+w2), and let X be the number of extendable valid candidates in C. If X ≥1, then with probability at
+least θ > 0.5 the highest-scored extendable valid candidate is among the top-w candidates selected
+for the next beam.
+3. (Perfect Verifier). The Deterministic Verifier accepts a candidate iff it is valid; no valid candidate is
+ever rejected, and no invalid candidate is ever accepted.
+Then the probability that CBS-DL produces at least one complete valid solution of length L satisfies
+PCBS ≥ θ · (1 −(1 −q)w)L.
+(A.1)
+Proof. We prove the lower bound (A.1) by induction on the depth k.
+Notation and events
+Let Bk denote the set of states (prefixes) in the beam after k reasoning steps. Define the event
+Ek = {Bk contains at least one extendable prefix}.
+(A.1)
+E0 holds trivially (the empty prefix is extendable). EL implies a complete valid solution, because an extend-
+able prefix of length L is already a full sequence and must be valid.
+We will prove by induction that P(Ek) ≥ck with c = θ · (1 −(1 −q)w).
+Base case: k = 0
+P(E0) = 1 = c0. The inequality holds.
+23
+
+Inductive step
+Assume P(Ek−1) ≥ck−1. By the law of total probability,
+P(Ek) = P(Ek | Ek−1)P(Ek−1) + P(Ek | ¬Ek−1)P(¬Ek−1) ≥P(Ek | Ek−1)P(Ek−1).
+(A.2)
+Condition on Ek−1, and consider the worst-case beam configuration consistent with Ek−1: exactly one
+extendable prefix in the beam, the remaining w −1 slots occupied by dead ends (valid but unextendable).
+Expanding the single extendable prefix yields w independent Generator calls, each producing an extend-
+able valid candidate with probability ≥q. The number X of extendable valid candidates among the valid
+candidates satisfies
+Pr(X ≥1) ≥1 −(1 −q)w.
+(A.2)
+Conditioned on X ≥1, the retention property of the Critics guarantees that the highest-scored extendable
+valid candidate is among the top-w selected for the next beam with probability at least θ. Hence, for this
+worst-case configuration,
+Pr(Ek | Ek−1, worst-case) ≥θ · (1 −(1 −q)w) = c.
+(A.3)
+Because the bound c holds for the worst-case configuration, it holds for every configuration satisfying
+Ek−1. Therefore
+Pr(Ek | Ek−1) ≥c.
+(A.3)
+Substituting (A.3) and the induction hypothesis into (A.2) yields
+P(Ek) ≥c · ck−1 = ck.
+(A.4)
+This completes the induction. Setting k = L gives (A.1). □
+Remark on the baseline
+For the monolithic baseline, the weak-link constraint gives that a single chunk’s validity probability is
+at most mini qi. In the worst case, mini qi can be arbitrarily small if any cognitive requirement is severely
+neglected. The diversified architecture avoids this min-bound by distributing requirements across the veri-
+fication loop, and Theorem 2* quantifies the resulting amplification.
+24
+
+Root Position
+Pawn Grab (Material Gain)
+Harmless Delaying Moves
+Horizon
+Checkmate (Constraint Violation)
+Input Prompt
+Fluent Para 1 (Formatting)
+Fluent Para 2 (Hedging)
+Fluent Para 3 (Confidence)
+Horizon
+Collapse (Dropped Constraint)
+Chess Engine
+LLM Autoregressive Generation
+Figure A.1: The Linguistic Horizon Effect. Just as early chess engines pushed inevitable losses past their fixed search depth
+by grabbing immediate material, monolithic LLMs push constraint violations past their attention horizon by optimizing for local
+fluency and RLHF “pawns.”
+25
+
+A: Forward-Only Search
+B: Bidirectional Evaluation
+Aesthetic
+Analytic
+Pruned
+×
+Forward (Fluency/Material)
+Backward (Constraint Pressure)
+Figure A.2: Bidirectional evaluation in the Coordinator’s search. The forward pass scores partial reasoning traces by structural
+harmony (piece mobility), while the backward pass scores them by accumulated constraint pressure (king safety). The search
+corridor is the region where both signals are favourable; the Coordinator navigates within this corridor.
+26
+
+Global Workspace
+Generator
+(System 1)
+Aesthetic Critic
+(Structural Harmony)
+Analytic Critic
+(Constraint Pressure)
+Adversarial Attacker
+(Discrete Probes)
+Coordinator (System 2)
+(Bidirectional Search)
+Deterministic Verifier
+(Environment Physics)
+candidate chunk
+Pass/Fail
+prune/backtrack
+Figure A.3: The Society of Specialised LLMs architecture. Six roles—Generator, Aesthetic Critic, Analytic Critic, Deterministic
+Verifier, Adversarial Attacker, and Coordinator—interact through a shared workspace, with the neuro-symbolic Translator imple-
+mented as a recursive instantiation of the same six-role motif.
+A: Baseline (Greedy/Sequential)
+C1
+C2
+C3
+C4
+B: Exploration-First (Deliberative)
+C1
+C2
+C3
+C4
+“Wait, revise”
+“Reconsider”
+Figure A.4: Topological comparison of reasoning traces under baseline prompting (left) and the exploration-first protocol (right).
+Each node represents a defined concept or constraint; edges represent logical dependencies. The baseline trace exhibits isolated,
+sequential constraint handling with no backtracking; the exploration-first trace shows high connectivity, multiple constraint revisi-
+tations, and explicit backtracking events.
+27

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  * { box-sizing: border-box; }
+  .diagram {
+    width: 1000px;
+    background: #ffffff;
+    padding: 14px 16px 10px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-family: 'Inter', 'Liberation Sans', Arial, sans-serif;
+  }
+  .section-label {
+    font-size: 16px; font-weight: 800; letter-spacing: 2.5px;
+    color: #7e7c74; text-transform: uppercase; margin: 5px 2px 3px 2px;
+  }
+  .card {
+    background: #f6f5f3;
+    border: 1px solid #d8d4c9;
+    border-radius: 8px;
+    padding: 7px 14px;
+    min-width: 0;
+  }
+  .title-row { display: flex; align-items: baseline; gap: 9px; margin-bottom: 2px; }
+  .tag {
+    font-size: 16px; font-weight: 800; letter-spacing: 1.5px;
+    color: #a48e4b; flex-shrink: 0;
+  }
+  .node-title { font-size: 22px; font-weight: 700; color: #151513; line-height: 1.15; }
+  .node-desc { font-size: 18.5px; font-weight: 400; color: #55534c; line-height: 1.28; }
+
+  /* claimed-bridge band (DeepSeek's version, dashed, struck) */
+  .claimed {
+    background: #f4f2ee;
+    border: 2px dashed #b8b2a2;
+    border-radius: 8px;
+    padding: 7px 16px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .claimed .cbox {
+    background: #ffffff; border: 1px solid #c5bfac; border-radius: 6px;
+    padding: 6px 14px; font-size: 21px; font-weight: 700; color: #55534c;
+    white-space: nowrap;
+  }
+  .claimed .claim-arrow { display: flex; flex-direction: column; align-items: center; min-width: 250px; }
+  .claimed .claim-label { font-size: 18px; font-weight: 600; color: #8a4a3a; white-space: nowrap; }
+  .claimed .claim-sub { font-size: 16.5px; color: #7e7c74; white-space: nowrap; }
+  .claimed .arrow-line { display: flex; align-items: center; width: 100%; margin: 2px 0; }
+  .claimed .line { flex: 1; border-top: 2.5px dashed #b08a7a; }
+  .claimed .head { width: 0; height: 0; border-left: 7px solid transparent; border-top: 8px solid #b08a7a; transform: rotate(90deg); }
+  .verdict {
+    font-size: 16.5px; line-height: 1.28; color: #8a4a3a; background: #f7ede9;
+    border-left: 3px solid #b08a7a; border-radius: 4px; padding: 5px 10px; max-width: 295px;
+  }
+
+  /* corrected chain */
+  .chain .card { border-left: 4px solid #92761f; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .chain .src { font-size: 17px; color: #7e7c74; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
+  .arrow-row { display: flex; align-items: center; gap: 10px; height: 31px; padding-left: 26px; }
+  .arrow-col { display: flex; flex-direction: column; align-items: center; }
+  .down-arrow { width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 9px solid #b3a26b; }
+  .status {
+    font-size: 16.5px; font-weight: 700; border-radius: 999px; padding: 2px 12px;
+    white-space: nowrap; border: 1px solid #d8d4c9;
+  }
+  .status.open { color: #8a5f13; background: #f6edd9; border-color: #cfa945; }
+  .status.proved { color: #1d6a85; background: #e2eff4; border-color: #7fb8cc; }
+  .link-note { font-size: 17px; color: #55534c; }
+  .cert-bar {
+    background: #4e4732; border-radius: 8px; padding: 9px 14px; color: #f6f5f3;
+    font-size: 17.5px; line-height: 1.25; text-align: center;
+  }
+  .cert-bar .tag2 { color: #d5c080; font-weight: 800; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+<div class="diagram">
+
+  <div class="section-label">The claimed bridge &mdash; DeepSeek, as stated</div>
+  <div class="claimed">
+    <div class="cbox">Obstruction datum</div>
+    <div class="claim-arrow">
+      <div class="arrow-line"><div class="line"></div><div class="head"></div></div>
+      <div class="claim-label">&oacute;(P) &isin; H&sup2;(U,F) &nbsp;&cong;&nbsp; &Omega;<sub>viab</sub></div>
+      <div class="claim-sub">&ldquo;isomorphism, not mere analogy&rdquo;</div>
+    </div>
+    <div class="cbox">Viability curvature</div>
+    <div class="verdict">Not well-typed: the datum is &lambda;<sub>&epsilon;</sub> plus nested spaces, and ECD v47 itself states &ldquo;no cohomological completeness statement is inferred.&rdquo;</div>
+  </div>
+
+  <div class="section-label" style="margin-top:10px;">The corrected bridge &mdash; two steps, one open link</div>
+  <div class="chain">
+    <div class="card">
+      <div>
+        <div class="title-row"><span class="tag">01</span><span class="node-title">Obstruction datum</span></div>
+        <div class="node-desc">fibre conflicts &middot; nested global spaces &middot; the five diagnostics</div>
+      </div>
+      <div class="src">ECD v47</div>
+    </div>
+    <div class="arrow-row">
+      <div class="arrow-col"><div class="down-arrow"></div></div>
+      <span class="status open">OPEN</span>
+      <span class="link-note">the deep identification: distinct Hankel rows = fibre conflicts &middot; rank = interface size &middot; spectrum = metric obstruction (BT1a)</span>
+    </div>
+    <div class="card">
+      <div>
+        <div class="title-row"><span class="tag">02</span><span class="node-title">Hankel spectrum</span></div>
+        <div class="node-desc">rows &middot; rank &middot; &sigma;<sub>k</sub> &middot; AAK/Nehari floors &middot; determination index</div>
+      </div>
+      <div class="src">transduction v9</div>
+    </div>
+    <div class="arrow-row">
+      <div class="arrow-col"><div class="down-arrow"></div></div>
+      <span class="status proved">PROVED</span>
+      <span class="link-note">refinement&ndash;resolution bridge (Theorem B&prime;): jump measures converge weakly to curvature densities, KR flat norm, window h &lf;&sigma;&lf;L<sub>var</sub></span>
+    </div>
+    <div class="card">
+      <div>
+        <div class="title-row"><span class="tag">03</span><span class="node-title">Viability-weighted curvature</span></div>
+        <div class="node-desc">&kappa;<sub>V</sub> &middot; Fisher&ndash;Rao/KKT connection &middot; small-loop viability&ndash;holonomy</div>
+      </div>
+      <div class="src">viability pair v15</div>
+    </div>
+    <div class="arrow-row">
+      <div class="arrow-col"><div class="down-arrow"></div></div>
+      <span class="status proved">PROVED + DATA</span>
+      <span class="link-note">endpoint erosion &le; curvature (Thm 3.16); empirics: r = +0.395, 424 genes, protein-layer null &minus;0.083</span>
+    </div>
+    <div class="card">
+      <div>
+        <div class="title-row"><span class="tag">04</span><span class="node-title">Regulation at constraint switches</span></div>
+        <div class="node-desc">93.4&ndash;100% second-order response at boundaries &middot; 66% non-reversion, slope 1.00</div>
+      </div>
+      <div class="src">E. coli, iJO1366/Keio</div>
+    </div>
+  </div>
+
+  <div class="cert-bar">
+    <span class="tag2">THREE LINKS</span>&nbsp; two proved, one open &mdash; the bridge is checkable link by link, and every open link is a named theorem with a named proof strategy
+  </div>
+
+</div>
+</body>
+</html>

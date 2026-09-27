@@ -1,0 +1,7 @@
+# Highlights 
+
+- A rate-distortion theory of bounded sequential transduction, rate = state budget M
+- Three regimes share one syntax: commitment, retention, grounding
+- Type signatures fix regime, feasible set, support, protocol, and bridge
+- Independence theorem: no cross-regime ordering of approximation obstructions
+- Determination-index ladder and protocol stratification with matching bounds

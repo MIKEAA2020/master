@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  * { box-sizing: border-box; }
+  .diagram {
+    width: 1000px;
+    background: #ffffff;
+    padding: 16px 16px 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: 'Inter', 'Liberation Sans', Arial, sans-serif;
+  }
+  .band { display: flex; gap: 12px; }
+  .card {
+    background: #f6f5f3;
+    border: 1px solid #d8d4c9;
+    border-radius: 8px;
+    padding: 8px 13px;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .title-row { display: flex; align-items: baseline; gap: 9px; margin-bottom: 2px; white-space: nowrap; }
+  .tag {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #a48e4b;
+    flex-shrink: 0;
+  }
+  .node-title {
+    font-size: 23px;
+    font-weight: 700;
+    color: #151513;
+    line-height: 1.1;
+  }
+  .node-desc {
+    font-size: 18px;
+    font-weight: 400;
+    color: #55534c;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .band-1 .card { border-left: 4px solid #92761f; }
+  .band-2 .card.a { border-top: 3px solid #92761f; }
+  .band-2 .card.b { border-top: 3px solid #3aa0c2; }
+  .band-3 .card { border-top: 3px solid #a48e4b; }
+  .band-4 .card { border-top: 3px solid #4e4732; }
+  .band-5 .card { border-left: 4px solid #3aa0c2; }
+  .arrow-row { display: flex; justify-content: center; height: 8px; }
+  .arrow {
+    width: 0; height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 8px solid #b3a26b;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; max-width: 100%; }
+  .chip {
+    font-size: 16px;
+    color: #151513;
+    background: #efeee9;
+    border: 1px solid #d8d4c9;
+    border-radius: 999px;
+    padding: 3px 11px;
+    white-space: nowrap;
+  }
+  .cert-bar {
+    background: #4e4732;
+    border-radius: 8px;
+    padding: 9px 14px;
+    color: #f6f5f3;
+    font-size: 18px;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .cert-bar .tag { color: #d5c080; font-weight: 800; }
+</style>
+</head>
+<body>
+<div class="diagram">
+
+  <div class="band band-1">
+    <div class="card">
+      <div class="title-row"><span class="tag">01</span><span class="node-title">Behaviour factors through a bottleneck</span></div>
+      <div class="node-desc">q : X &rarr; O the quotient (sensor &middot; memory &middot; mesh &middot; interface) &mdash; every policy &pi; = &pi;&prime; &circ; q</div>
+    </div>
+  </div>
+
+  <div class="arrow-row"><div class="arrow"></div></div>
+
+  <div class="band band-2">
+    <div class="card a">
+      <div class="title-row"><span class="tag">02</span><span class="node-title">Width / Rate</span></div>
+      <div class="node-desc">capacity: log |O| &middot; treewidth &middot; states &middot; rank</div>
+    </div>
+    <div class="card b">
+      <div class="title-row"><span class="tag">02</span><span class="node-title">Distortion / Obstruction</span></div>
+      <div class="node-desc">deficiency: fibre conflicts &middot; &sigma;<sub>k</sub> &middot; gaps</div>
+    </div>
+  </div>
+
+  <div class="arrow-row"><div class="arrow"></div></div>
+
+  <div class="band band-3">
+    <div class="card">
+      <div class="title-row"><span class="tag">03</span><span class="node-title">Existence</span></div>
+      <div class="node-desc">exact criteria + witnesses</div>
+    </div>
+    <div class="card">
+      <div class="title-row"><span class="tag">03</span><span class="node-title">Price</span></div>
+      <div class="node-desc">curves + dual lower bounds</div>
+    </div>
+    <div class="card">
+      <div class="title-row"><span class="tag">03</span><span class="node-title">Proof</span></div>
+      <div class="node-desc">certified synthesis + walls</div>
+    </div>
+  </div>
+
+  <div class="arrow-row"><div class="arrow"></div></div>
+
+  <div class="band band-4">
+    <div class="card">
+      <div class="title-row"><span class="tag">04</span><span class="node-title">Combinatorial wall</span></div>
+      <div class="node-desc">W[2]/ETH &mdash; partition quotients are hitting-set hard</div>
+    </div>
+    <div class="card">
+      <div class="title-row"><span class="tag">04</span><span class="node-title">Analytic wall</span></div>
+      <div class="node-desc">AAK/Nehari &mdash; width-k loses &ge; &sigma;<sub>k+1</sub></div>
+    </div>
+  </div>
+
+  <div class="arrow-row"><div class="arrow"></div></div>
+
+  <div class="band band-5">
+    <div class="card">
+      <div class="title-row"><span class="tag">05</span><span class="node-title">Eight domains</span></div>
+      <div class="chips">
+        <span class="chip">CSP &amp; sheaves</span>
+        <span class="chip">Bell &amp; quantum combs</span>
+        <span class="chip">automata &amp; transducers</span>
+        <span class="chip">mechanics</span>
+        <span class="chip">computability</span>
+        <span class="chip">E. coli metabolism</span>
+        <span class="chip">governance</span>
+        <span class="chip">LLM agents</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-row"><div class="arrow"></div></div>
+
+  <div class="cert-bar">
+    <span class="tag">06</span>&nbsp; charts carry certificates &middot; ladders carry monotonicity &middot; limits carry invariants &middot; Z3 &middot; Lean &middot; SAT/MILP
+  </div>
+
+</div>
+</body>
+</html>
