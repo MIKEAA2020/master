@@ -1,0 +1,579 @@
+astra:
+**Scope note:** You have supplied substantive descriptions of **(a)** and **(b)**, but only identifiers for **(c)–(h)** and the four additional DOIs. I cannot retrieve those records in this chat. Consequently, the synthesis below is grounded in **(a)–(b)**; attributing a common program to all the linked works would require their titles and abstracts.
+
+# The emerging grand picture: a theory of constrained realizability
+
+The strongest unifying idea is this:
+
+> **Before asking which behavior is optimal, ask which behavior can actually be realized by a system with specified observations, causal access, memory, computational resources, and standards of evidence.**
+
+This shifts the center of gravity from *choosing the best action* to *establishing the informational and computational conditions under which the required behavior is possible at all*.
+
+On this reading, effective causal descent and bounded sequential transduction address complementary parts of one larger problem:
+
+- **Descent:** Can the desired behavior survive passage from the world’s distinctions to the distinctions available to an observer?
+- **Bounded transduction:** Can that behavior survive further passage into a finite, causally maintained representation?
+- **Approximation:** When exact realization is unavailable or too expensive, what loss is unavoidable?
+- **Certification:** How can success, impossibility, and proposed repairs be made independently accountable?
+
+The organizing object is therefore not merely a policy or automaton. It is a **specification together with its conditions of realizability**.
+
+## 1. The fundamental issue is which distinctions a system can preserve
+
+Suppose a hidden world or history is \(h\), while the agent receives only an observational record \(O(h)\). A deterministic implementable policy must factor through that record:
+
+\[
+\pi=\bar{\pi}\circ O.
+\]
+
+If two histories produce the same available information, the policy cannot respond differently to them.
+
+In a sequential setting, “available information” means the relevant observational history—not necessarily just the current sensor reading. Memory can preserve an earlier distinction; it cannot manufacture a distinction that was never available.
+
+This is the foundation of **(a)**. A specification may demand different actions in situations that the agent cannot distinguish. Alternatively, each local context may admit an acceptable policy, yet those policies may fail to assemble into one observationally uniform, causally valid implementation.
+
+Now impose finite-state implementation. The controller no longer retains the entire observational history. It maintains a recursively updateable summary:
+
+\[
+q_{t+1}=\delta(q_t,o_t).
+\]
+
+That introduces a second loss of distinctions:
+
+1. **Observation identifies hidden histories that the sensors cannot distinguish.**
+2. **Finite memory identifies observed histories that the implementation cannot retain separately.**
+
+These are related but different limitations. More memory may repair forgotten information; it cannot repair information that was never sensed.
+
+Moreover, not every compression of histories is implementable sequentially. The summary must be updateable from its current state and the next input. Causality therefore constrains the representation itself.
+
+**This is the deepest bridge between (a) and (b): both concern whether behavior remains realizable after distinctions have been identified, but they constrain different stages of that identification.**
+
+## 2. Exact descent and rate–distortion describe complementary regimes
+
+The account of **(a)** distinguishes four presentation-relative diagnostics:
+
+- local validity;
+- compatibility;
+- effective realizability;
+- bounded realizability.
+
+Their importance is that they prevent several fundamentally different questions from being collapsed into “does a solution exist?”
+
+A collection of local decisions may fail to fit together. A globally admissible object may exist without an effective way to select it. An effective realization may exceed the prescribed resource bound. These failures require different explanations and different interventions.
+
+Work **(b)** introduces the quantitative counterpart:
+
+> Given a bounded sequential representation, how closely can it approximate the desired behavior—and how must the representation grow to achieve a specified distortion?
+
+This turns a binary realizability question into a resource–accuracy frontier.
+
+The relationship is not that every theorem in **(a)** is automatically a zero-distortion instance of **(b)**. Their objects, presentations, resource measures, and admissibility conditions would need explicit translation. Rather, they support a common architecture:
+
+- **Exact realizability:** satisfy the specification within the permitted information and implementation class.
+- **Approximate realizability:** quantify what can be retained when exact satisfaction is unavailable or prohibitively costly.
+- **Lower bounds:** establish what no implementation in the stipulated class can achieve.
+
+In that architecture, the determination-index calculus belongs to the comparative resource-accounting layer of **(b)**. Its Hankel-operator and AAK/Nehari-type methods supply something especially important: principled lower bounds, rather than merely observations that a particular approximation algorithm performed poorly.
+
+Where the relevant operator representation applies, past–future dependence becomes a source of provable resistance to compression.
+
+## 3. The common currency is obstruction—not merely construction
+
+A conventional synthesis problem asks:
+
+> Can we produce a controller?
+
+The stronger program asks:
+
+> Can we produce either a controller or a precise account of why the requested controller cannot exist under these conditions?
+
+That is the significance of obstruction data, refutations, fibre conflicts, repair profiles, and approximation lower bounds.
+
+They distinguish, for example:
+
+- **Insufficient information:** indistinguishable situations require incompatible responses.
+- **Incompatible local obligations:** individually acceptable fragments do not assemble.
+- **Ineffectivity:** existence does not yield an effective selector in the relevant presentation.
+- **Insufficient implementation resources:** the permitted realization class is too small.
+- **Irreducible approximation error:** every permitted approximation remains a specified distance from the target.
+
+These distinctions make impossibility actionable.
+
+A failure caused by missing information will not disappear through better optimization. A failure caused by insufficient memory may not require new sensors. A difficult synthesis problem does not imply that the eventual controller must be large. An inconclusive numerical abstraction is not a proof that the underlying mechanical specification is impossible.
+
+The resulting methodological principle is:
+
+> **Diagnose the obstruction before choosing the repair.**
+
+The operator-theoretic lower bounds in **(b)** and the obstruction certificates in **(a)** have a common purpose here, but they are not automatically the same kind of mathematical object. Turning an analytic approximation lower bound into the typed, independently checkable certificate format of the finite synthesis pipeline would itself require additional work.
+
+## 4. The algorithmic companion makes the theory operational
+
+The second volume of **(a)** is important because it connects abstract realizability to a disciplined engineering workflow:
+
+\[
+\text{declared mechanical model}
+\;\longrightarrow\;
+\text{certified influence information}
+\;\longrightarrow\;
+\text{finite constraints}
+\;\longrightarrow\;
+\text{width-sensitive synthesis}
+\;\longrightarrow\;
+\text{checkable artifacts}.
+\]
+
+The central achievement, as described, is not simply automation. It is the preservation of a traceable justification across this chain.
+
+The inner/outer sandwich is particularly revealing:
+
+\[
+\mathcal P_{\mathrm{inner}}
+\subseteq
+\mathcal P_{\mathrm{true}}
+\subseteq
+\mathcal P_{\mathrm{outer}},
+\]
+
+where “true” remains relative to the stated mechanical model and assumptions.
+
+This separates three outcomes:
+
+- A policy in the inner set certifies feasibility.
+- An empty outer set certifies infeasibility.
+- An empty inner set with a nonempty outer set indicates unresolved uncertainty, not a justified yes-or-no conclusion.
+
+Width-adaptive refinement can then reduce uncertainty without abandoning the guarantees already established.
+
+This also exposes an important distinction between two kinds of approximation:
+
+- **Behavioral approximation** deliberately tolerates distortion in the implemented behavior.
+- **Certified abstraction** may approximate the analysis while preserving sound conclusions about a hard specification.
+
+They are not interchangeable. A small average distortion is not automatically a worst-case safety guarantee.
+
+The software artifact adds reproducibility to mathematical checkability. Neither replaces the need for adequate modeling assumptions. The hardness results, meanwhile, explain why the program exploits structural width rather than promising a universally inexpensive optimal-design procedure.
+
+## 5. The larger intellectual architecture has several independent axes
+
+The different mathematical literatures are not decorative additions. Each addresses a different barrier between specification and implementation.
+
+| Axis | Governing question |
+|---|---|
+| **Observation** | Which distinctions can the agent access? |
+| **Contextual compatibility** | Can locally admissible choices coexist globally? |
+| **Causality** | When may information influence an action? |
+| **Effectivity** | Can an admissible realization actually be computed? |
+| **Finite-state representation** | Which distinctions between past histories can persist? |
+| **Constraint structure** | How difficult is synthesis and certification? |
+| **Distortion** | What degradation is accepted or unavoidable? |
+| **Evidence** | What independently checkable support accompanies the conclusion? |
+
+This explains the interdisciplinary structure of **(a)** and its connection to **(b)**:
+
+- **Constraint satisfaction and sheaf contextuality** provide languages for local consistency and global assembly.
+- **Bell scenarios** contribute sharply specified information and causal restrictions, together with obstruction and repair questions.
+- **Computable analysis** separates mathematical existence from effective selection.
+- **Games and causal protocols** make permissible information flow explicit over time.
+- **Automata and transducers** impose recursively maintainable finite representations.
+- **Hankel-operator methods** expose limitations of approximating past–future behavior.
+- **Mechanical control** supplies concrete specifications whose realizability must survive a modeling and verification pipeline.
+
+The unification is strongest when these axes remain distinct.
+
+In particular, **treewidth, controller memory, and operator-approximation complexity are not interchangeable measures**. Treewidth concerns the coupling structure of a synthesis instance. State complexity concerns the implementation. Hankel-based quantities constrain approximation in the applicable representation. Any equality or systematic translation between them would need a theorem—not just a shared vocabulary of “complexity.”
+
+## 6. The design consequence: several repairs, no universal substitute
+
+The combined perspective suggests a structured menu of interventions:
+
+1. **Improve sensing:** distinguish situations previously identified by observation.
+2. **Increase memory:** preserve distinctions already present in the observed history.
+3. **Change the computational architecture:** exploit decomposition or alter coupling.
+4. **Refine the certified model:** close an inconclusive abstraction gap.
+5. **Relax performance requirements:** accept explicitly measured distortion while retaining any hard constraints.
+6. **Revise the specification:** remove genuinely incompatible obligations.
+
+These interventions affect different parts of the realizability problem. There is no reason to expect them to substitute freely for one another.
+
+The natural overarching design object is consequently a **feasible region or trade-off frontier** involving information, implementation resources, performance, and verification—not a single universal score.
+
+# Bottom line
+
+For **(a)** and **(b)**, the coherent grand picture is:
+
+> **A mathematics of realizable behavior under limited distinctions: observation determines what can be known, causality determines when it can be used, memory determines what can be retained, compatibility determines what can coexist, computation determines what can be produced, and certification determines what can be warranted. Approximation quantifies the price of relaxing exact realization.**
+
+This is more specific than a general theory of intelligence and broader than a controller-synthesis technique. It is a framework for understanding **why a desired behavior is possible, why it fails, what resources could repair the failure, and what evidence justifies that conclusion**.
+
+opus 5.5:
+# The Grand Picture: Existence, Proof, and Price Under Observational Uniformity
+
+**Scope note.** I can't open links, and I have no reliable knowledge of records c–h or the four trailing DOIs. Rather than guess at their contents, I've built the picture from a and b, whose descriptions are detailed enough to unify. Section 9 gives a docking map for c–h. I call a's two books Vol 1 (*Effective Causal Descent*) and Vol 2 (*Algorithms and Certificates*). Where I name a classical theorem as the "shadow" of a result, that is my reading of the architecture, not a report of what the texts contain.
+
+---
+
+## 1. The picture in one paragraph
+
+The corpus is a theory of factorisation through bottlenecks. Its one primitive is that an agent's behaviour must factor through what it can distinguish. Around that primitive it asks three questions, each more refined than the last:
+
+- **Existence:** when do locally acceptable behaviours assemble into a global one?
+- **Proof:** when they don't, what finite, independently checkable object shows it, and where?
+- **Price:** what does it cost, in sensors, memory, width or bits, to widen the bottleneck? If you can't, how much error is unavoidable?
+
+Vol 1 answers existence and guarantees the proof objects exist. Vol 2 computes and checks them at bounded width, anchors them in physical models, and prices extra sensors. b prices limited memory, supplying the converse bounds that no bounded agent can beat.
+
+## 2. One constraint, five disguises
+
+Observational uniformity says π(w) = π(w′) whenever the relevant sensor cannot tell w from w′. Equivalently, π factors through the sensor. The corpus reaches so many literatures because the same constraint recurs under different names, depending on what the "sensor" is:
+
+| The "sensor" | The uniformity constraint is called | Where it lives |
+|---|---|---|
+| Physical sensors | partial observability; information sets | Vol 1 and Vol 2; the mechanics front end |
+| Prefix of the history | causality | Vol 1's causal histories; b's sequential transducers |
+| The agent's internal state | finite memory (Myhill–Nerode) | b |
+| One's own input only | Bell locality | Vol 1's Bell interface |
+| Finite-precision views of the input | continuity, hence computability | Vol 1's Weihrauch/DNR interface |
+
+The last two rows are the non-obvious ones.
+
+- **Bell locality.** A local hidden-variable model is a global policy in which each party's output, given the hidden variable, is uniform across the other party's setting.
+- **Computability.** Computable maps on infinite data are continuous: each finite piece of output is uniform across inputs that agree to some finite precision.
+
+So the "uniform" of observational uniformity and the "uniform" of Weihrauch's uniform reducibility are the same word for the same reason. The title's "effective" also does double duty. It means effective descent in the categorical sense (descent data come from a global object) and effective in the computable sense.
+
+Vol 1's subtitle names the three scales at which the constraint bites:
+
+- **Uniform selection** (one fibre): find an action admissible in every world the sensor merges. This is a Helly-type intersection problem.
+- **Contextual gluing** (overlapping contexts): local choices must agree on overlaps. This is the territory of sheaves, CSP and Bell.
+- **Causal histories** (time): sensors refine along histories, and policies compose sequentially, in parallel, and under guarded feedback.
+
+## 3. The ladder: where assembly fails, and what proves it
+
+The four diagnostics form a tower. The obstruction datum reports the lowest failing rung and its location. Each rung has its own finite witness and its own classical tool.
+
+This is the point of recasting selection theorems as certificate tools. Compactness, Helly and join-trees each turn a global or infinite check into a finite local one, along three different axes:
+
+- compactness along the number of worlds;
+- Helly along the dimension of the action space;
+- join-trees along the topology of the contexts.
+
+b adds a quantitative rung on top.
+
+| Rung | Question | Witness of failure | Governing tools |
+|---|---|---|---|
+| Local validity | Does each fibre admit a uniform admissible action? | Fibre conflict: merged worlds with no common action. At most d+1 of them for compact convex actions in ℝᵈ; finitely many for compact ones | Helly, compactness |
+| Compatibility | Do local choices agree on overlaps? | A gluing obstruction, necessarily supported on cyclic context structure. Probabilistically, a Farkas vector, i.e. a Bell inequality | Sheaf contextuality, CSP consistency; join-trees (acyclic ⇒ local suffices; cf. Vorob'ev) |
+| Effective realisability | Is there a computable global policy? | A reduction showing every global policy computes, e.g., a DNR function. The Weihrauch degree measures the gap | Computable analysis. Compactness gives existence, not computability (computable trees with no computable path) |
+| Bounded realisability | Is there one within a resource bound? | A lower-bound witness for the resource. For memory: k+1 pairwise distinguishable histories, or a Hankel block of rank k+1 | Tree decompositions, parameterized complexity |
+| Rate–distortion (b) | With k states, how close can you get? | Hankel singular values as floors on distortion | AAK/Nehari-type inequalities |
+
+The top rung is why b is a third member of the family rather than a neighbour. a's certificates are the distortion-zero slice of b's curves. "No k-state machine does this exactly" is a rank statement; "none gets within ε" is a singular-value statement.
+
+## 4. The four corners
+
+A second axis organises everything: is the sensor given (you design the policy) or designed (you choose what is observed or remembered)?
+
+The identification that makes this work is that **memory is a sensor pointed at one's own past**. A finite-state machine's states are the fibres of its past-to-state map, and Myhill–Nerode identifies the coarsest fibres that still work. So bounded-memory transduction is sensor design in the sequential setting.
+
+| | Sensor given: design the policy | Sensor designed: choose what's observed or remembered |
+|---|---|---|
+| **Exact** | Vol 1's diagnostics and obstruction datum; Vol 2's DP returning a policy or a refutation | Vol 2's sensor repair: split every conflicting pair of worlds with the fewest added sensors. NP-complete, W[2]-hard, no better than logarithmic approximation unless P = NP, ETH-tight (the signature of hitting set) |
+| **Quantitative** | Vol 2's optimum costs, weighted width, inner/outer sandwich and sparsification ladder; Vol 1's Bell repair profiles | b: the least memory achieving distortion D, with AAK-type converses |
+
+The right column shows the corpus's sharpest division of labour. Exact design is provably hard even to approximate. b's converses, by contrast, are spectral and computable in time polynomial in the size of a finite section. They don't solve design, but they bound it from below cheaply.
+
+## 5. The interface is the unit of cost
+
+The deepest link between Vol 2 and b is that they measure the same quantity on different shapes.
+
+A tree-decomposition DP must carry across each separator exactly enough information to glue the two sides. The minimum is governed by a gluing matrix: rows are partial configurations on one side, columns are partial configurations on the other, and entries record compatibility or value. This is the content of Courcelle-style recognisability and graph Myhill–Nerode, and of Lovász's connection matrices.
+
+The Hankel matrix H(u, v) = f(uv) is the same object on a path. The past sits on one side, the future on the other, and the present is the separator. Then:
+
+- **distinct rows** give the minimal deterministic interface (DFA states; DP table size at a bag);
+- **rank** gives the minimal linear interface (weighted-automaton dimension, by Fliess/Carlyle–Paz);
+- **singular values** measure what you must lose by forcing a smaller interface. This is the regime b's multiletter AAK-type bounds address.
+
+Width, states and rate are one currency; a width counted in bits of interface state is literally a rate. This gives the joint corpus the shape of an information-theoretic theorem:
+
+- **Achievability:** Vol 2's sparsification ladder is certified and monotone, and says what width w buys you.
+- **Converse:** b's spectral bounds say that no bounded interface does better.
+
+Achievability plus converse is what a rate–distortion theorem is. The corpus has both halves, currently in different settings.
+
+The same logic applies to presentation. Width depends on the decomposition, and state count depends on the syntax (DFA, weighted automaton, transducer). The existence of an obstruction and the Hankel rank do not. Vol 1's insistence that diagnostics are presentation-relative and b's "comparative syntax" express the same stance:
+
+- complexity belongs to a (problem, presentation) pair;
+- morphisms transport it;
+- b's curves are the exchange rates between presentations.
+
+## 6. One example that exercises everything
+
+Take the absent-minded driver. There are two indistinguishable intersections. Exiting at the first pays 0, exiting at the second pays 4, and continuing past both pays 1.
+
+- **Fibre conflict.** Payoff 4 requires "continue" then "exit" at two nodes in one fibre. That pair is a two-world certificate that no uniform deterministic policy reaches 4.
+- **Descent failure.** Imperfect recall breaks Kuhn's equivalence between mixed and behavioural strategies. Mixtures of pure plans cap at 1, while continuing with probability 2/3 earns 4/3 (the maximum of 4p − 3p²). The local presentation (behavioural) and the global one (mixed) come apart.
+- **Sensor repair.** One landmark separates the fibre, so the repair has size 1.
+- **Rate–distortion.** With 0 bits of memory, the best value is 1 deterministically and 4/3 with behavioural randomisation. With 1 bit, it is 4. The fibre conflict certifies that rate 0 cannot reach 4, and the curve says by how much it falls short.
+
+CHSH is the Bell twin. With 0 bits of communication the win probability is at most 3/4, certified by the CHSH inequality acting as a Farkas vector. With 1 bit it reaches 1.
+
+## 7. The pipeline and its epistemics
+
+```
+declared truss / mass–spring model
+   │  exact rational influence rows          (check: K·x = eᵢ)
+   ▼
+finite instance: worlds · sensors · admissible actions · costs
+   │  semantics: four diagnostics, obstruction datum        (Vol 1)
+   ▼
+tree-decomposition DP at width w                            (Vol 2)
+   ├─ feasible   → policy, optimum cost
+   ├─ infeasible → refutation, fibre conflict → sensor repair (hard; log barrier)
+   └─ too wide   → sparsification ladder → inner/outer sandwich, monotone refinement
+   ▼
+typed certificates → independent checkers → SAT / CP-SAT / MILP cross-check → pinned artifact
+
+converse side (b): spectral floors on what any bounded interface can achieve
+```
+
+Checkability is preserved at every step:
+
+- **Inputs.** The mechanics front end certifies them. An influence row is an exact rational solution of Kx = eᵢ: expensive to compute, cheap to verify.
+- **Algorithm.** Tree-decomposition DP suits this discipline beyond its speed, because its tables are proofs by structural induction.
+- **Trust.** Typed certificates move trust from the solver to small checkers.
+- **Benchmarks.** The SAT/CP-SAT/MILP study is a performance comparison and, equally, N-version differential testing, pinned by the artifact.
+- **Uncertainty.** The sandwich marks where modelling and sparsification uncertainty lives, and the ladder certifies that it shrinks monotonically.
+- **Empirical data.** Vol 1's finite-sample Bell tests apply the same discipline. When the input is a frequency table rather than an exact model, a certificate becomes a test with a controlled error rate.
+
+## 8. Seams the unification exposes
+
+1. **Spectral certificates.** b's converses could join Vol 2's certificate family. The bound σₖ₊₁(H) ≥ s is witnessed by a (k+1)-dimensional subspace on which ‖Hx‖ ≥ s‖x‖ (Courant–Fischer). That witness is checkable by an exact positive-semidefiniteness test. Finite Hankel sections suffice, because a submatrix's singular values never exceed the operator's.
+
+2. **Rank-aware width for physics.** Magnitude sparsification exploits decay, but physics often yields influence matrices that are dense yet low-rank across cuts.
+   - For a uniform mass–spring chain fixed at one end, (K⁻¹)ᵢⱼ = min(i, j)/k. Nothing decays with distance, so thresholding fails and combinatorial width is maximal.
+   - Yet every past–future block has rank 1. Each cut needs only two scalars: the total load on one side and the first moment of load on the other.
+   - This suggests a DP carrying such sufficient statistics could stay polynomial (for loads from a small finite set) where width explodes. b's Hankel spectra would be its natural converse.
+
+3. **A quantitative obstruction datum.** Vol 1's datum records where assembly first fails. Bell repair profiles and b's curves record how badly. Merging them would give an obstruction profile: a distortion floor for each rung.
+
+4. **Resource-annotated morphisms.** Vol 1's composition theory and b's determination-index calculus are both compositional accountings, one qualitative and, presumably, one quantitative. Their common home would be a graded monoidal structure whose morphisms carry width, rate and distortion. Guarded feedback is where the two accountings must agree.
+
+## 9. Where c–h would dock
+
+The architecture has eight layers:
+
+1. the constraint and its disguises;
+2. qualitative theory (diagnostics, obstruction datum, morphisms);
+3. bridges to CSP/sheaves, Bell, computable analysis and games;
+4. algorithms and certificates;
+5. the physics front end;
+6. design complexity;
+7. quantitative theory;
+8. trust and reproducibility.
+
+A new work docks by answering three questions:
+
+- Which sensor does it study? A new disguise extends layers 1 and 3.
+- Which rung does it address? That places it in layer 2 or 7.
+- Does it produce or check certificates? That places it in layer 4 or 8.
+
+Vol 2 cites a public software artifact and a recorded computational study, so some of c–h plausibly belong at layer 8, but I can't confirm that. Paste their titles and abstracts (first pages are ideal) and I'll place each one. I'll revise the picture wherever a work adds a rung or a bridge rather than filling a slot.
+
+Several of the trailing DOIs sit numerically close to records f–h. They may be concept or version DOIs of the same deposits, which is worth checking so nothing is double-counted.
+
+fable:
+**A note before the picture.** I can't open the figshare/Zenodo records c–h. Their identifiers cluster very tightly (Zenodo 2178xxxx–2189xxxx, figshare 3392xxxx–3395xxxx), which suggests companion deposits of one programme — plausibly the texts, artifacts, and datasets behind (a) and (b) — but I won't invent their contents. What follows is the picture that (a) and (b) themselves force, with the slots where c–h would attach. Send titles/abstracts and I'll fold them in.
+
+---
+
+## 1. The one-sentence picture
+
+Both bodies of work study the same object — **an agent whose descriptive resolution is smaller than the world it must act in** — and do the same three things to it: locate exactly *where* the resolution shortfall makes local behaviour fail to assemble into global behaviour; *certify* that failure (and its repair) with independently checkable dual witnesses; and *synthesise* the best bounded-resolution behaviour by decomposing along a width parameter. (a) does this in the **spatial/combinatorial** regime (sensors, discrete worlds, exact policies, treewidth); (b) does it in the **temporal/analytic** regime (memory, streams, approximate transductions, Hankel rank). Read together, they are the achievability and converse halves of one theory: a **rate–distortion theory of bounded observers**, with certificates.
+
+## 2. The shared object: descent along a resolution-limited quotient
+
+In (a), the sensor is a map W → O from worlds to observations, and observational uniformity says a policy must be constant on its fibres — i.e. a policy on W must *descend* to a section over O. Local-to-global assembly is literally descent: local policies on contexts, compatible on overlaps, must glue.
+
+In (b), a finite-state transducer's output is determined by its state, and the state is a quotient of the input history (the Nerode congruence). That is the *same* uniformity constraint, with two twists: the "sensor" is the machine's own bounded memory, and the quotient must additionally be **causal** — no lookahead. So partial observation has two axes: spatial resolution (a) and temporal resolution (b). (a)'s "causal histories/protocols" and (b)'s "sequential" are the same axiom, that the agent cannot see the future, imposed on the spatial and temporal quotients respectively.
+
+The bridge object is the **Hankel matrix**: rows indexed by histories, columns by continuations. Two histories with different rows cannot share a state — that is a **fibre conflict** in (a)'s vocabulary. Its rank is the minimal state count (Fliess / Carlyle–Paz), i.e. the minimal fibre count for exact realisability. So *exact bounded realisability in (a)* ⇔ *Hankel rank ≤ budget in (b)*; and where exact realisability fails, AAK/Nehari turns (a)'s boolean obstruction ("it fails here") into a metric one ("it fails by at least σ_{k+1}").
+
+## 3. A four-layer architecture both works share
+
+**Layer 0 — Presentation.** (a) insists its diagnostics are *presentation-relative* (relative to a cover/decomposition); (b) calls itself a *comparative syntax* (approximability relative to the descriptive class). Both then build a calculus to compare presentations and extract presentation-invariant quantities: (a)'s functorial morphism theory; (b)'s determination-index calculus. Treewidth (min over decompositions) and Hankel rank (defined by the operator, not the automaton) are the model invariants.
+
+**Layer 1 — Diagnostics as a ladder of effectivity.** (a)'s four diagnostics ascend: local validity → compatibility → effective realisability → bounded realisability. (b) refines the top rung into a *curve*: for every budget k, a distortion D(k). Together they give a hierarchy of what "realisable" means, each rung with its own obstruction theory:
+
+computable section (Weihrauch/DNR, compactness) → finite-state (rate) → bounded-width (treewidth DP).
+
+**Layer 2 — Certificates by exact duality.** (a): Farkas certificates/Bell inequalities, refutations, fibre conflicts. (b): AAK/Nehari — the distance to the bounded-rank class *equals* a norm attained by an explicit extremal object. Both are strong-duality theorems producing a checkable **negative** witness; the **positive** witnesses are the policy with its DP trace, and the k-state approximant with its error bound.
+
+**Layer 3 — Synthesis by decomposition plus monotone certified refinement.** (a): dynamic programming over tree decompositions; a width-adaptive sparsification ladder; an inner/outer sandwich bracketing the true policy space. (b): Schmidt-pair truncation along σ₁ ≥ σ₂ ≥ …, each step certified by the next singular value. The classical join-tree/Vorob'ev "local ⇒ global" theorem is the width-1 case of (a); AAK is the rank-k case of (b). Compactness and Helly are the infinitary and convex-geometric members of the same family.
+
+## 4. Rosetta stone
+
+| | (a) Effective Causal Descent | (b) Rate–Distortion Transduction |
+|---|---|---|
+| Bounded observer | sensor map with finitely many fibres | finite-state transducer (Nerode classes) |
+| Resolution budget ("rate") | fibre count; treewidth | state count; Hankel rank |
+| Constraint | uniformity on fibres; causal histories | output determined by state; no lookahead |
+| Exact realisability | bounded realisability | rank ≤ k; sequentiality |
+| Obstruction | obstruction datum, fibre conflict (*where*) | σ_{k+1} of the Hankel operator (*how much*) |
+| Negative certificate | Farkas/Bell inequality, refutation | AAK/Nehari bound, extremal Hankel vector |
+| Positive certificate | policy + checkable DP trace | explicit k-state approximant + error |
+| Decomposition | tree decomposition, join-tree, Helly | Hankel factorisation, Schmidt pairs |
+| Refinement ladder | sparsification ladder, inner/outer sandwich | AAK truncation ladder, upper/lower bounds |
+| Repair | sensor repair (split fibres) | add states (raise rate) |
+| Design problem | NP-c, W[2]-hard, log-approx barrier, ETH-tight | spectral, polynomial in the linear case |
+| Compositionality | sequential/parallel/guarded feedback | cascade/product/feedback of transducers |
+| Presentation-relativity | diagnostics relative to decomposition | comparative syntax; determination index |
+| Physics | truss/mass–spring finite-element rows | Hankel operators of linear systems |
+
+## 5. Where they differ — and the theorem-shaped gap between them
+
+**The hardness cliff.** Choosing the sensor partition in (a) is W[2]-hard with a set-cover barrier; choosing the optimal rank-k quotient in (b) is a spectral computation. The reason is precise: a partition quotient is a 0/1 projection, a subspace quotient is an orthogonal projection, and relaxing the former to the latter converts hitting-set into an eigenvalue problem. This yields two immediate research directions the unified view demands: (i) Hankel singular values and rank lower bounds as **certified lower bounds on required sensor count** (as rank lower bounds serve in communication complexity), with the integrality gap between partition and subspace quotients as the *price of physical realisability*; (ii) conversely, (a)'s tree-decomposition DP as a route to AAK-type approximation over tree-structured (multiletter) index sets, where classical single-index Hankel theory does not apply — which appears to be exactly the territory of (b)'s multiletter bounds.
+
+**Feedback.** (a)'s guarded feedback (a delay guard making the fixpoint well-defined) is the combinatorial twin of feedback interconnection of transducers; the quantitative law for how obstructions compose under feedback should be small-gain-shaped in Hankel norm. This is the open compositional question the two works jointly pose.
+opus 5:
+## 0. A necessary caveat
+
+Items **a** and **b** you described in full; items **c–h** (and the four trailing DOIs) arrive as bare identifiers, and I can't resolve them. So below I give you the grand picture that genuinely *does* emerge from the two described corpora — which turns out to be a single, tightly-specified research programme — and then a **slot-grid** showing exactly which cells of that programme are still empty, so you can tell me which of c–h fills which. If you paste titles/abstracts, I'll place them and the picture will close.
+
+---
+
+## 1. The one-sentence version
+
+Every one of these works studies the same mathematical object — **a lifting problem against an information quotient** — and every one of them answers it in the same three-part format: *when does the lift exist, how much is lost when it doesn't, and what independently checkable artifact witnesses either answer.*
+
+## 2. The one-paragraph version
+
+An agent, a machine, or a model is always required to act as a function of *less* than what is really there. A sensor partition hides worlds; a finite state set hides histories; a tree-decomposition bag hides the rest of the graph; a mesh hides the continuum; a representation hides the real number. In each case the demanded behaviour must **factor through a bottleneck**. Work **a** is the *qualitative* theory of that factorisation — descent, gluing, obstruction data, contextuality. The rate–distortion/transduction work is the *quantitative* theory of the same factorisation — how distortion falls as the bottleneck widens, with Hankel-operator singular values as the exact price list. Work **b** is the *effective* theory — width-parameterised synthesis that emits the lift as a typed certificate, brackets the unrepresentable continuum from inside and outside, and proves by NP/W[2]/ETH barriers that no cheaper route exists. Obstruction theory, approximation theory, and certified computation are not three subjects here; they are the three faces of one bottleneck.
+
+---
+
+## 3. The unifying primitive: the interface
+
+Let $q : X \to O$ be the quotient (sensor map, Myhill–Nerode congruence, separator, mesh, representation). The programme's single question is:
+
+> Given a target behaviour $f$ on $X$, does there exist $g$ on $O$ with $g \circ q = f$ — and if not, what is $\inf_g d(g\circ q, f)$?
+
+Two numbers govern everything:
+
+- **Width / rate** — the capacity of the interface: $\log|O|$, treewidth, number of states, determination index, element count, Weihrauch degree.
+- **Distortion / obstruction** — the deficiency of the lift: obstruction datum, fibre conflict, Hankel singular value $\sigma_k$, inner/outer gap.
+
+The corpus is, in effect, a **rate–distortion theory of agency under bounded resolution**, made constructive.
+
+## 4. The headline identification
+
+The deepest single insight of the union is a dictionary between two literatures that never speak:
+
+> **The obstruction datum of effective causal descent is the qualitative Hankel spectrum of a sensor bottleneck; the AAK singular values are the quantitative Čech theory of a memory bottleneck.**
+
+Concretely:
+
+| Descent side (a) | Operator side (rate–distortion) |
+|---|---|
+| local validity | zeroth-order consistency |
+| compatibility on overlaps | Hankel symbol well-defined |
+| global section exists | $\sigma_1 = 0$ (finite-rank lift) |
+| obstruction datum = *where* gluing first fails | $\sigma_k$ = *how much* rank-$k$ lift loses |
+| Farkas certificate of contextuality | Nehari dual extremal / AAK lower bound |
+| ladder: validity → compatibility → effective → bounded realisability | multiletter AAK ladder in block length |
+
+Nehari's theorem *is* a descent theorem: distance-to-extension equals norm-of-obstruction. AAK *is* graded obstruction theory. Once you see this, the four presentation-relative diagnostics of book **a** read as a degenerate (0/∞) rate–distortion curve, and the multiletter AAK bounds read as the continuous completion of the same ladder.
+
+## 5. The trichotomy every chapter instantiates
+
+Each work proves, for its domain, three theorems of fixed type:
+
+1. **Exact criterion + obstruction.** Lift iff the obstruction vanishes; else a canonical datum locating first failure. *(Descent diagnostics; Myhill–Nerode/finite Hankel rank; join-tree consistency; Helly/compactness as finite certificate tools.)*
+2. **Frontier + dual lower bound.** A Pareto curve of rate against distortion, with the lower bound supplied by duality, never by construction. *(AAK/Nehari; Farkas in Bell settings; LP/DP refutations; interval enclosures from both sides.)*
+3. **Constructive synthesis + hardness wall.** A width-parameterised algorithm attaining the frontier, plus proof that its parameterisation is optimal. *(Certifying DP over tree decompositions; NP-completeness, W[2]-hardness, log-approximation barriers, ETH-tightness.)*
+
+## 6. The two walls
+
+A striking structural fact emerges only when the corpora are read together: **feasible use of a bottleneck is cheap; choosing the bottleneck is hard; and even the best choice has an analytic floor.** Hence two independent lower-bound technologies, which the programme shows are the two walls of the same room:
+
+- **Combinatorial wall** — W[2]-hardness and ETH-tightness of *sensor design / repair*. You cannot search for the right quotient.
+- **Analytic wall** — AAK/Hankel floors. Even the right quotient of given width cannot beat $\sigma_k$.
+
+Neither wall is visible from inside one book. Together they say: partial observability is not a nuisance to be engineered away but a **conserved quantity** with a price schedule.
+
+## 7. Compositionality: the programme is a graded category
+
+Book **a**'s morphism theory (functoriality, sequential and parallel composition, guarded feedback) plus the transducer calculus give the same object from two directions: a **monoidal category with trace, doubly graded by rate and distortion**. Objects are interfaces; morphisms are policies/transducers; composition adds rates and subadditively accumulates distortion; guarded feedback is the trace, guarded precisely to keep the accumulation well-founded. This is the level at which the mechanics front end, the CSP encodings, the Bell scenarios, and the automata all become *the same kind of thing* and can be wired together with certificates composing alongside.
+
+## 8. Methodological spine: presentation-relativity + monotone refinement
+
+The programme's epistemology is unusual and consistent across all parts:
+
+- Diagnostics, widths, and certificates are **presentation-relative** — properties of a chart, not of the abstract problem. This is stated as a feature, not apologised for.
+- The **frontier** is the chart-invariant content.
+- **Refinement ladders** (width-adaptive sparsification, multiletter blocking, mesh refinement, tree-decomposition improvement) are the mechanism by which chart-relative certificates converge monotonically to invariant truth — an inner/outer sandwich closing on the real policy space.
+
+So: *charts carry certificates; ladders carry monotonicity; limits carry invariants.* That is the programme's answer to how proof-producing computation can speak about continua and hidden states at all.
+
+## 9. The vertical stack (what the pipeline actually does)
+
+```
+physical model (truss, mass–spring)
+   ↓  exact influence rows + brackets        [verified numerics]
+finite constraint presentation
+   ↓  tree decomposition, weighted width     [parameterised complexity]
+certifying dynamic program
+   ↓  typed artifacts: policy | refutation | cost |
+      fibre conflict | sensor repair | FE row | ladder
+independent checker  ⟷  SAT / CP-SAT / MILP cross-check
+   ↓
+version-exact replicable artifact
+```
+
+The claim being made, quietly, is large: **a sheaf-theoretic obstruction theory can be run end-to-end as an engineering toolchain without ever leaving proof.** Contextuality becomes a diagnosable fault in a sensor suite; a repair profile becomes a purchase order.
+
+## 10. What the union asserts that no single volume does
+
+1. Contextuality, finite-state approximation, and treewidth-bounded synthesis are one subject: bounded-interface factorisation.
+2. Farkas, Nehari/AAK, Čech, and DP-refutation certificates are one duality, instantiated four ways.
+3. Every "no" in the corpus is proof-relevant; there are no unwitnessed negatives.
+4. Hardness comes in exactly two flavours (combinatorial design, analytic floor) and they are complementary, not competing.
+5. Presentation-relativity plus monotone refinement is a *sufficient* epistemology for certified reasoning about partially observed physical systems.
+
+A serviceable name for the whole: **the Resolution Programme** — obstruction, price, and proof for systems that must act on less than what is there.
+
+---
+
+## 11. Slot-grid for c–h (tell me which is which)
+
+The programme's matrix, with described works placed and gaps marked:
+
+| Domain \ Face | Obstruction | Rate–distortion frontier | Certified synthesis |
+|---|---|---|---|
+| Discrete CSP / sheaves | **a** | ☐ | **b** |
+| Quantum contextuality / Bell | **a** | ☐ | **b** (Farkas, finite-sample) |
+| Sequential / automata / transducers | (RD work) | **RD work** | ☐ |
+| Continuum mechanics | **b** (fibre conflicts) | **b** (sparsification ladder) | **b** |
+| Computability (Weihrauch, DNR) | **a** | ☐ | ☐ |
+| Games / causal protocols | **a** | ☐ | ☐ |
+| Statistics / finite-sample estimation of the frontier | ☐ | ☐ | ☐ |
+
+Most plausible roles for the ten unnamed items, given the shape of the gaps: (i) the **quantitative** face of contextuality (rate–distortion of nonlocality); (ii) **certified synthesis for automata/transducers** (the missing algorithmic companion on the sequential side); (iii) **Weihrauch-degree frontiers** for selection problems; (iv) **finite-sample/statistical** estimation of obstruction data; (v) software-artifact and benchmark records.
+
+Give me the titles and I'll finish the closure: place each item, state the theorem-type it contributes, identify which duality supplies its lower bound, and hand you the single programme statement plus a recommended reading order and a one-page abstract for the whole corpus.
+
+**Physics.** (a)'s finite-element rows are exact linear influence operators; the Hankel operator of such a system (past forces → future displacements) is precisely what (b) bounds. Glover-style Hankel-norm model reduction is the analytic shadow of (a)'s sensor repair, and balanced truncation is the analytic shadow of choosing which states to observe.
+
+## 6. The spokes are one wheel
+
+(a) interfaces with CSP and sheaf contextuality, Bell nonlocality, Weihrauch degrees, and extensive-form games; (b) with automata theory, information theory, operator theory, and control. Every spoke is the same statement: *a family of local descriptions, under a resolution budget, may or may not admit a global realisation, and duality produces the certificate either way.* Contextuality, non-sequentiality, non-effectivity, information-set constraints in games, and irreducible Hankel rank are one phenomenon in five dialects.
+
+## 7. Programme statement
+
+**Certified bounded observation.** An *achievability* side (a): proof-producing synthesis that outputs (policy, certificate) pairs, cross-checked against independent solvers, replicable by artifact. A *converse* side (b): rate–distortion curves and operator-theoretic lower bounds saying no bounded observer of that rate can do better. A *design* side (a's classification) saying when the converse cannot be constructively met — and, via the partition/subspace gap, why.
+
+## 8. Slots for c–h
+
+Given the clustering of identifiers, the natural attachment points are: the replication artifact and recorded computational study of (a)'s second volume; datasets/benchmarks (truss and mass–spring models, SAT/CP-SAT/MILP baselines); extended proof appendices for the multiletter AAK results or the determination-index calculus; and possibly further interfaces (e.g. a quantum-contextuality or games companion). If you paste their abstracts I'll place each in the architecture above and revise the picture wherever they extend or contradict it.
