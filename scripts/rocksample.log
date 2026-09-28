@@ -1,0 +1,39 @@
+E1: matched-budget comparison on RockSample[4,4], eps=0.9
+  vanilla_POMCP_random_100           mean   9.91 +/- 1.33  (  3.8s)
+  vanilla_POMCP_random_300           mean   9.51 +/- 1.33  ( 10.1s)
+  vanilla_POMCP_random_800           mean   8.92 +/- 1.26  ( 26.4s)
+  DIrollout_POMCP_300                mean   5.30 +/- 1.56  ( 11.4s)
+  DI_fixed_policy_nosearch           mean  13.78 +/- 1.05  (  0.0s)
+  oracle_clairvoyant_bound           mean  24.18 +/- 1.06  (  0.0s)
+  DI fixed policy wall-clock per decision: 0.004 ms
+E2: compression width scan (the DI program on quantized beliefs)
+  q= 0 (exact): mean  14.21 +/- 1.06  D_q=0.0000
+  q= 2 (levels): mean  14.94 +/- 1.42  D_q=0.1240
+  q= 3 (levels): mean   3.40 +/- 1.01  D_q=0.2965
+  q= 4 (levels): mean  10.50 +/- 1.29  D_q=0.0830
+  q= 5 (levels): mean  13.98 +/- 1.11  D_q=0.0391
+  q= 6 (levels): mean  14.33 +/- 0.98  D_q=0.0348
+  q= 8 (levels): mean  14.03 +/- 1.12  D_q=0.0342
+  q=10 (levels): mean  14.64 +/- 0.99  D_q=0.0239
+  q=16 (levels): mean  15.93 +/- 1.00  D_q=0.0133
+  certificate q= 2: deficit  -0.73 vs bound 227.62 -> HOLDS
+  certificate q= 3: deficit  10.81 vs bound 544.28 -> HOLDS
+  certificate q= 4: deficit   3.71 vs bound 152.43 -> HOLDS
+  certificate q= 5: deficit   0.23 vs bound  71.73 -> HOLDS
+  certificate q= 6: deficit  -0.12 vs bound  63.90 -> HOLDS
+  certificate q= 8: deficit   0.19 vs bound  62.76 -> HOLDS
+  certificate q=10: deficit  -0.43 vs bound  43.96 -> HOLDS
+  certificate q=16: deficit  -1.72 vs bound  24.38 -> HOLDS
+  L_V = 91.8 | Lambda = 0.95 | continuous-regime certificate: True
+E3: sensor efficiency scan (the wall at eps = 1/2)
+  eps=0.55: checks/ep 59.96 | DI theory   21.90 | reward   0.03
+  eps=0.60: checks/ep 59.54 | DI theory   10.84 | reward   0.20
+  eps=0.65: checks/ep 58.59 | DI theory    7.10 | reward   1.24
+  eps=0.70: checks/ep 56.31 | DI theory    5.19 | reward   2.21
+  eps=0.80: checks/ep 35.55 | DI theory    3.17 | reward   7.88
+  eps=0.90: checks/ep 12.06 | DI theory    2.00 | reward  13.38
+  eps=0.95: checks/ep  6.46 | DI theory    1.49 | reward  17.30
+  eps=1.00: checks/ep  4.00 | DI theory    0.11 | reward  19.48
+  pole fit: measured slope -1.128 vs theory -1.688 (both -> -1: first-order wall)
+figure -> ../download/figures/rocksample.png
+json -> rocksample_results.json
