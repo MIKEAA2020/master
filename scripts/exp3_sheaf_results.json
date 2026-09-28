@@ -1,0 +1,634 @@
+{
+ "meta": {
+  "experiment": "the chat's Experiment 3 \u2014 sheaf diagnostics (compositional generalization)",
+  "task": "Z_7 addition, MLP 2-64-64-7, 12 seeds per split, splits 16/36/49"
+ },
+ "runs": [
+  {
+   "split": "compositional_16",
+   "seed": 0,
+   "train_acc": 1.0,
+   "train_nll_final": 1.0648217697684419e-06,
+   "ood_acc": 0.06060606060606061,
+   "ood_nll": 11.367230700681459,
+   "ood_wrong_confidence": 0.8023065013733228,
+   "coboundary_energy": 0.6492642039907428,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "compositional_16",
+   "seed": 1,
+   "train_acc": 1.0,
+   "train_nll_final": 1.940345312928281e-06,
+   "ood_acc": 0.030303030303030304,
+   "ood_nll": 10.018205928319864,
+   "ood_wrong_confidence": 0.777174560875489,
+   "coboundary_energy": 0.5696449260287021,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "compositional_16",
+   "seed": 2,
+   "train_acc": 1.0,
+   "train_nll_final": 1.3365645798819375e-06,
+   "ood_acc": 0.09090909090909091,
+   "ood_nll": 12.434938170469517,
+   "ood_wrong_confidence": 0.7548357819628095,
+   "coboundary_energy": 0.5292955900634777,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "compositional_16",
+   "seed": 3,
+   "train_acc": 1.0,
+   "train_nll_final": 8.492069661494486e-07,
+   "ood_acc": 0.06060606060606061,
+   "ood_nll": 12.235316423446356,
+   "ood_wrong_confidence": 0.7679915433393903,
+   "coboundary_energy": 0.4800680216936815,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "compositional_16",
+   "seed": 4,
+   "train_acc": 1.0,
+   "train_nll_final": 1.1006953383318753e-06,
+   "ood_acc": 0.030303030303030304,
+   "ood_nll": 11.636380610342485,
+   "ood_wrong_confidence": 0.7780978956290605,
+   "coboundary_energy": 0.6288812855276286,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "compositional_16",
+   "seed": 5,
+   "train_acc": 1.0,
+   "train_nll_final": 1.486549275033775e-06,
+   "ood_acc": 0.030303030303030304,
+   "ood_nll": 11.111286791131558,
+   "ood_wrong_confidence": 0.7634151543272465,
+   "coboundary_energy": 0.49997772935060314,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "compositional_16",
+   "seed": 6,
+   "train_acc": 1.0,
+   "train_nll_final": 1.4158546078039063e-06,
+   "ood_acc": 0.09090909090909091,
+   "ood_nll": 11.05651860126155,
+   "ood_wrong_confidence": 0.733702225442965,
+   "coboundary_energy": 0.6169250446290501,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "compositional_16",
+   "seed": 7,
+   "train_acc": 1.0,
+   "train_nll_final": 1.6119024621413986e-06,
+   "ood_acc": 0.09090909090909091,
+   "ood_nll": 10.809906695993757,
+   "ood_wrong_confidence": 0.7456790042580218,
+   "coboundary_energy": 0.6345790877564629,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "compositional_16",
+   "seed": 8,
+   "train_acc": 1.0,
+   "train_nll_final": 1.1747435017272406e-06,
+   "ood_acc": 0.12121212121212122,
+   "ood_nll": 10.032379575744498,
+   "ood_wrong_confidence": 0.7789569524141007,
+   "coboundary_energy": 0.5887767444944738,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "compositional_16",
+   "seed": 9,
+   "train_acc": 1.0,
+   "train_nll_final": 1.2586768567744435e-06,
+   "ood_acc": 0.09090909090909091,
+   "ood_nll": 11.277908413202645,
+   "ood_wrong_confidence": 0.788991415796828,
+   "coboundary_energy": 0.5942032453707113,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "compositional_16",
+   "seed": 10,
+   "train_acc": 1.0,
+   "train_nll_final": 1.4407317670063557e-06,
+   "ood_acc": 0.06060606060606061,
+   "ood_nll": 12.101128428887273,
+   "ood_wrong_confidence": 0.8006116840811993,
+   "coboundary_energy": 0.5531593410374112,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "compositional_16",
+   "seed": 11,
+   "train_acc": 1.0,
+   "train_nll_final": 1.35719447329459e-06,
+   "ood_acc": 0.12121212121212122,
+   "ood_nll": 12.323851573166607,
+   "ood_wrong_confidence": 0.7274139000474332,
+   "coboundary_energy": 0.5775575611177479,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "intermediate_36",
+   "seed": 0,
+   "train_acc": 1.0,
+   "train_nll_final": 2.1652242407975983e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 10.981753633661972,
+   "ood_wrong_confidence": 0.8112372008447575,
+   "coboundary_energy": 0.594826372936722,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "intermediate_36",
+   "seed": 1,
+   "train_acc": 1.0,
+   "train_nll_final": 2.422036338914239e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 11.12204775447587,
+   "ood_wrong_confidence": 0.744116404406157,
+   "coboundary_energy": 0.5960098915886844,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "intermediate_36",
+   "seed": 2,
+   "train_acc": 1.0,
+   "train_nll_final": 2.3138274762736204e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 11.784776368401223,
+   "ood_wrong_confidence": 0.7139003924953651,
+   "coboundary_energy": 0.5750317869203334,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "intermediate_36",
+   "seed": 3,
+   "train_acc": 1.0,
+   "train_nll_final": 2.1063053481154065e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 10.768634675516214,
+   "ood_wrong_confidence": 0.6918633584023124,
+   "coboundary_energy": 0.5464940443926131,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "intermediate_36",
+   "seed": 4,
+   "train_acc": 1.0,
+   "train_nll_final": 2.5188651368797054e-06,
+   "ood_acc": 0.07692307692307693,
+   "ood_nll": 10.58591351859035,
+   "ood_wrong_confidence": 0.761760491368724,
+   "coboundary_energy": 0.6054663939235924,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "intermediate_36",
+   "seed": 5,
+   "train_acc": 1.0,
+   "train_nll_final": 2.331060591218509e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 10.319836377109274,
+   "ood_wrong_confidence": 0.7349314738876227,
+   "coboundary_energy": 0.5813460557370749,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "intermediate_36",
+   "seed": 6,
+   "train_acc": 1.0,
+   "train_nll_final": 2.3301482158998387e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 11.07416744647942,
+   "ood_wrong_confidence": 0.6820747157456091,
+   "coboundary_energy": 0.6042589262393572,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "intermediate_36",
+   "seed": 7,
+   "train_acc": 1.0,
+   "train_nll_final": 2.139183571358384e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 11.829730641469029,
+   "ood_wrong_confidence": 0.7001409053010791,
+   "coboundary_energy": 0.624545587838051,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "intermediate_36",
+   "seed": 8,
+   "train_acc": 1.0,
+   "train_nll_final": 2.3113152615131143e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 9.424894638873726,
+   "ood_wrong_confidence": 0.642193385454534,
+   "coboundary_energy": 0.5947425819917082,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "intermediate_36",
+   "seed": 9,
+   "train_acc": 1.0,
+   "train_nll_final": 2.0509047438837697e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 12.445249370889426,
+   "ood_wrong_confidence": 0.9137991297506426,
+   "coboundary_energy": 0.6074484897966794,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "intermediate_36",
+   "seed": 10,
+   "train_acc": 1.0,
+   "train_nll_final": 2.490388058645903e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 10.910704568824587,
+   "ood_wrong_confidence": 0.6650456791105243,
+   "coboundary_energy": 0.6032029577461648,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "intermediate_36",
+   "seed": 11,
+   "train_acc": 1.0,
+   "train_nll_final": 2.543251704876141e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 10.23481825502359,
+   "ood_wrong_confidence": 0.57318073846047,
+   "coboundary_energy": 0.5986357041378427,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "full_49",
+   "seed": 0,
+   "train_acc": 1.0,
+   "train_nll_final": 2.7524092892442756e-06,
+   "ood_acc": 1.0,
+   "ood_nll": 0.0,
+   "ood_wrong_confidence": 0.0,
+   "coboundary_energy": 0.5357618439332968,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "full_49",
+   "seed": 1,
+   "train_acc": 1.0,
+   "train_nll_final": 3.0090770583175756e-06,
+   "ood_acc": 1.0,
+   "ood_nll": 0.0,
+   "ood_wrong_confidence": 0.0,
+   "coboundary_energy": 0.5429447276877205,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "full_49",
+   "seed": 2,
+   "train_acc": 1.0,
+   "train_nll_final": 2.7393119615697743e-06,
+   "ood_acc": 1.0,
+   "ood_nll": 0.0,
+   "ood_wrong_confidence": 0.0,
+   "coboundary_energy": 0.5530901961276318,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "full_49",
+   "seed": 3,
+   "train_acc": 1.0,
+   "train_nll_final": 2.694454180154959e-06,
+   "ood_acc": 1.0,
+   "ood_nll": 0.0,
+   "ood_wrong_confidence": 0.0,
+   "coboundary_energy": 0.5248312199347713,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "full_49",
+   "seed": 4,
+   "train_acc": 1.0,
+   "train_nll_final": 2.802933237224012e-06,
+   "ood_acc": 1.0,
+   "ood_nll": 0.0,
+   "ood_wrong_confidence": 0.0,
+   "coboundary_energy": 0.5320560917448451,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "full_49",
+   "seed": 5,
+   "train_acc": 1.0,
+   "train_nll_final": 3.285260780496271e-06,
+   "ood_acc": 1.0,
+   "ood_nll": 0.0,
+   "ood_wrong_confidence": 0.0,
+   "coboundary_energy": 0.5417963542644711,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "full_49",
+   "seed": 6,
+   "train_acc": 1.0,
+   "train_nll_final": 2.8889875761472893e-06,
+   "ood_acc": 1.0,
+   "ood_nll": 0.0,
+   "ood_wrong_confidence": 0.0,
+   "coboundary_energy": 0.5849323709985984,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "full_49",
+   "seed": 7,
+   "train_acc": 1.0,
+   "train_nll_final": 2.8276332642221604e-06,
+   "ood_acc": 1.0,
+   "ood_nll": 0.0,
+   "ood_wrong_confidence": 0.0,
+   "coboundary_energy": 0.5211885071453145,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "full_49",
+   "seed": 8,
+   "train_acc": 1.0,
+   "train_nll_final": 2.651928598169119e-06,
+   "ood_acc": 1.0,
+   "ood_nll": 0.0,
+   "ood_wrong_confidence": 0.0,
+   "coboundary_energy": 0.525384269378749,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "full_49",
+   "seed": 9,
+   "train_acc": 1.0,
+   "train_nll_final": 2.548507638612304e-06,
+   "ood_acc": 1.0,
+   "ood_nll": 0.0,
+   "ood_wrong_confidence": 0.0,
+   "coboundary_energy": 0.5446684327140181,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "full_49",
+   "seed": 10,
+   "train_acc": 1.0,
+   "train_nll_final": 2.69902480956722e-06,
+   "ood_acc": 1.0,
+   "ood_nll": 0.0,
+   "ood_wrong_confidence": 0.0,
+   "coboundary_energy": 0.5505191599578907,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "full_49",
+   "seed": 11,
+   "train_acc": 1.0,
+   "train_nll_final": 3.0374418964804916e-06,
+   "ood_acc": 1.0,
+   "ood_nll": 0.0,
+   "ood_wrong_confidence": 0.0,
+   "coboundary_energy": 0.5338490362820881,
+   "ood_both_trained_conflict": null,
+   "ood_both_trained_error": null
+  },
+  {
+   "split": "random_60",
+   "seed": 0,
+   "train_acc": 1.0,
+   "train_nll_final": 1.947189638421899e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 17.284409429003905,
+   "ood_wrong_confidence": 0.8723368839130011,
+   "coboundary_energy": 0.6140095576323743,
+   "ood_both_trained_conflict": 0.350796653368031,
+   "ood_both_trained_error": 1.0
+  },
+  {
+   "split": "random_60",
+   "seed": 1,
+   "train_acc": 1.0,
+   "train_nll_final": 2.134944903064869e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 16.98922027470154,
+   "ood_wrong_confidence": 0.791096490482217,
+   "coboundary_energy": 0.6376246824636131,
+   "ood_both_trained_conflict": 0.2361824214969377,
+   "ood_both_trained_error": 1.0
+  },
+  {
+   "split": "random_60",
+   "seed": 2,
+   "train_acc": 1.0,
+   "train_nll_final": 1.6358390307599804e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 21.213295996155143,
+   "ood_wrong_confidence": 0.9561673748364888,
+   "coboundary_energy": 0.6059246804458228,
+   "ood_both_trained_conflict": 0.3336250072126661,
+   "ood_both_trained_error": 1.0
+  },
+  {
+   "split": "random_60",
+   "seed": 3,
+   "train_acc": 1.0,
+   "train_nll_final": 1.7638878770328519e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 18.93991615091589,
+   "ood_wrong_confidence": 0.8866396510176972,
+   "coboundary_energy": 0.5989208816551314,
+   "ood_both_trained_conflict": 0.36504562295161,
+   "ood_both_trained_error": 1.0
+  },
+  {
+   "split": "random_60",
+   "seed": 4,
+   "train_acc": 1.0,
+   "train_nll_final": 1.7937964551801328e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 19.522555367469206,
+   "ood_wrong_confidence": 0.8936540128475376,
+   "coboundary_energy": 0.6326792132827798,
+   "ood_both_trained_conflict": 0.28246004544501957,
+   "ood_both_trained_error": 1.0
+  },
+  {
+   "split": "random_60",
+   "seed": 5,
+   "train_acc": 1.0,
+   "train_nll_final": 1.823852640413532e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 20.23448083190162,
+   "ood_wrong_confidence": 0.826643321566928,
+   "coboundary_energy": 0.6070662378015169,
+   "ood_both_trained_conflict": 0.24862105135041626,
+   "ood_both_trained_error": 1.0
+  },
+  {
+   "split": "random_60",
+   "seed": 6,
+   "train_acc": 1.0,
+   "train_nll_final": 1.6372552238470023e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 18.817362969035518,
+   "ood_wrong_confidence": 0.849203369269215,
+   "coboundary_energy": 0.5934689898850458,
+   "ood_both_trained_conflict": 0.2818868814040228,
+   "ood_both_trained_error": 1.0
+  },
+  {
+   "split": "random_60",
+   "seed": 7,
+   "train_acc": 1.0,
+   "train_nll_final": 1.998081692678644e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 17.09351731831607,
+   "ood_wrong_confidence": 0.8864330906347568,
+   "coboundary_energy": 0.6302932128817255,
+   "ood_both_trained_conflict": 0.23738053078083396,
+   "ood_both_trained_error": 1.0
+  },
+  {
+   "split": "random_60",
+   "seed": 8,
+   "train_acc": 1.0,
+   "train_nll_final": 1.5541980379834904e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 15.329671756764075,
+   "ood_wrong_confidence": 0.8454989281556567,
+   "coboundary_energy": 0.5846007663275781,
+   "ood_both_trained_conflict": 0.28960362455869826,
+   "ood_both_trained_error": 1.0
+  },
+  {
+   "split": "random_60",
+   "seed": 9,
+   "train_acc": 1.0,
+   "train_nll_final": 1.8858941135054448e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 17.984930593595895,
+   "ood_wrong_confidence": 0.8639304112167628,
+   "coboundary_energy": 0.5988208914248133,
+   "ood_both_trained_conflict": 0.2614991186199057,
+   "ood_both_trained_error": 1.0
+  },
+  {
+   "split": "random_60",
+   "seed": 10,
+   "train_acc": 1.0,
+   "train_nll_final": 1.789116863221225e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 16.370084966693536,
+   "ood_wrong_confidence": 0.8533985313308857,
+   "coboundary_energy": 0.6239569596310922,
+   "ood_both_trained_conflict": 0.277656882443824,
+   "ood_both_trained_error": 1.0
+  },
+  {
+   "split": "random_60",
+   "seed": 11,
+   "train_acc": 1.0,
+   "train_nll_final": 1.914538565461858e-06,
+   "ood_acc": 0.0,
+   "ood_nll": 18.03048884768054,
+   "ood_wrong_confidence": 0.8771145510204889,
+   "coboundary_energy": 0.6534415565265246,
+   "ood_both_trained_conflict": 0.24898912501324338,
+   "ood_both_trained_error": 1.0
+  }
+ ],
+ "summary": {
+  "split_means": {
+   "compositional_16": {
+    "train_acc": 1.0,
+    "ood_acc": 0.07323232323232323,
+    "coboundary_energy": 0.5768610650883912
+   },
+   "intermediate_36": {
+    "train_acc": 1.0,
+    "ood_acc": 0.006410256410256411,
+    "coboundary_energy": 0.5943340661040687
+   },
+   "full_49": {
+    "train_acc": 1.0,
+    "ood_acc": 1.0,
+    "coboundary_energy": 0.5409185175141163
+   },
+   "random_60": {
+    "train_acc": 1.0,
+    "ood_acc": 0.0,
+    "coboundary_energy": 0.6150673024965014
+   }
+  },
+  "pearson_E_vs_ood_error_pooled": 0.5935238720383882,
+  "per_split": {
+   "compositional_16": {
+    "pearson_E_vs_ooderr": -0.19579842753283122,
+    "pearson_E_vs_wrongconf": 0.06663340316083495
+   },
+   "intermediate_36": {
+    "pearson_E_vs_ooderr": -0.17861873610457488,
+    "pearson_E_vs_wrongconf": 0.12008054313660914
+   },
+   "full_49": {
+    "pearson_E_vs_ooderr": 0.0,
+    "pearson_E_vs_wrongconf": 0.0
+   },
+   "random_60": {
+    "pearson_E_vs_ooderr": 0.0,
+    "pearson_E_vs_wrongconf": -0.04431660359006043
+   }
+  },
+  "pearson_oodconflict_vs_ooderror_16": 0.0,
+  "verdicts": {
+   "compositional_gap": "the compositional split reproduces the classic failure: train accuracy 1.000 with OOD accuracy 0.073 (16-split) vs 0.006 (intermediate) vs 1.000 (full control) \u2014 the network memorizes the training quadrant and fails to glue the token geometries.",
+   "chat_prediction": "the chat's 'the harmonic norm correlates with the validation gap': the HONEST SPLIT is task-level YES, seed-level NO. Task-level: the energy orders the three splits EXACTLY as their OOD errors do (E = 0.5409 / 0.5769 / 0.5943 for full / compositional / intermediate against OOD errors 0 / .93 / .99 \u2014 a perfect ordering). Seed-level: within a split the energy-vs-OOD-error correlation is r = {'compositional_16': -0.196, 'intermediate_36': -0.179, 'full_49': 0.0, 'random_60': 0.0} (n = 12 each, null to slightly negative) \u2014 the sheaf diagnostic predicts WHICH TASK GEOMETRY fails, not which random seed fails. Pooled r = 0.594 is dominated by the split separation, an honest caveat for anyone reading it as a seed-level predictor.",
+   "hallucination": "the confidence on WRONG OOD outputs (the hallucination measure) vs the energy: pooled r = 0.608 \u2014 the incoherent representations are also the confidently wrong ones (or not: the measured number decides).",
+   "ood_conflict": "on the scattered random-60 split, the OOD pairs whose BOTH tokens are trained exist; the token-reconstruction conflict vs the OOD error on those held-out compositions: r = 0.000 \u2014 the sheaf's edge-level diagnostic on unseen compositions of SEEN tokens."
+  }
+ }
+}

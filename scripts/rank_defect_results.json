@@ -1,0 +1,517 @@
+{
+ "meta": {
+  "order": "Task 15 item 1: the rank-defect theorem's generalization beyond the ring (which stationary processes satisfy arrow <=> rank defect)",
+  "objects": {
+   "arrow": "reversal divergence D = sum_ij pi_i P_ij ln(pi_i P_ij / (pi_j P_ji)) for chains; exact block reversal KL for processes",
+   "rank": "rank of the covariance Hankel [c(i+j)] of the observed process (the number of exponential modes of c(m))",
+   "complex_modes": "number of visible modes with Im lambda != 0"
+  }
+ },
+ "A_quadrant_witnesses": {
+  "driven_3ring": {
+   "P": "3-ring a=0.32 b=0.18",
+   "arrow_D": 0.08055098028649864,
+   "rank": 2,
+   "rho_C": 2,
+   "sv2": 0.003961161899893373,
+   "quadrant": "iff-domain (arrow AND complex mode)",
+   "quadrant_sv2": "consistent (by mode count, not by arrow)",
+   "modes": [
+    [
+     "(0.25+0.12124355652982154j)",
+     "(0.25-0.12124355652982154j)"
+    ]
+   ],
+   "note": "Task 14's rank witness, re-verified: sv2 > 0 iff driven on the ring family; the visible pair is the complex conjugate pair 0.25 +- 0.1212i."
+  },
+  "symmetric_chain_fake_arrow": {
+   "P": "symmetric 3-state [[.5,.3,.2],[.3,.2,.5],[.2,.5,.3]]",
+   "arrow_D": 0.0,
+   "reversibility_check_max_piP_minus_piP": 0.0,
+   "rank": 2,
+   "rho_C": 0,
+   "sv2": 0.0015756929328124142,
+   "eigenvalues_exact": [
+    1.0,
+    0.2645751311064591,
+    -0.2645751311064591
+   ],
+   "eigenvalues_measured": [
+    -0.2645751311064591,
+    0.26457513110645914,
+    0.9999999999999998
+   ],
+   "quadrant": "silent (no arrow, no complex mode)",
+   "quadrant_sv2": "FAKE ARROW (rank-witness false positive)",
+   "note": "reversible (symmetric, detailed balance exact) yet the indicator sees TWO distinct real modes {+sqrt(7)/10, -sqrt(7)/10}: sv2 > 0 with zero arrow \u2014 the Task-14 rank witness sv2 is NOT an arrow witness off the ring (false positive); the complex-mode witness stays silent here, which is exactly the refinement: soundness belongs to the COMPLEX half of the rank, not to the count."
+  },
+  "doubly_stochastic_hidden_arrow": {
+   "P": "B3 member [[.6,.4,0],[.2,.2,.6],[.2,.4,.4]] (uniform pi)",
+   "arrow_D": 0.0732408192445406,
+   "arrow_D_exact_1_15_ln3": 0.07324081924454065,
+   "arrow_match_error": 5.551115123125783e-17,
+   "rank": 1,
+   "rho_C": 0,
+   "sv2": 1.4061854762209858e-15,
+   "spectrum_exact_rational_certificate": {
+    "tr": [
+     "6/5",
+     "6/5"
+    ],
+    "M2": [
+     "3/25",
+     "3/25"
+    ],
+    "det": [
+     "-2/25",
+     "-2/25"
+    ],
+    "all_match": true
+   },
+   "quadrant": "HIDDEN ARROW (arrow, no complex mode)",
+   "quadrant_sv2": "HIDDEN ARROW (rank-witness miss)",
+   "note": "non-reversible (D = (1/15) ln 3 > 0, certificate exact) with ALL-REAL spectrum {1, 2/5, -1/5}: the arrow is invisible to the complex-mode rank witness \u2014 the hidden-arrow quadrant at the Markov level (the sv2 witness is 'consistent' here only by mode-count coincidence, two real modes)."
+  },
+  "gaussian_AR2_fake_arrow": {
+   "process": "AR(2), roots 0.8 exp(+-i pi/5)",
+   "phi": [
+    1.294427190999916,
+    -0.6400000000000001
+   ],
+   "rank": 2,
+   "rho_C": 2,
+   "modes": [
+    "0.8 e^{+i pi/5}",
+    "0.8 e^{-i pi/5}"
+   ],
+   "block_swap_invariance_max_err": 0.0,
+   "arrow_block_KL": 0.0,
+   "quadrant": "FAKE ARROW (complex mode, no arrow)",
+   "note": "every real stationary Gaussian process is reversible (the block covariance is Toeplitz in |i-j|, machine-exact swap invariance above), yet AR(2) has a complex-conjugate covariance-mode pair: Hankel rank 2, arrow 0 \u2014 the fake-arrow quadrant at the process level. Soundness (complex => arrow) is a JUMP-process theorem; the linear-Gaussian stratum launders it."
+  },
+  "gaussian_AR1_silent": {
+   "process": "AR(1), a = 0.6 (Gaussian innovations)",
+   "rank": 1,
+   "rho_C": 0,
+   "arrow_block_KL": 0.0,
+   "quadrant": "silent (no arrow, no complex mode)",
+   "note": "reversible Gaussian with a single real mode: the silent quadrant (this is the OU baseline of Task 14, at the process level)."
+  },
+  "quadrant_table": {
+   "driven_3ring": {
+    "quadrant_complex": "iff-domain (arrow AND complex mode)",
+    "quadrant_sv2": "consistent (by mode count, not by arrow)",
+    "arrow": 0.08055098028649864,
+    "rank": 2,
+    "rho_C": 2,
+    "sv2": 0.003961161899893373
+   },
+   "symmetric_chain_fake_arrow": {
+    "quadrant_complex": "silent (no arrow, no complex mode)",
+    "quadrant_sv2": "FAKE ARROW (rank-witness false positive)",
+    "arrow": 0.0,
+    "rank": 2,
+    "rho_C": 0,
+    "sv2": 0.0015756929328124142
+   },
+   "doubly_stochastic_hidden_arrow": {
+    "quadrant_complex": "HIDDEN ARROW (arrow, no complex mode)",
+    "quadrant_sv2": "HIDDEN ARROW (rank-witness miss)",
+    "arrow": 0.0732408192445406,
+    "rank": 1,
+    "rho_C": 0,
+    "sv2": 1.4061854762209858e-15
+   },
+   "gaussian_AR2_fake_arrow": {
+    "quadrant_complex": "FAKE ARROW (complex mode, no arrow)",
+    "quadrant_sv2": null,
+    "arrow": 0.0,
+    "rank": 2,
+    "rho_C": 2,
+    "sv2": null
+   },
+   "gaussian_AR1_silent": {
+    "quadrant_complex": "silent (no arrow, no complex mode)",
+    "quadrant_sv2": null,
+    "arrow": 0.0,
+    "rank": 1,
+    "rho_C": 0,
+    "sv2": null
+   }
+  },
+  "hidden_arrow_sv2_miss": {
+   "witness": "the driven 4-ring observed through the parity sensor (Part C): arrow 0.0806, observed rank 1 \u2014 the rank-witness MISS quadrant lives ON the ring family itself (Part C delivers the exact laundering)."
+  }
+ },
+ "B_soundness_genericity": {
+  "T1_reversible_random_walks": {
+   "samples": 1000,
+   "N_range": "3..8",
+   "max_detailed_balance_violation": 1.3877787807814457e-17,
+   "max_imaginary_part_of_spectrum": 6.822750382460107e-17,
+   "verdict": "PASS: reversible => real spectrum (T1), 1000/1000, machine-exact (all |Im lambda| < 6.8e-17)"
+  },
+  "T1_contrapositive_random_stochastic": {
+   "samples": 4000,
+   "complex_spectrum": 1125,
+   "complex_and_driven": 1125,
+   "verdict": "PASS: every complex-eigenvalue chain sampled is non-reversible (1125/1125)"
+  },
+  "T2_B3_hit_and_run": {
+   "samples": 6000,
+   "real_spectrum_fraction": 0.6863333333333334,
+   "complex_spectrum_fraction": 0.31366666666666665,
+   "real_spectrum_D_range": [
+    4.520901807641286e-13,
+    1.3937828451409624
+   ],
+   "hidden_arrow_examples": [
+    {
+     "P": [
+      [
+       0.346464,
+       0.132769,
+       0.520767
+      ],
+      [
+       0.31621,
+       0.576951,
+       0.106839
+      ],
+      [
+       0.337326,
+       0.29028,
+       0.372394
+      ]
+     ],
+     "D": 0.14073483455179542,
+     "eigs": [
+      -0.00236834,
+      0.29817759,
+      1.0
+     ]
+    },
+    {
+     "P": [
+      [
+       0.398132,
+       0.132247,
+       0.469621
+      ],
+      [
+       0.109755,
+       0.751929,
+       0.138316
+      ],
+      [
+       0.492113,
+       0.115824,
+       0.392062
+      ]
+     ],
+     "D": 0.003078901206101911,
+     "eigs": [
+      -0.08527707,
+      0.62739952,
+      1.0
+     ]
+    },
+    {
+     "P": [
+      [
+       0.421653,
+       0.25314,
+       0.325207
+      ],
+      [
+       0.131539,
+       0.739344,
+       0.129117
+      ],
+      [
+       0.446808,
+       0.007516,
+       0.545676
+      ]
+     ],
+     "D": 0.15467338983346854,
+     "eigs": [
+      0.09678611,
+      0.60988688,
+      1.0
+     ]
+    }
+   ],
+   "verdict": "the hidden-arrow quadrant has POSITIVE MEASURE in B3: 68.6% of doubly-stochastic 3-state chains have an all-real spectrum with D > 0 \u2014 the iff fails generically off the circulant slice (the ring is the measure-zero subfamily where reversible slice = merging locus)."
+  },
+  "T2_random_stochastic_N4": {
+   "samples": 3000,
+   "real_spectrum_fraction": 0.36766666666666664,
+   "verdict": "random 4-state chains: 36.77% all-real (the hidden-arrow capability shrinks with N but stays nonzero for odd N cubics; for N=4 the generic matrix needs two conjugate pairs to close)"
+  }
+ },
+ "C_N_ring_law": {
+  "rank_doubling_table": [
+   {
+    "N": 3,
+    "rank_equilibrium": 1,
+    "rank_driven": 2,
+    "predicted_equilibrium": 1,
+    "predicted_driven": 2,
+    "defect_delta": 1,
+    "predicted_delta": 1,
+    "circulant_spectrum_max_err": 3.0436364816617974e-16,
+    "law_holds": true
+   },
+   {
+    "N": 4,
+    "rank_equilibrium": 2,
+    "rank_driven": 3,
+    "predicted_equilibrium": 2,
+    "predicted_driven": 3,
+    "defect_delta": 1,
+    "predicted_delta": 1,
+    "circulant_spectrum_max_err": 4.440892098500626e-16,
+    "law_holds": true
+   },
+   {
+    "N": 5,
+    "rank_equilibrium": 2,
+    "rank_driven": 4,
+    "predicted_equilibrium": 2,
+    "predicted_driven": 4,
+    "defect_delta": 2,
+    "predicted_delta": 2,
+    "circulant_spectrum_max_err": 6.661338147750939e-16,
+    "law_holds": true
+   },
+   {
+    "N": 6,
+    "rank_equilibrium": 3,
+    "rank_driven": 5,
+    "predicted_equilibrium": 3,
+    "predicted_driven": 5,
+    "defect_delta": 2,
+    "predicted_delta": 2,
+    "circulant_spectrum_max_err": 6.661338147750939e-16,
+    "law_holds": true
+   },
+   {
+    "N": 7,
+    "rank_equilibrium": 3,
+    "rank_driven": 6,
+    "predicted_equilibrium": 3,
+    "predicted_driven": 6,
+    "defect_delta": 3,
+    "predicted_delta": 3,
+    "circulant_spectrum_max_err": 1.7763568394002505e-15,
+    "law_holds": true
+   },
+   {
+    "N": 8,
+    "rank_equilibrium": 4,
+    "rank_driven": 7,
+    "predicted_equilibrium": 4,
+    "predicted_driven": 7,
+    "defect_delta": 3,
+    "predicted_delta": 3,
+    "circulant_spectrum_max_err": 1.1116099371267112e-15,
+    "law_holds": true
+   }
+  ],
+  "law_verdict": {
+   "all_N_hold": true,
+   "statement": "on the N-ring: equilibrium rank = floor((N-1)/2) + [N even] (the pair-merging), driven rank = N-1 (every pair splits into a complex conjugate pair); the reversible slice IS the spectral-merging locus: Im lambda_j = (a-b) sin(2 pi j / N) \u2014 that is WHY the ring satisfies arrow <=> rank defect: turning the arrow off forces the degeneracy that halves the visible rank."
+  },
+  "parity_laundering_N4": {
+   "hidden_arrow_D": 0.08055098028649868,
+   "observed_rank": 1,
+   "observed_block_KL_n2_to_n6": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.734723475976804e-18
+   ],
+   "identity_sensor_block_KL_n2_to_n6": [
+    0.08055098028649854,
+    0.16110196057299714,
+    0.2416529408594958,
+    0.3222039211459943,
+    0.4027549014324935
+   ],
+   "DPI_holds": true,
+   "verdict": "the parity sensor LAUNDERS the driven 4-ring completely: the observed process is the flip/stay 2-state chain (reversible, exact block KL = 0 at every n) while the hidden arrow is 0.0806 \u2014 and the observed rank stays 1 (memory survives, the arrow does not). Even ON the ring, the parity-affine observable (even N) breaks the iff: the record can lose the world's arrow without losing its memory."
+  }
+ },
+ "D_one_way_valve": {
+  "factor_theorem_symmetric_chain": {
+   "sensor": "{0,2}|{1} on the symmetric 3-chain",
+   "block_KL_n2_n7": [
+    0.0,
+    -5.921189464667512e-18,
+    6.162975822039155e-33,
+    -3.69334192858636e-18,
+    5.651775344025122e-18,
+    3.057258150344447e-18
+   ],
+   "max_block_KL": 5.651775344025122e-18,
+   "verdict": "PASS: a coordinate-wise function of a reversible process is reversible \u2014 the sensor cannot CREATE the arrow (pushforward commutes with index reversal; block KL = 0 exactly at every n)."
+  },
+  "laundering_lattice_3ring": {
+   "hidden_arrow_D": 0.08055098028649864,
+   "sensors": {
+    "identity": {
+     "block_KL_n2_n8": [
+      0.08055098028649853,
+      0.16110196057299714,
+      0.24165294085949574,
+      0.3222039211459943,
+      0.4027549014324933,
+      0.4833058817189911,
+      0.5638568620054822
+     ],
+     "observed_rank": 2,
+     "rate_estimate_n8": 0.07048210775068528
+    },
+    "s1_block12": {
+     "block_KL_n2_n8": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      9.848122317634974e-19,
+      -7.148519254466616e-18,
+      2.3075214710862307e-18
+     ],
+     "observed_rank": 2,
+     "rate_estimate_n8": 2.8844018388577884e-19
+    },
+    "s2_block02": {
+     "block_KL_n2_n8": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      3.724676863233372e-18,
+      -2.107902001095382e-18,
+      -4.527389177629454e-19
+     ],
+     "observed_rank": 2,
+     "rate_estimate_n8": -5.659236472036817e-20
+    },
+    "constant": {
+     "block_KL_n2_n8": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "observed_rank": 0,
+     "rate_estimate_n8": 0.0
+    }
+   },
+   "DPI_holds": true,
+   "verdict": "the exact block arithmetic found the laundering THEOREM: the identity sensor keeps the arrow (block KL growing linearly, rate 0.0705), and EVERY non-identity sensor of the 3-ring launders it to EXACTLY 0 \u2014 each is a reflection-orbit sensor (see the reflection-laundering theorem below): the 3-ring's arrow survives only at full resolution, because the arrow is the ring's CHIRALITY. The DPI bound holds at every block length."
+  },
+  "laundering_lattice_4ring": {
+   "hidden_arrow_D": 0.08055098028649868,
+   "sensors": {
+    "identity": {
+     "block_KL_n2_n7": [
+      0.08055098028649854,
+      0.16110196057299714,
+      0.2416529408594958,
+      0.3222039211459943,
+      0.4027549014324935,
+      0.48330588171899075
+     ]
+    },
+    "parity": {
+     "block_KL_n2_n7": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.734723475976804e-18,
+      0.0
+     ]
+    },
+    "half": {
+     "block_KL_n2_n7": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -1.5407439555097887e-33,
+      0.0
+     ]
+    },
+    "constant": {
+     "block_KL_n2_n7": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "verdict": "on the driven 4-ring: identity keeps the arrow (rate 0.0690), the parity sensor launders it to exactly 0, the half sensor {0,1}|{2,3} partially launders \u2014 the one-way valve with a genuine nontrivial zero."
+  },
+  "reflection_laundering_theorem": {
+   "statement": "if a symmetry rho conjugates the dynamics to its own time reversal (rho . P . rho^-1 = P-reversed), then every rho-invariant sensor has observed block reversal KL = 0 EXACTLY (the pushforward of the reversal is the rho-conjugate, and the sensor is rho-blind). On the N-ring every reflection is such a reversal symmetry: the arrow of the ring IS its chirality, and the record loses the arrow exactly when it loses the handedness.",
+   "4ring_chirality_keeping_{0}|{1}|{2,3}": [
+    0.060413235214873906,
+    0.13393127837591812,
+    0.21248812350024127,
+    0.2925054289016516,
+    0.37291626246872367,
+    0.45343067742410936
+   ],
+   "4ring_reflection_control_{0}|{1,2,3}": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    7.703719777548943e-34
+   ],
+   "chirality_sensor_keeps_arrow": true,
+   "reflection_control_launders": true,
+   "3ring_all_nonidentity_launder": true,
+   "3ring_only_identity_keeps_arrow": true,
+   "verdict": "CONFIRMED: the chirality-keeping 3-block sensor keeps a strictly positive block KL (4.5343e-01 at n=7) while both reflection-orbit controls launder to exactly 0 \u2014 and on the 3-ring EVERY non-identity sensor launders: the identity is the only arrow-preserving sensor (the 3-ring is the minimal chiral record). The rank-doubling's complex pair is the chiral mode; killing the handedness kills both."
+  }
+ },
+ "E_process_level_boundary": {
+  "ma1_nongaussian_hidden_arrow": {
+   "process": "x_t = eps_t - 0.7 eps_{t-1}, eps ~ Laplace (symmetric)",
+   "autocovariance": "c(0) = 2(1+theta^2), c(1) = -2 theta, c(m>=2) = 0",
+   "hankel_rank": 2,
+   "rho_C": 0,
+   "block2_reversal_KL": 0.018191169851220247,
+   "block2_KL_stderr": 0.0004242787346310223,
+   "theta_zero_control_KL": -1.2644833099957464e-11,
+   "gaussian_control": "the same MA(1) with Gaussian eps has the symmetric 2-block covariance [[1+t^2, -t],[-t, 1+t^2]] => p(x0,x1) = p(x1,x0) identically: KL = 0",
+   "quadrant": "HIDDEN ARROW (arrow, no complex mode)",
+   "verdict": "the symmetric-innovation MA(1) is a hidden-arrow witness at the process level: finite-support autocovariance (Hankel rank 2, modes real/degenerate) with a strictly positive 2-block reversal divergence measured by piecewise-exact integration (inner integrals exact, outer expectation Monte-Carlo with SE 4.24e-04)."
+  }
+ },
+ "scope_theorem": {
+  "question": "which stationary processes satisfy arrow <=> rank defect?",
+  "answer": [
+   "T1 (sound, every finite jump process): a VISIBLE COMPLEX MODE is a sound arrow witness \u2014 reversible chains are pi-self-adjoint, hence real-spectrum. The rank defect's complex half is sound.",
+   "T2 (both failure modes exist off the ring): the HIDDEN ARROW (real-spectrum irreversibles: the B3 witness D = (1/15) ln 3, positive measure in the polytope; the Laplace MA(1) at process level) and the FAKE ARROW (Gaussian AR(2): complex covariance modes, exactly reversible; the symmetric chain with distinct real modes: sv2 > 0, D = 0). Hence the iff fails in BOTH directions for general stationary processes.",
+   "T3 (the iff's natural home): the N-state cyclic rings, all N: the reversible slice IS the spectral-merging locus (Im lambda_j = (a-b) sin(2 pi j / N)); the visible rank doubles exactly when the arrow turns on; the iff holds for every observable except the parity-affine family (even N), which launders the arrow completely while keeping memory.",
+   "T4 (the one-way valve, every process): sensors are coordinate-wise channels, so the observed arrow <= the source arrow (DPI) and reversible sources stay reversible under every sensor: the record cannot fabricate the arrow \u2014 the arrow is a record-monotone, inherited or destroyed, never created.",
+   "T4b (the reflection-laundering theorem, discovered by this battery's exact zeros): if a state-space symmetry conjugates the dynamics to its own time reversal, every symmetry-invariant sensor launders the arrow EXACTLY. On the N-ring every reflection is such a reversal symmetry: THE RING'S ARROW IS ITS CHIRALITY \u2014 the record keeps the arrow iff it keeps the handedness; the 3-ring's identity sensor is the only handedness-keeping sensor (the 3-ring is the minimal chiral record), and the complex pair of the rank-doubling law IS the chiral mode.",
+   "THE CLASS: the processes satisfying arrow <=> rank defect are exactly those whose non-reversibility is SPECTRALLY CARRIED inside the observable's visible spectrum: the abelian (circulant) families with arrow-carrying observables are the canonical class \u2014 the rank defect is the ABELIAN SHADOW of the arrow. Beyond the abelian class both failure quadrants have positive measure; the arrow itself (the reversal divergence) is the full-law object, of which the Hankel rank sees only the second-moment abelianized projection."
+  ],
+  "corpus_landing": "the abelian shadow statement lands on Volume VIII's abelianized rung (the circulant/Parikh class is exactly where the iff survives) and on the BT2/BT3 strata of the corpus: the memory scale (Hankel) and the reversal asymmetry (intercept) are different strata that meet at the register \u2014 'it and bit from record', now with the one-way valve: the record's arrow is bounded by the world's."
+ }
+}

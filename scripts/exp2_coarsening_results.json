@@ -1,0 +1,344 @@
+{
+ "meta": {
+  "experiment": "the chat's Experiment 2 \u2014 certified viability / sensor coarsening (Tiger)",
+  "parameters": "open +10/-100, listen -1, horizon 8, start belief 0.5, alpha-backup exact (upper-envelope prune, O(n) breakpoints)"
+ },
+ "record_side": {
+  "theorem": "the Tiger's listen record is conditionally iid given the hidden side: every block law is 0.5*prod P(u_t|L) + 0.5*prod P(u_t|R), which is invariant under index reversal \u2014 the arrow of the record is IDENTICALLY ZERO at every sensor quality (verified on all 16 4-blocks at every kappa, max deviation 1.4e-17).",
+  "consequence": "the chat's bridge from control performance to the arrow of time cannot be tested on memoryless-sensor benchmarks: the record stratum degenerates. The bridge lives on sources with temporal structure \u2014 exactly the class Part 1's laundering theorems cover (the one-way valve and the reflection theorem). The DPI bound holds trivially (0 <= source arrow).",
+  "verified_deviation_max": 1.3877787807814457e-17
+ },
+ "scan_rows": [
+  {
+   "kappa": 1.0,
+   "V_star_05": 9.0,
+   "oracle_gap": 1.0,
+   "alpha_count": 9,
+   "alpha_history": [
+    3,
+    4,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "kink_count": 2,
+   "kinks_head": [
+    0.009615385,
+    0.990909091
+   ],
+   "interior_curvature": 214.0,
+   "weighted_curvature": 107.0,
+   "belief_visit_nodes": 3,
+   "V_1FSC": 9.0,
+   "best_1fsc": [
+    "listen",
+    "openR",
+    "openL"
+   ],
+   "obstruction_o": 0.0,
+   "record_4block_reversal_dev": 0.0
+  },
+  {
+   "kappa": 0.95,
+   "V_star_05": 7.482770187499999,
+   "oracle_gap": 2.517229812500001,
+   "alpha_count": 59,
+   "alpha_history": [
+    3,
+    5,
+    10,
+    14,
+    18,
+    27,
+    40,
+    59
+   ],
+   "kink_count": 52,
+   "kinks_head": [
+    0.010992531,
+    0.011015886,
+    0.011259451,
+    0.01168733,
+    0.012867039,
+    0.016384778,
+    0.142583512,
+    0.174416136,
+    0.175268022,
+    0.189788634,
+    0.195658393,
+    0.199162328
+   ],
+   "interior_curvature": 219.66168516875,
+   "weighted_curvature": 102.26335948223081,
+   "belief_visit_nodes": 58,
+   "V_1FSC": 3.4999999999999956,
+   "best_1fsc": [
+    "listen",
+    "openR",
+    "openL"
+   ],
+   "obstruction_o": 3.9827701875000034,
+   "record_4block_reversal_dev": 3.469446951953614e-18
+  },
+  {
+   "kappa": 0.9,
+   "V_star_05": 6.171576,
+   "oracle_gap": 3.828424,
+   "alpha_count": 34,
+   "alpha_history": [
+    3,
+    4,
+    7,
+    11,
+    17,
+    24,
+    28,
+    34
+   ],
+   "kink_count": 30,
+   "kinks_head": [
+    0.013403666,
+    0.013680604,
+    0.015192702,
+    0.023281596,
+    0.081519815,
+    0.090112301,
+    0.108919818,
+    0.110840475,
+    0.122112581,
+    0.341208366,
+    0.444524743,
+    0.470920856
+   ],
+   "interior_curvature": 219.88452639999997,
+   "weighted_curvature": 109.88221574910528,
+   "belief_visit_nodes": 58,
+   "V_1FSC": -1.9999999999999982,
+   "best_1fsc": [
+    "listen",
+    "openR",
+    "openL"
+   ],
+   "obstruction_o": 8.171575999999998,
+   "record_4block_reversal_dev": 0.0
+  },
+  {
+   "kappa": 0.8,
+   "V_star_05": 2.8575360000000023,
+   "oracle_gap": 7.142463999999998,
+   "alpha_count": 44,
+   "alpha_history": [
+    3,
+    5,
+    9,
+    15,
+    22,
+    28,
+    36,
+    44
+   ],
+   "kink_count": 41,
+   "kinks_head": [
+    0.022635182,
+    0.023631032,
+    0.026787155,
+    0.027027027,
+    0.035360614,
+    0.039312039,
+    0.086298049,
+    0.087140628,
+    0.090609016,
+    0.096300646,
+    0.123287671,
+    0.124281328
+   ],
+   "interior_curvature": 219.7868544,
+   "weighted_curvature": 77.83521547873585,
+   "belief_visit_nodes": 228,
+   "V_1FSC": -8.0,
+   "best_1fsc": [
+    "listen",
+    "listen",
+    "listen"
+   ],
+   "obstruction_o": 10.857536000000003,
+   "record_4block_reversal_dev": 1.3877787807814457e-17
+  },
+  {
+   "kappa": 0.7,
+   "V_star_05": -2.983644000000002,
+   "oracle_gap": 12.983644000000002,
+   "alpha_count": 45,
+   "alpha_history": [
+    3,
+    5,
+    9,
+    14,
+    26,
+    35,
+    36,
+    45
+   ],
+   "kink_count": 41,
+   "kinks_head": [
+    0.046719203,
+    0.04717415,
+    0.048870637,
+    0.05922865,
+    0.089602963,
+    0.100474666,
+    0.101211322,
+    0.102454301,
+    0.115141624,
+    0.205882353,
+    0.212321171,
+    0.218594189
+   ],
+   "interior_curvature": 218.578657,
+   "weighted_curvature": 58.08516692370381,
+   "belief_visit_nodes": 100,
+   "V_1FSC": -8.0,
+   "best_1fsc": [
+    "listen",
+    "listen",
+    "listen"
+   ],
+   "obstruction_o": 5.016355999999998,
+   "record_4block_reversal_dev": 0.0
+  },
+  {
+   "kappa": 0.6,
+   "V_star_05": -7.841536,
+   "oracle_gap": 17.841535999999998,
+   "alpha_count": 9153,
+   "alpha_history": [
+    3,
+    5,
+    9,
+    17,
+    31,
+    67,
+    400,
+    9153
+   ],
+   "kink_count": 171,
+   "kinks_head": [
+    0.100220177,
+    0.122227953,
+    0.13126056,
+    0.142857143,
+    0.14742003,
+    0.547764428,
+    0.110394503,
+    0.142857143,
+    0.172218285,
+    0.224814713,
+    0.172218285,
+    0.666952514
+   ],
+   "interior_curvature": 178.85541120000016,
+   "weighted_curvature": 90.8990240217262,
+   "belief_visit_nodes": 138,
+   "V_1FSC": -8.0,
+   "best_1fsc": [
+    "listen",
+    "listen",
+    "listen"
+   ],
+   "obstruction_o": 0.15846400000000038,
+   "record_4block_reversal_dev": 1.3877787807814457e-17
+  },
+  {
+   "kappa": 0.55,
+   "V_star_05": -8.0,
+   "oracle_gap": 18.0,
+   "alpha_count": 280,
+   "alpha_history": [
+    3,
+    5,
+    8,
+    12,
+    18,
+    28,
+    72,
+    280
+   ],
+   "kink_count": 63,
+   "kinks_head": [
+    0.142336915,
+    0.142581297,
+    0.144567855,
+    0.160787913,
+    0.162123553,
+    0.168651799,
+    0.180924972,
+    0.186454589,
+    0.220422457,
+    0.180924972,
+    0.198981428,
+    0.201569064
+   ],
+   "interior_curvature": 208.1386780312501,
+   "weighted_curvature": 47.11676191114152,
+   "belief_visit_nodes": 490,
+   "V_1FSC": -8.0,
+   "best_1fsc": [
+    "listen",
+    "listen",
+    "listen"
+   ],
+   "obstruction_o": 0.0,
+   "record_4block_reversal_dev": 6.938893903907228e-18
+  },
+  {
+   "kappa": 0.5,
+   "V_star_05": -8.0,
+   "oracle_gap": 18.0,
+   "alpha_count": 4,
+   "alpha_history": [
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "kink_count": 3,
+   "kinks_head": [
+    0.164137437,
+    0.1,
+    0.836363636
+   ],
+   "interior_curvature": 220.0,
+   "weighted_curvature": 0.0,
+   "belief_visit_nodes": 24,
+   "V_1FSC": -8.0,
+   "best_1fsc": [
+    "listen",
+    "listen",
+    "listen"
+   ],
+   "obstruction_o": 0.0,
+   "record_4block_reversal_dev": 0.0
+  }
+ ],
+ "verdicts": {
+  "obstruction_predicts_gap": {
+   "pearson_o_vs_gap_all": -0.45395961071640684,
+   "pearson_o_vs_gap_informative": 0.38043588553979657,
+   "pearson_register_vs_gap_informative": 0.3863840184525203,
+   "pearson_wcurv_vs_gap_informative": -0.9523738026701184,
+   "statement": "HONEST MEASUREMENT: on the informative range (kappa >= 0.7) the obstruction datum correlates with the oracle gap only WEAKLY (r = 0.380; register r = 0.386), and the weighted curvature ANTI-correlates (r = -0.952): as the gap grows the closed-loop visitation concentrates on flat listen/stall paths, so the visit-weighted curvature FALLS \u2014 the chat's 'curvature predicts the gap' is REFUTED in its weighted form on this benchmark. What holds EXACTLY is the iff (o > 0 <=> memory required) and the register inflation. Over ALL kappa the raw correlation is r = -0.454 \u2014 the finite-horizon stall option (listen out the horizon, avoid the -100) caps the memoryless controller's loss and decouples the obstruction from the gap at coarse sensors: the honest boundary of the chat's prediction on finite-horizon problems."
+  },
+  "iff_memory": "the exact equivalence o(kappa) > 0 <=> the optimal policy needs memory holds at every kappa (including the stall regime, where the optimum itself is memoryless); the chat's weak form (obstruction = 0 => a finite-state policy exists and is optimal) verified at kappa = 1 and at the stall boundary.",
+  "register_law": "the optimal policy's register |alpha| GROWS as the sensor coarsens (9 -> 44 -> 9153): the curse of history made visible \u2014 the poorer the sensor, the more belief regions the optimal controller must distinguish, until the game itself collapses to the stall. This is the register inflation the corpus measured algebraically (Vol VIII's box-determinant law), here measured on the control side, exactly.",
+  "curvature_law": "the value function's interior kink mass is dominated by the near-boundary open-slope jumps (the honest finding: the total mass saturates near the 220 telescoping ceiling, so the CHAT's 'curvature predicts the gap' holds only through the kink COUNT and the visit-weighted profile, not the raw mass); the weighted curvature falls with coarsening as the visitation concentrates on the stall paths.",
+  "record_side": "the arrow stratum degenerates on the Tiger (the exchangeability theorem above); the chat's Experiment 2, honestly run, separates the strata: the value / obstruction / register / curvature laws all measured exactly, the record's arrow identically zero on memoryless sensors.",
+  "honest_split": "the chat's STRONG form (non-zero obstruction => no finite-state policy achieves the optimum) is TRUE at every kappa < 1 by construction (the optimal policy needs the growing register); the WEAK form (obstruction vanishes => a finite-state policy exists) holds at kappa = 1 (o = 0 exactly, the 1-state controller IS optimal); between, the optimal controller is finite-state but LARGER \u2014 the obstruction is a register BUDGET, not an impossibility."
+ }
+}

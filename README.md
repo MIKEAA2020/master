@@ -14,12 +14,12 @@ halting physics and automata, to metabolic curvature and sustainability governan
 | Path | Contents |
 |---|---|
 | `top-down of my work.txt` | The author's four-model external syntheses (astra / opus 5.5 / fable / opus 5) — the brief this programme answers. |
-| `download/` | The nine volumes (PDF) + all scan figures + editable sources + reference papers. |
+| `download/` | The ten volumes (PDF) + all scan figures + editable sources + reference papers. |
 | `scripts/` | Every generation and computation script (LaTeX builders, scan engines, results JSON, logs). |
-| `worklog.md` | The full session-by-session task log (Task IDs 0–13). |
+| `worklog.md` | The full session-by-session task log (Task IDs 0–15). |
 | `PREFERENCES.md` | Standing user preferences (English-only protocol, credential storage, commit protocol). |
 
-## The nine volumes
+## The ten volumes
 
 1. **The_Resolution_Programme_Grand_Unified_Picture.pdf** (Vol I, 18 pp) — the coherent,
    top-down, bird's-eye view: one primitive, two currencies, three faces, two walls, eight domains;
@@ -94,6 +94,48 @@ halting physics and automata, to metabolic curvature and sustainability governan
    the abelianized closures do not touch Open 7.13.
 
 
+
+10. **The_Resolution_Programme_X_The_Rank_Defect_Theorem.pdf** (Vol X, 15 pp) —
+   the rank-defect theorem generalized beyond the ring, and the chat's
+   Experiments 1–3 run at full audit strength. The classification: T1
+   soundness (reversible => pi-self-adjoint => real spectrum, 1000/1000;
+   a visible complex mode is a sound arrow witness); T2 the two failure
+   modes with exact witnesses — the doubly-stochastic hidden arrow
+   (spectrum {1, 2/5, −1/5} certified in exact rational arithmetic,
+   D = (1/15) ln 3, observed rank 1) and the Gaussian AR(2) fake arrow
+   (complex covariance modes, exactly reversible) — with the hidden-arrow
+   quadrant at POSITIVE MEASURE (68.6% of B3 under hit-and-run); T3 the
+   N-ring rank-doubling law (equilibrium rank floor((N−1)/2) + [N even],
+   driven rank N−1, 6/6 for N = 3..8: the reversible slice IS the
+   spectral-merging locus); T4 the one-way valve (sensors are
+   coordinate-wise channels: the observed arrow never exceeds the source
+   arrow, reversible sources stay reversible under every sensor — DPI in
+   exact block arithmetic); T4b the REFLECTION-LAUNDERING THEOREM,
+   discovered by the battery's exact zeros: on the N-ring every
+   reflection is a reversal symmetry, so every reflection-invariant
+   sensor launders the arrow exactly — THE RING'S ARROW IS ITS CHIRALITY,
+   and the 3-ring's identity sensor is its only handedness-keeping
+   sensor. THE SCOPE ANSWER: the iff holds exactly where the
+   non-reversibility is spectrally carried — the abelian (circulant)
+   families with arrow-carrying observables; the rank defect is the
+   ABELIAN SHADOW of the arrow. Experiments: (1) spectral compression on
+   the driven 6-ring through a 4-symbol sensor (true minimal rank 5
+   exact): the tanh RNN compresses to a 3-dim state at near-optimal CE,
+   the AAK interval holds 10/10 with ratios 1.00–1.31, the task knee at
+   order 3 (the predictive dimension, not the WFA rank), and the honest
+   baseline split (beats pruning everywhere; matched-size retraining
+   WINS at n ≤ 2); (2) the Tiger coarsening scan with exact
+   alpha-backup: the register explosion 9 → 9153 at κ = 0.6, the
+   obstruction iff exact, the chat's weighted-curvature claim REFUTED
+   (anti-correlated, the finite-horizon stall confound), and the
+   record-side exchangeability theorem (the Tiger's listen record is
+   conditionally iid given the side: its arrow is identically zero at
+   every sensor quality); (3) the token-sheaf coboundary energy on Z7
+   compositional splits: the task-level ordering PERFECT (energy
+   0.541/0.577/0.594/0.615 matching OOD error 0/0.93/0.99/1.00 across
+   the four splits), the seed-level correlation null — the sheaf
+   predicts which task geometry fails, not which seed fails.
+
 ## The computation record (exact scans, anchor-first discipline)
 
 | Scan | Script | Result |
@@ -107,6 +149,11 @@ halting physics and automata, to metabolic curvature and sustainability governan
 | **The abelianized rung + T_k battery** | `scripts/abelian_rung.py` | Parikh reduction machine-exact (2.2e-16, 6 symbol families); weights forced (10/10 vs 0/10); defect ratios exact on 9 cells (rho = sqrt(mu)); spectral law error 0.0; box determinants +-c^R exact; golden on the anisotropic graded class (0.61803399, 4e-16); defect law 12/12 at 2.8e-17; complex-lambda negative check; amalgam strict failure D(1) = 1.0369 > 1 over the exhaustive rank-1 family — **RETRACTED by Vol IX (surrogate artifact; true minimum exactly 1)**. |
 | **The sandwich-locus battery** | `scripts/sandwich_locus.py` | The amalgam closed form machine-exact (10/10 at 12 digits, spectrum (sigma_2,-sigma_2,-sigma_2), identities < 1e-12); the retraction reproduced (surrogate 1.0369 vs true 1.000000000000); the lens criterion 30/30 with boundary deficit 0.0; the two-atom identity exact-rational-certified (12 instances, both branches) + 4.5e-14/50 numerical; affine targets 8/8; complex amalgams machine-exact (bilinear operators); the 285-point locus map + 7 high-precision valley spots (0 on the slice, 2.5e-5–0.23 off); the cell's M=2 over the complete rank-2 family with exact norms: [1.000, 1.2771]; Vol VII's off-class gaps re-verified fresh. |
 | **The Q–Delta / arrow-strata battery** | `scripts/q_delta_arrows.py` | The three spectral conventions defined and closed-form-verified (the TRUE Hankel object of a memoryless channel = the superoperator-HS singular values, CONV-I); the chat's AD and erasure Choi claims REFUTED (true spectra (1-g/2, g/2, 0, 0) and (1-p, p/2, p/2, 0)); THE DEPHASING REFUTATION: the coherent info is maximized at the MAX-ENT input, Q = 1 - H2(p/2) (machine-exact), NOT 'Q = 0 for all p > 0' (the chat maximized over diagonal inputs only); Q = 0 only at the EB endpoint p = 1; the depolarizing threshold measured 0.2524 (the chat's 0.1893 = another convention slip); Q <= Delta REFUTED in CONV-I (15/22) and for the qutrit (dimension-broken), HOLDS for qubits via the CHORD LEMMA (proved, 300/300); the two-state chain is ALWAYS reversible (detailed balance to 8.3e-17 — the chat's Sdot formula is the 3-state ring's NESS, verified 1.1e-16); the ring's equilibrium: sigma = 0 with Hankel gap > 0 (Experiment 4 REFUTED); THE REPAIR: the arrow = the time-reversal divergence (exact) and the RANK WITNESS sv2 > 0 <=> driven — THE ARROW IS A HANKEL RANK DEFECT; the stratification table with the erasure identity chi = (1+Q)/2 exact and the FULL-dephasing endpoint as the honest classical-without-quantum witness. |
+
+| **The rank-defect classification battery** | `scripts/rank_defect.py` | T1: 1000/1000 reversible random walks all-real spectrum (max |Im| 6.8e-17); the ds-witness's rational spectrum certificate exact ({1, 2/5, −1/5}, D = (1/15)ln3, observed rank 1 with c(m) = (2/9)(2/5)^m verified in fractions); the B3 hit-and-run: 68.6% real-spectrum with D up to 1.39 (the hidden-arrow quadrant has positive measure); the N-ring rank-doubling law 6/6 (N = 3..8, Im λ_j = (a−b)sin(2πj/N) machine-exact); the parity laundering: observed block KL = 0 exactly (1.7e-18) with memory surviving (rank 1); the factor theorem (lumped reversible = reversible, 5.7e-18) and DPI exact; THE REFLECTION-LAUNDERING THEOREM: on the 3-ring every non-identity sensor launders to exactly 0; the 4-ring chirality-keeping sensor {0}\|{1}\|{2,3} keeps KL = 0.453 (n=7) while both reflection-orbit controls = 0; the Gaussian AR(2) swap invariance 0.0; the Laplace MA(1) 2-block KL = 0.0182 ± 0.0004 by piecewise-exact integration. |
+| **Experiment 1 — spectral compression** | `scripts/exp1_spectral.py` | The true process's joint Hankel rank 5 machine-exact (stable window 3→4), entropy rate 0.9559 (exact filter, 4×10^5 steps); trained CE: linear 0.9793, tanh 0.9590 (3 seeds each); the tanh state spectrum collapses to 3 dims at 1% tolerance; the linear Gramian effrank scan {1%: 7.3, 2%: 6, 5%: 5, 10%: 4} crosses the true rank at 5%; the learned transition spectra carry the chiral complex pair 3/3; the balanced-truncation certificate 8e-16 and the error-system Hankel norms cross-validated against a direct 30×30 block SVD (4+ digits); the AAK interval 10/10 with error/floor ratios 1.00–1.31; the task knee at order 3; the baselines: BT beats random deletion at every order, retraining wins at n ≤ 2. |
+| **Experiment 2 — sensor coarsening (Tiger)** | `scripts/exp2_coarsening.py` | Exact alpha-backup (upper-envelope monotone chain, O(n) breakpoints) at κ = 1.0→0.5, horizon 8: V* 9.000 → −8.000; the register |α|: 9, 59, 34, 44, 45, **9153**, 280, 4 (the curse of history made visible); the best-1-state-FSC obstruction o exact by enumeration (o = 0 exactly at κ = 1 and at the stall boundary; the iff o > 0 ⟺ memory required holds at every κ); the informative-range correlations: o-vs-gap r = 0.38, register r = 0.39, weighted curvature r = −0.95 (the chat's weighted-curvature claim REFUTED; the stall confound identified); the record-side exchangeability theorem verified on all 16 4-blocks at every κ (max deviation 3.5e-18): the Tiger's record arrow is identically zero. |
+| **Experiment 3 — sheaf diagnostics** | `scripts/exp3_sheaf.py` | Z7 addition, MLP 2-64-64-7, 12 seeds × 4 splits: train 1.000 everywhere; OOD 0.073 / 0.006 / 1.000 / 0.000 (compositional_16 / intermediate_36 / full_49 / random_60); the token-sheaf coboundary energy orders the splits EXACTLY as their OOD errors (0.541 / 0.577 / 0.594 / 0.615 vs 0 / 0.93 / 0.99 / 1.00); the seed-level correlation null-to-negative (−0.20, −0.18) — the honest task-level-yes / seed-level-no split; the pooled r = 0.59 flagged as split-dominated. |
 
 All scans run **anchor-reproduction-first**: the manuscript's own certified numbers are
 reproduced to machine precision before any new claim is read off.
