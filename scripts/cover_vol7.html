@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    @page { size: 794px 1123px; margin: 0; }
+    :root {
+      --c-bg: #121210;
+      --c-accent: #d5c080;
+      --c-text: #e2e1df;
+      --c-muted: #8b8881;
+      --c-footer: #6d6a63;
+    }
+    html, body { margin: 0; padding: 0; width: 794px; height: 1123px; background: var(--c-bg); color: var(--c-text); font-family: 'Inter', 'Noto Sans SC', sans-serif; }
+    @media screen {
+      html { height: auto; display: flex; justify-content: center; min-height: 100vh; background: var(--c-bg); }
+      body { transform-origin: top center; scale: min(1, calc(100vw / 794), calc(100vh / 1123)); margin: 0 auto; box-shadow: 0 0 60px rgba(0,0,0,0.3); }
+    }
+    .cover { width: 794px; height: 1123px; position: relative; box-sizing: border-box; }
+    .vline { position: absolute; left: 57px; top: 76px; bottom: 76px; width: 2.5px; background: var(--c-accent); }
+    .content { position: absolute; left: 101px; right: 76px; top: 0; bottom: 0; }
+    .label { position: absolute; top: 132px; font-size: 9pt; color: var(--c-accent); letter-spacing: 3px; text-transform: uppercase; font-family: 'Inter', 'Noto Sans SC', sans-serif; }
+    .title { position: absolute; top: 214px; font-size: 30pt; font-weight: 700; line-height: 1.28; font-family: 'Playfair Display', 'Noto Serif SC', serif; color: var(--c-text); max-width: 590px; }
+    .subtitle { position: absolute; top: 512px; font-size: 12pt; line-height: 1.5; color: var(--c-muted); max-width: 510px; }
+    .authors { position: absolute; top: 730px; font-size: 12pt; color: var(--c-text); }
+    .institution { position: absolute; top: 788px; font-size: 10pt; color: var(--c-muted); line-height: 1.4; }
+    .footer { position: absolute; bottom: 76px; left: 0; right: 0; display: flex; justify-content: space-between; font-size: 9pt; color: var(--c-footer); }
+  </style>
+</head>
+<body>
+  <div class="cover">
+    <div class="vline"></div>
+    <div class="content">
+      <div class="label">Research Programme Synthesis &middot; Volume VII</div>
+      <div class="title">The Multiletter Analytic Theorem</div>
+      <div class="subtitle">The full proof demanded, and delivered with its exact class stated. The six clauses of BT1a are proved at analytic strength: the partial realization theorem with its closed-form commutativity obstruction, the uniform 2-eps law in every solid norm with the sharp constant, the graded Fliess ladder with its attainment bound, the norm-universal wall at L = 1, the enriched naturality of the dictionary, and the global sheaf morphism that glues them. The multiletter AAK equality is proved on the exact class of level-constant symbols &mdash; an isometric transport of the entire classical theory, verified to machine precision with the golden-ratio witness &mdash; and the off-class boundary is carried honestly as the open constructive nc-AAK problem it is.</div>
+      <div class="authors">Amin Abaee</div>
+      <div class="institution">Independent Researcher, Tehran &middot; ORCID 0000-0002-0019-1842</div>
+      <div class="footer">
+        <span>6 clauses at analytic strength &middot; AAK equality on the exact class &middot; 1 open boundary named</span>
+        <span>September 2026</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

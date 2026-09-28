@@ -14,12 +14,12 @@ halting physics and automata, to metabolic curvature and sustainability governan
 | Path | Contents |
 |---|---|
 | `top-down of my work.txt` | The author's four-model external syntheses (astra / opus 5.5 / fable / opus 5) — the brief this programme answers. |
-| `download/` | The four volumes (PDF) + all scan figures + editable sources + reference papers. |
+| `download/` | The seven volumes (PDF) + all scan figures + editable sources + reference papers. |
 | `scripts/` | Every generation and computation script (LaTeX builders, scan engines, results JSON, logs). |
-| `worklog.md` | The full session-by-session task log (Task IDs 0–8). |
+| `worklog.md` | The full session-by-session task log (Task IDs 0–11). |
 | `PREFERENCES.md` | Standing user preferences (English-only protocol, credential storage, commit protocol). |
 
-## The four volumes
+## The seven volumes
 
 1. **The_Resolution_Programme_Grand_Unified_Picture.pdf** (Vol I, 18 pp) — the coherent,
    top-down, bird's-eye view: one primitive, two currencies, three faces, two walls, eight domains;
@@ -33,6 +33,22 @@ halting physics and automata, to metabolic curvature and sustainability governan
 4. **The_Resolution_Programme_IV_A_Theory_of_Bounded_Observation.pdf** (Vol IV, 20 pp) —
    the theory-level deliverable: record thermodynamics of bounded observers (postulates P1–P4,
    phase diagram, cascade dynamics) + the three ordered confrontations executed.
+5. **The_Resolution_Programme_V_The_Remaining_Open_Links.pdf** (Vol V, 17 pp) —
+   BT3's enrichment built (the cost-enriched graded category, the budget dichotomy, the guarded
+   trace), BT2's equality closed to the corpus ceiling (exact quadratic gap form), Risk 3
+   confronted on RockSample (the DI program vs POMCP: +45% at 10^4x less compute).
+6. **The_Resolution_Programme_VI_The_Dictionary.pdf** (Vol VI, 15 pp) —
+   BT1a attacked inside the enrichment: the dictionary as a morphism of sheaves on the budget
+   lattice, six clauses proved, recovery audited 600/600, the quantum rank law recovered
+   exactly, RockSample's compression break typed at correlation 0.97.
+7. **The_Resolution_Programme_VII_The_Multiletter_Analytic_Theorem.pdf** (Vol VII, 18 pp) —
+   the full analytic proof demanded of BT1a's remainder: the six demands discharged (the
+   multiletter partial realization theorem with the closed-form commutativity obstruction, the
+   uniform 2-eps law in every solid norm, the graded Fliess ladder, the norm-universal wall,
+   the enriched naturality, the global sheaf morphism) and the multiletter AAK equality proved
+   on the exact stated class of level-constant symbols — the transport sandwich, machine-exact
+   (4.4e-16) with the golden-ratio witness (3.3e-16) — with the off-class boundary carried
+   honestly as Open 7.13 / the constructive nc-AAK problem.
 
 ## The computation record (exact scans, anchor-first discipline)
 
@@ -43,6 +59,7 @@ halting physics and automata, to metabolic curvature and sustainability governan
 | **Record-phase boundary, n=4** | `scripts/pscan_n4.py`, `repair_n4.py` | **CONFIRMED at the exact level**: crossings (4,6) 0.358313 [ms 0.35820, dev 1.1e-4], (6,8) 0.379079 [ms 0.37899, dev 9e-5], drift 0.0208 exact; R-ladder 0.1314/0.1827/0.2140 [ms 0.1315/0.1829/0.2142]; L·ln(λ1/λε) = 5.15 [5.2]; multiplet order exact (1+9+4+9+1, ε below all spin); endpoints exact: 24-fold at p=0, (4/35)^L rank-one at p=1. L=10 leg not run (resource limit, noted in JSON). Solver post-mortems (sector escape + v1-deflated matvec fix) in `scripts/repair_n4.log`. |
 | E. coli cycle-size scan | `scripts/ecoli_cycles.py`, `ecoli_cycles2.py` | LP layer k-relaxation 0.249/cycle R²=1.000; one-pass saturation theorem; 0.361 = certified slowest cascade case; drift law slope 1.001. |
 | Optic-Nehari attack | `scripts/optic_nehari.py` | Refutation of the naive composite (excess = δ², slope 1.991); dichotomy theorem + 2‖Δ‖ envelope; 12/12 small-gain accumulation. |
+| **The multiletter analytic theorem battery** | `scripts/bt1a_analytic.py` | Transport identity machine-exact (0.0–5.6e-17); singular values preserved (4.4e-16); the golden-ratio AAK witness exact to 3.3e-16; PR witness m*=2 with verified construction; 609/609 two-eps law in 5 norms; 10/10 graded-Fliess ladders; the wall norm-universal (pole slope −1.000); off-class gaps measured and reported open. |
 
 All scans run **anchor-reproduction-first**: the manuscript's own certified numbers are
 reproduced to machine precision before any new claim is read off.

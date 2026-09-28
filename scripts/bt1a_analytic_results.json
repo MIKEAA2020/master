@@ -1,0 +1,708 @@
+{
+ "meta": {
+  "script": "bt1a_analytic.py",
+  "purpose": "the multiletter analytic theorem \u2014 full proof package",
+  "date": "2026-09-28"
+ },
+ "verdicts": {
+  "L0_cell_decomposition": {
+   "n_words": 63,
+   "partial_isom": true,
+   "decomp_exact": true,
+   "l1_bound": true,
+   "max_err": 0.0,
+   "Ew_norm_max_dev": 0.0,
+   "decomp_max_err": 0.0,
+   "H_op": 5.051065271523987,
+   "h_l1": 33.10042,
+   "trunc": [
+    {
+     "k": 1,
+     "rank": 2,
+     "N_k": 3,
+     "tau_k": 31.547247,
+     "measured_err": 4.940002,
+     "bound_holds": true
+    },
+    {
+     "k": 2,
+     "rank": 4,
+     "N_k": 7,
+     "tau_k": 28.631717,
+     "measured_err": 4.561879,
+     "bound_holds": true
+    },
+    {
+     "k": 3,
+     "rank": 6,
+     "N_k": 15,
+     "tau_k": 23.611515,
+     "measured_err": 3.974565,
+     "bound_holds": true
+    }
+   ],
+   "Ew_checked": 120
+  },
+  "A2_transport_sandwich": {
+   "psi_dirac": {
+    "support": 0,
+    "rank_1L": 1,
+    "rank_ML": 1,
+    "V_isometry_err_levels0K": 2.220446049250313e-16,
+    "transport_identity_err": 0.0,
+    "singular_value_err": 0.0,
+    "n_sigma_1L": 1,
+    "n_sigma_ML": 1
+   },
+   "psi_geom": {
+    "support": 5,
+    "rank_1L": 6,
+    "rank_ML": 6,
+    "V_isometry_err_levels0K": 2.220446049250313e-16,
+    "transport_identity_err": 5.551115123125783e-17,
+    "singular_value_err": 4.440892098500626e-16,
+    "n_sigma_1L": 6,
+    "n_sigma_ML": 6
+   },
+   "psi_alt": {
+    "support": 6,
+    "rank_1L": 7,
+    "rank_ML": 7,
+    "V_isometry_err_levels0K": 2.220446049250313e-16,
+    "transport_identity_err": 2.7755575615628914e-17,
+    "singular_value_err": 4.440892098500626e-16,
+    "n_sigma_1L": 7,
+    "n_sigma_ML": 7
+   },
+   "golden_ratio_witness": {
+    "case": "psi = (1, 1); 2x2 window [[1,1],[1,0]]; M = 1",
+    "sigma_2": 0.6180339887498948,
+    "prony_optimum": 0.6180339887498945,
+    "golden_closed_form": 0.6180339887498949,
+    "match_err": 3.3306690738754696e-16,
+    "section_theorem_validated": true
+   },
+   "sandwich": [
+    {
+     "M": 3,
+     "sigma_{M+1}": 0.194931417,
+     "one_letter_window_optimum(Prony)": 0.196397817,
+     "prony_gap_vs_sigma": 0.001466399,
+     "err_ML(measured)": 0.196397817,
+     "isometric_identity_err": 0.0,
+     "transported_is_Hankel": true,
+     "transported_rank_le_M": true,
+     "sigma_{M+1}_ML": 0.194931417,
+     "EYM_lower_holds": true,
+     "sandwich_gap_ML": 0.001466399
+    },
+    {
+     "M": 4,
+     "sigma_{M+1}": 0.164583063,
+     "one_letter_window_optimum(Prony)": 0.169606445,
+     "prony_gap_vs_sigma": 0.005023382,
+     "err_ML(measured)": 0.169606445,
+     "isometric_identity_err": 0.0,
+     "transported_is_Hankel": true,
+     "transported_rank_le_M": true,
+     "sigma_{M+1}_ML": 0.164583063,
+     "EYM_lower_holds": true,
+     "sandwich_gap_ML": 0.005023382
+    },
+    {
+     "M": 5,
+     "sigma_{M+1}": 0.150015788,
+     "one_letter_window_optimum(Prony)": 0.16013783,
+     "prony_gap_vs_sigma": 0.010122042,
+     "err_ML(measured)": 0.16013783,
+     "isometric_identity_err": 0.0,
+     "transported_is_Hankel": true,
+     "transported_rank_le_M": true,
+     "sigma_{M+1}_ML": 0.150015788,
+     "EYM_lower_holds": true,
+     "sandwich_gap_ML": 0.010122042
+    }
+   ]
+  },
+  "PR_partial_realization": {
+   "commutativity_witness": {
+    "data": {
+     "ab": 1.0,
+     "ba": 0.0
+    },
+    "hand_machine_verified": true,
+    "commutator_norm": 1.0,
+    "dim1_closed_form_obstruction": true,
+    "cut_web_analysis": {
+     "complete": true,
+     "P": 5,
+     "S": 5,
+     "rank": 2,
+     "shift_system_feasible": {
+      "a": true,
+      "b": true
+     },
+     "conditions_hold": true,
+     "constructed": {
+      "dim": 2,
+      "verified_on_D": true
+     }
+    },
+    "verdict": "m* = 2: rank(M) = 2 (the EYM-style floor), dim 1 killed by the commutativity obstruction (commuting scalar shifts force h(ab) = h(ba)), the constructed rank-2 realization verified on the data"
+   },
+   "random_data": [
+    {
+     "machine_dim": 4,
+     "data_size": 4,
+     "rank_floor": 3,
+     "conditions_hold_at_rank": true,
+     "minimal_is_rank_floor": true,
+     "constructed_dim": 3,
+     "free_dim": 9,
+     "free_verified": true
+    },
+    {
+     "machine_dim": 2,
+     "data_size": 3,
+     "rank_floor": 2,
+     "conditions_hold_at_rank": true,
+     "minimal_is_rank_floor": true,
+     "constructed_dim": 2,
+     "free_dim": 8,
+     "free_verified": true
+    },
+    {
+     "machine_dim": 3,
+     "data_size": 4,
+     "rank_floor": 2,
+     "conditions_hold_at_rank": true,
+     "minimal_is_rank_floor": true,
+     "constructed_dim": 2,
+     "free_dim": 7,
+     "free_verified": true
+    },
+    {
+     "machine_dim": 4,
+     "data_size": 3,
+     "rank_floor": 2,
+     "conditions_hold_at_rank": true,
+     "minimal_is_rank_floor": true,
+     "constructed_dim": 2,
+     "free_dim": 4,
+     "free_verified": true
+    },
+    {
+     "machine_dim": 2,
+     "data_size": 4,
+     "rank_floor": 2,
+     "conditions_hold_at_rank": true,
+     "minimal_is_rank_floor": true,
+     "constructed_dim": 2,
+     "free_dim": 8,
+     "free_verified": true
+    },
+    {
+     "machine_dim": 2,
+     "data_size": 4,
+     "rank_floor": 1,
+     "conditions_hold_at_rank": true,
+     "minimal_is_rank_floor": true,
+     "constructed_dim": 1,
+     "free_dim": 7,
+     "free_verified": true
+    },
+    {
+     "machine_dim": 2,
+     "data_size": 3,
+     "rank_floor": 1,
+     "conditions_hold_at_rank": true,
+     "minimal_is_rank_floor": true,
+     "constructed_dim": 1,
+     "free_dim": 5,
+     "free_verified": true
+    },
+    {
+     "machine_dim": 4,
+     "data_size": 3,
+     "rank_floor": 1,
+     "conditions_hold_at_rank": true,
+     "minimal_is_rank_floor": true,
+     "constructed_dim": 1,
+     "free_dim": 6,
+     "free_verified": true
+    },
+    {
+     "machine_dim": 2,
+     "data_size": 5,
+     "rank_floor": 2,
+     "conditions_hold_at_rank": true,
+     "minimal_is_rank_floor": true,
+     "constructed_dim": 2,
+     "free_dim": 8,
+     "free_verified": true
+    },
+    {
+     "machine_dim": 2,
+     "data_size": 5,
+     "rank_floor": 2,
+     "conditions_hold_at_rank": true,
+     "minimal_is_rank_floor": true,
+     "constructed_dim": 2,
+     "free_dim": 11,
+     "free_verified": true
+    }
+   ],
+   "one_letter_reduction": {
+    "alternating": {
+     "classical_m*": 2,
+     "PR_route_rank": 2,
+     "PR_route_conditions": true,
+     "PR_route_constructed_verified": true,
+     "rank_equals_classical": true,
+     "free_dim": 5
+    },
+    "fib": {
+     "classical_m*": 2,
+     "PR_route_rank": 2,
+     "PR_route_conditions": true,
+     "PR_route_constructed_verified": true,
+     "rank_equals_classical": true,
+     "free_dim": 6
+    },
+    "shifted": {
+     "classical_m*": 3,
+     "PR_route_rank": 3,
+     "PR_route_conditions": true,
+     "PR_route_constructed_verified": true,
+     "rank_equals_classical": true,
+     "free_dim": 4
+    },
+    "geom": {
+     "classical_m*": 1,
+     "PR_route_rank": 1,
+     "PR_route_conditions": true,
+     "PR_route_constructed_verified": true,
+     "rank_equals_classical": true,
+     "free_dim": 4
+    },
+    "generic": {
+     "classical_m*": 3,
+     "PR_route_rank": 3,
+     "PR_route_conditions": true,
+     "PR_route_constructed_verified": true,
+     "rank_equals_classical": true,
+     "free_dim": 5
+    }
+   }
+  },
+  "L_two_eps_law": {
+   "norm_stats": {
+    "linf": {
+     "agreement": "609/609",
+     "sharp_2eps_cases": 2
+    },
+    "l1": {
+     "agreement": "609/609",
+     "sharp_2eps_cases": 0
+    },
+    "l2": {
+     "agreement": "609/609",
+     "sharp_2eps_cases": 0
+    },
+    "l4": {
+     "agreement": "609/609",
+     "sharp_2eps_cases": 0
+    },
+    "wl1_decay": {
+     "agreement": "609/609",
+     "sharp_2eps_cases": 0
+    }
+   },
+   "sharpness": [
+    {
+     "eps": 0.4857,
+     "diam_linf": 0.967822,
+     "midpoint_admissible": true
+    },
+    {
+     "eps": 0.2962,
+     "diam_linf": 0.597237,
+     "midpoint_admissible": true
+    }
+   ],
+   "window_constant": {
+    "chi_linf": 1.0,
+    "chi_lp_T": "|T|^{1/p} (grows with window)",
+    "chi_weighted_l1": "bounded (sum of weights) \u2014 the analytic class where the 2-eps law is window-uniform"
+   }
+  },
+  "GF_graded_fliess": {
+   "cases": [
+    {
+     "machine_dim": 2,
+     "global_rank": 2,
+     "ladder": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "monotone": true,
+     "attainment_bound_b0": 1,
+     "attained": true,
+     "nerode_classes_at_sufficient_window": 7,
+     "nerode_span_dimension": 2,
+     "span_equals_register": true
+    },
+    {
+     "machine_dim": 2,
+     "global_rank": 2,
+     "ladder": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "monotone": true,
+     "attainment_bound_b0": 1,
+     "attained": true,
+     "nerode_classes_at_sufficient_window": 7,
+     "nerode_span_dimension": 2,
+     "span_equals_register": true
+    },
+    {
+     "machine_dim": 2,
+     "global_rank": 2,
+     "ladder": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "monotone": true,
+     "attainment_bound_b0": 1,
+     "attained": true,
+     "nerode_classes_at_sufficient_window": 7,
+     "nerode_span_dimension": 2,
+     "span_equals_register": true
+    },
+    {
+     "machine_dim": 3,
+     "global_rank": 3,
+     "ladder": [
+      1,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "monotone": true,
+     "attainment_bound_b0": 2,
+     "attained": true,
+     "nerode_classes_at_sufficient_window": 15,
+     "nerode_span_dimension": 3,
+     "span_equals_register": true
+    },
+    {
+     "machine_dim": 3,
+     "global_rank": 3,
+     "ladder": [
+      1,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "monotone": true,
+     "attainment_bound_b0": 2,
+     "attained": true,
+     "nerode_classes_at_sufficient_window": 15,
+     "nerode_span_dimension": 3,
+     "span_equals_register": true
+    },
+    {
+     "machine_dim": 2,
+     "global_rank": 2,
+     "ladder": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "monotone": true,
+     "attainment_bound_b0": 1,
+     "attained": true,
+     "nerode_classes_at_sufficient_window": 7,
+     "nerode_span_dimension": 2,
+     "span_equals_register": true
+    },
+    {
+     "machine_dim": 2,
+     "global_rank": 2,
+     "ladder": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "monotone": true,
+     "attainment_bound_b0": 1,
+     "attained": true,
+     "nerode_classes_at_sufficient_window": 7,
+     "nerode_span_dimension": 2,
+     "span_equals_register": true
+    },
+    {
+     "machine_dim": 3,
+     "global_rank": 3,
+     "ladder": [
+      1,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "monotone": true,
+     "attainment_bound_b0": 2,
+     "attained": true,
+     "nerode_classes_at_sufficient_window": 15,
+     "nerode_span_dimension": 3,
+     "span_equals_register": true
+    },
+    {
+     "machine_dim": 3,
+     "global_rank": 3,
+     "ladder": [
+      1,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "monotone": true,
+     "attainment_bound_b0": 2,
+     "attained": true,
+     "nerode_classes_at_sufficient_window": 15,
+     "nerode_span_dimension": 3,
+     "span_equals_register": true
+    },
+    {
+     "machine_dim": 2,
+     "global_rank": 2,
+     "ladder": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "monotone": true,
+     "attainment_bound_b0": 1,
+     "attained": true,
+     "nerode_classes_at_sufficient_window": 7,
+     "nerode_span_dimension": 2,
+     "span_equals_register": true
+    }
+   ],
+   "monotone_all": true,
+   "attainment_all": true
+  },
+  "W_wall": {
+   "scan": [
+    {
+     "L": 0.2,
+     "N": 26,
+     "truncated_sum": 0.875,
+     "closed_form": 0.875,
+     "err": 1.1102230246251565e-16,
+     "converges": true
+    },
+    {
+     "L": 0.5,
+     "N": 52,
+     "truncated_sum": 1.4,
+     "closed_form": 1.4,
+     "err": 0.0,
+     "converges": true
+    },
+    {
+     "L": 0.8,
+     "N": 150,
+     "truncated_sum": 3.5,
+     "closed_form": 3.5,
+     "err": 0.0,
+     "converges": true
+    },
+    {
+     "L": 0.9,
+     "N": 311,
+     "truncated_sum": 7.0,
+     "closed_form": 7.0,
+     "err": 0.0,
+     "converges": true
+    },
+    {
+     "L": 0.95,
+     "N": 634,
+     "truncated_sum": 14.0,
+     "closed_form": 14.0,
+     "err": 1.7763568394002505e-15,
+     "converges": true
+    },
+    {
+     "L": 0.99,
+     "N": 3213,
+     "truncated_sum": 70.0,
+     "closed_form": 70.0,
+     "err": 1.4210854715202004e-14,
+     "converges": true
+    },
+    {
+     "L": 1.01,
+     "partial_sum_N200": 442.121,
+     "term_N": 5.071,
+     "converges": false,
+     "diverges_geometrically": true
+    },
+    {
+     "L": 1.05,
+     "partial_sum_N200": 242082.131,
+     "term_N": 11528.387,
+     "converges": false,
+     "diverges_geometrically": true
+    },
+    {
+     "L": 1.2,
+     "partial_sum_N200": 2.4005859163751504e+16,
+     "term_N": 4000976527291916.5,
+     "converges": false,
+     "diverges_geometrically": true
+    }
+   ],
+   "wall_universal": true,
+   "rates": {
+    "lp_1": [
+     1.4,
+     7.0,
+     69.99999987
+    ],
+    "lp_2": [
+     1.4,
+     7.0,
+     69.99999987
+    ],
+    "lp_4": [
+     1.4,
+     7.0,
+     69.99999987
+    ]
+   },
+   "pole_loglog_slope": -1.0
+  },
+  "S_structure_theory": {
+   "T0_multiplicative_pass": "30/30",
+   "T0_random_fail": "30/30",
+   "delta_eps_case": true,
+   "geometric_reweighting_Tk_hankel": true,
+   "classification_verified": true
+  },
+  "N_G_naturality_gluing": {
+   "naturality": {
+    "sigma_scaling_exact": "30/30",
+    "rank_plus_one": "30/30",
+    "C2_diameter_law": "60/60",
+    "enriched_naturality_holds": true
+   },
+   "gluing": {
+    "local_patches_merged": "19/20",
+    "gluing_is_PR": true,
+    "note": "the spectral sheaf's gluing axiom is the partial realization theorem: consistent completions merge into a single realization; Phi commutes with refinement and is Lipschitz \u2014 a morphism of sheaves in the analytic topology"
+   }
+  },
+  "I_off_class_boundary": {
+   "instances": [
+    {
+     "M": 3,
+     "sigma_{M+1}": 0.907462,
+     "alternating_upper_bound": 1.044539,
+     "measured_gap": 0.137077,
+     "level_constant": false
+    },
+    {
+     "M": 2,
+     "sigma_{M+1}": 1.943656,
+     "alternating_upper_bound": 2.162153,
+     "measured_gap": 0.218497,
+     "level_constant": false
+    },
+    {
+     "M": 3,
+     "sigma_{M+1}": 1.083534,
+     "alternating_upper_bound": 1.231774,
+     "measured_gap": 0.14824,
+     "level_constant": false
+    },
+    {
+     "M": 3,
+     "sigma_{M+1}": 1.40412,
+     "alternating_upper_bound": 1.516299,
+     "measured_gap": 0.112179,
+     "level_constant": false
+    },
+    {
+     "M": 3,
+     "sigma_{M+1}": 1.434939,
+     "alternating_upper_bound": 1.512744,
+     "measured_gap": 0.077805,
+     "level_constant": false
+    },
+    {
+     "M": 2,
+     "sigma_{M+1}": 1.711899,
+     "alternating_upper_bound": 1.893922,
+     "measured_gap": 0.182024,
+     "level_constant": false
+    },
+    {
+     "M": 2,
+     "sigma_{M+1}": 1.734689,
+     "alternating_upper_bound": 1.907878,
+     "measured_gap": 0.173188,
+     "level_constant": false
+    },
+    {
+     "M": 3,
+     "sigma_{M+1}": 1.05024,
+     "alternating_upper_bound": 1.111771,
+     "measured_gap": 0.061531,
+     "level_constant": false
+    }
+   ],
+   "eym_lower_holds_all": true,
+   "verdict": "OFF the exact class: only sigma <= D_Hankstr is provable (EYM); the measured upper bounds sit above sigma with positive gaps \u2014 no equality available; the status is the open nc-AAK problem (Open 7.13), honestly carried, not claimed"
+  }
+ }
+}

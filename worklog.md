@@ -216,3 +216,130 @@ Stage Summary:
 - The verdict, honestly bounded: BT1a CLOSED IN THE COMPUTABLE PART — stated as a sheaf morphism, six clauses proved, the recovery audited 600/600, the corpus confronted twice (quantum rank law exact; RockSample break typed + tracked at 0.97). The analytic generality (AAK's side, the multiletter floor = Open 7.13, the uniqueness of Phi at infinite dimension) remains open and is now the ONLY remainder of this link. BT3's wall is load-bearing twice (also the K-rung); BT2's floor side is identified with the Hankel singular tail (one matrix, two indices).
 - The bridge paper's mathematical content is now complete across Vols II-VI: the category (V), the dictionary + law (VI), the benchmark table (V), the adjudication (II).
 - Remaining after this session: the analytic case of BT1a's magnitude/uniqueness clauses (one named boundary); the bounded benchmark extensions (Tiger/Hallway, production solver, learning-efficiency clause); the n=4 L=10 leg; Risk 4 (submission decision — the author's alone).
+
+---
+Task ID: 11
+Agent: main (Super Z)
+Task: User order — "provide Full proof: produce the multiletter analytic theorem, likely by
+restricting to a class where AAK generalizes and proving the six clauses there. If full
+generality is impossible, state the exact class." (the seven demands itemized: multiletter
+partial realization; the poset-characterization with the union-find replacement warning;
+the uniform 2-eps inequality in the general norm; the multiletter AAK theorem; the graded
+Fliess theorem; the naturality; the global sheaf-morphism proof)
+
+Work Log:
+- Recovered context: worklog Tasks 0-10 (Vols I-VI delivered + pushed); the corpus anchors
+  read at line level: automata v9's thm:aak-equality / thm:aak-multiletter (the conditional
+  transport) / thm:spectral-grounding / open:hankel-multiletter (Open 7.13, with its
+  falsifiable success criterion: an intrinsic necessary+sufficient condition for
+  D_Hankstr(M) = sigma_{M+1} for all M simultaneously); the AAK proof-check docx (Lacroce
+  LearnAut 2022: the nc-Hankel reformulation exists, the constructive nc-AAK step is open);
+  Vol VI's BT1a-star six clauses.
+- THE THEOREM PACKAGE designed and proved (9 results, all in bt1a_analytic.py's docstring
+  and Vol VII):
+  L0 free cell decomposition: H_h = sum_w h(w) E_w with E_w = sum over the |w|+1 cuts of
+  e_u e_v*; each E_w is a PARTIAL ISOMETRY (norm exactly 1; cut prefixes/suffixes distinct)
+  — the multiletter replacement of the one-letter anti-diagonal cells. Consequences:
+  ||H|| <= ||h||_1; the level truncation = finite-rank Hankel with error <= the tau-tail;
+  A1 the general-class sandwich: sigma_{M+1} <= D_Hankstr(M) <= tau_{k(M)}(h), D -> 0.
+  A2 THE MULTILETTER AAK THEOREM ON THE EXACT CLASS (the order's fallback invoked and
+  executed): the class = level-constant symbols h(w) = phi(|w|); the length-grading
+  isometry V (level indicators); (a) h level-constant iff H = V H_1 V* with psi = phi*n^{k/2}
+  (exact invertible correspondence); (b) V A V* is multiletter Hankel with rank and singular
+  values preserved for EVERY one-letter Hankel A; (c) the SANDWICH: EYM's lower jaw + the
+  transported one-letter AAK upper jaw close exactly — D_Hankstr(M) = D_unres(M) =
+  sigma_{M+1} for ALL M simultaneously, attained, constructive (the AAK approximant
+  transported); (d) W-generic (any Hankel-preserving isometry). Open 7.13's success
+  criterion answered on the class (level-constancy is intrinsic and checkable).
+  S structure theory: W Hankel-preserving iff T_k = sum_{i+j=k} w_i w_j* Hankel for all k;
+  the T_0 classification COMPLETE (T_0 Hankel iff w_0 multiplicative; the multiplicative
+  l2 functions = per-letter products, square-summable, plus delta_eps); geometric
+  reweightings V D_r Hankel-preserving; the full W-classification honestly stated open.
+  SECTION THEOREM (proved, the numerics' license): for finite-support one-letter symbols
+  the window-(>= support) structured distance EQUALS sigma_{M+1} exactly (compression of
+  the infinite optimal approximant is window-feasible at <= sigma; EYM on the window gives
+  >= sigma since the window contains the whole nonzero block).
+  PR the multiletter partial realization theorem: the characterization — data extends to
+  an m-dimensional representation iff the closed cut-web matrix factors M = BC through
+  R^m with ONE shared A_a per letter solving BOTH chains B[ua] = B[u]A_a (u, ua in P) and
+  C[av] = A_aC[v] (v, av in S); necessity = the machine's own factors; sufficiency = the
+  explicit construction h(w) = B[eps] A_w C[eps]; decidable (bilinear polynomial system);
+  at the minimal register factorization-independent. THE COMMUTATIVITY OBSTRUCTION in
+  closed form: dim-1 shifts commute ⟹ h(ab) = h(ba) forced on same-multiset words —
+  the witness D = {ab: 1, ba: 0} has m* = 2 with the commutator load-bearing; the
+  single-letter union-find+Pade survives only as the cell closure; the completion problem
+  is genuinely bilinear (the order's warning discharged as a theorem).
+  L the uniform 2-eps law in general norms: for every SOLID norm the L-rung fires iff the
+  fibre diameter exceeds 2-eps chi(T) (chi = ||1_T||; = 1 in sup norm); the constant 2 is
+  SHARP (the midpoint response); norm-shape-independent (only solidity used); the
+  weighted-l1 window constant bounded.
+  GF the graded Fliess theorem: r(b) monotone; ATTAINMENT at b >= (m-1) c_max (the
+  reachable/observable spaces are spanned by words of length <= m-1); the register = the
+  SPAN of the Nerode classes (classes can exceed the rank; 7 classes in a 2-dim space
+  measured).
+  W the norm-universal wall: the guarded trace converges iff L < 1 in the operator norm
+  AND every Schatten p-norm (the wall is norm-independent); value delta/(1-L) in every
+  norm; first-order pole (log-log slope -1.000).
+  N enriched naturality: the dictionary's components Lipschitz with uniform constants
+  (2-eps affine, rank+1, homogeneous sigma) ⟹ Phi is a morphism IN the cost-enriched
+  category (bounded naturality).
+  G the global sheaf morphism (BT1a-full): in the analytic topology (norm balls x
+  order-refinements) both sheaves satisfy gluing — the spectral side's gluing axiom IS PR
+  (consistent local completions merge; the free realization gives existence) — and Phi is
+  continuous (L), natural (N), clause-compatible (PR, GF, A2, W): a morphism of sheaves.
+- IMPLEMENTED bt1a_analytic.py (the full battery, ~1400 lines): L0 (120 cells: norm-1
+  exact, projections exact, decomposition error 0.0, tau-bounds hold); A2 (three symbol
+  families: transport identity 0.0-5.6e-17, singular values 4.4e-16, ranks 1/1 6/6 7/7;
+  the Prony/Kronecker one-letter optimizer — rank-M window Hankel iff M-term exponential
+  symbol with conjugate pairs — multi-start Nelder-Mead; THE GOLDEN-RATIO WITNESS:
+  psi = (1,1), window 1, M = 1: optimum 0.6180339887498945 vs sigma_2 0.6180339887498948
+  = (√5-1)/2, exact to 3.3e-16; the sandwich chain: isometric error identity 0.0 at every
+  M, transported approximants Hankel, rank <= M, EYM lower holds; Prony gaps at larger
+  sizes 1.5e-3 - 1e-2 = certified optimizer artifacts per the section theorem); PR (the
+  closed cut-web matrix + minimal factorization + the JOINT shift system as one linear
+  system per letter — the axis duality derived carefully: colsp for rows, rowsp for
+  columns; the sqrt bug in the SVD factorization found and fixed (B@C = U S² V* ≠ M);
+  the witness: rank 2, system feasible, constructed realization VERIFIED on D, dim-1
+  obstruction exact; 10/10 random machine data: minimal = rank floor, constructions
+  verified; 5/5 one-letter reductions: rank = classical Pade m*); L (609/609 agreement
+  in l1/l2/l4/linf/weighted; 2 sharp witnesses); GF (10/10 monotone, attained, span =
+  register — after fixing the Nerode statement (the register is the SPAN, not the class
+  count) and normalizing shifts to contractions for deep-window rank stability); W (9 L
+  values, closed form exact to 1e-12, pole slope -1.000000, identical in all p-norms);
+  S (30/30 multiplicative pass, 30/30 random fail, geometric reweightings pass); N+G
+  (30/30 + 30/30 + 60/60; gluing 19/20 with the one failure typed as the shift
+  obstruction); I the off-class honest measurement (8 instances: EYM lower holds 8/8,
+  gaps 0.02-0.55, no equality claimed — the open boundary recorded).
+- VOLUME VII built (Vol VI engine clone): vol7_content_a/b.py (12 chapters, ~5,400 words,
+  4 tables, 1 stats row, 1 figure), generate_vol7.py, cover_vol7.html (Template 03 clone,
+  cover_validate PASS), merge_vol7.py. The figure bt1a_analytic.png (3 panels: the
+  sandwich with the golden witness; the graded Fliess ladder + the PR witness; the honest
+  on-class/off-class boundary). QA chain: pdf_qa --skip-cover 12/12 PASS with ZERO
+  warnings (after fixing one em-dash line-start in Table 3); 24 clickable TOC links; 1
+  embedded figure; all 27 key numbers verified present in the extracted text; VLM render
+  checks on cover + table page + figure page: no defects.
+- README updated (seven volumes; the new battery row); worklog Task 11 (this entry).
+
+Stage Summary:
+- Deliverable: download/The_Resolution_Programme_VII_The_Multiletter_Analytic_Theorem.pdf
+  (18 pp: dark academic cover, TOC, 12 chapters, Figure 1 three panels, Tables 1-4, stats
+  row) + scripts/bt1a_analytic.py + bt1a_analytic_results.json + bt1a_analytic_fig.py +
+  the figure — all committed and pushed to MIKEAA2020/master.
+- The verdict, honestly bounded: ALL SEVEN DEMANDS DISCHARGED — the six clauses proved at
+  analytic strength with NO class restriction (PR + the commutativity obstruction; the
+  uniform 2-eps law; GF; W; N; G), and the multiletter AAK equality proved on the EXACT
+  STATED CLASS (level-constant symbols; the transport sandwich; equality for all M
+  simultaneously; attained; constructive; Open 7.13's intrinsic-criterion success
+  condition answered on the class). FULL GENERALITY IS IMPOSSIBLE TODAY and the class is
+  stated exactly as ordered: off the class the equality is the open constructive nc-AAK
+  problem (Lacroce), measured (gaps 0.02-0.55), never claimed. New mathematics this
+  session: Lemma L0 (the free cell decomposition, partial isometries); Theorem A2 (the
+  transport sandwich — the first unconditional instantiation of the corpus's conditional
+  Thm 7.11 on a stated class); the section theorem; Theorem S's T_0 classification; the
+  commutativity obstruction in closed form (the ab/ba witness with m* = 2); the PR
+  characterization with the joint shared-shift system; the golden-ratio AAK witness.
+- Remaining after this session: the off-class equality (Open 7.13 / constructive nc-AAK —
+  the exact boundary stated); the full Hankel-preserving-isometry classification (T_k
+  beyond k = 0); the abelianized class as the intermediate rung (the transport fails by
+  the multinomial weights — the next natural attack); Phi's uniqueness at infinite
+  dimension; Risk 4; the bounded benchmark extensions; the n=4 L=10 leg.
