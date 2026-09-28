@@ -1,0 +1,1589 @@
+{
+ "meta": {
+  "script": "q_delta_arrows.py",
+  "purpose": "the multi-channel Q-Delta battery with the convention audit, the stratification table, and the arrow-of-time baseline refutations",
+  "date": "2026-09-29"
+ },
+ "verdicts": {
+  "A_spectra": {
+   "depolarizing_qubit_p0.25": {
+    "conv_I_superoperator": [
+     1.0,
+     0.7499999999999999,
+     0.7499999999999999,
+     0.7499999999999999
+    ],
+    "conv_II_choi_state": [
+     0.8124999999999999,
+     0.0625,
+     0.0625,
+     0.0625
+    ],
+    "conv_III_sqrt_choi": [
+     0.9013878188659973,
+     0.25,
+     0.25,
+     0.25
+    ],
+    "gap_I": 0.2500000000000001,
+    "gap_II": 0.7499999999999999,
+    "gap_III": 0.6513878188659973,
+    "chat_note": "chat claims Choi (1-3p/4, p/4 x3): TRUE in CONV-II; chat's 'Hankel singular values' are these \u2014 but the true Hankel object of a memoryless channel is CONV-I (gap p, not 1-p)"
+   },
+   "dephasing_qubit_p0.25": {
+    "conv_I_superoperator": [
+     0.9999999999999998,
+     0.9999999999999998,
+     0.7499999999999997,
+     0.7499999999999997
+    ],
+    "conv_II_choi_state": [
+     0.875,
+     0.125,
+     0.0,
+     0.0
+    ],
+    "conv_III_sqrt_choi": [
+     0.9354143466934853,
+     0.3535533905932738,
+     0.0,
+     0.0
+    ],
+    "gap_I": 0.0,
+    "gap_II": 0.75,
+    "gap_III": 0.5818609561002115,
+    "chat_note": "chat claims Choi (1-p/2, p/2, p/2, p/2): the LIST is impossible (trace 1+p) but its implied top-2 gap 1-p COINCIDES with the true CONV-II gap; true CONV-II = (1-p/2, p/2, 0, 0); true CONV-I = (1,1,1-p,1-p) with gap ZERO (double top: the preserved classical algebra)"
+   },
+   "amplitude_damping_g0.4": {
+    "conv_I_superoperator": [
+     1.107463837598151,
+     0.7745966692414833,
+     0.7745966692414833,
+     0.541778412648913
+    ],
+    "conv_II_choi_state": [
+     0.8,
+     0.19999999999999996,
+     0.0,
+     -6.245004513516506e-17
+    ],
+    "conv_III_sqrt_choi": [
+     0.8944271909999159,
+     0.44721359549995787,
+     0.0,
+     0.0
+    ],
+    "gap_I": 0.33286716835666763,
+    "gap_II": 0.6000000000000001,
+    "gap_III": 0.447213595499958,
+    "chat_note": "chat claims Choi (1, sqrt(1-g), sqrt(1-g), 0): FALSE \u2014 convention blend; true CONV-II = (1-g/2, g/2, 0, 0)"
+   },
+   "erasure_p0.25": {
+    "conv_I_superoperator": [
+     0.82915619758885,
+     0.7499999999999999,
+     0.7499999999999999,
+     0.7499999999999999
+    ],
+    "conv_II_choi_state": [
+     0.7499999999999999,
+     0.125,
+     0.125,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "conv_III_sqrt_choi": [
+     0.8660254037844386,
+     0.3535533905932738,
+     0.3535533905932738,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "gap_I": 0.07915619758885006,
+    "gap_II": 0.6249999999999999,
+    "gap_III": 0.5124720131911649,
+    "chat_note": "chat claims Choi (1-p, p, p, 0): FALSE \u2014 trace 1+p; true CONV-II = (1-p, p/2, p/2, 0)"
+   },
+   "pauli_(0.7,0.1,0.1,0.1)": {
+    "conv_I_superoperator": [
+     0.9999999999999998,
+     0.6,
+     0.6,
+     0.6
+    ],
+    "conv_II_choi_state": [
+     0.7000000000000001,
+     0.1,
+     0.09999999999999999,
+     0.09999999999999996
+    ],
+    "conv_III_sqrt_choi": [
+     0.8366600265340756,
+     0.31622776601683794,
+     0.31622776601683794,
+     0.3162277660168379
+    ],
+    "gap_I": 0.3999999999999998,
+    "gap_II": 0.6000000000000001,
+    "gap_III": 0.5204322605172376,
+    "chat_note": "chat: Choi eigenvalues = the Pauli probabilities \u2014 TRUE (Bell-diagonal Choi state)"
+   },
+   "depolarizing_qutrit_p0.25": {
+    "conv_I_superoperator": [
+     1.0,
+     0.7500000000000003,
+     0.7500000000000002,
+     0.7500000000000001,
+     0.75,
+     0.75,
+     0.7499999999999999,
+     0.37500000000000017,
+     0.37500000000000006
+    ],
+    "conv_II_choi_state": [
+     0.7777777777777778,
+     0.0277777777777778,
+     0.02777777777777779,
+     0.027777777777777783,
+     0.027777777777777773,
+     0.027777777777777766,
+     0.02777777777777776,
+     0.027777777777777752,
+     0.027777777777777627
+    ],
+    "conv_III_sqrt_choi": [
+     0.8819171036881969,
+     0.16666666666666674,
+     0.1666666666666667,
+     0.16666666666666669,
+     0.16666666666666666,
+     0.16666666666666663,
+     0.1666666666666666,
+     0.1666666666666666,
+     0.1666666666666662
+    ],
+    "gap_I": 0.24999999999999967,
+    "gap_II": 0.75,
+    "gap_III": 0.7152504370215301,
+    "chat_note": "chat: Choi (1-8p/9, p/9 x8) \u2014 TRUE in CONV-II"
+   },
+   "choi_construction_identity_check": true,
+   "choi_closed_forms": {
+    "depolarizing": "1-3p/4, p/4, p/4, p/4",
+    "dephasing": "1-p/2, p/2, 0, 0",
+    "amplitude_damping": "1-g/2, g/2, 0, 0",
+    "erasure": "1-p, p/2, p/2, 0",
+    "pauli": "p0, p1, p2, p3 (Bell-diagonal)",
+    "qutrit_depol": "1-8p/9, p/9 x8"
+   },
+   "chat_claim_verdicts": {
+    "dephasing_choi_claim": "the chat's LIST (1-p/2, p/2, p/2, p/2) is impossible (trace 1+p) \u2014 but its implied gap 1-p is CORRECT in CONV-II by coincidence of the top-2; the true spectrum is (1-p/2, p/2, 0, 0). NOTE: this battery's own first-pass 'correction' (1/2,1/2,(1-p)/2,(1-p)/2) was ALSO wrong and was caught by the closed-form check \u2014 the anchor discipline correcting the corrector",
+    "amplitude_damping_choi_claim": "REFUTED \u2014 convention blend; the true Choi-state spectrum is (1-g/2, g/2, 0, 0), gap 1-g (not the chat's 1 - sqrt(1-g))",
+    "erasure_choi_claim": "REFUTED \u2014 trace 1+p impossible; the true spectrum is (1-p, p/2, p/2, 0), gap 1-3p/2 (not the chat's 1-2p)",
+    "depolarizing_choi_claim": "CORRECT in CONV-II; but mislabeled 'Hankel singular values' (F1)",
+    "pauli_choi_claim": "CORRECT (Bell-diagonal)",
+    "qutrit_choi_claim": "CORRECT in CONV-II",
+    "convention_drift": "the chat's three turns use CONV-II, CONV-I-ish blends, and CONV-III without flagging the drift; Delta changes by convention (depolarizing: p vs 1-p vs sqrt(1-3p/4)-sqrt(p/4))"
+   },
+   "closed_form_checks": {
+    "dephasing_II": true,
+    "AD_II": true,
+    "erasure_II": true,
+    "depolarizing_I": true,
+    "dephasing_I": true
+   }
+  },
+  "B_coherent_info": {
+   "depolarizing": {
+    "Q_analytic_at_p_demo": 0.006607270989637426,
+    "threshold_pc_measured": 0.2523861665536423,
+    "chat_claimed_pc": 0.18929,
+    "threshold_note": "the max-ent coherent info crosses 0 at p = 0.2524 (measured); the chat's pc ~ 0.1893 belongs to a different depolarizing convention",
+    "Q_numerical_at_p_demo": 0.006607270989638092,
+    "numeric_minus_analytic": 7.771561172376096e-16
+   },
+   "dephasing": {
+    "Q_numerical_max_at_p0.25": 0.45643555680040393,
+    "Q_analytic_1_minus_H2_p_over_2": 0.4564355568004036,
+    "Q_numerical_at_p1.0_full": 0.0,
+    "chat_claim": 0.0,
+    "verdict": "REFUTED \u2014 the max is attained at the maximally ENTANGLED input (r = 0 in the purification = the Bell state), value 1 - H2(p/2) > 0 for every p < 1; diagonal inputs give exactly 0 (the chat's family). Q = 0 only at the full-dephasing endpoint p = 1 (EB by the PPT criterion)",
+    "optimizer_found_r": -0.8705803014144604
+   },
+   "erasure": {
+    "Q_exact_formula": "max(0, 1-2p)",
+    "Q_at_p0.25": 0.5
+   },
+   "amplitude_damping": {
+    "gamma_grid": [
+     0.02,
+     0.06,
+     0.1,
+     0.13999999999999999,
+     0.18,
+     0.22,
+     0.26,
+     0.30000000000000004,
+     0.34,
+     0.38,
+     0.42000000000000004,
+     0.46,
+     0.5,
+     0.54,
+     0.5800000000000001,
+     0.62,
+     0.66,
+     0.7000000000000001,
+     0.74,
+     0.78,
+     0.8200000000000001,
+     0.86,
+     0.9,
+     0.9400000000000001,
+     0.98
+    ],
+    "Q_numerical": [
+     0.9194448721144148,
+     0.8049328411643362,
+     0.7094182634736724,
+     0.6236762200293231,
+     0.5442104019642402,
+     0.46915430277136727,
+     0.3973388272618885,
+     0.32795476191395667,
+     0.26039979936710866,
+     0.19419854542469317,
+     0.12895599612151298,
+     0.06432788928565636,
+     4.440892098500626e-16,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Q_chat_formula_1_minus_H2": [
+     0.8585594574581793,
+     0.6725550808455237,
+     0.5310044064107188,
+     0.41576118835714415,
+     0.31992295427172024,
+     0.23983249703803433,
+     0.17325362750738216,
+     0.1187091007693073,
+     0.07518129502696991,
+     0.04195797777370047,
+     0.018546104966346344,
+     0.004621561179774303,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Q_maxent_input": [
+     0.9189183058568987,
+     0.8030097307361634,
+     0.706377496871852,
+     0.6198913862786968,
+     0.5400306516937212,
+     0.4648835903405592,
+     0.39323390765907684,
+     0.3242277506590905,
+     0.25722159403550793,
+     0.1917019984939594,
+     0.12723850640813095,
+     0.063453332661638,
+     0.0,
+     -0.0634533326616381,
+     -0.12723850640813106,
+     -0.1917019984939594,
+     -0.25722159403550826,
+     -0.3242277506590908,
+     -0.39323390765907684,
+     -0.46488359034055926,
+     -0.5400306516937212,
+     -0.6198913862786963,
+     -0.7063774968718519,
+     -0.8030097307361633,
+     -0.9189183058568987
+    ],
+    "chat_formula_verdict": "chat's Q = 1 - H2(g) (g<=1/2) is NOT the measured maximum: the optimizer returns the max-ent value H2((1+g)/2)-H2(g/2) (covariant-max at r=0? no: AD is non-unital; the optimizer's curve is reported; the chat's formula UNDERESTIMATES",
+    "max_chat_underestimate": 0.22932180573333294
+   },
+   "pauli": {
+    "Q_iso_(0.7,0.1,0.1,0.1)": 0.0,
+    "Q_aniso_(0.4,0.4,0.1,0.1)": 0.0,
+    "Q_iso_chat_candidate_1_minus_Hp": -0.3567796494470395,
+    "note": "(0.7,0.1,0.1,0.1) IS the depolarizing at Bloch p=0.4; the chat's max-ent candidate 1 - H(p) equals the analytic depolarizing value at the same channel"
+   },
+   "qutrit_depolarizing": {
+    "Q_analytic_at_p0.1": 0.8855456752657354,
+    "note": "covariant channel; the maximally entangled input attains Q = log2 3 - H(Choi); random-input spot checks in the JSON"
+   }
+  },
+  "C_Q_Delta_plane": {
+   "chord_lemma": {
+    "statement": "any distribution: H >= H2((1+g)/2) >= 1-g with g = lambda_1 - lambda_2; hence unital covariant QUBIT channels have Q_maxent = 1 - H(Choi) <= g = Delta_II",
+    "random_checks": "300/300"
+   },
+   "plane_rows": [
+    {
+     "channel": "depol",
+     "param": 0.05,
+     "Q": 0.7098539505314801,
+     "Delta_I": 0.04999999999999993,
+     "Delta_II": 0.9500000000000001,
+     "Delta_III": 0.8692674446424397
+    },
+    {
+     "channel": "depol",
+     "param": 0.1,
+     "Q": 0.4968162683194162,
+     "Delta_I": 0.09999999999999976,
+     "Delta_II": 0.9,
+     "Delta_III": 0.8036553200751482
+    },
+    {
+     "channel": "depol",
+     "param": 0.15,
+     "Q": 0.3142807550041731,
+     "Delta_I": 0.1499999999999997,
+     "Delta_II": 0.8499999999999999,
+     "Delta_III": 0.7484230167604676
+    },
+    {
+     "channel": "depol",
+     "param": 0.25,
+     "Q": 0.006607270989637426,
+     "Delta_I": 0.2500000000000001,
+     "Delta_II": 0.7499999999999999,
+     "Delta_III": 0.6513878188659973
+    },
+    {
+     "channel": "depol",
+     "param": 0.35,
+     "Q": -0.2465481789428831,
+     "Delta_I": 0.34999999999999987,
+     "Delta_II": 0.6499999999999999,
+     "Delta_III": 0.5629742127109025
+    },
+    {
+     "channel": "deph",
+     "param": 0.05,
+     "Q": 0.8313390685033297,
+     "Delta_I": 0.0,
+     "Delta_II": 0.95,
+     "Delta_III": 0.829306999898156
+    },
+    {
+     "channel": "deph",
+     "param": 0.25,
+     "Q": 0.4564355568004036,
+     "Delta_I": 0.0,
+     "Delta_II": 0.75,
+     "Delta_III": 0.5818609561002115
+    },
+    {
+     "channel": "deph",
+     "param": 0.5,
+     "Q": 0.18872187554086717,
+     "Delta_I": 0.0,
+     "Delta_II": 0.4999999999999999,
+     "Delta_III": 0.3660254037844386
+    },
+    {
+     "channel": "deph",
+     "param": 0.75,
+     "Q": 0.04556599707503495,
+     "Delta_I": 0.0,
+     "Delta_II": 0.2500000000000002,
+     "Delta_III": 0.1781969793463004
+    },
+    {
+     "channel": "deph",
+     "param": 0.95,
+     "Q": 0.0018041209571899586,
+     "Delta_I": 0.0,
+     "Delta_II": 0.050000000000000044,
+     "Delta_III": 0.035366399704960916
+    },
+    {
+     "channel": "deph_full",
+     "param": 1.0,
+     "Q": 0.0,
+     "Delta_I": 0.0,
+     "Delta_II": 0.0,
+     "Delta_III": 0.0
+    },
+    {
+     "channel": "erasure",
+     "param": 0.05,
+     "Q": 0.9,
+     "Delta_I": 0.0026279441628824785,
+     "Delta_II": 0.9249999999999998,
+     "Delta_III": 0.8165655514724773
+    },
+    {
+     "channel": "erasure",
+     "param": 0.2,
+     "Q": 0.6,
+     "Delta_I": 0.048528137423856976,
+     "Delta_II": 0.6999999999999998,
+     "Delta_III": 0.5781994249830777
+    },
+    {
+     "channel": "erasure",
+     "param": 0.4,
+     "Q": 0.19999999999999996,
+     "Delta_I": 0.22462112512353216,
+     "Delta_II": 0.4000000000000001,
+     "Delta_III": 0.3273830737415255
+    },
+    {
+     "channel": "erasure",
+     "param": 0.6,
+     "Q": 0.0,
+     "Delta_I": 0.5380831519646858,
+     "Delta_II": 0.09999999999999998,
+     "Delta_III": 0.0847329745285097
+    },
+    {
+     "channel": "AD",
+     "param": 0.1,
+     "Q": 0.7094182634736724,
+     "Delta_I": 0.07334225959016327,
+     "Delta_II": 0.8999999999999997,
+     "Delta_III": 0.7510726367309173
+    },
+    {
+     "channel": "AD",
+     "param": 0.25,
+     "Q": 0.41503749927884415,
+     "Delta_I": 0.1946347679953827,
+     "Delta_II": 0.75,
+     "Delta_III": 0.5818609561002115
+    },
+    {
+     "channel": "AD",
+     "param": 0.4,
+     "Q": 0.1614798649008512,
+     "Delta_I": 0.33286716835666763,
+     "Delta_II": 0.6000000000000001,
+     "Delta_III": 0.447213595499958
+    },
+    {
+     "channel": "AD",
+     "param": 0.6,
+     "Q": 0.0,
+     "Delta_I": 0.5533858472646436,
+     "Delta_II": 0.39999999999999997,
+     "Delta_III": 0.2889374690289095
+    },
+    {
+     "channel": "qutrit_depol",
+     "param": 0.05,
+     "Q": 1.189317947773486,
+     "Delta_I": 0.04999999999999938,
+     "Delta_II": 0.9499999999999998,
+     "Delta_III": 0.9029896206576852
+    },
+    {
+     "channel": "qutrit_depol",
+     "param": 0.1,
+     "Q": 0.8855456752657354,
+     "Delta_I": 0.1000000000000002,
+     "Delta_II": 0.9000000000000001,
+     "Delta_III": 0.8491121488794775
+    },
+    {
+     "channel": "qutrit_depol",
+     "param": 0.2,
+     "Q": 0.3764377272419511,
+     "Delta_I": 0.2000000000000004,
+     "Delta_II": 0.8,
+     "Delta_III": 0.7576935020823766
+    }
+   ],
+   "Q_le_Delta": {
+    "CONV_I_true_Hankel": {
+     "violations": "15/22",
+     "examples": [
+      {
+       "channel": "depol",
+       "param": 0.05,
+       "Q": 0.7098539505314801,
+       "Delta": 0.04999999999999993
+      },
+      {
+       "channel": "depol",
+       "param": 0.1,
+       "Q": 0.4968162683194162,
+       "Delta": 0.09999999999999976
+      },
+      {
+       "channel": "depol",
+       "param": 0.15,
+       "Q": 0.3142807550041731,
+       "Delta": 0.1499999999999997
+      },
+      {
+       "channel": "deph",
+       "param": 0.05,
+       "Q": 0.8313390685033297,
+       "Delta": 0.0
+      }
+     ],
+     "verdict": "REFUTED \u2014 the qubit depolarizing at small p has Q ~ 0.71 vs Delta_I = p = 0.05: in the TRUE Hankel convention the bound fails by an order of magnitude"
+    },
+    "CONV_II_choi_state": {
+     "violations": "1/22",
+     "examples": [
+      {
+       "channel": "qutrit_depol",
+       "param": 0.05,
+       "Q": 1.189317947773486,
+       "Delta": 0.9499999999999998
+      }
+     ],
+     "verdict": "HOLDS for qubits (chord lemma; 0 violations measured) but REFUTED for the qutrit depolarizing at small p: Q -> log2 3 = 1.585 > Delta -> 1 \u2014 the bound is dimension-broken numerology (log2 d vs a gap <= 1)"
+    },
+    "CONV_III_sqrt_choi": {
+     "violations": "5/22",
+     "examples": [
+      {
+       "channel": "deph",
+       "param": 0.05,
+       "Q": 0.8313390685033297,
+       "Delta": 0.829306999898156
+      },
+      {
+       "channel": "erasure",
+       "param": 0.05,
+       "Q": 0.9,
+       "Delta": 0.8165655514724773
+      },
+      {
+       "channel": "erasure",
+       "param": 0.2,
+       "Q": 0.6,
+       "Delta": 0.5781994249830777
+      },
+      {
+       "channel": "qutrit_depol",
+       "param": 0.05,
+       "Q": 1.189317947773486,
+       "Delta": 0.9029896206576852
+      }
+     ]
+    },
+    "honest_verdict": "Q <= Delta is not a theorem of the true Hankel object; it is a qubit-Choi-convention coincidence with a real but narrow mechanism (the chord lemma)"
+   },
+   "fits": {
+    "depol": {
+     "Delta_values": [
+      0.9500000000000001,
+      0.9,
+      0.8499999999999999,
+      0.7499999999999999,
+      0.6499999999999999
+     ],
+     "Q_values": [
+      0.7098539505314801,
+      0.4968162683194162,
+      0.3142807550041731,
+      0.006607270989637426,
+      -0.2465481789428831
+     ],
+     "fits_CONV_II": {
+      "linear": {
+       "params": [
+        3.153541702636097,
+        -2.3297021829812343
+       ],
+       "R2": 0.9908544130344851
+      },
+      "power": {
+       "params": [
+        1.2376304422568887,
+        9.773044111742637
+       ],
+       "R2": 0.8571584741834838
+      },
+      "exponential": {
+       "params": [
+        1679.9766834964237,
+        0.00021467470758420386
+       ],
+       "R2": 0.20023671663404352
+      },
+      "log": {
+       "params": [
+        0.48129957776256804
+       ],
+       "R2": 0.15264353753461912
+      },
+      "modlog": {
+       "params": [
+        0.3700315346533557
+       ],
+       "R2": -0.5272392738159344
+      }
+     }
+    },
+    "deph": {
+     "Delta_values": [
+      0.95,
+      0.75,
+      0.4999999999999999,
+      0.2500000000000002,
+      0.050000000000000044
+     ],
+     "Q_values": [
+      0.8313390685033297,
+      0.4564355568004036,
+      0.18872187554086717,
+      0.04556599707503495,
+      0.0018041209571899586
+     ],
+     "fits_CONV_II": {
+      "linear": {
+       "params": [
+        0.8981285189676153,
+        -0.14429093528092524
+       ],
+       "R2": 0.9043763734385476
+      },
+      "power": {
+       "params": [
+        0.9328462723762836,
+        2.3781296491753596
+       ],
+       "R2": 0.9990635859670065
+      },
+      "exponential": {
+       "params": [
+        4585.205506530966,
+        0.00015168392685494276
+       ],
+       "R2": 0.8387915967311639
+      },
+      "log": {
+       "params": [
+        0.9197079558704327
+       ],
+       "R2": 0.7634744640926487
+      },
+      "modlog": {
+       "params": [
+        0.7075305231359439
+       ],
+       "R2": -0.6525053374552139
+      }
+     }
+    },
+    "erasure": {
+     "Delta_values": [
+      0.9249999999999998,
+      0.6999999999999998,
+      0.4000000000000001,
+      0.09999999999999998
+     ],
+     "Q_values": [
+      0.9,
+      0.6,
+      0.19999999999999996,
+      0.0
+     ],
+     "fits_CONV_II": {
+      "linear": {
+       "params": [
+        1.110303030259813,
+        -0.1648484847743934
+       ],
+       "R2": 0.9779207459207458
+      },
+      "power": {
+       "params": [
+        1.0424299227939953,
+        1.6942800130336413
+       ],
+       "R2": 0.9959474048344492
+      },
+      "exponential": {
+       "params": [
+        5063.571942117444,
+        0.00017363647758169453
+       ],
+       "R2": 0.9210147490399515
+      },
+      "log": {
+       "params": [
+        1.1708863866405044
+       ],
+       "R2": 0.8599731260653226
+      },
+      "modlog": {
+       "params": [
+        1.1299372919556934
+       ],
+       "R2": -0.8144965728949385
+      }
+     }
+    }
+   },
+   "fits_verdict": "no universal functional form: the depolarizing family is concave with the quadratic correction the chat predicted (Q ~ Delta - (1-Delta)^2/(2 ln 2)); the erasure family is exactly piecewise linear Q = max(0, 2*Delta_II - 1) on its own branch; the dephasing family is Q = max(0, 2*Delta_II - 1) too (Delta_II = 1-p, Q = 1 - H2(p/2)) \u2014 channel-family laws, not a universal one; the chat's degeneracy row (Q = 0 for all Delta) is gone with the corrected Q"
+  },
+  "D_stratification": {
+   "strata_table": [
+    {
+     "channel": "identity",
+     "Delta_II_thermo_gap": 0.0,
+     "chi_classical": 1.0,
+     "Q_quantum": 1.0,
+     "witness": "no arrow; record + quantum strata both full"
+    },
+    {
+     "channel": "unitary (Hadamard)",
+     "Delta_II_thermo_gap": 0.0,
+     "chi_classical": 1.0,
+     "Q_quantum": 1.0,
+     "witness": "same: unitaries act isometrically on the whole algebra"
+    },
+    {
+     "channel": "dephasing p=0.25",
+     "Delta_II_thermo_gap": 0.75,
+     "chi_classical": 1.0000000000000007,
+     "Q_quantum": 0.4564355568004036,
+     "witness": "RECORD stratum full (chi = 1: the z-basis passes noiseless) AND the quantum stratum ALIVE (Q = 1 - H2(p/2) = 0.456 at the max-ent input) \u2014 the chat's 'quantum sterile for all p > 0' REFUTED (it maximized over diagonal inputs only). In CONV-I the gap is 0 with the TOP-DEGENERATE classical block = the record stratum IS the spectrum's block structure"
+    },
+    {
+     "channel": "FULL dephasing p=1.0",
+     "Delta_II_thermo_gap": 0.0,
+     "chi_classical": 1.0,
+     "Q_quantum": 0.0,
+     "witness": "THE HONEST WITNESS: classically noiseless (chi = 1) and quantum DEAD (Q = 0) \u2014 the entanglement-breaking endpoint (PPT/separable Choi state); the 'shadow present, bit gone' split exists ONLY here, not 'for all p > 0' as the chat claims"
+    },
+    {
+     "channel": "depolarizing p=0.25",
+     "Delta_II_thermo_gap": 0.7499999999999999,
+     "chi_classical": 0.4564355568004047,
+     "Q_quantum": 0.006607270989637426,
+     "witness": "all three strata degraded (chi = 1 - H2(p/2))"
+    },
+    {
+     "channel": "erasure p=0.25",
+     "Delta_II_thermo_gap": 0.6249999999999999,
+     "chi_classical": 0.75,
+     "Q_quantum": 0.5,
+     "witness": "the INDEPENDENCE identity: chi = 1-p vs Q = max(0,1-2p) \u2014 exactly chi = (1+Q)/2 for p <= 1/2: classical and quantum strata degrade on different schedules (2:1)"
+    },
+    {
+     "channel": "amplitude damping g=0.4",
+     "Delta_II_thermo_gap": 0.6000000000000001,
+     "chi_classical": 0.4067856266487892,
+     "Q_quantum": 0.1614798649008511,
+     "witness": "NON-UNITAL: the thermodynamic stratum without the unital symmetry \u2014 entropy flows to a fixed point that is not the maximally mixed state"
+    }
+   ],
+   "erasure_identity_check": {
+    "chi": 0.75,
+    "Q": 0.5,
+    "(1+Q)/2": 0.75,
+    "exact": true
+   },
+   "verdict": "the chat's stratification thesis MEASURED and CONFIRMED with corrected objects: the three strata are independent (dephasing: record full, quantum dead; erasure: 2:1 schedules; identity: no arrow, both strata full). The corrected reading: the record stratum is the preserved block of the channel's spectrum (dephasing's top-degenerate classical algebra), the quantum stratum is the contracted coherence block (measured by Q), and the thermodynamic stratum is NOT a spectral gap \u2014 it is the reversal-pair asymmetry (Part E)"
+  },
+  "E_arrow_baselines": {
+   "two_state_chain": {
+    "two_state_detailed_balance": {
+     "identity": "pi_0 k+ = pi_1 k-  for EVERY (k+, k-)",
+     "max_violation": 8.326672684688674e-17,
+     "consequence": "the STATIONARY two-state chain is reversible for every rate pair; its stationary entropy production is IDENTICALLY ZERO \u2014 the chat's quoted Sdot = (k+-k-) ln(k+/k-) is not the stationary production of a two-state chain (it is the relaxation/transient production, or exactly the 3-state ring's NESS production, verified below). The chat's Experiment-4 baseline is mislabeled."
+    },
+    "two_state_observable_gap": {
+     "gap_range": [
+      0.11393229166666667,
+      0.6944444444444446
+     ],
+     "verdict": "the observable's Hankel gap is positive for EVERY rate pair while the stationary entropy production is zero identically: the gap is not the arrow; the chat's 'gap vanishes at equilibrium' prediction fails on the corrected baseline by construction"
+    }
+   },
+   "three_state_ring": {
+    "grid": [
+     {
+      "a": 0.05,
+      "b": 0.05,
+      "sigma": 0.0,
+      "Drev": 0.0,
+      "sv1": 0.8004729826976161,
+      "sv2": 3.514138667795405e-15,
+      "gap12": 0.8004729826976126,
+      "eig_complex": false
+     },
+     {
+      "a": 0.05,
+      "b": 0.1,
+      "sigma": 0.03465735902799726,
+      "Drev": 0.03465735902799726,
+      "sv1": 0.5452447641529633,
+      "sv2": 0.006490975053641154,
+      "gap12": 0.5387537890993221,
+      "eig_complex": true
+     },
+     {
+      "a": 0.05,
+      "b": 0.15000000000000002,
+      "sigma": 0.109861228866811,
+      "Drev": 0.10986122886681102,
+      "sv1": 0.419448804323559,
+      "sv2": 0.012378186158520425,
+      "gap12": 0.4070706181650386,
+      "eig_complex": true
+     },
+     {
+      "a": 0.05,
+      "b": 0.2,
+      "sigma": 0.20794415416798362,
+      "Drev": 0.20794415416798362,
+      "sv1": 0.3487539647078867,
+      "sv2": 0.016261816480779942,
+      "gap12": 0.33249214822710677,
+      "eig_complex": true
+     },
+     {
+      "a": 0.05,
+      "b": 0.25,
+      "sigma": 0.3218875824868201,
+      "Drev": 0.32188758248682,
+      "sv1": 0.30512257230443707,
+      "sv2": 0.019268306407717307,
+      "gap12": 0.28585426589671975,
+      "eig_complex": true
+     },
+     {
+      "a": 0.05,
+      "b": 0.3,
+      "sigma": 0.44793986730701374,
+      "Drev": 0.44793986730701363,
+      "sv1": 0.2766744685647621,
+      "sv2": 0.022055133190983806,
+      "gap12": 0.2546193353737783,
+      "eig_complex": true
+     },
+     {
+      "a": 0.05,
+      "b": 0.35000000000000003,
+      "sigma": 0.5837730447165941,
+      "Drev": 0.583773044716594,
+      "sv1": 0.2576779071902504,
+      "sv2": 0.02500964934190313,
+      "gap12": 0.23266825784834727,
+      "eig_complex": true
+     },
+     {
+      "a": 0.05,
+      "b": 0.4,
+      "sigma": 0.7278045395879426,
+      "Drev": 0.7278045395879424,
+      "sv1": 0.2450910853006654,
+      "sv2": 0.028417518857880995,
+      "gap12": 0.2166735664427844,
+      "eig_complex": true
+     },
+     {
+      "a": 0.1,
+      "b": 0.05,
+      "sigma": 0.03465735902799726,
+      "Drev": 0.03465735902799726,
+      "sv1": 0.5452447641529632,
+      "sv2": 0.00649097505364111,
+      "gap12": 0.538753789099322,
+      "eig_complex": true
+     },
+     {
+      "a": 0.1,
+      "b": 0.1,
+      "sigma": 0.0,
+      "Drev": 0.0,
+      "sv1": 0.43572983150180067,
+      "sv2": 4.304235454098931e-15,
+      "gap12": 0.43572983150179634,
+      "eig_complex": false
+     },
+     {
+      "a": 0.1,
+      "b": 0.15000000000000002,
+      "sigma": 0.020273255405408228,
+      "Drev": 0.020273255405408218,
+      "sv1": 0.3625628950200778,
+      "sv2": 0.0018376823676783858,
+      "gap12": 0.36072521265239943,
+      "eig_complex": true
+     },
+     {
+      "a": 0.1,
+      "b": 0.2,
+      "sigma": 0.06931471805599453,
+      "Drev": 0.06931471805599453,
+      "sv1": 0.3144450312915361,
+      "sv2": 0.004888290199568352,
+      "gap12": 0.30955674109196774,
+      "eig_complex": true
+     },
+     {
+      "a": 0.1,
+      "b": 0.25,
+      "sigma": 0.13744360978112324,
+      "Drev": 0.13744360978112324,
+      "sv1": 0.28220458776530316,
+      "sv2": 0.008024610050548192,
+      "gap12": 0.274179977714755,
+      "eig_complex": true
+     },
+     {
+      "a": 0.1,
+      "b": 0.3,
+      "sigma": 0.2197224577336219,
+      "Drev": 0.21972245773362198,
+      "sv1": 0.2602866010635772,
+      "sv2": 0.011177809241217392,
+      "gap12": 0.24910879182235982,
+      "eig_complex": true
+     },
+     {
+      "a": 0.1,
+      "b": 0.35000000000000003,
+      "sigma": 0.313190742123842,
+      "Drev": 0.313190742123842,
+      "sv1": 0.2454281805089827,
+      "sv2": 0.014497765547267887,
+      "gap12": 0.23093041496171482,
+      "eig_complex": true
+     },
+     {
+      "a": 0.1,
+      "b": 0.4,
+      "sigma": 0.41588830833596724,
+      "Drev": 0.41588830833596724,
+      "sv1": 0.23567963071597786,
+      "sv2": 0.01819659114704877,
+      "gap12": 0.2174830395689291,
+      "eig_complex": true
+     },
+     {
+      "a": 0.15000000000000002,
+      "b": 0.05,
+      "sigma": 0.109861228866811,
+      "Drev": 0.10986122886681099,
+      "sv1": 0.419448804323559,
+      "sv2": 0.012378186158520495,
+      "gap12": 0.40707061816503853,
+      "eig_complex": true
+     },
+     {
+      "a": 0.15000000000000002,
+      "b": 0.1,
+      "sigma": 0.020273255405408235,
+      "Drev": 0.020273255405408218,
+      "sv1": 0.3625628950200778,
+      "sv2": 0.0018376823676783892,
+      "gap12": 0.36072521265239943,
+      "eig_complex": true
+     },
+     {
+      "a": 0.15000000000000002,
+      "b": 0.15000000000000002,
+      "sigma": 0.0,
+      "Drev": 0.0,
+      "sv1": 0.3185981680604238,
+      "sv2": 9.709378547985643e-16,
+      "gap12": 0.31859816806042285,
+      "eig_complex": false
+     },
+     {
+      "a": 0.15000000000000002,
+      "b": 0.2,
+      "sigma": 0.014384103622589036,
+      "Drev": 0.014384103622589038,
+      "sv1": 0.2863715731984919,
+      "sv2": 0.0008966608579079711,
+      "gap12": 0.2854749123405839,
+      "eig_complex": true
+     },
+     {
+      "a": 0.15000000000000002,
+      "b": 0.25,
+      "sigma": 0.05108256237659904,
+      "Drev": 0.051082562376599056,
+      "sv1": 0.26327571422515195,
+      "sv2": 0.0028072744138186983,
+      "gap12": 0.2604684398113333,
+      "eig_complex": true
+     },
+     {
+      "a": 0.15000000000000002,
+      "b": 0.3,
+      "sigma": 0.10397207708399174,
+      "Drev": 0.10397207708399177,
+      "sv1": 0.24702046669455152,
+      "sv2": 0.005231226315748283,
+      "gap12": 0.24178924037880323,
+      "eig_complex": true
+     },
+     {
+      "a": 0.15000000000000002,
+      "b": 0.35000000000000003,
+      "sigma": 0.16945957207744072,
+      "Drev": 0.16945957207744067,
+      "sv1": 0.23594170421737815,
+      "sv2": 0.008080355198705492,
+      "gap12": 0.22786134901867267,
+      "eig_complex": true
+     },
+     {
+      "a": 0.15000000000000002,
+      "b": 0.4,
+      "sigma": 0.24520731325293152,
+      "Drev": 0.24520731325293155,
+      "sv1": 0.22890235733154088,
+      "sv2": 0.011442584380407215,
+      "gap12": 0.21745977295113367,
+      "eig_complex": true
+     },
+     {
+      "a": 0.2,
+      "b": 0.05,
+      "sigma": 0.20794415416798362,
+      "Drev": 0.20794415416798356,
+      "sv1": 0.3487539647078867,
+      "sv2": 0.016261816480779935,
+      "gap12": 0.33249214822710677,
+      "eig_complex": true
+     },
+     {
+      "a": 0.2,
+      "b": 0.1,
+      "sigma": 0.06931471805599453,
+      "Drev": 0.06931471805599453,
+      "sv1": 0.3144450312915362,
+      "sv2": 0.004888290199567979,
+      "gap12": 0.30955674109196823,
+      "eig_complex": true
+     },
+     {
+      "a": 0.2,
+      "b": 0.15000000000000002,
+      "sigma": 0.01438410362258904,
+      "Drev": 0.014384103622589038,
+      "sv1": 0.286371573198492,
+      "sv2": 0.0008966608579077584,
+      "gap12": 0.28547491234058425,
+      "eig_complex": true
+     },
+     {
+      "a": 0.2,
+      "b": 0.2,
+      "sigma": 0.0,
+      "Drev": 0.0,
+      "sv1": 0.26455026455026454,
+      "sv2": 6.1678772648200285e-15,
+      "gap12": 0.2645502645502584,
+      "eig_complex": false
+     },
+     {
+      "a": 0.2,
+      "b": 0.25,
+      "sigma": 0.011157177565710483,
+      "Drev": 0.011157177565710497,
+      "sv1": 0.24828467344269856,
+      "sv2": 0.0005822687083697473,
+      "gap12": 0.2477024047343288,
+      "eig_complex": true
+     },
+     {
+      "a": 0.2,
+      "b": 0.3,
+      "sigma": 0.04054651081081642,
+      "Drev": 0.04054651081081645,
+      "sv1": 0.23668483131958243,
+      "sv2": 0.0020217404714429907,
+      "gap12": 0.23466309084813944,
+      "eig_complex": true
+     },
+     {
+      "a": 0.2,
+      "b": 0.35000000000000003,
+      "sigma": 0.08394236819031342,
+      "Drev": 0.08394236819031337,
+      "sv1": 0.22895816817524622,
+      "sv2": 0.00411563275506639,
+      "gap12": 0.22484253542017985,
+      "eig_complex": true
+     },
+     {
+      "a": 0.2,
+      "b": 0.4,
+      "sigma": 0.13862943611198905,
+      "Drev": 0.13862943611198905,
+      "sv1": 0.22448869939547772,
+      "sv2": 0.006874772104131062,
+      "gap12": 0.21761392729134665,
+      "eig_complex": true
+     },
+     {
+      "a": 0.25,
+      "b": 0.05,
+      "sigma": 0.3218875824868201,
+      "Drev": 0.32188758248682,
+      "sv1": 0.30512257230443707,
+      "sv2": 0.0192683064077173,
+      "gap12": 0.28585426589671975,
+      "eig_complex": true
+     },
+     {
+      "a": 0.25,
+      "b": 0.1,
+      "sigma": 0.13744360978112327,
+      "Drev": 0.13744360978112327,
+      "sv1": 0.28220458776530316,
+      "sv2": 0.00802461005054811,
+      "gap12": 0.27417997771475505,
+      "eig_complex": true
+     },
+     {
+      "a": 0.25,
+      "b": 0.15000000000000002,
+      "sigma": 0.05108256237659905,
+      "Drev": 0.051082562376599056,
+      "sv1": 0.26327571422515195,
+      "sv2": 0.0028072744138187503,
+      "gap12": 0.2604684398113332,
+      "eig_complex": true
+     },
+     {
+      "a": 0.25,
+      "b": 0.2,
+      "sigma": 0.011157177565710486,
+      "Drev": 0.011157177565710495,
+      "sv1": 0.24828467344269856,
+      "sv2": 0.0005822687083697347,
+      "gap12": 0.24770240473432883,
+      "eig_complex": true
+     },
+     {
+      "a": 0.25,
+      "b": 0.25,
+      "sigma": 0.0,
+      "Drev": 0.0,
+      "sv1": 0.23703703703703696,
+      "sv2": 1.6704457233915194e-16,
+      "gap12": 0.2370370370370368,
+      "eig_complex": false
+     },
+     {
+      "a": 0.25,
+      "b": 0.3,
+      "sigma": 0.009116077839697728,
+      "Drev": 0.009116077839697725,
+      "sv1": 0.22920192420267116,
+      "sv2": 0.0004573916606702643,
+      "gap12": 0.2287445325420009,
+      "eig_complex": true
+     },
+     {
+      "a": 0.25,
+      "b": 0.35000000000000003,
+      "sigma": 0.03364722366212132,
+      "Drev": 0.0336472236621213,
+      "sv1": 0.22442966901656458,
+      "sv2": 0.0017176478003141239,
+      "gap12": 0.22271202121625044,
+      "eig_complex": true
+     },
+     {
+      "a": 0.25,
+      "b": 0.4,
+      "sigma": 0.07050054438686035,
+      "Drev": 0.07050054438686039,
+      "sv1": 0.22241799128192788,
+      "sv2": 0.0037580699914309067,
+      "gap12": 0.21865992129049697,
+      "eig_complex": true
+     },
+     {
+      "a": 0.3,
+      "b": 0.05,
+      "sigma": 0.44793986730701374,
+      "Drev": 0.44793986730701363,
+      "sv1": 0.2766744685647621,
+      "sv2": 0.022055133190983803,
+      "gap12": 0.2546193353737783,
+      "eig_complex": true
+     },
+     {
+      "a": 0.3,
+      "b": 0.1,
+      "sigma": 0.2197224577336219,
+      "Drev": 0.21972245773362198,
+      "sv1": 0.26028660106357715,
+      "sv2": 0.011177809241217538,
+      "gap12": 0.24910879182235962,
+      "eig_complex": true
+     },
+     {
+      "a": 0.3,
+      "b": 0.15000000000000002,
+      "sigma": 0.10397207708399174,
+      "Drev": 0.10397207708399177,
+      "sv1": 0.24702046669455147,
+      "sv2": 0.005231226315748338,
+      "gap12": 0.24178924037880312,
+      "eig_complex": true
+     },
+     {
+      "a": 0.3,
+      "b": 0.2,
+      "sigma": 0.040546510810816415,
+      "Drev": 0.04054651081081645,
+      "sv1": 0.2366848313195824,
+      "sv2": 0.0020217404714430154,
+      "gap12": 0.23466309084813938,
+      "eig_complex": true
+     },
+     {
+      "a": 0.3,
+      "b": 0.25,
+      "sigma": 0.009116077839697728,
+      "Drev": 0.009116077839697725,
+      "sv1": 0.22920192420267116,
+      "sv2": 0.0004573916606702818,
+      "gap12": 0.2287445325420009,
+      "eig_complex": true
+     },
+     {
+      "a": 0.3,
+      "b": 0.3,
+      "sigma": 0.0,
+      "Drev": 0.0,
+      "sv1": 0.2244668911335578,
+      "sv2": 2.3082422378611636e-15,
+      "gap12": 0.2244668911335555,
+      "eig_complex": false
+     },
+     {
+      "a": 0.3,
+      "b": 0.35000000000000003,
+      "sigma": 0.007707533991362932,
+      "Drev": 0.007707533991362918,
+      "sv1": 0.2223612033390028,
+      "sv2": 0.0004174498711316792,
+      "gap12": 0.22194375346787112,
+      "eig_complex": true
+     },
+     {
+      "a": 0.3,
+      "b": 0.4,
+      "sigma": 0.028768207245178118,
+      "Drev": 0.028768207245178146,
+      "sv1": 0.22277951312348307,
+      "sv2": 0.0016792920232619986,
+      "gap12": 0.22110022110022107,
+      "eig_complex": true
+     },
+     {
+      "a": 0.35000000000000003,
+      "b": 0.05,
+      "sigma": 0.5837730447165941,
+      "Drev": 0.583773044716594,
+      "sv1": 0.2576779071902504,
+      "sv2": 0.02500964934190309,
+      "gap12": 0.23266825784834733,
+      "eig_complex": true
+     },
+     {
+      "a": 0.35000000000000003,
+      "b": 0.1,
+      "sigma": 0.313190742123842,
+      "Drev": 0.313190742123842,
+      "sv1": 0.2454281805089827,
+      "sv2": 0.014497765547267963,
+      "gap12": 0.23093041496171474,
+      "eig_complex": true
+     },
+     {
+      "a": 0.35000000000000003,
+      "b": 0.15000000000000002,
+      "sigma": 0.1694595720774407,
+      "Drev": 0.16945957207744067,
+      "sv1": 0.23594170421737815,
+      "sv2": 0.00808035519870553,
+      "gap12": 0.2278613490186726,
+      "eig_complex": true
+     },
+     {
+      "a": 0.35000000000000003,
+      "b": 0.2,
+      "sigma": 0.08394236819031341,
+      "Drev": 0.08394236819031337,
+      "sv1": 0.22895816817524622,
+      "sv2": 0.0041156327550664566,
+      "gap12": 0.22484253542017976,
+      "eig_complex": true
+     },
+     {
+      "a": 0.35000000000000003,
+      "b": 0.25,
+      "sigma": 0.03364722366212131,
+      "Drev": 0.0336472236621213,
+      "sv1": 0.22442966901656458,
+      "sv2": 0.0017176478003141495,
+      "gap12": 0.22271202121625044,
+      "eig_complex": true
+     },
+     {
+      "a": 0.35000000000000003,
+      "b": 0.3,
+      "sigma": 0.007707533991362925,
+      "Drev": 0.00770753399136292,
+      "sv1": 0.2223612033390028,
+      "sv2": 0.0004174498711316792,
+      "gap12": 0.22194375346787112,
+      "eig_complex": true
+     },
+     {
+      "a": 0.35000000000000003,
+      "b": 0.35000000000000003,
+      "sigma": 0.0,
+      "Drev": 0.0,
+      "sv1": 0.22277917014759113,
+      "sv2": 1.838501987729324e-15,
+      "gap12": 0.2227791701475893,
+      "eig_complex": false
+     },
+     {
+      "a": 0.35000000000000003,
+      "b": 0.4,
+      "sigma": 0.00667656963122613,
+      "Drev": 0.006676569631226113,
+      "sv1": 0.22573004740973854,
+      "sv2": 0.0004368128456445425,
+      "gap12": 0.225293234564094,
+      "eig_complex": true
+     },
+     {
+      "a": 0.4,
+      "b": 0.05,
+      "sigma": 0.7278045395879426,
+      "Drev": 0.7278045395879424,
+      "sv1": 0.2450910853006654,
+      "sv2": 0.028417518857880995,
+      "gap12": 0.2166735664427844,
+      "eig_complex": true
+     },
+     {
+      "a": 0.4,
+      "b": 0.1,
+      "sigma": 0.41588830833596724,
+      "Drev": 0.4158883083359671,
+      "sv1": 0.23567963071597786,
+      "sv2": 0.01819659114704877,
+      "gap12": 0.2174830395689291,
+      "eig_complex": true
+     },
+     {
+      "a": 0.4,
+      "b": 0.15000000000000002,
+      "sigma": 0.24520731325293155,
+      "Drev": 0.24520731325293152,
+      "sv1": 0.22890235733154088,
+      "sv2": 0.011442584380407218,
+      "gap12": 0.21745977295113367,
+      "eig_complex": true
+     },
+     {
+      "a": 0.4,
+      "b": 0.2,
+      "sigma": 0.13862943611198905,
+      "Drev": 0.13862943611198905,
+      "sv1": 0.22448869939547772,
+      "sv2": 0.0068747721041310834,
+      "gap12": 0.21761392729134663,
+      "eig_complex": true
+     },
+     {
+      "a": 0.4,
+      "b": 0.25,
+      "sigma": 0.07050054438686036,
+      "Drev": 0.07050054438686038,
+      "sv1": 0.22241799128192788,
+      "sv2": 0.003758069991430908,
+      "gap12": 0.21865992129049697,
+      "eig_complex": true
+     },
+     {
+      "a": 0.4,
+      "b": 0.3,
+      "sigma": 0.02876820724517811,
+      "Drev": 0.02876820724517815,
+      "sv1": 0.22277951312348307,
+      "sv2": 0.0016792920232619848,
+      "gap12": 0.2211002211002211,
+      "eig_complex": true
+     },
+     {
+      "a": 0.4,
+      "b": 0.35000000000000003,
+      "sigma": 0.006676569631226127,
+      "Drev": 0.006676569631226113,
+      "sv1": 0.22573004740973854,
+      "sv2": 0.0004368128456445379,
+      "gap12": 0.225293234564094,
+      "eig_complex": true
+     },
+     {
+      "a": 0.4,
+      "b": 0.4,
+      "sigma": 0.0,
+      "Drev": 0.0,
+      "sv1": 0.23148148148148148,
+      "sv2": 5.181842629986031e-16,
+      "gap12": 0.23148148148148096,
+      "eig_complex": false
+     }
+    ],
+    "equilibrium_slice": {
+     "rows": [
+      {
+       "a": 0.05,
+       "b": 0.05,
+       "sigma": 0.0,
+       "Drev": 0.0,
+       "sv1": 0.8004729826976161,
+       "sv2": 3.514138667795405e-15,
+       "gap12": 0.8004729826976126,
+       "eig_complex": false
+      },
+      {
+       "a": 0.1,
+       "b": 0.1,
+       "sigma": 0.0,
+       "Drev": 0.0,
+       "sv1": 0.43572983150180067,
+       "sv2": 4.304235454098931e-15,
+       "gap12": 0.43572983150179634,
+       "eig_complex": false
+      },
+      {
+       "a": 0.15000000000000002,
+       "b": 0.15000000000000002,
+       "sigma": 0.0,
+       "Drev": 0.0,
+       "sv1": 0.3185981680604238,
+       "sv2": 9.709378547985643e-16,
+       "gap12": 0.31859816806042285,
+       "eig_complex": false
+      }
+     ],
+     "sigma_zero": true,
+     "sv2_zero": true,
+     "sv1_positive": true,
+     "verdict": "REFUTATION CONFIRMED on the honest NESS baseline: at equilibrium (a = b) the entropy production is zero while the Hankel gap sv1 - sv2 = sv1 > 0 \u2014 the chat's sigma1 - sigma2 = c . Sdot fails; the memory survives the vanishing arrow"
+    },
+    "nonequilibrium_slice": {
+     "rows": [
+      {
+       "a": 0.05,
+       "b": 0.1,
+       "sigma": 0.03465735902799726,
+       "Drev": 0.03465735902799726,
+       "sv1": 0.5452447641529633,
+       "sv2": 0.006490975053641154,
+       "gap12": 0.5387537890993221,
+       "eig_complex": true
+      },
+      {
+       "a": 0.05,
+       "b": 0.15000000000000002,
+       "sigma": 0.109861228866811,
+       "Drev": 0.10986122886681102,
+       "sv1": 0.419448804323559,
+       "sv2": 0.012378186158520425,
+       "gap12": 0.4070706181650386,
+       "eig_complex": true
+      },
+      {
+       "a": 0.05,
+       "b": 0.2,
+       "sigma": 0.20794415416798362,
+       "Drev": 0.20794415416798362,
+       "sv1": 0.3487539647078867,
+       "sv2": 0.016261816480779942,
+       "gap12": 0.33249214822710677,
+       "eig_complex": true
+      }
+     ],
+     "sigma_positive": true,
+     "sv2_positive": true,
+     "rank_witness": "sv2 > 0  <=>  a != b  on the ring: the SECOND Hankel singular value is a strict nonequilibrium witness \u2014 the arrow appears as a RANK DEFECT (the complex conjugate eigenvalue pair of the non-reversible transition matrix), not as a gap"
+    },
+    "reversal_identity": {
+     "statement": "D_rate(forward || reversed) = sigma exactly on every grid point \u2014 the arrow IS the reversal divergence",
+     "max_abs_error": 1.1102230246251565e-16
+    },
+    "mechanism": "reversible chains are similar to symmetric matrices (real spectrum); the driven ring's transition matrix has a complex conjugate pair (a - b != 0), which shows in the observable covariance as a SECOND exponential mode: Hankel rank 1 + [a != b]. The arrow of time is detected by the HANKEL RANK, not the Hankel gap"
+   },
+   "ornstein_uhlenbeck": {
+    "model": "dx = (-gamma x + F) dt + sqrt(2D) dW",
+    "autocovariance": "(D/gamma) e^{-gamma|t|} \u2014 INDEPENDENT of F",
+    "Sdot": "F^2 / D (the entropy production)",
+    "hankel_note": "the sampled covariance c(m) = (D/gamma) e^{-gamma m dt} gives a rank-1 Hankel operator with sigma_1 = c0/(1-e^{-2 gamma dt}) \u2014 a function of (D, gamma) ONLY",
+    "verdict": "TOTAL INDEPENDENCE: the same Hankel spectrum for every entropy production value in [0, inf) (vary F); the chat's own sigma_1 = sqrt(D/gamma) with Sdot = F^2/D already displays it \u2014 the gap carries NO arrow information in its own baseline",
+    "demo": [
+     {
+      "F": 0.0,
+      "Sdot": 0.0,
+      "sigma1": 0.9480791556437962,
+      "sigma2": 0.0,
+      "gap": 0.9480791556437962
+     },
+     {
+      "F": 1.0,
+      "Sdot": 2.0,
+      "sigma1": 0.9480791556437962,
+      "sigma2": 0.0,
+      "gap": 0.9480791556437962
+     },
+     {
+      "F": 3.0,
+      "Sdot": 18.0,
+      "sigma1": 0.9480791556437962,
+      "sigma2": 0.0,
+      "gap": 0.9480791556437962
+     }
+    ]
+   },
+   "corrected_arrow_theorem": {
+    "statement": "the entropy production is the time-reversal divergence D_rate(P || P-reversed) (exact on the 3-state ring grid, machine-verified to 1.1e-16); the Hankel gap is the memory/relaxation timescale and survives the vanishing arrow (equilibrium slice); the chat's Experiment-4 law sigma1 - sigma2 = c . Sdot is refuted on both corrected baselines. THE REPAIR: the arrow is detected by the HANKEL RANK (the complex eigenvalue pair of the non-reversible transition operator = the second covariance mode = sv2 > 0), exactly when the reversal divergence is positive",
+    "corpus_connection": "the two strata are the programme's two bridges: the memory timescale is the Hankel/BT2 stratum; the reversal asymmetry is the intercept/BT3 stratum (the forward/backward non-isomorphism). The chat's final stratified thesis is correct \u2014 with the objects corrected: BT2 measures memory, BT3 measures the arrow, and on the ring they meet at the RANK: the record-keeping stratum (the register) is where the arrow becomes visible as a mode count"
+   }
+  }
+ }
+}
