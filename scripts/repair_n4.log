@@ -1,0 +1,17 @@
+======================================================================
+L=8 REBUILD (deflated sector solver)
+======================================================================
+  resuming with 15 seeded L=8 rows
+  power-vs-deflated check p=0.375: deflated 0.0021042218 vs power 0.0021042218 (dev 2.27e-11)
+  power-vs-deflated check p=0.381: deflated 0.0018779702 vs power 0.0018779702 (dev 7.15e-12)
+  power-vs-deflated check p=0.383: deflated 0.0018079583 vs power 0.0018079583 (dev 2.98e-11)
+  lambda_eps(0.383) = 0.0010898223; ratio 0.5252; L ln(l1/leps) = 5.15  [manuscript: 5.2]
+  std*sgn power cross-check: deflated 0.00027966 vs power 0.00309341 (dev 2.81e-03)
+  multiplet L=8 p=0.36 (deflated): triv=0.00309341, std=0.00279198, two=0.00268891, stdsgn=0.00027966, sgn=0.00244928; eps=0.00160309
+  ordering triv>std>two>stdsgn>sgn: False; eps below all spin: False
+  crossing (6,8) rebuilt: 0.3790790625779328  [manuscript: 0.37899]
+  crossing (4,6) recheck: 0.358313295913262  [manuscript: 0.35820]
+  R(0.383) L=8: 0.2140  [manuscript: 0.2142]
+======================================================================
+L=10 LEG (m=5, 24^5 = 7,962,624 bond labels, float32, deflated)
+======================================================================

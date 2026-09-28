@@ -40,7 +40,7 @@ halting physics and automata, to metabolic curvature and sustainability governan
 |---|---|---|
 | Record-phase p-scan, n=2 (Ising exact) | `scripts/pscan_n2.py` | Kink at 0.23381 exact; Onsager fit R²=0.9902; anchors to 6–9 decimals. |
 | Record-phase p-scan, n=3 (Weingarten) | `scripts/pscan_n3.py` | Crossing ladder 0.271→0.297 → 0.305(3); manuscript anchors to 6 decimals. |
-| **Record-phase boundary, n=4** | `scripts/pscan_n4.py` | Full S₄ colour resolution, ring contraction to L=10; crossings vs manuscript 0.35820/0.37899/0.3823; R-ladder vs 0.1315/0.1829/0.2142/0.2378 → 1/4; multiplet order; endpoints (4/35)^L exact. |
+| **Record-phase boundary, n=4** | `scripts/pscan_n4.py`, `repair_n4.py` | **CONFIRMED at the exact level**: crossings (4,6) 0.358313 [ms 0.35820, dev 1.1e-4], (6,8) 0.379079 [ms 0.37899, dev 9e-5], drift 0.0208 exact; R-ladder 0.1314/0.1827/0.2140 [ms 0.1315/0.1829/0.2142]; L·ln(λ1/λε) = 5.15 [5.2]; multiplet order exact (1+9+4+9+1, ε below all spin); endpoints exact: 24-fold at p=0, (4/35)^L rank-one at p=1. L=10 leg not run (resource limit, noted in JSON). Solver post-mortems (sector escape + v1-deflated matvec fix) in `scripts/repair_n4.log`. |
 | E. coli cycle-size scan | `scripts/ecoli_cycles.py`, `ecoli_cycles2.py` | LP layer k-relaxation 0.249/cycle R²=1.000; one-pass saturation theorem; 0.361 = certified slowest cascade case; drift law slope 1.001. |
 | Optic-Nehari attack | `scripts/optic_nehari.py` | Refutation of the naive composite (excess = δ², slope 1.991); dichotomy theorem + 2‖Δ‖ envelope; 12/12 small-gain accumulation. |
 

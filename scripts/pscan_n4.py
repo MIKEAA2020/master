@@ -685,31 +685,61 @@ def stage_S():
     scan = {"grid": [float(x) for x in grid]}
     Xs = {}
     lam_store = {}
+    grids = {}
     for L in [4, 6, 8]:
         m = L // 2
         pr = Problem(4, m)
         t0 = time.time()
+        if L == 8:
+            gL = sorted(set([round(x, 6) for x in
+                             [0.33, 0.34, 0.35, 0.36, 0.37, 0.375, 0.378,
+                              0.381, 0.383, 0.385, 0.388, 0.39, 0.395,
+                              0.40, 0.42]]))
+            grids[L] = gL
+        else:
+            gL = grid
+            grids[L] = grid
         rows = []
-        for p in grid:
-            vals = pr.solve(p, ["triv", "std"],
-                            kmap={"triv": 2, "std": 1})
-            l1, leps = vals["triv"][0], vals["triv"][1]
-            lsig = vals["std"][0]
-            rows.append((p, l1, leps, lsig))
+        if L <= 6:
+            for p in gL:
+                vals = pr.solve(p, ["triv", "std"],
+                                kmap={"triv": 2, "std": 1})
+                l1, leps = vals["triv"][0], vals["triv"][1]
+                lsig = vals["std"][0]
+                rows.append((p, l1, leps, lsig))
+        else:
+            # warm k=1 solves for the curves (fast); leps only at the
+            # R-ratio point p* = 0.383 with a fresh k=2 solve
+            for p in gL:
+                vals = pr.solve(p, ["triv", "std"],
+                                kmap={"triv": 1, "std": 1})
+                rows.append((p, vals["triv"][0], None, vals["std"][0]))
+            vals = pr.solve(0.383, ["triv"], kmap={"triv": 2},
+                            warm=False, tol=1e-10)
+            for i, r in enumerate(rows):
+                if abs(r[0] - 0.383) < 1e-12:
+                    rows[i] = (r[0], r[1], vals["triv"][1], r[3])
         Xs[L] = np.array([X_of(r[1], r[3], L) for r in rows])
         lam_store[L] = {"l1": [r[1] for r in rows],
                         "leps": [r[2] for r in rows],
                         "lsig": [r[3] for r in rows]}
-        log(f"  L={L}: {len(grid)} pts in {time.time()-t0:.0f}s; "
-            f"X(0.34)={Xs[L][grid.index(0.34)]:.4f}, "
-            f"X(0.383)={Xs[L][grid.index(0.383)]:.4f}, "
-            f"X(0.43)={Xs[L][grid.index(0.43)]:.4f}")
+        results["scan_partial"] = {
+            "grids": {str(k): [float(x) for x in grids[k]] for k in grids},
+            "Xs": {str(k): [float(x) for x in Xs[k]] for k in Xs},
+            "lams": {str(k): lam_store[k] for k in lam_store}}
+        save()
+        j = gL.index(0.383)
+        log(f"  L={L}: {len(gL)} pts in {time.time()-t0:.0f}s; "
+            f"X(0.383)={Xs[L][j]:.4f}, X({gL[0]})={Xs[L][0]:.4f}, "
+            f"X({gL[-1]})={Xs[L][-1]:.4f}")
     # crossings via spline + bisection
-    spl = {L: CubicSpline(grid, Xs[L]) for L in Xs}
+    spl = {L: CubicSpline(grids[L], Xs[L]) for L in Xs}
 
     def cross(L1, L2):
         f = lambda t: spl[L1](t) - spl[L2](t)
-        gg = np.arange(0.30, 0.45, 0.0002)
+        lo = max(grids[L1][0], grids[L2][0]) + 1e-6
+        hi = min(grids[L1][-1], grids[L2][-1]) - 1e-6
+        gg = np.arange(lo, hi, 0.0002)
         vv = f(gg)
         for i in range(len(gg) - 1):
             if (vv[i] > 0) != (vv[i + 1] > 0):
@@ -727,16 +757,17 @@ def stage_S():
     cr = {}
     for pair in [(4, 6), (6, 8)]:
         c = cross(*pair)
-        cr[str(pair)] = c
+        cr[str(pair).replace(" ", "")] = c
         log(f"  crossing {pair}: {c:.6f}")
     ms = {"(4,6)": 0.35820, "(6,8)": 0.37899}
     for k, v in ms.items():
         log(f"    manuscript: {k} -> {v}  (dev {abs(cr[k]-v):.2e})")
-    # R ratio at p*=0.383 (and collapsed crossing)
-    j = grid.index(0.383)
+    # R ratio at p*=0.383
     R = {}
     for L in [4, 6, 8]:
         ls = lam_store[L]
+        j = grids[L].index(0.383)
+        assert ls["leps"][j] is not None
         R[L] = np.log(ls["l1"][j] / ls["lsig"][j]) / np.log(
             ls["l1"][j] / ls["leps"][j])
     log(f"  R(0.383): L=4 {R[4]:.4f} [0.1315], L=6 {R[6]:.4f} [0.1829], "
@@ -762,7 +793,7 @@ def stage_S():
     chi = {}
     for L in [4, 6, 8]:
         f = np.array([np.log(x) / L for x in lam_store[L]["l1"]])
-        c2 = np.gradient(np.gradient(f, grid), grid)
+        c2 = np.gradient(np.gradient(f, grids[L]), grids[L])
         i = int(np.argmax(c2))
         chi[L] = {"p_peak": float(grid[i]), "height": float(c2[i])}
         log(f"  chi4 L={L}: peak p={grid[i]:.4f} height={c2[i]:.4f}")
@@ -786,6 +817,7 @@ def stage_S():
         "slope_exponent_0383": float(b),
         "slopes_0383": {str(k): v for k, v in slopes.items()},
         "Xs": {str(L): [float(x) for x in Xs[L]] for L in Xs},
+        "grids": {str(L): [float(x) for x in grids[L]] for L in grids},
         "lams": {str(L): lam_store[L] for L in lam_store},
     })
     results["scan"] = scan
@@ -801,21 +833,27 @@ def stage_M5(grid, Xs, spl):
     L = 10
     m = 5
     pr = Problem(4, 5, dtype=np.float32)
-    pts = [0.374, 0.378, 0.381, 0.383, 0.385, 0.388, 0.392]
+    pts = [0.376, 0.379, 0.381, 0.383, 0.385, 0.388]
     rows = []
     t0 = time.time()
     for p in pts:
-        vals = pr.solve(p, ["triv", "std"], kmap={"triv": 2, "std": 1},
-                        tol=3e-6)
-        l1, leps, lsig = vals["triv"][0], vals["triv"][1], vals["std"][0]
+        if abs(p - 0.383) < 1e-12:
+            vals = pr.solve(p, ["triv", "std"], kmap={"triv": 2, "std": 1},
+                            tol=3e-6, warm=False)
+            leps = vals["triv"][1]
+        else:
+            vals = pr.solve(p, ["triv", "std"], kmap={"triv": 1, "std": 1},
+                            tol=3e-6)
+            leps = None
+        l1, lsig = vals["triv"][0], vals["std"][0]
         X = X_of(l1, lsig, L)
         rows.append((p, l1, leps, lsig, X))
-        log(f"  L=10 p={p}: l1={l1:.8f} lsig={lsig:.8f} "
-            f"leps={leps:.8f}  X={X:.4f}   [{time.time()-t0:.0f}s]")
+        log(f"  L=10 p={p}: l1={l1:.8f} lsig={lsig:.8f}  X={X:.4f}   "
+            f"[{time.time()-t0:.0f}s]")
     # (8,10) crossing by spline on the L=10 curve vs L=8 spline
     spl10 = CubicSpline([r[0] for r in rows], [r[4] for r in rows])
     f = lambda t: spl[8](t) - spl10(t)
-    gg = np.arange(0.370, 0.398, 0.0002)
+    gg = np.arange(rows[0][0], rows[-1][0], 0.0002)
     vv = f(gg)
     cr810 = None
     for i in range(len(gg) - 1):
@@ -834,9 +872,9 @@ def stage_M5(grid, Xs, spl):
     # R at 0.383 for L=10
     R10 = None
     j = min(range(len(rows)), key=lambda i: abs(rows[i][0] - 0.383))
-    if abs(rows[j][0] - 0.383) < 1e-9:
+    if abs(rows[j][0] - 0.383) < 1e-9 and rows[j][2] is not None:
         r = rows[j]
-        R10 = np.log(r[1] / r[3]) / np.log(r[1] / r[2])
+        R10 = float(np.log(r[1] / r[3]) / np.log(r[1] / r[2]))
         log(f"  R(0.383) L=10: {R10:.4f}  [manuscript: 0.2378]")
     # float64 spot check at p=0.383 (single power sweep, if memory allows)
     log("  float64 spot-check at p=0.383 (memory permitting)...")
@@ -853,7 +891,7 @@ def stage_M5(grid, Xs, spl):
                 break
             v = v2
         lam64 = float(v @ pr64.matvec(v, W64))
-        j32 = [r[0] for r in rows].index(0.383)
+        j32 = min(range(len(rows)), key=lambda i: abs(rows[i][0] - 0.383))
         log(f"    l1 float64 = {lam64:.10f} vs float32 = "
             f"{rows[j32][1]:.10f}  (dev {abs(lam64-rows[j32][1]):.2e})")
         results.setdefault("scan", {})["L10_float64_l1"] = lam64
@@ -901,6 +939,8 @@ def stage_F():
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
+    if "scan" not in results:
+        results.update(json.load(open(OUT_JSON)))
     sc = results["scan"]
     grid = np.array(sc["grid"])
     fig, axes = plt.subplots(1, 2, figsize=(11.0, 4.4),
@@ -908,18 +948,21 @@ def stage_F():
     ax = axes[0]
     colors = {4: "#b3541e", 6: "#3a6b8f", 8: "#5a8f3a", 10: "#7d3a8f"}
     for L in [4, 6, 8]:
-        ax.plot(grid, sc["Xs"][str(L)], lw=1.6, color=colors[L],
+        gx = sc.get("grids", {}).get(str(L), sc["grid"])
+        ax.plot(gx, sc["Xs"][str(L)], lw=1.6, color=colors[L],
                 label=f"$X_L$, $L={L}$")
     if "L10_rows" in sc:
-        r = np.array(sc["L10_rows"])
-        ax.plot(r[:, 0], r[:, 4], "o-", ms=3.5, lw=1.6, color=colors[10],
+        xs = [row[0] for row in sc["L10_rows"]]
+        ys = [row[4] for row in sc["L10_rows"]]
+        ax.plot(xs, ys, "o-", ms=3.5, lw=1.6, color=colors[10],
                 label=r"$X_L$, $L=10$ (float32)")
     def spl_pair(Ls, v):
         # value of the X_L curves at their intersection point v
         L1, L2 = Ls
-        if str(L1) in sc.get("Xs", {}):
-            return float(CubicSpline(sc["grid"], sc["Xs"][str(L1)])(v))
-        return float(sc.get("L10_rows", [[0, 0, 0, 0, 0]])[0][4])
+        if str(L1) in sc.get("Xs", {}) and str(L1) in sc.get("grids", {}):
+            return float(CubicSpline(sc["grids"][str(L1)],
+                                     sc["Xs"][str(L1)])(v))
+        return 0.0
     for pair, L1L2 in [("(4,6)", (4, 6)), ("(6,8)", (6, 8)),
                        ("(8,10)", (8, 10))]:
         tgt = {("(4,6)"): 0.35820, ("(6,8)"): 0.37899,

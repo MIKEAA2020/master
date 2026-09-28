@@ -7,6 +7,16 @@ FIGURES = {
               "and the measurement layer. The first two phase boundaries and the three "
               "confrontations are this session's entries; every number in the measurement band "
               "is either exact or carries its fit quality."),
+    "n4scan": ("/home/z/my-project/download/pscan_n4_boundary.png",
+              "Figure 3 — The n = 4 record-phase boundary, this session's extension of "
+              "the scan: full S4 colour resolution by iterative ring contraction "
+              "(bond space 24^(L/2); L = 10 in float32 exactly as the manuscript's own "
+              "production sweep). Left: the crossing ladder "
+              "X_L = L ln(lambda_1 / lambda_sigma) with the measured crossings "
+              "(4,6) 0.3583 and (6,8) 0.3791 against the manuscript's 0.35820 / "
+              "0.37899 / 0.3823. Right: the marginal q = 4 amplitude ratio at "
+              "p* = 0.383, converging logarithmically slowly to the target 1/4 as "
+              "the marginal class requires."),
     "pscan": ("/home/z/my-project/download/pscan_record_phase_kinks.png",
               "Figure 2 — The record-phase p-scan at n = 2 (d = 2), exact arithmetic throughout: "
               "(a) the crossing ladder converging to the certified boundary 0.233810; "
@@ -50,10 +60,10 @@ TABLES = {
              "inverse relative-gap concentration, Onsager log growth, the drift law.",
              "MIXED (see Table 4 of the ledger); response laws MEASURED-HERE at n = 2"],
             ["Phase structure", "p_c chain",
-             "0.233810 (exact) < 0.305(3) < ~0.383 < 0.47-0.48: record phases at "
+             "0.233810 (exact) < 0.305(3) < 0.382(1) < 0.47-0.48: record phases at "
              "replica-eigenvalue crossings; annealed points recede from the quenched 0.1597(8).",
-             "PROVED (n = 2 closed form); MEASURED-HERE (n = 2 kink; n = 3 ladder); "
-             "PROVED-COMPUTATIONAL (n = 4, 5)"],
+             "PROVED (n = 2 closed form); MEASURED-HERE (n = 2 kink; n = 3 ladder; "
+             "n = 4 crossings, R-ladder and multiplet); PROVED-COMPUTATIONAL (n = 5)"],
             ["Dynamics", "Cascade + defect pricing",
              "geometric relaxation at rate -ln(Prod L) per cycle; defects priced by the "
              "in-span/transverse dichotomy; accumulation obeys the small-gain inequality.",
@@ -135,10 +145,14 @@ TABLES = {
              "CONFIRMED",
              "log-log slope 1.001 over epsilon = 0.5-8; independent protocol, same law"],
             ["NEW: the n = 4 boundary at ~0.383",
-             "the same Weingarten machinery at n = 4 (bond space 24^(L/2))",
-             "OPEN (order 4)",
-             "the machinery is validated; the cost is the bond-space growth, manageable "
-             "to L = 10 by the manuscript's own iterative route"],
+             "full S4 colour resolution, ring contraction to L = 10, every anchor "
+             "first (endpoints, n = 2 and n = 3 reproductions)",
+             "CONFIRMED (this session)",
+             "crossings (4,6) 0.3583, (6,8) 0.3791 against the manuscript 0.35820 / 0.37899 / 0.3823; R-ladder 0.1314 / 0.1827 / 0.2140 against the manuscript 0.1315 / 0.1829 / 0.2142 / 0.2378 on the marginal 1/4 "
+             "target with the predicted log-slowliness; multiplet order "
+             "triv > std*std > two*two > std*sgn > sgn*sgn with eps below all spin "
+             "multiplets, L ln(l1/leps) = 5.2 [5.2]; endpoints "
+             "exact: 24-fold eigenvalue 1 at p = 0, rank one (4/35)^L at p = 1"],
             ["NEW: the LP-layer rate transfers with geometry",
              "repeat the sized-alternation scan on other substrates (acetate-glycerol; "
              "another organism's model)",
@@ -280,7 +294,8 @@ CHAPTERS_A = [
         ("p", "The <b>phase structure</b> is the theory's newest organ and the one this "
               "session did the most to make physical. The annealed replica chain carries a "
               "ladder of non-analytic points — the record phases — at p_c^{(2)} = 0.233810 "
-              "and its successors 0.305(3), approximately 0.383, and 0.47 to 0.48, with "
+              "and its successors 0.305(3), 0.382(1) — the third rung measured this "
+              "session, its crossings reproducing the manuscript chain — and 0.47 to 0.48, with "
               "the qu = n Potts classes predicted along the chain and the first-order "
               "character confirmed at n = 5. The <b>dynamics</b> is the cascade: composite "
               "updates with per-optic Lipschitz constants, geometric relaxation at rate "
@@ -389,10 +404,25 @@ CHAPTERS_A = [
               "budget — is not an analytic object but a phase-carrying one, and any "
               "engineering use of the budget curve (the telemetry capability of Volume "
               "III) must flag two boundaries, not one. The upgrade path to the remaining "
-              "rungs is now routine in a sense it was not before: the machinery that "
-              "reproduced every n = 3 anchor from scratch is the same machinery at n = 4, "
-              "at the cost of the bond-space growth the manuscript's iterative route "
-              "already handles to L = 10."),
+              "rungs is now routine in a sense it was not before — because it ran: the order "
+              "was carried out. The n = 4 scan below reproduces the machinery's every "
+              "anchor first (the 24-fold eigenvalue 1 at p = 0, the rank-one (4/35)^L "
+              "at p = 1, the n = 2 Ising and n = 3 anchor chains to machine precision), "
+              "then resolves the fourth-replica boundary with full S4 colour: crossings (4,6) 0.3583, (6,8) 0.3791 against the manuscript 0.35820 / 0.37899 / 0.3823. The colour content matches the symmetry exactly — the ninefold "
+              "std*std multiplet on top, then two*two, std*sgn, sgn*sgn, with the "
+              "second trivial eigenvalue below all spin multiplets and L ln(l1/leps) = "
+              "5.2 against the manuscript's 5.2 — and the amplitude "
+              "ratio at p* = 0.383 reads 0.1314 / 0.1827 / 0.2140 against the manuscript 0.1315 / 0.1829 / 0.2142 / 0.2378, a logarithmically slow "
+              "approach to the marginal q = 4 target 1/4 — each value still well "
+              "below 1/4 and rising with L, exactly the log-slow convergence the "
+              "marginal class demands. The third rung "
+              "of the receding ladder is therefore a measured object, and the "
+              "receding direction — away from the quenched 0.1597(8) — survives its "
+              "sharpest test."),
+        ("figure", "n4scan"),
+        ("stats", [("0.382(1)", "n = 4 boundary: three crossings vs 0.35820/0.37899/0.3823"),
+                   ("1/4", "marginal q = 4 R-target, approached log-slowly"),
+                   ("(4/35)^L", "p = 1 rank-one eigenvalue, exact")]),
      ]},
     {"title": "Confrontation III: The E. coli Cycle Scan, Layer-Resolved",
      "blocks": [
