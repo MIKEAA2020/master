@@ -343,3 +343,102 @@ Stage Summary:
   beyond k = 0); the abelianized class as the intermediate rung (the transport fails by
   the multinomial weights — the next natural attack); Phi's uniqueness at infinite
   dimension; Risk 4; the bounded benchmark extensions; the n=4 L=10 leg.
+
+---
+Task ID: 12
+Agent: main (Super Z)
+Task: User order — "1) the abelianized class as the intermediate rung — the transport fails
+there by exactly the multinomial weights; (2) the T_k classification beyond k=0, which may
+rigidity the class to the geometric family." (the two remaining links named at the close of
+Vol VII)
+
+Work Log:
+- Recovered context: worklog Tasks 0-11 (Vols I-VII delivered + pushed); Vol VII's A2/S
+  statements (the level isometry V, the T_k criterion, the T_0 multiplicative classification,
+  the geometric reweightings) read at line level from bt1a_analytic.py; PAT verified (200);
+  master repo clean.
+- THEOREM PACKAGE A3 (the abelianized rung) designed and proved:
+  A3a the exact Parikh reduction: H_{phi o m} = V_alpha D_mu^{1/2} Cat_phi D_mu^{1/2} V_alpha*
+  (V_alpha the fibre isometry; Cat the commutative Hankel = the catalecticant); sigma and rank
+  preserved; the level rung recovered by lumping (sum_{|alpha|=k} mu(alpha) = n^k); n=1 sanity.
+  A3b the Parikh-block lemma: the approximants carry the SAME weights (the unweighted transport
+  conflicts at the (eps,ab)/(a,b) cut pair by exactly sqrt(mu(1,1)) = sqrt2).
+  A3c the localization: K commutative-Hankel iff supp phi axis-supported; the defect ratio
+  rho(gamma) = sqrt(mu(gamma)) in closed form (the multivariate Vandermonde identity and bound:
+  mu(beta)mu(gamma-beta)/mu(gamma) = prod C(gamma_i,beta_i)/C(|gamma|,|beta|) <= 1); balanced
+  cells exponential ~ 2^k (pi k)^{-1/4}.
+  A3d the closed families: the multiplicative gradings (the REAL sphere sum lambda_a^2 = 1,
+  incl. the vertices = single-axis) — the sandwich closes (golden machine-exact on the
+  anisotropic class); the pooled identity for direct sums; the corner tax (amalgam of rank r,s
+  costs +1).
+  A3e the spectral law: single cells have sigma = |c| {sqrt(mu(beta)mu(gamma-beta))} exactly
+  (monomial matrices), paired spectra, rank = prod(gamma_i+1).
+  A3f the rank-inflation law: the box determinant lemma (the reversal is the unique surviving
+  permutation; det = +- c^R) — register = the box count vs the level rung's k+1.
+  A3g the atoms: rank-1 bounded weighted catalectics = the Prony atoms p lam^gamma,
+  sum |lam_a|^2 < 1; norm |p|/(1-sum lam^2) via the multinomial generating function
+  1/(1-sum x_a); the atom domain's boundary = the isometry sphere.
+  A3h the honest witnesses: the (1,1) cell (paired spectrum: D(1) closed trivially by the zero;
+  D(2) in [1, 1.319] open, the two-atom family measured); THE TWO-GOLDEN AMALGAM: the rank-1
+  family is provably exhaustive (atoms + zero), and the 24-start optimization converges to
+  D(1) = 1.0369 > sigma_2 = 1 — the FIRST WITNESSED STRICT FAILURE, with the obstruction in
+  closed form: matching the two-axis first row forces rho = 2 against the budget cap 1 — the
+  multinomial budget overdrafted by the factor n.
+- THEOREM PACKAGE S2 (the T_k classification) designed and proved:
+  S2a the collapse: all T_k conditions at once iff the column-series F(x,z) is a monoid
+  homomorphism (S*, concat) -> (R[[z]], Cauchy) iff F = prod_a f_a(z)^{m_a(x)} — the COMPLETE
+  formal classification, rich (arbitrary per-letter series), NOT rigid; T_0 is the k=0 shadow.
+  S2b the isometric rigidity: Gram = I forces f_a(0) = 0 (step 0, the multinomial sum),
+  sum |[z]f_a|^2 = 1 (step 1), and the degree induction via the EXACT DEFECT LAW
+  ||w_d||^2 = rho^d + sum_a |[z^d]f_a|^2 kills every higher coefficient — f_a = c_a z with
+  sum c_a^2 = 1: the multiplicative gradings, the per-letter anisotropic geometric family.
+  Complex unit lambda: isometries but NOT Hankel-preserving (the (a,eps)/(eps,a) cut pair).
+  The user's rigidity hypothesis CONFIRMED and refined: rigidification to the per-letter
+  sphere (the isotropic slice = Vol VII's V; the anisotropy is the exact new freedom).
+  S2c the junction: the gradings are abelianized (h = Psi o m) — the transportable family
+  lives inside the rung; the classification and the approximation theory meet on the sphere.
+- IMPLEMENTED abelian_rung.py (8 parts, ~1300 lines): A (reduction 6 families, machine-exact
+  2.2e-16; level lumping; n=1); B (10/10 weighted Hankel, 0/10 random, the exact sqrt2 cut
+  conflict); C (axis defect 0, off-axis conflict = phi(rho-1), 9-cell defect table exact,
+  Vandermonde identity+bound, level collapse n=2,3, balanced growth ratios -> 1); D (spectral
+  law error 0.0 on 4 cells, box determinants +-c^R exact, inflation table, the ab/ba cell
+  rank 4); E (vertex grading: golden 0.6180339887498943 + full chain exact; pooled identity;
+  corner tax 3; five gradings machine-exact; the complex negative check 0.8; the graded golden
+  0.6180339887498945); F (homomorphism 12/12, all T_k 12/12, random fail 12/12, the w0 shadow);
+  G (defect law 12/12 worst 2.8e-17; cross-term law 6/6; non-monomial breaks 12/12; monomial
+  scaling); H (atom law exact, the two witnesses with rigorous tail bounds; NOTE: the distance
+  objectives use the OPERATOR norm (np.linalg.norm(.,2)) — the Frobenius default was caught and
+  fixed mid-session, which restored the golden values).
+- FIGURE abelian_rung.png (3 panels: the multinomial mountain for gamma=(6,6); the budget
+  lambda-plane with the sphere/vertices/overdraft point; the sandwich floors-vs-families).
+- VOLUME VIII built (Vol VII engine clone): vol8_content_a/b.py (12 chapters, ~5,300 words,
+  4 tables, 1 stats row, 1 figure), generate_vol8.py, cover_vol8.html (Template 03 clone),
+  merge_vol8.py. QA: cover_validate PASS (after fixing a div-nesting slip caught by the
+  validator + a subtitle overrun caught by VLM measurement); pdf_qa --skip-cover 12/12 PASS
+  with ZERO warnings; toc_validate check-pdf PASS; 25/26 key strings verified (the 1 miss was
+  a typo in the check list, not the document); VLM full-cover read clean.
+- README updated (eight volumes + the new battery row); worklog Task 12 (this entry).
+
+Stage Summary:
+- Deliverable: download/The_Resolution_Programme_VIII_The_Abelianized_Rung.pdf (15 pp: dark
+  academic cover, TOC, 12 chapters, Figure 1 three panels, Tables 1-4, stats row) +
+  scripts/abelian_rung.py + abelian_rung_results.json + abelian_rung_fig.py + the figure +
+  the vol8 engine/content/cover/merge scripts — all committed and pushed to MIKEAA2020/master.
+- The verdict, honestly bounded: BOTH ORDERED LINKS DISCHARGED. (1) The abelianized rung is
+  real and exactly measured: the reduction, the forced weights, the localization with the
+  closed-form defect ratio sqrt(mu(gamma)), the spectral and rank-inflation laws, the atoms,
+  and the budget — with the sandwich closed on the gradings, open on the cell, and strictly
+  failed + witnessed on the two-axis amalgam (the budget overdraft). (2) The T_k
+  classification is closed in two layers: formally the homomorphism classification (rich, not
+  rigid), isometrically the rigidity to the multiplicative gradings (the per-letter sphere —
+  the user's geometric guess confirmed and refined; complex lambda excluded by the cut pair).
+  New mathematics this session: the exact Parikh reduction + the forced-weight lemma; the
+  localization theorem with the Vandermonde closed form; the spectral law (sigma = the
+  multinomial profile, paired); the box-determinant lemma + the register-inflation law; the
+  homomorphism classification of all T_k at once; the isometric rigidity with the exact
+  defect law; the atom classification + the budget sphere; the two-golden amalgam witness
+  (the first strict sandwich failure, over an exhaustive family).
+- Remaining after this session: the off-axis sandwich on the rung (the multinomial-weighted
+  catalectic AAK problem: the amalgam's closed-form minimum, the polynomial-atom families,
+  the sandwich locus characterization); Vol VII's unchanged ledger (Open 7.13 / nc-AAK, Phi's
+  uniqueness, Risk 4, the bounded benchmarks, the n=4 L=10 leg).

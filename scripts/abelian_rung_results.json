@@ -1,0 +1,704 @@
+{
+ "meta": {
+  "script": "abelian_rung.py",
+  "purpose": "the abelianized rung + the T_k classification (the two remaining links of Vol VII)",
+  "date": "2026-09-28"
+ },
+ "verdicts": {
+  "A_reduction": {
+   "level_const": {
+    "identity_err": 1.1102230246251565e-16,
+    "sigma_err": 2.220446049250313e-16,
+    "rank_H": 5,
+    "rank_K": 5,
+    "n_sigma": 5
+   },
+   "gamma11_cell": {
+    "identity_err": 2.220446049250313e-16,
+    "sigma_err": 2.220446049250313e-16,
+    "rank_H": 4,
+    "rank_K": 4,
+    "n_sigma": 4
+   },
+   "gamma21_cell": {
+    "identity_err": 2.220446049250313e-16,
+    "sigma_err": 4.440892098500626e-16,
+    "rank_H": 6,
+    "rank_K": 6,
+    "n_sigma": 6
+   },
+   "axis_supported": {
+    "identity_err": 0.0,
+    "sigma_err": 2.220446049250313e-16,
+    "rank_H": 7,
+    "rank_K": 7,
+    "n_sigma": 7
+   },
+   "multiplicative_graded": {
+    "identity_err": 0.0,
+    "sigma_err": 0.0,
+    "rank_H": 2,
+    "rank_K": 2,
+    "n_sigma": 2
+   },
+   "random_abelianized": {
+    "identity_err": 2.220446049250313e-16,
+    "sigma_err": 4.440892098500626e-16,
+    "rank_H": 4,
+    "rank_K": 4,
+    "n_sigma": 4
+   },
+   "level_lumping": {
+    "L_isometry_err": 2.220446049250313e-16,
+    "K_equals_LHL_err": 2.220446049250313e-16
+   },
+   "n1_sanity": {
+    "identity_err": 0.0,
+    "K_is_classical_hankel_err": 0.0
+   }
+  },
+  "B_parikh_block": {
+   "weighted_transports_hankel": "10/10",
+   "unweighted_conflict": {
+    "hankel_defect": 0.5857864376269049,
+    "cut_eps_ab": 1.4142135623730951,
+    "cut_a_b": 2.0,
+    "ratio": 0.7071067811865476,
+    "sqrt_mu_gamma11": 1.4142135623730951
+   },
+   "random_blocks_hankel": "0/10"
+  },
+  "C_localization": {
+   "axis_K_comm_hankel_defect": 0.0,
+   "offaxis_K_defect": 0.6213203435596428,
+   "gamma11_strip": {
+    "profile": [
+     1.0,
+     1.0,
+     1.4142135623730951,
+     1.4142135623730951
+    ],
+    "min": 1.0,
+    "max": 1.4142135623730951,
+    "sqrt_mu": 1.4142135623730951
+   },
+   "level_collapse_exact": true,
+   "level_collapse_n3": true,
+   "defect_ratio_table": [
+    {
+     "gamma": [
+      1,
+      1
+     ],
+     "rho_measured": 1.4142135623730951,
+     "sqrt_mu_gamma": 1.4142135623730951,
+     "exact": true
+    },
+    {
+     "gamma": [
+      2,
+      1
+     ],
+     "rho_measured": 1.7320508075688772,
+     "sqrt_mu_gamma": 1.7320508075688772,
+     "exact": true
+    },
+    {
+     "gamma": [
+      2,
+      2
+     ],
+     "rho_measured": 2.449489742783178,
+     "sqrt_mu_gamma": 2.449489742783178,
+     "exact": true
+    },
+    {
+     "gamma": [
+      3,
+      1
+     ],
+     "rho_measured": 2.0,
+     "sqrt_mu_gamma": 2.0,
+     "exact": true
+    },
+    {
+     "gamma": [
+      3,
+      2
+     ],
+     "rho_measured": 3.1622776601683795,
+     "sqrt_mu_gamma": 3.1622776601683795,
+     "exact": true
+    },
+    {
+     "gamma": [
+      3,
+      3
+     ],
+     "rho_measured": 4.47213595499958,
+     "sqrt_mu_gamma": 4.47213595499958,
+     "exact": true
+    },
+    {
+     "gamma": [
+      4,
+      4
+     ],
+     "rho_measured": 8.366600265340756,
+     "sqrt_mu_gamma": 8.366600265340756,
+     "exact": true
+    },
+    {
+     "gamma": [
+      4,
+      1
+     ],
+     "rho_measured": 2.23606797749979,
+     "sqrt_mu_gamma": 2.23606797749979,
+     "exact": true
+    },
+    {
+     "gamma": [
+      5,
+      5
+     ],
+     "rho_measured": 15.874507866387544,
+     "sqrt_mu_gamma": 15.874507866387544,
+     "exact": true
+    }
+   ],
+   "vandermonde_identity_and_bound": true,
+   "balanced_growth": [
+    {
+     "k": 1,
+     "rho": 1.4142135623730951,
+     "2^k/(pi k)^{1/4}": 1.502251088929885,
+     "ratio": 0.9413962637767148
+    },
+    {
+     "k": 2,
+     "rho": 2.449489742783178,
+     "2^k/(pi k)^{1/4}": 2.5264751109842587,
+     "ratio": 0.9695285467620978
+    },
+    {
+     "k": 3,
+     "rho": 4.47213595499958,
+     "2^k/(pi k)^{1/4}": 4.565855944711563,
+     "ratio": 0.9794737304797065
+    },
+    {
+     "k": 4,
+     "rho": 8.366600265340756,
+     "2^k/(pi k)^{1/4}": 8.498015456217574,
+     "ratio": 0.9845357787881324
+    },
+    {
+     "k": 5,
+     "rho": 15.874507866387544,
+     "2^k/(pi k)^{1/4}": 16.073853621794132,
+     "ratio": 0.9875981354504623
+    }
+   ]
+  },
+  "D_spectral_rank": {
+   "spectral_law": [
+    {
+     "gamma": [
+      1,
+      1
+     ],
+     "c": 1.0,
+     "R": 4,
+     "sigma_law_err": 0.0,
+     "rank": 4,
+     "n_nonzero_sigma": 4,
+     "sigma": [
+      1.414214,
+      1.414214,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "gamma": [
+      2,
+      1
+     ],
+     "c": 1.3,
+     "R": 6,
+     "sigma_law_err": 0.0,
+     "rank": 6,
+     "n_nonzero_sigma": 6,
+     "sigma": [
+      2.251666,
+      2.251666,
+      1.838478,
+      1.838478,
+      1.3,
+      1.3
+     ]
+    },
+    {
+     "gamma": [
+      2,
+      2
+     ],
+     "c": 0.7,
+     "R": 9,
+     "sigma_law_err": 2.220446049250313e-16,
+     "rank": 9,
+     "n_nonzero_sigma": 9,
+     "sigma": [
+      1.714643,
+      1.714643,
+      1.4,
+      1.212436,
+      1.212436,
+      1.212436,
+      1.212436,
+      0.7,
+      0.7
+     ]
+    },
+    {
+     "gamma": [
+      3,
+      1
+     ],
+     "c": -0.9,
+     "R": 8,
+     "sigma_law_err": 0.0,
+     "rank": 8,
+     "n_nonzero_sigma": 8,
+     "sigma": [
+      1.8,
+      1.8,
+      1.558846,
+      1.558846,
+      1.272792,
+      1.272792,
+      0.9,
+      0.9
+     ]
+    }
+   ],
+   "box_determinants": [
+    {
+     "gamma": [
+      1,
+      1
+     ],
+     "R": 4,
+     "det_abs": 1.0,
+     "c_power_R": 1.0,
+     "rel_err": 0.0,
+     "rank": 4
+    },
+    {
+     "gamma": [
+      1,
+      1
+     ],
+     "R": 4,
+     "det_abs": 1.0,
+     "c_power_R": 1.0,
+     "rel_err": 0.0,
+     "rank": 4
+    },
+    {
+     "gamma": [
+      1,
+      1
+     ],
+     "R": 4,
+     "det_abs": 1.0,
+     "c_power_R": 1.0,
+     "rel_err": 0.0,
+     "rank": 4
+    },
+    {
+     "gamma": [
+      2,
+      1
+     ],
+     "R": 6,
+     "det_abs": 0.2621440000000001,
+     "c_power_R": 0.2621440000000001,
+     "rel_err": 0.0,
+     "rank": 6
+    },
+    {
+     "gamma": [
+      2,
+      1
+     ],
+     "R": 6,
+     "det_abs": 0.262144,
+     "c_power_R": 0.2621440000000001,
+     "rel_err": 4.2351647362715e-16,
+     "rank": 6
+    },
+    {
+     "gamma": [
+      2,
+      1
+     ],
+     "R": 6,
+     "det_abs": 0.2621440000000001,
+     "c_power_R": 0.2621440000000001,
+     "rel_err": 0.0,
+     "rank": 6
+    },
+    {
+     "gamma": [
+      2,
+      2
+     ],
+     "R": 9,
+     "det_abs": 0.010077696000000008,
+     "c_power_R": 0.010077695999999997,
+     "rel_err": 1.0328095683637258e-15,
+     "rank": 9
+    },
+    {
+     "gamma": [
+      2,
+      2
+     ],
+     "R": 9,
+     "det_abs": 0.010077696000000008,
+     "c_power_R": 0.010077695999999997,
+     "rel_err": 1.0328095683637258e-15,
+     "rank": 9
+    },
+    {
+     "gamma": [
+      2,
+      2
+     ],
+     "R": 9,
+     "det_abs": 0.010077696000000008,
+     "c_power_R": 0.010077695999999997,
+     "rel_err": 1.0328095683637258e-15,
+     "rank": 9
+    },
+    {
+     "gamma": [
+      1,
+      2
+     ],
+     "R": 6,
+     "det_abs": 1.7715610000000008,
+     "c_power_R": 1.7715610000000008,
+     "rel_err": 0.0,
+     "rank": 6
+    },
+    {
+     "gamma": [
+      1,
+      2
+     ],
+     "R": 6,
+     "det_abs": 1.7715610000000008,
+     "c_power_R": 1.7715610000000008,
+     "rel_err": 0.0,
+     "rank": 6
+    },
+    {
+     "gamma": [
+      1,
+      2
+     ],
+     "R": 6,
+     "det_abs": 1.7715610000000008,
+     "c_power_R": 1.7715610000000008,
+     "rel_err": 0.0,
+     "rank": 6
+    }
+   ],
+   "box_det_law_holds": true,
+   "rank_inflation_table": [
+    {
+     "gamma": [
+      1,
+      1
+     ],
+     "abelianized_register": 4,
+     "level_register_same_degree": 3,
+     "inflation_factor": 1.3333333333333333
+    },
+    {
+     "gamma": [
+      2,
+      2
+     ],
+     "abelianized_register": 9,
+     "level_register_same_degree": 5,
+     "inflation_factor": 1.8
+    },
+    {
+     "gamma": [
+      3,
+      3
+     ],
+     "abelianized_register": 16,
+     "level_register_same_degree": 7,
+     "inflation_factor": 2.2857142857142856
+    },
+    {
+     "gamma": [
+      4,
+      4
+     ],
+     "abelianized_register": 25,
+     "level_register_same_degree": 9,
+     "inflation_factor": 2.7777777777777777
+    }
+   ],
+   "ab_ba_cell": {
+    "hankel_rank": 4,
+    "expected_register": 4
+   }
+  },
+  "E_closed_families": {
+   "vertex_grading": {
+    "gram_err": 0.0,
+    "transport_identity_err": 0.0,
+    "Tk_hankel_all": true,
+    "sigma2_golden": 0.6180339887498948,
+    "golden_value": 0.6180339887498949,
+    "optimizer_dist_1L_window6": 0.6180339887498943,
+    "sigma2_err_vs_golden": 1.1102230246251565e-16,
+    "transported_dist_equals_1L_err": 3.3306690738754696e-16,
+    "approx_hankel_defect": 0.0,
+    "approx_transport_form_err": 0.0,
+    "rank_transported": 1
+   },
+   "pooled_identity_direct_sums": true,
+   "corner_tax": {
+    "amalgam_of_two_rank1": 3,
+    "per_letter_ranks": 1,
+    "tax": "+1 (the shared eps corner glues the blocks)"
+   },
+   "multiplicative_gradings": [
+    {
+     "lambda": [
+      0.8,
+      0.6
+     ],
+     "rho": 1.0,
+     "gram_err": 8.881784197001252e-16,
+     "Tk_hankel_all_k": true,
+     "transport_identity_err": 0.0,
+     "sigma_err": 4.440892098500626e-16
+    },
+    {
+     "lambda": [
+      0.7071067811865475,
+      0.7071067811865475
+     ],
+     "rho": 0.9999999999999998,
+     "gram_err": 6.661338147750939e-16,
+     "Tk_hankel_all_k": true,
+     "transport_identity_err": 0.0,
+     "sigma_err": 2.220446049250313e-16
+    },
+    {
+     "lambda": [
+      0.28,
+      0.96
+     ],
+     "rho": 1.0,
+     "gram_err": 1.1102230246251565e-16,
+     "Tk_hankel_all_k": true,
+     "transport_identity_err": 0.0,
+     "sigma_err": 4.440892098500626e-16
+    },
+    {
+     "lambda": [
+      -0.6,
+      0.8
+     ],
+     "rho": 1.0,
+     "gram_err": 4.440892098500626e-16,
+     "Tk_hankel_all_k": true,
+     "transport_identity_err": 0.0,
+     "sigma_err": 4.440892098500626e-16
+    },
+    {
+     "lambda": [
+      0.6,
+      0.8
+     ],
+     "rho": 1.0,
+     "gram_err": 4.440892098500626e-16,
+     "Tk_hankel_all_k": true,
+     "transport_identity_err": 0.0,
+     "sigma_err": 4.440892098500626e-16
+    }
+   ],
+   "complex_unit_lambda": {
+    "isometry_gram_err": 8.881791097891703e-16,
+    "T1_cut_pair_conflict": 0.8,
+    "hankel_preserving": false,
+    "note": "lambda_a vs conj(lambda_a) at the (a,eps)/(eps,a) cuts"
+   },
+   "graded_golden_witness": {
+    "transport_identity_err": 0.0,
+    "sigma2_multiletter": 0.6180339887498949,
+    "golden": 0.6180339887498949,
+    "sigma2_err_vs_golden": 0.0,
+    "optimizer_dist_1L_window6": 0.6180339887498945,
+    "transported_dist": 0.6180339887498949,
+    "approx_transport_form_err": 5.551115123125783e-17,
+    "approx_hankel_defect": 0.0,
+    "rank_transported": 1
+   }
+  },
+  "F_homomorphism": {
+   "homomorphism_identity": "12/12",
+   "random_fs_all_Tk_hankel": "12/12",
+   "random_columns_Tk_fail": "12/12",
+   "w0_shadow": {
+    "lambda": [
+     0.3,
+     -0.4
+    ],
+    "partial_norm_sums_vs_geometric": {
+     "4": [
+      1.3320312500000002,
+      1.3333333333333333
+     ],
+     "6": [
+      1.3332519531250007,
+      1.3333333333333333
+     ],
+     "8": [
+      1.3333282470703127,
+      1.3333333333333333
+     ]
+    }
+   }
+  },
+  "G_rigidity": {
+   "defect_law": {
+    "pass": "12/12",
+    "worst_deviation": 2.7755575615628914e-17
+   },
+   "cross_term_exact_law": {
+    "pass": "6/6",
+    "law": "<w_1, w_d> = sum_a [z]f_a * [z^d]f_a",
+    "examples": [
+     {
+      "cross_w1_wd": -0.007323999999999983,
+      "predicted_sum_c_gamma": -0.007323999999999983
+     },
+     {
+      "cross_w1_wd": 0.071513,
+      "predicted_sum_c_gamma": 0.071513
+     }
+    ]
+   },
+   "non_monomial_breaks_gram": "12/12",
+   "non_monomial_examples": [
+    {
+     "rho": 0.496008,
+     "gram_deviation_from_diag": 0.2840380511022451
+    },
+    {
+     "rho": 0.106138,
+     "gram_deviation_from_diag": 0.17723432788800003
+    },
+    {
+     "rho": 0.24312499999999998,
+     "gram_deviation_from_diag": 0.136837
+    }
+   ],
+   "monomial_scaling_rho_k": true
+  },
+  "H_atoms_witness": {
+   "atoms": [
+    {
+     "lam": [
+      0.5,
+      0.4
+     ],
+     "rho": 0.41000000000000003,
+     "norm2_partial": 1.694360369602722,
+     "norm2_partial_expected": 1.6943603696027223,
+     "atom_equals_weighted_catactic_err": 2.7755575615628914e-17,
+     "atom_rank": 1,
+     "tail_rho_power": 0.000554884634566036
+    },
+    {
+     "lam": [
+      0.7,
+      0.2
+     ],
+     "rho": 0.5299999999999999,
+     "norm2_partial": 2.1206388008685053,
+     "norm2_partial_expected": 2.1206388008685058,
+     "atom_equals_weighted_catactic_err": 2.7755575615628914e-17,
+     "atom_rank": 1,
+     "tail_rho_power": 0.007020773599578995
+    },
+    {
+     "lam": [
+      0.3,
+      0.55
+     ],
+     "rho": 0.39250000000000007,
+     "norm2_partial": 1.6457266110044377,
+     "norm2_partial_expected": 1.6457266110044377,
+     "atom_equals_weighted_catactic_err": 2.7755575615628914e-17,
+     "atom_rank": 1,
+     "tail_rho_power": 0.00036392397498627194
+    }
+   ],
+   "atom_norm_law_holds": true,
+   "gamma11_witness": {
+    "sigma": [
+     1.414214,
+     1.414214,
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    "sigma_pairing": "single-cell spectra come in pairs (the strip matrix D^(1/2) Pi D^(1/2) is symmetric with zero diagonal blocks \u2014 eigenvalues +-), hence sigma_2 = sigma_1 and D(1) = ||K|| = sigma_2 trivially (the zero approximant)",
+    "eym_floors": {
+     "D1": 1.4142135623730951,
+     "D2": 1.0,
+     "D3": 1.0,
+     "D4": 0.0
+    },
+    "zero_approximant_upper": 1.4142135623730951,
+    "atom_family_D1_upper": 1.4142135623730911,
+    "two_atom_D2_upper": 1.318799822373663,
+    "status_M1": "CLOSED (trivially): D(1) = sigma_2 \u2014 the zero attains",
+    "status_M2_M3": "OPEN on the rung: D(2) in [sigma_3 = 1.0000, two-atom best = 1.3188] (the two-atom family beats the zero but not the floor \u2014 the atoms' strip values are tied to their geometric tails by the multinomial weights); the exact D(2) over all rank-2 weighted catalectics is open",
+    "atom_family_best_D1": 1.4142135623730911,
+    "two_atom_best_D2": 1.318799822373663,
+    "D4_exact_attainment": "the cell itself (rank 4) \u2014 distance 0"
+   },
+   "two_golden_amalgam_witness": {
+    "sigma": [
+     2.0,
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "sigma2_expected": 1.0,
+    "eym_floor_D1": 0.9999999999999999,
+    "zero_approximant_upper": 2.0,
+    "atom_family_D1": 1.0368721283335427,
+    "rank1_family_is_exhaustive": "atoms + zero (the rank-1 catalectics are exactly the Prony atoms \u2014 proved)",
+    "measured_strict_failure": true,
+    "gap_floor_to_best_upper": 0.03687212833354281,
+    "note": "the corner-coupled budget obstruction: matching the amalgam's first row forces lambda_a = lambda_b = 1, i.e. total weight rho = 2 \u2014 but the atom/isometry domains cap rho = sum lambda_a^2 at 1 (the multinomial budget: sum_alpha mu(alpha) lam^{2 alpha} = rho^|alpha| must stay summable, and the isometries live ON the sphere rho = 1). The two-axis demand overdrafts the budget by a factor n = 2 \u2014 the transport fails by exactly the multinomial weight budget. D(1) = 1.0369 > sigma_2 = 1: the first witnessed strict failure on the rung, numerically certified over the exhaustive rank-1 family"
+   }
+  }
+ }
+}
