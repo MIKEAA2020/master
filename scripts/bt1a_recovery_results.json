@@ -1,0 +1,299 @@
+{
+ "A_battery": {
+  "n": 300,
+  "checks": 600,
+  "agreements": 600,
+  "recovery_exact": true,
+  "outcome_tally": {
+   "L": 457,
+   "D": 6,
+   "K": 0,
+   "R": 52,
+   "ok": 85
+  },
+  "rank_spread_max": 4,
+  "rank_stable_fraction": 0.7007299270072993,
+  "note": "Phi(H,q) equals the ECD-definitional semantics on every check (presentation families F1/F2/F3 x register budgets): the Hankel matrix of the quotient is a complete invariant of the obstruction datum at each (eps, b). K = 0 by the Finiteness Lemma, as the lemma predicts."
+ },
+ "B_package": {
+  "instances": 80,
+  "resolution_ladder_monotone": 79,
+  "resolution_outcome_antitone": 80,
+  "register_ladder_eligible": 25,
+  "register_ladder_R_to_ok_at_rank": 25,
+  "eym_checks_passed": 19,
+  "eym_checks_total": 19,
+  "naturality_diam_exact": 80,
+  "naturality_rank_le_plus_one": 80,
+  "naturality_sigma_bound": 80,
+  "note": "the nested-space ladder is the rank filtration in BOTH coordinates: the register budget b (outcome flips R->ok exactly at b = rank(M)) and the test-resolution budget c (rank nondecreasing along the feasible regime, outcome antitone \u2014 obstructions APPEAR as resolution grows: the resolution window); magnitudes are the singular tail (EYM, spectral-norm equality, entrywise bound); the dictionary is graded-natural (C2 law: affine diameters, rank <= +1, sigma bounds)."
+ },
+ "B_wall": {
+  "L_grid": [
+   0.3,
+   0.348,
+   0.396,
+   0.443,
+   0.491,
+   0.539,
+   0.587,
+   0.635,
+   0.683,
+   0.73,
+   0.778,
+   0.826,
+   0.874,
+   0.922,
+   0.97,
+   1.017,
+   1.065,
+   1.113,
+   1.161,
+   1.209,
+   1.257,
+   1.304,
+   1.352,
+   1.4
+  ],
+  "closed_form_below_wall_exact": true,
+  "diverges_above_wall": true,
+  "linear_drift_at_wall": true,
+  "ceiling_loglog_slope": -1.0,
+  "note": "K-rung = the wall: below L<1 the completion is effective (geometric rate |ln L|, closed form d* = delta/(1-L) to 1e-12); at L=1 linear drift; above L=1 exponential divergence \u2014 the budget wall (ceiling slope -1, the first-order pole) is the effectivity boundary. Fuses bt3's dichotomy with BT1a's ladder."
+ },
+ "C1_quantum": {
+  "rows": [
+   {
+    "m": 2,
+    "L": 4,
+    "p": 0.118,
+    "rank_T": 3,
+    "rank_hankel_stack": 3,
+    "thm_rank": 3,
+    "match": true
+   },
+   {
+    "m": 2,
+    "L": 4,
+    "p": 0.5,
+    "rank_T": 3,
+    "rank_hankel_stack": 3,
+    "thm_rank": 3,
+    "match": true
+   },
+   {
+    "m": 2,
+    "L": 4,
+    "p": 0.7,
+    "rank_T": 3,
+    "rank_hankel_stack": 3,
+    "thm_rank": 3,
+    "match": true
+   },
+   {
+    "m": 2,
+    "L": 4,
+    "p": 1.0,
+    "rank_T": 1,
+    "rank_hankel_stack": 1,
+    "thm_rank": 1,
+    "match": true
+   },
+   {
+    "m": 3,
+    "L": 6,
+    "p": 0.118,
+    "rank_T": 6,
+    "rank_hankel_stack": 6,
+    "thm_rank": 6,
+    "match": true
+   },
+   {
+    "m": 3,
+    "L": 6,
+    "p": 0.5,
+    "rank_T": 6,
+    "rank_hankel_stack": 6,
+    "thm_rank": 6,
+    "match": true
+   },
+   {
+    "m": 3,
+    "L": 6,
+    "p": 0.7,
+    "rank_T": 6,
+    "rank_hankel_stack": 6,
+    "thm_rank": 6,
+    "match": true
+   },
+   {
+    "m": 3,
+    "L": 6,
+    "p": 1.0,
+    "rank_T": 1,
+    "rank_hankel_stack": 1,
+    "thm_rank": 1,
+    "match": true
+   },
+   {
+    "m": 4,
+    "L": 8,
+    "p": 0.118,
+    "rank_T": 12,
+    "rank_hankel_stack": 12,
+    "thm_rank": 12,
+    "match": true
+   },
+   {
+    "m": 4,
+    "L": 8,
+    "p": 0.5,
+    "rank_T": 12,
+    "rank_hankel_stack": 12,
+    "thm_rank": 12,
+    "match": true
+   },
+   {
+    "m": 4,
+    "L": 8,
+    "p": 0.7,
+    "rank_T": 12,
+    "rank_hankel_stack": 12,
+    "thm_rank": 12,
+    "match": true
+   },
+   {
+    "m": 4,
+    "L": 8,
+    "p": 1.0,
+    "rank_T": 1,
+    "rank_hankel_stack": 1,
+    "thm_rank": 1,
+    "match": true
+   },
+   {
+    "m": 5,
+    "L": 10,
+    "p": 0.118,
+    "rank_T": 24,
+    "rank_hankel_stack": 24,
+    "thm_rank": 24,
+    "match": true
+   },
+   {
+    "m": 5,
+    "L": 10,
+    "p": 0.5,
+    "rank_T": 24,
+    "rank_hankel_stack": 24,
+    "thm_rank": 24,
+    "match": true
+   },
+   {
+    "m": 5,
+    "L": 10,
+    "p": 0.7,
+    "rank_T": 24,
+    "rank_hankel_stack": 24,
+    "thm_rank": 24,
+    "match": true
+   },
+   {
+    "m": 5,
+    "L": 10,
+    "p": 1.0,
+    "rank_T": 1,
+    "rank_hankel_stack": 1,
+    "thm_rank": 1,
+    "match": true
+   }
+  ],
+  "all_match": true,
+  "note": "thm:rank recovered BY the dictionary: the strobe's reachability-Hankel rank (lambda_1-normalized, relative tolerance) equals 3*2^(L/2-2) exactly at every benchmark p and the p=1 endpoint gives rank 1 \u2014 the corpus's rank law is the R-clause of the dictionary read on the quantum interface. The p->1 interior is numerically degenerate toward the endpoint collapse; the exact statement there rests on the corpus's own Z[p] certificates."
+ },
+ "C2_rocksample": {
+  "sensor_llr_values": [
+   0.8189,
+   0.9626,
+   1.0821,
+   1.1309,
+   1.1858,
+   1.4088,
+   1.5163,
+   1.8548,
+   2.1972
+  ],
+  "typing": {
+   "2": {
+    "step": 7.0311,
+    "reads_atomic_commit": 9,
+    "reads_absorbed": 9,
+    "reads_gradual": 0,
+    "total_reads": 18,
+    "gradual_fraction": 0.0,
+    "predicted_distortion_traj": 0.1536,
+    "mean_reads_to_commit": 1.0
+   },
+   "3": {
+    "step": 3.5156,
+    "reads_atomic_commit": 4,
+    "reads_absorbed": 14,
+    "reads_gradual": 0,
+    "total_reads": 18,
+    "gradual_fraction": 0.0,
+    "predicted_distortion_traj": 0.25,
+    "mean_reads_to_commit": 2.87
+   },
+   "4": {
+    "step": 2.3437,
+    "reads_atomic_commit": 0,
+    "reads_absorbed": 9,
+    "reads_gradual": 9,
+    "total_reads": 18,
+    "gradual_fraction": 0.5,
+    "predicted_distortion_traj": 0.1369,
+    "mean_reads_to_commit": 3.65
+   },
+   "5": {
+    "step": 1.7578,
+    "reads_atomic_commit": 0,
+    "reads_absorbed": 2,
+    "reads_gradual": 16,
+    "total_reads": 18,
+    "gradual_fraction": 0.889,
+    "predicted_distortion_traj": 0.0897,
+    "mean_reads_to_commit": 4.08
+   },
+   "6": {
+    "step": 1.4062,
+    "reads_atomic_commit": 0,
+    "reads_absorbed": 5,
+    "reads_gradual": 13,
+    "total_reads": 18,
+    "gradual_fraction": 0.722,
+    "predicted_distortion_traj": 0.0731,
+    "mean_reads_to_commit": 4.38
+   },
+   "8": {
+    "step": 1.0044,
+    "reads_atomic_commit": 0,
+    "reads_absorbed": 2,
+    "reads_gradual": 16,
+    "total_reads": 18,
+    "gradual_fraction": 0.889,
+    "predicted_distortion_traj": 0.0553,
+    "mean_reads_to_commit": 3.09
+   }
+  },
+  "E2_measured_distortions": {
+   "2": 0.124,
+   "3": 0.2965,
+   "4": 0.083,
+   "5": 0.0391,
+   "6": 0.0348,
+   "8": 0.0342
+  },
+  "correlation_predicted_vs_measured": 0.97,
+  "verdict": "the dictionary types the E2 table from the quantizer's own transition graph: q=2 is the all-ATOMIC interface (the prior sits on the rounding boundary: every read commits to an extreme, one read decides - the blind-commit survivor, value 14.94 > exact 14.21 because early commitment wins in RockSample[4,4]); q=3 is the D-class degenerate completion (absorb + atomic with ZERO gradual reads: no shift-consistent completion through the 3-level quantizer accumulates evidence - the measured structural break, value 3.40, the maximal distortion 0.2965); q=4 partial (gradual reads appear, 10.50); q>=5 mostly gradual (full ~14.2). The trajectory-level distortion predictor (Wald walk, quantized-belief stop rule) reproduces the E2 curve at the stated correlation; the single-step predictor does not (the q=3 gap is the absorbing dynamics, i.e. exactly the degeneracy the dictionary names)."
+ }
+}

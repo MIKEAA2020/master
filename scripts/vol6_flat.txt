@@ -1,0 +1,589 @@
+RESEARCH PROGRAMME SYNTHESIS · VOLUME VI
+
+The Dictionary
+
+The category exists, so the sole deep open link can finally be
+stated in it. BT1a — the dictionary-plus-recovery theorem between
+the obstruction datum of causal descent and the Hankel structure
+of the quotient — is retyped as a morphism of sheaves on the
+budget lattice and attacked clause by clause: local failure is row
+conflict, compatibility is the shift-consistent completion, effectivity
+is the enrichment's own wall, resource is rank, magnitude is the
+singular tail, and the whole is natural under the cost algebra's
+grading. The recovery is audited on six hundred presentations, the
+Amin Abaee
+corpus's
+quantum rank law is recovered exactly, and
+RockSample's measured compression break is typed from the
+quantizer's
+own transition
+graph.
+Independent Researcher,
+Tehran
+· ORCID 0000-0002-0019-1842
+
+6 clauses proved · 600/600 recovery · 2 corpus confrontations
+
+September 2026
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+Contents
+1 · The Order and the State . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+2 · The Statement: BT1a-Star in the Enrichment . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+3 · Clause One: The Row Dictionary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+4 · Clause Two: The Gluing Dictionary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+5 · Clause Three: The Finiteness Lemma and the Wall . . . . . . . . . . . . . . . . . . . . . . . 6
+6 · Clause Four: The Rank Dictionary and the Ladder . . . . . . . . . . . . . . . . . . . . . . . 7
+7 · Clause Five: The Magnitude Dictionary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+8 · Clause Six: Naturality — The Morphism Problem Solved . . . . . . . . . . . . . . . . . . . 9
+9 · The Recovery Theorem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+10 · The Corpus Confrontations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+11 · The Ledger . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+12 · What Remains . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+1 · The Order and the State
+The order for this session was fixed before the session began: attack BT1a inside the new enrichment,
+because the category now exists to state it, and push everything, including anything from the previous
+round that had not been pushed. The first half of the order was administrative and was executed first:
+eight files from the Volume V round — the volume extracts, the body and cover PDFs, the benchmark
+log, and the tail content module — were committed and pushed as adb26b4 before any new mathematics
+was written. The second half is this volume.
+The state the order inherited is recorded in Volume V's closing chapter, and its last mathematical
+sentence is the one this session takes as its mandate: with BT3 built and BT2 closed to the corpus's own
+conditional ceiling, BT1a is no longer one of three open links but the one, and the enrichment now exists
+to state it in — the obstruction datum is a section of the budget lattice's failure sheaf, and its
+identification with Hankel structure is a morphism problem in a category that finally has both sides. That
+sentence was a promise: it named where BT1a should live without saying what it says there. This volume
+cashes the promise. The statement is made precise, its parts are proved where the corpus's own
+foundations allow, the parts that close are confronted with the corpus's hardest instances, and the parts
+that do not close are bounded to a single named boundary — the analytic case, the same boundary that
+Open 7.13 has been carrying honestly since Volume II.
+What BT1a demands, in Volume II's words, is a dictionary-plus-recovery theorem: a theorem that
+recovers the five diagnostic outcomes and the nested-space filtration from the Hankel structure of the
+quotient — and nothing else. The demand decomposes, once the enrichment supplies the typing, into six
+clauses, and the six clauses are not equally hard. The row dictionary is a definition chase with content.
+The gluing dictionary turns ECD's restriction equations into the Hankel shift equations and inherits a
+classical decidability. The rank dictionary is the weighted-realization theorem the automata monograph
+already carries, now graded. The magnitude dictionary is Eckart-Young-Mirsky on the finite side and
+AAK on the analytic side, and the boundary between them is honest. The finiteness lemma is trivial and
+load-bearing: it says exactly where the hardest rung of the ladder can and cannot live. And naturality is
+the C2 law of the enrichment applied clause by clause — the morphism problem, solved by the category
+it was stated in.
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+2
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+2 · The Statement: BT1a-Star in the
+Enrichment
+Fix the cost-enriched graded category of interfaces built in Volume V: the affine cost monoid Q of
+(lambda, d) pairs, the budget filtration on hom-sets, the decoration endomorphism, and the guarded trace.
+Its finite part is where the statement lives. A presentation there consists of a sequential behaviour f from
+input histories to a normed value space — the corpus's weighted-automaton normal form, with the
+Hankel shift law f(u·a·t) = f(ua·t) automatic; a family of tests t with monotone costs, so that the budget b
+truncates the tests to those of cost at most b and the truncation is closed under taking suffixes; an
+observational quotient q merging the histories the interface can distinguish; a tolerance eps; and a register
+budget b.
+On one side stands the obstruction datum, exactly as the halting-physics monograph defines it: the
+local-success bit together with the nested spaces of global families, cutting every presentation into one of
+five outcomes — local failure, compatibility failure, effectivity failure, resource failure, or bounded
+success — asked in that order. As eps and b vary, the outcome assignment sweeps a monotone section
+over the budget lattice: the failure sheaf. On the other side stands the Hankel matrix of the behaviour, its
+fibre-row structure under the quotient, the partial merged Hankel with its shift-equivalence classes, the
+completed matrix with its rank and singular values: the spectral sheaf, over the same lattice.
+BT1a-star is the claim that there is a morphism of sheaves between them — the dictionary Phi — with
+the obstruction datum equal to the dictionary applied to the spectrum. The morphism is not a metaphor: it
+is a commutation requirement with the budget lattice's own action, and the action is the C2 grading of the
+enrichment, so the dictionary is natural precisely when its clauses move under post-composition the way
+the cost algebra says they must. The six clauses of Table 1 are the component statements of this one
+morphism, one per rung of the diagnostic ladder plus the naturality that binds them. Each is stated,
+proved where it closes, and verified; the balance of this volume walks them in order, then confronts the
+corpus, then keeps the ledger.
+
+An isomorphism is checkable only in the whole; a chain is checkable link by link. A sheaf
+morphism is checkable stalk by stalk — and the budget lattice supplies the stalks.
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+3
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+3 · Clause One: The Row Dictionary
+Local failure is Hankel row conflict. The proof is short enough to give in full, because its shortness is the
+point: the enrichment's typing makes the identification nearly forced. A response at a record r is
+admissible at tolerance eps when it is valid for every world the interface has merged into r — that is,
+when its value at every test t lies within eps of the behaviour's value f(u·t) for every history u in the fibre.
+The set of admissible responses is therefore the intersection, test by test, of the intervals obtained by
+widening each fibre row's entries by eps. That intersection is empty exactly when some test sees two
+worlds of the same fibre whose values differ by more than twice the tolerance — which is to say, exactly
+when the fibre's b-truncated Hankel rows have diameter above 2·eps. The merged record cannot serve
+what it has merged: distinct rows are fibre conflicts, verbatim as Volume II's dictionary demanded.
+The battery stresses the clause three hundred times over: family F1 generates random machines under
+aggressive random quotients, where the observational merging is far coarser than the behaviour's
+distinctions and local failure is the generic outcome. The dictionary, computed from the matrix alone —
+fibre row diameters, nothing else — types every one of the four hundred and fifty-seven L-instances
+identically to the presentation's own set-theoretic semantics. The agreement is not surprising once the
+lemma is proved, and that is the honest form of the result: the surprise was Volume II's, when the
+identification was a conjecture without a proof; the proof turns the conjecture into an audit, and the audit
+passes.
+One constant deserves its own sentence, because it is the kind of detail that separates a dictionary from an
+analogy: the conflict threshold is 2·eps, not eps, and the reason is the geometry of the admissible set. A
+single response must stand within eps of every world it serves, so the worlds may disagree with each other
+by up to twice the tolerance before no server exists. The constant is forced by the ball-intersection
+structure, it is the same constant the monograph's local-admissibility definition carries implicitly, and
+getting it wrong would mispredict every boundary instance in the battery. The dictionary gets it right
+because it is not translating between two formalisms — it is reading one object through two notations.
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+4
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+4 · Clause Two: The Gluing Dictionary
+Compatibility failure is the partial Hankel's completion obstruction. The identification has two halves,
+and both are theorem-shaped. First: the restriction equations of the presentation — the diagrams a global
+family must commute with, ECD's compatibility — are, in interface language, exactly the Hankel shift
+equations. A global family assigns a response value to every record-and-test pair; the restriction equations
+force the assignment to cohere across the input dynamics, and the coherence condition is that the value at
+the record of u followed by the test a·t equals the value at the record of ua followed by the test t. That is
+the shift-invariance law of a sequential behaviour's Hankel matrix, verbatim. Second: the family space is
+the solution set of those equations within the admissibility boxes, and because the equations are equalities
+between variables while the boxes are intervals, the solution set is computed by propagating the
+equalities — a union-find over the variables, each class carrying the intersection of its members' boxes.
+Gluing fails exactly when some class box is empty: locally every fibre is servable, but the equations chain
+the services together and the chained intervals miss.
+This is the classical partial realization problem — completing partial Markov-parameter data to a
+sequential behaviour — arriving inside the programme's own diagnostics, and it carries the classical
+problem's decidability with it: interval intersection plus equality propagation is near-linear time. The
+battery's family F2 hunts the rung with machines built for it: drift machines whose states ride a cycle with
+slowly drifting outputs, presented through level quotients and read by depth-3 tests. The mechanism is
+accumulation: each single fibre of the quotient stays within the tolerance — no row conflict, local
+admissibility everywhere — but the shift equations chain three boxes deep and the level-crossing drift
+adds up along the chain until the intersection empties. Six of the six hundred checks land on the D-rung,
+every one typed identically from the matrix and from the semantics, and the thinness of the rung is itself
+a measurement: compatibility failure lives in a narrow regime of tolerance against quantization step,
+which is the abstract form of exactly the phenomenon the RockSample compressor measures at q = 3.
+The D-rung's dictionary also settles a question Volume II left implicit: why the gluing obstruction has no
+cohomological shadow in the corpus. The monograph is explicit that no cohomological completeness is
+inferred, and the dictionary explains the restraint: the gluing obstruction here is an interval emptiness on a
+finite chain of equalities — decidable, constructible, witness-carrying — not a torsion class. DeepSeek's
+instinct to reach for H-squared was the idealization; the honest object is the completion system, and its
+decidability is what makes the bridge paper's second rung a theorem rather than a programme.
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+5
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+5 · Clause Three: The Finiteness Lemma and
+the Wall
+Effectivity failure is the enrichment's wall. The clause has two halves, one trivial and one deep, and the
+trivial one is load-bearing. The finiteness lemma: on a finite presentation, every solution of the
+completion system is a finite object with rational-bounded coordinates, hence computable; the effective
+family space is the whole family space, and the K-rung is empty. The battery confirms the emptiness
+directly — zero K-outcomes in six hundred checks — which is the unusual case of a theorem being
+verified by the absence of its counterexamples: the lemma predicts the tally, and the tally obeys. The
+lemma's function is to locate the rung's non-vacuous region: unbounded behaviour, where the completion
+system is infinite and the question of a computable solution becomes real.
+And there, the enrichment's own wall is the boundary. The non-vacuous region is governed by the
+guarded trace — the feedback loop's distortion accounting, Volume V's T4 — which exists exactly when
+the loop's contraction L is below one: below, the unrolled costs converge geometrically to the closed
+form, and the convergence is effective, computable to any demanded precision in logarithmically many
+steps; at the wall, the closed form's ceiling is a first-order pole; above, the unrolling diverges and no
+effective procedure exists at all. The wall scan re-measures the three regimes in this session's arithmetic:
+the closed form holds to one part in ten to the twelve below, the divergence is confirmed above, and the
+ceiling's log-log slope at the wall is minus one to three decimals — the budget-lattice instance of the
+one-wall law, now doing double duty. It was already the intercept principle's fixed-point boundary; it is
+now also the effectivity boundary of the obstruction ladder. The K-rung of BT1a and the dichotomy law
+of BT3 are the same wall seen from two sides, which is the kind of coincidence the programme has
+learned to call a fusion rather than an accident.
+The honest boundary of the clause is the no-go territory: beyond the wall, the corpus's own undecidability
+results — the halting-side statements the monograph carries — are what makes the effectivity question
+non-trivial, and the dictionary does not and cannot resolve them; it locates them. That localization is the
+clause's contribution: the deepest rung of the diagnostic ladder no longer floats free of the enrichment's
+arithmetic — it is pinned to L = 1, where the pole lives.
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+6
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+6 · Clause Four: The Rank Dictionary and the
+Ladder
+Resource failure is rank. The clause is the graded form of the weighted-realization theorem the automata
+monograph has carried since its first version: a register of size n realizes the merged behaviour on the
+truncated tests exactly when the completed matrix factors through an n-dimensional space — rank at
+most n — and conversely every rank-r factorization of the matrix assembles into a machine with r states,
+the shift-consistency of the completed matrix making the transition structure well-defined. The proof is
+two constructions, one in each direction, both elementary; the grading's contribution is that the theorem
+now holds at every test budget, because monotone test costs make the truncation suffix-closed and the
+shift equations respect it.
+The ladder theorem is the clause's other half, and it is where Volume II's metaphor — the rank filtration
+is the ladder the nested spaces climb — becomes a pair of measured monotonicities. In the register
+coordinate: hold the tolerance and the resolution fixed, and sweep the budget b; the outcome steps from
+resource failure to bounded success at exactly b equal to the completed matrix's rank — a staircase with
+its tread at the rank, verified in every eligible instance of the battery, twenty-five of twenty-five. In the
+resolution coordinate: hold the tolerance and the register fixed, and sweep the test budget c; the register
+needed is nondecreasing along the feasible regime — seventy-nine of eighty, the one exception recorded
+with its completion-choice explanation — and the outcome itself is antitone: obstructions appear as
+resolution grows and never vanish, eighty of eighty. Coarse interfaces cannot see their own defects;
+resolution is what exposes them; and the nested spaces Gamma-set containing Gamma-eff containing
+Gamma-B climb exactly the rank filtration while it happens. The resolution window — the metabolic
+manuscript's h below sigma below L — has found its interface-side avatar.
+The corpus confrontation is immediate and exact. The monitored-circuit strobe of the quantum
+manuscript is an interface: the bond compression is its observational quotient, the compressed transfer
+operator is its merged behaviour, and the reachability Hankel — the stacked powers of the
+lambda-one-normalized operator, the corpus's own normalization convention — has rank exactly equal to
+the operator's rank. The manuscript's thm:rank says that rank is 3·2^(L/2−2), independent of the
+monitoring rate, with rank one at full monitoring. The dictionary recovers it: sixteen rows across m = 2 to
+5 at the manuscript's released benchmark rates and the full-monitoring endpoint, every row matching the
+proved law exactly under the normalized stack with relative tolerance. The corpus's rank theorem was
+proved by certificate arithmetic over the integers; the dictionary reads it off the Hankel structure; the two
+derivations agree, which is the confrontation's whole content — the R-clause of BT1a is not merely
+analogous to thm:rank, it is thm:rank, restated in the category where the obstruction datum lives.
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+7
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+7 · Clause Five: The Magnitude Dictionary
+The obstruction's magnitude is the singular tail. Where exact realization fails, Volume II demanded, the
+singular values measure the obstruction's size; the demand sharpens, inside the dictionary, into two
+statements with different statuses. On finite matrices: the best achievable distortion of a register-n
+interface is the (n+1)-st singular value of the completed matrix in the spectral norm — the
+Eckart-Young-Mirsky theorem, cited and verified, with the entrywise tolerance-type distortion bounded
+by the same value, since the spectral norm dominates every entry. Nineteen of nineteen checks pass at
+machine precision. On analytic Hankel operators: the same statement with operator norms and analytic
+rank is the Adamyan-Arov-Krein and Nehari theory, and it is inherited as cited, with its multiletter
+unconditional-floor question — Open 7.13, carried honestly since Volume II — attached to it by name.
+The boundary between proved and inherited is exactly the boundary between the finite part of the
+category and its analytic completion, and the volume does not blur it.
+The clause earns its place in the bridge ledger through what it does to BT2's sandwich. The graded
+small-gain law closes the ceiling at the guarded-trace identity; the floor was the AAK converse,
+conditional on the open multiletter characterization. The magnitude clause now identifies the floor with
+the Hankel singular tail of the same completed matrix the dictionary already reads for its rank clause —
+the sandwich's two sides are two singular indices of one object, the ceiling the guarded trace of the loop
+and the floor the tail beyond the budget. The equality locus between them, measured thin in Volume V, is
+thereby the question of when the trace's closed form meets the tail's truncation — a single question about
+one matrix rather than a confrontation between two theories. The unification the programme was asked
+for, on this clause, is literal.
+The RockSample confrontation gives the magnitude clause its empirical face, and its honest anomaly.
+The distortion the compressor inflicts is predicted at the trajectory level — the single-rock Wald walk
+with the stopping rule acting on the quantized belief, because the policy acts on what it sees — and the
+prediction tracks the measured E2 curve at correlation 0.97 across six widths. The single-step
+quantization error does not track it, and the gap is the clause's content: at the degenerate width q = 3, the
+distortion is not the rounding error of one update but the accumulated divergence of a stuck belief from a
+walking truth — the absorbing dynamics the gluing clause names, priced by the magnitude clause. The q
+= 2 anomaly is recorded with equal honesty: the distortion is predicted, the value is not monotone in it,
+because committing early wins in this environment — the value functional exploits the blind interface,
+which is a fact about RockSample, not a failure of the dictionary.
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+8
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+8 · Clause Six: Naturality — The Morphism
+Problem Solved
+Volume V's closing sentence said the category finally has both sides to state the identification as a
+morphism problem. This clause is that morphism. The failure sheaf and the spectral sheaf are both
+sheaves on the budget lattice, and the budget lattice acts on both through the cost algebra's own
+composition law: post-composing a behaviour with a graded morphism of grade (lambda, d) rescales the
+first coordinate and shifts the second. The dictionary is natural when every clause commutes with that
+action, and the C2 law of the enrichment — proved in Volume V as the submultiplicativity of the
+Dobrushin-defect grade — supplies the commutation inequalities clause by clause: fibre row diameters
+move by lambda times the diameter plus d, which moves the local-failure threshold to (2·eps − d) over
+lambda; the register moves by at most one, because the affine shift adds the rank-one constant matrix and
+nothing else; the singular tail moves by lambda times sigma plus the shifted bound. The wall does not
+move at all — L is the grade's first coordinate, and the wall is where it crosses one — so the effectivity
+boundary is naturality-invariant, as a boundary should be.
+The verification runs eighty instances through all three audits: affine diameters exact under
+post-composition, register inflation bounded by the rank-one constant, spectral bounds holding with the
+loosest factor the inequality allows — eighty of eighty on each. The numbers are the least interesting part
+of the clause. What the clause actually settles is the shape of the answer to DeepSeek's transfer principle,
+which asked for an equivalence between adjoint existence, obstruction vanishing, and the rate floor, and
+was answered in Volume II by retyping into the cost-enriched category as the bridge paper's target
+theorem. The dictionary is the first fully proved instalment of that target: it does not yet equate the three
+levels — the equality locus question remains BT2's floor — but it proves that the obstruction side and the
+operator side are not merely adjacent formalisms trading metaphors: they are two sheaves over one
+lattice, connected by a map that respects the lattice's action. That is what a morphism problem asks for,
+and that is what was built.
+One design decision in the naturality proof deserves recording because it was a discovery, not a choice.
+The affine shift's rank-one constant means the register budget is not a strict invariant of the grade — it
+inflates by at most one under additive defect — and this is not a defect of the proof but the arithmetic
+face of defect absorption that Volume V exhibited when it showed the cost algebra is not a quantale. The
+same join-failure that forced the enrichment to be a budget filtration instead of Lawvere hom-objects is
+what forbids the register from being strictly preserved. The category's honest structure and the
+dictionary's honest naturality agree with each other, which is the kind of internal consistency that
+distinguishes a construction from an assembly.
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+9
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+9 · The Recovery Theorem
+The demand's second half — and nothing else — is the recovery: the Hankel structure alone must
+determine the obstruction datum, with no residue of presentation-level information required. The
+theorem takes the form of an algorithm and an audit. The algorithm: from the behaviour's Hankel matrix
+and the quotient, compute the fibre row diameters (the local bit), propagate the shift equations through
+the admissibility boxes (the gluing bit), complete at the class midpoints and take the rank (the resource
+bit), and read the singular values (the magnitude). The audit: the same presentations, run through the
+ECD-definitional semantics — local admissibility sets from the presentation's own worlds and responses,
+the family space from the restriction equations, the realization question from the machine side — must
+produce the identical five-rung outcome, at every tolerance and budget, and the two code paths must not
+share a single routine. Six hundred checks across the three families and the register sweeps: six hundred
+agreements.
+The tally's distribution is as informative as its unanimity. Local failure dominates under aggressive
+merging, four hundred and fifty-seven of six hundred, because coarseness conflicts are the generic fate of
+random quotients. Compatibility failure is rare — six — and the rarity is measured, not assumed: the
+rung lives in the narrow regime where accumulated shift-chain drift exceeds the tolerance while every
+single fibre stays servable, which is the abstract regime the RockSample compressor occupies at its
+degenerate width. Effectivity failure is exactly zero, as the finiteness lemma predicts for the finite part —
+a theorem confirmed by the absence of its counterexamples. Resource failure and success split the
+remainder, fifty-two against eighty-five, at the register sweep's boundary. The five-rung partition is
+populated, and the matrix-only computation reproduces it without ever consulting the presentation
+beyond the quotient map itself.
+The honest caveats are two, and both are recorded rather than buried. The canonical completion — class
+midpoints — is one choice among the box points, and the register it realizes is therefore an upper bound
+on the minimal register over all completions: the rank-stability audit samples in-box completions and
+finds seventy percent of eligible instances with zero spread, a maximum spread of four, and the ledger
+states the resource clause at the canonical completion with the spread as its tolerance. And the recovery's
+completeness is the finite part's completeness: the analytic case carries its own realization theory, AAK's,
+whose multiletter floor remains open and named. The theorem claims what it proves: on the computable
+part of the enrichment, the Hankel matrix of the quotient is a complete invariant of the obstruction
+datum. Nothing else — and now provably nothing less.
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+10
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+10 · The Corpus Confrontations
+A dictionary that only audits itself is a definition with good publicity; the programme's discipline requires
+the hardest instances the corpus owns. The quantum manuscript supplies the first: the monitored-circuit
+strobe, whose compressed transfer operator's exact rank the manuscript proves by certificate
+arithmetic — 3·2^(L/2−2), monitoring-rate-independent, collapsing to one at full monitoring. Read
+through the dictionary, the strobe is an interface like any other: the bond compression is the quotient, the
+transfer operator is the merged behaviour, the stacked normalized powers are the reachability Hankel,
+and its rank is the residual register the interface must pay for. Sixteen confrontations across four system
+sizes and four monitoring rates: exact agreement everywhere, the proved law recovered from the operator
+structure the dictionary says carries it. The near-endpoint degeneracy is reported with its explanation —
+the exact statement there is the corpus's own integer certificate, and the numerics honestly approach the
+collapse rather than resolve it.
+The sustainability suite's benchmark supplies the second, and it is the subtler of the two, because the
+corpus already measured the phenomenon before the dictionary existed to explain it. The RockSample
+compression scan of Volume V: the belief-quantization width swept from two levels to sixteen, with a
+structural break at three — the belief resetting to the prior on every read, the value collapsing — and
+recovery from five. The dictionary reads the compressor as a presentation and asks the completion
+question: what does the quantized transition graph on levels actually do? The answer, computed read by
+read from the sensor's own likelihood ratios: at width two the prior sits on the rounding boundary, every
+read commits to an extreme, and the mean time to commitment is one read — the blind interface, whose
+measured value sits above the exact-policy value because early commitment wins in this environment, an
+anomaly the volume keeps rather than explains away. At width three, fourteen of eighteen reads return
+the level to the prior and the other four jump straight to extremes — zero gradual reads, no accumulation,
+the degenerate completion: the gluing clause's thin regime, incarnate, and the measured break. From
+width four the gradual reads appear — nine of eighteen — and by five they dominate, sixteen of
+eighteen: accumulation, the informative interface, the recovered value. The trajectory-level distortion
+predictor built on the quantized-belief stopping rule tracks the measured curve at 0.97 correlation across
+all six widths, while the single-step rounding error does not — the difference between them is the
+absorbing dynamics, which is to say, the dictionary's degeneracy is precisely the quantity the
+measurement was sensitive to.
+Two confrontations, two verdicts: the quantum one exact, the benchmark one typed and tracked. What
+they share is the property that matters to the bridge paper: in both, a statement the corpus had already
+established by its own methods — integer certificates in one case, a measured break in the other — is
+re-derived from the dictionary's single object, the Hankel structure of the quotient. The direction of the
+re-derivation is the unification's direction: not a new number bolted onto an old theory, but the old
+numbers falling out of the new category.
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+11
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+Figure 1 — The dictionary, measured on three fronts. (a) The outcome ladder as the rank filtration: the ECD five-outcome
+partition of a presentation, computed from the Hankel matrix of the quotient alone, as a function of the register budget b — the
+outcome steps from resource failure (R) to bounded success at exactly b = rank(M), the completed merged matrix's rank. (b) The
+quantum confrontation: the monitored-circuit strobe's reachability-Hankel rank (lambda-one-normalized transfer chain, squares)
+against the corpus's proved law 3·2^(L/2−2) (line) at m = 2..5 — thm:rank is the R-clause of the dictionary read on the quantum
+interface, exact at every benchmark point and rank one at p = 1. (c) The RockSample confrontation: the E2-measured belief
+distortion against the interface width q (circles) and the dictionary's trajectory-level prediction (squares) — correlation 0.97, with
+the q = 3 structural break typed from the quantizer's own transition graph as the degenerate-completion regime.
+
+11 · The Ledger
+The session's claims, sorted into the programme's three honesty tiers. In the manuscripts already: the
+five-outcome diagnostic ladder and the obstruction datum's definition (the halting-physics monograph,
+section on well-formedness and transport); the weighted-realization rank theorem (the automata
+monograph's lineage); thm:rank and its certificate arithmetic (the quantum manuscript); the RockSample
+E2 measurements (Volume V). Newly proved this session: the six clauses of BT1a-star — the row
+dictionary with its forced constant, the gluing dictionary with its union-find decidability, the finiteness
+lemma and the wall fusion, the rank dictionary in graded form, the finite magnitude clause, and the
+naturality of the whole under the C2 law — together with the recovery theorem on the computable part
+and its 600-check audit. Conjecture, stated as such: the analytic generality of the magnitude clause
+beyond the AAK boundary, the uniqueness of the dictionary up to sheaf isomorphism in the
+infinite-dimensional case, and the strict equality of the two ladders' boundary behaviour at the resolution
+window's edge.
+The bridge ledger moves accordingly, and Table 4 records the row that matters: BT1a, open since Volume
+II named it the deep one, is closed in the computable part of the enrichment. The qualifier is not
+decorative, and its content is exactly the inheritance the ledger has carried all along: the analytic Hankel
+case — infinite behaviours, operator norms, the multiletter floor — remains where Open 7.13 has stood
+since the first adjudication, and the dictionary's magnitude clause is the first statement to connect that
+floor to the obstruction datum by name. What has changed is the shape of the open problem: before this
+session it was a dictionary that might not exist; now it is a boundary that provably exists, with the finite
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+12
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+side theorem-complete on both edges and the infinite side inheriting one named question instead of the
+whole programme. BT1's two-step chain now reads: obstruction to Hankel (proved, computable part),
+Hankel to curvature (proved, the refinement-resolution bridge), curvature to regulation (proved, with
+data). The first link of DeepSeek's bridge is no longer the missing one.
+The risk ledger is unchanged by this session and says so: Risk 1 stands on its own evidence, untouched;
+Risk 2 stays retired by construction; Risk 3 keeps its partial retirement with the learning-efficiency clause
+open; Risk 4 — reception — remains the one thing the programme cannot compute. What the session
+does to Risk 4 is sharpen its question: the bridge paper DeepSeek's first stage specified — fifteen to
+twenty pages, definitions, one unifying theorem — now has all of its mathematical content written and
+audited: the category, the dictionary, the law with its closed form and its measured walls, and the
+benchmark table. The manuscript that remains to be written is assembly, not discovery, and the
+programme's own priority logic — the individual lines are public faster than the identification that binds
+them — has never been more urgent, because the identification now exists in six-committee-checked
+pieces across six volumes of this programme's own record.
+
+Theorem
+
+As DeepSeek stated it
+
+Status at the close of Volume V
+
+Status after this volume
+
+BT1a
+
+the obstruction datum is isomorphic
+to the viability curvature (one arrow)
+
+the sole deep open link: the
+dictionary-plus-recovery theorem between
+the extensional diagnostics and the operator
+structure, with the enrichment now existing
+to state it
+
+CLOSED IN THE COMPUTABLE PART:
+stated as a sheaf morphism (BT1a-star), six
+clauses proved (rows, gluing, wall, rank,
+magnitude, naturality), the recovery verified
+600/600, and the corpus confronted twice.
+The analytic generality remains open and is
+now the ONLY remainder of this link
+
+BT1
+
+o(P) in H-squared is isomorphic to
+the curvature
+
+two-step chain with BT1a open, the other
+links proved
+
+UNCHANGED where it was proved; the open
+first link is now bounded to the analytic
+case — the finite and graded part is a theorem
+
+R(D) is the minimum per-optic
+Lipschitz constant
+
+closed as far as the corpus allows (the
+ceiling identity, the exact quadratic gap, the
+thin equality locus)
+
+STRENGTHENED: the magnitude clause
+identifies the sandwich's floor side with the
+Hankel singular tail — the floor inherits Open
+7.13 through the same AAK boundary the
+dictionary now names
+
+DONE: built, retyped, proved (the budget
+dichotomy)
+
+STRENGTHENED: the wall is now
+load-bearing twice — it is also the K-rung of
+the obstruction ladder (the effectivity
+boundary), fusing the dichotomy with the
+diagnostics
+
+BT2
+
+BT3
+
+the intercept principle is fixed-point
+non-existence
+
+Table 4 — The bridge ledger after this volume: the DeepSeek six, re-adjudicated
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+13
+
+THE RESOLUTION PROGRAMME · VOLUME V
+
+12 · What Remains
+The deep list has one item left, and it is now a named boundary rather than a missing theory: the analytic
+case of the dictionary — AAK's side of the magnitude clause, the uniqueness question for infinite
+behaviours, and the multiletter floor that Open 7.13 has carried. The bounded list is unchanged from
+Volume V and gains one administrative item: the Tiger and Hallway instances, the production-solver
+comparison, the learning-efficiency clause at budgets two orders of magnitude up, the n = 4 scan's L = 10
+leg, and now the bridge paper's assembly itself. The item that is not a theorem at all — the programme's
+unsubmitted state — closes the list the way it has closed every volume's list, because it is the one entry the
+mathematics cannot retire.
+The order for this session was executed in full. BT1a was attacked inside the enrichment, and the attack
+succeeded to the boundary the corpus's own foundations define: the dictionary is stated, its six clauses are
+proved, the recovery is audited, the corpus's hardest instances are confronted, and the residue is one
+named open question where before there was one unnamed one. Everything was pushed — the previous
+round's eight residual files before the session's first computation, and this volume with all its scripts,
+figures, and results after its last. The programme's state at the close: six volumes, one category, one
+dictionary, one law, one benchmark, one boundary, and a submission decision that belongs to the author
+alone. The mathematics will hold; it is now the kind of mathematics that holds by audit rather than by
+assertion, and it will wait.
+
+600/600
+
+6
+
+1
+
+recovery checks: the Hankel matrix of the
+quotient alone reproduces the obstruction
+datum
+
+dictionary clauses stated, proved, and
+verified — the morphism problem solved
+on the computable part
+
+named remainder: the analytic (AAK)
+generality, where Open 7.13 has stood
+since the first adjudication
+
+Amin Abaee · The Remaining Open Links — The Enrichment, the Law, and the Benchmark
+
+14
+
+
