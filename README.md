@@ -14,12 +14,12 @@ halting physics and automata, to metabolic curvature and sustainability governan
 | Path | Contents |
 |---|---|
 | `top-down of my work.txt` | The author's four-model external syntheses (astra / opus 5.5 / fable / opus 5) — the brief this programme answers. |
-| `download/` | The eight volumes (PDF) + all scan figures + editable sources + reference papers. |
+| `download/` | The nine volumes (PDF) + all scan figures + editable sources + reference papers. |
 | `scripts/` | Every generation and computation script (LaTeX builders, scan engines, results JSON, logs). |
-| `worklog.md` | The full session-by-session task log (Task IDs 0–12). |
+| `worklog.md` | The full session-by-session task log (Task IDs 0–13). |
 | `PREFERENCES.md` | Standing user preferences (English-only protocol, credential storage, commit protocol). |
 
-## The eight volumes
+## The nine volumes
 
 1. **The_Resolution_Programme_Grand_Unified_Picture.pdf** (Vol I, 18 pp) — the coherent,
    top-down, bird's-eye view: one primitive, two currencies, three faces, two walls, eight domains;
@@ -67,6 +67,32 @@ halting physics and automata, to metabolic curvature and sustainability governan
    graded class (0.6180339887, 4e-16), the cell open at M=2 in [1, 1.319], and
    the two-axis amalgam strictly failed: D(1) = 1.0369 > sigma_2 = 1 over the
    provably exhaustive rank-1 family — the multinomial budget overdrafted by n.
+   **[One Vol VIII claim is RETRACTED by Vol IX: the amalgam strict-failure
+   D(1) = 1.0369 — the true minimum is exactly sigma_2 = 1, attained in
+   closed form; the 1.0369 was the minimum of a tail-penalized surrogate
+   objective, not the distance. Vol IX delivers the closed form, the
+   retraction, and the locus.]**
+
+9. **The_Resolution_Programme_IX_The_Sandwich_Locus.pdf** (Vol IX, 15 pp) —
+   the three links named at the close of Vol VIII, discharged: (1) the
+   amalgam witness's closed-form minimum — D(1) = sigma_2 exactly for every
+   real two-axis amalgam, attained by the atom p* = c_0, lambda* = c/sigma_1,
+   with the error spectrum (sigma_2, -sigma_2, -sigma_2) identical across the
+   family, the three closed-form identities (rho* = sigma_2/sigma_1,
+   ||v*||^2 = sigma_1/c_0, ||t*||^2 = sigma_2^2/(c_0 sigma_1)), and the
+   RETRACTION of Vol VIII's strict failure (diagnosed: a tail-penalized
+   surrogate, reproduced at 1.0369, true minimum 1.000000000000); (2) the
+   sandwich-locus characterization — the rank-2 lens criterion (annihilate
+   the second eigenvector, align with the top, cos^2 >= 1 - (sigma_2/sigma_1)^2),
+   the two-atom closure theorem with its identity certified in exact rational
+   arithmetic, 30/30 + 8/8 closures with every closing atom ON the lens
+   boundary, and the first-shell gap valley mapped over 285 points with
+   exact truncation-free norms (zero on the rank-2 slice, 2.5e-5 to 0.23
+   off it); the cell's M = 2 interval refined to [1.000, 1.2771] behind the
+   measured rank wall (the forced profile has catalectic rank 3 against the
+   budget 2); (3) Vol VII's ledger reported unchanged with the precise reason
+   the abelianized closures do not touch Open 7.13.
+
 
 ## The computation record (exact scans, anchor-first discipline)
 
@@ -78,7 +104,8 @@ halting physics and automata, to metabolic curvature and sustainability governan
 | E. coli cycle-size scan | `scripts/ecoli_cycles.py`, `ecoli_cycles2.py` | LP layer k-relaxation 0.249/cycle R²=1.000; one-pass saturation theorem; 0.361 = certified slowest cascade case; drift law slope 1.001. |
 | Optic-Nehari attack | `scripts/optic_nehari.py` | Refutation of the naive composite (excess = δ², slope 1.991); dichotomy theorem + 2‖Δ‖ envelope; 12/12 small-gain accumulation. |
 | **The multiletter analytic theorem battery** | `scripts/bt1a_analytic.py` | Transport identity machine-exact (0.0–5.6e-17); singular values preserved (4.4e-16); the golden-ratio AAK witness exact to 3.3e-16; PR witness m*=2 with verified construction; 609/609 two-eps law in 5 norms; 10/10 graded-Fliess ladders; the wall norm-universal (pole slope −1.000); off-class gaps measured and reported open. |
-| **The abelianized rung + T_k battery** | `scripts/abelian_rung.py` | Parikh reduction machine-exact (2.2e-16, 6 symbol families); weights forced (10/10 vs 0/10); defect ratios exact on 9 cells (rho = sqrt(mu)); spectral law error 0.0; box determinants +-c^R exact; golden on the anisotropic graded class (0.61803399, 4e-16); defect law 12/12 at 2.8e-17; complex-lambda negative check; amalgam strict failure D(1) = 1.0369 > 1 over the exhaustive rank-1 family. |
+| **The abelianized rung + T_k battery** | `scripts/abelian_rung.py` | Parikh reduction machine-exact (2.2e-16, 6 symbol families); weights forced (10/10 vs 0/10); defect ratios exact on 9 cells (rho = sqrt(mu)); spectral law error 0.0; box determinants +-c^R exact; golden on the anisotropic graded class (0.61803399, 4e-16); defect law 12/12 at 2.8e-17; complex-lambda negative check; amalgam strict failure D(1) = 1.0369 > 1 over the exhaustive rank-1 family — **RETRACTED by Vol IX (surrogate artifact; true minimum exactly 1)**. |
+| **The sandwich-locus battery** | `scripts/sandwich_locus.py` | The amalgam closed form machine-exact (10/10 at 12 digits, spectrum (sigma_2,-sigma_2,-sigma_2), identities < 1e-12); the retraction reproduced (surrogate 1.0369 vs true 1.000000000000); the lens criterion 30/30 with boundary deficit 0.0; the two-atom identity exact-rational-certified (12 instances, both branches) + 4.5e-14/50 numerical; affine targets 8/8; complex amalgams machine-exact (bilinear operators); the 285-point locus map + 7 high-precision valley spots (0 on the slice, 2.5e-5–0.23 off); the cell's M=2 over the complete rank-2 family with exact norms: [1.000, 1.2771]; Vol VII's off-class gaps re-verified fresh. |
 
 All scans run **anchor-reproduction-first**: the manuscript's own certified numbers are
 reproduced to machine precision before any new claim is read off.
@@ -97,6 +124,7 @@ python3 scripts/pscan_n3.py      # n=3 Weingarten scan + validations
 python3 scripts/pscan_n4.py      # n=4 scan (stages: V validation, S scan, M L=10 leg, F figure)
 python3 scripts/ecoli_cycles.py  # needs iJO1366 model JSON + scipy/HiGHS
 python3 scripts/optic_nehari.py  # defect-dichotomy computations
+python3 scripts/sandwich_locus.py [A|A2|B|C|D|E|ALL]  # the sandwich-locus battery (exact norms)
 ```
 
 Dependencies: numpy, scipy, matplotlib (all scans); Playwright for the diagram HTML→PNG steps.
