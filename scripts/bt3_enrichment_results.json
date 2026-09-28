@@ -1,0 +1,411 @@
+{
+ "C1_affine_monoid": {
+  "assoc_200": true,
+  "unit_200": true,
+  "monotone_both_variables_200": true,
+  "join_distributive_right_variable": true,
+  "join_distributive_left_variable": false,
+  "verdict": "Q is the lattice-ordered affine monoid (x |-> l x + d under composition, pointwise order): associative, unital, monotone in both variables. NOT a quantale: join-distributivity fails in the left variable. The failure is load-bearing: max does not commute with the rescale \u2014 the arithmetic face of defect absorption \u2014 and it forces the enrichment to be the budget filtration on hom-sets."
+ },
+ "C1_inf_failure": {
+  "set": [
+   [
+    1.0,
+    5.0
+   ],
+   [
+    2.0,
+    0.0
+   ]
+  ],
+  "E": 1.0,
+  "inf_of_tensors": 2.0,
+  "tensor_of_infs": 1.0,
+  "strict": true,
+  "meaning": "tensor does not preserve infs in the cost coordinate; the chain-closure hom-object construction fails, and the budget filtration is the repair."
+ },
+ "C2_submultiplicative": {
+  "composites_checked": 300,
+  "lambda_violations": 0,
+  "d_violations": 0,
+  "law": "lambda(g o f) <= lambda(g) lambda(f)  and  d(g o f) <= lambda(g) d(f) + d(g)",
+  "proof": "two triangle inequalities on TV + the Dobrushin contraction (proved; numerics are a sanity anchor)",
+  "lambda_def": "Dobrushin coefficient",
+  "d_def": "worst-point TV defect"
+ },
+ "T1_intercept": {
+  "square_arithmetic_2_to_12": true,
+  "table": [
+   {
+    "e": 2,
+    "need": 13,
+    "between_squares": true,
+    "delta": 3,
+    "delta_equals_e2_minus_1": true,
+    "nearest_n": 4,
+    "is_square": false,
+    "affdim_ChanEE": 12,
+    "su_dim": 3
+   },
+   {
+    "e": 3,
+    "need": 73,
+    "between_squares": true,
+    "delta": 8,
+    "delta_equals_e2_minus_1": true,
+    "nearest_n": 9,
+    "is_square": false,
+    "affdim_ChanEE": 72,
+    "su_dim": 8
+   },
+   {
+    "e": 4,
+    "need": 241,
+    "between_squares": true,
+    "delta": 15,
+    "delta_equals_e2_minus_1": true,
+    "nearest_n": 16,
+    "is_square": false,
+    "affdim_ChanEE": 240,
+    "su_dim": 15
+   },
+   {
+    "e": 5,
+    "need": 601,
+    "between_squares": true,
+    "delta": 24,
+    "delta_equals_e2_minus_1": true,
+    "nearest_n": 25,
+    "is_square": false,
+    "affdim_ChanEE": 600,
+    "su_dim": 24
+   },
+   {
+    "e": 6,
+    "need": 1261,
+    "between_squares": true,
+    "delta": 35,
+    "delta_equals_e2_minus_1": true,
+    "nearest_n": 36,
+    "is_square": false,
+    "affdim_ChanEE": 1260,
+    "su_dim": 35
+   },
+   {
+    "e": 7,
+    "need": 2353,
+    "between_squares": true,
+    "delta": 48,
+    "delta_equals_e2_minus_1": true,
+    "nearest_n": 49,
+    "is_square": false,
+    "affdim_ChanEE": 2352,
+    "su_dim": 48
+   },
+   {
+    "e": 8,
+    "need": 4033,
+    "between_squares": true,
+    "delta": 63,
+    "delta_equals_e2_minus_1": true,
+    "nearest_n": 64,
+    "is_square": false,
+    "affdim_ChanEE": 4032,
+    "su_dim": 63
+   },
+   {
+    "e": 9,
+    "need": 6481,
+    "between_squares": true,
+    "delta": 80,
+    "delta_equals_e2_minus_1": true,
+    "nearest_n": 81,
+    "is_square": false,
+    "affdim_ChanEE": 6480,
+    "su_dim": 80
+   },
+   {
+    "e": 10,
+    "need": 9901,
+    "between_squares": true,
+    "delta": 99,
+    "delta_equals_e2_minus_1": true,
+    "nearest_n": 100,
+    "is_square": false,
+    "affdim_ChanEE": 9900,
+    "su_dim": 99
+   },
+   {
+    "e": 11,
+    "need": 14521,
+    "between_squares": true,
+    "delta": 120,
+    "delta_equals_e2_minus_1": true,
+    "nearest_n": 121,
+    "is_square": false,
+    "affdim_ChanEE": 14520,
+    "su_dim": 120
+   },
+   {
+    "e": 12,
+    "need": 20593,
+    "between_squares": true,
+    "delta": 143,
+    "delta_equals_e2_minus_1": true,
+    "nearest_n": 144,
+    "is_square": false,
+    "affdim_ChanEE": 20592,
+    "su_dim": 143
+   }
+  ],
+  "rigidity_all_pairs": true,
+  "phi_iteration": [
+   {
+    "e": 2,
+    "divergence_rate_measured": 1.3862943611198904,
+    "divergence_rate_predicted": 1.3862943611198906,
+    "match": true
+   },
+   {
+    "e": 3,
+    "divergence_rate_measured": 2.197224577336219,
+    "divergence_rate_predicted": 2.1972245773362196,
+    "match": true
+   },
+   {
+    "e": 4,
+    "divergence_rate_measured": 2.7725887222397807,
+    "divergence_rate_predicted": 2.772588722239781,
+    "match": true
+   }
+  ],
+  "theorem": "Phi_E(l,d) = (e^2 l, e^2 d + nu) has no fixed point on the admissible budget lattice for e > 1: the grade equation l = e^2 l admits only l = 0 (the empty interface), and the integer form m^2 = e^4 - e^2 + 1 has no solution (strictly between consecutive squares). Hence no graded right adjoint to -(x) E: the intercept principle is fixed-point non-existence.",
+  "status": "PROVED here (integer arithmetic) + corpus-cited lemmas (chan-dim, adjunction-defect) for the affine-dimension grounding"
+ },
+ "T2_contraction": {
+  "L": 0.697,
+  "delta": 0.283,
+  "fixed_point_closed_form": 0.9339933993399337,
+  "iteration_relative_error": 3.5660520472942314e-16,
+  "measured_rate": 0.36096986814239396,
+  "predicted_rate": 0.36096986822161325,
+  "note": "rate 0.361 = -ln 0.697: the same number as the E. coli cascade relaxation rate and the KM-averaged contraction of the viability pair"
+ },
+ "T3_dichotomy": {
+  "scan": [
+   {
+    "L": 0.3,
+    "kind": "converge",
+    "d_star": 0.4285714285714286,
+    "closed_form_error": 2.5905203907920316e-16,
+    "rate_measured": 1.2039728005215498,
+    "rate_predicted": 1.2039728043259361
+   },
+   {
+    "L": 0.35,
+    "kind": "converge",
+    "d_star": 0.4615384615384615,
+    "closed_form_error": 1.2027416100105864e-16,
+    "rate_measured": 1.049822120512206,
+    "rate_predicted": 1.0498221244986778
+   },
+   {
+    "L": 0.39999999999999997,
+    "kind": "converge",
+    "d_star": 0.4999999999999999,
+    "closed_form_error": 0.0,
+    "rate_measured": 0.9162907471737286,
+    "rate_predicted": 0.9162907318741551
+   },
+   {
+    "L": 0.44999999999999996,
+    "kind": "converge",
+    "d_star": 0.5454545454545454,
+    "closed_form_error": 0.0,
+    "rate_measured": 0.7985076830619328,
+    "rate_predicted": 0.7985076962177717
+   },
+   {
+    "L": 0.5,
+    "kind": "converge",
+    "d_star": 0.6,
+    "closed_form_error": 1.8503717077085943e-16,
+    "rate_measured": 0.6931471821746371,
+    "rate_predicted": 0.6931471805599453
+   },
+   {
+    "L": 0.5499999999999999,
+    "kind": "converge",
+    "d_star": 0.6666666666666665,
+    "closed_form_error": 0.0,
+    "rate_measured": 0.5978370390556663,
+    "rate_predicted": 0.5978370007556205
+   },
+   {
+    "L": 0.6,
+    "kind": "converge",
+    "d_star": 0.7499999999999999,
+    "closed_form_error": 1.4802973661668756e-16,
+    "rate_measured": 0.5108257453085236,
+    "rate_predicted": 0.5108256237659907
+   },
+   {
+    "L": 0.6499999999999999,
+    "kind": "converge",
+    "d_star": 0.8571428571428569,
+    "closed_form_error": 1.2952601953960163e-16,
+    "rate_measured": 0.4307829491394804,
+    "rate_predicted": 0.4307829160924544
+   },
+   {
+    "L": 0.7,
+    "kind": "converge",
+    "d_star": 0.9999999999999998,
+    "closed_form_error": 2.2204460492503136e-16,
+    "rate_measured": 0.3566749498095305,
+    "rate_predicted": 0.35667494393873245
+   },
+   {
+    "L": 0.75,
+    "kind": "converge",
+    "d_star": 1.2,
+    "closed_form_error": 1.8503717077085943e-16,
+    "rate_measured": 0.2876822365736803,
+    "rate_predicted": 0.2876820724517809
+   },
+   {
+    "L": 0.7999999999999999,
+    "kind": "converge",
+    "d_star": 1.4999999999999996,
+    "closed_form_error": 1.4802973661668758e-16,
+    "rate_measured": 0.2231436490192653,
+    "rate_predicted": 0.22314355131420985
+   },
+   {
+    "L": 0.8499999999999999,
+    "kind": "converge",
+    "d_star": 1.9999999999999982,
+    "closed_form_error": 1.1102230246251575e-16,
+    "rate_measured": 0.16251910414530393,
+    "rate_predicted": 0.16251892949777508
+   },
+   {
+    "L": 0.8999999999999999,
+    "kind": "converge",
+    "d_star": 2.9999999999999973,
+    "closed_form_error": 1.1842378929335014e-15,
+    "rate_measured": 0.10536006317659759,
+    "rate_predicted": 0.1053605156578264
+   },
+   {
+    "L": 0.95,
+    "kind": "converge",
+    "d_star": 5.999999999999995,
+    "closed_form_error": 4.3520742565306174e-14,
+    "rate_measured": 0.051293016327974617,
+    "rate_predicted": 0.05129329438755058
+   },
+   {
+    "L": 0.97,
+    "kind": "converge",
+    "d_star": 9.999999999999991,
+    "closed_form_error": 1.1562199730974508e-08,
+    "rate_measured": 0.030459207652073265,
+    "rate_predicted": 0.030459207484708574
+   },
+   {
+    "L": 0.99,
+    "kind": "converge",
+    "d_star": 29.99999999999997,
+    "closed_form_error": 0.002405009291308604,
+    "rate_measured": 0.010050335853502936,
+    "rate_predicted": 0.01005033585350145
+   },
+   {
+    "L": 0.999,
+    "kind": "converge",
+    "d_star": 299.9999999999997,
+    "closed_form_error": 2.040592524584404e-09,
+    "rate_measured": 0.0010005007626459215,
+    "rate_predicted": 0.0010005003335835344
+   },
+   {
+    "L": 1.0,
+    "kind": "drift",
+    "d_600": 179.7000000000011,
+    "drift_is_linear": true
+   },
+   {
+    "L": 1.001,
+    "kind": "diverge",
+    "d_600": 245.92585737631933,
+    "rate_measured": 0.0009995003781946377,
+    "rate_predicted": 0.0009995003330834232
+   },
+   {
+    "L": 1.01,
+    "kind": "diverge",
+    "d_600": 11601.19000988085,
+    "rate_measured": 0.009950331306611718,
+    "rate_predicted": 0.009950330853168092
+   },
+   {
+    "L": 1.05,
+    "kind": "diverge",
+    "d_600": 29548905102272.88,
+    "rate_measured": 0.048790164170620154,
+    "rate_predicted": 0.04879016416943204
+   },
+   {
+    "L": 1.1,
+    "kind": "diverge",
+    "d_600": 1.8678399693194513e+25,
+    "rate_measured": 0.09531017980432488,
+    "rate_predicted": 0.09531017980432493
+   },
+   {
+    "L": 1.2,
+    "kind": "diverge",
+    "d_600": 4.033273209011471e+47,
+    "rate_measured": 0.18232155679395454,
+    "rate_predicted": 0.1823215567939546
+   },
+   {
+    "L": 1.3,
+    "kind": "diverge",
+    "d_600": 1.786767448260168e+68,
+    "rate_measured": 0.262364264467491,
+    "rate_predicted": 0.26236426446749106
+   },
+   {
+    "L": 1.4,
+    "kind": "diverge",
+    "d_600": 2.5453917646183814e+87,
+    "rate_measured": 0.33647223662121273,
+    "rate_predicted": 0.3364722366212129
+   },
+   {
+    "L": 4.0,
+    "kind": "diverge",
+    "d_600": 1.6742321987285425e+298,
+    "rate_measured": 1.3862943611198908,
+    "rate_predicted": 1.3862943611198906
+   }
+  ],
+  "rates_match_both_sides": true,
+  "law": "|ln L| is the budget rate on BOTH sides of L = 1; the wall at L = 1 separates the Banach/trace regime (fixed point exists, cost = the geometric closed form) from the intercept regime (grade inflation, no fixed point). Phi_E is the intercept regime at L = e^2."
+ },
+ "T3_wall": {
+  "loglog_slope": -0.9999999999999999,
+  "intercept": -1.2039728043259381,
+  "pole_order_1": true,
+  "law": "the ceiling d* = delta/(1-L) is a first-order pole at the wall: Vol III's one-wall (unattainability) law instantiated in the budget lattice"
+ },
+ "T4_guarded_trace": {
+  "random_instances": 50,
+  "max_relative_error": 1.287619107730012e-15,
+  "closed_form": "d_trace = d_f + lambda_f * delta_g / (1 - L)",
+  "theorem": "the guarded trace exists in the enrichment iff L < 1, and its cost is EXACTLY the geometric closed form (induction on the unrolling depth). The trace value is the ceiling of BT2's sandwich: the graded small-gain law is the trace closed form.",
+  "status": "PROVED here (induction) + verified to machine precision"
+ }
+}
