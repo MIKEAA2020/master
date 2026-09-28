@@ -1,0 +1,1781 @@
+{
+ "meta": {
+  "order": "Task 16 item 1 (the Vol X frontier): the reflection-laundering theorem beyond the ring \u2014 which irreducible chains admit a reversal symmetry; the arrow-preserving sensor lattice off the circulant class",
+  "date": "2026-09-29"
+ },
+ "A_reversal_group": {
+  "N_ring_classification": {
+   "rows": [
+    {
+     "N": 3,
+     "Aut = rotations": true,
+     "R = reflections": true,
+     "|Aut| = N": true,
+     "|R| = N": true,
+     "Ghat = dihedral D_N": true,
+     "arrow_D": 0.08055098028649864
+    },
+    {
+     "N": 4,
+     "Aut = rotations": true,
+     "R = reflections": true,
+     "|Aut| = N": true,
+     "|R| = N": true,
+     "Ghat = dihedral D_N": true,
+     "arrow_D": 0.08055098028649868
+    },
+    {
+     "N": 5,
+     "Aut = rotations": true,
+     "R = reflections": true,
+     "|Aut| = N": true,
+     "|R| = N": true,
+     "Ghat = dihedral D_N": true,
+     "arrow_D": 0.0805509802864987
+    },
+    {
+     "N": 6,
+     "Aut = rotations": true,
+     "R = reflections": true,
+     "|Aut| = N": true,
+     "|R| = N": true,
+     "Ghat = dihedral D_N": true,
+     "arrow_D": 0.08055098028649865
+    },
+    {
+     "N": 7,
+     "Aut = rotations": true,
+     "R = reflections": true,
+     "|Aut| = N": true,
+     "|R| = N": true,
+     "Ghat = dihedral D_N": true,
+     "arrow_D": 0.08055098028649868
+    },
+    {
+     "N": 8,
+     "Aut = rotations": true,
+     "R = reflections": true,
+     "|Aut| = N": true,
+     "|R| = N": true,
+     "Ghat = dihedral D_N": true,
+     "arrow_D": 0.08055098028649867
+    }
+   ],
+   "verdict": "PROVED and verified N = 3..8: the driven (a,b)-ring has Aut = Z_N (the rotations, since a != b) and R = the N reflections: the reversal group is the DIHEDRAL group, Aut is its index-2 rotation subgroup, and R is the coset of handedness flips. Vol X's 'the ring's arrow is its chirality' is the coset statement R = D_N \\ Z_N; at equilibrium (a = b) P is symmetric, Aut = R = D_N (reversible <=> R = Aut)."
+  },
+  "group_laws_random_and_witnesses": {
+   "trials": 30,
+   "all_coset_laws_hold": true,
+   "max_pi_preservation_err": 5.551115123125783e-17,
+   "reversible_among_witnesses": 0,
+   "verdict": "RL-G verified: pi-preservation, R = rho0 Aut = Aut rho0 (index-2 normal), rho^2 in Aut, R.R = Aut, Aut.R = R = R.Aut, reversible <=> R = Aut."
+  },
+  "anti_centralizer_criterion": {
+   "trials": 120,
+   "agreement_with_bruteforce": 120,
+   "Aut_criterion_agrees": true,
+   "verdict": "RL-C verified 120/120: R(P) = centralizer(S) intersect anti-centralizer(K) for A = Pi^(1/2) P Pi^(-1/2), and Aut(P) = centralizer(S) intersect centralizer(K). The reversal symmetries are the permutations that commute with the reversible half of the dynamics and ANTI-commute with the irreversible (skew) half: the arrow must be ODD under a reversal symmetry. Computable in closed form."
+  }
+ },
+ "B_normal_form_laundering": {
+  "normal_form_witnesses": {
+   "witnesses": [
+    {
+     "tag": "N4_rho=(01)(23)",
+     "n": 4,
+     "rho": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "D": 0.11532015031933182,
+     "circulant": false,
+     "R_contains_rho": true,
+     "R_size": 1,
+     "Aut_size": 1,
+     "twist_balance_max_err": 0.0,
+     "P": [
+      [
+       0.2993539523021709,
+       0.06827078846789966,
+       0.2564782779804331,
+       0.37589698124949644
+      ],
+      [
+       0.2535846986910929,
+       0.2993539523021709,
+       0.23159653740698335,
+       0.21546481159975295
+      ],
+      [
+       0.21546481159975295,
+       0.37589698124949644,
+       0.28839529924702695,
+       0.12024290790372373
+      ],
+      [
+       0.23159653740698335,
+       0.2564782779804331,
+       0.22352988536555657,
+       0.28839529924702695
+      ]
+     ],
+     "P_rounded": [
+      [
+       0.2994,
+       0.0683,
+       0.2565,
+       0.3759
+      ],
+      [
+       0.2536,
+       0.2994,
+       0.2316,
+       0.2155
+      ],
+      [
+       0.2155,
+       0.3759,
+       0.2884,
+       0.1202
+      ],
+      [
+       0.2316,
+       0.2565,
+       0.2235,
+       0.2884
+      ]
+     ]
+    },
+    {
+     "tag": "N5_rho=(01)(23)",
+     "n": 5,
+     "rho": [
+      1,
+      0,
+      3,
+      2,
+      4
+     ],
+     "D": 0.12654883067385556,
+     "circulant": false,
+     "R_contains_rho": true,
+     "R_size": 1,
+     "Aut_size": 1,
+     "twist_balance_max_err": 0.0,
+     "P": [
+      [
+       0.2527603590753137,
+       0.1844886984111038,
+       0.12869458384451987,
+       0.17700965620382847,
+       0.2570467024652341
+      ],
+      [
+       0.2024899019047001,
+       0.2527603590753137,
+       0.1419047905939372,
+       0.2031774989594656,
+       0.1996674494665834
+      ],
+      [
+       0.2031774989594656,
+       0.17700965620382847,
+       0.26774897885190796,
+       0.08291002761032193,
+       0.26915383837447604
+      ],
+      [
+       0.1419047905939372,
+       0.12869458384451987,
+       0.3265054257535801,
+       0.26774897885190796,
+       0.13514622095605489
+      ],
+      [
+       0.1996674494665834,
+       0.2570467024652341,
+       0.13514622095605489,
+       0.26915383837447604,
+       0.13898578873765155
+      ]
+     ],
+     "P_rounded": [
+      [
+       0.2528,
+       0.1845,
+       0.1287,
+       0.177,
+       0.257
+      ],
+      [
+       0.2025,
+       0.2528,
+       0.1419,
+       0.2032,
+       0.1997
+      ],
+      [
+       0.2032,
+       0.177,
+       0.2677,
+       0.0829,
+       0.2692
+      ],
+      [
+       0.1419,
+       0.1287,
+       0.3265,
+       0.2677,
+       0.1351
+      ],
+      [
+       0.1997,
+       0.257,
+       0.1351,
+       0.2692,
+       0.139
+      ]
+     ]
+    },
+    {
+     "tag": "N4_rho=(01)",
+     "n": 4,
+     "rho": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "D": 0.11468517381927495,
+     "circulant": false,
+     "R_contains_rho": true,
+     "R_size": 1,
+     "Aut_size": 1,
+     "twist_balance_max_err": 0.0,
+     "P": [
+      [
+       0.3837339525667805,
+       0.18583286427139412,
+       0.14988070287651414,
+       0.28055248028531127
+      ],
+      [
+       0.2822229008075724,
+       0.3837339525667805,
+       0.22995164190401807,
+       0.10409150472162906
+      ],
+      [
+       0.22995164190401807,
+       0.14988070287651414,
+       0.305989989287877,
+       0.3141776659315909
+      ],
+      [
+       0.10409150472162906,
+       0.28055248028531127,
+       0.3141776659315909,
+       0.30117834906146884
+      ]
+     ],
+     "P_rounded": [
+      [
+       0.3837,
+       0.1858,
+       0.1499,
+       0.2806
+      ],
+      [
+       0.2822,
+       0.3837,
+       0.23,
+       0.1041
+      ],
+      [
+       0.23,
+       0.1499,
+       0.306,
+       0.3142
+      ],
+      [
+       0.1041,
+       0.2806,
+       0.3142,
+       0.3012
+      ]
+     ]
+    },
+    {
+     "tag": "N6_rho=(01)(23)(45)",
+     "n": 6,
+     "rho": [
+      1,
+      0,
+      3,
+      2,
+      5,
+      4
+     ],
+     "D": 0.14030203261292326,
+     "circulant": false,
+     "R_contains_rho": true,
+     "R_size": 1,
+     "Aut_size": 1,
+     "twist_balance_max_err": 0.0,
+     "P": [
+      [
+       0.17777688297518776,
+       0.04472086663520773,
+       0.19595100419984718,
+       0.18039181351631484,
+       0.21713575628700132,
+       0.18402367638644118
+      ],
+      [
+       0.14760499050463424,
+       0.17777688297518776,
+       0.04948069973301274,
+       0.22574767408289675,
+       0.17955252423471035,
+       0.21983722846955814
+      ],
+      [
+       0.22574767408289675,
+       0.18039181351631484,
+       0.16320519133876432,
+       0.20898282882073488,
+       0.07572345985243903,
+       0.14594903238885026
+      ],
+      [
+       0.04948069973301274,
+       0.19595100419984718,
+       0.15310994475665676,
+       0.16320519133876432,
+       0.2996961248041559,
+       0.13855703516756313
+      ],
+      [
+       0.21983722846955814,
+       0.18402367638644118,
+       0.13855703516756313,
+       0.14594903238885026,
+       0.14202475509366824,
+       0.16960827249391905
+      ],
+      [
+       0.17955252423471035,
+       0.21713575628700132,
+       0.2996961248041559,
+       0.07572345985243903,
+       0.08586737972802518,
+       0.14202475509366824
+      ]
+     ],
+     "P_rounded": [
+      [
+       0.1778,
+       0.0447,
+       0.196,
+       0.1804,
+       0.2171,
+       0.184
+      ],
+      [
+       0.1476,
+       0.1778,
+       0.0495,
+       0.2257,
+       0.1796,
+       0.2198
+      ],
+      [
+       0.2257,
+       0.1804,
+       0.1632,
+       0.209,
+       0.0757,
+       0.1459
+      ],
+      [
+       0.0495,
+       0.196,
+       0.1531,
+       0.1632,
+       0.2997,
+       0.1386
+      ],
+      [
+       0.2198,
+       0.184,
+       0.1386,
+       0.1459,
+       0.142,
+       0.1696
+      ],
+      [
+       0.1796,
+       0.2171,
+       0.2997,
+       0.0757,
+       0.0859,
+       0.142
+      ]
+     ]
+    }
+   ],
+   "verdict": "RL-NF verified: every normal-form instance is stochastic, irreducible, DRIVEN (D > 0), NON-circulant, carries rho in R(P) with the flux twist F_ij = F_{rho(j)rho(i)} exact to machine precision, and R(P) is exactly the coset rho.Aut. The self-converse world is STRICTLY larger than the circulant world: the laundering theorem now has a home beyond the ring."
+  },
+  "laundering_theorem_beyond_ring": {
+   "rows": [
+    {
+     "tag": "N4_rho=(01)(23)",
+     "sensors": {
+      "(0, 0, 0, 0)": {
+       "rho_invariant": true,
+       "block_KL_n2_n6": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       "max_KL": 0.0
+      },
+      "(0, 0, 0, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0,
+        0.0,
+        1.0713105967651312e-17,
+        1.3840189930036e-18,
+        -3.2760168543282665e-18
+       ],
+       "max_KL": 1.0713105967651312e-17
+      },
+      "(0, 0, 1, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0,
+        0.0,
+        6.371356400599992e-18,
+        9.333184826713993e-18,
+        -1.3384112634708342e-18
+       ],
+       "max_KL": 9.333184826713993e-18
+      },
+      "(0, 0, 1, 1)": {
+       "rho_invariant": true,
+       "block_KL_n2_n6": [
+        -1.232595164407831e-32,
+        0.0,
+        6.375497550701269e-18,
+        9.143658785434888e-18,
+        -3.896584769784686e-19
+       ],
+       "max_KL": 9.143658785434888e-18
+      },
+      "(0, 0, 1, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.025923734676458327,
+        0.052341246927158074,
+        0.0787940500762285,
+        0.10525067860653735,
+        0.13170783053909818
+       ],
+       "max_KL": 0.13170783053909818
+      },
+      "(0, 1, 0, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0,
+        -3.0814879110195774e-33,
+        -4.495154792601029e-18,
+        9.292892259744734e-19,
+        1.254932064509649e-17
+       ],
+       "max_KL": 1.254932064509649e-17
+      },
+      "(0, 1, 0, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        -6.162975822039155e-33,
+        0.0,
+        7.998057984152473e-08,
+        1.6099507619448655e-07,
+        2.4202084013660584e-07
+       ],
+       "max_KL": 2.4202084013660584e-07
+      },
+      "(0, 1, 0, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.003576878813842596,
+        0.007215395253496536,
+        0.010854088480157991,
+        0.014492769577264078,
+        0.01813144981512815
+       ],
+       "max_KL": 0.01813144981512815
+      },
+      "(0, 1, 1, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0,
+        0.0,
+        2.2446873898479687e-06,
+        4.487423939451509e-06,
+        6.730737570243554e-06
+       ],
+       "max_KL": 6.730737570243554e-06
+      },
+      "(0, 1, 1, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0,
+        6.162975822039155e-33,
+        0.0,
+        -1.4677583046261956e-18,
+        1.5607257303895471e-18
+       ],
+       "max_KL": 1.5607257303895471e-18
+      },
+      "(0, 1, 1, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.043634148455279013,
+        0.08855985913769217,
+        0.1334852765126704,
+        0.17841069425094272,
+        0.22333611198876793
+       ],
+       "max_KL": 0.22333611198876793
+      },
+      "(0, 1, 2, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.043634148455279013,
+        0.08855985913769215,
+        0.13348527651267034,
+        0.17841069425094247,
+        0.22333611198876807
+       ],
+       "max_KL": 0.22333611198876807
+      },
+      "(0, 1, 2, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.003576878813842596,
+        0.00721539525349653,
+        0.010854088480157963,
+        0.01449276957726406,
+        0.01813144981512813
+       ],
+       "max_KL": 0.01813144981512813
+      },
+      "(0, 1, 2, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.09292520655058498,
+        0.18619108415450364,
+        0.27949092292732997,
+        0.3727947352092725,
+        0.4660990336394473
+       ],
+       "max_KL": 0.4660990336394473
+      },
+      "(0, 1, 2, 3)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.1153201503193318,
+        0.23064030063866364,
+        0.3459604509579952,
+        0.4612806012773256,
+        0.5766007515966575
+       ],
+       "max_KL": 0.5766007515966575
+      }
+     },
+     "all_invariant_launder_exactly": true,
+     "breaking_sensors_with_arrow": 9,
+     "breaking_sensors_total": 13
+    },
+    {
+     "tag": "N5_rho=(01)(23)",
+     "sensors": {
+      "(0, 0, 0, 0, 0)": {
+       "rho_invariant": true,
+       "block_KL_n2_n6": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       "max_KL": 0.0
+      },
+      "(0, 0, 0, 0, 1)": {
+       "rho_invariant": true,
+       "block_KL_n2_n6": [
+        0.0,
+        0.0,
+        1.1806557775467176e-18,
+        4.660639341497997e-19,
+        -2.923558934586423e-18
+       ],
+       "max_KL": 1.1806557775467176e-18
+      },
+      "(0, 0, 0, 1, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0,
+        -4.353394604265506e-18,
+        -1.1656169598314958e-18,
+        -4.993868623870908e-19,
+        -2.488695161640679e-18
+       ],
+       "max_KL": 0.0
+      },
+      "(0, 0, 0, 1, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0,
+        -1.604891282688729e-17,
+        6.8493446941605995e-06,
+        1.3841558764957567e-05,
+        2.08458652461972e-05
+       ],
+       "max_KL": 2.08458652461972e-05
+      },
+      "(0, 0, 0, 1, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.030746142883849904,
+        0.06117714793349954,
+        0.09156841168156525,
+        0.12195516312081346,
+        0.15234140693558457
+       ],
+       "max_KL": 0.15234140693558457
+      },
+      "(0, 0, 1, 0, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0,
+        0.0,
+        0.0,
+        2.002054741408773e-18,
+        1.0584250870008074e-17
+       ],
+       "max_KL": 1.0584250870008074e-17
+      },
+      "(0, 0, 1, 0, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        -6.162975822039155e-33,
+        0.0,
+        6.849344694164665e-06,
+        1.3841558764964452e-05,
+        2.0845865246205638e-05
+       ],
+       "max_KL": 2.0845865246205638e-05
+      },
+      "(0, 0, 1, 0, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.030746142883849904,
+        0.061177147933499515,
+        0.09156841168156526,
+        0.12195516312081338,
+        0.1523414069355848
+       ],
+       "max_KL": 0.1523414069355848
+      },
+      "(0, 0, 1, 1, 0)": {
+       "rho_invariant": true,
+       "block_KL_n2_n6": [
+        2.3427628480116748e-17,
+        -1.1727332279902515e-17,
+        6.162975822039155e-33,
+        -1.232595164407831e-32,
+        1.8488927466117464e-32
+       ],
+       "max_KL": 2.3427628480116748e-17
+      },
+      "(0, 0, 1, 1, 1)": {
+       "rho_invariant": true,
+       "block_KL_n2_n6": [
+        0.0,
+        1.0977526074785029e-17,
+        1.2630527539911199e-17,
+        1.0051400267192022e-17,
+        -4.262548014783748e-18
+       ],
+       "max_KL": 1.2630527539911199e-17
+      },
+      "(0, 0, 1, 1, 2)": {
+       "rho_invariant": true,
+       "block_KL_n2_n6": [
+        0.0,
+        -3.0814879110195774e-33,
+        1.815654075597967e-18,
+        1.398967429220594e-18,
+        2.8095803259840612e-18
+       ],
+       "max_KL": 2.8095803259840612e-18
+      },
+      "(0, 0, 1, 2, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.11259728770255785,
+        0.22510580550553508,
+        0.33762138058896407,
+        0.45013665017808685,
+        0.5626519377698755
+       ],
+       "max_KL": 0.5626519377698755
+      },
+      "(0, 0, 1, 2, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.016468210500801373,
+        0.034480183727679276,
+        0.05249292550629043,
+        0.07050575344564537,
+        0.0885185836191264
+       ],
+       "max_KL": 0.0885185836191264
+      },
+      "(0, 0, 1, 2, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.016468210500801373,
+        0.0344801837276793,
+        0.05249292550629042,
+        0.07050575344564537,
+        0.08851858361912636
+       ],
+       "max_KL": 0.08851858361912636
+      },
+      "(0, 0, 1, 2, 3)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.11861230468175928,
+        0.23722534676291404,
+        0.3558384194768258,
+        0.4744514939073395,
+        0.5930645684391203
+       ],
+       "max_KL": 0.5930645684391203
+      },
+      "(0, 1, 0, 0, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        -6.162975822039155e-33,
+        -4.193813295648318e-18,
+        3.0814879110195774e-33,
+        -2.974239441492332e-18,
+        5.117046729510609e-19
+       ],
+       "max_KL": 5.117046729510609e-19
+      },
+      "(0, 1, 0, 0, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0,
+        -6.162975822039155e-33,
+        7.757467424329088e-07,
+        1.5600747265236058e-06,
+        2.3444726123673357e-06
+       ],
+       "max_KL": 2.3444726123673357e-06
+      },
+      "(0, 1, 0, 0, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.00521069838677209,
+        0.01042003514323594,
+        0.015629215572179847,
+        0.020838435287290964,
+        0.02604766470662571
+       ],
+       "max_KL": 0.02604766470662571
+      },
+      "(0, 1, 0, 1, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0,
+        1.6102503659512703e-17,
+        8.025288071490124e-06,
+        1.6255670047805285e-05,
+        2.4495873399946362e-05
+       ],
+       "max_KL": 2.4495873399946362e-05
+      },
+      "(0, 1, 0, 1, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        -6.162975822039155e-33,
+        1.6102503659512703e-17,
+        8.02528807148078e-06,
+        1.6255670047791383e-05,
+        2.4495873399954954e-05
+       ],
+       "max_KL": 2.4495873399954954e-05
+      },
+      "(0, 1, 0, 1, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.04488801228384917,
+        0.08938153342155422,
+        0.13385033065161697,
+        0.17832059173023254,
+        0.22279161463300554
+       ],
+       "max_KL": 0.22279161463300554
+      },
+      "(0, 1, 0, 2, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.010675735427068326,
+        0.02163458005176018,
+        0.03258804008896287,
+        0.04354078417211132,
+        0.05449345766425307
+       ],
+       "max_KL": 0.05449345766425307
+      },
+      "(0, 1, 0, 2, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.06000404394056581,
+        0.11918656537544609,
+        0.17827775727863512,
+        0.23735911880816735,
+        0.29643952237462656
+       ],
+       "max_KL": 0.29643952237462656
+      },
+      "(0, 1, 0, 2, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.00038783484521823924,
+        0.0017271412549969565,
+        0.003082192931034148,
+        0.004437774861179453,
+        0.005793367045209019
+       ],
+       "max_KL": 0.005793367045209019
+      },
+      "(0, 1, 0, 2, 3)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.07019578130595658,
+        0.13957814707519525,
+        0.20886255648138885,
+        0.27813691655997846,
+        0.34741027853565437
+       ],
+       "max_KL": 0.34741027853565437
+      },
+      "(0, 1, 1, 0, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        -6.162975822039155e-33,
+        1.597461120910821e-17,
+        2.1963210027141286e-06,
+        4.4533301075424054e-06,
+        6.715300302213464e-06
+       ],
+       "max_KL": 6.715300302213464e-06
+      },
+      "(0, 1, 1, 0, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        -6.162975822039155e-33,
+        1.5974611209108192e-17,
+        2.196321002709563e-06,
+        4.453330107549592e-06,
+        6.7153003022136034e-06
+       ],
+       "max_KL": 6.7153003022136034e-06
+      },
+      "(0, 1, 1, 0, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0070803458851058446,
+        0.014038080271638198,
+        0.020998330020342307,
+        0.027959236315889972,
+        0.03492048631317025
+       ],
+       "max_KL": 0.03492048631317025
+      },
+      "(0, 1, 1, 1, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0,
+        1.611472433799695e-17,
+        7.757467424422506e-07,
+        1.5600747265286914e-06,
+        2.344472612358662e-06
+       ],
+       "max_KL": 2.344472612358662e-06
+      },
+      "(0, 1, 1, 1, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        -6.162975822039155e-33,
+        0.0,
+        9.445019463485013e-18,
+        -1.9852844377673013e-19,
+        -3.9182582005924144e-19
+       ],
+       "max_KL": 9.445019463485013e-18
+      },
+      "(0, 1, 1, 1, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.005210698386772055,
+        0.010420035143235962,
+        0.01562921557217986,
+        0.02083843528729094,
+        0.026047664706625746
+       ],
+       "max_KL": 0.026047664706625746
+      },
+      "(0, 1, 1, 2, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.03909308991649586,
+        0.07736052194576207,
+        0.11552429751708196,
+        0.15367743234490583,
+        0.19182952609154205
+       ],
+       "max_KL": 0.19182952609154205
+      },
+      "(0, 1, 1, 2, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0024018485224298136,
+        0.005177471247411539,
+        0.007951528225330271,
+        0.010725289746177157,
+        0.013499026573682715
+       ],
+       "max_KL": 0.013499026573682715
+      },
+      "(0, 1, 1, 2, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.011355713390176828,
+        0.02291802674923505,
+        0.0344887815458479,
+        0.04606080843984525,
+        0.0576329177039168
+       ],
+       "max_KL": 0.0576329177039168
+      },
+      "(0, 1, 1, 2, 3)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.04614467466335573,
+        0.09151644867605031,
+        0.13678857337738837,
+        0.18205001783054464,
+        0.22731036332683982
+       ],
+       "max_KL": 0.22731036332683982
+      },
+      "(0, 1, 2, 0, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0024018485224298136,
+        0.005177471247411548,
+        0.007951528225330238,
+        0.01072528974617714,
+        0.013499026573682741
+       ],
+       "max_KL": 0.013499026573682741
+      },
+      "(0, 1, 2, 0, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.039093089916495856,
+        0.07736052194576211,
+        0.1155242975170819,
+        0.1536774323449057,
+        0.1918295260915424
+       ],
+       "max_KL": 0.1918295260915424
+      },
+      "(0, 1, 2, 0, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.011355713390176828,
+        0.022918026749235005,
+        0.034488781545847905,
+        0.04606080843984525,
+        0.057632917703916826
+       ],
+       "max_KL": 0.057632917703916826
+      },
+      "(0, 1, 2, 0, 3)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.04614467466335572,
+        0.09151644867605029,
+        0.13678857337738842,
+        0.18205001783054464,
+        0.2273103633268393
+       ],
+       "max_KL": 0.2273103633268393
+      },
+      "(0, 1, 2, 1, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.06000404394056581,
+        0.11918656537544602,
+        0.1782777572786351,
+        0.23735911880816712,
+        0.2964395223746267
+       ],
+       "max_KL": 0.2964395223746267
+      },
+      "(0, 1, 2, 1, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.010675735427068326,
+        0.02163458005176018,
+        0.032588040088962864,
+        0.04354078417211132,
+        0.0544934576642531
+       ],
+       "max_KL": 0.0544934576642531
+      },
+      "(0, 1, 2, 1, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.00038783484521823924,
+        0.0017271412549969677,
+        0.0030821929310341526,
+        0.004437774861179451,
+        0.005793367045209032
+       ],
+       "max_KL": 0.005793367045209032
+      },
+      "(0, 1, 2, 1, 3)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.07019578130595658,
+        0.1395781470751953,
+        0.20886255648138902,
+        0.27813691655997863,
+        0.34741027853565437
+       ],
+       "max_KL": 0.34741027853565437
+      },
+      "(0, 1, 2, 2, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.002115057129169353,
+        0.004244395895936514,
+        0.006374458650166422,
+        0.0085045266047953,
+        0.010634593950492377
+       ],
+       "max_KL": 0.010634593950492377
+      },
+      "(0, 1, 2, 2, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.002115057129169355,
+        0.004244395895936525,
+        0.0063744586501664246,
+        0.00850452660479531,
+        0.010634593950492391
+       ],
+       "max_KL": 0.010634593950492391
+      },
+      "(0, 1, 2, 2, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0005692813335883306,
+        0.0013029278174681502,
+        0.002038787619650269,
+        0.002774870036916432,
+        0.0035109529726311834
+       ],
+       "max_KL": 0.0035109529726311834
+      },
+      "(0, 1, 2, 2, 3)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.0080413868750082,
+        0.01608595922962665,
+        0.024130588936597388,
+        0.03217522037618582,
+        0.04021985190155192
+       ],
+       "max_KL": 0.04021985190155192
+      },
+      "(0, 1, 2, 3, 0)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.11626692861638595,
+        0.2324712658044511,
+        0.3486800867026739,
+        0.46488874601411606,
+        0.5810974114432764
+       ],
+       "max_KL": 0.5810974114432764
+      },
+      "(0, 1, 2, 3, 1)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.11626692861638595,
+        0.232471265804451,
+        0.348680086702674,
+        0.46488874601411523,
+        0.5810974114432773
+       ],
+       "max_KL": 0.5810974114432773
+      },
+      "(0, 1, 2, 3, 2)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.019209647386241962,
+        0.040103318152311565,
+        0.06099551016445515,
+        0.08188769905457205,
+        0.10277988793822211
+       ],
+       "max_KL": 0.10277988793822211
+      },
+      "(0, 1, 2, 3, 3)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.019209647386241962,
+        0.04010331815231161,
+        0.06099551016445519,
+        0.08188769905457226,
+        0.10277988793822196
+       ],
+       "max_KL": 0.10277988793822196
+      },
+      "(0, 1, 2, 3, 4)": {
+       "rho_invariant": false,
+       "block_KL_n2_n6": [
+        0.1265488306738556,
+        0.25309766134771117,
+        0.3796464920215669,
+        0.5061953226954226,
+        0.6327441533692816
+       ],
+       "max_KL": 0.6327441533692816
+      }
+     },
+     "all_invariant_launder_exactly": true,
+     "breaking_sensors_with_arrow": 43,
+     "breaking_sensors_total": 47
+    }
+   ],
+   "verdict": "RL-L verified on non-circulant driven witnesses: EVERY rho-invariant sensor has block reversal KL = 0 EXACTLY at every block length n = 2..6 (the pushforward proof: the reversed chain is the rho-conjugate, the sensor is rho-blind); the rho-breaking sensors keep a positive arrow (the arrow-preserving lattice off the circulant class)."
+  }
+ },
+ "C_genericity_stratification": {
+  "dimension_table_exact": {
+   "table": [
+    {
+     "n": 3,
+     "rho_class": "id",
+     "rho": [
+      0,
+      1,
+      2
+     ],
+     "dim_L_rho_in_R^{n^2}": 6,
+     "dim_L_rho_in_balanced": 6,
+     "ambient_chain_dim": 7,
+     "codim_in_chains": 1,
+     "measure_zero": true
+    },
+    {
+     "n": 3,
+     "rho_class": "involution",
+     "rho": [
+      0,
+      2,
+      1
+     ],
+     "dim_L_rho_in_R^{n^2}": 6,
+     "dim_L_rho_in_balanced": 5,
+     "ambient_chain_dim": 7,
+     "codim_in_chains": 2,
+     "measure_zero": true
+    },
+    {
+     "n": 3,
+     "rho_class": "involution",
+     "rho": [
+      1,
+      0,
+      2
+     ],
+     "dim_L_rho_in_R^{n^2}": 6,
+     "dim_L_rho_in_balanced": 5,
+     "ambient_chain_dim": 7,
+     "codim_in_chains": 2,
+     "measure_zero": true
+    },
+    {
+     "n": 3,
+     "rho_class": "order-3",
+     "rho": [
+      1,
+      2,
+      0
+     ],
+     "dim_L_rho_in_R^{n^2}": 5,
+     "dim_L_rho_in_balanced": 3,
+     "ambient_chain_dim": 7,
+     "codim_in_chains": 4,
+     "measure_zero": true
+    },
+    {
+     "n": 3,
+     "rho_class": "order-3",
+     "rho": [
+      2,
+      0,
+      1
+     ],
+     "dim_L_rho_in_R^{n^2}": 4,
+     "dim_L_rho_in_balanced": 3,
+     "ambient_chain_dim": 7,
+     "codim_in_chains": 4,
+     "measure_zero": true
+    },
+    {
+     "n": 3,
+     "rho_class": "involution",
+     "rho": [
+      2,
+      1,
+      0
+     ],
+     "dim_L_rho_in_R^{n^2}": 6,
+     "dim_L_rho_in_balanced": 5,
+     "ambient_chain_dim": 7,
+     "codim_in_chains": 2,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "id",
+     "rho": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "dim_L_rho_in_R^{n^2}": 10,
+     "dim_L_rho_in_balanced": 10,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 3,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "involution",
+     "rho": [
+      0,
+      1,
+      3,
+      2
+     ],
+     "dim_L_rho_in_R^{n^2}": 10,
+     "dim_L_rho_in_balanced": 9,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 4,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "involution",
+     "rho": [
+      0,
+      2,
+      1,
+      3
+     ],
+     "dim_L_rho_in_R^{n^2}": 10,
+     "dim_L_rho_in_balanced": 9,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 4,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-3",
+     "rho": [
+      0,
+      2,
+      3,
+      1
+     ],
+     "dim_L_rho_in_R^{n^2}": 9,
+     "dim_L_rho_in_balanced": 7,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 6,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-3",
+     "rho": [
+      0,
+      3,
+      1,
+      2
+     ],
+     "dim_L_rho_in_R^{n^2}": 8,
+     "dim_L_rho_in_balanced": 6,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 7,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "involution",
+     "rho": [
+      0,
+      3,
+      2,
+      1
+     ],
+     "dim_L_rho_in_R^{n^2}": 10,
+     "dim_L_rho_in_balanced": 9,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 4,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "involution",
+     "rho": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "dim_L_rho_in_R^{n^2}": 10,
+     "dim_L_rho_in_balanced": 9,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 4,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "involution",
+     "rho": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "dim_L_rho_in_R^{n^2}": 10,
+     "dim_L_rho_in_balanced": 8,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 5,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-3",
+     "rho": [
+      1,
+      2,
+      0,
+      3
+     ],
+     "dim_L_rho_in_R^{n^2}": 9,
+     "dim_L_rho_in_balanced": 7,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 6,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-4",
+     "rho": [
+      1,
+      2,
+      3,
+      0
+     ],
+     "dim_L_rho_in_R^{n^2}": 8,
+     "dim_L_rho_in_balanced": 5,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 8,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-4",
+     "rho": [
+      1,
+      3,
+      0,
+      2
+     ],
+     "dim_L_rho_in_R^{n^2}": 8,
+     "dim_L_rho_in_balanced": 5,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 8,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-3",
+     "rho": [
+      1,
+      3,
+      2,
+      0
+     ],
+     "dim_L_rho_in_R^{n^2}": 9,
+     "dim_L_rho_in_balanced": 6,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 7,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-3",
+     "rho": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "dim_L_rho_in_R^{n^2}": 8,
+     "dim_L_rho_in_balanced": 6,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 7,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-4",
+     "rho": [
+      2,
+      0,
+      3,
+      1
+     ],
+     "dim_L_rho_in_R^{n^2}": 8,
+     "dim_L_rho_in_balanced": 5,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 8,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "involution",
+     "rho": [
+      2,
+      1,
+      0,
+      3
+     ],
+     "dim_L_rho_in_R^{n^2}": 10,
+     "dim_L_rho_in_balanced": 9,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 4,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-3",
+     "rho": [
+      2,
+      1,
+      3,
+      0
+     ],
+     "dim_L_rho_in_R^{n^2}": 9,
+     "dim_L_rho_in_balanced": 6,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 7,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "involution",
+     "rho": [
+      2,
+      3,
+      0,
+      1
+     ],
+     "dim_L_rho_in_R^{n^2}": 10,
+     "dim_L_rho_in_balanced": 8,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 5,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-4",
+     "rho": [
+      2,
+      3,
+      1,
+      0
+     ],
+     "dim_L_rho_in_R^{n^2}": 8,
+     "dim_L_rho_in_balanced": 5,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 8,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-4",
+     "rho": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "dim_L_rho_in_R^{n^2}": 8,
+     "dim_L_rho_in_balanced": 6,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 7,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-3",
+     "rho": [
+      3,
+      0,
+      2,
+      1
+     ],
+     "dim_L_rho_in_R^{n^2}": 8,
+     "dim_L_rho_in_balanced": 6,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 7,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-3",
+     "rho": [
+      3,
+      1,
+      0,
+      2
+     ],
+     "dim_L_rho_in_R^{n^2}": 8,
+     "dim_L_rho_in_balanced": 6,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 7,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "involution",
+     "rho": [
+      3,
+      1,
+      2,
+      0
+     ],
+     "dim_L_rho_in_R^{n^2}": 10,
+     "dim_L_rho_in_balanced": 9,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 4,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "order-4",
+     "rho": [
+      3,
+      2,
+      0,
+      1
+     ],
+     "dim_L_rho_in_R^{n^2}": 8,
+     "dim_L_rho_in_balanced": 6,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 7,
+     "measure_zero": true
+    },
+    {
+     "n": 4,
+     "rho_class": "involution",
+     "rho": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "dim_L_rho_in_R^{n^2}": 10,
+     "dim_L_rho_in_balanced": 8,
+     "ambient_chain_dim": 13,
+     "codim_in_chains": 5,
+     "measure_zero": true
+    }
+   ],
+   "verdict": "RL-GEN proved by exact integer row reduction: every twist locus L_rho intersect the balanced (chain) space is a PROPER linear subvariety (codim >= 1 for every non-trivial rho; codim = 0 only for the identity on n <= 2). The union over the finitely many rho is still measure zero: a generic chain admits NO reversal symmetry, so the reflection-laundering mechanism is a non-generic stratum. The reversible locus itself (rho = id) is codim n(n-1)/2."
+  },
+  "sampling_confirmation_N4": {
+   "samples": 3000,
+   "self_converse_hits": 0,
+   "verdict": "0 hits in 3000 random 4-state chains (expected: the loci are proper linear strata \u2014 measure zero)."
+  },
+  "DS_witness_adjudication": {
+   "P": "B3 member [[.6,.4,0],[.2,.2,.6],[.2,.4,.4]] (uniform pi)",
+   "R_empty": true,
+   "R": [],
+   "Aut_trivial": false,
+   "chain_arrow_D": 0.07324081924454065,
+   "sensor_{0}|{1,2}_block_KL_n2_n8": [
+    0.0,
+    -1.1842378929335005e-17,
+    0.0,
+    -6.162975822039155e-33,
+    -2.7474319116057177e-18,
+    -6.252776074688864e-19,
+    -5.741185304941626e-19
+   ],
+   "all_zero": true,
+   "strong_lumping": true,
+   "strong_lumping_conditions": "P[1,0] = P[2,0] = 1/5 (exact fractions)",
+   "lumped_2state_chain": [
+    [
+     0.6,
+     0.4
+    ],
+    [
+     0.2,
+     0.8
+    ]
+   ],
+   "lumped_chain_arrow": 0.0,
+   "q01_q10_exact": [
+    "2/15",
+    "2/15",
+    "equal"
+   ],
+   "verdict": "THE SHARP CONVERSE IS FALSE: the witness launders its arrow through the STRONG-LUMPING route, not reflection. R(P) = emptyset (exhaustive over S_3: the asymmetric driven chain has no reversal symmetry at all), yet the sensor {0}|{1,2} launders completely: the lumping is strong (Kemeny-Snell: states 1,2 have identical block profiles P[1,0] = P[2,0] = 1/5), so the observed process IS the 2-state Markov chain [[.6,.4],[.2,.8]] \u2014 and every 2-state chain is reversible. The laundering set is strictly larger than the reflection-invariant sensors."
+  }
+ },
+ "D_laundering_routes_deceptive": {
+  "strong_lumping_route_N4": {
+   "strong_lumping_verified": true,
+   "R_empty": true,
+   "chain_arrow_D": 0.08956846014932898,
+   "observed_block_KL_n2_n7": [
+    -6.162975822039155e-33,
+    -9.250040099652948e-18,
+    -3.0212525624315925e-18,
+    1.3686081447350094e-17,
+    3.821540090642603e-18,
+    -1.049975337023203e-18
+   ],
+   "all_exactly_zero": true,
+   "verdict": "the strong-lumping route CONFIRMED off the 3-state world: a random 4-state chain ON the Kemeny-Snell stratum (imposed profile equality, no reversal symmetry) launders completely through a 2-block sensor; the lumped process is the 2-block Markov chain, reversible. The dominant laundering stratum is codimension-count(P-1 per merged pair), NOT the reflection strata."
+  },
+  "residual_accidental_iid_pair": {
+   "chain": "A->B(1); B->{A,C}(1/2 each); C->D(1); D->{A,C}(1/2 each)",
+   "sensor": "{A, D} | {B, C} (the pair-phase symbol)",
+   "chain_one_way_edges": [
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     0
+    ]
+   ],
+   "chain_arrow": "INFINITE (one-way edges A->B and C->D: the reversed chain assigns probability zero to forward paths of positive probability, so the reversal divergence diverges)",
+   "R_size": 2,
+   "R": [
+    [
+     1,
+     0,
+     3,
+     2
+    ],
+    [
+     3,
+     2,
+     1,
+     0
+    ]
+   ],
+   "sensor_rho_invariant_for_some_reversal": true,
+   "strong_lumping": false,
+   "block2_law": {
+    "00": 0.125,
+    "01": 0.375,
+    "10": 0.375,
+    "11": 0.125
+   },
+   "observed_block_KL_n2_n7": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "all_exactly_zero": true,
+   "verdict": "THE THIRD LAUNDERING STRATUM IS REAL, WITNESSED: the observed binary process is reversible at EVERY block length (KL = 0 machine-exact, n = 2..7) although the chain's arrow is INFINITE (one-way edges), the sensor is not rho-invariant for any reversal symmetry, and the lumping is not strong (states B and C have different block profiles). The mechanism is a symmetry of the RECORD, not of the WORLD: the iid-pair law is reversal-invariant because the stationary phase is random \u2014 the pairs (0,1)/(1,0) with the phase mixing produce palindromic block laws at every length. The observed process's own degeneracy launders what no chain-level symmetry lumps: the residual accidental stratum of RL-STRAT."
+  },
+  "binary_block_structure": {
+   "n2_identity": "q(01) = q(10) for every stationary binary process (telescoping); max violation on 400 random HMMs: 1.1e-16",
+   "n3_identity": "the 3-block law of every stationary binary process is symmetric (run-counting: 011/110 both count 1-runs of length >= 2, 001/100 both count 0-runs >= 2, the rest are palindromes); max 3-block KL on 200 random binary HMMs (4..6 states): 2.6e-17",
+   "n4_first_arrow": "the first possible binary arrow is the 4-block law = the adjacent run-pair ORDER statistics (q(0101) vs q(1010) etc.); the binary process is reversible iff its run-length sequence is order-reversible",
+   "singleton_block_theorem": "either block singleton => the binary lump of ANY chain is reversible (the singleton routes memorylessly, the other block's entries are iid, the process is an alternating renewal with iid runs); max KL over all 1+(N-1) splits, N = 4..6, n = 2..7: 3.3e-17",
+   "three_state_binary_theorem": "every binary function of a 3-state chain is reversible (the forced 1+2 split + the singleton theorem); max KL over 80 chains, both sensors, n = 2..8: 3.0e-17",
+   "boundary_2plus2": {
+    "samples": 450,
+    "fraction_with_arrow": 0.9977777777777778,
+    "max_KL": 0.060092245089634726,
+    "example_per_n_KL_n2_n6": [
+     0.0,
+     2.5144705520506255e-17,
+     1.9062906811197666e-05,
+     4.578065366624769e-05,
+     7.504223938404261e-05
+    ]
+   },
+   "verdict": "RL-DEC, the alphabet-counted arrow: the binary record CANNOT carry an arrow below the 4-block \u2014 n = 2 and n = 3 are symmetric by IDENTITY for every stationary binary process, and the binary lumps of 3-state chains are reversible at every length (the singleton-routing theorem: the forced 1+2 split makes the entries iid). The first binary arrow lives at the 4-block, needs both blocks of size >= 2, and is generic there (99.8% of random 2+2 instances, max KL 0.0601). So the minimal binary arrow carrier has hidden rank 4 with a 2+2 split \u2014 and on the driven 3-ring every binary sensor launders STRUCTURALLY (not only by reflection): the ring's arrow needs the identity sensor. The minimal pairwise arrow carrier is the 3-symbol, 3-state record; the minimal block-pair arrow carrier is the 2+2 binary record of rank 4: the arrow's resolution floor, counted twice."
+  }
+ },
+ "scope_summary": {
+  "question": "which irreducible chains admit a reversal symmetry, and which sensors preserve the arrow off the circulant class?",
+  "answer": [
+   "RL-G: the reversal symmetries form the coset R = rho0.Aut inside the reversal group G-hat = Aut ~ R (Aut index-2 normal; rho^2 in Aut; asymmetric chains have at most ONE reversal symmetry, an involution). The N-ring's G-hat is the dihedral group: Vol X's 'the arrow is the chirality' is the coset R = D_N \\ Z_N.",
+   "RL-C: R(P) = centralizer(S_A) intersect anti-centralizer(K_A): computable, and the arrow must be ODD under the symmetry.",
+   "RL-NF: self-converse chains = the rho-twisted detailed-balance fluxes F_ij = F_{rho(j)rho(i)}; manufactured at will beyond the circulant class by iota-symmetrizing any pi-flow.",
+   "RL-L: every rho-invariant sensor launders exactly (verified on non-circulant driven witnesses, all block lengths); the rho-breaking sensors keep the arrow \u2014 the arrow-preserving lattice off the ring is the complement of the R-invariant partitions, and it is non-empty exactly because the lattice of sensors is finer than the orbit structure.",
+   "RL-GEN: every twist locus is a proper LINEAR stratum (exact dimension table): the chains admitting a reversal symmetry are MEASURE ZERO. The reflection mechanism is the abelian/circulant world's mechanism; the generic chain's arrow is not reflect-launderable.",
+   "RL-STRAT: the laundering set is the union of three strata: the reflection strata (linear, codim >= 3 on 3-state), the STRONG-LUMPING strata (Kemeny-Snell, codim = merged-profile count \u2014 the DOMINANT mechanism: Vol X's DS witness launders this way with R = emptyset, so the sharp converse is FALSE), and the residual algebraic strata.",
+   "RL-DEC: the pairwise screen is blind BY THEOREM on binary alphabets (the telescoping identity q(01) = q(10) for every stationary binary process): a pairwise arrow needs three symbols, and the ring's arrow needs the identity sensor \u2014 the minimal pairwise arrow carrier is the 3-symbol, 3-state record. The first binary arrow stratum is the 3-block (generic off the ring). And the RESIDUAL accidental stratum is witnessed: the iid-pair process launders an INFINITE chain-level arrow (one-way edges) through a record-level phase symmetry with no chain-level reversal symmetry and no strong lumping.",
+   "THE SCOPE, SHARPENED: arrow <=> rank defect holds exactly where the non-reversibility is spectrally carried (Vol X's abelian shadow); the shadow's own boundary is now stratified \u2014 the reflection strata (where the shadow is exact by symmetry), the lumping strata (where the observed process degenerates below the carrier), and the deceptive strata (where the pairwise shadow is silent but the full arrow survives). The record's arrow is inherited or destroyed (the one-way valve); the destruction routes are exactly the strata above."
+  ],
+  "corpus_landing": "the reversal group is the symmetry refinement of Vol X's rank-defect theorem; the strata answer the ledger's question 'which irreducible chains admit a reversal symmetry' with the exact dimension table, and the arrow-preserving sensor lattice is the complement filter measured on manufactured witnesses. The 'it and bit from record' synthesis keeps its one-way valve: no stratum creates an arrow."
+ }
+}

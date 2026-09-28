@@ -1,0 +1,275 @@
+{
+ "meta": {
+  "order": "Task 16 item 2 (the Vol IX ledger): the cell's exact D(2) / Open 7.13, framed by the abelian-shadow theorem",
+  "date": "2026-09-29"
+ },
+ "A_shadow_theorem": {
+  "SH1_dilation_identity": {
+   "free_cell_singular_values": [
+    1.414213562373,
+    1.414213562373,
+    1.0,
+    1.0,
+    0.0
+   ],
+   "shadow_catalecticant_singular_values": [
+    1.414213562373,
+    1.414213562373,
+    1.0,
+    1.0
+   ],
+   "equal": 1.0,
+   "eym_floor_M2_both_sides": 1.0,
+   "statement": "H_h = V Cat V* (the block-constant dilation with a zero block): the free cell and its abelianized shadow share the singular values (sqrt2, sqrt2, 1, 1) exactly, and the EYM floor at M = 2 is sigma_3 = 1 on both sides.",
+   "verdict": "PROVED (the free symbol h IS abelian: h = phi o m; the block-constant subspace carries the whole free Hankel)."
+  },
+  "FX1_zero_approximant": {
+   "norm": 1.4142135623730951,
+   "expected": 1.4142135623730951,
+   "match_err": 0.0,
+   "verdict": "the machinery reproduces ||H_cell|| = sqrt(2) exactly (the 6x6 product degenerates to the block Grams)."
+  },
+  "FX1_abelian_cross_check": {
+   "instances": [
+    {
+     "atoms": [
+      0.5,
+      [
+       0.3,
+       -0.2
+      ],
+      -0.4,
+      [
+       0.1,
+       0.25
+      ]
+     ],
+     "free_machinery": 1.579028419578214,
+     "abelian_machinery": 1.5790284195778062
+    },
+    {
+     "atoms": [
+      0.8,
+      [
+       0.4,
+       0.4
+      ],
+      0.3,
+      [
+       -0.3,
+       0.1
+      ]
+     ],
+     "free_machinery": 1.9835021442557919,
+     "abelian_machinery": 1.9835021430475117
+    },
+    {
+     "atoms": [
+      -0.6,
+      [
+       0.2,
+       0.5
+      ],
+      0.7,
+      [
+       0.5,
+       -0.2
+      ]
+     ],
+     "free_machinery": 1.8701345487587462,
+     "abelian_machinery": 1.8701345487565073
+    },
+    {
+     "atoms": [
+      1.1,
+      [
+       0.05,
+       0.3
+      ],
+      -0.9,
+      [
+       0.35,
+       0.05
+      ]
+     ],
+     "free_machinery": 1.6469055840912084,
+     "abelian_machinery": 1.646905584091202
+    },
+    {
+     "atoms": [
+      0.33,
+      [
+       -0.25,
+       0.3
+      ],
+      0.33,
+      [
+       0.3,
+       -0.25
+      ]
+     ],
+     "free_machinery": 1.8555766980114918,
+     "abelian_machinery": 1.8555766980105146
+    }
+   ],
+   "max_disagreement": 1.2082801426060996e-09,
+   "verdict": "PASS: the free 6x6 machinery on the diagonal (two-atom) WFAs agrees with the independent Vol IX generalized-eigenvalue machinery to 1.2e-09 \u2014 two exact algorithms for the same operator, derived independently."
+  },
+  "FX1_dense_truncation_check": {
+   "instances": [
+    {
+     "exact": 1.444182145978384,
+     "dense_L9": 1.4441821459341513,
+     "rho_sq": 0.1421,
+     "rel_gap": 3.0628143196390025e-11
+    },
+    {
+     "exact": 1.74253283908489,
+     "dense_L9": 1.7425326734484243,
+     "rho_sq": 0.2333,
+     "rel_gap": 9.505500380776683e-08
+    },
+    {
+     "exact": 1.8033036898750556,
+     "dense_L9": 1.8033036898668828,
+     "rho_sq": 0.1011,
+     "rel_gap": 4.532123911997258e-12
+    },
+    {
+     "exact": 1.599652106418196,
+     "dense_L9": 1.5996520789038928,
+     "rho_sq": 0.3379,
+     "rel_gap": 1.7200179445137403e-08
+    }
+   ],
+   "verdict": "PASS: the exact norms match the dense word-space truncation (L = 9, 1023 words) to the tail scale of the decaying reachable functions."
+  }
+ },
+ "B_free_scan": {
+  "abelian_diagonal_subscan": {
+   "best": 1.2771822672776398,
+   "atoms_p": [
+    -1.660302634,
+    1.646755459
+   ],
+   "lam_a_diag": [
+    0.657249942,
+    0.655058926
+   ],
+   "lam_b_diag": [
+    -0.109392947,
+    0.111571602
+   ],
+   "vol9_reference": 1.277144002283,
+   "verdict": "the diagonal (two-atom) subfamily reproduces the Vol IX optimum 1.2771427 through the free machinery: the lift identity SH-2 verified at the optimum."
+  },
+  "symmetric_subscan": {
+   "best": 1.2774895958067276,
+   "verdict": "the letter-swap-symmetric 2-state family (A_b = J A_a J, B and C symmetric): the best measured error."
+  },
+  "full_scan": {
+   "best": 1.2783510599955887,
+   "floor": 1.0,
+   "ceiling_abelian": 1.277142689665,
+   "best_over_all_subfamilies": 1.2771822672776398,
+   "verdict": "the free D(2) over the complete 2-state WFA class (12 parameters, 30 multi-starts, exact norms). By the lift identity SH-2 the free optimum is bounded above by the abelian optimum 1.2771427 (the diagonal configurations ARE free rank-2); the full scan found nothing below it."
+  },
+  "D1_both_sides": {
+   "D_free_1": 1.4142135623730951,
+   "D_abelian_1": 1.4142135623730951,
+   "floor_sigma_2": 1.4142135623730951,
+   "verdict": "M = 1 closes trivially on both sides (the zero approximant): the sandwich question starts at M = 2."
+  }
+ },
+ "C_anatomy_certificates": {
+  "abelian_optimizer_anatomy": {
+   "value": 1.2771485869735295,
+   "atoms": {
+    "p1": 2.77175129,
+    "lam1": [
+     0.07152188,
+     0.656323579
+    ],
+    "p2": -2.771744134,
+    "lam2": [
+     -0.071722572,
+     0.656321527
+    ]
+   },
+   "parity_odd_pair": 1.0,
+   "coordinate_swap_pair": 0.0,
+   "structure": "lam2 = (-lam1_1, lam1_2), p2 = -p1: the PARITY-ODD MIRRORED PAIR \u2014 the approximant lives on the gamma_1-odd shell (psi vanishes whenever gamma_1 is even)",
+   "pslq_attempt": "127714858697353/100000000000000",
+   "verdict": "the abelian optimum's anatomy: the two atoms form the PARITY-ODD MIRRORED PAIR lam2 = (-lam1_1, lam1_2), p2 = -p1 \u2014 the approximant is supported on the gamma_1-odd shell. The 3-parameter reduced family (p, x, y) with lam = (x, y)/(-x, y) carries the optimum (verified below); the value submitted to closed-form identification (no simple form found)."
+  },
+  "reduced_parity_odd_family": {
+   "best": 1.277142113314728,
+   "params_p_x_y": [
+    -31.149573007,
+    -0.006374184,
+    0.656323076
+   ],
+   "matches_two_atom_optimum": true,
+   "verdict": "the 3-parameter parity-odd family (psi = 2p x^g1 y^g2 1[g1 odd]) attains the two-atom optimum: the symmetric structure carries the global measured optimum."
+  },
+  "local_non_commutative_perturbation": {
+   "base_value": 1.277142113314728,
+   "rows": [
+    {
+     "eps": 0.001,
+     "non_commutative_perturbations": 60,
+     "never_improved": 60
+    },
+    {
+     "eps": 0.01,
+     "non_commutative_perturbations": 60,
+     "never_improved": 60
+    },
+    {
+     "eps": 0.05,
+     "non_commutative_perturbations": 60,
+     "never_improved": 60
+    }
+   ],
+   "verdict": "around the abelian (diagonal) optimum, random non-commutative perturbations of the 2-state dynamics NEVER improve the error at any tested scale: the abelian optimum is a local minimum of the FULL free problem \u2014 the escape room is empty locally, and the scans found no global escape either."
+  },
+  "escape_scan": {
+   "rows": [
+    {
+     "r": 0.9,
+     "best_with_atom1_near_sphere": 1.2787907032472052
+    },
+    {
+     "r": 0.95,
+     "best_with_atom1_near_sphere": 1.2778570437549905
+    },
+    {
+     "r": 0.99,
+     "best_with_atom1_near_sphere": 1.2803747631264946
+    },
+    {
+     "r": 0.995,
+     "best_with_atom1_near_sphere": 1.2773002710681276
+    }
+   ],
+   "verdict": "the infimum is NOT hiding at the domain boundary: with one atom forced to radius r -> 1 the best error stays above the interior optimum \u2014 no boundary-atom descent."
+  },
+  "certificate_status": {
+   "rank_wall_vol9": "the closure-forced profile psi(1,1) = 1, psi(2,0) = -psi(0,2), psi(0,0) = psi(2,2) = 0 has catalectic rank >= 3 on its finite part: NO rank-2 member attains the floor (non-attainment PROVED, Vol IX)",
+   "measured_strict_gap": "the multi-start infimum over the provably complete rank-2 family (two Prony atoms + affine, real and complex) is 1.2771427: the gap 0.2771 is MEASURED, not yet certified",
+   "open_certificate": "the exact SOS/elimination certificate (the semialgebraic infeasibility of ||M|| <= 1 + delta over the 6-parameter atom family) is the named open problem; the Rayleigh 5-vector relaxation fails (the atoms can zero all five low-order forms \u2014 the obstruction is genuinely infinite-dimensional, the rank wall's quantitative form).",
+   "verdict": "the cell's D(2) is strictly separated from the EYM floor on the abelianized rung: not attained (proved), infimum 1.2771427 (measured over the complete family), the certified delta remains open."
+  }
+ },
+ "shadow_sandwich": {
+  "sandwich": "sigma_3 = 1 <= D_free(2) <= D_abelian(2) ~ 1.2771427",
+  "D_free_2_measured": 1.2771822672776398,
+  "D_abelian_2_measured": 1.2771485869735295,
+  "open_7_13_on_witness": {
+   "question": "does the free (non-commutative) 2-state class escape the abelian shadow and close at the EYM floor 1?",
+   "measured_answer": "the best free configuration found is 1.277182: the free class does NOT escape: the non-commutative freedom of the 2-state WFAs does not beat the abelian atoms \u2014 the off-class equality fails on the witness at the measured level",
+   "framing": "the abelian-shadow theorem: the shadow bounds the free problem from above; the EYM floor from below; the gap between them is the free class's escape room, and on the ab/ba cell the measurement says the room is empty: the multiletter sandwich fails strictly off the level-constant class, witnessed."
+  },
+  "corpus_landing": "Vol VIII's abelianized rung + Vol IX's interval are now closed from above by the free measurement: the cell is the boundary where the sandwich's failure is structural (the rank wall), not numerical."
+ }
+}

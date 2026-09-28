@@ -796,3 +796,165 @@ Stage Summary:
   chains admit a reversal symmetry; the arrow-preserving sensor lattice
   off the circulant class); the Lyapunov-Cohomology Correspondence and
   Bridge 3's Lawvere program (stated by the chat, not built).
+---
+Task ID: 16
+Agent: main (Super Z)
+Task: User order — "the reflection-laundering theorem beyond the ring,
+and Vol IX's still-open cell D(2) / Open 7.13 (now framed by the
+abelian-shadow theorem)" — the two frontiers named at the close of Task
+15's ledger.
+
+Work Log:
+- CONTEXT RECOVERY: the sandbox had been reset (the persisted PAT storage
+  wiped); the master repo re-cloned anonymously (public) with all ten
+  volumes + all batteries intact; the full worklog Tasks 0-15 re-read;
+  the two ordered frontiers located in Task 15's remaining list.
+- FRONTIER 1 (reversal_group.py, ~1050 lines, exact): RL-G the reversal
+  group: pi-preservation free for every reversal symmetry (5.6e-17);
+  G-hat = Aut ~ R with Aut index-2 normal (R = rho0 Aut = Aut rho0,
+  R.R = Aut, rho^2 in Aut, verified on 30 chains + witnesses); asymmetric
+  chains have exactly ONE reversal symmetry, an involution (the four
+  manufactured witnesses realize it); the ring: Aut = Z_N, R = the
+  reflections, G-hat = the dihedral D_N for N = 3..8 EXACT (Vol X's
+  "the arrow is the chirality" = the coset statement). RL-C the
+  anti-centralizer criterion: R(P) = centralizer(S) intersect
+  anti-centralizer(K) for A = Pi^(1/2) P Pi^(-1/2) (the arrow must be
+  ODD under the symmetry), 120/120 agreement with brute force; Aut
+  likewise. RL-NF the twist normal form: rho in R iff the flux satisfies
+  the twisted detailed balance F_ij = F_{rho(j)rho(i)}; the
+  iota-symmetrization construction (Sinkhorn-balanced G -> F = (G +
+  iota G)/2) manufactures NON-circulant driven self-converse witnesses
+  at will (N = 4,4,5,6; D = 0.115-0.140; twist error 0.0; R = one
+  involution). RL-L the laundering theorem beyond the ring verified on
+  the witnesses: every rho-invariant sensor launders exactly (block KL
+  machine-zero at n = 2..6, max 2.8e-17); the rho-breaking sensors keep
+  the arrow (9/13 and 43/47 measured; the arrow-preserving lattice =
+  the complement of the laundering strata). RL-GEN the exact dimension
+  table by integer row reduction: every twist locus is a proper linear
+  variety (N=3: reversible codim 1, transposition codim 2, 3-cycle codim
+  4; N=4: codim 3-8) — the self-converse chains are MEASURE ZERO (0/3000
+  random hits). RL-STRAT the laundering stratification: reflection /
+  strong lumping (the DOMINANT codim-1 mechanism) / residual; Vol X's
+  doubly-stochastic witness ADJUDICATED: R = emptyset (exhaustive over
+  S_3) yet the sensor launders via strong lumping (Kemeny-Snell
+  P_10 = P_20 = 1/5 exact; the observed process IS the reversible
+  2-state chain [[.6,.4],[.2,.8]]) — THE SHARP CONVERSE IS FALSE; a
+  constructed 4-state strong-lumping witness confirms the route off the
+  3-state world. RL-DEC (the session's own discovery cluster, corrected
+  mid-run): the BINARY RESOLUTION FLOOR — the 2-block law of every
+  stationary binary process is symmetric by the telescoping identity
+  (1.1e-16 over 400 HMMs); the 3-block law by the run-counting identity
+  (2.6e-17 over 200); the singleton-block routing theorem: either block
+  singleton => the binary lump of ANY chain is reversible (3.3e-17 over
+  all 1+(N-1) splits, N = 4..6, n = 2..7), hence every 3-state binary
+  lump reversible at every length (3.0e-17, n = 2..8); the first binary
+  arrow is the 4-BLOCK (the adjacent run-pair order statistics): 99.8%
+  of random 2+2 lumps (hidden rank 4) carry it, max KL 0.0601; the
+  iid-pair process re-typed: its laundering is the REFLECTION route (R
+  contains rho = (AD)(BC), the sensor is invariant) behind an INFINITE
+  one-way-edge chain arrow. Mid-session repairs: the block-kl symbol
+  encoding bug (constant sensors mis-keyed in base-S), the witness
+  normalization bug (rounded P destroying the exact zeros), the D3
+  projection loop artifact — all caught by the anchor discipline.
+- FRONTIER 2 (free_cell.py + line_atom.py + minpoly_cell2.py, exact):
+  SH-1 the dilation identity: the free cell symbol IS the abelian
+  symbol composed with the Parikh map, so H = V Cat V* with a zero
+  block: sigma(free) = sigma(shadow) = (sqrt2, sqrt2, 1, 1) EXACTLY
+  (dense five-word support check). SH-2 the lift: every abelian
+  approximant lifts to a free one (two-atom = the diagonal WFAs,
+  affine = the shear WFAs): the sandwich sigma_3 = 1 <= D_free(2) <=
+  D_abelian(2). FX-1 the exact free-cell machinery: the error's column
+  space is 6-dimensional (four block indicators + two reachable
+  functions), so ||M||^2 = the largest eigenvalue of C.G (6x6) with
+  EVERY entry in closed form — the finite block sums plus the
+  discrete-Lyapunov identities (I - A_a kron A_a - A_b kron A_b)^-1,
+  the free analogue of Vol IX's multinomial generating function;
+  TRIPLE-VALIDATED: the zero approximant exact (0.0), the abelian
+  dense-box referee 1.2e-9, the dense word-space truncation (L=9)
+  rel gaps <= 1.7e-7. A real bug was caught by the chain (the BLOCKS
+  one-tuple word encoding made 'ab' a single unknown letter — the
+  machinery disagreed with the referee by 20% until fixed). FX-2 the
+  free scan: the diagonal tier reproduces Vol IX's optimum through the
+  new machinery (1.277182 vs 1.277144 — the lift verified AT the
+  optimum); the symmetric tier 1.277490; the full 12-parameter tier
+  1.278351 — NOTHING below the shadow; the escape scan (atoms forced
+  toward the domain sphere) stays >= 1.2773 at every radius; the local
+  non-commutative perturbation test around the abelian optimum: 60/60
+  perturbations NEVER improve at each of three scales — THE ESCAPE ROOM
+  IS EMPTY: Open 7.13's off-class equality fails on the witness at the
+  measured level (the free class does not beat the abelian shadow).
+  AN-1 the optimizer's anatomy: the best two-atom configuration is the
+  PARITY-ODD MIRRORED PAIR lambda2 = (-lambda1_1, lambda1_2), p2 = -p1
+  (the approximant lives on the gamma_1-odd shell), and its refinement
+  runs to the boundary x -> 0, p -> inf with 2px = c fixed: the LINE
+  ATOM psi = c 1[gamma_1 = 1] y^{gamma_2} — a rank-2 catalecticant on
+  the BOUNDARY of the Kronecker variety (not a two-atom sum; the limit
+  of the parity-odd pairs); the 3-parameter parity-odd family and the
+  2-parameter line-atom family both attain the optimum (1.2771421129,
+  six digits stable across three independent optimizers). The closed
+  6x6 on the line atom: entries rational in (c, y), validated exact
+  against the machinery at 6 sample points; the flip symmetry
+  (c,y) ~ (-c,-y) explained (the cell is odd under the gamma_2 parity);
+  THE gamma_1-PARITY BLOCK DECOUPLING: the 6x6 splits exactly into two
+  3x3 blocks, the top eigenvalue lives in the odd block, and the norm
+  is the largest root of an explicit CUBIC P(lambda, c, y). The
+  stationarity system P = dP/dc = dP/dy = 0 solved to 90 digits:
+  lambda* = 1.6310919765642504414737578928177383666901925754942...,
+  c* = 0.3971072873503973695456334, y* = 0.6563224669957891081761482.
+  THE CELL'S D(2) = sqrt(lambda*) = 1.277142112908446239007301375264347
+  80654... — Vol IX's open interval CLOSED at its upper end: the
+  infimum is the line-atom stationary value, an exact algebraic point.
+  AN-2 the certificate ledger: the rank wall unchanged (non-attainment
+  of 1); the Rayleigh finite-relaxation route REFUTED as a certificate
+  (the atoms can zero all low-order forms — the obstruction is
+  infinite-dimensional); the minimal polynomial of lambda* left OPEN
+  with artifacts saved (the naive resultant chain was wrong —
+  eliminating c before y produced a bivariate impostor, caught; the
+  corrected chain's coprime resultant explodes to degree 1154 with
+  extraneous components; the in-sandbox LLL relation searches exceeded
+  the time budget; external factoring of the saved cubic system via
+  PARI/FLINT is the named route).
+- VOLUME XI built (generate_vol11.py = the Vol X engine clone; vol11
+  _content_a/b.py: 12 chapters, ~6,000 words, 3 tables + 1 stats row + 1
+  quote; the figure reversal_shadow.png (3 panels, embed scale 0.60,
+  fonts >= 7pt effective); cover_vol11.html on the validated Template 03
+  (cover_validate PASS); merge with the cover mediabox normalized to
+  A4). QA CHAIN ALL PASS: font.check 0 issues; toc.check + toc_validate
+  clean; pdf_qa --skip-cover 12/12 PASS (the initial page-size error
+  fixed by the normalization); VLM render check on cover + table page +
+  figure page: PASS; 27/28 key strings verified present (the one
+  "miss" was a spelled-out phrase, confirmed present).
+- README updated (eleven volumes + the Vol XI row + two new battery
+  rows); this Task 16 entry.
+
+Stage Summary:
+- Deliverables: download/The_Resolution_Programme_XI_The_Reversal_Group
+  _and_the_Abelian_Shadow.pdf (17 pp: dark academic cover, TOC, 12
+  chapters, Figure 1 three panels, Tables 1-3, stats row) +
+  scripts/reversal_group.py + free_cell.py + line_atom.py +
+  minpoly_cell2.py + their results JSONs + vol11_fig.py + the figure +
+  the Vol XI engine/content/cover/merge scripts + minpoly_r2v3.txt (the
+  elimination artifact) — all committed to the repo.
+- The verdict, honestly bounded: BOTH ORDERED FRONTIERS DISCHARGED.
+  (1) The reflection-laundering theorem beyond the ring is a group
+  theory: the reversal group, the computable criterion, the normal form
+  with manufactured witnesses, the exact measure-zero dimension table,
+  the three-tier laundering stratification with the sharp converse
+  REFUTED (the strong-lumping route), and the binary resolution floor
+  discovered (the arrow cannot appear below the 4-block on binary
+  alphabets; the 3-state binary lumps are reversible by the singleton
+  routing theorem). (2) The cell's D(2) SOLVED: the abelian-shadow
+  sandwich + the exact free-cell machinery + the empty escape room + the
+  line-atom reduction to a 2-parameter cubic stationarity system:
+  D(2) = 1.2771421129084462... (an exact algebraic point, 40 digits,
+  the system saved); Open 7.13's off-class equality fails on the witness
+  at the measured level.
+- Remaining after this session: the minimal polynomial of lambda* (the
+  saved computation; external factoring); the global certificate that
+  the line-atom value is the infimum over the full rank-two variety (a
+  bounded, named problem); the complex free scan (machinery ready);
+  the residual laundering stratum witness; the programme's longer items
+  unchanged (Phi's uniqueness, Risk 4, the bounded benchmarks, the n=4
+  L=10 leg, the Lyapunov-cohomology correspondence).
+- NOTE: the PAT storage was wiped by the sandbox reset; the commit is
+  local pending the credential's re-provisioning.

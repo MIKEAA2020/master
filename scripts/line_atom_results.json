@@ -1,0 +1,38 @@
+{
+ "meta": {
+  "order": "Vol XI Part B addendum: the line-atom reduction of the cell's D(2)",
+  "date": "2026-09-29"
+ },
+ "LA1_scan": {
+  "best": 1.2771421129084455,
+  "c": -0.3971072837897692,
+  "y": -0.656322467093687,
+  "value_matches_parity_odd_family": true,
+  "verdict": "the line-atom family (2 parameters) attains the parity-odd family's optimum: the cell's D(2) reduces to a 2-parameter boundary problem.",
+  "D2_high_precision": "1.27714211290844623900730137526434780654"
+ },
+ "LA2_reduction": {
+  "statement": "for the line atom the machinery degenerates to an explicit 6x6 matrix C.G with entries rational in (c, y) (block sums + the two geometric line Grams c^2/(1-y^2)^2 and c^2/(1-y^2)): ||M||^2 = the largest eigenvalue of C.G, the largest root of an explicit degree-6 polynomial",
+  "validation_max_disagreement": 1.3322676295501878e-15,
+  "flip_symmetry": "(c, y) and (-c, -y) give the same norm: the cell K is ODD under the gamma_2 parity (Pi_2 K Pi_2 = -K), so the flip (c, y) -> (-c, -y) conjugates the error",
+  "verdict": "PASS: the closed 6x6 agrees with the independent machinery to 1.3e-15 \u2014 the reduction is exact."
+ },
+ "LA3_stationarity": {
+  "charpoly_lambda_degree": 6,
+  "stationary_point": {
+   "lambda": 1.6310919620821842,
+   "c": 0.39710561803528005,
+   "y": 0.6563174253323033,
+   "norm": 1.2771421072387301
+  },
+  "matches_scan": true,
+  "minimal_polynomial_lambda": null,
+  "verdict": "the stationarity system P = dP/dc = dP/dy = 0 of the line-atom cubic solved to 90 digits: lambda* = 1.6310919765642504414737578928... (D(2) = sqrt(lambda*) = 1.2771421129...), c* = 0.397107287..., y* = 0.6563224670...: the optimum is an exact algebraic point of the explicit cubic system. The minimal polynomial of lambda* is the remaining open computation: the naive resultant elimination explodes (degree 1154 with extraneous components; artifacts saved: minpoly_r2v3.txt) and the in-sandbox LLL relation search did not converge in the time budget \u2014 external factoring (PARI/FLINT) of the saved system is the natural route.",
+  "high_precision": {
+   "lambda_star_50_digits": "1.6310919765642504414737578928177383666901925754942",
+   "c_star": "0.3971072873503973695456334",
+   "y_star": "0.6563224669957891081761482",
+   "D2_sqrt": "1.27714211290844623900730137526434780654"
+  }
+ }
+}
