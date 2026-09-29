@@ -1108,3 +1108,131 @@ Stage Summary:
   polynomial + global certificate) is on GitHub as of fe7a3a5.
 - Next session start protocol: bash /home/z/my-project/scripts/restore_pat.sh
   before any git push.
+
+---
+Task ID: 19
+Agent: main (Super Z)
+Task: The rank-2 strictness proof (the user's order: "rank-2 strictness
+proof -> complex/affine identity completion -> integrate Experiments 1-3
+into Vol IX"); PAT restored per protocol at session start.
+
+Work Log:
+- Session start: bash scripts/restore_pat.sh (identity MIKEAA2020, push
+  TRUE); the battery scripts restored from the repo (the sandbox reset
+  again wiped scripts/ but the repo preserved everything).
+- THE CORNER REDUCTION DISCOVERED (the session's key structure): the
+  cell's Hankel is purely off-diagonal in the a-count parity split, so
+  ||error|| >= ||the (odd,even) block|| >= ||its CORNER restriction||
+  (rows |u|_a = 1, cols |v|_a = 0), and the corner is the
+  MULTIPLICITY-WEIGHTED 1-D Hankel problem (the words b^i a b^j with
+  i+j = n are n+1 many) with the EFFECTIVE ATOMS (p_i x_i, y_i) — the
+  x-amplitudes become the corner's weights. First probe: the naive
+  UNWEIGHTED 1-D check FAILED (2.4e-1); the weighted version matches the
+  line-atom 6x6 machinery to 2.2e-16 and the dense referee.
+- r2_strictness.py (T1-T5): T1 the corner reduction verified (300 random
+  two-atom configs, 0 violations; the 3x3 = the 6x6 to 1.8e-15). T2 the
+  PARITY-ODD SHELL THEOREM PROVED: the pair's (odd,even) error = the
+  stacked [corner; beyond-corner] matrix, so ||pair|| >= ||its corner|| =
+  the weighted-1-D SINGLE-atom error >= sqrt(lambda*) (Task 17's
+  certificate); the corner 1-atom infimum re-derived at 1.2771421129 to
+  1.1e-15 at the flip (-c*, -y*); the pair-never-beats-its-limit check 0
+  violations — Vol XI's measured anatomy is now a theorem. T3 the 1-D
+  DISCOVERY: the weighted-1-D TWO-atom infimum is ZERO (the odd pair
+  (w,-w),(r,-r) -> delta_1 as r -> 0) — the corner is KILLABLE, so the
+  general family's strictness is a TRADE-OFF (the killer pays 1/x: cell
+  errors 50.0/20.0/10.0/5.0/2.7 at x = 0.02..0.40 with corner 0; the
+  PSD-sum identity ||M||^2 >= lambda_max(Y_ee Y_ee* + (T2-X_eo)(T2-X_eo)*)
+  isolates the mechanism). T4 the anisotropic corners: domain-guarded
+  crossed corner infimum = 1.2771421129 (alpha = beta = y* recovered);
+  affine at 1.4142; the FULL 6-param odd-constrained free scan = the
+  line-atom parameters (a12 -> 0, alpha = beta = 0.6563) — the free odd
+  shell does not escape. T5 the frontier: 285 configs, 0 below
+  sqrt(lambda*). Mid-run fixes: two scans escaped their domains (r =
+  -1.21, alpha = 7123) — domain guards added.
+- HONEST STATUS: the parity-odd shell is PROVED; the general 6-parameter
+  family's certificate is the named open semialgebraic problem (the
+  corner + payment trade-off), now cleanly stated.
+
+Stage Summary:
+- Deliverables: scripts/r2_strictness.py + r2_strictness_results.json +
+  the probe scripts (quick_1d_check*.py). The strictness chain: the
+  corner reduction (exact, field-agnostic) + the parity-odd shell
+  theorem (proved, closing Vol XI's numerical shell) + the 1-D closure
+  discovery (the corner is killable; the strictness is the trade-off) +
+  the anisotropic corners closed + the trade-off frontier measured.
+
+---
+Task ID: 20
+Agent: main (Super Z)
+Task: The complex/affine identity completion (the order's second item).
+
+Work Log:
+- complex_completion.py (CC-1..CC-6): the conjugation-corrected COMPLEX
+  free machinery built (C = sum c(v)c(v)*, the conjugated Lyapunov
+  operators; TWO bugs found and fixed en route: the Kr factor
+  kron(Aa.T, conj(Aa).T) not kron(Aa.T, conj(Aa)); the C[i,4+k]
+  conjugation direction) — validated: real configs vs the original
+  machinery 1.33e-15; complex vs the vectorized dense referee 3.6e-4
+  over 36 converged configs (the referee at rho ~ 0.9 is a submatrix
+  lower bound — the convergence guard added; a third bug: the referee's
+  float() discarding complex parts).
+- CC-2 the corner reduction over C: 200 general complex pairs 0
+  violations; the complex mirrored-pair stack tight. CC-3 the complex
+  1-atom corner: infimum = sqrt(lambda*) with the PHASE GAUGE
+  DISCOVERED: (w, r) ~ (c* e^{i psi}, y* e^{-i psi}) — the corner
+  matrix conjugates by unitary diagonals, the norm invariant to 6.7e-16
+  along the circle; the scan's optimizer has |w| = c*, |r| = y*,
+  arg w + arg r = 0 — the complex family reduces to the real one. CC-4
+  the complex FREE 2-state scan (20 real params): infimum 1.2771471 —
+  no escape (Open 7.13's complex escape room empty at the measured
+  level). CC-5 the identities: conjugation symmetry 0; isospectral
+  doubling 1.1e-11 (two conjugation slips in the hand-built 6x6 fixed);
+  the flip 0; the dilation identity's sigma_1 = sqrt(2) exact.
+- HONEST GAPS: the certified complex certificate (Task 17's
+  ball arithmetic covered R x (-1,1); the complex domain's 4 real params
+  await the extended bisection); the complex trade-off = the same
+  reduced problem as the real one.
+
+Stage Summary:
+- Deliverables: scripts/complex_completion.py +
+  complex_completion_results.json + debug_complex*.py (the bug-hunt
+  trail). The complex/affine completion closed at the scan level with
+  the phase gauge as the new structure; the complex certificate named.
+
+---
+Task ID: 21
+Agent: main (Super Z)
+Task: Integrate Experiments 1-3 + the "it and bit from record" synthesis
+into Volume IX (the order's third item) — the SECOND EDITION.
+
+Work Log:
+- vol9_content_c.py written: 8 new chapters (the second-edition preface
+  with the cell's closure; the corner-reduction strictness chain; the
+  complex/affine completions; the three empirical-face chapters —
+  spectral compression, the register and the obstruction, the sheaf
+  stratum — integrating Vol X's experiment material into the sandwich-
+  locus volume; "it and bit from record"; the second-edition ledger) +
+  Table 5 (the strictness chain) + Table 6 (the experiments) + the
+  stats row.
+- vol9_ed2_fig.py: Figure 2 (3 panels: the corner equality map with the
+  sqrt(lambda*) contour; the trade-off frontier with the killer dial;
+  the phase gauge circle).
+- The first-edition chapters surgically updated: the cell-at-M=2 quote
+  now carries the second-edition closure note; the header/footer/
+  cover/metadata re-branded SECOND EDITION; the cover re-rendered
+  (cover_validate PASS) and the paths fixed (github_master ->
+  github_repos/master).
+- The stats-row bug (5 items in a 3-column layout — the page-16
+  overflow) fixed. QA: pdf_qa --skip-cover ALL PASS (24 pp); font.check
+  0 issues; toc.check + toc_validate clean; 19/20 key strings (the 1
+  "miss" is case-sensitivity); VLM checks on the cover, the figure
+  page, and the table page: all PASS.
+- README updated: the Vol IX row (second edition, 24 pp) + two new
+  battery rows (the corner-reduction battery; the complex/affine
+  completion battery).
+
+Stage Summary:
+- Deliverable: The_Resolution_Programme_IX_The_Sandwich_Locus.pdf (24
+  pp, SECOND EDITION) — the closure + the strictness chain + the complex
+  completions + the empirical face + the record synthesis, integrated
+  into the sandwich-locus volume. All QA green.

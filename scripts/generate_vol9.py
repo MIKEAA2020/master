@@ -11,7 +11,7 @@ import os, sys, hashlib
 SKILL_SCRIPTS = "/home/z/my-project/skills/pdf/scripts"
 if SKILL_SCRIPTS not in sys.path:
     sys.path.insert(0, SKILL_SCRIPTS)
-sys.path.insert(0, "/home/z/my-project/github_master/scripts")
+sys.path.insert(0, "/home/z/my-project/github_repos/master/scripts")
 sys.path.insert(0, "/home/z/my-project/scripts")
 
 from pdf import install_font_fallback  # skill helper: auto font fallback in Paragraphs
@@ -31,8 +31,28 @@ from PIL import Image as PILImage
 
 from vol9_content_a import CHAPTERS_A, TABLES, FIGURES
 from vol9_content_b import CHAPTERS_B
+from vol9_content_c import CHAPTERS_C, TABLES_C
 
-CHAPTERS = CHAPTERS_A + CHAPTERS_B
+CHAPTERS = CHAPTERS_A + CHAPTERS_B + CHAPTERS_C
+TABLES.update(TABLES_C)
+FIGURES["corner"] = (
+    "/home/z/my-project/download/figures/vol9_ed2_corner.png",
+    "Figure 2 — The corner reduction, second edition. (a) The corner "
+    "equality: the three-by-three corner norm over the (c, y) plane — "
+    "identical to the full six-by-six line-atom machinery to 1.8e-15; "
+    "the contour at sqrt(lambda*) = 1.2771 is the certified floor, "
+    "touched at (c*, y*) and its flip. (b) The trade-off frontier: each "
+    "dot a random two-atom configuration, its corner error against its "
+    "even-shell payment (the colour scale), on the log payment axis — "
+    "the corner-killer dial (the red triangles) kills the corner to "
+    "machine zero and pays 1/x on the diagonal (50.0 at x = 0.02 down "
+    "to 2.7 at x = 0.40), and the parity-odd shell sits ON the corner "
+    "floor with zero payment (the dashed line); the general family's "
+    "strictness is the empty region below-left. (c) The phase gauge: "
+    "the complex one-atom corner norm along the gauge circle (c* "
+    "e^{i psi}, y* e^{-i psi}) is constant to 6.7e-16 — the complex "
+    "family reduces to the real one by the unitary diagonal "
+    "conjugation.")
 
 # ------------------------------------------------------------------ fonts
 FONT_DIR = "/usr/share/fonts"
@@ -88,7 +108,7 @@ H1_ORPHAN_THRESHOLD = AVAIL_H * 0.25
 MAX_KEEP_HEIGHT = PAGE_H * 0.4
 
 DOC_TITLE = "The Sandwich Locus — The Resolution Programme, Volume IX"
-OUT_PATH = "/home/z/my-project/github_master/scripts/body_vol9.pdf"
+OUT_PATH = "/home/z/my-project/github_repos/master/scripts/body_vol9.pdf"
 
 # ---------------------------------------------------------------- styles
 body_style = ParagraphStyle("Body", fontName="FreeSerif", fontSize=10.5, leading=17,
@@ -262,7 +282,7 @@ def page_decor(canvas, doc):
     # header: doc title left + accent rule
     canvas.setFont("FreeSerif", 7.5)
     canvas.setFillColor(TEXT_MUTED)
-    canvas.drawString(MARGIN, PAGE_H - 0.58 * inch, "THE RESOLUTION PROGRAMME · VOLUME IX")
+    canvas.drawString(MARGIN, PAGE_H - 0.58 * inch, "THE RESOLUTION PROGRAMME · VOLUME IX · SECOND EDITION")
     canvas.setStrokeColor(ACCENT)
     canvas.setLineWidth(1.2)
     canvas.line(MARGIN, PAGE_H - 0.66 * inch, PAGE_W - MARGIN, PAGE_H - 0.66 * inch)
@@ -272,7 +292,7 @@ def page_decor(canvas, doc):
     canvas.line(MARGIN, 0.62 * inch, PAGE_W - MARGIN, 0.62 * inch)
     canvas.setFont("FreeSerif", 7.5)
     canvas.setFillColor(TEXT_MUTED)
-    canvas.drawString(MARGIN, 0.46 * inch, "Amin Abaee · The Sandwich Locus — The Closed Form, the Lens, and the Retraction")
+    canvas.drawString(MARGIN, 0.46 * inch, "Amin Abaee · The Sandwich Locus, Second Edition — The Closure, the Strictness Chain, and the Empirical Face")
     if doc.page >= 2:
         canvas.drawRightString(PAGE_W - MARGIN, 0.46 * inch, str(doc.page))
     canvas.restoreState()

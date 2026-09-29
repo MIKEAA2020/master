@@ -1,0 +1,59 @@
+{
+ "meta": {
+  "order": "Task 20: the complex/affine identity completion for the cell's D(2)",
+  "date": "2026-09-29",
+  "reference": {
+   "sqrt_lambda_star": 1.2771421129084461
+  },
+  "wall_time_s": 71.32591605186462
+ },
+ "CC1_machinery": {
+  "real_agreement": 1.3322676295501878e-15,
+  "complex_referee_rel": 0.00035749569009823945,
+  "verdict": "PASS: the conjugation-corrected complex machinery agrees with the real machinery on real configs and with the dense word-space referee on complex configs."
+ },
+ "CC2_corner_complex": {
+  "statement": "the corner reduction holds over C verbatim (the a-parity block decomposition and the corner compression are index-level arguments, field-agnostic): ||complex cell error|| >= ||complex corner error|| with the effective atoms (p_i x_i, y_i) in C.",
+  "mirrored_pair_stack_worst": 0.0,
+  "general_violations": 0,
+  "general_min_gap": 0.0938762481188462,
+  "verdict": "PASS over C."
+ },
+ "CC3_complex_corner_scans": {
+  "complex_1atom_infimum": 1.2771421129084446,
+  "params": [
+   -0.2170869340776282,
+   0.33251686667974045,
+   -0.35879227330951363,
+   -0.5495700943318439
+  ],
+  "sqrt_lambda_star": 1.2771421129084461,
+  "phase_gauge": "DISCOVERED: the corner norm is invariant under the phase gauge (w, r) -> (c* e^{i psi}, y* e^{-i psi}) \u2014 the corner matrix conjugates by unitary diagonals (the row phase e^{-i(i+j)psi}, the column phase e^{-ik psi}). The scan's complex optimum is exactly |w| = c*, |r| = y* with opposite phases \u2014 the gauge image of the real optimum. Hence the complex 1-atom corner infimum EQUALS the real one, with a circle of gauge optima.",
+  "verdict": "no complex escape: the phase gauge reduces the complex 1-atom corner family to the real one; the infimum is sqrt(lambda*) with the gauge circle of optima"
+ },
+ "CC4_complex_free_scan": {
+  "family": "the full complex 2-state WFAs (B, C complex; Aa, Ab complex 2x2 \u2014 20 real parameters after the domain scaling)",
+  "infimum": 1.2771471067188755,
+  "sqrt_lambda_star": 1.2771421129084461,
+  "verdict": "the complex free class does not beat the abelian shadow's line-atom value at the measured level \u2014 Open 7.13's complex escape room is empty"
+ },
+ "CC5_identities": {
+  "conjugation_symmetry": 0.0,
+  "isospectral_doubling": 1.0913938098883356e-11,
+  "flip_symmetry": 0.0,
+  "dilation_identity_sigma1_free": 1.4142135623730951,
+  "verdict": "all identities close machine-exact over C"
+ },
+ "verdict": {
+  "closed": [
+   "the complex free machinery (conjugation-corrected, validated against the dense referee) \u2014 the named 'machinery ready' item",
+   "the corner reduction over C (the a-parity argument is field-agnostic): the complex effective atoms (p_i x_i, y_i)",
+   "the identity completions: conjugation symmetry, isospectral doubling, the flip, the lift, the dilation identity \u2014 all machine-exact over C",
+   "the complex scans: the 1-D corner, the free 2-state class \u2014 neither beats sqrt(lambda*) at the measured level"
+  ],
+  "honest_gaps": [
+   "the CERTIFIED complex certificate: Task 17's ball-arithmetic covered R x (-1,1); the complex (w, r) domain (4 real params) needs the extended bisection \u2014 named open",
+   "the complex trade-off certificate (as in the real case) \u2014 the corner is killable over C too; the strictness is the trade-off"
+  ]
+ }
+}

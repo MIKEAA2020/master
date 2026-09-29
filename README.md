@@ -73,7 +73,8 @@ halting physics and automata, to metabolic curvature and sustainability governan
    objective, not the distance. Vol IX delivers the closed form, the
    retraction, and the locus.]**
 
-9. **The_Resolution_Programme_IX_The_Sandwich_Locus.pdf** (Vol IX, 15 pp) —
+9. **The_Resolution_Programme_IX_The_Sandwich_Locus.pdf** (Vol IX, 24 pp,
+   **SECOND EDITION**) —
    the three links named at the close of Vol VIII, discharged: (1) the
    amalgam witness's closed-form minimum — D(1) = sigma_2 exactly for every
    real two-axis amalgam, attained by the atom p* = c_0, lambda* = c/sigma_1,
@@ -91,7 +92,22 @@ halting physics and automata, to metabolic curvature and sustainability governan
    off it); the cell's M = 2 interval refined to [1.000, 1.2771] behind the
    measured rank wall (the forced profile has catalectic rank 3 against the
    budget 2); (3) Vol VII's ledger reported unchanged with the precise reason
-   the abelianized closures do not touch Open 7.13.
+   the abelianized closures do not touch Open 7.13. **The second edition
+   adds**: the cell's interval CLOSED at its upper end (D(2) = sqrt(lambda*)
+   = 1.2771421129084462, the cubic 108x^3 - 415x^2 + 522x - 216, the global
+   certificate); the CORNER-REDUCTION strictness chain (the multiplicity-
+   weighted 1-D corner with the effective atoms (p_i x_i, y_i); the
+   parity-odd shell theorem PROVED; the 1-D closure discovery — the corner
+   is killable, the strictness is the trade-off; the anisotropic corners
+   closed); the complex/affine identity completions (the conjugation-
+   corrected complex free machinery; the PHASE GAUGE (w, r) ~ (c* e^{i
+   psi}, y* e^{-i psi}) reducing the complex corner to the real one at
+   6.7e-16; the complex free scan: no escape); and the EMPIRICAL FACE
+   integrated — the three experiments (the AAK interval 10/10 and the knee
+   exact with the baselines split; the register law 9-59-34-44-45-9153
+   with the curvature prediction refuted and the record-side degeneracy
+   proved; the sheaf ordering perfect at the task level, null at the seed
+   level) and the "it and bit from record" synthesis.
 
 
 
@@ -196,6 +212,8 @@ halting physics and automata, to metabolic curvature and sustainability governan
 | **Experiment 1 — spectral compression** | `scripts/exp1_spectral.py` | The true process's joint Hankel rank 5 machine-exact (stable window 3→4), entropy rate 0.9559 (exact filter, 4×10^5 steps); trained CE: linear 0.9793, tanh 0.9590 (3 seeds each); the tanh state spectrum collapses to 3 dims at 1% tolerance; the linear Gramian effrank scan {1%: 7.3, 2%: 6, 5%: 5, 10%: 4} crosses the true rank at 5%; the learned transition spectra carry the chiral complex pair 3/3; the balanced-truncation certificate 8e-16 and the error-system Hankel norms cross-validated against a direct 30×30 block SVD (4+ digits); the AAK interval 10/10 with error/floor ratios 1.00–1.31; the task knee at order 3; the baselines: BT beats random deletion at every order, retraining wins at n ≤ 2. |
 | **Experiment 2 — sensor coarsening (Tiger)** | `scripts/exp2_coarsening.py` | Exact alpha-backup (upper-envelope monotone chain, O(n) breakpoints) at κ = 1.0→0.5, horizon 8: V* 9.000 → −8.000; the register |α|: 9, 59, 34, 44, 45, **9153**, 280, 4 (the curse of history made visible); the best-1-state-FSC obstruction o exact by enumeration (o = 0 exactly at κ = 1 and at the stall boundary; the iff o > 0 ⟺ memory required holds at every κ); the informative-range correlations: o-vs-gap r = 0.38, register r = 0.39, weighted curvature r = −0.95 (the chat's weighted-curvature claim REFUTED; the stall confound identified); the record-side exchangeability theorem verified on all 16 4-blocks at every κ (max deviation 3.5e-18): the Tiger's record arrow is identically zero. |
 | **Experiment 3 — sheaf diagnostics** | `scripts/exp3_sheaf.py` | Z7 addition, MLP 2-64-64-7, 12 seeds × 4 splits: train 1.000 everywhere; OOD 0.073 / 0.006 / 1.000 / 0.000 (compositional_16 / intermediate_36 / full_49 / random_60); the token-sheaf coboundary energy orders the splits EXACTLY as their OOD errors (0.541 / 0.577 / 0.594 / 0.615 vs 0 / 0.93 / 0.99 / 1.00); the seed-level correlation null-to-negative (−0.20, −0.18) — the honest task-level-yes / seed-level-no split; the pooled r = 0.59 flagged as split-dominated. |
+| **The rank-2 strictness battery (the corner reduction)** | `scripts/r2_strictness.py` | T1 the CORNER REDUCTION: \|\|cell error\|\| ≥ \|\|corner error\|\| with the corner = the multiplicity-weighted 1-D Hankel over the (\|u\|_a = 1)×(\|v\|_a = 0) words, the effective atoms (p_i x_i, y_i); the 3×3 = the line-atom 6×6 to 1.8e-15; 300 random two-atom configs 0 violations; T2 the PARITY-ODD SHELL THEOREM PROVED: the pair's error = the stacked corner + beyond-corner rows, so the shell's infimum = the line-atom value exactly (the corner 1-atom infimum re-derived at 1.2771421129 to 1.1e-15 at the flip (c\*, y\*); the pair-never-beats-its-limit check: 0 violations); T3 the 1-D DISCOVERY: the weighted-1-D TWO-atom infimum is ZERO (the odd pair (w,−w),(r,−r) → δ_1) — the corner is KILLABLE, the general family's strictness is the TRADE-OFF (the killer pays 50/20/10/5/2.7 at x = 0.02..0.40; the PSD-sum identity \|\|M\|\|² ≥ λ_max(Y_eeY_ee\* + (T2−X_eo)(T2−X_eo)\*)); T4 the anisotropic corners: the crossed corner (the odd-constrained free family) domain-guarded infimum = 1.2771421129 with α = β = y\* recovered; the affine corner at 1.4142; the FULL 6-param odd-shell scan = 1.2771421129 at the line-atom parameters (a₁₂ → 0, α = β = y\*) — the free odd shell does not escape; T5 the trade-off frontier: 285 configs, 0 below sqrt(λ\*). |
+| **The complex/affine completion battery** | `scripts/complex_completion.py` | The conjugation-corrected COMPLEX free machinery (C = Σc(v)c(v)\*, the conjugated Lyapunov identities; validated: real configs vs the original machinery 1.33e-15; complex vs the dense referee 3.6e-4 over 36 converged configs); the corner reduction over ℂ verbatim (200 general pairs, 0 violations; the complex mirrored-pair stack tight); the complex 1-atom corner infimum = sqrt(λ\*) with the PHASE GAUGE discovered: (w, r) ~ (c\*e^{iψ}, y\*e^{−iψ}) — the corner matrix conjugates by unitary diagonals, the norm invariant to 6.7e-16 along the circle, \|w_opt\| = c\*, \|r_opt\| = y\*, arg w + arg r = 0; the complex FREE 2-state scan (20 real params): infimum 1.2771471 — no escape; the identities: conjugation symmetry 0, isospectral doubling 1.1e-11, the flip 0, the dilation identity's σ₁ = √2 exact. |
 
 All scans run **anchor-reproduction-first**: the manuscript's own certified numbers are
 reproduced to machine precision before any new claim is read off.

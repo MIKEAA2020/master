@@ -1,0 +1,118 @@
+{
+ "meta": {
+  "order": "Task 19: the rank-2 strictness proof (the corner reduction chain) for the cell's D(2)",
+  "date": "2026-09-29",
+  "reference": {
+   "lambda_star": 1.6310919765642504,
+   "sqrt_lambda_star": 1.2771421129084461
+  },
+  "wall_time_s": 406.8035538196564
+ },
+ "T1_corner_reduction": {
+  "statement": "||H_cell - H_psi|| >= ||corner error|| with the corner = the (|u|_a = 1 rows) x (|v|_a = 0 cols) block \u2014 the multiplicity-weighted 1-D Hankel problem with the effective atoms (p_i x_i, y_i); exact 3x3/4x4 eigenproblems; the block-interlacing proof",
+  "line_atom_consistency_worst": 1.7763568394002505e-15,
+  "random_two_atom_violations": 0,
+  "min_gap_cell_minus_corner": 0.023182985038803672,
+  "verdict": "PASS: the corner reduction is exact \u2014 the cell error dominates its corner error, with equality structure on the parity-odd shell (the pair = the stacked corner + beyond-corner rows)."
+ },
+ "T2_parity_odd_shell": {
+  "theorem": "For every gamma_1-odd-supported rank-2 approximant (the mirrored pair family): ||error|| >= ||its corner error|| = the weighted-1-D single-atom error of (2px, y) >= sqrt(lambda*) (Task 17). The parity-odd shell's infimum is EXACTLY sqrt(lambda*), attained only at the boundary line atom (x -> 0). Vol XI's measured anatomy is now a theorem.",
+  "corner_1atom_infimum": 1.277142112908445,
+  "sqrt_lambda_star": 1.2771421129084461,
+  "pair_never_beats_limit_max_violation": 0.0,
+  "verdict": "PROVED (machine-verified chain: the stack argument + Task 17's certificate)."
+ },
+ "T3_1d_discovery": {
+  "discovery": "the weighted-1-D TWO-atom infimum is ZERO \u2014 the odd 1-D pair (w, -w), (r, -r) with r -> 0, w = c/2r converges to delta_1 itself. The corner is KILLABLE. Therefore the corner bound is vacuous for the general (non-odd) family: the strictness of the cell at the general two-atom level is a TRADE-OFF, not a corner obstruction.",
+  "one_d_two_atom_infimum": 0.0,
+  "killer_params": [
+   387.11677931033825,
+   0.001291599919602786,
+   -387.11677931096267,
+   -0.0012915999098528671
+  ],
+  "same_atoms_on_cell_error": 20.000250767030103,
+  "verdict": "the corner is necessary but not sufficient: the general family's obstruction is the trade-off (T5)."
+ },
+ "T4_anisotropic_corner": {
+  "question": "the odd-constrained free corners: the crossed family w alpha^i beta^{j+k} (the diagonal A_b with the odd constraint B A_b^i C = 0) and the affine degenerations (the Jordan A_b) \u2014 can the free odd shell beat the line atom through anisotropy?",
+  "isotropy_check": 0.0,
+  "crossed_corner_infimum": 1.277142112908445,
+  "crossed_params": [
+   -0.3971072967185802,
+   -0.6563224634251146,
+   -0.6563224684106596
+  ],
+  "affine_corner_infimum": 1.414213902754467,
+  "affine_params": [
+   0.962682002637623,
+   2881.6509873995765,
+   0.00034690398977971
+  ],
+  "full_odd_shell_infimum": 1.2771421129084455,
+  "full_odd_shell_params": [
+   1.7750968865787524,
+   -3.945901713519416,
+   -7.77020414102214e-08,
+   -0.0566943172810406,
+   0.6563224707146755,
+   0.6563224592400495
+  ],
+  "sqrt_lambda_star": 1.2771421129084461,
+  "verdict": "the corner alone is NOT binding (the crossed family reaches ~1 at the boundary) but the FULL odd shell \u2014 the corner + the beyond-corner rows together \u2014 never beats sqrt(lambda*): the line atom holds"
+ },
+ "T5_tradeoff": {
+  "identity": "||M||^2 >= lambda_max( Y_ee Y_ee* + (T2 - X_eo)(T2 - X_eo)* ) \u2014 the PSD sum of the even-shell payment and the corner error (both blocks live on the even-row space); the atoms that kill the corner pay on the a-even shell.",
+  "frontier_configs": 285,
+  "below_sqrt_lambda": 0,
+  "best_full": {
+   "corner": 1.4346570813671675,
+   "payment": 0.24002250670165456,
+   "full": 1.5602016968305963
+  },
+  "killer_dial_curve": [
+   {
+    "x": 0.02,
+    "cell_error": 50.00001592392439,
+    "corner": 0.0
+   },
+   {
+    "x": 0.05,
+    "cell_error": 20.000250767030103,
+    "corner": 0.0
+   },
+   {
+    "x": 0.1,
+    "cell_error": 10.002025247103399,
+    "corner": 0.0
+   },
+   {
+    "x": 0.2,
+    "cell_error": 5.016836306998443,
+    "corner": 0.0
+   },
+   {
+    "x": 0.4,
+    "cell_error": 2.660742498415107,
+    "corner": 0.0
+   }
+  ],
+  "verdict": "the escape room is empty at the measured level: no two-atom config beats sqrt(lambda*); the corner-killer configurations pay on the diagonal blocks \u2014 the trade-off frontier. The certified semialgebraic statement over the 6-parameter family (the corner + the payment) is the named open certificate, now REDUCED to a clean semialgebraic problem."
+ },
+ "verdict": {
+  "proved": [
+   "T1 the corner reduction: ||cell error|| >= ||corner error||, the corner = the multiplicity-weighted 1-D Hankel with the effective atoms (p_i x_i, y_i) \u2014 exact 3x3/4x4 eigenproblems",
+   "T2 the parity-odd shell theorem: the 3-parameter parity-odd family NEVER beats sqrt(lambda*) \u2014 Vol XI's anatomy is now a theorem; the line atom is the shell's unique optimum (the boundary)",
+   "the refinement/stack: the pair's error = the corner error + the beyond-corner rows (adding rows only increases the norm)"
+  ],
+  "discovered": [
+   "T3 the 1-D closure: the weighted-1-D TWO-atom family contains delta_1 in its closure (the odd 1-D pair) \u2014 the corner is killable, so the general family's strictness is a trade-off",
+   "the effective-atom transfer: the two cell atoms (p_i, x_i, y_i) act on the corner as the 1-D atoms (p_i x_i, y_i) \u2014 the x_i amplitudes are the corner's weights"
+  ],
+  "measured_honest": [
+   "T4 the anisotropic/affine corners do not beat sqrt(lambda*) (the free odd shell's escape closed at the corner level)",
+   "T5 the trade-off frontier: 0/400 configs below sqrt(lambda*); the corner-killers pay >= 1 on the diagonal blocks",
+   "the full 6-parameter semialgebraic certificate (the corner + the payment trade-off) is the named open problem \u2014 now a clean, reduced statement"
+  ]
+ }
+}

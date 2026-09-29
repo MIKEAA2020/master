@@ -5,9 +5,9 @@ from pypdf import PdfReader, PdfWriter
 
 A4_W, A4_H = 595.28, 841.89
 
-COVER = "/home/z/my-project/scripts/cover_vol9.pdf"
-BODY = "/home/z/my-project/github_master/scripts/body_vol9.pdf"
-OUT = "/home/z/my-project/github_master/download/The_Resolution_Programme_IX_The_Sandwich_Locus.pdf"
+COVER = "/home/z/my-project/github_repos/master/scripts/cover_vol9.pdf"
+BODY = "/home/z/my-project/github_repos/master/scripts/body_vol9.pdf"
+OUT = "/home/z/my-project/github_repos/master/download/The_Resolution_Programme_IX_The_Sandwich_Locus.pdf"
 
 
 def normalize_page_to_a4(page):
@@ -25,10 +25,10 @@ def main():
     for page in PdfReader(BODY).pages:
         writer.add_page(normalize_page_to_a4(page))
     writer.add_metadata({
-        "/Title": "The Sandwich Locus — The Resolution Programme, Volume IX",
+        "/Title": "The Sandwich Locus — The Resolution Programme, Volume IX, Second Edition",
         "/Author": "Z.ai",
         "/Creator": "Z.ai",
-        "/Subject": "The three links named at the close of Volume VIII, discharged: the amalgam closed form with the retraction of the strict-failure witness (diagnosed as a tail-penalized surrogate artifact), the sandwich-locus characterization (the rank-2 lens criterion, the two-atom closure identity, the first-shell gap valley measured with exact truncation-free norms), and Volume VII's unchanged ledger.",
+        "/Subject": "Second edition: the original three links discharged (the amalgam closed form with the retraction, the lens criterion, the first-shell map) plus the cell's D(2) closed at sqrt(lambda*) with its cubic minimal polynomial and global certificate; the corner-reduction strictness chain (the parity-odd shell theorem, the 1-D closure discovery, the trade-off); the complex and affine identity completions with the phase gauge; and the empirical face integrated (the three experiments and the it-and-bit-from-record synthesis).",
     })
     with open(OUT, "wb") as f:
         writer.write(f)
