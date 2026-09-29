@@ -14,12 +14,12 @@ halting physics and automata, to metabolic curvature and sustainability governan
 | Path | Contents |
 |---|---|
 | `top-down of my work.txt` | The author's four-model external syntheses (astra / opus 5.5 / fable / opus 5) — the brief this programme answers. |
-| `download/` | The eleven volumes (PDF) + all scan figures + editable sources + reference papers. |
+| `download/` | The twelve volumes (PDF) + all scan figures + editable sources + reference papers. |
 | `scripts/` | Every generation and computation script (LaTeX builders, scan engines, results JSON, logs). |
 | `worklog.md` | The full session-by-session task log (Task IDs 0–26). |
 | `PREFERENCES.md` | Standing user preferences (English-only protocol, credential storage, commit protocol). |
 
-## The eleven volumes
+## The twelve volumes
 
 1. **The_Resolution_Programme_Grand_Unified_Picture.pdf** (Vol I, 18 pp) — the coherent,
    top-down, bird's-eye view: one primitive, two currencies, three faces, two walls, eight domains;
@@ -190,6 +190,37 @@ halting physics and automata, to metabolic curvature and sustainability governan
    D(2) = 1.27714211290844623900730137526434780654... — an exact
    algebraic point (Vol IX's interval closed; the minimal polynomial
    left as the saved computation).
+12. **The_Resolution_Programme_XII_The_Grand_Unification.pdf** (Vol XII, 18 pp) —
+   the adjudicated grand unification across ALL works, on the user's standing
+   order: the two external top-down files read together (the four-model file
+   on works (a)/(b) — astra, opus 5.5, fable, opus 5 — and the GPT file on
+   (b)/(c)/(d)/(e)/(g)) and ruled claim by claim against the certified
+   batteries. THE TWO ADJUDICATIONS: the four external syntheses' load-bearing
+   claims (the eight-axis taxonomy, the Rosetta-stone identification, the
+   two walls, the not-interchangeable-currencies warning, the quantitative-
+   obstruction-datum gap) and the GPT synthesis's 13 established claims plus
+   its six not-yet-established concessions — the pattern: nothing refuted,
+   the sharpenable sharpened into proved theorems, the 'quantitative
+   obstruction datum' DELIVERED (Task 26), and two of the six concessions
+   closed (the rate-distortion-gap = viability-curvature identification
+   proved in the discrete by Task 24's correspondence; the single-category
+   equivalence closed as the budget dichotomy's signed boundary). THE
+   MISSING WORK (f) RETYPED AND DELIVERED: the GPT synthesis's proposed
+   resource-indexed, viability-decorated process bicategory with the defect
+   calculus Def(G∘F) ≤ Def(G) + L_G Def(F) already exists as certified
+   mathematics — the budget-lattice enrichment of Vol V, the multiletter
+   transport inequality of Vol VII (the same composition law, 609/609 in
+   five norms), the discrete viability shadow of Task 24, the intercept-
+   as-fixed-point of Vol V — with the continuum upgrade the honest
+   residual. THE UNIFIED STATEMENT: constrained realizability with the two
+   walls JOINED by the certified trade-off law (the mirrored pair kills
+   the corner and pays the payment's 1/x² law; the equality locus λ* the
+   certified meeting point — every front closed, the core included by
+   Task 26); the grand matrix (eight domains × three faces, every cell
+   ruled with its battery anchor); the open ledger at full scope (five
+   links, ranked by adjacent built structure); Figure 1 the unification
+   map (the docking bays, the proved bridges solid, the open links
+   dashed).
 
 ## The computation record (exact scans, anchor-first discipline)
 

@@ -1502,3 +1502,77 @@ Stage Summary:
   (the tubes' 6-direction sampling caveat) and the h^-6 exhaustive
   interior wall — unchanged, now clearly separated from the CORE
   they no longer block.
+
+---
+Task ID: 27
+Agent: main (Super Z)
+Task: The adjudicated grand unification across all works (the user's
+order: "repo updated: master/gpt topdown master.txt also see
+master/top-down of my work.txt. use them together along with your own
+prior works for adjudicated, grand unification accross all my works").
+
+Work Log:
+- Pulled the repo update (dddf0a5: gpt topdown master.txt, 1888
+  lines); read BOTH top-down files completely: the four-model file
+  (astra, opus 5.5, fable, opus 5 — the syntheses of works (a)+(b))
+  and the GPT file (the synthesis of (b), (c/d), (e), (g) with the
+  designed 'missing work f' — the resource-indexed, viability-
+  decorated process bicategory with the defect calculus).
+- The adjudication instrument: every load-bearing claim of both files
+  ruled against the certified batteries (the README ledger + the 26
+  task worklog).  The verdict vocabulary unchanged: SURVIVES /
+  RETYPED / REFUTED / OPEN.
+- THE STRUCTURAL DISCOVERY: the GPT synthesis's 'missing work (f)' is
+  not missing — its components are already certified mathematics:
+  the resource grading = Vol V's budget-lattice enrichment (the
+  graded law 300/300, the guarded trace at exact cost); the defect
+  calculus Def(G o F) <= Def(G) + L_G Def(F) = Vol VII's multiletter
+  transport inequality (the same law, 609/609 in five norms) + the
+  graded small-gain accumulation; the viability decoration = the
+  discrete shadow Task 24 proved (the circulation class = the
+  holonomy; the detailed-balance iff); the normalization
+  subcategories = the intercept-as-fixed-point (Vol V) + Vol X's
+  rank-defect stratification.  The continuum Fisher-Rao/Leray
+  upgrade is the honest residual.
+- THE SECOND DISCOVERY: two of the GPT synthesis's six
+  'not-yet-established' concessions are closed — the rate-distortion-
+  gaps = viability-curvature identification PROVED in the discrete
+  (Task 24: [omega] = the holonomy = the Hankel rank defect, one
+  object on the ring-class), and the single-category equivalence
+  closed as the budget dichotomy's signed boundary (the tensor that
+  does not distribute; the trace that exists only under contraction).
+- THE THIRD: the two walls (the combinatorial and the analytic, both
+  external syntheses' parallel facts) have a certified INTERACTION
+  LAW — the trade-off theorem (Task 22): the mirrored pair kills
+  the analytic wall's corner and pays the combinatorial-side
+  payment (the 1/x^2 law), the equality locus lambda* (the cubic
+  108x^3 - 415x^2 + 522x - 216) the certified meeting point, every
+  front closed including the core (Task 26) and the complex domain
+  (Task 23).
+- Volume XII BUILT: The_Grand_Unification, Adjudicated Across All
+  Works (18 pp): 6 chapters — the corpus complete (the two top-downs
+  read together, the letter map, Table 1); the first adjudication
+  (the four external syntheses, Table 2); the second adjudication
+  (the GPT synthesis's 13 established claims, Table 3); the missing
+  work (f) retyped and delivered (Table 4); the unified statement at
+  full scope (the grand matrix Table 5 + the walls/trade-off Table
+  6); the open ledger at full scope (five links, ranked).  Figure 1
+  the unification map (the HTML diagram: the spine, the walls + the
+  trade-off, the docking bays, the proved bridges solid, the open
+  links dashed).  Engine cloned from generate_vol11.py; cover
+  cloned from cover_vol11.html; the VLM QA passed (one cover
+  subtitle collision found and fixed; the body, tables and figure
+  clean).
+
+Stage Summary:
+- Deliverables: download/The_Resolution_Programme_XII_The_Grand_
+  Unification.pdf (18 pp) + scripts/vol12_content_a.py +
+  vol12_content_b.py + generate_vol12.py + merge_vol12.py +
+  cover_vol12.html/pdf + download/sources/diagram_vol12.html +
+  download/figures/unification_map.png.  The grand unification is
+  ADJUDICATED: both external syntheses ruled claim by claim (nothing
+  refuted; the sharpenable sharpened into proved theorems; two
+  concessions closed; the quantitative obstruction datum delivered);
+  the missing work (f) retyped and delivered; the unified statement
+  carries the two walls JOINED by the certified trade-off law and
+  the grand matrix with every cell ruled; the open ledger honest.
