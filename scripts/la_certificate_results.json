@@ -1,0 +1,59 @@
+{
+ "meta": {
+  "script": "la_certificate.py",
+  "date": "2026-09-29",
+  "wall_time_s": 152.2
+ },
+ "statement": "For every (c, y) in R x (-1,1): ||M(c,y)||^2 >= lambda*, with equality at (c*, y*) and (-c*, -y*); hence the line-atom value sqrt(lambda*) is the infimum (a minimum).",
+ "C1_strip_patch": {
+  "domain": "|y| >= sqrt(1-0.05)",
+  "S_identity": "C_bb - C_bf C_ff^-1 C_bf^T = diag(2,1,1,1) - t e0e0^T - t^2 e1e1^T [proved symbolically]",
+  "bound": "lambda_max(C.G) >= G[3,3]/(C^-1)_33 >= 2 lambda_min(S) >= 2(1-2t-5t^2) >= 1.775 > lambda*",
+  "numeric_identity_checks": "50/50 PASS",
+  "pencil_identity": "lambda_max(C.G) = max_u (u^T G u)/(u^T C^-1 u) (C PD on the strip: C_ff PD and S PD)"
+ },
+ "C2_far_c_patch": {
+  "domain": "|c| >= 7",
+  "trace_identity": "tr(C.G) = 6 - 12cy + 2c^2/t^3 [proved symbolically]",
+  "bound": "lambda_max >= tr/6 >= 1 - 2|c| + c^2/3 >= 3.333333333333332 > lambda*"
+ },
+ "C3_bisection": {
+  "domain": "[-7,7] x [-0.974680, 0.974680]",
+  "test": "BAD <=> P(lam*)>0 and P'(lam*)>0 and P''(lam*)>0 (real-rooted cubic, lc = t^3 > 0); certified: some sup <= 0",
+  "boxes_certified": 2719552,
+  "splits": 2719551,
+  "engine": "python-flint arb ball arithmetic (C-speed, sound comparisons: certified iff definitely <= 0)",
+  "real_rootedness_support": "300/300 samples: C PSD, G PD, spec(C.G) real >= 0; block-UT symbolic; PSD-product theory"
+ },
+ "C4_stall_patches": {
+  "centers": [
+   [
+    "0.397107287350397369545633413598",
+    "0.656322466995789108176148213977"
+   ],
+   [
+    "-0.397107287350397369545633413598",
+    "-0.656322466995789108176148213977"
+   ]
+  ],
+  "gradient_zero": "P = dP/dc = dP/dy = 0 at (lam*, c*, y*) exactly (the stationarity system)",
+  "hessian_lambda_max": "-0.70838315404530356046",
+  "C3_cubic_bound": "6.591699608630332",
+  "radius": "0.003",
+  "criterion": "r <= 3|lambda_max(H)|/(4 C3) = 0.0805995",
+  "stall_boxes_absorbed": 0
+ },
+ "attainment": {
+  "spectrum_6x6": [
+   "1.63109197656425",
+   "1.63109197656425",
+   "0.508162844801678",
+   "0.508162844801678",
+   "0.151886767658686",
+   "0.151886767658686"
+  ],
+  "lambda_max_minus_lambda_star": "-1.31256877e-91",
+  "note": "the two 3x3 blocks are isospectral (numerically identical spectra): lambda_max(C.G) = lambda_1(A1) = lambda*"
+ },
+ "verdict": "CERTIFIED: the line-atom norm infimum over R x (-1,1) equals sqrt(lambda*) = 1.27714211290844623900730137526434780654..., attained at (c*, y*) and its flip. The remaining link to the FULL rank-2 variety is Vol XI's reduction (escape room empty, parity-odd anatomy, the sandwich) \u2014 numerical, honestly labeled, not part of this certificate."
+}

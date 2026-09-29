@@ -1,0 +1,34 @@
+[0] lambda* loaded: 1.6310919765642504415...  [sign bracket verified at dps 130]
+[0] (c*, y*) refined: c* = 0.397107287350397369545633413598, y* = 0.656322466995789108176148213977
+[0] Hessian at optimum: lambda_max(H) = -0.708383154045, lambda_min(H) = -2.49358651581
+[C1] STRIP PATCH: |y| >= sqrt(1-0.05) = 0.974679
+     S = diag(2,1,1,1) - t e0e0^T - t^2 e1e1^T  [symbolic identity OK]
+     lambda_min(S) >= 1 - 2t - 5t^2 >= 0.8875
+     lambda_max(C.G) >= G[3,3]/(C^-1)_33 = 2/(S^-1)_33 >= 2*lambda_min(S) >= 1.775  > lambda* = 1.63109
+     numeric identity checks (50 samples): True
+[C2] FAR-c PATCH: |c| >= 7: tr(C.G) = 6-12cy+2c^2/t^3 [symbolic OK]
+     lambda_max >= tr/6 >= 1 - 2|c| + c^2/3 >= 3.333333333333332 > lambda*
+     PSD/real-spectrum sweep (300 samples): True
+[C3] ball coefficient tables built (0.01s)
+[C4] Taylor patch: C3 bound = 6.591699608630332, allowed r = 0.0805995, using r = 0.003
+     ... 500000 processed, queue 9
+     ... 1000000 processed, queue 17
+     ... 1500000 processed, queue 17
+     ... 2000000 processed, queue 11
+     ... 2500000 processed, queue 9
+     ... 3000000 processed, queue 17
+     ... 3500000 processed, queue 15
+     ... 4000000 processed, queue 9
+     ... 4500000 processed, queue 9
+     ... 5000000 processed, queue 17
+[C3] bisection done in 147.1s (36985 boxes/s): 2719552 certified, 2719551 splits, 0 stall boxes (absorbed by Taylor patches), 0 FAILURES
+Traceback (most recent call last):
+  File "/home/z/my-project/github_repos/master/scripts/la_certificate.py", line 384, in <module>
+    r1 = roots3(M1)
+         ^^^^^^^^^^
+  File "/home/z/my-project/github_repos/master/scripts/la_certificate.py", line 372, in roots3
+    a, b, c = M[0]; d, e, f = M[1]; g, h, i = M[2]
+              ~^^^
+  File "/home/z/.venv/lib/python3.12/site-packages/mpmath/matrices/matrices.py", line 447, in __getitem__
+    raise IndexError('insufficient indices for matrix')
+IndexError: insufficient indices for matrix

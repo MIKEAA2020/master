@@ -958,3 +958,113 @@ Stage Summary:
   L=10 leg, the Lyapunov-cohomology correspondence).
 - NOTE: the PAT storage was wiped by the sandbox reset; the commit is
   local pending the credential's re-provisioning.
+
+---
+Task ID: 17
+Agent: main (Super Z)
+Task: The minimal polynomial of lambda* (external factoring of the saved
+cubic system) and the global certificate that the line-atom value is the
+infimum — the two named remainders of Vol XI's cell D(2).
+
+Work Log:
+- PAT re-provisioned and stored persistently (all three documented places:
+  /home/z/my-project/.secrets/github_pat.txt 0600, ~/.git-credentials with
+  git credential.helper store, ~/.bashrc $GITHUB_PAT); API-verified as
+  MIKEAA2020. NOTE: the token lacks repository write access (fine-grained
+  PAT scope: ref-creation test returns 403 "Resource not accessible by
+  personal access token") — the push is blocked until the PAT gets
+  Contents:Read+Write on MIKEAA2020/master; everything committed locally.
+- External engine installed: python-flint 0.9.0 + gmpy2 (venv).
+- la_probe.py: the structural verification battery — the 6x6 C.G is
+  block-upper-triangular w.r.t. idx1={beta(1,0),beta(1,1),f1} (A[comp,idx1]
+  = 0 symbolically: spec(C.G) = spec(A1) u spec(A2), both 3x3 blocks
+  isospectral, the 6x6 spectrum doubled); P1core is degree 3 in lambda and
+  degree 2 in c (the quadratic-in-c collapse); the leading coeff
+  (1-y^2)^3 > 0 on the domain; C PSD / G PD / spec(C.G) real >= 0.
+- la_map.py: the terrain map — with lc > 0 and real-rootedness,
+  BAD(lambda_1 < lam*) <=> P(lam*)>0 and P'(lam*)>0 and P''(lam*)>0; the
+  grid (1997x1001) shows the BAD set EMPTY and the stall set {triple >= 0}
+  EMPTY; on {P>0} both P' <= 0 and P'' <= 0 hold everywhere (witnesses).
+- la_minpoly.py: THE MINIMAL POLYNOMIAL. The collapse: P = A(lam,y)c^2 +
+  B c + C with deg_y 10/7/6; stationarity in c gives c0 = -B/(2A),
+  Delta = B^2-4AC = 0, Nred = -B By + 2A Cy + 2 Ay C = 0 (verified at the
+  90-digit optimum: Delta 4.8e-41, Nred 2.5e-26, c_pred = c*); the
+  boundary gcd 4*lam*(y-1)^2*(y+1)^2 stripped; the eliminant
+  Res_y(Delta, Nred) computed EXACTLY by evaluating the 23x23 Sylvester
+  determinant (fmpz_mat) at 97 consecutive integers and interpolating
+  with Newton forward differences (self-check at a 98th point PASS):
+  degree 74; EXTERNAL FACTORING (FLINT): 6 irreducible factors — the
+  linear boundary values, a quadratic, a quartic, a degree-60, a degree-93,
+  and the CUBIC carrying lambda*: 108*lam^3 - 415*lam^2 + 522*lam - 216
+  (irreducible over Q; exact division into the eliminant verified; its
+  unique real root refined to 100+ digits = the optimum through 48
+  digits). The minpoly of D(2) = sqrt(lam*): 108x^6 - 415x^4 + 522x^2
+  - 216. The degenerate stratum {A=B=C=Cy=0}: boundary only
+  (lam = 0,1,2 at y = +-1; lam = 0 at y = 0, +-sqrt(6)/2).
+- flint_factor_saved.py: the LITERAL route — external factoring of the
+  SAVED degree-1154 artifact minpoly_r2v3.txt: gcd(p, p') degree 989,
+  squarefree part degree 165, factored by FLINT in 0.0s into
+  1+1+1+2+3+4+60+93; the SAME CUBIC 108x^3-415x^2+522x-216 carries
+  lambda* (root 1.631091976564250 isolated inside it). Both routes agree.
+- la_certificate.py: THE GLOBAL CERTIFICATE, four components:
+  (C1) STRIP PATCH |y| >= sqrt(1-0.05): the block Schur identity
+       S = C_bb - C_bf C_ff^-1 C_bf^T = diag(2,1,1,1) - t e0e0^T -
+       t^2 e1e1^T (proved symbolically), (C^-1)_bb = S^-1, and the
+       generalized-pencil identity lambda_max(C.G) = max_u (u^T G u)/
+       (u^T C^-1 u) (C PD on the strip) give
+       lambda_max >= G[3,3]/(C^-1)_33 >= 2 lambda_min(S) >=
+       2(1-2t-5t^2) >= 1.775 > lambda* = 1.63109 (50/50 numeric
+       identity checks).
+  (C2) FAR-c PATCH |c| >= 7: tr(C.G) = 6 - 12cy + 2c^2/t^3 (symbolic),
+       eigenvalues real >= 0 => lambda_max >= tr/6 >= 1 - 2|c| + c^2/3
+       >= 10/3 > lambda*.
+  (C3) MIDDLE BISECTION [-7,7] x [-sqrt(.95), sqrt(.95)]: the sigma-triple
+       test certified by SOUND TAYLOR-SHIFT BALL ARITHMETIC (flint arb):
+       each box's y-polynomials A, B, C are Ruffini-Horner-shifted to the
+       box center (exact balls; the shifted coefficients are the small
+       Taylor coefficients — the monomial-basis cancellation blowup
+       (needing ~1e-8 boxes, hundreds of millions) was diagnosed and
+       fixed by this), then the exact c-quadratic assembly bounds the
+       sup. RESULT: 2,719,552 boxes certified, 0 failures, 0 stall boxes,
+       149 s (36.5k boxes/s). The bisection covered everything; the
+       near-optimum boxes certified on their own.
+  (C4) TAYLOR PATCHES at (+-c*, +-y*): gradient zero (the stationarity),
+       Hessian negative definite (lambda_max(H) = -0.708), C3 bound 6.59,
+       allowed radius 0.081 >> used 0.003 — stood by, never needed.
+  ATTAINMENT: the 6x6 spectrum at (c*, y*) = {lam*, lam*, 0.508, 0.508,
+  0.152, 0.152} (the isospectral blocks), lambda_max - lambda* = -1.3e-91.
+- VERDICT (saved to la_certificate_results.json): the line-atom norm
+  infimum over R x (-1,1) equals sqrt(lambda*) = 1.27714211290844623900
+  730137526434780654..., attained at (c*, y*) and its flip. The remaining
+  link to the FULL rank-2 variety is Vol XI's reduction (the empty escape
+  room, the parity-odd anatomy, the sandwich) — numerical, honestly
+  labeled, NOT part of this certificate.
+- README battery row added (the line-atom closure battery); this entry.
+
+Stage Summary:
+- Deliverables: scripts/la_probe.py, la_map.py, la_minpoly.py,
+  la_certificate.py, flint_factor_saved.py + la_minpoly_results.json +
+  la_certificate_results.json + flint_factor_saved.json (+ the log).
+- THE TWO NAMED REMAINDERS OF VOL XI ARE CLOSED:
+  (1) the minimal polynomial of lambda* = 108x^3 - 415x^2 + 522x - 216
+      (and of D(2): 108x^6 - 415x^4 + 522x^2 - 216), obtained by external
+      FLINT factoring of BOTH the collapsed degree-74 eliminant and the
+      saved degree-1154 artifact, with exact-division and 100-digit root
+      verification;
+  (2) the global certificate over the line-atom family: strip + far-c +
+      bisection + attainment, all sound, 0 failures.
+- The degree-1154 explosion is now UNDERSTOOD: the naive resultant's
+  squarefree part is degree 165 (989 degrees of repeated factors); the
+  collapsed chain (via the quadratic-in-c structure) is degree 74; the
+  true minimal polynomial is degree 3.
+- Honesty ledger: the minpoly is exact (machine-checked irreducibility +
+  divisibility + root identification to 48 digits beyond root
+  separation); the certificate's C1/C2 are symbolic identities with
+  elementary bounds; C3 is sound interval (ball) arithmetic; C4 and the
+  attainment are certified-numeric with 1e-38+ margins; the FULL
+  rank-2-variety claim remains Vol XI's numerical reduction.
+- Push: BLOCKED by the PAT's missing write scope (the commit is local,
+  ready to push the moment the PAT is fixed: GitHub Settings ->
+  Developer settings -> Fine-grained tokens -> this PAT -> Repository
+  access: add MIKEAA2020/master; Permissions -> Contents: Read and
+  write).

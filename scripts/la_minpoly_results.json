@@ -1,0 +1,68 @@
+{
+ "meta": {
+  "script": "la_minpoly.py",
+  "engine": "python-flint 0.9.0 (external factoring)",
+  "date": "2026-09-29",
+  "wall_time_s": 9.9
+ },
+ "quadratic_collapse": {
+  "statement": "P1core = A(lam,y)c^2 + B(lam,y)c + Cc(lam,y); stationarity reduces to Delta = B^2-4AC = 0 and Nred = -B*By+2A*Cy+2*Ay*C = 0 at c0 = -B/(2A)",
+  "deg_y": [
+   10,
+   7,
+   6,
+   16,
+   15
+  ],
+  "deg_lam": [
+   2,
+   2,
+   3,
+   5,
+   5
+  ],
+  "verification_at_optimum": {
+   "Delta": 4.768467905671316e-41,
+   "Nred": 2.4688526008898652e-26,
+   "A": -0.44418266190596584,
+   "c_pred": 0.39710728735039735,
+   "c_star": 0.39710728735039735
+  }
+ },
+ "eliminant": {
+  "method": "Sylvester determinant evaluated at 97 consecutive integers, finite-difference interpolation, self-check PASS",
+  "degree": 74,
+  "n_factors": 6
+ },
+ "minimal_polynomial_lambda": {
+  "degree": 3,
+  "coeffs_desc": [
+   "108",
+   "-415",
+   "522",
+   "-216"
+  ],
+  "expression": "108*x**3 - 415*x**2 + 522*x - 216",
+  "divides_E_exactly": true,
+  "lambda_star_100_digits": "1.631091976564250441473757892817738366690192575494157630700813782429799765440329520231128873087734836",
+  "D2_sqrt_60_digits": "1.27714211290844623900730137526434780653967288259604266018035",
+  "isolating_interval": [
+   "271011639868669448196169086583337349/166153499473114484112975882535043072",
+   "4336186237898711171138705385333397585/2658455991569831745807614120560689152"
+  ]
+ },
+ "minimal_polynomial_D": {
+  "degree": 6,
+  "expression": "108*x**6 - 415*x**4 + 522*x**2 - 216"
+ },
+ "degenerate_stratum": [
+  "{lambda: 0, y: 0}",
+  "{lambda: 0, y: -sqrt(6)/2}",
+  "{lambda: 0, y: sqrt(6)/2}",
+  "{lambda: 1, y: -1}",
+  "{lambda: 1, y: 1}",
+  "{lambda: 2, y: -1}",
+  "{lambda: 2, y: 1}"
+ ],
+ "critical_value_census": []
+}

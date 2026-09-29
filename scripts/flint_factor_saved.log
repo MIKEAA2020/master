@@ -1,0 +1,16 @@
+loaded artifact: 529625 chars
+parsed: degree 1154, 1043 terms present, 112 zero coeffs
+fmpz_poly built; leading coeff digits: 171
+gcd(p, p') degree: 989   [0.0s]
+squarefree part degree: 165
+factor() done in 0.0s
+factor() returns type: <class 'tuple'>
+  factor: degree 1 (x1), 1 real roots
+  factor: degree 1 (x1), 1 real roots
+  factor: degree 1 (x1), 1 real roots
+  factor: degree 2 (x1), 0 real roots
+  factor: degree 3 (x1), 1 real roots  <<< contains lambda*: root = 1.631091976564250
+  factor: degree 4 (x1), 2 real roots
+  factor: degree 60 (x1), 14 real roots  <<< contains lambda*: root = 0.006266906479584
+  factor: degree 93 (x1), 7 real roots  <<< contains lambda*: root = -155992.848331687913742
+saved /home/z/my-project/github_repos/master/scripts/flint_factor_saved.json
