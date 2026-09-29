@@ -1,0 +1,658 @@
+{
+ "meta": {
+  "order": "Task 28: the continuum Fisher-Rao/Leray upgrade \u2014 the (f) bridge's named residual, built and verified on the continuum objects",
+  "date": "2026-10-02",
+  "wall_time_s": 12.772974729537964
+ },
+ "FR1_arrow": {
+  "continuum_form": "omega = (mu/D) dtheta \u2014 the entropy-production density; general law: omega = [(2/D)b - d log pi].dx with class = the stationary flux's class",
+  "convergence": "the discrete circulation N log(a/b) -> 2 pi mu/D (the de Rham class), error O(h^2)",
+  "ladder": [
+   {
+    "N": 8,
+    "circulation": 3.435075755485484,
+    "limit": 3.383253626942854,
+    "error": 0.05182212854262991,
+    "halving_ratio": null
+   },
+   {
+    "N": 16,
+    "circulation": 3.3959450054402023,
+    "limit": 3.383253626942854,
+    "error": 0.01269137849734836,
+    "halving_ratio": 4.083254514350607
+   },
+   {
+    "N": 32,
+    "circulation": 3.3864104591589594,
+    "limit": 3.383253626942854,
+    "error": 0.0031568322161055207,
+    "halving_ratio": 4.020289210367124
+   },
+   {
+    "N": 64,
+    "circulation": 3.384041841723284,
+    "limit": 3.383253626942854,
+    "error": 0.0007882147804298967,
+    "halving_ratio": 4.00504062405905
+   },
+   {
+    "N": 128,
+    "circulation": 3.383450618674575,
+    "limit": 3.383253626942854,
+    "error": 0.00019699173172105233,
+    "halving_ratio": 4.001258192633376
+   },
+   {
+    "N": 256,
+    "circulation": 3.3833028710048842,
+    "limit": 3.383253626942854,
+    "error": 4.924406203032916e-05,
+    "halving_ratio": 4.000314425721545
+   },
+   {
+    "N": 512,
+    "circulation": 3.3832659377164584,
+    "limit": 3.383253626942854,
+    "error": 1.2310773604529146e-05,
+    "halving_ratio": 4.000078598814636
+   },
+   {
+    "N": 1024,
+    "circulation": 3.3832567046211364,
+    "limit": 3.383253626942854,
+    "error": 3.077678282448204e-06,
+    "halving_ratio": 4.000019649466507
+   },
+   {
+    "N": 2048,
+    "circulation": 3.3832543963614796,
+    "limit": 3.383253626942854,
+    "error": 7.694186257012348e-07,
+    "halving_ratio": 4.000004912336586
+   },
+   {
+    "N": 4096,
+    "circulation": 3.3832538192974515,
+    "limit": 3.383253626942854,
+    "error": 1.9235459758348838e-07,
+    "halving_ratio": 4.000001223611415
+   },
+   {
+    "N": 8192,
+    "circulation": 3.3832536750315,
+    "limit": 3.383253626942854,
+    "error": 4.808864595418072e-08,
+    "halving_ratio": 4.000000286278917
+   }
+  ],
+  "measured_order": 2.000007550321729,
+  "edge_density": [
+   {
+    "N": 256,
+    "edge_density": 0.5384693758974285,
+    "target": 0.5384615384615384
+   },
+   {
+    "N": 1024,
+    "edge_density": 0.5384620282892503,
+    "target": 0.5384615384615384
+   },
+   {
+    "N": 4096,
+    "edge_density": 0.5384615690757235,
+    "target": 0.5384615384615384
+   }
+  ],
+  "fk_lz_property": {
+   "rows": [
+    {
+     "T": 0.3,
+     "theta0": 0.0,
+     "integral": -0.11307692307692305,
+     "negative": true
+    },
+    {
+     "T": 0.3,
+     "theta0": 1.1,
+     "integral": -0.11307692307692305,
+     "negative": true
+    },
+    {
+     "T": 0.3,
+     "theta0": 4.0,
+     "integral": -0.11307692307692305,
+     "negative": true
+    },
+    {
+     "T": 1.0,
+     "theta0": 0.0,
+     "integral": -0.37692307692307686,
+     "negative": true
+    },
+    {
+     "T": 1.0,
+     "theta0": 1.1,
+     "integral": -0.37692307692307686,
+     "negative": true
+    },
+    {
+     "T": 1.0,
+     "theta0": 4.0,
+     "integral": -0.37692307692307686,
+     "negative": true
+    },
+    {
+     "T": 2.5,
+     "theta0": 0.0,
+     "integral": -0.9423076923076922,
+     "negative": true
+    },
+    {
+     "T": 2.5,
+     "theta0": 1.1,
+     "integral": -0.9423076923076922,
+     "negative": true
+    },
+    {
+     "T": 2.5,
+     "theta0": 4.0,
+     "integral": -0.9423076923076922,
+     "negative": true
+    },
+    {
+     "T": 7.0,
+     "theta0": 0.0,
+     "integral": -2.638461538461538,
+     "negative": true
+    },
+    {
+     "T": 7.0,
+     "theta0": 1.1,
+     "integral": -2.638461538461538,
+     "negative": true
+    },
+    {
+     "T": 7.0,
+     "theta0": 4.0,
+     "integral": -2.638461538461538,
+     "negative": true
+    }
+   ],
+   "all_negative": true,
+   "statement": "omega_L = -omega is a closed Lyapunov 1-form for the drift flow; it is non-exact iff mu != 0 (the class IS the arrow)"
+  },
+  "verdict": "VERIFIED: the discrete shadow's class converges to the de Rham class; the Farber-type Lyapunov 1-form exists at the continuum and its non-exactness is the arrow."
+ },
+ "FR2_potential": {
+  "theorem": "omega = dPhi on S^1 iff oint omega = 0 iff mu = 0 (the detailed-balance slice \u2014 LC2/LC3's continuum upgrade; the discrete equilibrium slice a = b IS mu = 0)",
+  "rows": [
+   {
+    "mu": 0.7,
+    "potential_exists": false,
+    "periodicity_residual": 3.383253626942854
+   },
+   {
+    "mu": 0.0,
+    "potential_exists": true,
+    "periodicity_residual": 0.0
+   },
+   {
+    "mu": -0.4,
+    "potential_exists": false,
+    "periodicity_residual": 1.9332877868244882
+   },
+   {
+    "mu": 1e-13,
+    "potential_exists": true,
+    "periodicity_residual": 4.83321946706122e-13
+   },
+   {
+    "mu": 0.25,
+    "potential_exists": false,
+    "periodicity_residual": 1.208304866765305
+   }
+  ],
+  "verdict": "VERIFIED: the periodic Fourier solve exists exactly on the equilibrium slice; the covering-space potential's monodromy is the class."
+ },
+ "FR2_hidden_arrow": {
+  "instance": "the 2-torus diffusion with the co-exact (curl-type) divergence-free stationary flux b0 = curl(sin x sin y)",
+  "class_components": [
+   3.487868498008632e-16,
+   5.885778090389566e-16
+  ],
+  "entropy_production": 0.3846153846153846,
+  "statement": "the class (the H_1-functional) vanishes while the entropy production is positive \u2014 the continuum upgrade of Vol X's T2 hidden-arrow quadrant: the class detects only the harmonic part of the flux; the co-exact arrows are invisible to cohomology and visible to the thermodynamics.",
+  "verdict": "EXHIBITED (the honest boundary of the correspondence, now at the continuum)."
+ },
+ "FR3_green": {
+  "spectrum": "lambda_k = -D k^2/2 + i mu k \u2014 real iff mu = 0 (LC4's continuum upgrade)",
+  "spectral_ladder": [
+   {
+    "N": 64,
+    "worst_low_mode_error": 0.3522203303794808
+   },
+   {
+    "N": 256,
+    "worst_low_mode_error": 0.022193153881891577
+   },
+   {
+    "N": 1024,
+    "worst_low_mode_error": 0.0013877761458113802
+   },
+   {
+    "N": 4096,
+    "worst_low_mode_error": 8.67387752424008e-05
+   }
+  ],
+  "real_iff": true,
+  "homotopy": "the discrete Neumann sum sum_k tau^k (the Grams' contracting homotopy) upgrades to the resolvent int_0^infty e^{tL} dt = L^{-1} \u2014 the Green operator",
+  "antisymmetry_rows": [
+   {
+    "x": 0.3,
+    "y": 2.1,
+    "asym(mu)": -2.6116725984033,
+    "asym(-mu)": 2.6116725984033,
+    "asym(0)": 0.0,
+    "closed_form": -2.611672598403299,
+    "closed_match": 1.0,
+    "odd_in_mu": 1.0,
+    "zero_on_equilibrium": 1.0
+   },
+   {
+    "x": 1.0,
+    "y": 4.5,
+    "asym(mu)": 0.7827107311298921,
+    "asym(-mu)": -0.7827107311298921,
+    "asym(0)": 0.0,
+    "closed_form": 0.7827107311298926,
+    "closed_match": 1.0,
+    "odd_in_mu": 1.0,
+    "zero_on_equilibrium": 1.0
+   },
+   {
+    "x": 2.7,
+    "y": 3.9,
+    "asym(mu)": -3.11712076571982,
+    "asym(-mu)": 3.11712076571982,
+    "asym(0)": 0.0,
+    "closed_form": -3.1171207657198226,
+    "closed_match": 1.0,
+    "odd_in_mu": 1.0,
+    "zero_on_equilibrium": 1.0
+   }
+  ],
+  "series_check": 3.7657972629112635e-08,
+  "green_ladder": [
+   {
+    "N": 32,
+    "discrete_green_pairing": 0.38488599682392866,
+    "continuum_pairing": 0.38356164383561636,
+    "closed_form": 0.3835616438356164,
+    "error": 0.001324352988312294
+   },
+   {
+    "N": 128,
+    "discrete_green_pairing": 0.383644362913904,
+    "continuum_pairing": 0.38356164383561636,
+    "closed_form": 0.3835616438356164,
+    "error": 8.2719078287663e-05
+   },
+   {
+    "N": 512,
+    "discrete_green_pairing": 0.3835668135686252,
+    "continuum_pairing": 0.38356164383561636,
+    "closed_form": 0.3835616438356164,
+    "error": 5.169733008847377e-06
+   },
+   {
+    "N": 2048,
+    "discrete_green_pairing": 0.3835619669430672,
+    "continuum_pairing": 0.38356164383561636,
+    "closed_form": 0.3835616438356164,
+    "error": 3.231074508502907e-07
+   }
+  ],
+  "gram_asymmetry": {
+   "discrete": 0.7671336271372169,
+   "continuum": 0.7671232876712328,
+   "at_mu0": 2.0668016336400386e-16
+  },
+  "correspondence": "the Green (Gram) kernel's antisymmetric part is the class's witness \u2014 the arrow's memory and the record's Green live in ONE operator (Task 24's correspondence, now at the continuum)",
+  "verdict": "VERIFIED: the spectral ladder, the closed kernel's antisymmetry law (odd in mu, zero on the equilibrium slice), and the discrete-to-continuum Green ladder."
+ },
+ "FR4_policy_bundle": {
+  "geometry": {
+   "verdict": "the sqrt-embedding metric identity and the geodesic-distance identity verified EXACT (8/8 at 1e-14)",
+   "rows": [
+    {
+     "metric_identity_residual": 0.0,
+     "distance_identity_residual": 0.0,
+     "arc_total": 1.5243386479324683,
+     "d_FR": 1.5243386479324683,
+     "pass": true
+    },
+    {
+     "metric_identity_residual": 2.220446049250313e-16,
+     "distance_identity_residual": 0.0,
+     "arc_total": 1.6067737264933568,
+     "d_FR": 1.6067737264933568,
+     "pass": true
+    },
+    {
+     "metric_identity_residual": 0.0,
+     "distance_identity_residual": 0.0,
+     "arc_total": 0.4796950491082272,
+     "d_FR": 0.4796950491082272,
+     "pass": true
+    },
+    {
+     "metric_identity_residual": 4.440892098500626e-16,
+     "distance_identity_residual": 0.0,
+     "arc_total": 1.4750630203738055,
+     "d_FR": 1.4750630203738055,
+     "pass": true
+    },
+    {
+     "metric_identity_residual": 1.1102230246251565e-16,
+     "distance_identity_residual": 0.0,
+     "arc_total": 1.072336931701473,
+     "d_FR": 1.072336931701473,
+     "pass": true
+    },
+    {
+     "metric_identity_residual": 5.551115123125783e-17,
+     "distance_identity_residual": 0.0,
+     "arc_total": 1.2952816878898998,
+     "d_FR": 1.2952816878898998,
+     "pass": true
+    },
+    {
+     "metric_identity_residual": 5.551115123125783e-17,
+     "distance_identity_residual": 0.0,
+     "arc_total": 0.12077198147772762,
+     "d_FR": 0.12077198147772394,
+     "pass": true
+    },
+    {
+     "metric_identity_residual": 4.440892098500626e-16,
+     "distance_identity_residual": 0.0,
+     "arc_total": 1.1158377270989819,
+     "d_FR": 1.1158377270989823,
+     "pass": true
+    }
+   ]
+  },
+  "h_theorem": {
+   "identity": "dPhi/dt = -|grad Phi|^2_FR along the natural-gradient flow",
+   "worst_residual": 5.648879942369428e-11,
+   "rows": [
+    {
+     "t": 0.5,
+     "dPhi_dt": -0.11286390326134359,
+     "grad_norm_sq": 0.11286390324904548,
+     "identity_residual": -1.2298106977226553e-11
+    },
+    {
+     "t": 1.5,
+     "dPhi_dt": -0.01720051338654998,
+     "grad_norm_sq": 0.017200513377588603,
+     "identity_residual": -8.96137677952602e-12
+    },
+    {
+     "t": 3.0,
+     "dPhi_dt": -0.0008769686408125909,
+     "grad_norm_sq": 0.0008769685843237915,
+     "identity_residual": -5.648879942369428e-11
+    },
+    {
+     "t": 5.0,
+     "dPhi_dt": -1.6108397274398266e-05,
+     "grad_norm_sq": 1.610837208421793e-05,
+     "identity_residual": -2.5190180335117303e-11
+    }
+   ]
+  },
+  "replicator": {
+   "identification": "the FR gradient flow of KL = the replicator equation with fitness -log(p/p*)",
+   "worst_disagreement": 9.43689570931383e-16
+  },
+  "wall_projection": {
+   "rows": [
+    {
+     "p": [
+      0.05120047237071728,
+      0.616687183424403,
+      0.3321123442048798
+     ],
+     "fr_jump": 0.8095996593747278,
+     "wall_minimality": true
+    },
+    {
+     "p": [
+      0.13932707291256402,
+      0.5211743802490628,
+      0.33949854683837316
+     ],
+     "fr_jump": 0.5010509647512243,
+     "wall_minimality": true
+    },
+    {
+     "p": [
+      0.13792527189224846,
+      0.1906579628614913,
+      0.6714167652462604
+     ],
+     "fr_jump": 0.5051076302138705,
+     "wall_minimality": true
+    },
+    {
+     "p": [
+      0.12309846751123486,
+      0.5356793749533709,
+      0.3412221575353941
+     ],
+     "fr_jump": 0.5491380167953397,
+     "wall_minimality": true
+    },
+    {
+     "p": [
+      0.10050857922583985,
+      0.3469091267017213,
+      0.5525822940724389
+     ],
+     "fr_jump": 0.6209092107205477,
+     "wall_minimality": true
+    },
+    {
+     "p": [
+      0.20428473753573795,
+      0.2514035201105323,
+      0.5443117423537297
+     ],
+     "fr_jump": 0.32813909631373106,
+     "wall_minimality": true
+    },
+    {
+     "p": [
+      0.16977086374876577,
+      0.4335706693441697,
+      0.3966584669070644
+     ],
+     "fr_jump": 0.41673627107722866,
+     "wall_minimality": true
+    },
+    {
+     "p": [
+      0.18857830386127875,
+      0.4145312535484958,
+      0.39689044259022543
+     ],
+     "fr_jump": 0.36767925516149413,
+     "wall_minimality": true
+    },
+    {
+     "p": [
+      0.09383484525588055,
+      0.4463150220027775,
+      0.459850132741342
+     ],
+     "fr_jump": 0.6434441595227806,
+     "wall_minimality": true
+    }
+   ],
+   "minimality_checks": "9/9"
+  },
+  "interior_loops": [
+   {
+    "omega": 0.5,
+    "payment_smooth": 0.003578307645668237,
+    "payment_reset": 0,
+    "holonomy": 0.08452954884044675,
+    "events": 0
+   },
+   {
+    "omega": 0.25,
+    "payment_smooth": 0.0011185837987384949,
+    "payment_reset": 0,
+    "holonomy": 0.04732002193395843,
+    "events": 0
+   },
+   {
+    "omega": 0.125,
+    "payment_smooth": 0.0002900273669004024,
+    "payment_reset": 0,
+    "holonomy": 0.024094422417482886,
+    "events": 0
+   },
+   {
+    "omega": 0.0625,
+    "payment_smooth": 7.21788181340631e-05,
+    "payment_reset": 0,
+    "holonomy": 0.012017928134219487,
+    "events": 0
+   }
+  ],
+  "interior_decay_ratios": [
+   3.198962518233989,
+   3.856821549956094,
+   4.018178385266893
+  ],
+  "crossing_loops": [
+   {
+    "omega": 0.25,
+    "payment_smooth": 0.0011104016388104633,
+    "payment_reset": 0.012752772177100823,
+    "holonomy": 0.04708335079451568,
+    "n_events": 2,
+    "n_captures": 1,
+    "total_jump": 0.1772896866189163,
+    "capture_phis": [
+     1.986
+    ]
+   },
+   {
+    "omega": 0.125,
+    "payment_smooth": 0.00028334242297374176,
+    "payment_reset": 0.014858669845840337,
+    "holonomy": 0.023807465745387738,
+    "n_events": 2,
+    "n_captures": 1,
+    "total_jump": 0.18086707426539483,
+    "capture_phis": [
+     1.868
+    ]
+   },
+   {
+    "omega": 0.0625,
+    "payment_smooth": 7.062456547994849e-05,
+    "payment_reset": 0.015828583916136174,
+    "holonomy": 0.011886948753061552,
+    "n_events": 2,
+    "n_captures": 1,
+    "total_jump": 0.18177032241402657,
+    "capture_phis": [
+     1.807
+    ]
+   }
+  ],
+  "ratchet": [
+   {
+    "loop": 1,
+    "drift": 0.023807465745387738,
+    "cumulative_reset_payment": 0.014858669845840337,
+    "p1": 0.4395679904612706
+   },
+   {
+    "loop": 2,
+    "drift": 0.023807465745387738,
+    "cumulative_reset_payment": 0.029717339726839535,
+    "p1": 0.4395679904612706
+   },
+   {
+    "loop": 3,
+    "drift": 0.023807465745387738,
+    "cumulative_reset_payment": 0.04457600960783873,
+    "p1": 0.4395679904612706
+   },
+   {
+    "loop": 4,
+    "drift": 0.023807465745387738,
+    "cumulative_reset_payment": 0.059434679488837926,
+    "p1": 0.4395679904612706
+   },
+   {
+    "loop": 5,
+    "drift": 0.023807465745387738,
+    "cumulative_reset_payment": 0.07429334936983713,
+    "p1": 0.4395679904612706
+   }
+  ],
+  "reset_semantics": "the capture reset is the DISCONTINUOUS re-initialization to the wall's safe mode (the neutral boundary state) \u2014 the treatise's 2-categorical boundary reset; the jump's Phi-cost is the viability payment and the p2:p3 ratios' destruction is the information loss",
+  "transgression": "tau(Omega_viab) = dPhi on the smooth segments + the reset lumps at the switching wall \u2014 a Lyapunov 1-form on the stratified policy bundle; its period over the environment loop is the RESET PAYMENT (zero for the interior loops, a positive rate-independent lump for the crossing loops); the class [tau] in H^1(B) is the wall-crossing payment \u2014 the treatise's claims (1)-(3) on the typed instance",
+  "verdict": "VERIFIED: the FR geometry (exact), the H-theorem, the replicator identification, the closed-form wall projection, the interior/crossing dichotomy (Phi is a global Lyapunov function on the interior loops and FAILS at the crossing loops' reset lumps), the ratchet's monotone payment account."
+ },
+ "FR5_cech": {
+  "cover": "U_0 = (-0.1, pi+0.1), U_1 = (pi-0.1, 2pi+0.1) \u2014 the two-patch cover of the state circle (Task 24's cover was one-point: the component was vacuous; it is not now)",
+  "local_potentials": "Phi_i = (mu/D) t on each patch (exact on each contractible patch)",
+  "cocycle": {
+   "on_A": 0.0,
+   "on_B": 3.383253626942854
+  },
+  "cech_class": 3.383253626942854,
+  "de_rham_class": 3.383253626942854,
+  "isomorphism_residual": 0.0,
+  "statement": "check-H^1(cover; R) = H^1_dR(S^1): the class computed in both cohomologies agrees \u2014 the arrow IS the transition function's mismatch",
+  "verdict": "VERIFIED to machine precision."
+ },
+ "FR5_leray": {
+  "fibration": "the environment loop B = S^1 with fibre the policy slice; the total space the mapping torus of the measured monodromy (the transport's end map)",
+  "monodromy_fr": 0.023807465745387738,
+  "E2_page": {
+   "(0,0)": "R (H^0 of the fibre, the constant sections)",
+   "(1,0)": "R (H^1(B) with coefficients in H^0(F))",
+   "(p,q) q>0": "0 \u2014 the fibre (the simplex slice) is contractible"
+  },
+  "collapse_by_degree_reasons": true,
+  "d_r_targets": {
+   "2": [
+    3,
+    -1
+   ],
+   "3": [
+    4,
+    -2
+   ]
+  },
+  "edge_coordinate": 0.014858669845840337,
+  "statement": "[tau] = (oint tau / 2pi) . [pi* dphi]: the class lives at E_2^{1,0}; the edge homomorphism of the collapse is the payment \u2014 the treatise's Leray step, delivered on the instance",
+  "honest_scope": "the general stratified base with non-trivial fibre cohomology (the Leray d_2 across the wall strata, the non-contractible fibres) remains the named open continuation.",
+  "verdict": "VERIFIED on the instance: the page, the degree-reason collapse, the edge = the payment."
+ },
+ "adjudication": {
+  "chat_claim_1": "the transgression is a Lyapunov 1-form for the Fisher\u2013Rao gradient flow: VERIFIED-TYPED \u2014 dPhi on the strata (the exact case, which the chat itself identifies as the trivial case) + the reset deltas at the switching wall; the FKLZ property checked on the drift flow (FR-1b) and the H-theorem identity along the flow (FR-4a)",
+  "chat_claim_2": "the Lyapunov class is the CECH class of the obstruction datum: VERIFIED-TYPED \u2014 the wall-crossing payment cocycle on the two-patch cover (FR-5a) and the de Rham/CECH isomorphism machine-exact; the class = the payment's period",
+  "chat_claim_3": "Phi is a global Lyapunov function iff the class vanishes: VERIFIED \u2014 the interior/crossing dichotomy (FR-4d): interior loops' payments decay to zero with the loop rate; crossing loops pay the reset sum; the potential returns iff the loop avoids the wall",
+  "the_gap_status": "the continuum Fisher\u2013Rao/Leray upgrade \u2014 Volume XII's 'the honest residual' of the (f) retyping \u2014 is DELIVERED at the certified-instance level: the arrow's de Rham class with the convergence theorem from Task 24's discrete classes, the true FR policy bundle with the viability wall and the boundary resets, the CECH\u2013LERAy machinery on a non-trivial cover.  What remains open is named: the general stratified treatise (the Leray d_2 across wall intersections, non-contractible fibres) and the hidden-arrow quadrant (the co-exact fluxes, FR-2b) as the correspondence's honest boundary."
+ }
+}

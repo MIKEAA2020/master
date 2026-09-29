@@ -1576,3 +1576,109 @@ Stage Summary:
   the missing work (f) retyped and delivered; the unified statement
   carries the two walls JOINED by the certified trade-off law and
   the grand matrix with every cell ruled; the open ledger honest.
+
+---
+Task ID: 28
+Agent: main (Super Z)
+Task: The continuum Fisher-Rao/Leray upgrade (the user's order: the one
+real gap in the (f) bridge — Volume XII's open ledger's first link).
+
+Work Log:
+- fisher_rao_continuum.py built and verified.  FR-1: the convergence
+  theorem (the discrete circulations N log(a/b) -> the de Rham class
+  2 pi mu/D, measured order 2.000 over N = 8..8192; the FKLZ Lyapunov
+  1-form property on the drift flow).  FR-2: the potential criterion
+  iff mu = 0; the continuum hidden arrow (the 2-torus curl flux: class
+  ~ 5e-16, EP = 0.385).  FR-3: the spectral ladder to -Dk^2/2 + i mu k;
+  the Green kernel's antisymmetric part (the closed form verified,
+  odd in mu, zero on the equilibrium slice) = the class's witness; the
+  discrete-to-continuum Green pairing ladder.  FR-4: the FR policy
+  bundle (the metric/geodesic identities exact; the H-theorem
+  5.7e-11; the replicator identification 9.4e-16; the wall projection;
+  the viability wall + the discontinuous safe-mode reset: interior
+  payments O(omega^2) -> 0, crossing loops pay the rate-independent
+  reset lump ~0.0158; the ratchet: the state returns, the payment
+  accumulates).  FR-5: the two-patch Cech-de Rham isomorphism
+  machine-exact; the Leray page on the environment-loop fibration
+  (the degree-reason collapse; the edge = the reset payment).  The
+  adjudication: the chat's claims verified-typed/verified; the
+  remainder named (the general stratified treatise, the co-exact
+  arrows).  In-session fixes: the phi-loop coverage bug, the
+  antisym/pairing formulas, the slerp check replaced by the exact
+  metric identity, the release condition keyed to the environment.
+
+Stage Summary:
+- Deliverables: scripts/fisher_rao_continuum.py +
+  fisher_rao_continuum_results.json.  The (f) bridge's named residual
+  CLOSED at the certified-instance level: the arrow's continuum class
+  with the convergence theorem from Task 24's discrete classes, the
+  true FR geometry with the viability wall and the boundary resets,
+  the Cech-Leray machinery on a non-trivial cover.
+
+---
+Task ID: 29
+Agent: main (Super Z)
+Task: The off-class nc-AAK problem (Open 7.13) on the free cell.
+
+Work Log:
+- offclass_ncaak.py built.  O-1 the class theorem (the 2-state WFAs =
+  the rank-<=2 free Hankels, both directions to 1e-15).  O-2 the
+  window obstruction (the forced 3x3 cut-web minor, det = -1 exactly)
+  + the finite-section ladder 1.199 -> 1.232 -> 1.261 climbing past
+  the EYM floor.  O-3 THE ESCAPE DISCOVERED: the local 12-dim descent
+  from the abelian optimizer beats the shadow (1.277142117 vs
+  1.277142690, delta 5.7e-7, the couplings ~0.03) — the
+  shadow-equality conjecture REFUTED (measured, dense cross-checked);
+  the multiplicity diagnosis (the abelian point's top eigenvalue is
+  double — the envelope theorem fails there, which is why the fixed-
+  vector instruments missed the escape).  O-4 the certified local
+  basin: the tight/box two-mode AFFINE (TP-1) arithmetic (flint, prec
+  96) over all 12 coordinates, the pencil Rayleigh
+  x^T G Cmat G x / x^T G x (the sound instrument — Task 26's ported),
+  the mean-value certificate: CERTIFIED at r = 2e-5 around the free
+  optimizer.  In-session fixes: the kron4 two-matrix bug (Aa kron Ab
+  instead of the sum — found by the tight-mode validation), the
+  printing bug that hid the escape, the ball-mode width blowup
+  replaced by the affine scheme.
+- Environment note: python-flint 0.9.0 installed into /home/z/.venv
+  (the batteries' flint tier runs under /home/z/.venv/bin/python).
+
+Stage Summary:
+- Deliverables: scripts/offclass_ncaak.py + offclass_ncaak_results.json.
+  Open 7.13's first constructive package on the cell: the intrinsic
+  typing, the obstruction certificate, the window ladder, the ESCAPE
+  (the shadow-equality refuted at the 4.5e-7 level — the free class's
+  second-order coupling gain), and the sound local basin.
+
+---
+Task ID: 30
+Agent: main (Super Z)
+Task: The rank-aware synthesis for the physics rung (Volume XII's open
+ledger's fourth link — "designed in Volume I's seam analysis and not
+yet built").
+
+Work Log:
+- rank_aware_synthesis.py built and verified.  RA-1 the
+  rank-across-cuts law: the chains 1 at every cut (sigma2/sigma1 <
+  2e-16), the beam 2 (the transmission state: deflection + rotation),
+  the grid the full cross-section, the generic full — the LAW: the
+  cross-rank = the interface's physical state dimension (the
+  classical transmission conditions ARE the sufficient statistics).
+  RA-2 the two scalars certified exact (~1e-13; the Dirichlet chain's
+  complementary moment 3.6e-15).  RA-3 THE DP: the exact recursion
+  y_i = S_{i-1} + i W_i, the two-scalar state (S, W), EXACT agreement
+  with the brute force over 531,441 load patterns (delta 0.0) — the
+  synthesis BUILT.  RA-4 the truncated sandwich (the beam's M = 1
+  error bounded AND attained at the EYM floor, the directed witness
+  exact) + the magnitude punchline (the banded errors O(100) vs the
+  one-scalar rank-aware interface exact — 'rank, not magnitude').
+  RA-5 the minimality certificates (the exact rational cross-ranks:
+  the beam 2, the chain 1).  RA-6 the wall (the grid's full profile,
+  the truncation price = the EYM floor).
+
+Stage Summary:
+- Deliverables: scripts/rank_aware_synthesis.py +
+  rank_aware_synthesis_results.json.  The physics rung's synthesis
+  built and verified end to end; the rank-aware width law identified
+  (the boundary DOF count); the corpus's dictionary row and sandwich
+  law delivered on the physics object with exact witnesses.

@@ -1,0 +1,311 @@
+{
+ "meta": {
+  "order": "Task 30: the rank-aware synthesis for the physics rung \u2014 the cut-rank law, the two scalars, the exact polynomial DP, the EYM sandwich, the minimality certificates, the grid wall",
+  "date": "2026-10-04",
+  "wall_time_s": 2.6521880626678467
+ },
+ "RA1_rank_law": {
+  "green_functions": {
+   "G1": "the one-ended chain: G = min(i,j), closed form verified to 2.3e-13",
+   "G2": "the Dirichlet chain: closed form verified to 7.1e-15",
+   "G3": "the Euler-Bernoulli beam (Hermite cubic elements, the integer stiffness)",
+   "G4": "the 2-D grid (5-point Laplacian)",
+   "G5": "the random dense SPD"
+  },
+  "rank_rows": {
+   "G1": {
+    "cuts": [
+     2,
+     5,
+     8,
+     11,
+     14,
+     17,
+     20
+    ],
+    "ranks": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "sigma2_over_sigma1": [
+     6.39591501576528e-17,
+     7.981036849137895e-17,
+     1.4267885555986922e-16,
+     1.5332905836475703e-16,
+     1.2316645618699919e-16,
+     7.093483978078834e-17,
+     1.9342671974048672e-16
+    ]
+   },
+   "G2": {
+    "cuts": [
+     2,
+     5,
+     8,
+     11,
+     14,
+     17,
+     20
+    ],
+    "ranks": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "sigma2_over_sigma1": [
+     8.388910545603928e-17,
+     1.209429931281188e-16,
+     1.232402194878257e-16,
+     6.053835425935284e-17,
+     1.0713795637209132e-16,
+     1.4503367167232678e-16,
+     8.192943598466804e-17
+    ]
+   },
+   "G3": {
+    "cuts": [
+     2,
+     5,
+     8,
+     11,
+     14,
+     17,
+     20
+    ],
+    "ranks": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "sigma2_over_sigma1": [
+     0.0041183953363760585,
+     0.007277481308199463,
+     0.014235269321547535,
+     0.010397327765276755,
+     0.012204376074230229,
+     0.009411874052180238,
+     0.008705640892293762
+    ]
+   },
+   "G5": {
+    "cuts": [
+     2,
+     4,
+     6,
+     8,
+     10,
+     12,
+     14
+    ],
+    "ranks": [
+     2,
+     4,
+     6,
+     8,
+     6,
+     4,
+     2
+    ],
+    "sigma2_over_sigma1": [
+     0.5191320160502864,
+     0.8978640604064738,
+     0.863834844172722,
+     0.8812438275793799,
+     0.8565291862933275,
+     0.8678805213005857,
+     0.8821479204943256
+    ]
+   }
+  },
+  "grid_cut_ranks": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "the_law": "the cross-rank = the interface's physical state dimension = the boundary DOFs the two sides exchange: the Laplacian chains 1 (the one-ended: the first moment; the Dirichlet: the complementary moment), the beam 2 (deflection + rotation: the 4th-order transmission state), the grid the cut's cross-section, the generic matrix full.  The classical transmission conditions ARE the sufficient statistics.",
+  "verdict": "MEASURED and CERTIFIED (the rank-1 factorisations exact to machine zero below)."
+ },
+ "RA2_two_scalars": {
+  "statement": "at every cut of the one-ended chain the future's response is the SINGLE scalar S = sum i w_i and the past's is T = sum w_j \u2014 the seam's 'two scalars: the total load on one side and the first moment of load on the other', certified exact",
+  "rows": [
+   {
+    "cut": 4,
+    "factorization_residual": 4.618527782440651e-14,
+    "future_response_residual": 1.1368683772161603e-13,
+    "past_response_residual": 5.258016244624741e-13,
+    "S": 8.0,
+    "T": 18.0
+   },
+   {
+    "cut": 9,
+    "factorization_residual": 1.0480505352461478e-13,
+    "future_response_residual": 7.389644451905042e-13,
+    "past_response_residual": 1.6768808563938364e-12,
+    "S": 67.0,
+    "T": 20.0
+   },
+   {
+    "cut": 14,
+    "factorization_residual": 1.6342482922482304e-13,
+    "future_response_residual": 1.4779288903810084e-12,
+    "past_response_residual": 1.3926637620897964e-12,
+    "S": 126.0,
+    "T": 10.0
+   },
+   {
+    "cut": 19,
+    "factorization_residual": 2.2026824808563106e-13,
+    "future_response_residual": 2.7284841053187847e-12,
+    "past_response_residual": 4.547473508864641e-13,
+    "S": 240.0,
+    "T": 2.0
+   }
+  ],
+  "g2_complementary_moment_residual": 3.552713678800501e-15,
+  "verdict": "VERIFIED exactly (the factorisation residuals at machine zero)."
+ },
+ "RA3_dp": {
+  "problem": "minimise sum (y_i - t_i)^2 + lambda sum w_i over the loads w_i in {0..L}, y = G1 w \u2014 the objective coupled through the DENSE rank-1 Green's function",
+  "brute_force_cost": 3.922459275659501,
+  "dp_cost": 3.922459275659501,
+  "exact_agreement": true,
+  "recursion": "y_i = S_{i-1} + i W_i (the rank-1 law's exact identity); the state (S, W); the transition (S, W) -> (S + i w, W - w)",
+  "complexity": {
+   "naive_state_count": 531441,
+   "dp_state_count": "O(k^2 L^2) \u2014 the (S, W) lattice ~ 1872 states",
+   "the_point": "the naive DP must remember the whole load vector (the width explodes); the rank-aware DP carries the two scalars \u2014 the sufficient statistics certified in RA-2 \u2014 and stays polynomial"
+  },
+  "verdict": "VERIFIED exact against the brute force \u2014 the rank-aware synthesis BUILT (Volume XII's fourth open link's 'not yet built' now built)."
+ },
+ "RA4_sandwich": {
+  "beam_truncation": [
+   {
+    "cut": 6,
+    "rank": 2,
+    "sigma": [
+     139.0824362416905,
+     1.8910127045157774,
+     7.320231380511245e-15
+    ],
+    "truncated_relative_error": 1.5490951203303522,
+    "eym_bound": 1.8910127045157776,
+    "directed_attainment": 1.0,
+    "tight": 1.0
+   },
+   {
+    "cut": 10,
+    "rank": 2,
+    "sigma": [
+     354.24528348933444,
+     4.955492222184065,
+     2.296057641770347e-14
+    ],
+    "truncated_relative_error": 3.37834911081153,
+    "eym_bound": 4.955492222184065,
+    "directed_attainment": 1.0,
+    "tight": 1.0
+   },
+   {
+    "cut": 14,
+    "rank": 2,
+    "sigma": [
+     651.6539422330173,
+     7.95302978126672,
+     5.2546888441529437e-14
+    ],
+    "truncated_relative_error": 5.065000307981058,
+    "eym_bound": 7.9530297812667206,
+    "directed_attainment": 1.0,
+    "tight": 1.0
+   },
+   {
+    "cut": 18,
+    "rank": 2,
+    "sigma": [
+     936.5377193653865,
+     9.170616376492882,
+     3.748217053477245e-14
+    ],
+    "truncated_relative_error": 5.819414643214202,
+    "eym_bound": 9.170616376492884,
+    "directed_attainment": 1.0,
+    "tight": 1.0
+   }
+  ],
+  "banded_G1": [
+   {
+    "bandwidth": 1,
+    "max_entry_error": 21.999999999999766,
+    "operator_norm_error": 195.62830812493337
+   },
+   {
+    "bandwidth": 2,
+    "max_entry_error": 20.99999999999977,
+    "operator_norm_error": 168.4919556621973
+   },
+   {
+    "bandwidth": 3,
+    "max_entry_error": 19.999999999999776,
+    "operator_norm_error": 144.59142500031692
+   }
+  ],
+  "sandwich": "the truncated-statistics response error = the EYM floor sigma_{M+1} of the cross-block (the bound respected and tight on the beam) \u2014 the corpus's sandwich law on the physics object",
+  "magnitude_punchline": "at the SAME budget (M scalars), the magnitude/decay sparsification of the dense rank-1 Green's function pays the operator-norm error of the banded truncation (O(k) at every bandwidth) while the rank-aware statistics are EXACT \u2014 'rank, not magnitude'",
+  "verdict": "VERIFIED: the sandwich respected and tight on the beam; the punchline measured on the chain."
+ },
+ "RA5_minimality": {
+  "certificate": "r+1 unit pasts with linearly independent cross-block columns (the exact rational row reduction) \u2014 the fibre-conflict/distinguishability witness: any interface compressing below the cross-rank merges two pasts with different futures' responses and loses them",
+  "beam_exact_rank": 2,
+  "chain_exact_rank": 1,
+  "dictionary_row": "the minimal interface dimension = the cross-block rank = the boundary DOF count \u2014 the (a)/(b) dictionary's row (Hankel rank / fibre count / treewidth) delivered on the physics object, with the EXACT checkable witness (the rational independence) the corpus's certificate discipline demands",
+  "verdict": "PROVED (exact rational arithmetic)."
+ },
+ "RA6_wall": {
+  "grid_rank_profile": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "the_wall": "the grid's cross-rank is FULL (the cut's cross-section) at every cut: the rank-aware width IS the physics rung's obstruction datum \u2014 the WHERE of the corpus's diagnostics is now the cut's cross-section, and any truncation below it pays the EYM floor sigma_{M+1} of the cross-block (measured below), which stays a positive fraction of sigma_1 through the leading modes",
+  "middle_block_sigma": [
+   1.1089399764658836,
+   0.35750858860077117,
+   0.15378159822783014,
+   0.08322383964226059,
+   0.053429560845624106,
+   0.03949741398108145,
+   0.03311314559308192,
+   5.387510480097353e-17
+  ],
+  "middle_sigma_fraction": [
+   1.0,
+   0.3223876820999156,
+   0.13867441114163964,
+   0.07504810125746329,
+   0.0481807509689573,
+   0.035617269481939884,
+   0.029860178454934293,
+   4.858252560492032e-17
+  ],
+  "verdict": "MEASURED \u2014 the honest boundary of the synthesis."
+ }
+}
