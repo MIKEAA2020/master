@@ -1405,3 +1405,31 @@ access: add MIKEAA2020/master; Permissions -> Contents: Read and
 write; save.  Then update /home/z/my-project/.secrets/github_pat.txt
 with the fixed token, run scripts/restore_pat.sh, and `git push origin
 main`.
+
+---
+Task ID: 25
+Agent: main (Super Z)
+Task: Push completion for Tasks 22-24 (the user's read+write token).
+
+Work Log:
+- The user supplied a fresh fine-grained PAT with both read and write
+  grants (the previous PAT's 403 was the missing write grant).
+- Token written to /home/z/my-project/.secrets/github_pat.txt (0600,
+  gitignored); scripts/restore_pat.sh re-run: identity MIKEAA2020,
+  ~/.git-credentials and $GITHUB_PAT refreshed.
+- PUSH EXECUTED AND LANDED: 5b4b143..3f15bd6 main -> main — the
+  Tasks 22-24 commit (the trade-off certificate with the
+  mirror-sector discovery, the complex-domain bisection, the
+  Lyapunov-cohomology correspondence) is now public on
+  MIKEAA2020/master.
+- Remote verified: origin/main = 3f15bd6, branch in sync, clean tree.
+- Token-leak sweep: git grep 'github_pat_' over tracked files finds
+  0 tokens (the 2 textual matches are this log's own sweep
+  documentation).  The SESSION NOTE above is superseded.
+- Hygiene: .gitignore added (scripts/__pycache__/) to keep the tree
+  clean; this entry committed and pushed as the follow-up.
+
+Stage Summary:
+- The session's push blocker is cleared; all Tasks 22-24 deliverables
+  (scripts + results JSONs + logs) are on the remote.  The local
+  commit ledger and the remote are identical.
