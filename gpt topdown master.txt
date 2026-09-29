@@ -1,0 +1,1888 @@
+# The grand picture
+
+Taken together, works **b–e and g** describe a single broad theory of **bounded, adaptive, compositional systems operating under information, viability, and normalization constraints**.
+
+The central idea is:
+
+> A system cannot generally preserve, internalize, or optimize everything about its environment and its own dynamics. It must compress histories, maintain viable policies, compose heterogeneous transformations, and respect normalization constraints. The resulting losses are not accidental implementation failures; they are structural consequences of finite memory, path dependence, stratified constraints, and normalized process composition.
+
+The works therefore converge on a common picture:
+
+\[
+\boxed{
+\text{bounded representation}
+\;\longrightarrow\;
+\text{adaptive transport}
+\;\longrightarrow\;
+\text{path-dependent viability}
+\;\longrightarrow\;
+\text{compositional obstruction}
+}
+\]
+
+They study different layers of the same general problem:
+
+- **b** asks: *What can a bounded system retain, commit to, or ground?*
+- **c/d** ask: *How does such a system move through changing constraints without losing viability?*
+- **e/g** ask: *Which transformations can be composed or internalized while preserving normalization?*
+
+The shared answer is that **finite resources and structural constraints force selective representation**. Every system must choose what to preserve, what to discard, and which transformations remain legally composable.
+
+---
+
+# 1. The common object: an adaptive system with limited representational power
+
+The unifying object is not merely a finite-state machine, a quantum channel, or a control policy. It is an adaptive system with four simultaneous aspects:
+
+1. **A history**
+   \[
+   h\in \mathcal I^*
+   \]
+   recording prior inputs, outputs, actions, or environmental changes.
+
+2. **An internal state or representation**
+   \[
+   q=\rho(h)
+   \]
+   compressing the history into a finite or otherwise bounded resource.
+
+3. **A policy or transformation**
+   \[
+   \pi_q
+   \]
+   determining the system’s response.
+
+4. **A viability condition**
+   \[
+   V(\pi_q,e)>0
+   \]
+   requiring the policy to remain admissible under the current environment \(e\).
+
+The system is therefore not simply computing a function. It is maintaining an evolving correspondence:
+
+\[
+\text{history}
+\;\mapsto\;
+\text{internal representation}
+\;\mapsto\;
+\text{policy}
+\;\mapsto\;
+\text{environmental consequence}.
+\]
+
+Work **b** studies the first arrow. Works **c/d** study the middle arrows. Works **e/g** study which transformations and compositions are mathematically available at the final stage.
+
+---
+
+# 2. Work b: bounded representation and the three semantic regimes
+
+Work **b** supplies the basic theory of finite representation.
+
+Its principal contribution is to identify a common syntax for bounded approximation:
+
+\[
+\text{histories}
+\;\to\;
+\text{right congruences}
+\;\to\;
+\text{quotient or low-rank representations}
+\;\to\;
+\text{task loss}.
+\]
+
+A finite system cannot retain every distinction in the history. It replaces the full history space by a finite representation. Depending on the semantic task, this representation takes a different form.
+
+## 2.1 Commitment
+
+In the commitment regime, the system must implement a deterministic specification.
+
+The relevant object is a deterministic Mealy machine, and the natural equivalence is a Myhill–Nerode-style residual equivalence:
+
+\[
+h\sim h'
+\quad\Longleftrightarrow\quad
+\text{the two histories induce the same future specification}.
+\]
+
+The resource is the number of quotient states:
+
+\[
+M=\lvert \mathcal I^*/{\sim}\rvert.
+\]
+
+This is the regime of exact symbolic commitment.
+
+## 2.2 Retention
+
+In the retention regime, the system must preserve predictive information about a stochastic controlled process.
+
+The relevant objects are stationary controlled unifilar causal states and lumpable quotients. Here the question is not:
+
+> Do two histories produce exactly the same deterministic output?
+
+but rather:
+
+> Do two histories preserve the same predictive distribution over future observations and controls?
+
+The full-KL loss decomposes exactly through the information discarded by the finite-state quotient. The representation is therefore a controlled information bottleneck.
+
+The key phenomenon is:
+
+\[
+\text{compression}
+\;\Longrightarrow\;
+\text{loss of predictive information}.
+\]
+
+The zero-loss threshold is determined not by arbitrary state count but by the number of distinct predictive states compatible with the required unifilar structure.
+
+## 2.3 Grounding
+
+In the grounding regime, the system approximates a stochastic channel or response operator.
+
+The natural resource is no longer necessarily a quotient index. It is operator rank, represented through a Hankel matrix or operator:
+
+\[
+H_\nu.
+\]
+
+The unrestricted rank-\(M\) approximation error is controlled by singular values:
+
+\[
+\Delta_{\mathrm{unres}}^{\mathrm{grd}}(M)
+=
+\sigma_{M+1}(H_\nu).
+\]
+
+But the physically or symbolically realizable approximation may be much harder than the unrestricted linear approximation. This yields a crucial distinction:
+
+\[
+\text{formal rank}
+\;\neq\;
+\text{deterministic state complexity}.
+\]
+
+A low-rank operator representation need not correspond to a small deterministic machine. The determinism gap can be superpolynomial while remaining sub-exponential.
+
+## 2.4 The major contribution of b
+
+Work **b** establishes that there is no single universal notion of “complexity” or “state count.” The correct resource depends on the semantic regime:
+
+\[
+\begin{array}{c|c|c}
+\text{Regime} & \text{Semantic object} & \text{Resource} \\
+\hline
+\text{Commitment} & \text{deterministic specification} & \text{quotient index} \\
+\text{Retention} & \text{predictive stochastic process} & \text{lumpable causal states} \\
+\text{Grounding} & \text{stochastic channel/operator} & \text{operator rank}
+\end{array}
+\]
+
+This is one of the central principles of the entire programme:
+
+> Approximation is always typed. A bound is meaningful only after the task, representation class, aggregation rule, support condition, protocol, and analytical bridge have been fixed.
+
+The three regimes share syntax, but they do not collapse into one theory. Their obstructions are independent. There is no general ordering saying that a system that is simple in one regime must be simple in another.
+
+---
+
+# 3. Works c and d: adaptive systems as stratified geometric objects
+
+Works **c** and **d** take the next step. They ask what happens after a system has compressed its history and selected a bounded policy:
+
+> How does that policy evolve when the environment changes, constraints switch, and individually safe adaptations accumulate into collective failure?
+
+Their answer is geometric.
+
+An adaptive system is modeled as a stratified object containing:
+
+- a control or environmental base \(B\),
+- a Fisher–Rao policy bundle,
+- a viability margin,
+- a maintenance graph,
+- and a 2-categorical boundary or reset structure.
+
+Schematically:
+
+\[
+\text{environmental base}
+\;\longleftarrow\;
+\text{policy bundle}
+\;\longrightarrow\;
+\text{viability data}.
+\]
+
+The policy is not transported arbitrarily. On each fixed active-constraint stratum, it follows the Fisher-minimal transport law, implemented through a KKT projection. When the active constraint set changes, the system crosses a switching wall and undergoes a boundary reset.
+
+Thus the state space is not a single smooth manifold. It is stratified:
+
+\[
+B=\bigcup_{\alpha} B_\alpha,
+\]
+
+where each stratum \(B_\alpha\) corresponds to a distinct active-constraint regime.
+
+---
+
+# 4. Viability-weighted curvature: why safe local changes can become globally dangerous
+
+The central geometric insight is that local safety does not imply global safety.
+
+Suppose the system undergoes a closed sequence of environmental changes:
+
+\[
+e_0\to e_1\to \cdots \to e_n=e_0.
+\]
+
+Even though the environment returns to its starting point, the transported policy need not return to its original state. The policy may acquire holonomy:
+
+\[
+\pi_0
+\;\longmapsto\;
+\pi_1
+\;\longmapsto\;
+\cdots
+\;\longmapsto\;
+\pi_n
+\neq \pi_0.
+\]
+
+This is the geometric form of path dependence.
+
+The corresponding loop effect is measured by a curvature-like quantity. But ordinary curvature is not enough, because not every policy deviation is equally dangerous. What matters is how the deviation interacts with the active viability constraints.
+
+Hence:
+
+\[
+\boxed{
+\text{viability-weighted curvature}
+=
+\text{geometric policy curvature}
+\times
+\text{active survival sensitivity}
+}
+\]
+
+The small-loop theorem then gives a bound of the form
+
+\[
+\text{endpoint erosion of viability margin}
+\;\lesssim\;
+\text{positive-part contraction of viability-weighted curvature}.
+\]
+
+The important conceptual result is:
+
+> Risk is not merely a property of isolated adaptations. It is a property of the noncommutativity of adaptation paths under changing constraints.
+
+In other words,
+
+\[
+\text{adaptation } a
+\circ
+\text{adaptation } b
+\neq
+\text{adaptation } b
+\circ
+\text{adaptation } a.
+\]
+
+The order of environmental changes matters.
+
+---
+
+# 5. The role of stratification
+
+The stratified structure explains why ordinary smooth or globally linear models are insufficient.
+
+Within a fixed regime:
+
+- the active constraints are stable;
+- the policy transport is governed by one connection;
+- the local geometry is relatively regular.
+
+At a regime boundary:
+
+- constraints activate or deactivate;
+- the admissible policy set changes;
+- a reset or boundary map is required;
+- the connection changes discontinuously or piecewise.
+
+The 2-category of stratified connections organizes this gluing. The system is therefore modeled by a combination of:
+
+\[
+\text{smooth transport within strata}
+\;+\;
+\text{categorical transition maps between strata}.
+\]
+
+This is the geometric counterpart of the typed regimes in work **b**. In work **b**, different semantic tasks require different approximation structures. In works **c/d**, different active-constraint regimes require different local policy geometries.
+
+The common principle is:
+
+> A globally coherent system may be locally heterogeneous. Its global behavior is determined by how local models are connected.
+
+---
+
+# 6. Optics: how local transformations compose across system boundaries
+
+Works **c/d** add a compositional layer through optics.
+
+An optic separates:
+
+- what a component receives,
+- what it exposes,
+- how information is propagated inward,
+- and how outputs are propagated outward.
+
+This is well suited to adaptive systems because different subsystems do not simply compose by identifying their entire internal states. They interact through interfaces.
+
+The seven domain bridges are typed as optics, and each optic is assigned a Lipschitz constant. This gives a quantitative compositional statement:
+
+\[
+d\bigl(\Phi(x),\Phi(y)\bigr)
+\leq
+L_\Phi\,d(x,y).
+\]
+
+When the composite update is averaged in the Krasnoselskii–Mann form,
+
+\[
+x_{n+1}
+=
+(1-\lambda)x_n+\lambda\Phi(x_n),
+\]
+
+and the effective Lipschitz constant is below one, the update is contractive:
+
+\[
+L_{\mathrm{effective}}<1.
+\]
+
+This supplies a mechanism for convergence and stability across a network of heterogeneous components.
+
+The projected CPTP contraction serves as the quantum-compatible instance of the same general idea. In that setting, the update is not merely a classical policy transformation but a normalized quantum process acting on an operational state space.
+
+Thus optics provide the compositional grammar:
+
+\[
+\text{component}
+\;+\;
+\text{interface}
+\;+\;
+\text{backward/forward action}
+\;\longrightarrow\;
+\text{composite adaptive system}.
+\]
+
+---
+
+# 7. Work e: normalization as an obstruction to universal internalization
+
+Work **e** shifts from geometry and approximation to categorical expressivity.
+
+It asks:
+
+> Can an external environment be absorbed universally into a quantum process?
+
+In an unrestricted category of completely positive maps, compact-closed structure supplies a form of internal hom or currying. Informally, an external wire can be turned into an internal argument of a process.
+
+But deterministic quantum processes are not arbitrary completely positive maps. They obey trace normalization. Channels and deterministic combs must preserve probability.
+
+That extra condition changes the categorical landscape.
+
+The central result is:
+
+\[
+\boxed{
+\text{normalization destroys the unrestricted internal-hom structure}
+}
+\]
+
+More precisely, environment decoration has no left or right adjoint in the specified normalized process categories once the relevant higher-order structure is present.
+
+This is not a claim that quantum processes cannot be composed. They can. It is a stronger and more specific claim:
+
+> There is no universal normalized object that represents “a process with an environment inserted” for every source process.
+
+The obstruction is not ordinary nonlinearity or lack of physical reversibility. It is the incompatibility between:
+
+- universal representation,
+- deterministic normalization,
+- and the dimensional structure of the process spaces.
+
+---
+
+# 8. Work g: the normalization-defect or intercept principle
+
+Work **g** sharpens the result of work **e** into a dimension-theoretic principle.
+
+The hom-sets of normalized quantum-process categories have affine-dimension polynomials in the squared interface dimensions. Their coefficients are constrained by normalization, including a fixed constant term.
+
+Environment decoration rescales one distinguished coefficient while leaving the constant term fixed.
+
+Schematically, suppose a normalized hom-space has dimension
+
+\[
+P(x)=a_kx^k+\cdots+a_1x+a_0,
+\]
+
+where normalization rigidly determines \(a_0\) relative to another coefficient. Decoration changes the variable-dependent part but cannot change the fixed intercept \(a_0\).
+
+A representing object for an adjoint would need to reproduce the decorated hom-space uniformly for every source. But no normalized object can simultaneously satisfy the required coefficient transformation and preserve the fixed normalization intercept.
+
+Hence:
+
+\[
+\text{universal decoration}
+\not\cong
+\text{representable normalized hom-object}.
+\]
+
+This is the **normalization-defect principle**.
+
+The phrase “intercept” is important. The obstruction is not merely that dimensions fail to match at one isolated example. The whole family of hom-space dimensions has a polynomial structure whose constant term is protected by normalization. Decoration changes the slope or higher-order coefficients without changing the intercept. A single representing object cannot absorb that mismatch uniformly.
+
+The dual argument excludes left adjoints as well.
+
+The resulting picture is:
+
+\[
+\begin{array}{c}
+\text{unrestricted CP processes} \\
+\Downarrow \\
+\text{compact-closed internal hom available}
+\end{array}
+\qquad
+\begin{array}{c}
+\text{normalized deterministic processes} \\
+\Downarrow \\
+\text{internal hom generally unavailable}
+\end{array}
+\]
+
+This is the categorical analogue of the approximation gaps in work **b**:
+
+- work **b**: a low-rank or finite-state representation may not correspond to a small exact symbolic machine;
+- work **e/g**: a formal environment insertion may not correspond to a normalized internal process object.
+
+In both cases, an apparently natural formal simplification fails when one imposes the actual structural constraints.
+
+---
+
+# 9. The common obstruction pattern
+
+The works converge on a single general obstruction pattern.
+
+## 9.1 Full structure is richer than bounded structure
+
+The unconstrained object may possess a clean representation:
+
+- full history space;
+- unrestricted Hankel operator;
+- unnormalized completely positive map;
+- smooth policy bundle;
+- unrestricted process composition.
+
+But the operational system is restricted:
+
+- finite state;
+- finite rank;
+- deterministic realization;
+- viability constraints;
+- trace normalization;
+- fixed interface types.
+
+The restriction changes the mathematics.
+
+## 9.2 The desired operation does not preserve the admissible subcategory
+
+A formal operation may exist in the larger universe but fail after restriction.
+
+Examples:
+
+\[
+\begin{array}{c|c}
+\text{Large universe} & \text{Failure after restriction} \\
+\hline
+\text{all histories} & \text{finite quotient loses predictive distinctions} \\
+\text{all linear Hankel realizations} & \text{deterministic realization has a complexity gap} \\
+\text{smooth policy transport} & \text{constraint switching creates holonomy and resets} \\
+\text{all CP maps} & \text{trace-preserving maps are not closed under internal hom} \\
+\text{arbitrary process composition} & \text{normalized combs fail universal currying}
+\end{array}
+\]
+
+## 9.3 The missing structure appears as a gap, curvature, or defect
+
+Different fields name the resulting obstruction differently:
+
+- **rate–distortion gap**;
+- **retention gap**;
+- **determinism gap**;
+- **viability-weighted curvature**;
+- **holonomy**;
+- **normalization defect**;
+- **intercept obstruction**;
+- **diamond-norm approximation error**.
+
+These are not literally the same invariant. But they have the same structural role:
+
+> They quantify the price of forcing a rich process into a restricted representational or compositional form.
+
+---
+
+# 10. A unified hierarchy of constraints
+
+The combined works can be organized as a hierarchy.
+
+## Level 1: Representation constraint
+
+The system cannot retain all histories.
+
+\[
+\mathcal I^*
+\longrightarrow
+\mathcal I^*/{\sim_M}.
+\]
+
+This produces information loss, distortion, or approximation error.
+
+## Level 2: Policy constraint
+
+The retained representation must generate a policy that remains viable.
+
+\[
+q_t
+\longrightarrow
+\pi_t
+\in
+\mathcal V(e_t),
+\]
+
+where \(\mathcal V(e_t)\) is the environment-dependent viable policy set.
+
+## Level 3: Path constraint
+
+The policy must remain coherent as the environment changes across strata.
+
+\[
+(\pi_t,e_t)
+\longrightarrow
+(\pi_{t+1},e_{t+1}),
+\]
+
+with transport depending on the path and on constraint switches.
+
+## Level 4: Compositional constraint
+
+The system must combine local transformations through typed interfaces.
+
+\[
+\Phi_1,\Phi_2,\ldots,\Phi_n
+\longrightarrow
+\Phi_n\circ\cdots\circ\Phi_1.
+\]
+
+The composition must preserve the relevant structure and remain contractive or otherwise controlled.
+
+## Level 5: Normalization constraint
+
+If the transformations are probabilistic or quantum, they must preserve normalization.
+
+\[
+\operatorname{Tr}(\rho)=1,
+\qquad
+\operatorname{Tr}(\Phi(\rho))=1.
+\]
+
+This can prevent universal internalization, adjoints, or compact closure.
+
+The system therefore lives inside a nested sequence of admissible classes:
+
+\[
+\text{all formal transformations}
+\supseteq
+\text{typed transformations}
+\supseteq
+\text{viable transformations}
+\supseteq
+\text{normalized transformations}
+\supseteq
+\text{bounded realizations}.
+\]
+
+At each restriction, some previously available operation may disappear.
+
+---
+
+# 11. A unified “resource–geometry–category” triangle
+
+The works can also be seen as three views of one triangle.
+
+## Resource view: work b
+
+What can be represented under a finite budget?
+
+\[
+M
+\longrightarrow
+\text{distortion}
+\]
+
+or
+
+\[
+\text{rank}
+\longrightarrow
+\text{approximation error}.
+\]
+
+## Geometric view: works c/d
+
+How does the representation move through changing constraints?
+
+\[
+\text{connection}
+\longrightarrow
+\text{holonomy}
+\longrightarrow
+\text{viability erosion}.
+\]
+
+## Categorical view: works e/g
+
+Which transformations can be represented universally and composed internally?
+
+\[
+\text{normalization}
+\longrightarrow
+\text{loss of adjunction}
+\longrightarrow
+\text{non-closure}.
+\]
+
+The triangle is:
+
+\[
+\boxed{
+\begin{array}{ccc}
+\text{bounded representation}
+&\longleftrightarrow&
+\text{viability geometry}
+\\
+&\searrow&
+\\
+&&
+\text{categorical compositionality}
+\end{array}
+}
+\]
+
+A complete theory would explain how resource limits, geometric path dependence, and categorical non-closure interact.
+
+At present, the works establish strong results within their respective corners and provide a compelling common architecture. They do not yet constitute a single formal theorem linking all three corners.
+
+---
+
+# 12. The shared notion of “internalization”
+
+A particularly important common thread is the failure of internalization.
+
+Internalization means replacing an external or global object by an internal state, representation, or morphism.
+
+Examples include:
+
+### In work b
+
+Replacing an entire history by a finite state:
+
+\[
+h\mapsto q(h).
+\]
+
+### In works c/d
+
+Replacing an evolving external environment by a transported internal policy state:
+
+\[
+e_{0:t}
+\mapsto
+\pi_t.
+\]
+
+### In work e/g
+
+Replacing an external quantum environment by an internal hom or curried process:
+
+\[
+E\otimes A\to B
+\quad\stackrel{?}{\longleftrightarrow}\quad
+A\to [E,B].
+\]
+
+The general lesson is:
+
+> Internalization is possible only when the restricted category remains closed under the relevant operation.
+
+For finite-state systems, the internal state must preserve the task-relevant future. For adaptive systems, policy transport must preserve viability. For normalized quantum processes, currying must preserve trace normalization.
+
+Each theory identifies a different reason why this can fail.
+
+---
+
+# 13. What the combined programme says about adaptation
+
+The broad theory of adaptation that emerges is not simply “an organism learns a policy.”
+
+It is:
+
+\[
+\boxed{
+\text{Adaptation}
+=
+\text{finite-state predictive compression}
++
+\text{viability-preserving policy transport}
++
+\text{typed process composition}
+}
+\]
+
+A successful adaptive system must solve three problems at once.
+
+## 13.1 It must remember enough
+
+Too much compression destroys predictive information or commitment accuracy.
+
+\[
+M<M_{\mathrm{critical}}
+\quad\Longrightarrow\quad
+\text{irreducible task loss}.
+\]
+
+## 13.2 It must change in the right way
+
+Even if each local adaptation is safe, a noncommuting sequence can produce holonomy and erode viability.
+
+\[
+\text{locally safe}
+\not\Rightarrow
+\text{globally viable}.
+\]
+
+## 13.3 It must compose legally
+
+Even if each component is individually valid, the desired higher-order composition may not exist within the normalized process category.
+
+\[
+\text{locally valid}
+\not\Rightarrow
+\text{universally internalizable}.
+\]
+
+Thus adaptive intelligence is constrained not merely by computation, but by the geometry and category of admissible transformations.
+
+---
+
+# 14. The role of approximation
+
+Approximation is not a secondary engineering compromise. It is the principal mechanism available when exact internalization fails.
+
+The works identify three broad responses to obstruction:
+
+## 14.1 Enlarge the state or type universe
+
+Increase \(M\), use a richer quotient, or allow a larger category of processes.
+
+\[
+\text{more representational capacity}
+\longrightarrow
+\text{smaller approximation gap}.
+\]
+
+## 14.2 Remove a restrictive structural condition
+
+For quantum processes, removing trace normalization restores the compact-closed internal-hom behavior for completely positive maps.
+
+\[
+\text{unnormalized CP maps}
+\longrightarrow
+\text{greater categorical closure}.
+\]
+
+## 14.3 Accept controlled approximation
+
+If exact closure is impossible, use:
+
+- finite-horizon bounds;
+- finite-section intervals;
+- Schatten or singular-value truncation;
+- diamond-norm approximation;
+- contraction estimates;
+- certified viability margins;
+- regret and oracle inequalities.
+
+This yields a general principle:
+
+> When exact compositional closure is unavailable, the correct goal is not to pretend closure exists, but to quantify the defect and control its accumulation.
+
+---
+
+# 15. The missing work f
+
+Because work **f** is absent, the unified picture has a clear missing bridge.
+
+The existing works provide:
+
+\[
+\text{finite representation}
+\quad\text{and}\quad
+\text{adaptive viability}
+\quad\text{and}\quad
+\text{normalized quantum obstruction}.
+\]
+
+What is not yet visible is the formal mechanism connecting them in one common language.
+
+A missing work **f** would ideally define a typed category or enriched structure in which:
+
+1. finite histories and right congruences appear as objects or quotients;
+2. predictive states and Hankel operators appear as semantic realizations;
+3. policies and viability constraints appear as stratified bundles or decorated morphisms;
+4. optics encode system interfaces;
+5. quantum channels and combs appear as normalized process morphisms;
+6. approximation gaps and normalization defects appear as explicit invariants;
+7. the transition from external environment to internal state is represented by a single general construction.
+
+Such a work would not need to prove that all the existing theories are equivalent. It would need to show how they fit into a common typed architecture.
+
+The likely bridge is not a naive equivalence between all categories. It is more plausibly a system of:
+
+- indexed categories;
+- enriched profunctors;
+- optics;
+- fibrations;
+- decorated cospans or spans;
+- quotient and completion constructions;
+- approximate adjunctions or lax adjunctions.
+
+The common structure is likely to be **lax, stratified, and resource-sensitive**, rather than a strict globally closed category.
+
+---
+
+# 16. The emerging grand thesis
+
+The combined thesis can be stated as follows:
+
+> Adaptive systems are finite, situated, and compositional. They represent an unbounded or high-dimensional environment through bounded internal states, transport those states through changing viability constraints, and compose local transformations through typed interfaces. Each restriction creates a characteristic obstruction: distortion under compression, holonomy under path-dependent adaptation, and normalization defects under higher-order quantum composition. These obstructions are not independent accidents; they are manifestations of the general failure of unrestricted structure to survive passage to a bounded, viable, normalized subtheory.
+
+In compressed form:
+
+\[
+\boxed{
+\text{bounded memory}
++
+\text{changing constraints}
++
+\text{typed composition}
++
+\text{normalization}
+\;\Longrightarrow\;
+\text{structured non-closure}.
+}
+\]
+
+The system does not possess every possible representation or transformation. It possesses only those that remain inside its admissible subcategory.
+
+---
+
+# 17. What is established versus what is interpretive
+
+The works support a strong mathematical synthesis, but the synthesis should be stated at the correct level.
+
+## Established within the supplied works
+
+- Typed rate–distortion frameworks distinguish commitment, retention, and grounding.
+- Finite-state and finite-rank approximations have different exact and asymptotic theories.
+- Retention gaps admit information-bottleneck decompositions.
+- Hankel singular values control unrestricted finite-rank approximation.
+- Deterministic state complexity can greatly exceed formal rank.
+- Adaptive policies can acquire path-dependent holonomy.
+- Viability-weighted curvature bounds local viability erosion.
+- Stratified connections and optics provide compositional frameworks.
+- Contractive averaged updates yield convergence under suitable hypotheses.
+- Trace normalization obstructs certain higher-order adjoints in specified quantum process categories.
+- The obstruction can be expressed through affine-dimension and intercept arguments.
+- Unnormalized completely positive maps recover more internal-hom structure.
+- Controlled approximation is a principled response to non-closure.
+
+## Not yet established by the combined works
+
+- A single category in which all these constructions are equivalent;
+- a theorem identifying rate–distortion gaps with viability curvature;
+- a theorem identifying viability holonomy with normalization defects;
+- a universal Chu, Dialectica, or ∞-categorical envelope containing all regimes;
+- a general equivalence between finite-state quotients, policy bundles, and quantum combs;
+- a proof that all obstructions arise from one numerical invariant.
+
+The correct claim is therefore not that the works already form one completed unified theory. It is that they form a coherent **research programme centered on constrained internalization and structured non-closure**.
+
+---
+
+# 18. Final bird’s-eye summary
+
+The grand picture is a theory of systems that must continually perform three operations:
+
+\[
+\boxed{
+\text{compress}
+\;\longrightarrow\;
+\text{adapt}
+\;\longrightarrow\;
+\text{compose}.
+}
+\]
+
+They compress histories into bounded internal representations. This produces rate–distortion tradeoffs, quotient gaps, rank gaps, and complexity barriers.
+
+They adapt those representations through changing environments. This produces stratified policy geometry, holonomy, switching effects, and viability-weighted curvature.
+
+They compose their local operations through typed interfaces and, in quantum settings, normalized higher-order processes. This produces contraction conditions when composition is stable and normalization defects when universal internalization is impossible.
+
+The deepest common lesson is:
+
+> A system’s limitations are determined not only by how much information it has, but by which transformations remain closed under its representational, geometric, and normalization constraints.
+
+Or, in one final formula:
+
+\[
+\boxed{
+\text{effective intelligence or control}
+=
+\text{what can be represented}
+\cap
+\text{what can remain viable}
+\cap
+\text{what can be composed}.
+}
+\]
+
+Work **b** characterizes the first intersection. Works **c/d** characterize the second. Works **e/g** characterize the third. The missing work **f** would ideally provide the common formal bridge among them.
+A suitable common bridge is a **resource-indexed, viability-decorated process bicategory**. It should combine:
+
+- finite-state and finite-rank representation;
+- adaptive policy transport;
+- optics for interfaces;
+- quantitative approximation;
+- viability constraints;
+- normalized quantum processes;
+- and approximate internalization.
+
+The important point is that the bridge should not identify all these theories with one another. It should place them in different fibers of one indexed structure.
+
+## 1. The master structure
+
+Let \(\mathcal C\) be a category of contexts and interfaces.
+
+An object \(c\in\mathcal C\) records the externally visible conditions of a system:
+
+\[
+c=(I,O,E,\alpha,N),
+\]
+
+where:
+
+- \(I\) is an input interface;
+- \(O\) is an output interface;
+- \(E\) is an environment type;
+- \(\alpha\) is the active constraint stratum;
+- \(N\) records normalization requirements.
+
+For each context \(c\), define a symmetric monoidal bicategory
+
+\[
+\mathsf P(c).
+\]
+
+Its:
+
+- objects are internal system types;
+- 1-cells are admissible processes;
+- 2-cells are refinements, simulations, or approximations.
+
+Context changes induce reindexing functors
+
+\[
+u^\ast:\mathsf P(c')\to \mathsf P(c)
+\]
+
+for every map \(u:c\to c'\). Together these form an indexed bicategory
+
+\[
+\mathsf P:\mathcal C^{\mathrm{op}}\to \mathbf{SymMonBicat}.
+\]
+
+The global category of context-dependent processes is its Grothendieck construction:
+
+\[
+\int_{\mathcal C}\mathsf P.
+\]
+
+An object of \(\int_{\mathcal C}\mathsf P\) is therefore a pair
+
+\[
+(c,X),
+\]
+
+consisting of an external context and an internal system type. A morphism contains both:
+
+1. a change of context;
+2. a process transported across that change.
+
+This is the formal location where external environments and internal representations coexist.
+
+---
+
+## 2. Resource grading
+
+Each fiber is graded by a resource object \(r\in\mathcal R\):
+
+\[
+\mathsf P(c)
+=
+\{\mathsf P_r(c)\}_{r\in\mathcal R}.
+\]
+
+The resource monoid \((\mathcal R,\otimes,1)\) may encode:
+
+- number of finite states;
+- operator rank;
+- memory dimension;
+- circuit depth;
+- channel dimension;
+- or a combined resource vector.
+
+Composition satisfies
+
+\[
+\mathsf P_r(c)\times \mathsf P_s(c)
+\longrightarrow
+\mathsf P_{r\otimes s}(c).
+\]
+
+For additive resources this can be written
+
+\[
+r\otimes s=r+s.
+\]
+
+For multiplicative resources such as Hilbert-space dimension,
+
+\[
+r\otimes s=rs.
+\]
+
+There are also weakening maps
+
+\[
+\mathsf P_r(c)\to\mathsf P_{r'}(c)
+\qquad
+\text{whenever }r\leq r'.
+\]
+
+This single grading accommodates the main resources from work **b**:
+
+\[
+\begin{aligned}
+r_{\mathrm{com}}&=\text{number of quotient states},\\
+r_{\mathrm{ret}}&=\text{number of predictive causal states},\\
+r_{\mathrm{grd}}&=\text{operator or Hankel rank}.
+\end{aligned}
+\]
+
+The three semantic regimes are therefore different resource interpretations inside the same indexed process formalism.
+
+---
+
+## 3. Semantic realization
+
+Every internal representation has an external semantic realization.
+
+For a context \(c\), let
+
+\[
+\mathsf{Sem}_c:\mathsf P(c)\to \mathsf{Beh}(c)
+\]
+
+map internal processes to observable behavior.
+
+The behavior category \(\mathsf{Beh}(c)\) may be:
+
+- deterministic transducers;
+- controlled stochastic processes;
+- channels;
+- combs;
+- policy trajectories;
+- or probability distributions over observations.
+
+A bounded realization is then a factorization
+
+\[
+\mathcal H
+\overset{\rho}{\longrightarrow}
+Q_r
+\overset{\pi}{\longrightarrow}
+\mathsf{Beh}(c),
+\]
+
+where:
+
+- \(\mathcal H\) is the full history object;
+- \(Q_r\) is an \(r\)-bounded internal state;
+- \(\rho\) is compression;
+- \(\pi\) is the induced process.
+
+This gives a common diagram:
+
+\[
+\begin{array}{ccc}
+\mathcal H & \xrightarrow{\text{ideal semantics}} & \mathsf{Beh}(c)\\
+\downarrow\rho & & \uparrow\mathsf{Sem}_c\\
+Q_r & \xrightarrow{\pi} & \mathsf P_r(c)
+\end{array}
+\]
+
+The diagram need not commute exactly. Its failure is the approximation error.
+
+---
+
+## 4. Quantitative enrichment
+
+To express approximation, equip every hom-set with an extended nonnegative distance:
+
+\[
+d_c(f,g)\in[0,\infty].
+\]
+
+This makes each fiber enriched over the Lawvere quantale
+
+\[
+([0,\infty],\geq,+,0).
+\]
+
+Composition obeys
+
+\[
+d(h\circ f,h\circ g)
+\leq
+L_h\,d(f,g)
+\]
+
+and
+
+\[
+d(h\circ f,k\circ g)
+\leq
+d(h,k)+L_h\,d(f,g),
+\]
+
+whenever \(h\) has Lipschitz constant \(L_h\).
+
+The approximation defect of a bounded realization is
+
+\[
+\varepsilon_r(f)
+=
+\inf_{g\in\mathsf P_r(c)}
+d_c(f,g).
+\]
+
+This single quantity specializes to the different losses:
+
+\[
+\begin{array}{c|c}
+\text{Regime} & d_c \\
+\hline
+\text{Commitment} & \text{exact disagreement or specification loss}\\
+\text{Retention} & \text{KL divergence or predictive information loss}\\
+\text{Grounding} & \text{operator norm, Schatten norm, or diamond norm}
+\end{array}
+\]
+
+Thus work **b** becomes the theory of the approximation spectrum
+
+\[
+r\longmapsto \varepsilon_r(f).
+\]
+
+For example:
+
+\[
+\varepsilon_r^{\mathrm{grd}}
+\leq
+\sigma_{r+1}(H_\nu)
+\]
+
+for unrestricted rank-\(r\) approximation, while deterministic realizability introduces a second defect:
+
+\[
+\varepsilon_r^{\mathrm{det}}
+=
+\varepsilon_r^{\mathrm{lin}}
++
+\Delta_r^{\mathrm{det}}.
+\]
+
+The deterministic gap is therefore a fiberwise failure of the semantic realization functor to preserve optimal low-rank approximations.
+
+---
+
+## 5. Viability as a subobject
+
+For each context \(c=(\ldots,E,\alpha,N)\), define a viability predicate
+
+\[
+V_c:\mathsf P(c)\to[0,1].
+\]
+
+The value \(V_c(p)\) is a viability margin. A process is admissible when
+
+\[
+V_c(p)>0.
+\]
+
+Equivalently, define the viable subcategory
+
+\[
+\mathsf V(c)\hookrightarrow \mathsf P(c)
+\]
+
+by
+
+\[
+\mathsf V(c)
+=
+\{p\in\mathsf P(c):V_c(p)>0\}.
+\]
+
+A context change \(u:c\to c'\) induces a transport operation
+
+\[
+T_u:\mathsf P(c)\to\mathsf P(c').
+\]
+
+The viable part of transport is generally only partially defined:
+
+\[
+T_u:
+\mathsf V(c)
+\rightharpoonup
+\mathsf V(c').
+\]
+
+This captures the distinction between ordinary process composition and viable adaptive composition.
+
+The viability loss of a transport is
+
+\[
+\operatorname{loss}_V(T_u,p)
+=
+\bigl[V_c(p)-V_{c'}(T_u p)\bigr]_+.
+\]
+
+This quantity can be combined with semantic approximation:
+
+\[
+\operatorname{cost}(T_u,p)
+=
+\lambda\,d(p,T_u p)
++
+\mu\,\operatorname{loss}_V(T_u,p).
+\]
+
+The coefficients \(\lambda,\mu\) determine the relative importance of fidelity and viability.
+
+---
+
+## 6. Stratification and connections
+
+Let the context space be stratified:
+
+\[
+\mathcal C=\coprod_{\alpha\in A}\mathcal C_\alpha,
+\]
+
+where each stratum \(\mathcal C_\alpha\) has a fixed active constraint set.
+
+Within a stratum, policy transport is given by a connection
+
+\[
+\nabla^\alpha.
+\]
+
+For a path \(\gamma\) inside \(\mathcal C_\alpha\), transport is
+
+\[
+T^\alpha_\gamma.
+\]
+
+When a path crosses from \(\alpha\) to \(\beta\), introduce a reset 2-cell
+
+\[
+R_{\alpha\beta}:
+T^\alpha_{\gamma^-}
+\Rightarrow
+T^\beta_{\gamma^+}.
+\]
+
+The complete transport along a stratified path is therefore
+
+\[
+T_\gamma
+=
+T^{\alpha_n}_{\gamma_n}
+\circ
+R_{\alpha_{n-1}\alpha_n}
+\circ\cdots\circ
+R_{\alpha_0\alpha_1}
+\circ
+T^{\alpha_0}_{\gamma_0}.
+\]
+
+This is the formal bridge to works **c** and **d**.
+
+A closed stratified path \(\gamma\) produces holonomy:
+
+\[
+\operatorname{Hol}_\gamma
+=
+T_\gamma:
+p\mapsto p'.
+\]
+
+The endpoint defect is
+
+\[
+\operatorname{hol}_\gamma(p)
+=
+d(p,\operatorname{Hol}_\gamma(p)).
+\]
+
+The viability-weighted version is
+
+\[
+\operatorname{hol}_V(\gamma,p)
+=
+\bigl[
+V(p)-V(\operatorname{Hol}_\gamma(p))
+\bigr]_+.
+\]
+
+For a small loop, this is bounded by curvature:
+
+\[
+\operatorname{hol}_V(\gamma,p)
+\leq
+C\,
+\left\|
+\int_S
+\mathcal K_V
+\right\|
++
+O(\lvert\gamma\rvert^3),
+\]
+
+where \(\mathcal K_V\) is the viability-weighted curvature 2-form.
+
+Thus curvature is not a separate theory. It is the infinitesimal form of the failure of path transport to define a flat functor from the context path groupoid into the viable process bicategory.
+
+---
+
+## 7. Optics as the compositional layer
+
+Interfaces are represented using the optic construction.
+
+Given a monoidal category \(\mathcal M\), an optic from \((A,B)\) to \((S,T)\) has the form
+
+\[
+(A,B)\rightsquigarrow(S,T)
+\]
+
+with a representative
+
+\[
+\ell:S\to A\otimes M,
+\qquad
+r:M\otimes B\to T.
+\]
+
+The intermediate object \(M\) is the internal resource exchanged across the interface.
+
+The adaptive process bicategory can therefore be lifted to an optic bicategory
+
+\[
+\operatorname{Optic}(\mathsf P).
+\]
+
+A system component is represented by:
+
+\[
+\text{input interface}
+\;\xrightarrow{\ell}\;
+\text{internal resource}
+\;\xrightarrow{r}\;
+\text{output interface}.
+\]
+
+Composition of optics composes the forward and backward interface maps while combining the resource grades.
+
+If \(L_f\) and \(L_g\) are the Lipschitz constants of two components, then
+
+\[
+L_{g\circ f}\leq L_gL_f.
+\]
+
+For an averaged update
+
+\[
+\Phi_\lambda
+=
+(1-\lambda)\operatorname{id}
++
+\lambda\Phi,
+\]
+
+the relevant contraction condition is
+
+\[
+L(\Phi_\lambda)<1.
+\]
+
+This explains how work **d** fits into the same framework:
+
+- optics provide the compositional syntax;
+- enrichment provides error propagation;
+- viability gives admissibility;
+- stratification supplies context-dependent transport.
+
+---
+
+## 8. Normalized quantum processes as a sub-bicategory
+
+Let \(\mathsf{CP}\) be a bicategory of completely positive maps and higher-order processes.
+
+The normalized quantum processes form a sub-bicategory
+
+\[
+\mathsf{QChan}
+\hookrightarrow
+\mathsf{CP}
+\]
+
+defined by trace preservation:
+
+\[
+\operatorname{Tr}(\Phi(\rho))
+=
+\operatorname{Tr}(\rho).
+\]
+
+Likewise, normalized combs form a subcategory
+
+\[
+\mathsf{Comb}_{\mathrm{det}}
+\hookrightarrow
+\mathsf{Comb}_{\mathrm{CP}}.
+\]
+
+This inclusion is not generally closed under all formal operations available in the ambient CP category.
+
+Let
+
+\[
+D_E:
+\mathsf{QChan}(A,B)
+\to
+\mathsf{QChan}(E\otimes A,E\otimes B)
+\]
+
+be environment decoration.
+
+An internalization principle would require a representing object \([E,B]\) satisfying
+
+\[
+\mathsf{QChan}(E\otimes A,B)
+\cong
+\mathsf{QChan}(A,[E,B])
+\]
+
+naturally in \(A\).
+
+In the ambient CP category, such a structure may be obtained from compact closure. In the normalized subcategory, the required representing object generally does not exist.
+
+The bridge expresses this as a **closure defect**:
+
+\[
+\delta_{\mathrm{norm}}(E,B)
+=
+\inf_{X}
+\sup_A
+\operatorname{dist}
+\left(
+\mathsf{QChan}(E\otimes A,B),
+\mathsf{QChan}(A,X)
+\right).
+\]
+
+Exact internalization holds precisely when
+
+\[
+\delta_{\mathrm{norm}}(E,B)=0.
+\]
+
+Works **e** and **g** establish cases where this defect is strictly positive.
+
+---
+
+## 9. The intercept obstruction in the unified language
+
+Suppose normalized hom-spaces have affine dimension
+
+\[
+\dim \mathsf{QChan}(A,B)
+=
+P(a,b),
+\]
+
+where \(a=\dim A^2\), \(b=\dim B^2\), and \(P\) has a normalization-fixed constant term.
+
+Environment decoration induces a transformation
+
+\[
+P(a,b)\longmapsto P_E(a,b).
+\]
+
+A representing object \(X\) would require
+
+\[
+P_E(a,b)=P(a,x)
+\]
+
+for one fixed \(x\), uniformly in \(a\).
+
+The normalization defect appears when:
+
+\[
+\text{constant}(P_E)
+\neq
+\text{constant}(P(a,x)).
+\]
+
+Equivalently, the variable-dependent coefficients may be rescaled by \(E\), while the normalization-fixed intercept cannot be rescaled consistently.
+
+This is the categorical analogue of the resource gaps from work **b**:
+
+\[
+\begin{aligned}
+\text{finite-state gap}
+&=
+\text{semantic distinctions not preserved by a quotient},\\
+\text{deterministic gap}
+&=
+\text{linear rank not realizable by a deterministic machine},\\
+\text{normalization gap}
+&=
+\text{formal internalization not realizable by a normalized process}.
+\end{aligned}
+\]
+
+They are all defects of a realization functor or inclusion of an admissible subcategory.
+
+---
+
+## 10. The unified defect calculus
+
+The bridge becomes most useful if all failures are treated as instances of one defect calculus.
+
+For any formal construction \(F\) and admissible subcategory \(\mathsf A\), define
+
+\[
+\operatorname{Def}_{\mathsf A}(F)
+=
+\inf_{G\in\mathsf A}
+d(F,G).
+\]
+
+Different choices of \(F\), \(\mathsf A\), and \(d\) recover the major phenomena:
+
+\[
+\begin{array}{c|c|c}
+\text{Phenomenon} & F & \operatorname{Def}_{\mathsf A}(F)\\
+\hline
+\text{Retention loss} & \text{full predictive process} & \text{KL distortion}\\
+\text{Grounding error} & \text{full Hankel operator} & \text{operator norm error}\\
+\text{Determinism gap} & \text{rank-}r\text{ realization} & \text{state-complexity excess}\\
+\text{Holonomy} & \text{flat transport} & \text{endpoint policy deviation}\\
+\text{Viability erosion} & \text{transported policy} & \text{margin loss}\\
+\text{Normalization defect} & \text{internal hom} & \text{dimension or process mismatch}
+\end{array}
+\]
+
+The defects obey composition bounds. If \(F\) and \(G\) are composed, then
+
+\[
+\operatorname{Def}(G\circ F)
+\leq
+\operatorname{Def}(G)
++
+L_G\operatorname{Def}(F).
+\]
+
+This is the central quantitative bridge. It says that local representation, transport, and normalization defects accumulate according to the Lipschitz behavior of the surrounding process.
+
+---
+
+## 11. The master definition
+
+A **resource-indexed viable process system** consists of:
+
+\[
+\mathfrak A
+=
+(\mathcal C,\mathcal R,\mathsf P,\mathsf{Sem},d,V,\nabla,R,N)
+\]
+
+with:
+
+1. a context category \(\mathcal C\);
+2. a resource monoid \(\mathcal R\);
+3. an indexed symmetric monoidal bicategory \(\mathsf P\);
+4. semantic realization functors \(\mathsf{Sem}_c\);
+5. enriched distances \(d_c\);
+6. viability predicates \(V_c\);
+7. stratified connections \(\nabla^\alpha\);
+8. boundary reset 2-cells \(R_{\alpha\beta}\);
+9. normalization subcategories \(N(c)\subseteq\mathsf P(c)\).
+
+A morphism of such systems preserves, up to controlled defect:
+
+- context change;
+- resource grading;
+- monoidal composition;
+- semantic realization;
+- viability;
+- stratified transport;
+- normalization.
+
+The adjective “up to controlled defect” is essential. Strict preservation is too strong for the systems under discussion.
+
+---
+
+## 12. Correspondence with the works
+
+The framework maps the works as follows.
+
+### Work b
+
+Use the fiber \(\mathsf P_r(c)\) with different semantic functors:
+
+\[
+\mathsf{Sem}^{\mathrm{com}},
+\qquad
+\mathsf{Sem}^{\mathrm{ret}},
+\qquad
+\mathsf{Sem}^{\mathrm{grd}}.
+\]
+
+The resulting approximation spectra are:
+
+\[
+\varepsilon_r^{\mathrm{com}},
+\qquad
+\varepsilon_r^{\mathrm{ret}},
+\qquad
+\varepsilon_r^{\mathrm{grd}}.
+\]
+
+### Works c and d
+
+Use the base category \(\mathcal C\) as a stratified environment space. Policies are objects in fibers \(\mathsf P(c)\), connections provide transport, and optics provide composition.
+
+Holonomy and viability-weighted curvature are defects of flat, viable transport.
+
+### Work e
+
+Use the normalized quantum sub-bicategory
+
+\[
+\mathsf{QChan}\subseteq\mathsf{CP}.
+\]
+
+Environment decoration is a functor \(D_E\). Failure of adjunction is failure of representability inside the normalized fiber.
+
+### Work g
+
+Compute the normalization defect through affine-dimension polynomials:
+
+\[
+\delta_{\mathrm{norm}}(E,B)>0
+\]
+
+when the decorated polynomial cannot be represented by a fixed normalized object.
+
+---
+
+## 13. The resulting theorem schema
+
+The common bridge supports the following general theorem schema.
+
+Let \(F\) be a formal process construction, and let \(\mathsf A_r^V\) denote the subcategory of processes that are:
+
+- resource-bounded by \(r\);
+- viable;
+- normalized;
+- and realizable through the available interfaces.
+
+Then:
+
+\[
+\operatorname{Def}_{r,V,N}(F)
+=
+\inf_{G\in\mathsf A_r^V}
+d(F,G).
+\]
+
+If \(F=F_n\circ\cdots\circ F_1\), then
+
+\[
+\operatorname{Def}_{r,V,N}(F)
+\leq
+\sum_{i=1}^{n}
+\left(
+\prod_{j>i}L_{F_j}
+\right)
+\operatorname{Def}_{r_i,V,N}(F_i)
++
+\operatorname{Def}_{\mathrm{comp}}.
+\]
+
+The final term measures failure of exact composition, including:
+
+- constraint-switching resets;
+- non-flat transport;
+- deterministic realization gaps;
+- or normalization defects.
+
+Exact closure occurs only when every term vanishes:
+
+\[
+\operatorname{Def}_{r,V,N}(F)=0.
+\]
+
+This gives a single formal criterion for exact representability, viable transport, and normalized internalization.
+
+---
+
+## 14. What this bridge predicts
+
+The framework yields several concrete predictions.
+
+### 14.1 More memory does not eliminate geometric risk
+
+Increasing \(r\) can reduce semantic compression error:
+
+\[
+\varepsilon_r\downarrow.
+\]
+
+But it need not reduce holonomy:
+
+\[
+\operatorname{hol}_V(\gamma,p)
+\not\downarrow
+\]
+
+unless the additional memory changes the connection or the active constraint geometry.
+
+### 14. Better local models do not guarantee global compositionality
+
+Even if each component has small approximation error,
+
+\[
+\operatorname{Def}(F_i)\approx 0,
+\]
+
+the composite may have large error if
+
+\[
+\prod_i L_{F_i}
+\]
+
+is large or if normalization prevents a required higher-order composition.
+
+### 14. Removing normalization restores formal expressivity at a cost
+
+Passing from normalized processes to all CP maps can reduce
+
+\[
+\delta_{\mathrm{norm}},
+\]
+
+but removes the operational interpretation of processes as deterministic probability-preserving transformations.
+
+### 14. Viability should be treated as a type, not merely a score
+
+A process with negative viability margin should not simply receive a larger loss. It should be excluded from the admissible fiber:
+
+\[
+\mathsf V(c)\hookrightarrow\mathsf P(c).
+\]
+
+This makes feasibility and approximation distinct:
+
+\[
+\text{first determine admissibility, then optimize fidelity}.
+\]
+
+---
+
+## 15. The concise answer
+
+The common formal bridge is therefore:
+
+\[
+\boxed{
+\text{an enriched, resource-indexed, stratified optic bicategory}
+}
+\]
+
+equipped with:
+
+- semantic realization functors;
+- resource grades;
+- viability subcategories;
+- connections and reset 2-cells;
+- normalization subcategories;
+- and a quantitative defect calculus.
+
+In this bridge:
+
+\[
+\begin{aligned}
+\text{finite-state and finite-rank approximation}
+&=\text{resource-bounded semantic realization},\\
+\text{adaptive policy transport}
+&=\text{parallel transport in a stratified indexed bicategory},\\
+\text{optics}
+&=\text{interface-level composition},\\
+\text{holonomy}
+&=\text{defect of flat transport},\\
+\text{viability erosion}
+&=\text{defect measured by a viability enrichment},\\
+\text{normalization obstruction}
+&=\text{failure of representability in a normalized sub-bicategory}.
+\end{aligned}
+\]
+
+The unified research object is not a single universal internal state. It is a **typed, resource-bounded, viable process representation with explicitly measured failure of closure**.
