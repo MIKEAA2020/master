@@ -1682,3 +1682,12 @@ Stage Summary:
   built and verified end to end; the rank-aware width law identified
   (the boundary DOF count); the corpus's dictionary row and sandwich
   law delivered on the physics object with exact witnesses.
+
+SESSION NOTE (Tasks 28-30): the commit 0634b82 is LOCAL AND READY; the
+PUSH IS BLOCKED — the session environment was reset and the durable
+token file /home/z/my-project/.secrets/github_pat.txt (gitignored, so
+not carried by the repo) is gone, with ~/.git-credentials and
+$GITHUB_PAT.  Fix (same as Tasks 18/25): re-supply the fine-grained PAT
+(read+write on MIKEAA2020/master), write it to
+/home/z/my-project/.secrets/github_pat.txt, run
+scripts/restore_pat.sh, and `git push origin main`.
