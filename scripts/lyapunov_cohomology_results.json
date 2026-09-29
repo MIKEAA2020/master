@@ -1,0 +1,314 @@
+{
+ "meta": {
+  "order": "Task 24: the Lyapunov-cohomology correspondence \u2014 built on the discrete objects, adjudicated claim by claim",
+  "date": "2026-10-01",
+  "wall_time_s": 28.56337857246399
+ },
+ "LC1_arrow_form": {
+  "definition": "omega(i->j) = log(pi_i P_ij / (pi_j P_ji)) \u2014 the time-reversal divergence's edge increment (the discrete Lyapunov 1-form)",
+  "class": "the cycle functional: the sum around a cycle = the log of the path ratio (the Kolmogorov circulation); on the driven N-ring the fundamental cycle carries N ln(a/b) exactly (the pi weights telescope)",
+  "rows": [
+   {
+    "N": 3,
+    "driven_cycle_sum": 2.0794415416798357,
+    "driven_D": 0.10397207708399175,
+    "eq_cycle_sum": 0.0,
+    "theory_driven": 2.0794415416798357
+   },
+   {
+    "N": 4,
+    "driven_cycle_sum": 2.772588722239781,
+    "driven_D": 0.10397207708399156,
+    "eq_cycle_sum": 0.0,
+    "theory_driven": 2.772588722239781
+   },
+   {
+    "N": 5,
+    "driven_cycle_sum": 3.4657359027997265,
+    "driven_D": 0.10397207708399175,
+    "eq_cycle_sum": 0.0,
+    "theory_driven": 3.4657359027997265
+   },
+   {
+    "N": 6,
+    "driven_cycle_sum": 4.1588830833596715,
+    "driven_D": 0.10397207708399177,
+    "eq_cycle_sum": -7.395570986446986e-32,
+    "theory_driven": 4.1588830833596715
+   },
+   {
+    "N": 7,
+    "driven_cycle_sum": 4.852030263919618,
+    "driven_D": 0.10397207708399175,
+    "eq_cycle_sum": 0.0,
+    "theory_driven": 4.852030263919617
+   },
+   {
+    "N": 8,
+    "driven_cycle_sum": 5.545177444479562,
+    "driven_D": 0.1039720770839917,
+    "eq_cycle_sum": 0.0,
+    "theory_driven": 5.545177444479562
+   }
+  ],
+  "verdict": "VERIFIED: the 1-form's class is exactly the circulation; the equilibrium slice's class vanishes to machine zero."
+ },
+ "LC2_potential": {
+  "theorem": "Phi (the information potential) is a global potential (omega = dPhi) iff [omega] = 0 iff the detailed balance \u2014 the chat's claim (3) in its discrete, proved form",
+  "chains": 120,
+  "mismatches": 0,
+  "sample_rows": [
+   {
+    "N": 3,
+    "reversible": true,
+    "exactness_residual": 0.0
+   },
+   {
+    "N": 6,
+    "reversible": true,
+    "exactness_residual": 7.395570986446986e-32
+   },
+   {
+    "N": 7,
+    "reversible": true,
+    "exactness_residual": 0.0
+   },
+   {
+    "N": 5,
+    "reversible": true,
+    "exactness_residual": 1.1102230246251563e-16
+   },
+   {
+    "N": 7,
+    "reversible": true,
+    "exactness_residual": 7.395570986446986e-32
+   },
+   {
+    "N": 5,
+    "reversible": true,
+    "exactness_residual": 0.0
+   },
+   {
+    "N": 5,
+    "reversible": true,
+    "exactness_residual": 0.0
+   },
+   {
+    "N": 4,
+    "reversible": true,
+    "exactness_residual": 0.0
+   }
+  ],
+  "verdict": "VERIFIED (the spanning-tree construction + the edge-residual check)."
+ },
+ "LC3_ring_iff": {
+  "theorem": "on the N-ring: the class [omega] vanishes exactly on the equilibrium slice a = b (the detailed-balance locus)",
+  "ladder": [
+   {
+    "N": 3,
+    "grid": "7x7 (a,b)",
+    "iff_holds": true
+   },
+   {
+    "N": 4,
+    "grid": "7x7 (a,b)",
+    "iff_holds": true
+   },
+   {
+    "N": 5,
+    "grid": "7x7 (a,b)",
+    "iff_holds": true
+   },
+   {
+    "N": 6,
+    "grid": "7x7 (a,b)",
+    "iff_holds": true
+   },
+   {
+    "N": 7,
+    "grid": "7x7 (a,b)",
+    "iff_holds": true
+   },
+   {
+    "N": 8,
+    "grid": "7x7 (a,b)",
+    "iff_holds": true
+   }
+  ],
+  "verdict": "VERIFIED on every N in 3..8 over the (a, b) grids."
+ },
+ "LC4_rank_defect_link": {
+  "correspondence": "[omega] != 0 <=> pi-self-adjointness fails => (the similar symmetric form) the complex spectrum => sv_2 > 0 \u2014 the sound direction always; the converse holds ON THE RING (Vol X's T3: the equilibrium slice = the spectral-merging locus)",
+  "ring_rows": [
+   {
+    "N": 3,
+    "a": 0.3,
+    "b": 0.3,
+    "class_nonzero": false,
+    "complex_spectrum": false,
+    "sv2_witness": 0.18138160010042814
+   },
+   {
+    "N": 3,
+    "a": 0.3,
+    "b": 0.15,
+    "class_nonzero": true,
+    "complex_spectrum": true,
+    "sv2_witness": 0.17669786258603434
+   },
+   {
+    "N": 3,
+    "a": 0.25,
+    "b": 0.1,
+    "class_nonzero": true,
+    "complex_spectrum": true,
+    "sv2_witness": 0.17203706470593955
+   },
+   {
+    "N": 4,
+    "a": 0.3,
+    "b": 0.3,
+    "class_nonzero": false,
+    "complex_spectrum": false,
+    "sv2_witness": 0.13622186142886208
+   },
+   {
+    "N": 4,
+    "a": 0.3,
+    "b": 0.15,
+    "class_nonzero": true,
+    "complex_spectrum": true,
+    "sv2_witness": 0.13116863063417042
+   },
+   {
+    "N": 4,
+    "a": 0.25,
+    "b": 0.1,
+    "class_nonzero": true,
+    "complex_spectrum": true,
+    "sv2_witness": 0.12025797858915127
+   },
+   {
+    "N": 5,
+    "a": 0.3,
+    "b": 0.3,
+    "class_nonzero": false,
+    "complex_spectrum": false,
+    "sv2_witness": 0.10031855596775172
+   },
+   {
+    "N": 5,
+    "a": 0.3,
+    "b": 0.15,
+    "class_nonzero": true,
+    "complex_spectrum": true,
+    "sv2_witness": 0.0910711457106606
+   },
+   {
+    "N": 5,
+    "a": 0.25,
+    "b": 0.1,
+    "class_nonzero": true,
+    "complex_spectrum": true,
+    "sv2_witness": 0.07747512701208534
+   },
+   {
+    "N": 6,
+    "a": 0.3,
+    "b": 0.3,
+    "class_nonzero": false,
+    "complex_spectrum": false,
+    "sv2_witness": 0.07690034635548398
+   },
+   {
+    "N": 6,
+    "a": 0.3,
+    "b": 0.15,
+    "class_nonzero": true,
+    "complex_spectrum": true,
+    "sv2_witness": 0.0648519381460469
+   },
+   {
+    "N": 6,
+    "a": 0.25,
+    "b": 0.1,
+    "class_nonzero": true,
+    "complex_spectrum": true,
+    "sv2_witness": 0.05351059595792585
+   }
+  ],
+  "ring_iff_count": 12,
+  "hidden_arrow_witness": {
+   "D": null,
+   "D_note": "inf (the one-sided flow 2->0 with P[0,2] = 0: the reversal KL diverges \u2014 the strongest arrow witness; Vol X's exact rational certificate of the finite part: (1/15) ln 3)",
+   "class_nonzero": true,
+   "spectrum_real": true,
+   "note": "the correspondence's honest boundary: the class sees the arrow the sv_2 misses (Vol X's T2 hidden-arrow quadrant)"
+  },
+  "verdict": "the discrete correspondence holds as stated: the class is the arrow's obstruction; the rank defect is its spectral shadow on the ring-class; the off-ring boundary is Vol X's T2, re-exhibited."
+ },
+ "LC5_lyapunov_complex": {
+  "objects": "delta = I - tau_sigma, tau_sigma(X) = sigma X sigma^T on the bilinear forms; H^0 = the invariant (conserved) forms; the Grams = the homotopy integrals h = sum tau^k (the contracting homotopy on the decaying part \u2014 the mixing condition rho(sigma x sigma) < 1)",
+  "stein_residual_worst": 1.9641850382783467e-15,
+  "h0_dims": [
+   {
+    "N": 3,
+    "a": 0.3,
+    "b": 0.3,
+    "h0_dim": 1
+   },
+   {
+    "N": 3,
+    "a": 0.3,
+    "b": 0.15,
+    "h0_dim": 1
+   },
+   {
+    "N": 4,
+    "a": 0.3,
+    "b": 0.3,
+    "h0_dim": 1
+   },
+   {
+    "N": 4,
+    "a": 0.3,
+    "b": 0.15,
+    "h0_dim": 1
+   },
+   {
+    "N": 5,
+    "a": 0.3,
+    "b": 0.3,
+    "h0_dim": 1
+   },
+   {
+    "N": 5,
+    "a": 0.3,
+    "b": 0.15,
+    "h0_dim": 1
+   },
+   {
+    "N": 6,
+    "a": 0.3,
+    "b": 0.3,
+    "h0_dim": 1
+   },
+   {
+    "N": 6,
+    "a": 0.3,
+    "b": 0.15,
+    "h0_dim": 1
+   }
+  ],
+  "conserved_form_residual": 0.0,
+  "free_cell_gram_residual": 0.0,
+  "verdict": "VERIFIED: the discrete-Lyapunov operator is the differential of the record complex; its homotopy integrates the observations into the Grams \u2014 the same objects whose second mode is the arrow's spectral shadow."
+ },
+ "adjudication": {
+  "chat_claim_1": "the transgression is a Lyapunov 1-form: RETYPED \u2014 the discrete Lyapunov 1-form is the arrow's edge form (verified); the Fisher-Rao/viability transgression is not applicable to the discrete stationary objects (the corpus has no Fisher-Rao flow)",
+  "chat_claim_2": "the class is the obstruction datum's Cech class: RETYPED \u2014 the class is the cycle-space circulation (the Kolmogorov map), computable and nonzero exactly off the detailed balance; the ECD obstruction datum remains set-level (Vol II's correction)",
+  "chat_claim_3": "Phi global iff the class vanishes: SURVIVES \u2014 proved and verified in the discrete (LC-2)",
+  "chat_leray": "the Leray spectral sequence: vacuous at the discrete level (the one-point cover); it is the price of the continuum upgrade, named",
+  "the_correspondence": "THE LYAPUNOV-COHOMOLOGY CORRESPONDENCE (discrete): the arrow is a cohomology class (the circulation); the Lyapunov/Stein operator is the differential of the record complex; its homotopy builds the Grams; the class vanishes iff the record's invariant algebra is symmetric (the detailed balance) iff the Hankel's second mode vanishes ON THE RING-CLASS \u2014 the arrow's memory and its price live in one operator."
+ }
+}

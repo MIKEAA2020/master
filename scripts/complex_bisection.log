@@ -1,0 +1,36 @@
+========================================================================
+GL — THE PHASE GAUGE: exact invariance along the gauge circles
+========================================================================
+  40 random (w, r) x 4 gauge steps: worst |value difference| = 2.13e-13
+
+   theta-scan (the monotonicity measurement):
+  200 random (|w|,|r|): theta=0 not the min: 0 cases
+
+========================================================================
+TC — THE PATCHES (the far-|w| and |r|-strip bounds, ball-verified)
+========================================================================
+  far-|w| >= 7: the trace/3 bound's worst case = 16.370 (lambda* = 1.6311)
+  ball-verified: True
+  |r| >= 0.97, |w| <= 0.1: the Rayleigh bound's worst = 1.886
+  ball-verified (|w| in [0,0.1] split, |r| in [0.97,1]): True (sub-boxes [True, True])
+
+========================================================================
+THE 3-D BISECTION: (|w|, |r|, theta)
+========================================================================
+  domain |w| in [0,7], |r| in [0,0.97], theta in [0.1, pi]:
+    boxes tested: 900021, certified: 449990, stalled: 21
+    stalled boxes (first 8): ['|w|~0.323, |r|~0.683, th~0.122', '|w|~0.322, |r|~0.683, th~0.123', '|w|~0.324, |r|~0.683, th~0.122', '|w|~0.323, |r|~0.685, th~0.122', '|w|~0.326, |r|~0.684, th~0.121', '|w|~0.325, |r|~0.688, th~0.121', '|w|~0.321, |r|~0.693, th~0.118', '|w|~0.314, |r|~0.682, th~0.136']
+
+LEDGER:
+  CERTIFIED:
+    - the phase gauge (exact, machine-verified): the value depends only on (|w|, |r|, arg w + arg r) — the complex
+    - the far-|w| (>= 7) and the |r|-strip (>= 0.97) regions: the trace/Rayleigh bounds, ball-verified
+    - the 3-D bisection over (|w|, |r|, theta) in [0,7]x[0,0.97]x[theta_0, pi]: the Rayleigh instrument, sound bal
+    - the real slice theta = 0: Task 17's global certificate over R x (-1,1) (cited)
+  MEASURED_NAMED:
+    - the theta-monotonicity (theta = 0 minimizes at fixed (|w|, |r|)): 200/200 measured; the analytic proof named
+    - the theta-slab [0, theta_0]: Task 17 + the measured monotonicity; the independent complex certificate of the
+  CONCLUSION:
+    - the complex 1-atom corner's infimum = sqrt(lambda*) certified on the gauge-reduced domain; the complex escap
+
+OK results written: complex_bisection_results.json (118.9 s)

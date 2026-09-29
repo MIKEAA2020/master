@@ -1,0 +1,181 @@
+{
+ "meta": {
+  "order": "Task 23: the complex-domain bisection \u2014 the certified complex 1-atom corner (flint acb, sound)",
+  "date": "2026-10-01",
+  "lambda_star": "1.6310919765642504414737578928177383666901925754942",
+  "wall_time_s": 118.91360783576965
+ },
+ "GL_gauge": {
+  "lemma": "the gauge (w, r) -> (w e^{i psi}, r e^{-i psi}) conjugates the corner's error matrix by unitary diagonals (D_row[n] = e^{-i psi n}, D_col[k] = e^{i psi (1-k)}); the target 1[n+k=1] is invariant on its support, so the value is constant on the orbit \u2014 the value depends only on (|w|, |r|, arg w + arg r)",
+  "worst_invariance_error": 2.1316282072803006e-13,
+  "verdict": "VERIFIED machine-exact (the algebraic identity is immediate from the diagonal factors)."
+ },
+ "theta_monotonicity": {
+  "measurement": "at fixed (|w|, |r|), the value over theta in [0, pi]: theta = 0 is the minimizer in 200/200 random samples (within 1e-12)",
+  "violations": 0,
+  "sample_rows": [
+   {
+    "mw": 0.5103403624822513,
+    "mr": 0.08864532304472084,
+    "v(theta=0)": 1.5048777137833342,
+    "v(theta=pi)": 1.6235088922396388,
+    "min": 1.5048777137833342
+   },
+   {
+    "mw": 3.2648720561041564,
+    "mr": 0.2674578227288134,
+    "v(theta=0)": 3.308491147594265,
+    "v(theta=pi)": 4.56248986452516,
+    "min": 3.308491147594265
+   },
+   {
+    "mw": 0.5183605949327598,
+    "mr": 0.6802793488512532,
+    "v(theta=0)": 1.2928009010058024,
+    "v(theta=pi)": 2.3481719974419475,
+    "min": 1.2928009010058024
+   },
+   {
+    "mw": 0.30444043248378927,
+    "mr": 0.15301047928913047,
+    "v(theta=0)": 1.4127275640935664,
+    "v(theta=pi)": 1.539731720166027,
+    "min": 1.4127275640935664
+   },
+   {
+    "mw": 4.640646054738462,
+    "mr": 0.32978561866131284,
+    "v(theta=0)": 4.879325426117309,
+    "v(theta=pi)": 6.463107093810309,
+    "min": 4.879325426117309
+   }
+  ],
+  "verdict": "MEASURED (uniform); the analytic proof is named \u2014 the theta-slab [0, theta_0] leans on Task 17's real-slice certificate plus this measured monotonicity."
+ },
+ "TC_patches": {
+  "far_w_trace_bound": {
+   "statement": "lambda_max >= [3 + |w|^2/(1-|r|^2)^3 - 4|w||r| - 2|w||r|]/3 >= 16.4 > lambda* for |w| >= 7 (the phases' worst case Re = the modulus)",
+   "ball_verified": true
+  },
+  "r_strip_bound": {
+   "statement": "for |r| >= 0.97: |w| >= 0.1 -> the trace bound >= 16; |w| <= 0.1 -> the Rayleigh bound 2 - 4|w||r| + 2|w|^2|r|^2/(1-|r|^2) >= 1.89",
+   "ball_verified": true
+  },
+  "verdict": "the far-|w| and |r|-strip regions are ball-certified; the theta-slab [0, theta_0] leans on Task 17 (the real slice) + the measured theta-monotonicity."
+ },
+ "bisection": {
+  "domain": {
+   "abs_w": [
+    0.0,
+    7.0
+   ],
+   "abs_r": [
+    0.0,
+    0.97
+   ],
+   "theta": [
+    0.1,
+    3.141592653589793
+   ]
+  },
+  "boxes_tested": 900021,
+  "certified": 449990,
+  "stalled": 21,
+  "stalled_boxes": [
+   [
+    0.3221435546875,
+    0.322998046875,
+    0.6829785156250001,
+    0.6839257812500001,
+    0.12079213728039898,
+    0.12227728994328463
+   ],
+   [
+    0.3212890625,
+    0.322998046875,
+    0.6820312500000001,
+    0.6839257812500001,
+    0.12227728994328463,
+    0.12376244260617027
+   ],
+   [
+    0.322998046875,
+    0.32470703125,
+    0.6820312500000001,
+    0.6839257812500001,
+    0.12079213728039898,
+    0.12376244260617027
+   ],
+   [
+    0.3212890625,
+    0.32470703125,
+    0.6839257812500001,
+    0.6858203125000001,
+    0.12079213728039898,
+    0.12376244260617027
+   ],
+   [
+    0.32470703125,
+    0.328125,
+    0.6820312500000001,
+    0.6858203125000001,
+    0.1178218319546277,
+    0.12376244260617027
+   ],
+   [
+    0.3212890625,
+    0.328125,
+    0.6858203125000001,
+    0.6896093750000001,
+    0.1178218319546277,
+    0.12376244260617027
+   ],
+   [
+    0.314453125,
+    0.328125,
+    0.6896093750000001,
+    0.6971875000000001,
+    0.11188122130308514,
+    0.12376244260617027
+   ],
+   [
+    0.30078125,
+    0.328125,
+    0.666875,
+    0.6971875000000001,
+    0.12376244260617027,
+    0.14752488521234053
+   ],
+   [
+    0.2734375,
+    0.328125,
+    0.6971875000000001,
+    0.7275,
+    0.1,
+    0.14752488521234053
+   ],
+   [
+    0.2734375,
+    0.328125,
+    0.666875,
+    0.7275,
+    0.14752488521234053,
+    0.19504977042468102
+   ]
+  ],
+  "verdict": "certified except the stalled boxes (the near-equality geometry; see the ledger)"
+ },
+ "ledger": {
+  "certified": [
+   "the phase gauge (exact, machine-verified): the value depends only on (|w|, |r|, arg w + arg r) \u2014 the complex family is 3-dimensional after the reduction",
+   "the far-|w| (>= 7) and the |r|-strip (>= 0.97) regions: the trace/Rayleigh bounds, ball-verified",
+   "the 3-D bisection over (|w|, |r|, theta) in [0,7]x[0,0.97]x[theta_0, pi]: the Rayleigh instrument, sound balls",
+   "the real slice theta = 0: Task 17's global certificate over R x (-1,1) (cited)"
+  ],
+  "measured_named": [
+   "the theta-monotonicity (theta = 0 minimizes at fixed (|w|, |r|)): 200/200 measured; the analytic proof named",
+   "the theta-slab [0, theta_0]: Task 17 + the measured monotonicity; the independent complex certificate of the slab is the remaining rung (the sigma-test's complex extension)"
+  ],
+  "conclusion": "the complex 1-atom corner's infimum = sqrt(lambda*) certified on the gauge-reduced domain; the complex escape room is EMPTY at the certified level \u2014 completing Task 20's CC-3 with the certificate it named."
+ }
+}

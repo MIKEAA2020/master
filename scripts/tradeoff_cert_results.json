@@ -1,0 +1,1272 @@
+{
+ "meta": {
+  "order": "Task 22: the trade-off certificate, part 2 \u2014 the ball-arithmetic certificates (flint/arb, sound)",
+  "date": "2026-09-30",
+  "instrument": "the Rayleigh lower bound R(v) = v*GCGv / v*Gv with float eigenvectors, evaluated in balls; the comparison R > lambda uses arb's definite semantics",
+  "lambda_star": "1.6310919765642504414737578928177383666901925754942",
+  "wall_time_s": 79.81929612159729
+ },
+ "P1_stratum": {
+  "statement": "on the mirrored-pair stratum (p,(x,y*)),(-p,(-x,y*)) with 2px = c*: the lifted-corner Rayleigh bound R(v) >= lambda* is ball-certified for all x in [0.005, 0.747] (the equality locus; the beyond(x) ~ 0.63 x^4 margin over the O(x^8) eigenvector penalty)",
+  "test_vector": "the 1-atom corner's top eigenvector at (c*, y*), lifted (v0, v1, tau/2, tau/2) \u2014 constant along the stratum",
+  "x_range": [
+   0.005,
+   0.747
+  ],
+  "certified_boxes": 29747,
+  "stalled": 0,
+  "stalled_intervals": [],
+  "verdict": "CERTIFIED (sound balls)"
+ },
+ "P2_killer_family": {
+  "statement": "the 1-D corner killers realized on the CELL: (w/x,(x,r)),(-w/x,(x,-r)) with 2wr = 1 \u2014 certified by the MIRROR-SECTOR instrument: the exact orthogonal congruence splits the even pencil into 2x2 sectors with the mirror-combination entries as closed forms (the corner-killing cancellations computed symbolically); either sector's Rayleigh certifies lambda_e = max(lam_s, lam_a) >= R",
+  "instrument": "the 2x2 sector Rayleigh R = v*GCGv/v*Gv with the float top sector eigenvector, in flint/arb balls on the closed-form mirror combinations",
+  "domain": {
+   "x": [
+    0.05,
+    0.9
+   ],
+   "r": [
+    0.02,
+    0.35
+   ]
+  },
+  "split": "anisotropic binary (the larger relative width first)",
+  "certified_boxes": 496857,
+  "stalled": 0,
+  "stall_area_floor": 1e-09,
+  "stalled_boxes": [],
+  "stalled_measured": [],
+  "stalled_measured_min": null,
+  "verdict": "CERTIFIED (sound balls; the full cover of the domain)"
+ },
+ "P3_off_pair_rays": {
+  "statement": "the mirror-breaking directions: from each of 15 base points (3 stratum x0 values x 5 in-pair points inside Task 17's certified corner basin), 6 random off-pair directions are ball-certified on TUBES (transverse radius 2e-5) around the ray segments from each ray's minimal certified radius s_min out to |s|_2 = 0.15 \u2014 the SOUND construction (the s-range AND the transverse spread both inside the balls), the margins the transverse basin's kappa|s|^2 growth over the tube widths",
+  "base_points": 15,
+  "directions_per_base": 6,
+  "outer_radius": 0.15,
+  "tube_transverse_radius": 2e-05,
+  "s_width_floor": 0.0001,
+  "boxes_tested": 88670,
+  "certified": 42185,
+  "stalled_floor_leaves": 2465,
+  "rays_without_full_cover": 1,
+  "ray_min_certified": [
+   {
+    "base": [
+     0.45,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.45,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.3,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02406
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": null,
+    "measured_max_side": {
+     "s": [
+      0.01,
+      0.05,
+      0.1,
+      0.15
+     ],
+     "max_side": [
+      1.631472798,
+      1.632977551,
+      1.637852045,
+      1.646636428
+     ]
+    }
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.06469
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.05961
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02609
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     0.0
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02914
+   },
+   {
+    "base": [
+     0.15,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.1,
+     0.0
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     -0.1,
+     0.0
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     0.05
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     0.4546,
+     -0.8751,
+     0.1663
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     -0.8115,
+     -0.528,
+     0.2503
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     0.4492,
+     0.7733,
+     -0.4474
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     0.5832,
+     -0.0122,
+     -0.8123
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     0.4599,
+     -0.7299,
+     0.5057
+    ],
+    "s_min_certified": 0.02102
+   },
+   {
+    "base": [
+     0.15,
+     0.0,
+     -0.05
+    ],
+    "dir": [
+     -0.3602,
+     0.6356,
+     -0.6828
+    ],
+    "s_min_certified": 0.02102
+   }
+  ],
+  "s_min_summary": {
+   "min": 0.02102,
+   "median": 0.02102,
+   "max": 0.06469
+  },
+  "verdict": "CERTIFIED on the sampled transverse tubes: every ray from its s_min (min 0.021 / median 0.021 / max 0.065) out to |s|_2 = 0.15, on tubes of transverse radius 2e-5 (sound balls); the stalled floor-leaves are the inward walk's probes below s_min (the core's kappa|s|^2 margin is below the tube width there \u2014 the named open region); 1 ray (the smallest-x0 base, a strongly x-ward direction) never fully certified \u2014 its measured values stay above lambda* (measured_max_side in ray_min_certified) \u2014 the tube instrument's honest boundary"
+ },
+ "P4_degenerate": {
+  "statement": "at x_1 = 0 the effective corner atom w_1 = p_1 x_1 = 0 vanishes: the odd side's 4x4 dominates the surviving atom's 1-D corner (the chain lambda_o >= corner_2atoms(0, y_1; w_2, y_2)^2 >= corner_1atom(w_2, y_2)^2 >= lambda* \u2014 part 1's V4 + Task 17's global certificate).  Ball-verified at the 60-config grid with the ADAPTIVE eigenvector (either side certifies max(lambda_e, lambda_o)); the domination gap measured.",
+  "configs": 60,
+  "certified": 60,
+  "failed": 0,
+  "min_lam_o": 1.683878619,
+  "min_dominance_gap": 1.874521e-05,
+  "failed_rows": [],
+  "verdict": "CERTIFIED at the grid (sound balls; min lam_o 1.683879, min dominance gap 1.87e-05 >= 0 \u2014 the degeneration is exactly Task 17's domain)"
+ },
+ "ledger": {
+  "certified": [
+   "P1 the mirrored-pair stratum (the equality locus): R >= lambda* in sound balls over x in [0.005, 0.747] (the lifted-corner test vector; the analytic stack + Task 17 covers the stalled intervals if any)",
+   "P2 the killer family (2wr = 1): the mirror-sector certificate over (x, r) in [0.05,0.9]x[0.02,0.35] (496857 boxes, full cover)",
+   "P3 the off-pair transverse tubes: 15 base points x 6 random directions, certified from each ray's s_min (min 0.021 / median 0.021 / max 0.065) out to |s|_2 = 0.15 on tubes of transverse radius 2e-5",
+   "P4 the degenerate strata x_i = 0: 60/60 certified at the grid (the odd side dominates the surviving atom's 1-D corner, min gap 1.87e-05 >= 0 \u2014 Task 17's domain)",
+   "Task 19 T2 (cited): the full parity-odd shell theorem",
+   "Task 17 (cited): the 1-atom corner over R x (-1,1) \u2014 the in-pair (w_sum, y) basin of the stratum"
+  ],
+  "measured_not_certified": [
+   "the 6-D interior far from the stratum/killer/tube regions: 0/500 random configs below lambda* (part 1's F-frontier; the five smallest max-side values ~ 1.76+)",
+   "the off-pair CORE below the rays' minimal certified radii (|s|_2 < ~0.02 on 89/90 sampled rays; the one x0 = 0.15 ray's margins 3e-4..1.5e-2 are below the tube resolution, its values measured above lambda* throughout): the value's margin kappa|s|^2 is below the tube's ball width at the affordable resolution; the measured transverse Hessian is PSD with transverse lambda ~ O(1) (part 1's S2) \u2014 the analytic patch route (Task 17's C4 pattern) is designed, not run"
+  ],
+  "the_named_wall": "the exhaustive 6-D box certificate needs h ~ 1e-3..1e-4 (the margins vs the entry scale p^2 Q), i.e. h^-6 ~ 1e18..1e24 boxes \u2014 the box-count wall.  The structure past the wall: the stratum certificate (P1) + the in-pair basin (Task 17) + the killer mirror-sector certificate (P2) + the transverse tube patches (P3) together cover the dangerous geometry; the interior's margin landscape (min ~ 0.13 over the random frontier) is the remaining object."
+ }
+}

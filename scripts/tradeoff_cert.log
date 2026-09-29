@@ -1,0 +1,41 @@
+========================================================================
+P1 — THE MIRRORED-PAIR STRATUM (the equality locus, ball-certified)
+========================================================================
+  stratum x in [0.005, 0.747]: certified boxes: 29747, stalled: 0
+
+========================================================================
+P2 — THE KILLER FAMILY (the corner-killers, ball-certified)
+========================================================================
+  killer family (x, r) in [0.05,0.9]x[0.02,0.35]: certified boxes: 496857, stalled: 0
+
+========================================================================
+P3 — THE OFF-PAIR TRANSVERSE TUBES (ball-certified)
+========================================================================
+  15 base points x 6 random off-pair directions:
+    ray boxes tested: 88670, certified: 42185, stalled floor-leaves: 2465
+    the certified inner radius s_min: min 0.0210, median 0.0210, max 0.0647 (1 rays without a full cover)
+    WARNING: 1 rays never fully certified — see the results
+
+========================================================================
+P4 — THE DEGENERATE STRATA (x_i = 0): Task 17's reduction
+========================================================================
+  60 degenerate configs (x_1 = 0): certified: 60, failed: 0
+    min lam_o = 1.683878619 (lambda* = 1.631091977); min dominance gap lam_o - corner_1atom(w2,y2)^2 = 1.875e-05
+
+========================================================================
+THE LEDGER
+========================================================================
+  CERTIFIED:
+    - P1 the mirrored-pair stratum (the equality locus): R >= lambda* in sound balls over x in [0.005, 0.747] (the l
+    - P2 the killer family (2wr = 1): the mirror-sector certificate over (x, r) in [0.05,0.9]x[0.02,0.35] (496857 bo
+    - P3 the off-pair transverse tubes: 15 base points x 6 random directions, certified from each ray's s_min (min 0
+    - P4 the degenerate strata x_i = 0: 60/60 certified at the grid (the odd side dominates the surviving atom's 1-D
+    - Task 19 T2 (cited): the full parity-odd shell theorem
+    - Task 17 (cited): the 1-atom corner over R x (-1,1) — the in-pair (w_sum, y) basin of the stratum
+  MEASURED_NOT_CERTIFIED:
+    - the 6-D interior far from the stratum/killer/tube regions: 0/500 random configs below lambda* (part 1's F-fron
+    - the off-pair CORE below the rays' minimal certified radii (|s|_2 < ~0.02 on 89/90 sampled rays; the one x0 = 0
+  THE_NAMED_WALL:
+    - the exhaustive 6-D box certificate needs h ~ 1e-3..1e-4 (the margins vs the entry scale p^2 Q), i.e. h^-6 ~ 1e
+
+OK results written: tradeoff_cert_results.json (79.8 s)

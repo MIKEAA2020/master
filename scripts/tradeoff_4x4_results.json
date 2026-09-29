@@ -1,0 +1,401 @@
+{
+ "meta": {
+  "order": "Task 22: the trade-off certificate, part 1 \u2014 the exact two-sided 4x4 machinery (the corner+payment PSD-sum identity)",
+  "date": "2026-09-30",
+  "reference": {
+   "lambda_star": 1.6310919765642504,
+   "sqrt_lambda_star": 1.2771421129084461
+  },
+  "wall_time_s": 26.761853456497192
+ },
+ "V1_identity": {
+  "statement": "||H_cell - H_psi||^2 >= max(lambda_e, lambda_o), each side an exact 4x4 generalized eigenproblem (the PSD-sum identity made exact; both row-parity blocks)",
+  "configs": 400,
+  "violations": 0,
+  "worst_margin": 0.042513397952472776,
+  "sample_rows": [
+   {
+    "p": [
+     -0.49578984978101026,
+     -0.800435222499766
+    ],
+    "atom1": [
+     -0.29548808021098577,
+     -0.2555200285999842
+    ],
+    "atom2": [
+     -0.5141104950903271,
+     -0.1688244926720256
+    ],
+    "norm2": 6.8317296175662845,
+    "lam_e": 4.975774473484682,
+    "lam_o": 3.083706020641557
+   },
+   {
+    "p": [
+     1.1522875226290878,
+     1.485198673371226
+    ],
+    "atom1": [
+     0.4696012932369904,
+     0.1394209461288014
+    ],
+    "atom2": [
+     0.5994383172047657,
+     -0.44886784853962564
+    ],
+    "norm2": 26.084223862159952,
+    "lam_e": 18.0131706944946,
+    "lam_o": 9.190931805708539
+   },
+   {
+    "p": [
+     1.2099428068751452,
+     -2.1261398250708727
+    ],
+    "atom1": [
+     -0.4580819560691357,
+     -0.026181621302626468
+    ],
+    "atom2": [
+     0.41444616487424524,
+     -0.11586293505671763
+    ],
+    "norm2": 6.211356266147104,
+    "lam_e": 4.944788409242485,
+    "lam_o": 4.233177226315414
+   },
+   {
+    "p": [
+     0.2375563702117769,
+     -0.11650802430768703
+    ],
+    "atom1": [
+     0.5068447036307182,
+     -0.45057186629763823
+    ],
+    "atom2": [
+     -0.07000839415132465,
+     0.5782135657962171
+    ],
+    "norm2": 2.685807631669689,
+    "lam_e": 2.325740309370641,
+    "lam_o": 2.2645708639450888
+   },
+   {
+    "p": [
+     1.7390628663848329,
+     -0.10838406042703674
+    ],
+    "atom1": [
+     0.5474046929048475,
+     -0.2044275812217735
+    ],
+    "atom2": [
+     -0.2995082511026626,
+     0.29384703255965006
+    ],
+    "norm2": 11.610671602242842,
+    "lam_e": 8.106973172617439,
+    "lam_o": 4.819570753665152
+   },
+   {
+    "p": [
+     1.8162363377591717,
+     -1.198487458770222
+    ],
+    "atom1": [
+     0.6700999276779043,
+     -0.15244799921170804
+    ],
+    "atom2": [
+     0.3922472594111708,
+     0.08564073998070088
+    ],
+    "norm2": 10.070010920516681,
+    "lam_e": 6.429160596354085,
+    "lam_o": 5.214041012798003
+   }
+  ],
+  "verdict": "PASS \u2014 the two-sided PSD sum is a valid lower bound, machine-verified against the exact free machinery."
+ },
+ "V2_pair": {
+  "statement": "on the mirrored pair (p,(x,y)),(-p,(-x,y)): M_ee = 0 and M_oo = 0 exactly, so lambda_e = lambda_o = the stacked corner-transpose >= corner_1atom(2px, y)^2 -> the Task 17 certified value as x -> 0",
+  "rows": [
+   {
+    "x": 0.4,
+    "lam_e": 1.6494443406355925,
+    "lam_o": 1.649444340635594,
+    "corner_1atom_sq": 1.6310919820539687,
+    "gap_o": 0.018352358581625428
+   },
+   {
+    "x": 0.2,
+    "lam_e": 1.6321043701787814,
+    "lam_o": 1.63210437017878,
+    "corner_1atom_sq": 1.6310919820539687,
+    "gap_o": 0.0010123881248114142
+   },
+   {
+    "x": 0.1,
+    "lam_e": 1.6311548075810678,
+    "lam_o": 1.6311548075810667,
+    "corner_1atom_sq": 1.6310919820539687,
+    "gap_o": 6.282552709802047e-05
+   },
+   {
+    "x": 0.05,
+    "lam_e": 1.6310959069123605,
+    "lam_o": 1.6310959069123632,
+    "corner_1atom_sq": 1.6310919820539687,
+    "gap_o": 3.924858394510622e-06
+   },
+   {
+    "x": 0.02,
+    "lam_e": 1.6310920825274444,
+    "lam_o": 1.6310920825274584,
+    "corner_1atom_sq": 1.6310919820539693,
+    "gap_o": 1.0047348908415188e-07
+   },
+   {
+    "x": 0.005,
+    "lam_e": 1.6310919824466459,
+    "lam_o": 1.631091982446444,
+    "corner_1atom_sq": 1.6310919820539693,
+    "gap_o": 3.9247471939063416e-10
+   }
+  ],
+  "gap_min": 3.9247471939063416e-10,
+  "verdict": "PASS \u2014 the pair never beats its limit; the beyond(x) margin decays like x^4 (the stacked-corner structure)."
+ },
+ "V3_brute_force": {
+  "statement": "the direct truncated row-Gram (class basis, exact multiplicities, words to length 24) reproduces both 4x4 eigenvalues to truncation accuracy \u2014 the finite reduction is correct",
+  "rows": [
+   {
+    "cfg": [
+     0.6,
+     0.25,
+     0.3,
+     -0.9,
+     -0.2,
+     0.45
+    ],
+    "lam_e": 1.8783140760995591,
+    "lam_e_bf": 1.8783140760995571,
+    "lam_o": 1.7831973577170512,
+    "lam_o_bf": 1.7831973577170546
+   },
+   {
+    "cfg": [
+     1.5,
+     -0.3,
+     0.5,
+     -0.7,
+     0.4,
+     -0.35
+    ],
+    "lam_e": 6.629915816270472,
+    "lam_e_bf": 6.629915816258064,
+    "lam_o": 3.8224340929968372,
+    "lam_o_bf": 3.822434092991284
+   },
+   {
+    "cfg": [
+     0.8,
+     0.45,
+     -0.25,
+     1.1,
+     -0.5,
+     0.3
+    ],
+    "lam_e": 7.353496284758377,
+    "lam_e_bf": 7.3534962847527225,
+    "lam_o": 3.329491518281201,
+    "lam_o_bf": 3.329491518278553
+   }
+  ],
+  "verdict": "PASS (agreement at the truncation scale ~1e-4, improving with L)."
+ },
+ "V4_corner_domination": {
+  "statement": "lambda_o >= ||the multiplicity-weighted 1-D two-atom corner||^2 \u2014 the odd side subsumes Task 19's T1 corner bound (the beyond-columns and the odd-odd shell only add PSD mass)",
+  "configs": 300,
+  "violations": 0,
+  "min_gap": 2.4238845597324143e-07,
+  "verdict": "PASS."
+ },
+ "V5_killer_dial": {
+  "statement": "the 1-D corner killers (w, r), (-w, -r): the corner is killed but the payment pays ~ 1/(4x^2) on lambda_e \u2014 the 1/x law of Task 19's T3, now EXACT (the (e1+e2)-Rayleigh of the payment Gram)",
+  "rows": [
+   {
+    "x": 0.05,
+    "r": 0.09,
+    "w": 5.555555555555555,
+    "lam_e": 400.06278409312966,
+    "lam_o": 0.0051455323886999,
+    "corner_sq": 0.00026250026765856267,
+    "payment_law_x2": 99.99999999999999
+   },
+   {
+    "x": 0.1,
+    "r": 0.09,
+    "w": 5.555555555555555,
+    "lam_e": 100.05380824481901,
+    "lam_o": 0.02037849507365822,
+    "corner_sq": 0.00026250026765856267,
+    "payment_law_x2": 24.999999999999996
+   },
+   {
+    "x": 0.2,
+    "r": 0.09,
+    "w": 5.555555555555555,
+    "lam_e": 25.17060799440061,
+    "lam_o": 0.08530330707348927,
+    "corner_sq": 0.00026250026765856267,
+    "payment_law_x2": 6.249999999999999
+   },
+   {
+    "x": 0.3,
+    "r": 0.09,
+    "w": 5.555555555555555,
+    "lam_e": 11.512826530100398,
+    "lam_o": 0.2094895672989588,
+    "corner_sq": 0.00026250026765856267,
+    "payment_law_x2": 2.7777777777777777
+   },
+   {
+    "x": 0.4,
+    "r": 0.09,
+    "w": 5.555555555555555,
+    "lam_e": 7.040611432476547,
+    "lam_o": 0.4291473739083535,
+    "corner_sq": 0.00026250026765856267,
+    "payment_law_x2": 1.5624999999999998
+   },
+   {
+    "x": 0.5,
+    "r": 0.09,
+    "w": 5.555555555555555,
+    "lam_e": 5.4617723470523005,
+    "lam_o": 0.8345777778046196,
+    "corner_sq": 0.00026250026765856267,
+    "payment_law_x2": 1.0
+   }
+  ],
+  "below_lambda_star": 0,
+  "verdict": "PASS \u2014 the killers pay; the trade-off frontier is bounded away from below."
+ },
+ "V6_p_convexity": {
+  "statement": "for fixed atoms, lambda_e(p) = max_w sum_j |<w, c_j(p)>|^2 is a max of convex quadratics in p \u2014 convex in (p1, p2). Hence the infimum over p is attained at a stationary point (or escapes along the mirrored-pair direction as x -> 0, which is the stratum).",
+  "violations": 0,
+  "verdict": "PASS \u2014 the p-landscape is convex; the minimizer structure is the stationary path ending on the pair stratum."
+ },
+ "S1_stratum": {
+  "theorem": "on the mirrored-pair stratum {(p,(x,y)),(-p,(-x,y))}: lambda_e = lambda_o = ||the stacked corner-transpose||^2 >= corner_1atom(2px, y)^2, and Task 17's GLOBAL CERTIFICATE gives corner_1atom >= sqrt(lambda*) for ALL (2px, y) in R x (-1,1) \u2014 so the stratum itself is CERTIFIED, with the beyond(x) ~ c*^2 x^4 (R(x^4, y^2) - 1/(1-y^2)^2) margin.",
+  "rows": [
+   {
+    "x": 0.5,
+    "lam_o": 1.6886949983747224,
+    "beyond": 0.05760301632075371,
+    "beyond_over_x4": 0.9216482611320593
+   },
+   {
+    "x": 0.3,
+    "lam_o": 1.6363822117267226,
+    "beyond": 0.005290229672753943,
+    "beyond_over_x4": 0.6531147744140671
+   },
+   {
+    "x": 0.2,
+    "lam_o": 1.63210437017878,
+    "beyond": 0.0010123881248114142,
+    "beyond_over_x4": 0.6327425780071337
+   },
+   {
+    "x": 0.1,
+    "lam_o": 1.6311548075810667,
+    "beyond": 6.282552709802047e-05,
+    "beyond_over_x4": 0.6282552709802046
+   },
+   {
+    "x": 0.05,
+    "lam_o": 1.6310959069123632,
+    "beyond": 3.924858394510622e-06,
+    "beyond_over_x4": 0.6279773431216994
+   }
+  ],
+  "verdict": "PROVED (analytic: the stack + Task 17); measured: the beyond/x^4 ratio is constant in x (the x^4 law)."
+ },
+ "S2_basin": {
+  "statement": "the value's Hessian at the pair-stratum points is PSD (the stratum is the argmin locus); the transverse curvature is O(1) (the corner's basin) \u2014 the input for the tube certificate",
+  "rows": [
+   {
+    "x": 0.3,
+    "hessian_eigs": [
+     0.031897792442799035,
+     1.7936420902317896,
+     2.2927319681555547,
+     2.716406760332363,
+     6.209886485896126,
+     7.4781217584255595
+    ]
+   },
+   {
+    "x": 0.2,
+    "hessian_eigs": [
+     0.0036344038856395916,
+     1.5906465965625933,
+     2.6890969633090283,
+     2.804052764051314,
+     7.4612169202362075,
+     12.010976485292904
+    ]
+   },
+   {
+    "x": 0.1,
+    "hessian_eigs": [
+     4.4640598829596695e-05,
+     1.46830890801539,
+     2.691930387314887,
+     3.1622786613858187,
+     23.65614453060537,
+     40.875994666240366
+    ]
+   }
+  ],
+  "kappa_min": 4.4640598829596695e-05,
+  "verdict": "MEASURED (finite differences): the basin is uniformly positive transverse to the stratum."
+ },
+ "F_frontier": {
+  "statement": "the exact two-sided frontier: max(lambda_e, lambda_o) over 500 random two-atom configs",
+  "configs": 500,
+  "below_lambda_star": 0,
+  "five_smallest": [
+   {
+    "max_side": 1.7579536515307876,
+    "corner_sq": 1.2863776006584127,
+    "payment_side": 1.7579536515307876
+   },
+   {
+    "max_side": 1.8287897812293985,
+    "corner_sq": 1.4057636146075694,
+    "payment_side": 1.8287897812293985
+   },
+   {
+    "max_side": 1.8578749098648877,
+    "corner_sq": 1.7804115676090921,
+    "payment_side": 1.8578749098648877
+   },
+   {
+    "max_side": 2.005088167546354,
+    "corner_sq": 1.9871611913643445,
+    "payment_side": 2.005088167546354
+   },
+   {
+    "max_side": 2.024890099597017,
+    "corner_sq": 1.9939076716785733,
+    "payment_side": 2.024890099597017
+   }
+  ],
+  "verdict": "0 below \u2014 the semialgebraic inequality max(lambda_e, lambda_o) >= lambda* holds at the measured level over the family; the certified regions (the stratum, the killers, the far patches) are in tradeoff_cert.py"
+ }
+}
