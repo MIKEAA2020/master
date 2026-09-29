@@ -1433,3 +1433,72 @@ Stage Summary:
 - The session's push blocker is cleared; all Tasks 22-24 deliverables
   (scripts + results JSONs + logs) are on the remote.  The local
   commit ledger and the remote are identical.
+
+---
+Task ID: 26
+Agent: main (Super Z)
+Task: The analytic patch for the off-pair core below s_min (the
+user's order: "analytic patch for the off-pair core below s_min") —
+Task 22's named open region.
+
+Work Log:
+- The design probes (probe_patch.py, probe_patch2.py): the fixed
+  center-eigenvector Rayleigh quotient as a rational function of the
+  3 transverse (mirror-breaking) coordinates is M-INVARIANT at the
+  stratum centers (v has the symmetric (a,b,c,c) lift form; the
+  (3,4) antisymmetric direction is exactly G-null; the stratum is
+  Fix(M) and M acts as -I on the transverse coords) => the instrument
+  is EVEN in delta: the linear/cubic Taylor coefficients vanish
+  identically (1e-12), the envelope theorem gives R(v_c, z_c) =
+  the eigenvalue at the center (2.2e-15), and the instrument is
+  essentially FLAT transversally (kappa ~ -0.006 vs the eigenvalue's
+  +1.5: the envelope penalty cancels the curvature).  The B-tracking
+  (affine eigenvector fields) is worthless (eigenvector degeneracy
+  noise) — the FIXED vector is the right instrument.
+- tradeoff_patch.py (flint/arb, prec 96, SOUND): the truncated-
+  polynomial (degree 4, 3 vars, 15 monomials) Taylor arithmetic over
+  balls — the coefficients ARE the derivatives; the truncated series
+  division (the Neumann recurrence) exact in balls (V5 round-trip
+  1.1e-24); TWO modes per patch: the TIGHT run (the center as exact
+  points: m0, gamma, kappa via Weyl+Frobenius on the Hessian ball,
+  C3) and the BOX run (the center constants widened to balls of
+  half-width r/2: the quartic coefficients enclose D^4 R(xi)/alpha!
+  for every Lagrange xi in the ball — the sound remainder).  The
+  certificate phi(r) = m0 - gamma r + min(0,kappa) r^2/2 - C3 r^3 -
+  C4(r) r^4 > 0 is MONOTONE (every negative term decreases), so ONE
+  definite arb comparison per patch radius; the r-bisection over 6
+  box probes per side.
+- THE RESULT: the 15 transverse 3-BALLS around the P3 base points
+  (both sides tried; the odd side's flat instrument wins everywhere):
+  max(lambda_e, lambda_o) >= lambda* for ALL transverse directions
+  |delta|_2 <= r0 with r0 min 0.032 / median 0.054 / max 0.068 —
+  ALL-direction coverage, beyond the sampled 6 directions.  The 90
+  P3 rays are now FULLY covered from the stratum: [0, min(r0, s_min)]
+  by the patches (3 chains on the x0 = 0.15 base where r0 < s_min),
+  [s_min, 0.15] by the Task 22 tubes; THE NEVER-CERTIFIED BOUNDARY
+  RAY (x0 = 0.15, strongly x-ward) CHAINED TO 0.152 >= 0.15 — Task
+  22's P3 hole CLOSED.  90/90.
+- The validation: V1 the Taylor coefficients vs central differences
+  (dm0 2.2e-16; the C4-aware tolerances — the even side's C4 ~ 1.8e4
+  explains its FD mismatch, diagnosed and priced); V2 the direct
+  float profiles at 0.95 r0 over 20 random directions per base (the
+  worst margin +3.2e-4, 0 below); V3 the envelope 2.2e-15; V4 the
+  M-evenness 1e-12; V5 the TP algebra 1.1e-24.  The direction
+  regeneration from the P3 seed cross-checked 4.8e-5.  Wall 4.5 s.
+- One bug found and fixed in-session: evecs_at passed (C_o, C_o)
+  instead of (C_o, G_o) — the odd eigenvector was wrong (the V3
+  residual 0.478 exposed it; every patch had fallen back to the even
+  side; after the fix the odd side's patches dominate everywhere and
+  r0 tripled at the hardest base).
+
+Stage Summary:
+- Deliverables: scripts/tradeoff_patch.py + probe_patch.py +
+  probe_patch2.py + tradeoff_patch_results.json.  Task 22's named
+  open region — the off-pair core below s_min — is CLOSED: the
+  analytic Taylor patches (the C4 pattern, degree-4, sound in balls)
+  certify the transverse 3-balls and every sampled ray from the
+  stratum out to |s| = 0.15, including the one ray the tubes never
+  certified.  The honest residuals: the transverse collar beyond r0
+  (the tubes' 6-direction sampling caveat) and the h^-6 exhaustive
+  interior wall — unchanged, now clearly separated from the CORE
+  they no longer block.
