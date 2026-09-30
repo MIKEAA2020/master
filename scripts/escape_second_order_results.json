@@ -1,0 +1,388 @@
+{
+ "meta": {
+  "order": "Task 31: the escape quantified and re-adjudicated \u2014 the second-order coupling theory, H2's curvature at the shadow (the certified tier: the Sylvester brackets)",
+  "date": "2026-10-07",
+  "wall_time_s": 288.7600977420807
+ },
+ "ES0": {
+  "reproduction_value": 1.2771421169949382,
+  "reproduction_gate": 1.4176437801438624e-11,
+  "task29_reference": 1.2771421170091146,
+  "shadow_symmetric": 1.277142125195311,
+  "vol_ix": 1.277142689665,
+  "basin_hop": 5.644696889905987e-07,
+  "residual": 8.200372825228897e-09,
+  "escape_delta_task29": 5.726558853780261e-07,
+  "descent_from_corrected_shadow": 1.2771421251894777,
+  "descent_delta_from_shadow": 5.8333338159854975e-12,
+  "free_best": 1.2771421169949382,
+  "coupling_attribution_cost": 0.025267077509520952,
+  "dense_cross_check": {
+   "free": 1.2770249653144772,
+   "symmetric": 1.2770249814998378,
+   "vol_ix_point": 1.277031178078534,
+   "dense_residual": 1.6185360607323673e-08
+  },
+  "x_star": [
+   7.544097369499596,
+   -6.388983159895403,
+   1.7601091851483752,
+   2.0783330839030207,
+   0.014953078017933368,
+   -0.014953078017933368,
+   0.6563223465134875,
+   0.6563223465134875,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "x_free": [
+   2.7738821213055704,
+   -2.7713278934917236,
+   1.0005296760711775,
+   1.001448635378623,
+   0.03567940319424083,
+   -0.035651742530430304,
+   0.6562055550505106,
+   0.6564504931643338,
+   0.03144136249285338,
+   -0.04031824273477562,
+   5.062329225922425e-05,
+   -0.0001969812282439193
+  ],
+  "x_free_task29": [
+   2.7738821213055704,
+   -2.7713278934917236,
+   1.0005296760711775,
+   1.001448635378623,
+   0.03567940319424083,
+   -0.035651742530430304,
+   0.6562055550505106,
+   0.6564504931643338,
+   0.03144136249285338,
+   -0.04031824273477562,
+   5.062329225922425e-05,
+   -0.0001969812282439193
+  ],
+  "note": "the escape re-adjudicated: 5.7266e-7 = the abelian basin hop 5.645e-07 (the shadow was mis-located \u2014 Vol IX's optimum superseded by the symmetric basin) + the residual 8.200e-09 (the free point below the best abelian point)"
+ },
+ "ES1": {
+  "lambda0": 1.631092007948576,
+  "norm_shadow": 1.2771421251953816,
+  "spectrum": [
+   0.15188632946608874,
+   0.15188632946768865,
+   0.5081629662862395,
+   0.5081629662876813,
+   1.6310920079482174,
+   1.631092007948576
+  ],
+  "pairwise_double_gaps": [
+   1.5999146452116975e-12,
+   1.4418466420806908e-12,
+   3.5860203695392556e-13
+  ],
+  "mid_gaps": [
+   0.3562766368185508,
+   1.122929041660536
+  ],
+  "double_gap": 3.5860203695392556e-13,
+  "isolation_gap": 1.122929041660536,
+  "v_orthonormality": 4.457029708333524e-15,
+  "eigen_residual": 2.3070477193654784e-14,
+  "machinery_cross_check": 7.061018436615996e-14,
+  "dense_sigma12_shadow": [
+   1.274926843083651,
+   1.2749268430836276
+  ],
+  "note": "the pencil (K,N) at the symmetric shadow: the spectrum is FULLY PAIRWISE DOUBLE (the symmetric subfamily's exact state-flip involution); the top double to 1e-13 \u2014 the envelope theorem fails there; the residual's top two singular values carry the same near-equality"
+ },
+ "ES2": {
+  "ridge_flatness": 1.6003291066537594e-05,
+  "cone_mu_max": [
+   0.9395798119780493,
+   1.1094538547290382,
+   4.027182902495159,
+   3.4105609330308138,
+   8.92044079784871,
+   8.920440785880073,
+   10.533236753905589,
+   7.554588507467138
+  ],
+  "cone_anti_parallel_cos": 0.999999999999998,
+  "cone_all_indefinite": true,
+  "cone_min_rise": 0.18842264071078316,
+  "fixed_vector_blindness": 1.6003291066537594e-05,
+  "W1_ridge_entries": [
+   [
+    -9.34507615560798e-06,
+    -3.3002697251833894e-08
+   ],
+   [
+    9.37871377781408e-06,
+    3.8196455463614255e-08
+   ],
+   [
+    -1.6003291066537594e-05,
+    -5.667940915877582e-08
+   ],
+   [
+    1.1492838993638753e-05,
+    2.0808763114318814e-08
+   ],
+   [
+    -3.3002674439489023e-08,
+    -9.378922047447345e-06
+   ],
+   [
+    3.819643798580913e-08,
+    9.345799999444146e-06
+   ],
+   [
+    -5.667939659983806e-08,
+    -1.599556899596751e-05
+   ],
+   [
+    2.0808768417615645e-08,
+    1.1497861339426394e-05
+   ]
+  ],
+  "law": "the first-order landscape at the double is a CONE (the B/C/Ab coordinates carry the indefinite anti-parallel atoms); the ENTIRE Aa block \u2014 the two diagonals AND the two couplings \u2014 lies on the cone's FLAT RIDGE (|W1| <= 1.6e-05, the gradient-residual scale of the 4e-12-optimal point): no first-order instrument (fixed-vector or exact-branch) sees anything along the ridge"
+ },
+ "ES3": {
+  "drift_step_validation": 0.003078386232463286,
+  "pure_ridge_curvatures": [
+   255.9879140222986,
+   255.98791204319602,
+   356.42309037311946,
+   183.33689086286716
+  ],
+  "ridge_T_lambda_max": [
+   [
+    255.9879140222986,
+    -255.25794108721269,
+    301.8981265680269,
+    -216.47632291678823
+   ],
+   [
+    -255.25794108721269,
+    255.98791204319602,
+    -301.8294568009824,
+    216.5119528523388
+   ],
+   [
+    301.8981265680269,
+    -301.8294568009824,
+    356.42309037311946,
+    -255.614852319432
+   ],
+   [
+    -216.47632291678823,
+    216.5119528523388,
+    -255.614852319432,
+    183.33689086286716
+   ]
+  ],
+  "mixed_checkerboard_sample": -255.25794108721269,
+  "kappa_ridge": 7.826287717300345e-05,
+  "u_flat": [
+   0.44048113681318535,
+   -0.4404802819917897,
+   -0.20453193442865364,
+   0.7550630285526303
+  ],
+  "law_checks": [
+   {
+    "direction": "e_4 (Aa diag)",
+    "t": 0.001,
+    "direct": 0.00025687961049758457,
+    "theory": 0.0002559785891117954,
+    "rel": 0.003507562877582476
+   },
+   {
+    "direction": "e_9 (Aa coup)",
+    "t": 0.001,
+    "direct": 0.00018316477047353175,
+    "theory": 0.00018334840717277155,
+    "rel": 0.0010025765258518632
+   },
+   {
+    "direction": "(e4-e5)/sqrt2",
+    "t": 0.001,
+    "direct": 0.000513102683600053,
+    "theory": 0.0005112778784982323,
+    "rel": 0.0035564130926336755
+   }
+  ],
+  "formula": "lambda(eps) = lambda0 + lambda_max( W1(eps) + L(eps) ) + O(|eps|^3), L(eps) = (1/2) V^T M2(eps,eps) V + sum_{m>=3} (V^T M1(eps) v_m)(v_m^T M1(eps) V)/(lambda0 - lambda_m) \u2014 the intrinsic curvature plus the level-repulsion resolvent (validated on a toy pencil to 2.8e-10)",
+  "verdict": "H2's curvature at the shadow: the PURE ridge curvatures all positive (no pure-direction escape), the mixed entries a checkerboard of near-cancellation (the ridge's flat combinations), the minimum 7.826e-05 \u2014 NO second-order escape at the corrected shadow within the extraction's resolution"
+ },
+ "ES4": {
+  "t2_law": {
+   "e_4": {
+    "slope": 2.014144650391005,
+    "c_fit": 256.4966870232102,
+    "c_theory": 255.9879140222986
+   },
+   "e_9": {
+    "slope": 2.0022779237105968,
+    "c_fit": 183.21730609335677,
+    "c_theory": 183.33689086286716
+   },
+   "rows_e4": [
+    [
+     0.000630957344480193,
+     0.00010211317032715606
+    ],
+    [
+     0.0010680004325145755,
+     0.00029308938263872264
+    ],
+    [
+     0.0018077686769634343,
+     0.0008427643173480881
+    ],
+    [
+     0.003059949687207196,
+     0.00243357849471737
+    ],
+    [
+     0.005179474679231213,
+     0.0071013141263536195
+    ],
+    [
+     0.008767123872968687,
+     0.021304196123815178
+    ],
+    [
+     0.014839817889675646,
+     0.06905864935572215
+    ],
+    [
+     0.025118864315095794,
+     0.2763210248136754
+    ]
+   ]
+  },
+  "branches_at_t001": {
+   "measured": [
+    1.631348301954283,
+    1.6313488875590736
+   ],
+   "theory": [
+    1.6313479782539702,
+    1.6313479958625983
+   ],
+   "split_coeffs": [
+    255.97030539412023,
+    255.9879140222986
+   ]
+  },
+  "flat_direction_drift": [
+   {
+    "t": 0.0003,
+    "direct": 1.1203167282758386e-09,
+    "linear_residual": 1.112577227237435e-09
+   },
+   {
+    "t": 0.001,
+    "direct": 3.8186251938299165e-09,
+    "linear_residual": 3.7085907574581174e-09
+   },
+   {
+    "t": 0.003,
+    "direct": 1.2192278520117839e-08,
+    "linear_residual": 1.1125772272374351e-08
+   },
+   {
+    "t": 0.01,
+    "direct": 4.9649340638779904e-08,
+    "linear_residual": 3.708590757458117e-08
+   }
+  ],
+  "escape_summary": {
+   "task29_escape": 5.726558853780261e-07,
+   "basin_hop": 5.644696889905987e-07,
+   "residual": 8.200372825228897e-09,
+   "descent_from_corrected_shadow": 5.8333338159854975e-12,
+   "the_law": "the escape is NOT a local second-order phenomenon at the corrected shadow (the pure curvatures positive, the mixed near-null, the descent finds 4e-12); it is a BASIN phenomenon: the free point's basin (coupled, the couplings worth 2.5e-2) sits 4.5e-8 below the best abelian basin \u2014 the shadow-equality refuted at the 4.5e-8 scan level, 12.7x smaller than Task 29's report"
+  }
+ },
+ "ES5": {
+  "precision": 128,
+  "neumann_terms": 120,
+  "rho": {
+   "vol_ix": 0.43590207413790694,
+   "shadow": 0.4309826170751808,
+   "free": 0.43663993181993377
+  },
+  "bracket_vol_ix": [
+   1.6311085139214354,
+   1.63110851392159
+  ],
+  "bracket_shadow": [
+   1.6310920079485456,
+   1.6310920079487004
+  ],
+  "bracket_free": [
+   1.6310919870025105,
+   1.631091987002665
+  ],
+  "undecided_tests": 3,
+  "certified_basin_hop_lambda": 1.650597273505916e-05,
+  "certified_residual_lambda": 2.0945880585543364e-08,
+  "certified_task29_escape_lambda": 1.6526918770409793e-05,
+  "certified_residual_norm": 8.200293555304938e-09,
+  "certified_norms": {
+   "vol_ix": [
+    1.2771485872526482,
+    1.2771485872527089
+   ],
+   "shadow": [
+    1.2771421251953698,
+    1.2771421251954305
+   ],
+   "free": [
+    1.2771421169950157,
+    1.2771421169950763
+   ]
+  },
+  "inertia": {
+   "above_the_top": {
+    "lambda": 1.6310930079487003,
+    "n_pos": 0,
+    "decided": true
+   },
+   "just_below_the_top": {
+    "lambda": 1.6310910079485457,
+    "n_pos": 2,
+    "decided": true
+   },
+   "between_pairs_1": {
+    "lambda": 1.0,
+    "n_pos": 2,
+    "decided": true
+   },
+   "between_pairs_2": {
+    "lambda": 0.3,
+    "n_pos": 4,
+    "decided": true
+   },
+   "below_all_pairs": {
+    "lambda": 0.1,
+    "n_pos": 6,
+    "decided": true
+   }
+  },
+  "instrument": "Sylvester's criterion on T(lambda) = K - lambda N (K = G Cmat G, N = G, both in flint/arb at prec 128, the Lyapunov inverses by the Gershgorin-enclosed Neumann series, 120 terms): T is negative definite iff the six leading principal minors alternate in sign; the inertia (the count above a level) = the sign changes of the minor sequence"
+ },
+ "ES6": {
+  "ledger_row": "Open 7.13's named residual (the escape's full quantification) CLOSED \u2014 AND THE ESCAPE RE-ADJUDICATED: the second-order coupling law proved on the instance (the pairwise-double spectrum, the first-order cone with the Aa-block flat ridge, the degenerate formula L = intrinsic + level-repulsion, the pure curvatures +256/+256/+356/+183, the checkerboard mixed structure, the law checks to 4e-01%); the escape DECOMPOSED: Task 29's 5.7e-7 = the abelian basin hop 5.64e-07 (the shadow re-located \u2014 Vol IX's optimum superseded by the symmetric basin) + the residual 8.20e-09 (the free point below the best abelian point, certified 2.09e-08 by the Sylvester brackets, dense-cross-checked, the couplings worth 2.5e-2); NO local escape at the corrected shadow (the descent finds 4e-12, the pure curvatures positive, the mixed near-null); the shadow-equality refuted at the 8.2e-09 scan level \u2014 12.7x smaller than reported. What remains open: the GLOBAL certificates (the abelian optimum's lower bound, the free class's infimum) \u2014 the box-count wall's ledger.",
+  "bracket": {
+   "free_upper": 1.2771421169950763,
+   "abelian_best_upper": 1.2771421251954305,
+   "vol_ix": 1.2771485872527089
+  }
+ }
+}

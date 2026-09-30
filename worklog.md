@@ -1691,3 +1691,77 @@ $GITHUB_PAT.  Fix (same as Tasks 18/25): re-supply the fine-grained PAT
 (read+write on MIKEAA2020/master), write it to
 /home/z/my-project/.secrets/github_pat.txt, run
 scripts/restore_pat.sh, and `git push origin main`.
+
+---
+Task ID: 31
+Agent: main (Super Z)
+Task: Volume XIII — a short volume consolidating the three closures into
+the unification (the ledger at two open links), and the escape quantified
+further: the second-order coupling theory, H2's curvature at the shadow.
+
+Work Log:
+- The push blockage healed first (the user re-supplied the PAT; the
+  secrets file + restore_pat.sh + push: 39948a1..48c88a5 landed Tasks
+  28-30 and the session note on the remote).
+- escape_second_order.py built and run (twice: the first version's
+  abelian polish STUCK at the rounded point — the diagnosis chain:
+  the flatness hypothesis failed there, the theory-vs-machinery
+  inconsistency forced a toy validation of the degenerate formula
+  (passed, 2.8e-10), which isolated a SIGN BUG in the probe scripts'
+  second-difference (fixed; the battery itself was already correct),
+  and the multi-start discovered the real cause: the abelian landscape
+  has TWO BASINS).
+- THE DISCOVERY: the symmetric subfamily (Aa = diag(alpha,-alpha), Ab =
+  diag(beta,beta)) holds a point 5.6447e-7 BELOW Vol IX's scan optimum
+  — the SHADOW RE-LOCATED at 1.277142125195; the descent from the
+  corrected shadow finds NOTHING (5.83e-12); Task 29's 5.7266e-7 escape
+  = the abelian basin hop 5.6447e-7 + the residual 8.2e-9 (the couplings
+  essential: +2.527e-2; the dense L=10 ordering confirms).
+- ES-1..ES-4: the pairwise-double pencil spectrum (the state-flip
+  involution, the top double 3.59e-13); the first-order CONE with the
+  Aa-block FLAT RIDGE (|W1| <= 1.6e-5); H2 via the degenerate
+  Rayleigh-Schrodinger law (the intrinsic curvature + the
+  level-repulsion resolvent; the 78 tensors; the toy validation): the
+  PURE curvatures +255.99/+255.99/+356.42/+183.34 all positive, the
+  MIXED checkerboard, kappa_ridge +7.83e-5 — NO infinitesimal escape at
+  the corrected shadow; the law checks 1.0e-3..3.6e-3; the t^2 slopes
+  2.014/2.002; both branches of the split checked.
+- ES-5 the CERTIFIED tier: the Sylvester brackets (flint/arb prec 128,
+  the Gershgorin-enclosed Neumann Lyapunov inverses, the ND test on the
+  six leading minors — one sign-convention bug found and fixed via a
+  direct minor printout): the three brackets to width 1.5e-13, the
+  orderings free < symmetric < Vol IX certified, the basin hop 1.65e-5
+  and the residual 2.09e-8 in lambda certified; the inertia counts
+  certify the pairwise-double spectrum.
+- Figures: escape_fig.py (the four-panel escape figure: the
+  decomposition, the t^2 law, the cone/ridge, H2's checkerboard — one
+  annotation clip found by the VLM QA and fixed) + diagram_vol13.html
+  rendered by render_diagram13.py (the updated unification map: the
+  three closures in gold, the ledger at 2).
+- Volume XIII generated (the Vol XII engine clone): 14 pp, 5 tables, 2
+  figures, the stats rows; cover via html2poster at 794px; merged via
+  pypdf.  QA: pdf_qa PASS (12 checks, 2 em-dash line-start warnings —
+  the shared engine's known cosmetic), font.check 0 issues, toc clean,
+  VLM QA all pages ALL CLEAN after the figure fix.
+- README battery row inserted; the venv rebuilt (uv: flint, numpy,
+  scipy, matplotlib, playwright+chromium, reportlab, pypdf, pymupdf,
+  pypdfium2) after the reset wiped it.
+
+Stage Summary:
+- Deliverables: download/The_Resolution_Programme_XIII_The_Three_
+  Closures_and_the_Escape_Quantified.pdf (14 pp) +
+  scripts/escape_second_order.py + escape_second_order_results.json +
+  escape_fig.py + generate_vol13.py + vol13_content.py + merge_vol13.py
+  + cover_vol13.html/pdf + download/sources/diagram_vol13.html +
+  download/figures/escape_quantified.png + unification_map_vol13.png
+  (+ the probe scripts probe_shadow*.py, probe_debug.py,
+  toy_degenerate.py documenting the discovery chain).
+- THE ESCAPE RE-ADJUDICATED: Task 29's 5.7266e-7 = the abelian basin
+  hop 5.6447e-7 (the shadow re-located — Vol IX's optimum superseded
+  by the symmetric basin) + the residual 8.2e-9 (certified).  NO
+  infinitesimal escape at the corrected shadow (H2's curvature read:
+  the pure positive, the mixed near-null).  The shadow-equality
+  refuted at the 8.2e-9 scan level — 69x smaller than reported; the
+  class-level certificate filed into the box-count wall's ledger.
+  The open ledger: 2 links (the box-count wall, the seed-level
+  boundary).
