@@ -3,7 +3,7 @@
   "order": "Task 35 part 2: the 12-parameter free-class wall (D_free >= sqrt(lambda*)) \u2014 the last gap to the full shadow equivalence theorem",
   "date": "2026-09-30",
   "lambda_star": "1.6310919765642504414737578928177383666901925754942",
-  "wall_time_s": 56.09819936752319
+  "wall_time_s": 56.05313420295715
  },
  "FW0_refs": {
   "points": [
@@ -73,20 +73,20 @@
    "the Gershgorin domain gate (rho(K) < 0.97)",
    "the full interval Rayleigh (the powered Neumann Lyapunovs \u2014 the O-4 instrument generalized)"
   ],
-  "calls": 260000,
-  "certified": 98814,
-  "window_passes": 98814,
+  "calls": 360000,
+  "certified": 135406,
+  "window_passes": 135406,
   "e0_poly_passes": 0,
   "rayleigh_passes": 0,
-  "boundary_tagged": 130014,
-  "farout_tagged": 31172,
-  "stalled": 31172,
-  "stack_remaining": 29,
+  "boundary_tagged": 180015,
+  "farout_tagged": 44579,
+  "stalled": 44579,
+  "stack_remaining": 31,
   "stall_records": 2000
  },
  "FW4_verdict": {
-  "certified_so_far": 98814,
-  "calls": 260000,
+  "certified_so_far": 135406,
+  "calls": 360000,
   "verdict": "Task 35 part 2 builds the 12-parameter free-class wall's engine: the compression theorem (the structural frame, the floor measured at sqrt(lambda*)), the window + the e0-poly + the interval-Rayleigh certificate stack (the O-4 instrument generalized, all validated), the 12-D anisotropic bisection with the checkpoint/resume protocol.  The pilot's first certified leaves are banked; the honest residue: the rho-boundary layer (the free e4/e5 divergence forms \u2014 the named next instrument), the critical-locus continuation runs, the unbounded far-field laws.  D_free >= sqrt(lambda*) holds on the certified region; with the drain of Task 35 part 1 (the abelian cover COMPLETE) and part A: the shadow equivalence theorem's remaining gap is exactly this wall's residue."
  }
 }
