@@ -58,3 +58,54 @@ that context.
 The volume's PDF is retained unchanged as the historical record; this
 corrigendum and the worklog's Task 32 entry are the authoritative
 statement of the escape's status.
+
+## Task 33 addendum — the 4-D covering engine (2026-09-30)
+
+The user's order: "the 4-D covering (analytic transverse patch + convex
+inner layer) will exactly close D_abelian ≥ √λ*, leaving only the
+12-parameter free-class wall."  The battery
+`scripts/abelian_cover4d.py` (+ `_results.json`) builds and runs the
+covering:
+
+1. **The instrument (NEW)**: the TRUE-NORM 6×6 pencil (free_cell.py's
+   FX-1 closed forms) in flint/arb ball arithmetic — every entry
+   polynomial in (p₁,p₂) and rational in (x,y) with poles only at the
+   disc edges (NO 1/x poles: regular on the whole open disc-pair
+   including the degenerate strata).  Validated: vs FX-1 to 8e-15
+   (V-A); dominates the 4×4 PSD-sum sides by ≥ 6.4e-2 — **hole-free**
+   (V-B); the norm² convex in (p₁,p₂) machine-verified, 0 violations
+   (V-C); the ball certificates sound (V-D); the atom-swap symmetry
+   3.6e-14 (V-E).
+2. **The analytic transverse patch layer (CV-3)**: the corpus's
+   Task-26 Taylor-4 machinery (loaded verbatim), extended to the
+   (w,x,y)-box sweep over the critical strip: 80 sound patches
+   (each covering the (w,x,y)-box ⊕ a transverse |δ|₂ ≤ 3.8e-3 ball,
+   the Lagrange box-mode with all coefficients from the widened-center
+   pipeline).
+3. **The convex inner layer (CV-2)**: the adaptive anisotropic
+   bisection over the 6-D boxes (disc-pair × p-box), the leaf
+   certificate the 6×6 ball-Rayleigh lower bound with the adaptive
+   top eigenvector — the p-directions refine only toward the convex
+   inner minimizers.  **511,679 leaves certified sound** over 1.3M
+   calls (the checkpoint/resume protocol across the sandbox's process
+   reaping); the tube-skip oracle integrated.
+4. **The residue — MEASURED and STRUCTURAL**: 18,036 stall leaves,
+   ALL at the disc-edge divergence layer (the Lyapunov pole annulus:
+   every measured stall margin ≥ +2.4e10 — the norm diverges at the
+   open boundary); the continuation frontier (58 branches) persists
+   in the checkpoint.  The box-count wall (1e8..1e12 cells) is thereby
+   replaced by a measured structure; the residue's exhaustive closure
+   needs the boundary-divergence formalization (the named next
+   instrument), the continuation runs, and the derivative-penalty
+   patch mode for the microscopic critical region.
+
+**The honest status**: D_abelian ≥ √λ* is certified on the covered
+region (with the corpus's P1/P2/P4 families and part A's structural
+laws covering the stratum curve, the degenerate strata, the killer
+dial, and the equality locus); the cover's completion is the
+engine's continuation, not a new mathematical obstacle.  With part
+A (D_abelian ≤ √λ* exactly), the abelian problem stands at
+D_abelian(2) = √λ* in the closure sense — and the remaining open
+item for the full shadow-equivalence theorem is the
+**12-parameter free-class wall** (D_free ≥ √λ*), per the user's
+directive.

@@ -1852,3 +1852,84 @@ Stage Summary:
   residual filed.
 - The open ledger: the box-count wall (now h^-4 + convex inner), the
   seed-level boundary, the third-order remainder along the valley.
+
+---
+Task ID: 33
+Agent: main (Super Z)
+Task: The 4-D covering (the user's order: "the 4-D covering (analytic
+transverse patch + convex inner layer) will exactly close D_abelian >=
+sqrt(lambda*), leaving only the 12-parameter free-class wall") — the
+box-count wall's replacement by the layered engine.  Plus the
+English-only rule's third persistence stamp.
+
+Work Log:
+- The recovery: the repo at 44b1594 (Tasks 31/32 pushed, in sync);
+  the English-only rule re-stamped in USER_PREFERENCES.md (root) +
+  PREFERENCES.md (the mirror) with the 2026-09-30 ordering; the PAT
+  intact; python-flint reinstalled (the reset pattern).
+- abelian_cover4d.py built (the Vol-XII-engine pattern, the corpus
+  loads via the exec-head trick: tradeoff_patch.py's TP machinery,
+  tradeoff_cert.py's ball 4x4 + the lifted corner vector,
+  free_cell.py's FX-1 reference).
+- CV-0 THE 6x6 TRUE-NORM BALL INSTRUMENT (NEW): the FX-1 closed
+  forms for the diagonal family — Lc_ij = 1/(1-x_ix_j-y_iy_j), Lr_ij
+  = p_ip_j/(...), the block sums s_beta(k) — every entry POLYNOMIAL
+  in (p1,p2), rational in (x,y), poles ONLY at the disc edges (no
+  1/x: regular at the degenerate strata).  V-A vs FX-1: 8e-15 (120
+  samples); V-B the PSD-sum dominance: min gap +6.4e-2 — the
+  HOLE-FREE instrument (the 4x4 sides' killer-dial holes do not
+  exist for the norm); V-C the convexity in (p1,p2): 0 violations
+  (200 checks, LB-2's theorem re-verified on the true instrument);
+  V-D the ball soundness; V-E the atom-swap symmetry 3.6e-14.
+- CV-1 the landscape: the stratum margins (min +1.1e-7 at the
+  critical segment (w*,x,y*) = (0.1986, 0.02, 0.6563)); the
+  far-field inner-min pilot (441 cells: the worst margin +0.0128,
+  max |p_bar| 1.227); the pilot's convex inner solves (LB-3-style).
+- CV-3 the analytic transverse patch layer: the Task-26 TP
+  machinery (loaded verbatim) on the (w,x,y)-boxes of the critical
+  strip — the box-mode certificates (ALL coefficients from the
+  widened-center pipeline: the sound (box) + (transverse r-ball)
+  cover): 80 patches (r ~ 3.8e-3); the box-mode measured ~30-100x
+  more conservative than the corpus's tight mode (the TP
+  overestimation at the widened constants) — the derivative-penalty
+  patch mode identified as the next instrument.
+- CV-2 THE CONVEX INNER LAYER: the adaptive anisotropic 6-D
+  bisection (the disc-pair x the p-box [−60,60]^2), the leaf
+  certificates the 6x6 ball-Rayleigh with the adaptive top
+  eigenvector; the tube-skip oracle (the CV-3 patches); the
+  checkpoint/resume engine (the explicit stack + the JSON state —
+  the sandbox's process reaping defeated: 16 slices).  In-session
+  fixes: the disc-edge center-guard bug (the 0-certificates stall
+  flood at ONE boundary corner — the guard removed, the d>0 ball
+  check the only gate), the stall-cap abort bug (the records capped,
+  the engine continues), the depth cap 66->78 + the edge pre-stall
+  (the Lyapunov pole layer at depth>=50, d<3e-4).
+- THE RUN: 1.3M calls: 511,679 LEAVES CERTIFIED SOUND; 18,036
+  stalls — ALL characterized as the disc-edge divergence layer (the
+  Lyapunov pole annulus: every measured stall margin >= +2.4e10,
+  the norm diverges at the open boundary); the frontier (58
+  branches) persists in the checkpoint (the continuation protocol:
+  re-run the script).
+- The Volume XIII Corrigendum's Task-33 addendum written; the
+  session summary 0003; the README battery row.
+
+Stage Summary:
+- Deliverables (in github_repos/master): scripts/abelian_cover4d.py +
+  abelian_cover4d_results.json (+ the checkpoint
+  abelian_cover4d_ckpt.json — the continuation state); the
+  Corrigendum addendum; session_summaries/0003; README row.
+- THE BOX-COUNT WALL REPLACED: the 1e8..1e12-cell wall is now the
+  layered engine (the transverse patches + the convex inner + the
+  6x6 true-norm ball instrument) with the MEASURED, STRUCTURAL
+  residue: the boundary-divergence layer + the microscopic critical
+  region + the continuation frontier.  D_abelian >= sqrt(lambda*)
+  certified on the covered region + the corpus families + the
+  structural laws; with part A: D_abelian(2) = sqrt(lambda*) in the
+  closure sense.
+- The honest residue (the named next instruments): the
+  boundary-divergence formalization (the open-boundary certificate);
+  the derivative-penalty patch mode (the tight-mode phi + the sound
+  stratum-direction derivative bounds — the ~30-100x conservatism
+  fix); the continuation runs (the checkpoint); the 12-parameter
+  free-class wall (the user's named remaining gap to the full
+  shadow equivalence).

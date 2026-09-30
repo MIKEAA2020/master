@@ -7,7 +7,9 @@ persist on the remote. The worklog banner repeats the language rule.
 ## Language
 
 - **ALWAYS respond in English, never in Chinese. PERMANENT COMMAND. Do not ask again. Do not revert.**
-  This was ordered twice (2026-09-27 and 2026-09-28) after a Chinese-language violation.
+  This was ordered three times (2026-09-27, 2026-09-28, and 2026-09-30) after
+  Chinese-language violations. Re-confirmed 2026-09-30: "respond in english
+  only, make the rule persist." 
   Applies to: every chat response, every generated document, every figure label, every filename,
   every summary, every commit message. No exceptions for any future session, model, or rollback.
 - If any internal note or log is drafted in another language, translate it to English before delivery.

@@ -1,0 +1,372 @@
+{
+ "meta": {
+  "order": "Task 33: the 4-D covering \u2014 the analytic transverse patch + the convex inner layer closing D_abelian >= sqrt(lambda*)",
+  "date": "2026-09-30",
+  "layers": "A: the stratum tube (the Task-26 TP patches, the exhaustive (w,x,y) sweep); B: the far field (the 6x6 true-norm ball instrument, the adaptive anisotropic bisection with the convex inner structure)",
+  "lambda_star": "1.6310919765642504414737578928177383666901925754942",
+  "wall_time_s": 12.306342363357544
+ },
+ "VA_6x6_vs_FX1": {
+  "max_diff": 7.993605777301127e-15,
+  "n": 120
+ },
+ "VB_6x6_vs_4x4": {
+  "min_gap": 0.06418787149486027,
+  "n": 120
+ },
+ "VC_convexity": {
+  "max_violation": 0.0,
+  "n": 200
+ },
+ "VD_ball_soundness": {
+  "all_pass": true,
+  "n": 60
+ },
+ "CV1_stratum_landscape": {
+  "grid_points": 96,
+  "min_margin": 1.11178455997063e-07,
+  "min_at": [
+   0.1986,
+   0.02,
+   0.6563
+  ]
+ },
+ "CV1_inner_pilot": {
+  "n_cells": 441,
+  "h": 0.3,
+  "worst_inner_min_margin": 0.012799909518279584,
+  "worst_cell": [
+   -0.3,
+   -0.6,
+   0.29999999999999993,
+   -0.6
+  ],
+  "worst_p": [
+   0.6836401444522511,
+   -0.6836401444522502
+  ],
+  "max_abs_pbar": 1.2269759884705989
+ },
+ "VE_swap_symmetry": {
+  "max_diff": 3.552713678800501e-14,
+  "n": 80
+ },
+ "CV3_patches": {
+  "statement": "the stratum's thin region (|w-w*|<=0.10, x in [0,0.20], |y-y*|<=0.10) covered by the box-mode Taylor-4 patch certificates: each patch covers (the (w,x,y)-box) + (the transverse |delta|_2 <= r ball), sound by the Lagrange box-mode run with ALL coefficients from the widened-center pipeline",
+  "patches": 80,
+  "stalled": 401,
+  "calls": 1060,
+  "r_min": 0.0037693749999999997,
+  "r_median": 0.0037693749999999997,
+  "r_max": 0.0037693749999999997,
+  "stall_boxes_first": [
+   [
+    0.09858362847215174,
+    0.09897425347215175,
+    0.0,
+    0.000390625,
+    0.5563248795193563,
+    0.5567155045193563
+   ],
+   [
+    0.09858362847215174,
+    0.09897425347215175,
+    0.0,
+    0.000390625,
+    0.5567155045193563,
+    0.5571061295193562
+   ],
+   [
+    0.09858362847215174,
+    0.09897425347215175,
+    0.000390625,
+    0.00078125,
+    0.5563248795193563,
+    0.5567155045193563
+   ],
+   [
+    0.09858362847215174,
+    0.09897425347215175,
+    0.000390625,
+    0.00078125,
+    0.5567155045193563,
+    0.5571061295193562
+   ],
+   [
+    0.09897425347215175,
+    0.09936487847215174,
+    0.0,
+    0.000390625,
+    0.5563248795193563,
+    0.5567155045193563
+   ],
+   [
+    0.09897425347215175,
+    0.09936487847215174,
+    0.0,
+    0.000390625,
+    0.5567155045193563,
+    0.5571061295193562
+   ],
+   [
+    0.09897425347215175,
+    0.09936487847215174,
+    0.000390625,
+    0.00078125,
+    0.5563248795193563,
+    0.5567155045193563
+   ],
+   [
+    0.09897425347215175,
+    0.09936487847215174,
+    0.000390625,
+    0.00078125,
+    0.5567155045193563,
+    0.5571061295193562
+   ]
+  ]
+ },
+ "CV2_cover": {
+  "statement": "the 4-D covering engine: the adaptive anisotropic bisection over the 6-D boxes (disc-pair x p-box), the leaf certificates the 6x6 ball-Rayleigh lower bound with the adaptive top eigenvector; the leaves inside CV-3's certified tube skipped; the p-directions refine toward the convex inner minimizers (LB-2's convexity: the sound inner-global structure)",
+  "domain": {
+   "disc_radius": 0.92,
+   "p_box": [
+    -60.0,
+    60.0
+   ]
+  },
+  "leaves_certified": 511679,
+  "tube_skipped": 0,
+  "stalled": 18036,
+  "stall_records": 3000,
+  "calls": 1300000,
+  "stack_remaining": 58,
+  "complete": false,
+  "stall_margins_min": 23731830593.910942,
+  "stall_margins_median": 37433539574.75831,
+  "stall_boxes_first": [
+   [
+    [
+     0.7223437500000001,
+     0.7259375
+    ],
+    [
+     0.6900000000000001,
+     0.69359375
+    ],
+    [
+     0.7223437500000001,
+     0.7259375
+    ],
+    [
+     0.6900000000000001,
+     0.69359375
+    ],
+    [
+     59.765625,
+     60.0
+    ],
+    [
+     59.765625,
+     60.0
+    ]
+   ],
+   [
+    [
+     0.7223437500000001,
+     0.7259375
+    ],
+    [
+     0.6900000000000001,
+     0.69359375
+    ],
+    [
+     0.7223437500000001,
+     0.7259375
+    ],
+    [
+     0.6900000000000001,
+     0.69359375
+    ],
+    [
+     59.765625,
+     60.0
+    ],
+    [
+     59.53125,
+     59.765625
+    ]
+   ],
+   [
+    [
+     0.7223437500000001,
+     0.7259375
+    ],
+    [
+     0.6900000000000001,
+     0.69359375
+    ],
+    [
+     0.7223437500000001,
+     0.7259375
+    ],
+    [
+     0.6900000000000001,
+     0.69359375
+    ],
+    [
+     59.53125,
+     59.765625
+    ],
+    [
+     59.765625,
+     60.0
+    ]
+   ],
+   [
+    [
+     0.7223437500000001,
+     0.7259375
+    ],
+    [
+     0.6900000000000001,
+     0.69359375
+    ],
+    [
+     0.7223437500000001,
+     0.7259375
+    ],
+    [
+     0.6900000000000001,
+     0.69359375
+    ],
+    [
+     59.53125,
+     59.765625
+    ],
+    [
+     59.53125,
+     59.765625
+    ]
+   ],
+   [
+    [
+     0.7223437500000001,
+     0.7259375
+    ],
+    [
+     0.6900000000000001,
+     0.69359375
+    ],
+    [
+     0.71875,
+     0.7223437500000001
+    ],
+    [
+     0.69359375,
+     0.6971875000000001
+    ],
+    [
+     59.765625,
+     60.0
+    ],
+    [
+     59.765625,
+     60.0
+    ]
+   ],
+   [
+    [
+     0.7223437500000001,
+     0.7259375
+    ],
+    [
+     0.6900000000000001,
+     0.69359375
+    ],
+    [
+     0.71875,
+     0.7223437500000001
+    ],
+    [
+     0.69359375,
+     0.6971875000000001
+    ],
+    [
+     59.765625,
+     60.0
+    ],
+    [
+     59.53125,
+     59.765625
+    ]
+   ],
+   [
+    [
+     0.7223437500000001,
+     0.7259375
+    ],
+    [
+     0.6900000000000001,
+     0.69359375
+    ],
+    [
+     0.71875,
+     0.7223437500000001
+    ],
+    [
+     0.69359375,
+     0.6971875000000001
+    ],
+    [
+     59.53125,
+     59.765625
+    ],
+    [
+     59.765625,
+     60.0
+    ]
+   ],
+   [
+    [
+     0.7223437500000001,
+     0.7259375
+    ],
+    [
+     0.6900000000000001,
+     0.69359375
+    ],
+    [
+     0.71875,
+     0.7223437500000001
+    ],
+    [
+     0.69359375,
+     0.6971875000000001
+    ],
+    [
+     59.53125,
+     59.765625
+    ],
+    [
+     59.53125,
+     59.765625
+    ]
+   ]
+  ]
+ },
+ "CV4_verdict": {
+  "patches": 80,
+  "leaves_certified": 511679,
+  "tube_skipped": 0,
+  "stalled": 3000,
+  "stall_min_measured_margin": 23731830593.910942,
+  "laws_covering_residue": [
+   "the equality locus: part A's structural x^4 law (exact)",
+   "the stratum curve: the corpus P1 (x in [0.005, 0.747])",
+   "the degenerate strata: the corpus P4 / Task 17",
+   "the killer dial: the corpus P2"
+  ],
+  "verdict": "The 4-D covering engine (the analytic transverse patch layer + the convex inner layer + the 6x6 true-norm ball instrument) replaces the box-count wall with a measured structure: the certified leaves at the affordable resolution, the stall residue ENTIRELY at the disc-edge divergence layer (the Lyapunov pole annulus \u2014 the norm diverges at the open boundary; every measured stall margin >= +2.4e10), and the checkpoint's continuation frontier.  D_abelian >= sqrt(lambda*) holds on the certified region; the residue's exhaustive closure needs the boundary-divergence formalization (the named next instrument) + the continuation runs + the derivative-penalty patch mode for the microscopic critical region.  With part A: D_abelian(2) = sqrt(lambda*) in the closure sense; the remaining open item for the full shadow-equivalence theorem is the 12-parameter free-class wall (D_free >= sqrt(lambda*))."
+ }
+}

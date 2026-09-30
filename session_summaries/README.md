@@ -52,3 +52,7 @@ instead of re-deriving state from chat history (the token-saving protocol).
 - `0002_task32_class_level.md` — Task 32: the class-level adjudication
   (the escape retracted; the structural x^4 law; the kappa sign
   resolved; the p-convexity; the V-cone).
+- `0003_task33_covering.md` — Task 33: the 4-D covering engine (the
+  6x6 true-norm ball instrument, hole-free; the layered run — 511,679
+  certified leaves; the box-count wall replaced by the measured
+  structural residue; the checkpoint/resume protocol).
