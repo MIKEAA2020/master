@@ -1,8 +1,8 @@
 # Session 0005 — Task 35: the drain and the free-class wall's engine
 
 - **Date**: 2026-09-30
-- **HEAD at end**: (this session's commit) — Task 35: the drain +
-  the free-class wall's engine.
+- **HEAD at end**: c60a5d1 — Task 35: the drain + the
+  free-class wall's engine.
 - **Last Task ID**: 35
 - **Ledger (open)**: (1) the drain's frontier (~30 branches — the
   continuation protocol: re-run `scripts/abelian_cover4d.py`; the
