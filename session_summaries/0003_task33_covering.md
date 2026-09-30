@@ -1,7 +1,7 @@
 # Session 0003 — Task 33: the 4-D covering engine (the box-count wall replaced)
 
 - **Date**: 2026-09-30
-- **HEAD at end**: (this session's commit) — Task 33: the 4-D covering
+- **HEAD at end**: f3d6019 — Task 33: the 4-D covering
   battery (the 6×6 true-norm ball instrument + the layered engine).
 - **Last Task ID**: 33
 - **Ledger (open)**: the class-level lower bound's status ADVANCED —
