@@ -1,0 +1,29 @@
+{
+ "meta": {
+  "order": "Task 36 probe B: the sound interval certificate + the coverage on the actual stalls",
+  "date": "2026-10-01",
+  "lambda_star": "1.6310919765642504414737578928177383666901925754942"
+ },
+ "Pe_stalls": {
+  "n": 2000,
+  "certified": 1755,
+  "by_N": {
+   "2": 1755
+  },
+  "by_rho_band": {
+   "rho>=1.2": [
+    1755,
+    2000
+   ]
+  }
+ },
+ "Pe_stack": {
+  "n": 31,
+  "certified": 3,
+  "by_N": {
+   "2": 3
+  }
+ },
+ "Pc_xcancellation_conic": [],
+ "Pc_soundness_violations": 0
+}

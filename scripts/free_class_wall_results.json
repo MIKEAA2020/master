@@ -3,7 +3,7 @@
   "order": "Task 35 part 2: the 12-parameter free-class wall (D_free >= sqrt(lambda*)) \u2014 the last gap to the full shadow equivalence theorem",
   "date": "2026-09-30",
   "lambda_star": "1.6310919765642504414737578928177383666901925754942",
-  "wall_time_s": 56.05313420295715
+  "wall_time_s": 116.27029991149902
  },
  "FW0_refs": {
   "points": [
@@ -70,23 +70,26 @@
   "instruments": [
    "the window (O-2's cut-web, polynomial, the fixed + corpus vectors)",
    "the e0-poly (the NEW free corner-anchor: the Lc-PSD-dropped polynomial form, the zero-WFA anchor = 2)",
+   "THE e4/e5 PARTIAL-SUM UNSTABLE-MODE FORMS (Task 36: the word-power sandwiches at the N-ladder, the fixed + adaptive unstable-mode carriers, the PSD-clamped poison control \u2014 the rho-boundary layer's divergence certificates, the Task-34 BDC mirror)",
    "the Gershgorin domain gate (rho(K) < 0.97)",
    "the full interval Rayleigh (the powered Neumann Lyapunovs \u2014 the O-4 instrument generalized)"
   ],
-  "calls": 360000,
-  "certified": 135406,
+  "calls": 520000,
+  "certified": 216402,
   "window_passes": 135406,
   "e0_poly_passes": 0,
+  "e45_partial_passes": 80996,
   "rayleigh_passes": 0,
   "boundary_tagged": 180015,
-  "farout_tagged": 44579,
-  "stalled": 44579,
-  "stack_remaining": 31,
-  "stall_records": 2000
+  "farout_tagged": 123583,
+  "stalled": 0,
+  "stack_remaining": 39,
+  "stall_records": 0
  },
  "FW4_verdict": {
-  "certified_so_far": 135406,
-  "calls": 360000,
-  "verdict": "Task 35 part 2 builds the 12-parameter free-class wall's engine: the compression theorem (the structural frame, the floor measured at sqrt(lambda*)), the window + the e0-poly + the interval-Rayleigh certificate stack (the O-4 instrument generalized, all validated), the 12-D anisotropic bisection with the checkpoint/resume protocol.  The pilot's first certified leaves are banked; the honest residue: the rho-boundary layer (the free e4/e5 divergence forms \u2014 the named next instrument), the critical-locus continuation runs, the unbounded far-field laws.  D_free >= sqrt(lambda*) holds on the certified region; with the drain of Task 35 part 1 (the abelian cover COMPLETE) and part A: the shadow equivalence theorem's remaining gap is exactly this wall's residue."
+  "certified_so_far": 216402,
+  "e45_partial_passes": 80996,
+  "calls": 520000,
+  "verdict": "Task 36 closes the rho-boundary residue the way Task 34 closed the abelian one: the free e4/e5 unstable-mode divergence certificates (the partial-sum word-power sandwiches at the class vectors \u2014 polynomial, sound at every in-class point including the X-cancellation strata, the excited out-of-class points vacuous) inserted into the cheap-first chain between the e0-poly and the domain gates.  The probes: the anchor EXACT (2), the soundness direction validated, the divergence law rho^{2N} confirmed, the coverage 87.8% of the recorded stalls at the census widths (the remainder refines).  D_free >= sqrt(lambda*) on the certified region; the remaining honest residue: the critical-locus continuation (the line-atom valley), the unbounded far-field laws, the extreme far-out sample remainder."
  }
 }

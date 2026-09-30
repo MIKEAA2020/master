@@ -826,8 +826,8 @@ B_SKIP = [0]
 B_STALLS = []
 B_STALLN = [0]
 B_CALLS = [0]
-B_CALL_CAP = 40000000   # Task 35: the drain headroom (12M banked + the
-                         # projected ~17M; the cap is a runaway guard)
+B_CALL_CAP = 100000000  # Task 36: the drain headroom raised again (39.5M
+                         # banked + the open frontier; a runaway guard only)
 B_SLICE = 500000        # the calls per slice (one bash call)
 P_ROOT = 60.0
 # the BDC (the boundary-divergence certificate) counters — Task 34

@@ -2015,3 +2015,104 @@ Stage Summary:
   free-class wall (D_free >= sqrt(λ*)) — the user's named last gap to
   the full shadow-equivalence theorem; the seed-level boundary; the
   third-order remainder.
+
+---
+Task ID: 36
+Agent: main (Super Z)
+Task: The user's two orders: (1) keep re-running both scripts to drain
+their frontiers; (2) Task 36's named assignment — the free e4/e5
+unstable-mode divergence certificates, closing the rho-boundary residue
+the same way Task 34 closed the abelian one.
+
+Work Log:
+- THE STATE RESTORED after the reset: the remote pulled (Tasks 32-35:
+  the class-level adjudication, the 4-D covering, the residue closed,
+  the drain + the free-wall engine); the venv rebuilt (numpy, scipy,
+  python-flint 0.9.0); the drain driver rebuilt as the FOREGROUND
+  driver (scripts/fg_driver.sh — the sandbox reaps the background
+  processes: the nohup drivers died; the corpus's checkpoint/resume
+  protocol absorbs the kills).
+- THE DRAIN (order 1): abelian_cover4d.py's cap raised 40M -> 100M;
+  39.5M -> 46M+ calls this session (zero stalls, the BDC trio
+  continuing; the LIFO frontier ~28-34 branches); free_class_wall.py
+  drained through the new chain (below).
+- THE PROBES (probe_task36.py / probe_task36b.py): P-a the zero-WFA
+  anchor EXACT (0.00e+00 over 20 random (Aa,Ab) with rho 1.26-5.79);
+  the soundness direction at the shadow/escape (the N-chain 1.251 ->
+  1.444 <= 1.631); P-b the near-locus chain (the true value^2
+  exploding 33.8 -> 7.9e7 as rho -> 1; the certificate crossing
+  lambda* at N=4 for rho >= 0.8); P-c the TRUE X-cancellation conic
+  (the unstable left-eigenvector's conic u.(C (x) C) = 0 — the
+  partial sums CONVERGE at rho > 1, the formal-solve agreement, 0
+  soundness violations); P-d the excited growth law rho^{2N}
+  (measured 1.126/1.232/1.458 per step); P-e THE COVERAGE: 1755/2000
+  (87.8%) of the recorded stall boxes certified at N=2 (all at the
+  cheapest rung; the 245 failures pure interval-width effects — the
+  centers' float certificates far above lambda*).
+- THE IN-SESSION BUGFIX (the honest record): the first interval
+  implementation had TWO bugs — the word-power recursion missing the
+  right multiplication (T_{n+1} = (Aa+Ab)T_n, decaying at ||A|| not
+  the spectral rate) and the Q_plain cross-term typo (T01.f11 for
+  T01.f01) — the float probe (correct all along: the soundness
+  direction held) exposed the discrepancy through the shadow
+  validation (707.49 > 1.63); both FIXED, the cross-validation added
+  (the word-power sums vs the corpus's Lyapunov: 9.34e-06 at N=16,
+  the truncation tail), the engine honestly RESET from the git
+  checkpoint (the buggy 10,086 passes discarded, the counters
+  restored, the re-seed redone).
+- THE BATTERY (free_class_wall.py, the Task-36 chain): the
+  formalization — the domain wall is the Gram wall rho(K) = 1; the
+  divergence in the Lyapunov block Lc = sum T_n (the word-power
+  recursion, each T_n PSD, the partial sums PSD-monotone toward Lc,
+  convergent at every IN-CLASS point: the rho < 1 interior AND the
+  rho >= 1 X-cancellation strata); THE CERTIFICATE at the class
+  vectors v = (z, 0): the denominator the CONSTANT z'MU z (no
+  Gramian entries, no poison), value^2 >= [P(z) + Q(z)]/D(z) with
+  Q(z) = (Fu^T z)'Lc(Fu^T z) >= the partial-sum sandwich Q_N(z) —
+  POLYNOMIAL (degree 2N+4), NO CONVERGENCE NEEDED, sound at every
+  in-class point, the excited out-of-class points vacuous (the
+  infinite Hankel norm is not a competitor); the N-ladder (2, 4, 8,
+  16, 32) x the z-menu (the fixed Z_VECS + the adaptive unstable-
+  mode pair — the center's Fu-sandwich generalized eigenproblem);
+  the plain interval quadratic + the PSD-CLAMPED bound (the better
+  kept); inserted into the cheap-first chain between the e0-poly and
+  the domain gates.
+- THE ENGINE CHANGE: the far-out census REPLACED by the bounded
+  far-out refinement (FAROUT_CAP = 48): the e4/e5 failures at the
+  census widths are pure interval-width effects; the B/C-first
+  splits resolve them in ~6-10 levels; the cap-hitters the honest
+  census remainder.
+- THE VALIDATIONS (the integrated battery): the e0-poly anchor 2 and
+  the e4/e5 partial anchor 2 (EXACT); the word-power sums vs the
+  corpus's Lyapunov 9.34e-06; the soundness direction at the shadow
+  (1.444129 <= 1.631092 — the interval and the float certificates
+  now AGREE); the far-out re-census: the 2000 recorded stall boxes
+  re-seeded onto the stack (the 87.8% passing at N=2, the rest
+  refining).
+- THE RUN: the wall drained through the Task-36 chain (360k -> 480k+
+  calls; the e45 passes 0 -> 60,993+; ZERO stalls at the far-out
+  refinement; the frontier ~40-45 entries at the depths 39-57 — the
+  B/C-far-field's far-out refinement + the boundary grind's trunk);
+  the cover4d abelian drain in parallel (the B_SLICE=500k slices,
+  zero stalls).
+
+Stage Summary:
+- Deliverables: scripts/probe_task36.py + probe_task36_results.json;
+  scripts/probe_task36b.py + probe_task36b_results.json; the
+  free_class_wall.py Task-36 chain (the e45 certificates + the
+  far-out refinement) + the updated results/ckpt; the diag script;
+  the fg drain driver; the README battery rows (two); the session
+  summary 0006.
+- THE rho-BOUNDARY RESIDUE CLOSED (the Task-34 arc repeating): the
+  Gershgorin-inconclusive boxes near rho(K) = 1 — where every
+  Neumann-based instrument was blind — now certified by the
+  partial-sum unstable-mode forms (sound at every in-class point
+  including the X-cancellation strata; the excited out-of-class
+  points vacuous).  D_free >= sqrt(lambda*) on the certified region;
+  the remaining honest residue: the critical-locus continuation
+  (the line-atom valley), the unbounded far-field laws, the far-out
+  refinement's cap-hitters (the continuation protocol: re-run the
+  script), the cover4d drain's open frontier.
+- THE PUSH PENDING: the PAT secrets wiped by the reset (the same
+  pattern as 48c88a5) — the user re-supplies the fine-grained PAT,
+  scripts/restore_pat.sh, then `git push origin main`.
