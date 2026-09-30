@@ -1,0 +1,160 @@
+{
+ "meta": {
+  "order": "Task 32 part A: the class-level adjudication \u2014 the boundary valley, the escape's retraction, the exact closure D_abelian <= sqrt(lambda*)",
+  "date": "2026-09-30",
+  "wall_time_s": 11.899231195449829
+ },
+ "CL0": {
+  "line_atom": 1.2771421129084461,
+  "sqrt_lambda_star": 1.2771421129084461,
+  "symmetric_shadow": 1.277142125269422,
+  "shadow_minus_sqrt_lambda": 1.2360975798486606e-08
+ },
+ "CL1_curve": [
+  {
+   "x": 0.0715219,
+   "norm": 1.277148544609775,
+   "delta": 6.431701328857287e-06
+  },
+  {
+   "x": 0.05,
+   "norm": 1.2771436489739656,
+   "delta": 1.5360655194474049e-06
+  },
+  {
+   "x": 0.03,
+   "norm": 1.2771423119775365,
+   "delta": 1.990690903230785e-07
+  },
+  {
+   "x": 0.02,
+   "norm": 1.2771421522306206,
+   "delta": 3.9322174405498345e-08
+  },
+  {
+   "x": 0.0149531,
+   "norm": 1.2771421251953508,
+   "delta": 1.228690460486348e-08
+  },
+  {
+   "x": 0.01,
+   "norm": 1.2771421153660831,
+   "delta": 2.4576369828110955e-09
+  },
+  {
+   "x": 0.005,
+   "norm": 1.2771421130620162,
+   "delta": 1.535700455690403e-10
+  },
+  {
+   "x": 0.002,
+   "norm": 1.2771421129130702,
+   "delta": 4.624078897563777e-12
+  },
+  {
+   "x": 0.001,
+   "norm": 1.2771421129069116,
+   "delta": -1.5345502646368914e-12
+  }
+ ],
+ "CL1_quartic_fit_K": 0.627750069981392,
+ "CL1_profile": [
+  {
+   "x": 0.0715,
+   "best": 1.2771485358879018,
+   "c": 0.3970882709308491,
+   "y": 0.6563055760741145
+  },
+  {
+   "x": 0.03,
+   "best": 1.2771423119767191,
+   "c": 0.3971066760005164,
+   "y": 0.6563219631184614
+  },
+  {
+   "x": 0.01,
+   "best": 1.2771421153660512,
+   "c": 0.39710742626745066,
+   "y": 0.6563224153102265
+  },
+  {
+   "x": 0.003,
+   "best": 1.2771421129276004,
+   "c": 0.39710759563852027,
+   "y": 0.6563221978533337
+  },
+  {
+   "x": 0.001,
+   "best": 1.2771421129000355,
+   "c": 0.39710760235255405,
+   "y": 0.6563218761078082
+  }
+ ],
+ "CL1_symmetric_descent": [
+  {
+   "a": 0.0149531,
+   "norm": 1.2771421252695283,
+   "delta": 1.2361082157852366e-08
+  },
+  {
+   "a": 0.005,
+   "norm": 1.2771421132836211,
+   "delta": 3.7517500217632005e-10
+  },
+  {
+   "a": 0.001,
+   "norm": 1.2771421140542007,
+   "delta": 1.14575460230526e-09
+  },
+  {
+   "a": 0.0001,
+   "norm": 1.2771421931434705,
+   "delta": 8.023502440224206e-08
+  }
+ ],
+ "CL1_placement": {
+  "shadow_2px": 0.3971069507393479,
+  "shadow_y": 0.6563223465,
+  "vol_ix_2px": 0.3964817263064504,
+  "vol_ix_y": 0.656323579,
+  "c_star": 0.39710728735039735,
+  "y_star": 0.6563224669957891
+ },
+ "CL2": {
+  "free_escape": 1.2771421169949382,
+  "free_escape_minus_sqrt_lambda": 4.086492033650302e-09,
+  "abelian_point_x_0.01": 1.2771421153660831,
+  "abelian_point_minus_free_escape": -1.6288550508392063e-09
+ },
+ "CL2_anisotropy": {
+  "dB_da": 888.00756131433,
+  "ratio": 888.00756131433
+ },
+ "CL2_shell_recheck": {
+  "max_la_minus_pair": -1.0824346663440565e-07
+ },
+ "CL2_dense_cross_check": {
+  "pair_x1e-3": 1.2766195178080493,
+  "line_atom": 1.2766195178078386
+ },
+ "CL3_reduction_check": 7.173100728683419e-15,
+ "CL3_exact": {
+  "reduced_charpoly_numerator": "c**2*lambda**2*y**2 - c**2*lambda**2 + 9*c**2*lambda*x**8*y**2 - 18*c**2*lambda*x**4*y**6 + 32*c**2*lambda*x**4*y**4 - 14*c**2*lambda*x**4*y**2 + 3*c**2*lambda*x**4 + 9*c**2*lambda*y**10 - 32*c**2*lambda*y**8 + 42*c**2*lambda*y**6 - 27*c**2*lambda*y**4 + 8*c**2*lambda*y**2 - 4*c**2*x**8*y**4 - 6*c**2*x**8*y**2 - 2*c**2*x**8 + 8*c**2*x**4*y**8 - 4*c**2*x**4*y**6 - 8*c**2*x**4*y**4 - 4*c**2*y**12 + 10*c**2*y**10 - 6*c**2*y**8 + 6*c*lambda**2*x**8*y - 12*c*lambda**2*x**4*y**5 + 24*c*lambda**2*x**4*y**3 - 12*c*lambda**2*x**4*y + 6*c*lambda**2*y**9 - 24*c*lambda**2*y**7 + 36*c*lambda**2*y**5 - 24*c*lambda**2*y**3 + 6*c*lambda**2*y - 8*c*lambda*x**8*y + 16*c*lambda*x**4*y**5 - 32*c*lambda*x**4*y**3 + 16*c*lambda*x**4*y - 8*c*lambda*y**9 + 32*c*lambda*y**7 - 48*c*lambda*y**5 + 32*c*lambda*y**3 - 8*c*lambda*y + lambda**3*x**8 - 2*lambda**3*x**4*y**4 + 4*lambda**3*x**4*y**2 - 2*lambda**3*x**4 + lambda**3*y**8 - 4*lambda**3*y**6 + 6*lambda**3*y**4 - 4*lambda**3*y**2 + lambda**3 - 3*lambda**2*x**8 + 6*lambda**2*x**4*y**4 - 12*lambda**2*x**4*y**2 + 6*lambda**2*x**4 - 3*lambda**2*y**8 + 12*lambda**2*y**6 - 18*lambda**2*y**4 + 12*lambda**2*y**2 - 3*lambda**2 + 2*lambda*x**8 - 4*lambda*x**4*y**4 + 8*lambda*x**4*y**2 - 4*lambda*x**4 + 2*lambda*y**8 - 8*lambda*y**6 + 12*lambda*y**4 - 8*lambda*y**2 + 2*lambda",
+  "x_exponents": [
+   0,
+   4,
+   8
+  ],
+  "limit_cubic": "-(y - 1)*(y + 1)*(-c**2*lambda**2 - 9*c**2*lambda*y**8 + 23*c**2*lambda*y**6 - 19*c**2*lambda*y**4 + 8*c**2*lambda*y**2 + 4*c**2*y**10 - 6*c**2*y**8 - 6*c*lambda**2*y**7 + 18*c*lambda**2*y**5 - 18*c*lambda**2*y**3 + 6*c*lambda**2*y + 8*c*lambda*y**7 - 24*c*lambda*y**5 + 24*c*lambda*y**3 - 8*c*lambda*y - lambda**3*y**6 + 3*lambda**3*y**4 - 3*lambda**3*y**2 + lambda**3 + 3*lambda**2*y**6 - 9*lambda**2*y**4 + 9*lambda**2*y**2 - 3*lambda**2 - 2*lambda*y**6 + 6*lambda*y**4 - 6*lambda*y**2 + 2*lambda)",
+  "K_exact": 0.627749538471868,
+  "K_measured": 0.627750069981392,
+  "law": "lambda(c, y, x) = lambda_0(c, y) + K(c, y) x^4 + O(x^8): the mirrored family's pencil depends on x only through x^4 = (the D-denominator); the boundary valley's quartic descent is a STRUCTURAL identity",
+  "verdict": "with T2 (the pair never beats its limit) and the x^4 descent: D_abelian(2) <= sqrt(lambda*) EXACTLY \u2014 the abelian closure contains the line-atom value, and no abelian point below it is known or possible on the shell"
+ },
+ "CL3_limit_root": 1.6310919765642509,
+ "CL4": {
+  "sandwich": "1 <= D_free(2) <= D_abelian(2) <= sqrt(lambda*); the line atom attains sqrt(lambda*) in the free class; the abelian closure attains it via the x^4 boundary valley",
+  "escape_verdict": "RETRACTED: both Task 29's 5.73e-7 and Task 31's residual 8.2e-9 were comparisons against stall points of the boundary valley, not against the abelian infimum; every escape point is ABOVE sqrt(lambda*) = 1.2771421129084462",
+  "open": "the class-level LOWER bound D_abelian >= sqrt(lambda*) over the full 6-parameter abelian family (abelian_lower_bound.py); the free-class lower bound (the box-count wall)"
+ }
+}

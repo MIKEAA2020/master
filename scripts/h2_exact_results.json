@@ -1,0 +1,74 @@
+{
+ "meta": {
+  "order": "Task 32 part C: the exact/AD extraction \u2014 the kappa_ridge sign resolved, the cone's true flat set, the honest residual of the H2 theory",
+  "date": "2026-09-30",
+  "wall_time_s": 13.782055616378784
+ },
+ "HX0": {
+  "lambda0": 1.631092007948576,
+  "double_gap": 3.7840397482113985e-10,
+  "isolation_gap": 1.1229290410018917
+ },
+ "HX2": {
+  "precision": 120,
+  "fd_step": "1e-25",
+  "step_sweep_drift": 0.0,
+  "note": "the truncation ~ 1e-50, the roundoff ~ 1e-70: the extraction effectively exact; the float64 FD's noise was ~1.1e-4 \u2014 the same order as Task 31's kappa_ridge"
+ },
+ "HX3": {
+  "pure_ridge_curvatures_exact": [
+   255.97879168795643,
+   255.9787922659146,
+   356.3997635598843,
+   183.33071853203109
+  ],
+  "kappa_ridge_true": 0.00013654279146175317,
+  "kappa_ridge_task31_fd": 7.826287717300345e-05,
+  "fd_noise_floor_estimate": 0.00011,
+  "sign_resolved": true
+ },
+ "HX4": {
+  "ridge_flatness_exact": 1.6076569244630162e-05,
+  "one_sided_tests": [
+   [
+    1e-06,
+    9.393931865719907e-07,
+    9.397716671522005e-07
+   ],
+   [
+    1e-05,
+    9.395865650629887e-06,
+    9.39624392981564e-06
+   ]
+  ],
+  "v_cone": "at the double, lambda(x* + t u) = lambda0 + |mu(u)| |t| + O(t^2) with mu the W1 branch split: the first-order landscape rises in EVERY direction \u2014 the escape question is entirely second-order",
+  "cone_B1": 0.9396,
+  "cone_empirical_tangent": 8.036522259644873e-05,
+  "profile_slope_empirical": 1.8790642375421385e-06
+ },
+ "HX5": {
+  "full_quadratic_min": -0.008681330150224341,
+  "full_min_direction": [
+   -0.29586745619300764,
+   -0.06993861640799756,
+   -0.03739603998038801,
+   -0.1640140083036856,
+   -0.3330839312927857,
+   0.3197743367536727,
+   -0.0006751775902342152,
+   0.0014444913781450116,
+   0.762670688067722,
+   0.29014576180389806,
+   -0.009368978823107053,
+   -0.011401145919797184
+  ],
+  "direct_rise_at_neg_direction": 0.004264942714576003,
+  "verdict": "no first-order escape (the V-cone); no second-order escape on the flat set (the Aa-flat c > 0; the negative-c directions are V-dominated); the real escape is the curved valley path (part A's quartic law) \u2014 beyond the quadratic model"
+ },
+ "HX6": {
+  "kappa_sign": "POSITIVE",
+  "kappa_true": 0.00013654279146175317,
+  "v_cone_theorem": "lambda(x* + t u) = lambda0 + |mu(u)| |t| + O(t^2) at the exact double: no first-order escape is possible (the branch-max structure)",
+  "residual": "(a) the FD noise floor (defeated: mp prec 120, drift 0.0); (b) the quadratic model's reach \u2014 the escape is the curved valley path (part A's quartic law); (c) the third-order remainder along the valley"
+ }
+}

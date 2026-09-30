@@ -1765,3 +1765,90 @@ Stage Summary:
   class-level certificate filed into the box-count wall's ledger.
   The open ledger: 2 links (the box-count wall, the seed-level
   boundary).
+
+---
+Task ID: 32
+Agent: main (Super Z)
+Task: The class-level problem (a lower bound on the abelian optimum)
++ the near-zero kappa_ridge sign resolved by exact/AD extraction (the
+honest residual of the H2 theory) + the housekeeping (the PAT
+re-persisted after the reset; the session_summaries archive built).
+
+Work Log:
+- The recovery: the repo at 725c25f (Task 31 pushed); the environment
+  had reset AGAIN (the .secrets wiped) — the PAT re-landed
+  (restore_pat.sh, identity MIKEAA020, push TRUE); python-flint
+  re-installed (--break-system-packages); session_summaries/ built in
+  the repo with the README protocol + the backfilled 0001 entry (the
+  user's token-saving order answered: the archive now EXISTS).
+- probe_task32_boundary.py (THE DISCOVERY): the abelian parity-odd
+  pairs descend IN NORM to the line-atom value sqrt(lambda*) =
+  1.277142112908... as x -> 0 (2px = c fixed) — BELOW both Task 29/31
+  escape points; the fixed-(c*,y*) curve fits lambda* + K x^4 with
+  K = 0.6278 per point; the symmetric shadow sits ON the valley (its
+  effective (2px, y) = (c*, y*) to 7 digits).
+- abelian_closure.py (part A): CL-0/1/2 the adjudication — the escape
+  points ABOVE sqrt(lambda*), a genuinely abelian point below them at
+  x = 0.01, the anisotropy (|dB/da| = 888) explaining every stall, T2
+  re-verified, the dense L=8 cross-check; CL-3 THE EXACT CLOSURE —
+  the mirrored pencil's state-flip 3x3 reduction (validated 7.2e-15),
+  the charpoly numerator's x-exponents [0,4,8] ONLY after 2px = c
+  (THE QUARTIC LAW IS STRUCTURAL), the limit root = lambda* (4.4e-16),
+  K's closed form -N4/N0' = 0.6277495385 matching the measured
+  0.6277500700 (5.3e-7) — D_abelian <= sqrt(lambda*) EXACTLY; the
+  escape RETRACTED; the shadow-equality restored in the closure sense.
+- abelian_lower_bound.py (part B): LB-0 the PSD-sum re-validated; LB-1
+  the landscape (the norm margins >= +0.414, no hole; the 4x4
+  touching -0.0074 near the stratum; a first-draft argument-order bug
+  caught honestly — the scrambled out-of-disc points gave spurious
+  negative margins); LB-2 THE p-CONVEXITY THEOREM (NEW: F convex in p
+  via the row-Gram Rayleigh argument, 400/400 at 0.0 violation; the
+  full norm^2 convex too) — the wall's dimension HALVED (h^-6 ->
+  h^-4 x a convex inner program); LB-3 the pilots (the mirrored
+  slice's inner-min map showing K x^4 exactly; the coarse 4-D grid's
+  worst NORM margin +0.0199); LB-4 the 4x4's holes on the killer dial
+  slices mapped (the norm carries them; P2's dial = the worst case,
+  validated by the dial scan); the honest residual: the 4-D cover at
+  the tube's resolution = 1e8..1e12 cells — the wall, halved,
+  standing.
+- h2_exact.py (part C): HX-2 the tensors re-extracted at mpmath prec
+  120 (the step-sweep drift 0.0 — Task 31's float64 FD floor ~1.1e-4
+  was the same order as the reported kappa_ridge); HX-3 THE SIGN
+  RESOLVED: kappa_ridge = +1.3654e-04 POSITIVE (the FD's sign right,
+  value 43% low); HX-4 THE V-CONE DISCOVERED (the one-sided tests:
+  lambda(+/-t) = lambda0 + |mu||t| exactly — at the double the
+  first-order landscape rises in EVERY direction: NO first-order
+  escape is possible at an exact double; the flat set extends beyond
+  the Aa block — the empirical tangent's |mu| ~ 8.04e-5, a 4-order
+  anti-parallel cancellation); HX-5 the quadratic adjudication (the
+  full 12-dim form has negative directions but they are V-dominated;
+  the Aa-flat set c >= kappa_ridge > 0; the real descent = the curved
+  valley, beyond the quadratic model); HX-6 the honest residual filed
+  (the FD noise defeated; the model's reach; the third-order
+  remainder).
+- The Volume XIII corrigendum written (download/..._XIII_Corrigendum
+  .md): the escape's retraction, the corrected sandwich, the exact
+  x^4 law, the kappa resolution — the volume's PDF retained as the
+  historical record.
+- README battery rows (three) inserted after the escape row; the
+  debug/probe scripts (probe_task32_boundary.py, debug_task32_a3.py)
+  retained as the discovery chain.
+
+Stage Summary:
+- Deliverables (in github_repos/master): scripts/abelian_closure.py +
+  abelian_closure_results.json; scripts/abelian_lower_bound.py +
+  abelian_lower_bound_results.json; scripts/h2_exact.py +
+  h2_exact_results.json; download/The_Resolution_Programme_XIII_
+  Corrigendum.md; session_summaries/ (the README protocol + 0001 +
+  0002); README.md (+3 battery rows); the probes.
+- THE CLASS-LEVEL ADJUDICATION: D_free <= D_abelian <= sqrt(lambda*)
+  exact (the structural x^4 boundary valley); the escape retracted
+  (a scan artifact); the shadow-equality restored in the closure
+  sense; the lower bound side advanced (the p-convexity halving the
+  wall) with the honest residual (the 4-D cover's box count).
+- THE KAPPA_RIDGE SIGN: POSITIVE, +1.3654e-04, resolved by the
+  exact/AD extraction (mp prec 120); the V-cone theorem discovered
+  (no first-order escape at an exact double); the H2 theory's honest
+  residual filed.
+- The open ledger: the box-count wall (now h^-4 + convex inner), the
+  seed-level boundary, the third-order remainder along the valley.

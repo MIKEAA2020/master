@@ -1,0 +1,185 @@
+{
+ "meta": {
+  "order": "Task 32 part B: the class-level lower bound \u2014 the p-convexity reduction and the wall's honest geometry",
+  "date": "2026-09-30",
+  "wall_time_s": 42.906357526779175
+ },
+ "LB0": {
+  "max_violation": 0.0,
+  "min_gap": 0.08896760031703987
+ },
+ "LB1_norm_margins": {
+  "min": 0.41429167137835154,
+  "q01": 0.6351399564860548
+ },
+ "LB1": {
+  "n_samples": 3000,
+  "min_margin": -0.007355172745493466,
+  "q01_margin": 0.4379572681209611,
+  "thin_count": 1,
+  "thin_stratum_dist": [
+   0.8740758675219091,
+   0.8740758675219091,
+   0.8740758675219091
+  ]
+ },
+ "LB1_transverse_profile": [
+  {
+   "d": 0.0,
+   "margin": 3.923550287110444e-06
+  },
+  {
+   "d": 0.01,
+   "margin": 0.019585365027231294
+  },
+  {
+   "d": 0.02,
+   "margin": 0.13829288325535094
+  },
+  {
+   "d": 0.05,
+   "margin": 4.981580890048773
+  },
+  {
+   "d": 0.1,
+   "margin": 27.641208199060305
+  },
+  {
+   "d": 0.2,
+   "margin": 258.5172868199573
+  },
+  {
+   "d": 0.4,
+   "margin": 999999998.368908
+  }
+ ],
+ "LB2": {
+  "theorem": "F(p) = max(lambda_e, lambda_o) is convex in (p1, p2) at every fixed (x1, y1, x2, y2) in the discs: each side is lambda_max(M(p)M(p)*) with M affine in p, the Rayleigh quotients are PSD quadratics, the max is convex",
+  "verification_max_violation": 0.0,
+  "corollary": "the class-level lower bound factors as min over the 4-D disc-pair of a 2-D convex inner program; the interior box count drops from h^-6 to h^-4; the inner min is global-by-convexity (sound multi-start free); the SAME argument makes the FULL NORM^2 convex in p \u2014 the true instrument carries the convexity (the 4x4 sides have holes on the killer dials, the norm does not)"
+ },
+ "LB3_mirrored_slice": [
+  {
+   "x": 0.02,
+   "y_grid": [
+    0.3,
+    0.5,
+    0.6563,
+    0.8
+   ],
+   "margins": [
+    0.2179856648614915,
+    0.05900772502478313,
+    1.0043995457564847e-07,
+    0.08780783780501467
+   ]
+  },
+  {
+   "x": 0.05,
+   "y_grid": [
+    0.3,
+    0.5,
+    0.6563,
+    0.8
+   ],
+   "margins": [
+    0.21798618142563164,
+    0.059009263313480886,
+    3.923479506617866e-06,
+    0.08781839876627706
+   ]
+  },
+  {
+   "x": 0.1,
+   "y_grid": [
+    0.3,
+    0.5,
+    0.6563,
+    0.8
+   ],
+   "margins": [
+    0.21799413401476286,
+    0.05903294661105418,
+    6.2786447373675e-05,
+    0.0879810081004262
+   ]
+  },
+  {
+   "x": 0.2,
+   "y_grid": [
+    0.3,
+    0.5,
+    0.6563,
+    0.8
+   ],
+   "margins": [
+    0.21812151733289475,
+    0.059412581580028156,
+    0.0010073472677845086,
+    0.09059117701073482
+   ]
+  },
+  {
+   "x": 0.4,
+   "y_grid": [
+    0.3,
+    0.5,
+    0.6563,
+    0.8
+   ],
+   "margins": [
+    0.22019659080993792,
+    0.06567116820996999,
+    0.016848544938907528,
+    0.1345090173998642
+   ]
+  },
+  {
+   "x": 0.7,
+   "y_grid": [
+    0.3,
+    0.5,
+    0.6563,
+    0.8
+   ],
+   "margins": [
+    0.24239332730210972,
+    0.14143806974371498,
+    0.23703493497414296,
+    999999998.368908
+   ]
+  }
+ ],
+ "LB3_outer_pilot": {
+  "h": 0.35,
+  "n_cells": 441,
+  "worst_norm_margin": 0.019914736434266,
+  "worst_cell": [
+   -0.7,
+   0.34999999999999987,
+   -0.7,
+   -0.35
+  ],
+  "worst_p": [
+   -0.48652411697187536,
+   0.48652411697187525
+  ],
+  "note": "MEASURED at the coarse grid with the TRUE-NORM inner min (convex in p, global); the thin region = the mirrored stratum's basin + the killer family's dial slices (the P2 slice is the worst-case dial \u2014 validated); the 4x4 max side has holes on the killer dials where the PSD-sum slack carries the norm (the norm margins stay positive)"
+ },
+ "LB4": {
+  "certified": [
+   "D_abelian <= sqrt(lambda*) (part A)",
+   "the mirrored stratum both sides (T2 + Task 17 + the x^4 law)",
+   "the killer family/tubes/degenerates (Tasks 22/26)",
+   "the p-convexity reduction (NEW: the wall 6-D -> 4-D + convex inner)"
+  ],
+  "measured": [
+   "the interior 4x4 margins (min -0.0074 over 3000) and the NORM margins (min +0.414292 over 1200 \u2014 no hole)",
+   "the thin set = the stratum tube near (w*, y*) + the killer dial slices",
+   "the coarse pilot's worst NORM inner-min margin +0.019915",
+   "the 4x4 holes on the killer dials (the norm carries them via the PSD-sum slack); P2's dial validated as the worst case"
+  ],
+  "residual": "the 4-D outer cover at the tube's resolution + the convex inner: 1e8..1e12 cells \u2014 the box-count wall, dimension halved; the analytic-patch route designed",
+  "conditional_verdict": "IF the 4-D cover completes (the patches + the bisection), then D_abelian = sqrt(lambda*) EXACTLY \u2014 the abelian problem closed with the line-atom value, and the shadow-equality D_free = D_abelian reduces to the free-class lower bound (the 12-parameter box-count wall)"
+ }
+}
