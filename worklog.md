@@ -2116,3 +2116,39 @@ Stage Summary:
 - THE PUSH PENDING: the PAT secrets wiped by the reset (the same
   pattern as 48c88a5) — the user re-supplies the fine-grained PAT,
   scripts/restore_pat.sh, then `git push origin main`.
+
+---
+Task ID: 36 (push completion + the durable PAT protocol)
+Agent: main (Super Z)
+Task: The user re-supplied the PAT ("i asked u to make this persist!") —
+the durable persistence done right this time, the pending push executed.
+
+Work Log:
+- THE ROOT CAUSE (the honest record): the Sep-30 session created
+  .secrets/ and designed restore_pat.sh around it but never wrote the
+  token file before the session died — the durable copy was empty, so
+  every reset reverted to "ask the user again" (the 48c88a5 pattern).
+- THE FIX (three durable layers, all under /home/z/my-project which
+  survives resets, all gitignored via .secrets/):
+  1. .secrets/github_pat.txt — the source of truth (chmod 600);
+  2. .secrets/git-credentials — a credential-store file wired into THIS
+     repo's local config (credential.helper = store --file=...), so
+     push/pull authenticate with zero reinstall;
+  3. restore_pat.sh upgraded with step 1b (idempotent re-wiring for
+     fresh sessions / re-clones) + the volatile stores reinstalled
+     (~/.git-credentials, GITHUB_PAT in ~/.bashrc) and API-verified:
+     the token belongs to MIKEAA2020, push permission True.
+- NEW: scripts/restore_env.sh (the venv rebuild after a reset — the
+  home-dir .venv lost python-flint 0.9.0 again this session; numpy,
+  scipy, python-flint pinned, idempotent).
+- THE PUSH EXECUTED: 7f7a73f..aa9097a (the Task-36 closure + the drain
+  continuation commits) — the pending-work risk cleared.
+
+Stage Summary:
+- The push-pending pattern CLOSED: the PAT now persists across resets
+  (the source-of-truth file + the repo-local credential store + the
+  self-healing scripts).  Recovery after any reset: bash
+  /home/z/my-project/scripts/restore_pat.sh && bash
+  /home/z/my-project/scripts/restore_env.sh, then the drain driver.
+- The drains continue (the standing order): cover4d ~48M calls / the
+  wall ~540k — both frontiers open, the continuation protocol live.

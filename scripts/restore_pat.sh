@@ -37,6 +37,18 @@ fi
 
 git config --global credential.helper store
 
+# 1b. durable repo-local credential store (belt & suspenders: lives under
+# /home/z/my-project which survives resets, so the mirror repo
+# authenticates even before this script runs in a fresh session)
+DURABLE_CRED="/home/z/my-project/.secrets/git-credentials"
+printf 'https://x-access-token:%s@github.com\n' "$PAT" > "$DURABLE_CRED"
+chmod 600 "$DURABLE_CRED"
+MIRROR_REPO="/home/z/my-project/github_repos/master"
+if [ -d "$MIRROR_REPO/.git" ]; then
+  git -C "$MIRROR_REPO" config credential.helper "store --file=$DURABLE_CRED"
+  echo "[restore_pat] mirror repo credential.helper -> $DURABLE_CRED"
+fi
+
 # 2. environment variable for non-git use (curl, SDKs)
 if ! grep -q 'GITHUB_PAT=' "$HOME/.bashrc" 2>/dev/null; then
   {
