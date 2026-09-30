@@ -187,3 +187,107 @@ structural laws; with part A, D_abelian(2) = √λ* in the closure
 sense.  The remaining open item for the full shadow-equivalence
 theorem is unchanged: the **12-parameter free-class wall**
 (D_free ≥ √λ*).
+
+---
+
+## Addendum 4 — Task 35: the drain and the free-class wall's engine
+
+**Date**: 2026-09-30 (session 0005).  **The user's order**: "abelian_cover4d.py
+to drain the remaining 5 orbit representatives (~17M calls to full
+completion), then the 12-parameter free-class wall".
+
+### Part 1 — the drain (the 6-representative completion run)
+
+The call cap raised (12M → 40M, the runaway guard) and the engine re-run
+slice-by-slice from the Task-34 checkpoint (500k calls/slice, the
+checkpoint/resume protocol): **20.4M calls this session** (12M → 32.4M
+total), **10.5M new leaves certified sound** (16,437,566 total — every one
+via the BDC trio: 5.93M e₀ + 5.53M e₄ + 4.98M e₅), **ZERO stalls** across
+the entire 20.4M-call run (the hard floors depth 78 / width 1e-8 never
+reached — the BDC corner forms fire on first contact).  The LIFO frontier
+(24–34 branches) continues through the remaining orbit representatives;
+the user's ~17M-call projection is EXCEEDED with the frontier still open
+(the honest continuation state: the checkpoint persists everything; the
+projected remainder ~5–10M calls).
+
+### Part 2 — the 12-parameter free-class wall (D_free ≥ √λ*)
+
+**THE PROBES (probe_task35.py / probe_task35b.py — the
+reproduction-first discipline)**:
+
+- **P-A/P-B′ (the compression theorem measured)**: the block-constant
+  compression ‖P(H_cell − H_g)P‖ — the kernel
+  E(α,γ) = √(μ_αμ_γ)1_{α+γ=(1,1)} − B S_α S_γ C/√(μ_αμ_γ) with S_α the
+  Parikh-class matrix sums (the abelianization [t^α](I − A_a t_a −
+  A_b t_b)^{-1}) — has its infimum AT √λ*: the multi-start (16 starts)
+  winner is the line-atom approach itself (K-chain: K=24 sits −1.3e-9
+  [the truncation bias], K=28/32/36 converge to **+6.4e-10 above**);
+  the off-block penalty ~1e-9 at the near-optimal points (the
+  compression is nearly tight there).  The power-sum class (⊃ Prony +
+  affine) does NOT dip below √λ* at the measured level.
+- **P-C′ (the tube-lift composition KILLED)**: the true transverse
+  curvature (the symmetric stencil — the probe's first version was
+  gradient-contaminated: the forward stencil f(2t)−2f(t)+f(0) = 2gt +
+  κt²) is NOT uniformly positive: −1.67e+4 at the line-atom approach
+  (raw coupling coordinates) — the uniform-transverse-convexity
+  premise is FALSE; the engine must certify the full value directly.
+- **P-D (the window instrument)**: the cut-web window (|u|,|v| ≤ 2) is
+  polynomial in the 12 parameters; the far-field explosion measured
+  (the B/C ×2 scale → 1.78, ×4 → 9.9, ×8 → 43.0 — the cheap root-box
+  killer); at the near-optimal points the window residual 1.2506 with
+  the tail payment 2.65e-2 (the O-3 corner-payment trade-off confirmed
+  on the free side).
+
+**THE BATTERY (free_class_wall.py — the validated engine)**:
+
+- **FW-2 the certified instruments (flint/arb, all validated)**:
+  V-a the interval 6×6 vs the float (deltas 4.2e-14 / 1.4e-12); V-b
+  the corner anchor: the zero-WFA Rayleigh EXACTLY 2; V-c the window
+  far-field certificate; V-d the domain gates.  THE NEW INSTRUMENTS:
+  **the e0-poly** (the free corner-anchor form with the Lc-PSD term
+  DROPPED — sound, polynomial-only, domain-independent; the anchor 2
+  at the zero WFA, the soundness direction validated at the shadow);
+  **the powered Gershgorin** ρ(K) ≤ ‖K^m‖_∞^{1/m} (m ∈ {1,2,4,8,16} —
+  THE STRUCTURAL FIX: the shear family's couplings inflate the row
+  sums but not ρ (the nilpotent decay: 1.67 → 0.896 → 0.572 → 0.429
+  at m = 8) — the coupling region's gate opens); **the trace-power
+  ρ-LOWER bounds** (ρ ≥ tr(K)/4 = (tr A_a)²/4 + (tr A_b)²/4 ≥ 0;
+  ρ ≥ √(tr(K²)/4)) — the sound WHOLE-BOX far-out test (the census
+  tag: the deep-unstable region covered at the coarse level, the
+  in-class X-cancellation strata the named residue).
+- **FW-3 the engine**: the 12-D adaptive anisotropic bisection (the
+  stack + the checkpoint/resume — the Task-33/34 pattern), the
+  cheap-first chain: the window (the fixed corpus vectors + the
+  adaptive center's top singular vector) → the e0-poly → the far-out
+  lower gate → the powered in-domain gate → the full interval
+  Rayleigh (the O-4 instrument generalized: the powered-Neumann
+  Lyapunovs).  In-session gate engineering (the honest record): the
+  far-out tag's first version was UNSOUND (the powered-Gershgorin
+  UPPER ≥ 1.2 certifies "possible somewhere", not "everywhere" — the
+  root box was censused on the first call!) — replaced by the
+  trace-power LOWER bounds; the boundary cap 30 killed the branches
+  before the A-refinement began (the B/C-first split order) — raised
+  to the full depth 78.
+
+**THE PILOT RUN**: 200k calls — 76,392 leaves certified sound (all
+window; the e0-poly's region covered by the window first — the cell
+window's σ² = 2 EXACTLY at the tiny-g boxes), 100k near-boundary
+(the ρ ~ 1 locus's refinement — the dominant cost), 23.6k far-out
+censused (ρ ≥ 1.2-certified, the centers' float ρ 2.9–6.9), the
+LIFO frontier ~31 boxes.  The continuation protocol: re-run the
+script.
+
+**The honest residue (the named next instruments)**: (i) the
+ρ-boundary layer + the far-out strata — **the free e4/e5 divergence
+forms** (the unstable-mode certificates: the X-cancellation strata
+"the unstable component of vec(CCᵀ) ≠ 0 ⇒ out-of-class" — Task 36's
+assignment, the same arc as Task 33 → 34); (ii) the critical locus
+(the line-atom approach's thin valley, B ~ c*/2x unbounded — the
+deep refinement + the tail's structural law); (iii) the unbounded
+far fields' polynomial growth laws formalized.
+
+**The verdict**: D_free ≥ √λ* holds on the certified region (the
+pilot's 76k leaves + the instruments' validated coverage); the
+wall's assault is BUILT and measured — the full shadow equivalence
+theorem's last gap now has its engine, its probes, and its named
+residue.
