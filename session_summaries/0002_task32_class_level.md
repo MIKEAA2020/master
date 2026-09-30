@@ -1,7 +1,7 @@
 # Session 0002 — Task 32: the class-level adjudication (the escape retracted)
 
 - **Date**: 2026-09-30
-- **HEAD at end**: (this session's commit) — "Task 32: the class-level
+- **HEAD at end**: 24cab09 — "Task 32: the class-level problem adjudicated (the boundary valley, the escape RETRACTED, the p-convexity halving the wall) + the kappa sign resolved."
   problem (the boundary valley, the p-convexity, the kappa sign
   resolved)…"
 - **Last Task ID**: 32
