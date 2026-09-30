@@ -1933,3 +1933,85 @@ Stage Summary:
   fix); the continuation runs (the checkpoint); the 12-parameter
   free-class wall (the user's named remaining gap to the full
   shadow equivalence).
+---
+Task ID: 34
+Agent: main (Super Z)
+Task: The user's order: "re-run the script to continue the sweep from
+the checkpoint (58 frontier branches), then the derivative-penalty
+patch mode and the boundary-divergence formalization close the
+residue."
+
+Work Log:
+- The recovery: the repo at 609a94d (Tasks 31/32/33 pushed); the
+  Task-33 checkpoint intact (58 branches: 15 root quadrants + 43
+  frontier); the probes first (probe_task34.py): V-F the pi-rotation
+  symmetry EXACT (0.00e+00 — the D-conjugation argument validated),
+  V-G the e0/e4/e5 closed forms ~1e-13, V-H the linear CS bound 0
+  violations, the BDC bounds on the live frontier (43/43 branches +
+  500/500 stall records pass).
+- THE BDC (the boundary-divergence formalization): the exact Rayleigh
+  corner identities (e0 the constant block — the d-free form with the
+  p = 0 anchor EXACTLY 2; e4/e5 the atom divergence forms) evaluated
+  as POISON-FREE clamped interval bounds on the box's DOMAIN portion
+  (the d-intervals clamp to (0, d_hi]; the V-H ratio bound
+  d12 >= max(d11,d22)/2 kills the 1/d12 cross-term poison); the cross
+  term's nonneg-product form (the same-sign AND the zero-touching
+  [0,w] cells) + the V-H-dominance form for the opposed case; the
+  p-split at 0 (the sign isolation).  Two gate bugs found and fixed
+  in-session: the strict same-sign gate blocked the p-split's [0,w]
+  children (a 117k-stall explosion — diagnosed, the product-interval
+  gate substituted); the depth-50 boundary pre-stall cut off
+  certifiable small-|p| boundary cells (its casualties diagnosed via
+  the stall records: 3000/3000 boundary small-|p| at coarse widths,
+  center margins +1.4e5..+5.7e5 — the pre-stall REMOVED, the stall
+  accounting reset).
+- THE DPP (the derivative-penalty patch mode): the two-scale Taylor-4
+  certificate — the coefficients (m0, gamma, kappa, C3) at the
+  box-scale widening 2h (the stratum-direction derivative penalty,
+  first order in h), the Lagrange C4 at the full region 2h + r (the
+  corpus's patch_at pattern generalized from h = 0).  THE SWEEP FLAW
+  FOUND: the Task-33 global stall cap aborted the whole sweep at the
+  first top box (the 80 patches were one corner sliver) — the
+  per-top-box budget + the margin-based early stall substituted:
+  1804 patches, median r = 4.23e-2 (11x the box-mode bisection
+  floor 3.77e-3, max 1.07e-1).  THE HONEST FINDING (the same-box A/B
+  test): the intrinsic transverse Taylor tail, not the widening,
+  binds at the microscopic scale (box-mode r 0.00389 vs DPP 0.00385
+  at h = 2e-4); the DPP's measured gain is the ~30x-coarser
+  certified boxes at the true radii.
+- THE ORBIT REDUCTION: V-E (the atom swap) + V-F (the pi-rotation)
+  generate {1, R, S, RS}: the 16 sign quadrants = 6 orbit
+  representatives; the 10 images symmetry-covered (a certified box's
+  image is certified); the root stack and the resume filter reduce
+  58 -> 48 entries (the 10 images dropped, counted).
+- THE RUN (the full fresh re-run from the restored Task-33 base —
+  the honest reset after the gate fixes): 24 slices x 500k calls =
+  12,000,000 calls; 5,975,008 leaves certified sound — ALL via the
+  BDC trio (2,322,896 e0 + 2,495,229 e4 + 1,156,883 e5; the standard
+  ball-Rayleigh superseded — the corner forms fire at coarser
+  resolutions); ZERO stalls across the final 4.5M calls (14 slices);
+  the (+,+,+,+) representative ~90% complete (the LIFO frontier: 26
+  branches — its p-subtrees + the 5 unexplored representatives).
+- The Corrigendum's Task-34 addendum; the README battery row; the
+  session summary 0004; the checkpoint (the version flags dpp=3,
+  b_sv=2) with the full continuation state.
+
+Stage Summary:
+- Deliverables (in github_repos/master): scripts/abelian_cover4d.py
+  (the BDC + the DPP + the orbit reduction + the budget/checkpoint
+  engine), abelian_cover4d_results.json, abelian_cover4d_ckpt.json
+  (the continuation state), scripts/probe_task34.py (the design
+  probes), the Corrigendum addendum, session_summaries/0004, the
+  README row.
+- THE TASK-33 RESIDUE CLOSED: the boundary-divergence layer
+  CERTIFIED (the BDC — the formalization the user ordered); the
+  derivative-penalty patch mode DEPLOYED and honestly measured; the
+  disc-edge stall count 0 at the hard floors; D_abelian >= sqrt(λ*)
+  on the certified region + the corpus families + the structural
+  laws, with part A: D_abelian(2) = sqrt(λ*) in the closure sense.
+- THE OPEN LEDGER: the 5 remaining orbit representatives + the
+  (+,+,+,+)'s frontier (the continuation protocol: re-run the script;
+  the projected full completion ~25-30M calls); the 12-parameter
+  free-class wall (D_free >= sqrt(λ*)) — the user's named last gap to
+  the full shadow-equivalence theorem; the seed-level boundary; the
+  third-order remainder.

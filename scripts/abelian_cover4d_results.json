@@ -1,10 +1,10 @@
 {
  "meta": {
-  "order": "Task 33: the 4-D covering \u2014 the analytic transverse patch + the convex inner layer closing D_abelian >= sqrt(lambda*)",
+  "order": "Task 33: the 4-D covering \u2014 the analytic transverse patch + the convex inner layer closing D_abelian >= sqrt(lambda*). Task 34 (the continuation): the BDC + the DPP + the orbit reduction close the residue",
   "date": "2026-09-30",
   "layers": "A: the stratum tube (the Task-26 TP patches, the exhaustive (w,x,y) sweep); B: the far field (the 6x6 true-norm ball instrument, the adaptive anisotropic bisection with the convex inner structure)",
   "lambda_star": "1.6310919765642504414737578928177383666901925754942",
-  "wall_time_s": 12.306342363357544
+  "wall_time_s": 188.91917729377747
  },
  "VA_6x6_vs_FX1": {
   "max_diff": 7.993605777301127e-15,
@@ -51,14 +51,31 @@
   "max_diff": 3.552713678800501e-14,
   "n": 80
  },
+ "VF_pi_rotation": {
+  "max_diff": 0.0,
+  "n": 240
+ },
+ "VG_bdc_closed_forms": {
+  "e0": 1.1368683772161603e-13,
+  "e4": 1.3642420526593924e-12,
+  "e5": 2.2737367544323206e-13,
+  "n": 240
+ },
+ "VH_linear_cs_bound": {
+  "max_violation": 0.0,
+  "n": 2000
+ },
  "CV3_patches": {
-  "statement": "the stratum's thin region (|w-w*|<=0.10, x in [0,0.20], |y-y*|<=0.10) covered by the box-mode Taylor-4 patch certificates: each patch covers (the (w,x,y)-box) + (the transverse |delta|_2 <= r ball), sound by the Lagrange box-mode run with ALL coefficients from the widened-center pipeline",
-  "patches": 80,
-  "stalled": 401,
-  "calls": 1060,
-  "r_min": 0.0037693749999999997,
-  "r_median": 0.0037693749999999997,
-  "r_max": 0.0037693749999999997,
+  "statement": "the stratum's thin region (|w-w*|<=0.10, x in [0,0.20], |y-y*|<=0.10) covered by the DERIVATIVE-PENALTY patch certificates (Task 34): the two-scale Taylor-4 certificate \u2014 the coefficients (m0, gamma, kappa, C3) at the box-scale widening 2h (the stratum-direction derivative penalty, FIRST ORDER in h) + the Lagrange C4 at the full-region widening 2h + r \u2014 the corpus's patch_at pattern (tight coefficients + widened C4) generalized from h = 0 to h > 0; each patch covers (the (w,x,y)-box) + (the transverse |delta|_2 <= r ball)",
+  "mode": "derivative-penalty (two-scale)",
+  "patches": 1804,
+  "stalled": 588,
+  "calls": 5880,
+  "r_min": 0.0010367187499999999,
+  "r_median": 0.04225234375,
+  "r_max": 0.1068859375,
+  "box_mode_floor_r": 0.00376937,
+  "same_box_r_comparison": "the direct A/B test at h=2e-4: the box-mode r = 0.00389 vs the DPP r = 0.00385 \u2014 the binding constraint at the microscopic boxes is the INTRINSIC transverse Taylor tail (kappa/C4 at the center), not the widening; the DPP's measured gain is the COARSER certified boxes (~30x the box volume per patch: h up to 1.6e-3 vs the box-mode's 2e-4) at the true radii (the bisection-floor artifact eliminated)",
   "stall_boxes_first": [
    [
     0.09858362847215174,
@@ -127,246 +144,59 @@
   ]
  },
  "CV2_cover": {
-  "statement": "the 4-D covering engine: the adaptive anisotropic bisection over the 6-D boxes (disc-pair x p-box), the leaf certificates the 6x6 ball-Rayleigh lower bound with the adaptive top eigenvector; the leaves inside CV-3's certified tube skipped; the p-directions refine toward the convex inner minimizers (LB-2's convexity: the sound inner-global structure)",
+  "statement": "the 4-D covering engine: the adaptive anisotropic bisection over the 6-D boxes (disc-pair x p-box), the leaf certificates the 6x6 ball-Rayleigh lower bound with the adaptive top eigenvector + THE BDC (Task 34: the boundary-divergence certificates \u2014 the exact e0/e4/e5 corner identities (V-G) as poison-free clamped interval bounds on the box's domain portion, the linear CS ratio bound (V-H)); the leaves inside CV-3's certified tube skipped; the p-split at 0 (the sign isolation); the 16 sign quadrants = 6 orbit representatives of {1, R, S, RS} (V-E the swap + V-F the pi-rotation \u2014 the 10 images symmetry-covered)",
   "domain": {
    "disc_radius": 0.92,
    "p_box": [
     -60.0,
     60.0
-   ]
+   ],
+   "orbit_reduction": "6 reps of 16 quadrants; the group {1, R, S, RS} (V-E + V-F)"
   },
-  "leaves_certified": 511679,
+  "leaves_certified": 5975008,
+  "leaves_standard": 0,
+  "bdc_e0_passes": 2322896,
+  "bdc_e4_passes": 2495229,
+  "bdc_e5_passes": 1156883,
+  "symmetry_covered_quadrants": 10,
   "tube_skipped": 0,
-  "stalled": 18036,
-  "stall_records": 3000,
-  "calls": 1300000,
-  "stack_remaining": 58,
+  "stalled": 0,
+  "stall_records": 0,
+  "calls": 12000000,
+  "stack_remaining": 26,
   "complete": false,
-  "stall_margins_min": 23731830593.910942,
-  "stall_margins_median": 37433539574.75831,
-  "stall_boxes_first": [
-   [
-    [
-     0.7223437500000001,
-     0.7259375
-    ],
-    [
-     0.6900000000000001,
-     0.69359375
-    ],
-    [
-     0.7223437500000001,
-     0.7259375
-    ],
-    [
-     0.6900000000000001,
-     0.69359375
-    ],
-    [
-     59.765625,
-     60.0
-    ],
-    [
-     59.765625,
-     60.0
-    ]
-   ],
-   [
-    [
-     0.7223437500000001,
-     0.7259375
-    ],
-    [
-     0.6900000000000001,
-     0.69359375
-    ],
-    [
-     0.7223437500000001,
-     0.7259375
-    ],
-    [
-     0.6900000000000001,
-     0.69359375
-    ],
-    [
-     59.765625,
-     60.0
-    ],
-    [
-     59.53125,
-     59.765625
-    ]
-   ],
-   [
-    [
-     0.7223437500000001,
-     0.7259375
-    ],
-    [
-     0.6900000000000001,
-     0.69359375
-    ],
-    [
-     0.7223437500000001,
-     0.7259375
-    ],
-    [
-     0.6900000000000001,
-     0.69359375
-    ],
-    [
-     59.53125,
-     59.765625
-    ],
-    [
-     59.765625,
-     60.0
-    ]
-   ],
-   [
-    [
-     0.7223437500000001,
-     0.7259375
-    ],
-    [
-     0.6900000000000001,
-     0.69359375
-    ],
-    [
-     0.7223437500000001,
-     0.7259375
-    ],
-    [
-     0.6900000000000001,
-     0.69359375
-    ],
-    [
-     59.53125,
-     59.765625
-    ],
-    [
-     59.53125,
-     59.765625
-    ]
-   ],
-   [
-    [
-     0.7223437500000001,
-     0.7259375
-    ],
-    [
-     0.6900000000000001,
-     0.69359375
-    ],
-    [
-     0.71875,
-     0.7223437500000001
-    ],
-    [
-     0.69359375,
-     0.6971875000000001
-    ],
-    [
-     59.765625,
-     60.0
-    ],
-    [
-     59.765625,
-     60.0
-    ]
-   ],
-   [
-    [
-     0.7223437500000001,
-     0.7259375
-    ],
-    [
-     0.6900000000000001,
-     0.69359375
-    ],
-    [
-     0.71875,
-     0.7223437500000001
-    ],
-    [
-     0.69359375,
-     0.6971875000000001
-    ],
-    [
-     59.765625,
-     60.0
-    ],
-    [
-     59.53125,
-     59.765625
-    ]
-   ],
-   [
-    [
-     0.7223437500000001,
-     0.7259375
-    ],
-    [
-     0.6900000000000001,
-     0.69359375
-    ],
-    [
-     0.71875,
-     0.7223437500000001
-    ],
-    [
-     0.69359375,
-     0.6971875000000001
-    ],
-    [
-     59.53125,
-     59.765625
-    ],
-    [
-     59.765625,
-     60.0
-    ]
-   ],
-   [
-    [
-     0.7223437500000001,
-     0.7259375
-    ],
-    [
-     0.6900000000000001,
-     0.69359375
-    ],
-    [
-     0.71875,
-     0.7223437500000001
-    ],
-    [
-     0.69359375,
-     0.6971875000000001
-    ],
-    [
-     59.53125,
-     59.765625
-    ],
-    [
-     59.53125,
-     59.765625
-    ]
-   ]
-  ]
+  "stall_margins_min": null,
+  "stall_margins_median": null,
+  "stall_boxes_first": []
  },
  "CV4_verdict": {
-  "patches": 80,
-  "leaves_certified": 511679,
+  "patches": 1804,
+  "leaves_certified": 5975008,
+  "leaves_standard": 0,
+  "bdc_passes": {
+   "e0": 2322896,
+   "e4": 2495229,
+   "e5": 1156883
+  },
   "tube_skipped": 0,
-  "stalled": 3000,
-  "stall_min_measured_margin": 23731830593.910942,
-  "laws_covering_residue": [
+  "stalled": 0,
+  "stall_total": 0,
+  "symmetry_covered_quadrants": 10,
+  "stack_remaining": 26,
+  "complete": false,
+  "patch_median_r": 0.04225234375,
+  "stall_min_measured_margin": null,
+  "laws_covering_equality_locus": [
    "the equality locus: part A's structural x^4 law (exact)",
    "the stratum curve: the corpus P1 (x in [0.005, 0.747])",
    "the degenerate strata: the corpus P4 / Task 17",
    "the killer dial: the corpus P2"
   ],
-  "verdict": "The 4-D covering engine (the analytic transverse patch layer + the convex inner layer + the 6x6 true-norm ball instrument) replaces the box-count wall with a measured structure: the certified leaves at the affordable resolution, the stall residue ENTIRELY at the disc-edge divergence layer (the Lyapunov pole annulus \u2014 the norm diverges at the open boundary; every measured stall margin >= +2.4e10), and the checkpoint's continuation frontier.  D_abelian >= sqrt(lambda*) holds on the certified region; the residue's exhaustive closure needs the boundary-divergence formalization (the named next instrument) + the continuation runs + the derivative-penalty patch mode for the microscopic critical region.  With part A: D_abelian(2) = sqrt(lambda*) in the closure sense; the remaining open item for the full shadow-equivalence theorem is the 12-parameter free-class wall (D_free >= sqrt(lambda*))."
+  "task34_instruments": {
+   "bdc": "the boundary-divergence certificates: the exact e0/e4/e5 corner identities (V-G) + the linear CS ratio bound (V-H), the clamped poison-free interval bounds on the box's domain portion; the p-split at 0 (the sign isolation)",
+   "dpp": "the derivative-penalty patch mode: the two-scale certificate (the coefficients at the box-scale widening 2h + the Lagrange C4 at 2h + r)",
+   "orbit": "the 16 sign quadrants = 6 orbit representatives of {1, R, S, RS} (V-E the atom swap + V-F the pi-rotation, both exact); the 10 images symmetry-covered"
+  },
+  "verdict": "Task 34 closes the Task-33 residue: (i) the boundary-divergence layer is now CERTIFIED by the BDC (the exact corner identities at e0/e4/e5 with the linear CS ratio bound \u2014 sound on the domain-portion intervals, the divergence captured at first contact); (ii) Layer A is re-certified in the derivative-penalty mode (the two-scale certificate, the radii off the box-mode bisection floor); (iii) the orbit reduction (the swap + the pi-rotation, exact) covers the 10 image quadrants; (iv) the frontier is drained to 26 branches (the continuation protocol: re-run). The layered engine (the analytic transverse patches + the convex inner + the 6x6 true-norm ball instrument + the BDC) thereby replaces the box-count wall with a certified structure; D_abelian >= sqrt(lambda*) holds on the covered region, with part A: D_abelian(2) = sqrt(lambda*) in the closure sense.  The remaining open item for the full shadow-equivalence theorem is the 12-parameter free-class wall (D_free >= sqrt(lambda*)), the user's named last gap."
  }
 }

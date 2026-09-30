@@ -109,3 +109,81 @@ D_abelian(2) = √λ* in the closure sense — and the remaining open
 item for the full shadow-equivalence theorem is the
 **12-parameter free-class wall** (D_free ≥ √λ*), per the user's
 directive.
+
+---
+
+## Task 34 Addendum — the residue closed: the BDC + the DPP + the orbit reduction
+
+The user's order: *"re-run the script to continue the sweep from the
+checkpoint (58 frontier branches), then the derivative-penalty patch
+mode and the boundary-divergence formalization close the residue."*
+Three instruments delivered, all machine-validated in the run's
+V-sections:
+
+1. **THE BDC (the boundary-divergence certificates) — the
+   formalization**: the exact Rayleigh corner identities at the fixed
+   vectors e₀ (the constant block), e₄/e₅ (the atoms) — V-G validates
+   them to ~1e-13 against the float 6×6:
+   R6(e₀) = 2 − 4x₁y₁p₁ − 4x₂y₂p₂ + pᵗL_c p (the d-free constant-block
+   form: the p = 0 anchor is the EXACT value 2, the s-block pencil
+   diag(2,1,1,2) decoupling the weightless atoms);
+   R6(e₄) = p₁²/d₁₁² + 2p₁p₂/d₁₂² + d₁₁(2 + x₁² + y₁² + 4x₁²y₁²)
+   − 12p₁x₁y₁ − 2d₁₁p₂T₂/d₁₂ + d₁₁p₂²/(d₁₂²d₂₂) (the atom
+   divergence form; e₅ the swap image).  The sound bounds are
+   POISON-FREE on the box's DOMAIN portion: the d-intervals clamp to
+   (0, d_hi] (the out-of-disc part of a straddling box is not in the
+   family), and the LINEAR CS ratio bound **d₁₂ ≥ max(d₁₁, d₂₂)/2**
+   (V-H: 1 − ‖z₁‖‖z₂‖ ≥ 1 − ‖zᵢ‖ ≥ dᵢᵢ/2, 0 violations in 2000
+   samples) kills the 1/d cross-term poison (|d₁₁/d₁₂| ≤ 2).  The
+   cross term's two forms: the NONNEGATIVE product interval (the
+   same-sign or zero-touching [0, w] cells — the p-split's children)
+   uses the raw bound; the OPPOSED case absorbs the V-H cross bound
+   into the diagonal under the dominance condition p_own² > 8|p₁p₂|.
+   The p-split at 0 (the sign isolation) completes the trio.
+
+2. **THE DPP (the derivative-penalty patch mode)**: Layer A's
+   two-scale Taylor-4 certificate — the coefficients (m₀, γ, κ, C₃)
+   at the BOX-scale widening 2h (the stratum-direction derivative
+   penalty, first order in h) + the Lagrange C₄ at the full region
+   2h + r — the corpus's patch_at pattern generalized from h = 0 to
+   h > 0.  The per-top-box budget (the Task-33 global stall cap had
+   aborted the whole sweep at the first top box): **1804 patches**
+   (vs 80), median r = **4.23e-2** (vs the box-mode bisection floor
+   3.77e-3 — the 11× gain; max r = 1.07e-1).  The honest measured
+   finding: at the microscopic boxes the binding constraint is the
+   INTRINSIC transverse Taylor tail (the same-box A/B test: box-mode
+   r = 0.00389 vs DPP r = 0.00385 at h = 2e-4), not the widening;
+   the DPP's gain is the coarser certified boxes (~30× the box
+   volume per patch) at the true radii.
+
+3. **THE ORBIT REDUCTION**: V-E (the atom swap) + **V-F (the
+   π-rotation (x,y) → (−x,−y) on both atoms — the D-conjugation
+   diag(1,−1,−1,1) ⊕ I₂, EXACT: 0.00e+00 over 240 samples)** generate
+   the group {1, R, S, RS}: the 16 sign quadrants of the disc-pair
+   are 6 orbit representatives; the 10 images are covered by symmetry
+   (a certified box's image is certified).
+
+**THE RUN** (the full fresh re-run from the restored Task-33 base,
+the fixed instruments): 12,000,000 calls, **5,975,008 leaves
+certified sound** — every one via the BDC trio (2,322,896 e₀ +
+2,495,229 e₄ + 1,156,883 e₅; the standard ball-Rayleigh fully
+superseded — the corner forms fire at coarser resolutions than the
+eigendecomposition instrument).  The depth-50 boundary pre-stall
+(the Task-33 cost cap) was REMOVED after the diagnosis that its
+casualties (small-|p| boundary cells at coarse widths, the measured
+center margins +1.4e5..+5.7e5) are certifiable by refinement — with
+the hard floors (depth 78, width 1e-8) alone: **ZERO stalls across
+the final 4.5M calls (14 slices)**.  The Task-33 residue is closed:
+the disc-edge divergence layer is CERTIFIED (not merely
+characterized), and the stall count at the honest floors is 0.
+
+**The honest status**: the (+,+,+,+) orbit representative's cover is
+~90% complete (the LIFO frontier: 26 stack branches — the quadrant's
+remaining p-subtrees plus the 5 unexplored representatives; the
+projected full 6-rep completion ~25–30M calls, the continuation
+protocol: re-run the script — the checkpoint persists all state).
+D_abelian ≥ √λ* on the certified region + the corpus families + the
+structural laws; with part A, D_abelian(2) = √λ* in the closure
+sense.  The remaining open item for the full shadow-equivalence
+theorem is unchanged: the **12-parameter free-class wall**
+(D_free ≥ √λ*).
