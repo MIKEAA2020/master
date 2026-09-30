@@ -1,9 +1,8 @@
 # Session 0004 — Task 34: the residue closed (the BDC + the DPP + the orbit reduction)
 
 - **Date**: 2026-09-30
-- **HEAD at end**: (this session's commit) — Task 34: the boundary-
-  divergence formalization + the derivative-penalty patch mode + the
-  orbit reduction; the Task-33 residue closed.
+- **HEAD at end**: f5339de — Task 34: the residue closed
+  (the BDC + the DPP + the orbit reduction).
 - **Last Task ID**: 34
 - **Ledger (open)**: the class-level lower bound's status ADVANCED TO
   CLOSED-ON-THE-CERTIFIED-REGION — the disc-edge divergence layer is
