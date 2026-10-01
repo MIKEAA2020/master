@@ -2957,3 +2957,104 @@ Stage Summary:
   empirical face's ledger.  The volume's remaining work is the
   PRINTING (the unification figure, the PDF, the QA/VLM gates) -
   the user's call.
+
+---
+Task ID: 48
+Agent: main (Super Z)
+Task: The user's order: "the printing — the unification figure, the
+PDF, the QA/VLM gates."  Volume XIV's final stage, executed as the
+thirteenth volume's printing was: the figures first (VLM-gated
+BEFORE embedding), then the PDF (the proven engine clone), then the
+full QA gates, then the records and the push.
+
+Work Log:
+- THE STATE READ: worklog Tasks 46/47 (the text complete, the pool
+  decided), the seven chapter .md files (Ch4 with the addendum:
+  4473 words), the outline's three post-execution notes, the two
+  results JSONs (seed_boundary, seed_dose) — the volume's content
+  standing; the printing the only residue.
+- THE FIGURES (both drawn from the runs' own JSONs, both
+  VLM-gated BEFORE embedding — the Vol XIII printing caught a
+  clipped annotation exactly this way, so the gate runs first):
+  (1) dose_cliff.png (scripts/vol14_fig.py, three panels: the
+  coverage dose E monotone 0.5699 -> 0.5491 with the full-grid
+  control marked; the error landscape — THE CLIFF at 44-48/49
+  (err = 1.000, 2160/2160) against the vacuous perfect at 49/49;
+  the coherence tiers with the partial/scattered overlap in E —
+  the instrument's resolution is the tier, not the rank).  VLM
+  iterations: THREE annotation-placement rounds (panel (a) an
+  annotation over the scatter; panel (b) the cliff text over the
+  axis and a clutter note; panel (c) the legend over the tier
+  cluster and a clipped note) — each caught, repositioned into
+  verified-empty regions, re-rendered; final PASS on all panels.
+  (2) unification_map_vol14.png (download/sources/
+  diagram_vol14.html + scripts/render_diagram14.py, the map's
+  FINAL face per Ch6.5): every bridge SOLID — this volume's three
+  decisions in gold (the grind certified: the laws + the stopping
+  rule STATED FIRST then fired, STOP/HOLD, 29,924,011 + 346,400
+  standing; the boundary decided: the scope law + the
+  coherence-tier law + the cliff, 864 + 720 pre-registered runs;
+  the method itself measured: reproduction-first, the five tiers,
+  the instrument laws), Vol XIII's four closures and the four
+  standing bridges beneath; THE DECIDED LEDGER replacing the open
+  ledger (the grind row DECIDED-by-rule with the residue priced
+  and declined; the boundary row DECIDED-by-experiment with the
+  boundary located absolutely; the third card dashed because
+  EXPLICITLY OUTSIDE the mathematics — the seed-level luck, the
+  hallucination zone, the accounting row); the ledger bar: 47 task
+  batteries, 14 volumes, ZERO open mathematical links.  VLM: PASS
+  on first render.
+- THE CONTENT MODULE (scripts/vol14_content.py): 7 chapters, 53
+  blocks, 11 tables of record (the typed ledger, the census
+  verdicts, the four laws, the coverage map, H1, the 21-geometry
+  pool with the tier means, H4, the error landscape, the five
+  tiers, the synthesis categories, the open types), 2 figures,
+  4 stats rows, 6 callouts — every number from the banked record
+  (the chapter .md files, the two results JSONs, the README rows);
+  Greek spelled out (lambda*, rho, sigma), exponents as caret text,
+  the non-ascii set exactly {+/-, middle-dot, em-dash, arrow} —
+  the engine's character convention.
+- THE PDF (the Vol XII/XIII engine clone): generate_vol14.py
+  (TocDocTemplate + multiBuild, FreeSerif, the cascade palette,
+  install_font_fallback, the no-dash-breaks guard, safe-keep
+  together, repeatRows tables) -> body_vol14.pdf; cover_vol14.html
+  ("The Post-Far-Field State: the Grind Certified, the Boundary
+  Decided, and the Method Itself Measured" — the outline's title
+  with 'named' honestly upgraded to 'decided' per the volume's own
+  record; the state subtitle; 794px, the thirteenth volume's cover
+  template) -> cover_vol14.pdf via html2poster; merge_vol14.py ->
+  download/The_Resolution_Programme_XIV_The_Post_Far_Field_State.pdf,
+  21 pages, the metadata current.
+- THE QA GATES (all green):
+  * cover: poster_validate check-html PASS (0 errors, 0 warnings)
+    + cover_validate.js PASS (7 text elements, no line overlaps,
+    no zone overflows).
+  * pdf_qa: 12 PASS / 0 FAIL — the 3 warnings are the intentional
+    em-dash table placeholders (the h1/pool tables' CI cells), the
+    Vol XIII printing's documented cosmetic class.
+  * font.check: 0 issues.  toc_validate check-pdf: PASS.
+  * THE VLM PAGE GATE: 7 pages rendered at 1.6x (cover, TOC, two
+    table pages, both figure pages, the closing page) — 6/7 clean
+    PASS; the cover flagged for a claimed truncation of the
+    institution line, RE-VERIFIED at 3x zoom on a cropped region:
+    the text reads exactly, no character cut, no rule overlap —
+    PASS (the full-page flag was a small-text misread).  Gate
+    closed 7/7.
+- THE RECORDS: the README (the header "the fourteen volumes"; the
+  Vol XIV PDF as volume-list item 14; the outline renumbered to 15
+  with the printing-delivered update; the computation record's
+  Vol-XIV-printing row), session summary 0014 + the index, this
+  worklog entry (both copies), the deliverables copied to the
+  local download/ (the PDF + the figures + the diagram source),
+  the scripts copied to the local scripts/, the commit + push.
+
+Stage Summary:
+- VOLUME XIV IS CLOSED: the printing delivered (21 pp, 7 chapters,
+  11 tables, 2 figures, all QA gates green) — the post-far-field
+  state's record as an artifact, the ledger at zero open
+  mathematical links, the corpus's expository residue the artifact
+  itself.  The programme's standing orders stand (push /
+  checkpoint / summary); the grind stays rule-stopped; nothing is
+  open.  The next act is the user's call: the corpus's rest, a
+  re-commissioning, or a fifteenth volume's premise — nothing
+  pending stands behind that choice.

@@ -19,7 +19,7 @@ halting physics and automata, to metabolic curvature and sustainability governan
 | `worklog.md` | The full session-by-session task log (Task IDs 0–26). |
 | `PREFERENCES.md` | Standing user preferences (English-only protocol, credential storage, commit protocol). |
 
-## The twelve volumes
+## The fourteen volumes
 
 1. **The_Resolution_Programme_Grand_Unified_Picture.pdf** (Vol I, 18 pp) — the coherent,
    top-down, bird's-eye view: one primitive, two currencies, three faces, two walls, eight domains;
@@ -271,7 +271,45 @@ halting physics and automata, to metabolic curvature and sustainability governan
    grind (the drain driver, the standing order) and the seed-level
    boundary.
 
-14. **The_Resolution_Programme_XIV_Outline.md** (Vol XIV, the OUTLINE —
+14. **The_Resolution_Programme_XIV_The_Post_Far_Field_State.pdf** (Vol XIV, 21 pp, FIRST EDITION — the post-far-field state: the grind certified, the boundary decided, the method itself measured) —
+   the continuation grind formalized as termination mathematics (the
+   race law 0.135 bits/level with predicted-vs-actual median error
+   1.0 level, the fuel law m ~ rho^31.46 with R^2 0.974, the N* = 2
+   law, the width-first optimality with the gradient-split corollary
+   refuted by the controlled A/B BEFORE any engine edit at 0.84x with
+   324 stalls) and STOPPED by its own pre-stated rule (the census's
+   verdicts: the wall arm STOP at the far-out replenishment, the
+   cover arm HOLD at the third below-floor window 24-26-28-30-30;
+   29,924,011 BDC leaves + 346,400 wall certificates standing, the
+   1246 first stall leaves banked as margin-positive residue with
+   every measured center >= lambda* + 11.25, median +107); the
+   completion certificate's FORM stated in advance (the domain = the
+   certified region + the analytic B-exit + the far-field laws, the
+   residue priced and declined); the seed-level boundary DECIDED by
+   the programme's first PRE-REGISTERED experiment (the scope law:
+   TOST-equivalence to |rho| < 0.30 replicated at n = 96; the
+   coherence-tier law; the covariate panel's clean negative; the
+   banked n = 12 null and the "perfect 4-split ordering" both
+   corrected to small-sample artifacts) with the commissioned
+   token-coverage-matched dose-response pool DECIDED as the decisive
+   negative (the pre-registered class UNTESTED-saturation; THE
+   CLIFF: err = 1.000 at every matched geometry 44-48/49, 2160/2160
+   held-out predictions failed, train accuracy 1.0000 in all 720
+   runs, wrong-confidence 0.749, while E's coverage dose runs
+   monotone 0.5699 -> 0.5491, Spearman 0.899); the method itself
+   measured (reproduction-first and its catches, the five typed
+   certificate tiers with the new PRE-REGISTERED tier, the
+   A/B-before-edit rule, the plateau and transient-profile
+   instrument laws); the synthesis statement in final form with the
+   unification map's final face (every bridge solid, every dashed
+   line decided or explicitly outside the mathematics); the ledger
+   at ZERO open mathematical links — 47 task batteries, 14 volumes,
+   every verdict machine-anchored.  Two figures (the cliff-and-dose
+   panel; the map's final face), 11 tables of record, the QA gates
+   green (pdf_qa 12 PASS, fonts clean, TOC clean, VLM pages
+   verified).
+
+15. **The_Resolution_Programme_XIV_Outline.md** (Vol XIV, the OUTLINE —
    the post-far-field state, committed before the volume is built) —
    the plan for the programme's next volume: the premise (no named
    mathematical obstruction left; the two remaining items are the
@@ -292,7 +330,15 @@ halting physics and automata, to metabolic curvature and sustainability governan
    1-3 and 5-7 written as records around the decided state (the ledger, the grind
    formalized, the certificates' coverage + the completion certificate's form, the
    method measured, the synthesis statement, the ledger forward).  The remaining
-   work is the printing.
+   work is the printing.  **UPDATE (Task 48, session 0014)**: THE PRINTING IS
+   DELIVERED — the volume printed as
+   The_Resolution_Programme_XIV_The_Post_Far_Field_State.pdf (21 pp,
+   first edition, item 14 above): the unification map regenerated at
+   the final state (every bridge solid, the decided ledger), the
+   dose-response cliff figure drawn from the runs' own JSONs, the
+   full QA gates run and green (pdf_qa 12 PASS, fonts clean, TOC
+   clean, VLM pages verified).  The volume is CLOSED; the corpus's
+   expository residue is the artifact itself.
 
 ## The computation record (exact scans, anchor-first discipline)
 
@@ -345,6 +391,7 @@ halting physics and automata, to metabolic curvature and sustainability governan
 | seed_boundary.py (Task 44) | THE SEED-LEVEL BOUNDARY CLOSED AS A LAW — the programme's first PRE-REGISTERED experiment (the design committed at 3a108d8 BEFORE the run: hypotheses H1-H4, power analysis, TOST delta=0.30, permutation p, BH-FDR, the falsification one-liners; the commissioning critique: "clear hypotheses, controls, metrics, falsification criteria, and independent replication"). THE REPRODUCTION GATE: 48/48 runs reproduce the banked exp3 numbers BIT-IDENTICAL (worst |dE| = 0.0) before any new data. THE LAW (H1): the token-sheaf coboundary energy is a task-GEOMETRY diagnostic, NOT an initialization-seed predictor — seed-level r(E, OOD error) = +0.057 [-0.145, 0.255] (compositional_16) and -0.125 [-0.317, 0.078] (intermediate_36), TOST-equivalence to |rho|<0.30 at p=0.007/0.038, REPLICATED with an independent seed block (seeds 2000-2095: r=+0.011, p=0.92, TOST p=0.002); the banked n=12 "r=-0.19/-0.18" was small-sample noise. THE COVARIATE NEGATIVE (H3): the 9-candidate training-dynamics panel (E_500/E_1500, early losses, final NLL, gradient-noise, wrong-confidence) ALL fail the pre-registered bar — seed-level OOD variance (sigma~0.033) is unexplained by every instrument pointed at it. THE REFINEMENT (H2, the honest correction): the banked "perfect 4-split ordering" does NOT survive powering — comp_16 E=0.598 vs interm_36 E=0.592 (order flipped, Welch t=1.15) while errors differ (0.934 vs 0.984); what stands is the COHERENCE-TIER law: full-grid (E~0.550, err=0.000) << partial (E~0.592-0.619, err 0.93-1.00, tiers unresolved), and scattered splits fail CATASTROPHICALLY (rand44: 44/49 pairs trained, 0/5 OOD across 12 seeds; 16/16 new geometries at err>=0.99); the instrument's degenerate-E threshold documented (tokens with <4 examples -> E=0.0 fallback). H4: WIDTH-DEPENDENT by the class rule — post-hoc diagnosis: TOST-power artifacts at n=48 (all six estimates in [-0.125,+0.097], CIs crossing zero at every width). The pooled confound re-measured: r=0.441 at n=384 (split-dominated, as flagged). | seed_boundary_results.json, seed_boundary_runs.jsonl, seed_boundary_preregistration.md |
 | grind_census.py (Task 44) | THE STOPPING RULE, MEASURED (the commissioning critique: the grind "needs a stopping rule and an expected endpoint" — computed from the frontier dynamics, not asserted). THE RULE (stated first): cover4d CONTINUE while frontier>0 and trailing-3 closure >= 1 branch/20M calls, COMPLETE at 0, HOLD after 3 consecutive below-floor windows; wall CONTINUE while the trailing-3 net stack reduction > 0, else STOP (the completion face is Task 42's far-field bookkeeping). THE MEASUREMENT: the wall arm STOPPED (the stack oscillates 39-45 with the far-out replenishment, net +4/window — exhaustion is not its endpoint; the certified region stands: 346,400); the cover4d arm caught its own projection error — the "3M-calls-to-zero" reading (trailing window 32->30->24) was a windowing artifact, REVERSED to 24->26->28->30 over the next three slices (the LIFO replenishment): HOLD-CANDIDATE 2 of 3 consecutive below-floor windows, the next rounds decide; the honest account of both frontiers: the oscillation band + the depth structure (the race law's d*), not branch-count exhaustion. The drain protocol AMENDED: cover4d-only slices (the wall arm stopped by the rule), the census re-run per round. THE RESOLUTION (Task 45, round 4 at 60M calls / 29,924,011 leaves): the third below-floor window (24->26->28->30->30, trailing closure -2.0 branches/M, projection NO-CLOSURE the trend opens) — THE RULE FIRES HOLD: both arms rule-stopped, the completion face is Task 42's bookkeeping, the certified region stands. The arc's FIRST STALL LEAVES appeared in the deciding round: 1246, every measured center margin >= +11.25 above lambda* (median +107, n=1099 with values) — interval-width effects at the frontier's depth (the wall's far-out pattern), not mathematical obstructions; they corroborate the HOLD: the remaining frontier is deep refinement whose certificate cost grows while its mathematical content is already accounted for by the analytic faces. | grind_census_results.json |
 | seed_dose_response.py (Task 47) | THE TOKEN-COVERAGE-MATCHED DOSE-RESPONSE POOL DECIDED (Vol XIV Ch.4 4.10's one remaining nameable upgrade, commissioned by the user's order and executed under the full Task-44 protocol: the prereg committed at cd42256 BEFORE the data; the gate 12/12 bit-identical through the IMPORTED instrument path, worst |dE| = 0.0). THE POOL: 30 matched geometries (the 49-grid minus a uniformly random partial matching, sizes 44-48 x gseeds 31/37/41/43/47/53, every token keeping 6-7 examples, the count profile identical within size, no degenerate-E cells) x 24 seeds in two 12-blocks (720 runs, 402 s). THE VERDICT (the pre-registered class): UNTESTED (saturation) - 0 of 5 size blocks carry within-block error variance; the level reading is the finding. THE FINDINGS: (1) THE CLIFF IS ABSOLUTE - err = 1.000 +- 0.000 at every size 44-48: 2160/2160 held-out predictions failed, train acc = 1.0000 in ALL 720 runs (perfect memorization), wrong-confidence 0.749/0.756 (confident failure) - no interpolation regime exists at the matched edge, the hypothesized graded-failure band does not exist; (2) E'S COVERAGE DOSE IS REAL - E monotone 0.5699 -> 0.5491 across 44 -> 48, descriptive Spearman(E, 49-size) = 0.899, the within-size spreads an order below the dose's span - the diagnostic measures the dose and the error axis it was to order is constant (H5-a rho_S = 0.000 both blocks; the guard silent: 253 matched pairs, max |derr| = 0.000); (3) the error landscape across the record: 49/49 vacuous-perfect, 44-48/49 total confident failure, 36/49 0.984, 16/49 0.934, scattered >= 0.99 - error NOT monotone in coverage, a function of the held-out set's structure; the coherence boundary is a cliff, not a slope. The last named item DECIDED as a decisive negative: the within-family dose-response axis does not exist in this instrument's regime; the coherence-tier law stands as the final form. | seed_dose_results.json, seed_dose_runs.jsonl, seed_dose_preregistration.md |
+| **The Vol XIV printing** (Task 48) | `scripts/vol14_fig.py`, `scripts/render_diagram14.py`, `scripts/vol14_content.py`, `scripts/generate_vol14.py`, `scripts/cover_vol14.html` + `merge_vol14.py` | THE VOLUME PRINTED — the post-far-field state's record as the artifact (download/The_Resolution_Programme_XIV_The_Post_Far_Field_State.pdf, 21 pp, first edition). THE FIGURES, both drawn from the runs' own JSONs and both VLM-gated before embedding: (1) dose_cliff.png (vol14_fig.py, three panels: the coverage dose E monotone 0.5699->0.5491 with the full-grid control marked; the error landscape with the cliff at 44-48/49 against the vacuous perfect at 49/49; the coherence tiers with the partial/scattered overlap in E — the instrument's resolution is the tier, not the rank); (2) unification_map_vol14.png (diagram_vol14.html + render_diagram14.py, the map's FINAL face: every bridge solid — this volume's three decisions in gold, Vol XIII's closures and the standing bridges beneath; the DECIDED ledger with the two former open links decided and the dashed lines that remain dashed only because explicitly OUTSIDE the mathematics; the ledger bar at 47 task batteries, 14 volumes, ZERO open mathematical links). THE ENGINE: the Vol XII/XIII clone (TocDocTemplate + multiBuild, FreeSerif, the cascade palette, 11 tables of record, stats rows, callouts) with the cover at 794px via html2poster. THE QA GATES, all green: poster_validate + cover_validate PASS on the cover; pdf_qa 12 PASS (the 3 warnings the intentional em-dash table placeholders, the Vol XIII printing's known cosmetic class); font.check 0 issues; toc_validate check-pdf PASS; the VLM page gate 7/7 (the cover's institution line re-verified at 3x zoom after a full-page misread). | body_vol14.pdf, cover_vol14.pdf, download/figures/dose_cliff.png, download/figures/unification_map_vol14.png, download/sources/diagram_vol14.html |
 
 All scans run **anchor-reproduction-first**: the manuscript's own certified numbers are
 reproduced to machine precision before any new claim is read off.

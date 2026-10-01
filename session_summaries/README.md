@@ -106,3 +106,11 @@ instead of re-deriving state from chat history (the token-saving protocol).
   coverage dose is real and monotone — the dose-response axis does
   not exist; the coherence-tier law's final form; the empirical
   face's ledger fully decided).
+- `0014_task48_vol14_printing_delivered.md` — Task 48: THE PRINTING
+  DELIVERED and Vol XIV CLOSED — the unification map's final face
+  (every bridge solid, the decided ledger, zero open mathematical
+  links) + the dose/cliff figure from the runs' own JSONs (both
+  VLM-gated before embedding), the 21-pp first edition PDF via the
+  proven engine clone, and the full QA gates green (pdf_qa 12 PASS,
+  fonts 0 issues, TOC clean, VLM 7/7 with the cover re-verified at
+  zoom). The ledger: NOTHING open.
