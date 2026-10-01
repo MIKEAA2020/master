@@ -2391,3 +2391,21 @@ Stage Summary:
   content complete through Task 40.  Next: the drain continuation
   (the standing order) + the session summary + the Vol XIII PDF
   regeneration (the carried write-up).
+
+---
+Task ID: 40 (the post-closure grind)
+Agent: main (Super Z)
+Task: The drain continuation after the critical-locus closure.
+
+Work Log:
+- The fg-driver round (1 round this invocation — the budget gate):
+  cover4d 54M -> 54.5M calls (27,186,871 leaves certified, all BDC:
+  9,847,477 e0 + 7,749,145 e4 + 9,590,249 e5; the frontier 28 -> 32;
+  ZERO stalls); the wall 680k -> 700k calls (306,401 certified:
+  135,406 window + 170,995 e4/e5 partial-sum; 213,584 far-out tags;
+  ZERO stalls; 41 stack).  The flow law steady (~1 e45-per-2-calls;
+  the cover4d conversion 1:1).
+
+Stage Summary:
+- Both frontiers clean and advancing; the continuation protocol
+  stands (re-run the fg driver).
