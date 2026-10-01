@@ -2783,3 +2783,87 @@ Stage Summary:
   named and priced in 4.10).  Next merited: the remaining Vol XIV
   chapters (1-3, 5-7) around the decided state, or the commissioning
   of the dose-response pool - the user's call.
+
+---
+Task ID: 46
+Agent: main (Super Z)
+Task: The user's order: "the remaining Vol XIV chapters (1-3, 5-7) now
+write themselves around the decided state - then commission the
+dose-response pool so even the last named item becomes a decided
+experiment."  This task: the six chapters written as records around
+the decided state (the pool commissioning is Task 47, the
+pre-registration committed BEFORE its data).
+
+Work Log:
+- THE SIX CHAPTERS (download/, both repo copies, written around the
+  DECIDED state - no chapter is a plan):
+  Ch1 THE LEDGER'S NEW SHAPE (1386 words): the ledger's three
+  shape-changes (Vol XII's five open links -> the FW-4 exhaustion ->
+  the two items both DECIDED); the typed rows table (8 rows, each
+  with owner + tier incl. the new PRE-REGISTERED tier); the census's
+  two verdicts quoted verbatim (wall STOP / cover4d HOLD, the series
+  24->26->28->30->30); the first-stall-leaves accounting (1246,
+  margins min +11.25 / median +107 above lambda*); the completion
+  conditions itemized (from grind_census_results.json); the premise
+  resolved.
+  Ch2 THE GRIND FORMALIZED (1021): the race law (0.135 bits/level,
+  predicted vs actual 1.0 level), the fuel law (81.3% of ROOT,
+  m ~ rho^31.46, R^2 0.974), N*=2, the censored 21, the gradient-split
+  A/B refutation (0.84x, 324 stalls, the flat live profile at the
+  informed-split optimum log2(100/91)); the stopping rule STATED
+  FIRST then measured (the wall STOP, the cover4d HOLD - the census's
+  own projection error caught and reversed in public); the closing
+  statement: the continuation protocol SUPERSEDED by its own
+  measurement.
+  Ch3 THE CERTIFICATES' COVERAGE (1139): the cover engine's region
+  (29,924,011 BDC leaves 10,840,150/8,324,792/10,759,069 + 1804
+  patch-tubes + the orbit reduction 16->6 + the structural laws); the
+  wall engine's region (346,400 = 135,406 window + 210,994 e45; the
+  cheap-first chain; FAROUT_CAP=48; the steady state 5022.7/10k
+  calls); Task 42's far-field map; THE COMPLETION CERTIFICATE'S FORM
+  stated in advance (the domain = certified + analytic + priced-
+  declined residue, every measured center above lambda*); the
+  coverage honestly read: an ACCOUNTING, not a road.
+  Ch5 THE METHOD ITSELF MEASURED (1119): reproduction-first's catches
+  (the 5.7266e-7 -> 8.2e-9 escape quantification; the three far-field
+  instrument errors incl. the word-power recursion bug; the
+  gradient-split transient; the tail-law measurement bug; the Task-44
+  48/48 bit-identical gate; THIS SESSION'S flint catch - the env
+  restore dropped python-flint, the first slice failed at the import,
+  caught and fixed before any number was read); the typed tiers (+
+  PRE-REGISTERED); the A/B-before-edit rule; the negatives banked;
+  the plateau + transient-profile instrument laws; the
+  pre-registration protocol; the closing symmetry - both commitments
+  ended in measured statements of scope.
+  Ch6 THE SYNTHESIS STATEMENT (987): certified (D_abelian(2) =
+  sqrt(lambda*) closure sense 1.2771421129084462, the cubic, the
+  walls' instruments, the plateau at prec 120, the off-family floor
+  +1.132e-11, the tightness SHARP on both sides); measured (the
+  growth laws, the termination structure, the census verdicts, the
+  scope law); scheduled-AND-ENDED (the rule fired; the completion is
+  bookkeeping, stated); open (the pool COMMISSIONED - the addendum's
+  row; the hallucination zone banked as measured); the unification
+  map's final face (the figure at the printing); the statement.
+  Ch7 THE LEDGER FORWARD (707): the standing orders restated and
+  AMENDED (the drain driver SUPERSEDED by its own rule - further
+  rounds are a re-commissioning decision; the push/checkpoint/
+  summary disciplines stand; the flint catch in the durability
+  layer); the open questions' three types (evidential: the pool;
+  computational: priced-declined accounting; expository: the
+  printing); the closing statement - the file the programme has
+  carried, now with pre-register-before-measuring and
+  falsify-before-believing added.
+- The chapters quote only banked numbers (the census JSON, the
+  seed_boundary results, the README rows) - no new claims, no
+  fabrications; every tier named out loud.
+- Both repo copies synced; worklog Task 46 (both copies); the
+  chapters committed (the pool's pre-registration follows as its own
+  commit BEFORE its data - the Task-47 sequence).
+
+Stage Summary:
+- Vol XIV's text is COMPLETE: seven chapters (Ch4's 3812 + the six
+  new records, 6359 words total) written around the decided state;
+  the volume's remaining work is the printing (the figure, the QA
+  gates) and the pool's verdict (Task 47, the commissioned
+  addendum).  The premise's two items stand decided in the volume's
+  own text.
