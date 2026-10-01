@@ -222,7 +222,7 @@ halting physics and automata, to metabolic curvature and sustainability governan
    map (the docking bays, the proved bridges solid, the open links
    dashed).
 
-13. **The_Resolution_Programme_XIII_The_Three_Closures_and_the_Escape_Quantified.pdf** (Vol XIII, 27 pp, SECOND EDITION — the record complete through Task 40) —
+13. **The_Resolution_Programme_XIII_The_Three_Closures_and_the_Escape_Quantified.pdf** (Vol XIII, 30 pp, THIRD EDITION — the record complete through Task 42) —
    the three closures consolidated into the unification and the escape
    quantified and re-adjudicated (the first edition: the continuum
    Fisher-Rao/Leray upgrade of Task 28, the off-class nc-AAK package of
@@ -254,9 +254,22 @@ halting physics and automata, to metabolic curvature and sustainability governan
    off-family floor +1.132e-11; THE TIGHTNESS: the compression
    infimum consistent with sqrt(lambda*) EXACTLY — the
    shadow-equivalence theorem's target confirmed sharp on both
-   sides). The regenerated open ledger: the continuation grind (the
-   drain driver, the standing order), the unbounded far-field laws
-   (the last FW-4 residue item), the seed-level boundary.
+   sides). **The third printing folds Addendum 7 in (Task 42): THE
+   UNBOUNDED FAR FIELD CLOSED** — the window's quartic growth law
+   (sigma^2 ~ s^3.977, the per-doubling 4.00 exact, the sound one-shot
+   certificates at exactly s^4: 2.07e8 / 3.32e9 / 5.31e10); the
+   e0-poly's degradation ~ -s^2 the honest negative (z-quadratic,
+   sign-invariant — the e0 not a far-field carrier); the e45 excited
+   growth rho^3.666 at N = 2 (crossing lambda* between rho 1 and 2);
+   the same-sign shells 6/6 one-shot STRICT-SOUND via the row-sound
+   window bound (the dependence-corrected square), A-blind; the mixed
+   quadrants the root's OWN grind structure, scale-invariantly — no
+   new obstruction; the valley tail cross-validated at the interval
+   Rayleigh (the margin 5.49e-9 = 2 sqrt(lambda*) 2.1491e-9 exactly,
+   to B = 2e5, the interval form sturdier than the float at x = 1e-6).
+   THE FW-4 RESIDUE EXHAUSTED. The open ledger: the continuation
+   grind (the drain driver, the standing order) and the seed-level
+   boundary.
 
 ## The computation record (exact scans, anchor-first discipline)
 

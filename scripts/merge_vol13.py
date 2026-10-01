@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """merge_vol13.py — insert Playwright cover as page 0 of the ReportLab
-body PDF (Vol XII)."""
+body PDF (Vol XII).  Third printing metadata."""
 from pypdf import PdfReader, PdfWriter
 
 A4_W, A4_H = 595.28, 841.89
@@ -26,10 +26,10 @@ def main():
     for page in PdfReader(BODY).pages:
         writer.add_page(normalize_page_to_a4(page))
     writer.add_metadata({
-        "/Title": "The Three Closures, the Escape Retracted, and the Walls Certified Symmetric — The Resolution Programme, Volume XIII (Second Edition)",
+        "/Title": "The Three Closures, the Escape Retracted, the Walls Certified Symmetric, and the Far Field Closed — The Resolution Programme, Volume XIII (Third Edition)",
         "/Author": "Z.ai",
         "/Creator": "Z.ai",
-        "/Subject": "The consolidation of the three closures and the escape quantified and re-adjudicated (the first edition) — and the corrigendum record through Task 40: the escape retracted (the shadow-equality restored in the closure sense), the two walls certified symmetric (the BDC corner identities on the abelian face, the word-power partial-sum sandwiches on the free face, both at zero stalls), the tail structural law, the gradient-split corollary refuted, and the critical locus closed tight at sqrt(lambda*).",
+        "/Subject": "The consolidation of the three closures and the escape quantified and re-adjudicated (the first edition) — and the corrigendum record through Task 42: the escape retracted (the shadow-equality restored in the closure sense), the two walls certified symmetric (the BDC corner identities on the abelian face, the word-power partial-sum sandwiches on the free face, both at zero stalls), the tail structural law, the gradient-split corollary refuted, the critical locus closed tight at sqrt(lambda*), and the unbounded far field closed (Addendum 7: the window's s^4 quartic growth law with the one-shot strict-sound shells, the e0-poly's degradation the honest negative, the e45 excited growth, the mixed quadrants the root's own grind structure scale-invariantly, the valley tail cross-validated at the interval Rayleigh to B = 2e5) — the FW-4 residue exhausted; the open ledger now the continuation grind and the seed-level boundary.",
     })
     with open(OUT, "wb") as f:
         writer.write(f)

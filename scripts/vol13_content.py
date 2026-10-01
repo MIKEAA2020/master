@@ -484,6 +484,81 @@ TABLES = {
         "font": 8.5,
         "ratios": [0.18, 0.50, 0.32],
     },
+    "farfield": {
+        "header": ["The law / the region", "The measurement",
+                   "The tier"],
+        "rows": [
+            ["THE WINDOW'S QUARTIC LAW (the growth region's spine)",
+             "sigma^2(window) ~ s^3.977 on the B/C-scale ladder (s = "
+             "1..1024; the per-doubling effective exponents 4.00 / "
+             "4.00 / 4.00 / 4.00 — the asymptotic pencil M_cell - "
+             "s^2 M_BC, the cells degree 0, the entries degree 2); the "
+             "SOUND one-shot certificates grow exactly s^4: 2.07e8 / "
+             "3.32e9 / 5.31e10 at s = 1/2/4; on the A-scale ~ t^7.29 "
+             "measured (t <= 64), approaching the degree-8 accounting "
+             "(the window words |u+v| <= 4: entries degree 4 in t, "
+             "sigma^2 degree 8)",
+             "MEASURED (the ladder + the pencil accounting)"],
+            ["THE e0-POLY'S DEGRADATION (the honest negative result)",
+             "the cross term -2 z mu (Fv . fut) ~ -s^2, the |value| fit "
+             "exponent 2.000 exact; the form is z-quadratic (a "
+             "Rayleigh-type quotient), hence sign-invariant — no menu "
+             "flip can recover it; the e0 is NOT a far-field carrier; "
+             "the window (s^4) and the e45 (the divergence) carry the "
+             "far field",
+             "MEASURED (the refutation of the banked alternative)"],
+            ["THE e45 EXCITED GROWTH (the divergence's far field)",
+             "on the A-scale ladder (rho 0.431 to 1766) the partial "
+             "sums at N = 2 grow at rho^3.666 measured (the excited "
+             "law rho^(2N) = 4 the asymptote; the N = 4 ladder faster "
+             "— the degree 2N+4 accounting), crossing lambda* between "
+             "rho 1 and 2 (11.07 at rho 1.7)",
+             "MEASURED"],
+            ["THE SAME-SIGN SHELLS (the one-shot region)",
+             "the annulus quadrants certify ONE SHOT, 6/6 "
+             "strict-sound, via the ROW-SOUND window bound — this "
+             "battery's instrument, the dependence-corrected square "
+             "(each row's interval contributes (inf |row|)^2; the "
+             "engine's interval product r*r treats the two factors as "
+             "independent and its enclosure straddles zero) — at the "
+             "identity entry B . C >= 2 (120 s)^2, A-BLIND",
+             "CERTIFIED (sound interval bounds, the s^4 law in the "
+             "bound itself)"],
+            ["THE MIXED QUADRANTS (the grind region's map)",
+             "the center-path conversion CENSORS at 22 levels at every "
+             "scale — the A-box straddles zero along the path, the "
+             "powered Gershgorin upper stays >= 12, the domain gate "
+             "never opens; the A-away one-shot (|A| >= 0.05) fails at "
+             "the census widths (the PSD-clamp's interval pessimism); "
+             "the far-field mixed quadrants carry the root's OWN grind "
+             "structure, scale-invariantly — NO new obstruction, the "
+             "growth laws + the race law guarantee the grind "
+             "terminates",
+             "MEASURED + ADJUDICATED (the scale-invariance census)"],
+            ["THE VALLEY TAIL (Task 40's plateau, cross-validated)",
+             "the cheap chain does NOT see the valley (the window "
+             "1.564, the e0 0.957, the e45 1.444 — all below "
+             "lambda*) but the FULL interval Rayleigh at the degenerate "
+             "boxes resolves the plateau margin at EVERY x down to "
+             "1e-6 (B = 2e5): the margin 5.49e-9 = 2 sqrt(lambda*) "
+             "2.1491e-9 EXACTLY — with the interval form MORE robust "
+             "than the float (the float value^2 breaks at x = 1e-6: "
+             "1.6310903 vs the interval's clean 1.6310919820489)",
+             "CROSS-VALIDATED (the prec-120 plateau law reproduced at "
+             "the wall's own instrument, matching to 0.1%)"],
+        ],
+        "caption": "Table 11.  The unbounded far field, measured and "
+                   "formalized (Addendum 7, Task 42's instrument): the "
+                   "growth region's three laws, the shells' two-region "
+                   "map, and the valley tail's cross-validation.  The "
+                   "far field decomposes into the one-shot growth "
+                   "region, the grind region (the root's own structure, "
+                   "terminating by the race law), and the valley tail "
+                   "(the plateau law) — the ROOT cap is the engine's "
+                   "bookkeeping, not the mathematics' boundary.",
+        "font": 7.5,
+        "ratios": [0.20, 0.52, 0.28],
+    },
 }
 
 CHAPTERS = [
@@ -1700,5 +1775,178 @@ CHAPTERS = [
               "obstruction before choosing the repair, price "
               "the repair before claiming it, and certify "
               "the price."),
+     ]},
+    {"title": "The Unbounded Far Field — the Laws Beyond Every Box",
+     "blocks": [
+        ("p", "The second edition closed its ledger with one "
+              "named mathematical item: the unbounded far-field "
+              "laws, the last of the wall's FW-4 residue.  The "
+              "question it named was the ROOT box's shadow — the "
+              "wall's engine certifies inside a bounded box (B "
+              "capped at 120, the far-out refinement capped at 48 "
+              "levels), and the honest question is whether the "
+              "mathematics beyond that bookkeeping boundary is "
+              "different mathematics or the same laws at another "
+              "scale.  The order came as the queue's third item, "
+              "and the instrument it commissioned (far_field_laws, "
+              "the wall's own machinery loaded through the "
+              "AST-filter exec — the tail-law pattern, no engine "
+              "mutation) answered it in the battery's established "
+              "grammar: reproduce the references first (the "
+              "P-D/V-c window reproduced exactly, the corner "
+              "anchor exact), then measure the ladders, then "
+              "certify the shells, then state the verdict.  This "
+              "chapter folds the Addendum 7 record into the "
+              "volume: the growth laws, the shells' two-region "
+              "map, the valley tail's cross-validation, and the "
+              "ledger the far field leaves behind."),
+        ("stats", [("s^4", "the window's sound one-shot growth "
+                            "law (the fit 3.977, the per-doubling "
+                            "4.00 exact)"),
+                   ("6/6", "the same-sign quadrants certified "
+                           "one shot, strict-sound, A-blind"),
+                   ("5.49e-9", "the valley margin = 2 sqrt(lambda*) "
+                               "2.1491e-9 exactly, to B = 2e5")]),
+        ("p", "The growth region's spine is the window's quartic "
+              "law.  On the B/C-scale ladder the window's "
+              "sigma^2 grows as s^3.977 with per-doubling "
+              "effective exponents 4.00 at every doubling — the "
+              "asymptotic pencil M_cell - s^2 M_BC accounts for "
+              "it exactly: the cells are degree 0, the entries "
+              "degree 2, so the pencil's window is degree 4 in "
+              "the scale.  The sound one-shot certificates grow "
+              "at exactly s^4 — 2.07e8, 3.32e9, 5.31e10 at s = "
+              "1, 2, 4 — and on the A-scale the growth runs at "
+              "t^7.29 measured, approaching the degree-8 "
+              "accounting the window words force (the entries "
+              "degree 4 in t, sigma^2 degree 8).  The honest "
+              "negative result sits beside it: the e0-poly "
+              "DEGRADES in the far field, its cross term running "
+              "as -s^2 with the fit exponent 2.000 exact — and "
+              "because the form is z-quadratic (a Rayleigh-type "
+              "quotient), it is sign-invariant: no menu flip can "
+              "recover it.  The e0 is not a far-field carrier; "
+              "the window and the e45 divergence carry the far "
+              "field, and the e45's excited growth — rho^3.666 "
+              "measured at N = 2, the rho^(2N) = 4 asymptote, "
+              "crossing lambda* between rho 1 and 2 — is the "
+              "third law of the region."),
+        ("p", "The shells then divide the far field into its two "
+              "regions, and the division is the chapter's "
+              "structural claim.  The same-sign annulus "
+              "quadrants certify ONE SHOT — 6 of 6 "
+              "strict-sound, A-blind — through this battery's "
+              "own new instrument, the row-sound window bound: "
+              "the dependence-corrected square in which each "
+              "row's interval contributes (inf |row|)^2, where "
+              "the engine's interval product r*r treats the two "
+              "factors as independent and its enclosure "
+              "straddles zero at exactly the widths that matter.  "
+              "The bound's own values carry the s^4 law.  The "
+              "mixed quadrants are the honest map's other half: "
+              "the center-path conversion censors at 22 levels "
+              "at every scale (the A-box straddles zero along "
+              "the path, the powered Gershgorin upper stays "
+              ">= 12, the domain gate never opens), and the "
+              "A-away one-shot fails at the census widths — the "
+              "PSD-clamp's interval pessimism, the same far-out "
+              "pattern the root itself showed.  That is the "
+              "punchline: the far-field mixed quadrants carry "
+              "the root's OWN grind structure, "
+              "scale-invariantly — the certificates' relative "
+              "widths are homogeneous in s — so the growth laws "
+              "plus the race law guarantee this grind "
+              "terminates, and there is no new obstruction "
+              "beyond the root's own.  The far field is not a "
+              "third kind of mathematics; it is the same two "
+              "regions the root already had, at scale."),
+        ("p", "The valley tail is the cross-validation, and it "
+              "closed a loop the second edition left open at "
+              "prec-120.  The cheap chain is blind to the "
+              "valley — the window at 1.564, the e0 at 0.957, "
+              "the e45 at 1.444, all below lambda* — but the "
+              "full interval Rayleigh at the degenerate boxes "
+              "resolves the plateau margin at every x down to "
+              "1e-6, out to B = 2e5: the margin 5.49e-9 equals "
+              "2 sqrt(lambda*) 2.1491e-9 EXACTLY, Task 40's "
+              "plateau law reproduced at the wall's own "
+              "instrument, matching to 0.1 percent.  The "
+              "interval form proved MORE robust than the float "
+              "on the way — the float value^2 breaks at x = "
+              "1e-6 (1.6310903 against the interval's clean "
+              "1.6310919820489) — an incidental result worth "
+              "the record on its own: the engine's interval "
+              "arithmetic is not merely the sound choice, it "
+              "is the numerically sturdier one at the "
+              "degenerate strata.  En route the battery also "
+              "confirmed the flint gate's semantics directly: "
+              "the whole-interval comparison returns False on "
+              "a straddling ball, the sound answer, verified "
+              "on constructed cases — the engine's honesty "
+              "mechanism checked at its own foundation."),
+        ("quote", "The unbounded far field is closed.  It "
+                  "decomposes into the one-shot growth region "
+                  "(the same-sign quadrants, s^4, "
+                  "strict-sound), the grind region (the mixed "
+                  "quadrants — the root's own structure, "
+                  "terminating by the race law), and the "
+                  "valley tail (the plateau law, "
+                  "cross-validated to B = 2e5).  The ROOT cap "
+                  "is the engine's bookkeeping, not the "
+                  "mathematics' boundary."),
+        ("table", "farfield"),
+        ("p", "With this chapter the FW-4 residue is exhausted "
+              "— every named item the wall's honest ledger "
+              "carried is closed or measured — and the volume's "
+              "ledger changes shape for the third printing.  "
+              "Chapter 8's far-field row (Table 10's middle "
+              "row) is superseded: the growth laws are "
+              "formalized, the shells certified, the valley "
+              "cross-validated.  What remains is exactly two "
+              "items, and they are different in kind.  The "
+              "first is the continuation grind itself — not a "
+              "named mathematics but the certificates' steady "
+              "accumulation, the drain driver's standing "
+              "order: at this printing the cover's frontier "
+              "stands at 57M calls and 28,436,871 leaves "
+              "certified (all BDC, zero stalls across the "
+              "entire arc), the wall at 760k calls and 336,400 "
+              "leaves (135,406 window + 200,994 e4/e5 "
+              "partial-sum, zero stalls, 43 stack), both "
+              "frontiers open and advancing at the race law's "
+              "measured pace.  The second is the seed-level "
+              "boundary, the empirical face's one open row: "
+              "the sheaf coboundary energy orders the "
+              "out-of-distribution splits exactly at the task "
+              "level and is null at the seed level — "
+              "split-level-yes, seed-level-no — a boundary "
+              "that awaits evidence rather than construction, "
+              "and that no wall in this volume's mathematics "
+              "bears on.  The one honest footnote the far-field "
+              "battery adds to its own record: the first pass "
+              "had three instrument errors (the flint "
+              "comparison probe ill-constructed, the e0 "
+              "sign-flip idea void, the shell chain omitting "
+              "the engine's step 4), every one caught by the "
+              "reproduction-first gates and fixed in place — "
+              "the discipline the whole corpus runs on, "
+              "visible once more at the moment of closure."),
+        ("p", "Provenance: every number in this chapter is "
+              "far_field_laws_results.json's own, the "
+              "Addendum 7 record the Corrigendum carries, and "
+              "the README's battery row added with it.  The "
+              "second edition's chapters stand as they were "
+              "certified — the historical record of the arc "
+              "through Task 40; this chapter completes the "
+              "record through Task 42 and retitles the "
+              "printing to match.  The reading order is "
+              "unchanged, and the file the programme has "
+              "carried since its first volume closes the "
+              "third printing the way it closed the first "
+              "two: the far field was not a new wall to break "
+              "but an old one, seen at scale — diagnosed "
+              "before it was repaired, priced before it was "
+              "claimed, and certified at the price the "
+              "instruments could actually carry."),
      ]},
 ]

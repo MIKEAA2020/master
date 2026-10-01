@@ -4,7 +4,9 @@
 body PDF (ReportLab, Report route). Cloned from generate_vol11.py (the
 proven engine): TocDocTemplate + multiBuild, FreeSerif English typography,
 cascade palette, tables/figure/stats/callouts. Cover generated separately
-(HTML/Playwright) and merged via pypdf.
+(HTML/Playwright) and merged via pypdf.  Third printing: the Addendum 7
+chapter (the unbounded far field closed) folded in, the record through
+Task 42.
 """
 import os, sys, hashlib
 
@@ -85,7 +87,7 @@ AVAIL_H = PAGE_H - 2 * MARGIN
 H1_ORPHAN_THRESHOLD = AVAIL_H * 0.25
 MAX_KEEP_HEIGHT = PAGE_H * 0.4
 
-DOC_TITLE = "The Three Closures, the Escape Retracted, and the Walls Certified Symmetric — The Resolution Programme, Volume XIII (Second Edition)"
+DOC_TITLE = "The Three Closures, the Escape Retracted, the Walls Certified Symmetric, and the Far Field Closed — The Resolution Programme, Volume XIII (Third Edition)"
 OUT_PATH = "/home/z/my-project/github_repos/master/scripts/body_vol13.pdf"
 
 # ---------------------------------------------------------------- styles
@@ -270,7 +272,7 @@ def page_decor(canvas, doc):
     canvas.line(MARGIN, 0.62 * inch, PAGE_W - MARGIN, 0.62 * inch)
     canvas.setFont("FreeSerif", 7.5)
     canvas.setFillColor(TEXT_MUTED)
-    canvas.drawString(MARGIN, 0.46 * inch, "Amin Abaee · Volume XIII, Second Edition — the Escape Retracted, the Walls Certified Symmetric, the Locus Tight")
+    canvas.drawString(MARGIN, 0.46 * inch, "Amin Abaee · Volume XIII, Third Edition — the Escape Retracted, the Walls Symmetric, the Locus Tight, the Far Field Closed")
     if doc.page >= 2:
         canvas.drawRightString(PAGE_W - MARGIN, 0.46 * inch, str(doc.page))
     canvas.restoreState()
@@ -279,7 +281,7 @@ doc = TocDocTemplate(OUT_PATH, pagesize=A4,
                      leftMargin=MARGIN, rightMargin=MARGIN,
                      topMargin=MARGIN, bottomMargin=MARGIN,
                      title=DOC_TITLE, author="Z.ai", creator="Z.ai",
-                     subject="The consolidation of the three closures into the unification and the escape quantified and re-adjudicated (the first edition: the Fisher-Rao/Leray continuum upgrade of Task 28, the off-class nc-AAK package of Task 29, the rank-aware synthesis of Task 30, the symmetric shadow second-order theory and the certified 8.2e-9 residual) — and the corrigendum record through Task 40: the boundary valley adjudicated and the escape retracted (D_abelian(2) <= sqrt(lambda*) exactly, the structural quartic law, the shadow-equality restored in the closure sense), the two walls certified symmetric (the 4-D covering with the BDC corner identities, the DPP patches and the orbit reduction on the abelian face; the 12-parameter free-class wall with the word-power partial-sum sandwiches on the free face — both polynomial, both at zero stalls, 27.7M and 316k leaves certified), the tail structural law (the fuel, race, N-star, census and carrier parts), the gradient-split corollary refuted by the controlled A/B, and the critical locus closed (the plateau law certified at precision 120, the approach law, the K-tail, the off-family floor at +1.1e-11, the tightness: the compression infimum consistent with sqrt(lambda*) exactly).")
+                     subject="The consolidation of the three closures into the unification and the escape quantified and re-adjudicated (the first edition: the Fisher-Rao/Leray continuum upgrade of Task 28, the off-class nc-AAK package of Task 29, the rank-aware synthesis of Task 30, the symmetric shadow second-order theory and the certified 8.2e-9 residual) — and the corrigendum record through Task 42: the boundary valley adjudicated and the escape retracted (D_abelian(2) <= sqrt(lambda*) exactly, the structural quartic law, the shadow-equality restored in the closure sense), the two walls certified symmetric (the 4-D covering with the BDC corner identities, the DPP patches and the orbit reduction on the abelian face; the 12-parameter free-class wall with the word-power partial-sum sandwiches on the free face), the tail structural law, the gradient-split corollary refuted by the controlled A/B, the critical locus closed (the plateau law certified at precision 120, the off-family floor at +1.1e-11, the tightness at sqrt(lambda*)), and the unbounded far field closed (Addendum 7: the window's quartic growth law s^4 with the sound one-shot shells strict-sound 6/6, the e0-poly's degradation -s^2 the honest negative, the e45 excited growth rho^3.67, the mixed quadrants the root's own grind structure scale-invariantly, and the valley tail cross-validated at the interval Rayleigh to B = 2e5) — the FW-4 residue exhausted, the residue now the continuation grind and the seed-level boundary.")
 doc.onFirstPage = page_decor
 doc.onLaterPages = page_decor
 
