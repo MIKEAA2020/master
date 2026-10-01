@@ -386,3 +386,107 @@ remaining honest residue is the continuation grind itself: the
 critical-locus continuation (the line-atom valley's deep refinement +
 the tail's structural law), the unbounded far-field laws, the far-out
 cap-hitters, the cover4d frontier.
+
+---
+
+## Addendum 6 — Tasks 38/39/40: the tail's structural law, the split
+corollary refuted, and the critical locus closed (the line-atom
+valley's deep refinement)
+
+### Task 38 — the tail's structural law (the FW-4 residue item,
+measured)
+
+The instrument (`tail_law.py`, the wall's machinery via the
+AST-filter exec): TL-0 the flow series, TL-1 the stack anatomy, TL-2
+the far-out population (MC 3000), TL-3 the center-path conversion
+probe (59 cases), TL-3b the race analysis, TL-4 the verdict.  **THE
+FIVE-PART LAW**: (1) the fuel law — the far-out population is 81.3%
+of the ROOT, the centers' margins 100% positive, m ~ ρ^{31.46}
+(R² 0.974): the divergence is the certificate's fuel and never binds
+(values 1e9–1e33 over λ*); (2) the race law — the conversion depth
+d* = ceil(log2(eps0)/rate) with eps0 the tag's rad/value (median
+5.41) and rate the per-level relative-radius decay (median 0.135
+bits/level): predicted vs. actual median |err| 1.0 level (n=35) —
+**the swamp is a RADIUS problem, not a value problem**; (3) the N*
+law — every conversion wins at N*=2 (the degree-8 form carries the
+whole far-out tail); (4) the censored 21 = slow, not stuck (the
+honest census is a budget artifact, not a structural wall); (5) the
+gradient carriers (at measurement time) — the A-off-diagonal
+couplings.  The far-out tail has NO structural wall; the drain's
+cost is the geometric radius race.  (The honest record: the first
+pass aggregated the N-ladder's candidates by midpoint — all 59
+"censored"; the engine's rule, each (N,z) tested independently,
+restored: 38/59 converted.)
+
+### Task 39 — the gradient-split corollary REFUTED (the controlled
+A/B before any engine edit)
+
+Task 38's banked "actionable corollary" (a ~2x drain via the
+rel·G split score) was tested by `gradient_split_ab.py` on the LIVE
+39-entry stack (the F_* counters snapshotted/restored, no checkpoint
+mutation): **the fresh profile has FLATTENED** (the top carrier 18%
+vs ~30% at the TL-3b census-width boxes — the peaked profile was a
+TRANSIENT of the measurement-time stack, not a structural
+invariant).  The controlled arms: the stock width-first split
+converts 0.4998 e45/call (0 stalls); the gradient arm 0.4185/call —
+**the ratio 0.84x with 324 cap-hit stalls**.  The dynamic variant is
+priced out (24 profile evals = 17 calls of overhead against a
+≤1.05x headroom): at the flat live profile the measured 0.135
+bits/level is ALREADY the informed-split optimum (log2(100/91) =
+0.137).  **The width-first rule STAYS — the engine validated
+near-optimal on the live frontier.**
+
+### Task 40 — the critical locus closed (the line-atom valley's deep
+refinement — the Vol XIII gate)
+
+The instrument (`critical_locus.py`): the closed-form kernel (the
+diagonal commuting family gives S_(i,j) = μ_(i,j)·diag(xⁱyʲ, (−x)ⁱyʲ)
+EXACTLY, so E(α,γ) = √(μ_αμ_γ)[1_{α+γ=(1,1)} − p·y^J·x^I·(1−(−1)^I)],
+E symmetric — validated against the general machinery to 0.0), the
+STRUCTURED O(n)-per-apply matvec (the Φ-polynomial operator — the
+deep-K and the mpmath certifications' engine), the x-ladder, the
+K-chain, the FD slope map, the off-family descent, and the prec-120
+certification.  **THE CRITICAL LOCUS'S STRUCTURAL LAW**:
+
+- **THE PLATEAU LAW**: the line-atom family's kernel SATURATES at
+  √λ* + 2.1491e-09 (x ≤ 1e-3, K ≥ 36, float-stable; CERTIFIED at
+  mpmath prec 120, K=64: 1.2771421150615995710039) — the valley is
+  unbounded in B (B = c*/2x) but FLAT in value: the I=1 stripe
+  (2px = c*) is the x⁰ leading structure, the B-magnitude cancels
+  identically.
+- **THE APPROACH LAW**: E(x) − plateau ~ x^4.00 (R² 1.0000) — the
+  quartic approach onto the plateau, the stationary family's
+  generic scaling.
+- **THE K-TAIL LAW**: |E_K − E_∞| ~ exp(−0.805·K) (the y*^K
+  geometric tail); the K ≥ 36 floor is below 1e-12.
+- **THE OFF-FAMILY FLOOR (the closure)**: the descent at the
+  converged K=64 lands **+1.132e-11 above √λ*** — 60x deeper than
+  the Task-35 multi-start winner (+6.4e-10), the SVD backward error
+  ±6.3e-13 — driven by TINY displacements (the B's ~4e-6, the
+  A-couplings ~1e-7, the C's ~3e-8): the valley's thinness
+  quantified.  The descent from x=1e-2 stalls at +2.46e-9 — the
+  deep path is delicate (the "thin valley" of the honest residue).
+- **THE TIGHTNESS STATEMENT**: every measured point sits ABOVE √λ*
+  (the compression theorem honored at every rung), and the floor
+  descends to within 1.1e-11 of √λ* — the compression infimum is
+  **consistent with √λ* exactly (TIGHT)**.  The power-sum class
+  (⊃ Prony + affine) does not dip below √λ* at any measured level;
+  the shadow-equivalence theorem's √λ* target is CONFIRMED SHARP on
+  the free side.
+- **THE B-EXIT BOOKKEEPING**: the wall's ROOT caps B at 120 — the
+  family segment x < 1.65e-3 (B > 120) lies outside the certified
+  box; the kernel analysis covers it analytically (the compression
+  bound is parameter-space-global).
+
+**The verdict**: the critical-locus residue — named at Task 35,
+carried through Tasks 36–38 as "the line-atom approach's thin
+valley, B ~ c*/2x unbounded" — is now MEASURED and CLOSED: the
+unboundedness is a parameter-space artifact that cancels in value
+(the plateau law), the tightness at √λ* is the supported structure
+(the off-family floor at +1.1e-11), and the compression theorem
+stands as the free side's sharp lower bound.  With Task 34 (the
+abelian residue), Task 36 (the ρ-boundary), Task 38 (the tail's
+law), and Task 40 (the critical locus), the shadow-equivalence
+theorem's named residues are all closed or measured; the remaining
+work is the continuation grind itself (the cover4d frontier, the
+far-out cap-hitters, the unbounded far-field laws).

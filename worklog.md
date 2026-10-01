@@ -2336,3 +2336,58 @@ Stage Summary:
   stack state).  The stock engine stays; the drain continues per
   the standing order; next: the critical-locus continuation (the
   Vol XIII gate).
+
+---
+Task ID: 40
+Agent: main (Super Z)
+Task: The critical-locus continuation (the other FW-4 residue
+item — the Vol XIII gate), per the feasibility-ordered sweep.
+
+Work Log:
+- THE PRE-CHECK (quick_locus_check.py): the vectorized kernel clone
+  reproduces the banked numbers; the x-ladder revealed the
+  SATURATION PLATEAU (the family does NOT converge to sqrt(lambda*)
+  — it converges to sqrt(lambda*) + 2.149e-9) — the design-changing
+  finding.
+- THE CLOSED FORM (new, exact): the diagonal commuting family gives
+  S_(i,j) = mu_(i,j) diag(x^i y^j, (-x)^i y^j) EXACTLY — the kernel
+  E(a,g) = sqrt(mu_a mu_g)[1_{a+g=(1,1)} - p y^J x^I (1-(-1)^I)],
+  E SYMMETRIC; validated vs the general machinery to 0.0.  The
+  STRUCTURED O(n)-per-apply matvec (the Phi-polynomial operator)
+  validated vs the dense SVD to 4.4e-16 — the deep-K and the
+  mpmath prec-120 certifications' engine.
+- THE INSTRUMENT (critical_locus.py, critical_locus_results.json):
+  CL-0 the validations; CL-1 the x-ladder (the plateau + the
+  approach law); CL-2 the K-chain (the truncation tail); CL-3 the
+  FD slope map + the off-family descent (Nelder-Mead at the honest
+  K, the K=64 certification); CL-4 the prec-120 certification;
+  CL-5 the verdict.
+- THE STRUCTURAL LAW (six parts): THE PLATEAU LAW (the family
+  saturates at sqrt(lambda*) + 2.1491e-9, CERTIFIED at prec 120,
+  K=64: 1.2771421150615995710039 — the valley unbounded in B but
+  FLAT in value: the I=1 stripe 2px = c* is the x^0 leading
+  structure, the B-magnitude cancels identically); THE APPROACH
+  LAW (x^4.00, R^2 1.0000 — the stationary quartic); THE K-TAIL
+  LAW (exp(-0.805 K), the y*^K geometric); THE OFF-FAMILY FLOOR
+  (the descent lands +1.132e-11 above sqrt(lambda*) — 60x deeper
+  than the Task-35 winner's +6.4e-10, the SVD backward error
+  +-6.3e-13, the displacements TINY: the B's ~4e-6, the couplings
+  ~1e-7 — the thinness quantified; the x=1e-2 start stalls at
+  +2.46e-9 — the deep path delicate); THE TIGHTNESS STATEMENT
+  (every point above sqrt(lambda*), the floor within 1.1e-11 — the
+  compression infimum consistent with sqrt(lambda*) EXACTLY: the
+  shadow-equivalence theorem's target CONFIRMED SHARP on the free
+  side); THE B-EXIT bookkeeping (the x < 1.65e-3 segment outside
+  the wall's ROOT box, covered analytically).
+- THE RECORD: the Corrigendum's Addendum 6 (Tasks 38/39/40 — the
+  tail law, the split refutation, the critical locus); the README
+  rows (tail_law.py + gradient_split_ab.py + critical_locus.py);
+  this worklog entry; the mirror commit + push.
+
+Stage Summary:
+- The critical-locus residue CLOSED (the line-atom valley measured:
+  the plateau + the quartic + the off-family floor + the
+  tightness).  The Vol XIII gate cleared — the volume's record
+  content complete through Task 40.  Next: the drain continuation
+  (the standing order) + the session summary + the Vol XIII PDF
+  regeneration (the carried write-up).

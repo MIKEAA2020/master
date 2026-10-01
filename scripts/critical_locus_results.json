@@ -1,0 +1,191 @@
+{
+ "meta": {
+  "order": "the critical-locus continuation (the line-atom valley's deep refinement \u2014 the FW-4 residue item, the Vol XIII gate)",
+  "date": "2026-10-01",
+  "lambda_star": 1.6310919765642504,
+  "sqrt_lambda_star": 1.2771421129084461
+ },
+ "CL0": {
+  "closed_vs_general": 0.0,
+  "structured_vs_dense": 4.440892098500626e-16
+ },
+ "CL1": {
+  "ladder": [
+   {
+    "x": 0.05,
+    "E": 1.2771436516351893
+   },
+   {
+    "x": 0.02,
+    "E": 1.2771421543928305
+   },
+   {
+    "x": 0.01,
+    "E": 1.2771421175160032
+   },
+   {
+    "x": 0.005,
+    "E": 1.277142115211203
+   },
+   {
+    "x": 0.002,
+    "E": 1.2771421150614832
+   },
+   {
+    "x": 0.001,
+    "E": 1.2771421150577962
+   },
+   {
+    "x": 0.0005,
+    "E": 1.2771421150575653
+   },
+   {
+    "x": 0.0002,
+    "E": 1.2771421150575506
+   },
+   {
+    "x": 0.0001,
+    "E": 1.27714211505755
+   },
+   {
+    "x": 1e-05,
+    "E": 1.2771421150575502
+   },
+   {
+    "x": 1e-06,
+    "E": 1.2771421150575497
+   },
+   {
+    "x": 1e-08,
+    "E": 1.2771421150575497
+   }
+  ],
+  "plateau": 1.2771421150575502,
+  "plateau_excess": 2.1491040058663202e-09,
+  "approach_exponent": 4.0000379070515795,
+  "approach_r2": 0.9999999999642031
+ },
+ "CL2": {
+  "chain": [
+   {
+    "K": 16,
+    "E": 1.2771409834259626
+   },
+   {
+    "K": 20,
+    "E": 1.2771420673206453
+   },
+   {
+    "K": 24,
+    "E": 1.2771421131156155
+   },
+   {
+    "K": 28,
+    "E": 1.277142114984192
+   },
+   {
+    "K": 32,
+    "E": 1.2771421150585767
+   },
+   {
+    "K": 36,
+    "E": 1.2771421150614832
+   },
+   {
+    "K": 40,
+    "E": 1.2771421150615954
+   },
+   {
+    "K": 44,
+    "E": 1.2771421150616002
+   },
+   {
+    "K": 48,
+    "E": 1.2771421150615998
+   },
+   {
+    "K": 56,
+    "E": 1.2771421150615998
+   },
+   {
+    "K": 64,
+    "E": 1.2771421150615998
+   }
+  ],
+  "tail_rate_per_K": 0.8047730519227042
+ },
+ "CL3_slopes": {
+  "B0": 1.5219178001180111e-06,
+  "B1": -1.5219178787588088e-06,
+  "C0": 0.015278608731905674,
+  "C1": 0.015278608731831659,
+  "Aa00": 0.009681149893086084,
+  "Aa11": -0.009681149904981331,
+  "Ab00": -0.0029928111814189356,
+  "Ab11": -0.002992811194447063,
+  "Aa01": 0.013367165557035912,
+  "Aa10": -0.013367165557405986,
+  "Ab01": 6.29126380620922e-12,
+  "Ab10": -2.2204460492503127e-12
+ },
+ "CL3_descents": [
+  {
+   "start": "family x=2e-3",
+   "search_value": 1.277142112916747,
+   "cert_value": 1.27714211291977
+  },
+  {
+   "start": "family x=1e-2",
+   "search_value": 1.2771421153680804,
+   "cert_value": 1.2771421153711031
+  }
+ ],
+ "CL3_best": {
+  "value": 1.27714211291977,
+  "excess": 1.1323830761966747e-11,
+  "x": [
+   99.29181037093062,
+   -99.29181062218049,
+   0.999999971183938,
+   0.9999999706722599,
+   0.0019999132827988636,
+   -0.0019996445265696326,
+   0.656324868758206,
+   0.6563248697514088,
+   -4.407580863160681e-07,
+   -2.6451234468426727e-07,
+   -4.8105454982043215e-09,
+   -4.19962835522928e-09
+  ],
+  "displacement": [
+   -3.865145245640633e-06,
+   3.613895373177911e-06,
+   -2.8816061981018493e-08,
+   -2.9327740125317803e-08,
+   -8.671720113642353e-08,
+   3.55473430367452e-07,
+   -1.0761150304183786e-08,
+   -9.76794745088938e-09,
+   -4.407580863160681e-07,
+   -2.6451234468426727e-07,
+   -4.8105454982043215e-09,
+   -4.19962835522928e-09
+  ]
+ },
+ "CL4": {
+  "family_plateau_mp": "1.27714211506159957100389822547",
+  "K": 64,
+  "prec": 120,
+  "converged_at_iter": 40,
+  "off_family_floor": 1.27714211291977,
+  "off_family_floor_bracket": 6.300780614089685e-13
+ },
+ "CL5_verdict": [
+  "THE PLATEAU LAW: the line-atom family's kernel SATURATES at sqrt(lambda*) + 2.149e-09 (x <= 1e-3, K >= 36, float-stable) \u2014 the valley is unbounded in B (B = c*/2x) but FLAT in value: the I=1 stripe (2px = c*) is the x^0 leading structure, the B-magnitude cancels identically",
+  "THE APPROACH LAW: E(x) - plateau ~ x^{4.00} (R^2 1.0000) \u2014 the quartic-in-x approach onto the plateau (the stationary family's generic scaling)",
+  "THE K-TAIL LAW: |E_K - E_inf| ~ exp(-0.80 K) \u2014 the y*^K geometric tail; the K >= 36 floor is below 1e-12, the search's honest precision",
+  "THE OFF-FAMILY FLOOR: the descent at the converged K lands +1.132e-11 above sqrt(lambda*) (the dip +2.14e-09 below the family plateau, the displacement dominated by B0, B1, C0, C1, Aa00, Aa11, Ab00, Ab11, Aa01, Aa10, Ab01, Ab10)",
+  "THE B-EXIT BOOKKEEPING: the wall's ROOT caps B at 120 \u2014 the family segment x < 1.65e-03 (B > 120) lies outside the certified box; the kernel analysis covers it analytically (the compression bound is parameter-space-global)",
+  "THE TIGHTNESS STATEMENT: every measured point sits ABOVE sqrt(lambda*) (the compression theorem honored); the floor's structure \u2014 plateau vs off-family dip vs sqrt(lambda*) itself \u2014 is the honest residue: a descent to the resolution limit would certify TIGHTNESS, a stable positive excess a GAP (a candidate STRONGER lower bound for D_free)"
+ ]
+}
