@@ -4,7 +4,7 @@
   "date": "2026-09-30",
   "layers": "A: the stratum tube (the Task-26 TP patches, the exhaustive (w,x,y) sweep); B: the far field (the 6x6 true-norm ball instrument, the adaptive anisotropic bisection with the convex inner structure)",
   "lambda_star": "1.6310919765642504414737578928177383666901925754942",
-  "wall_time_s": 191.5504674911499
+  "wall_time_s": 193.36789536476135
  },
  "VA_6x6_vs_FX1": {
   "max_diff": 7.993605777301127e-15,
@@ -153,17 +153,17 @@
    ],
    "orbit_reduction": "6 reps of 16 quadrants; the group {1, R, S, RS} (V-E + V-F)"
   },
-  "leaves_certified": 24436873,
+  "leaves_certified": 25686872,
   "leaves_standard": 0,
-  "bdc_e0_passes": 8857151,
-  "bdc_e4_passes": 7149063,
-  "bdc_e5_passes": 8430659,
+  "bdc_e0_passes": 9334122,
+  "bdc_e4_passes": 7465777,
+  "bdc_e5_passes": 8886973,
   "symmetry_covered_quadrants": 10,
   "tube_skipped": 0,
   "stalled": 0,
   "stall_records": 0,
-  "calls": 49000000,
-  "stack_remaining": 28,
+  "calls": 51500000,
+  "stack_remaining": 30,
   "complete": false,
   "stall_margins_min": null,
   "stall_margins_median": null,
@@ -171,18 +171,18 @@
  },
  "CV4_verdict": {
   "patches": 1804,
-  "leaves_certified": 24436873,
+  "leaves_certified": 25686872,
   "leaves_standard": 0,
   "bdc_passes": {
-   "e0": 8857151,
-   "e4": 7149063,
-   "e5": 8430659
+   "e0": 9334122,
+   "e4": 7465777,
+   "e5": 8886973
   },
   "tube_skipped": 0,
   "stalled": 0,
   "stall_total": 0,
   "symmetry_covered_quadrants": 10,
-  "stack_remaining": 28,
+  "stack_remaining": 30,
   "complete": false,
   "patch_median_r": 0.04225234375,
   "stall_min_measured_margin": null,
@@ -197,6 +197,6 @@
    "dpp": "the derivative-penalty patch mode: the two-scale certificate (the coefficients at the box-scale widening 2h + the Lagrange C4 at 2h + r)",
    "orbit": "the 16 sign quadrants = 6 orbit representatives of {1, R, S, RS} (V-E the atom swap + V-F the pi-rotation, both exact); the 10 images symmetry-covered"
   },
-  "verdict": "Task 34 closes the Task-33 residue: (i) the boundary-divergence layer is now CERTIFIED by the BDC (the exact corner identities at e0/e4/e5 with the linear CS ratio bound \u2014 sound on the domain-portion intervals, the divergence captured at first contact); (ii) Layer A is re-certified in the derivative-penalty mode (the two-scale certificate, the radii off the box-mode bisection floor); (iii) the orbit reduction (the swap + the pi-rotation, exact) covers the 10 image quadrants; (iv) the frontier is drained to 28 branches (the continuation protocol: re-run). The layered engine (the analytic transverse patches + the convex inner + the 6x6 true-norm ball instrument + the BDC) thereby replaces the box-count wall with a certified structure; D_abelian >= sqrt(lambda*) holds on the covered region, with part A: D_abelian(2) = sqrt(lambda*) in the closure sense.  The remaining open item for the full shadow-equivalence theorem is the 12-parameter free-class wall (D_free >= sqrt(lambda*)), the user's named last gap."
+  "verdict": "Task 34 closes the Task-33 residue: (i) the boundary-divergence layer is now CERTIFIED by the BDC (the exact corner identities at e0/e4/e5 with the linear CS ratio bound \u2014 sound on the domain-portion intervals, the divergence captured at first contact); (ii) Layer A is re-certified in the derivative-penalty mode (the two-scale certificate, the radii off the box-mode bisection floor); (iii) the orbit reduction (the swap + the pi-rotation, exact) covers the 10 image quadrants; (iv) the frontier is drained to 30 branches (the continuation protocol: re-run). The layered engine (the analytic transverse patches + the convex inner + the 6x6 true-norm ball instrument + the BDC) thereby replaces the box-count wall with a certified structure; D_abelian >= sqrt(lambda*) holds on the covered region, with part A: D_abelian(2) = sqrt(lambda*) in the closure sense.  The remaining open item for the full shadow-equivalence theorem is the 12-parameter free-class wall (D_free >= sqrt(lambda*)), the user's named last gap."
  }
 }

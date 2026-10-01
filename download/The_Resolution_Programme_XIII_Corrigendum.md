@@ -291,3 +291,98 @@ pilot's 76k leaves + the instruments' validated coverage); the
 wall's assault is BUILT and measured — the full shadow equivalence
 theorem's last gap now has its engine, its probes, and its named
 residue.
+
+---
+
+## Addendum 5 — Task 36: the ρ-boundary residue closed (the free e4/e5
+unstable-mode divergence certificates)
+
+**Date**: 2026-09-30 (session 0006) + the 2026-10-01 continuation.  **The
+user's order**: *(1) keep re-running both scripts to drain their
+frontiers; (2) Task 36's named assignment — the free e4/e5 unstable-mode
+divergence certificates, which would close the ρ-boundary residue the
+same way Task 34 closed the abelian one.*
+
+### The formalization
+
+1. **The domain wall is the Gram wall ρ(K) = 1.**  The divergence of the
+   formal Neumann series lives in the Lyapunov block L_c = Σ T_n with
+   the WORD-POWER RECURSION T₀ = CCᵗ, T_{n+1} = A_a T_n A_aᵗ +
+   A_b T_n A_bᵗ — each T_n PSD, the partial sums PSD-monotone toward
+   L_c, CONVERGENT at every in-class point: the ρ < 1 interior AND the
+   ρ ≥ 1 X-cancellation strata (where the formal Neumann diverges but
+   the true Gramian exists).
+
+2. **THE CERTIFICATE (the partial-sum sandwich)**: at the class vectors
+   v = (z, 0) the denominator is the CONSTANT zᵗMU z (no Gramian
+   entries, no poison), and value² ≥ [P(z) + Q(z)]/D(z) with
+   Q(z) = (F_uᵗz)ᵗ L_c (F_uᵗz) ≥ the partial-sum sandwich Q_N(z) —
+   POLYNOMIAL (degree 2N + 4), NO CONVERGENCE NEEDED, sound at every
+   in-class point of the box, the excited out-of-class points VACUOUS
+   (the infinite Hankel norm is not a competitor).  The whole
+   bounded-Hankel class is covered by one polynomial instrument — the
+   Neumann gate rendered unnecessary, exactly as the BDC corner forms
+   superseded the eigendecomposition instrument on the abelian side.
+
+### The probes (probe_task36.py / probe_task36b.py)
+
+P-a the zero-WFA anchor EXACT (0.00e+00 over 20 random (A_a, A_b) with
+ρ 1.26–5.79); the soundness direction at the shadow/escape (the
+N-chain 1.251 → 1.444 ≤ 1.631); P-b the near-locus chain (the true
+value² exploding 33.8 → 7.9e7 as ρ → 1; the certificate crossing λ* at
+N = 4 for ρ ≥ 0.8); P-c the TRUE X-cancellation conic (the unstable
+left-eigenvector's conic u·(C ⊗ C) = 0 — the partial sums CONVERGE at
+ρ > 1, the formal-solve agreement, 0 soundness violations); P-d the
+excited growth law ρ^{2N} (measured 1.126/1.232/1.458 per step); P-e
+THE COVERAGE: 1755/2000 (87.8%) of the recorded stall boxes certified
+at N = 2 (the cheapest rung; the 245 failures pure interval-width
+effects — the centers' float certificates far above λ*).
+
+### The honest in-session record
+
+The first interval implementation had TWO bugs — the word-power
+recursion missing the right multiplication (T_{n+1} = (A_a+A_b)T_n,
+decaying at ‖A‖ not the spectral rate) and the Q_plain cross-term typo
+(T01.f11 for T01.f01) — the float probe (correct all along) exposed
+them through the shadow validation (707.49 > 1.63); both FIXED, the
+cross-validation added (the word-power sums vs the corpus's Lyapunov:
+9.34e-06 at N = 16, the truncation tail), the engine honestly RESET
+from the git checkpoint (the buggy 10,086 passes discarded, the
+counters restored, the re-seed redone).
+
+### The engine + the runs
+
+The N-ladder (2, 4, 8, 16, 32) × the z-menu (the fixed Z_VECS + the
+adaptive unstable-mode pair — the center's F_u-sandwich generalized
+eigenproblem) inserted between the e0-poly and the domain gates; the
+far-out census REPLACED by the bounded far-out refinement
+(FAROUT_CAP = 48 — the e4/e5 failures at the census widths are pure
+interval-width effects; the B/C-first splits resolve them in ~6–10
+levels); the 2000 recorded stalls re-seeded (the far-out re-census).
+
+**The Task-36 session run**: the wall drained through the new chain
+(360k → 540k calls; the e4/e5 partial-sum passes 0 → 90,993; ZERO
+stalls at the far-out refinement; the frontier ~45 entries at the
+depths 39–57) — with the cover4d abelian drain in parallel (the
+B_SLICE = 500k slices, 39.5M → 48M calls, ZERO stalls).  **The
+2026-10-01 continuation** (the standing order, both frontiers): the
+wall at 580k+ calls / 110,995+ e4-e5 passes / ZERO stalls (41 stack
+entries — the far-out refinement active); cover4d at 50M calls /
+24.94M leaves certified (all BDC: 9.01M e₀ + 7.23M e₄ + 8.70M e₅;
+ZERO stalls; the frontier 26–30 branches — the LIFO grind through the
+remaining orbit representatives).
+
+### The verdict
+
+The ρ-boundary layer — the Gershgorin-inconclusive boxes near ρ(K) = 1
+where every Neumann-based instrument was blind — is now CERTIFIED by
+the partial-sum unstable-mode forms: sound at every in-class point
+including the X-cancellation strata, the excited out-of-class points
+vacuous.  **D_free ≥ √λ* on the certified region.**  The two walls now
+stand SYMMETRIC — the abelian residue closed by Task 34's BDC corner
+identities, the free residue by Task 36's word-power sandwiches, both
+machine-certified at zero stalls — and the shadow-equivalence theorem's
+remaining honest residue is the continuation grind itself: the
+critical-locus continuation (the line-atom valley's deep refinement +
+the tail's structural law), the unbounded far-field laws, the far-out
+cap-hitters, the cover4d frontier.

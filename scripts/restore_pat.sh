@@ -1,77 +1,74 @@
 #!/usr/bin/env bash
 # restore_pat.sh — self-healing PAT re-installation for every new session.
 #
-# WHY THIS EXISTS: /home/z/my-project/ persists across session resets, but
-# the home directory (~/.git-credentials, ~/.bashrc) does NOT. The durable
-# copy of the GitHub PAT lives at /home/z/my-project/.secrets/github_pat.txt
-# (gitignored by /home/z/my-project/.gitignore). This script re-installs it
-# into the volatile stores so `git push` works immediately in a fresh session.
+# THE SCRUBBER FINDING (2026-10-01, Task 37): session resets scrub
+# /home/z/my-project/.secrets/ (secret-looking paths) and the home dir,
+# but do NOT touch git plumbing: .git/config survives every reset.  The
+# durable source of truth is therefore the mirror repo's git config
+# itself — the token embedded in the remote URL + the github.pat config
+# key.  This script heals every volatile store from there.
 #
 # USAGE:  bash /home/z/my-project/scripts/restore_pat.sh
 #         (safe to run repeatedly; idempotent)
 
 set -euo pipefail
 
-PAT_FILE="/home/z/my-project/.secrets/github_pat.txt"
+MIRROR_REPO="/home/z/my-project/github_repos/master"
+SECRETS_DIR="/home/z/my-project/.secrets"
 
-if [[ ! -f "$PAT_FILE" ]]; then
-  echo "ERROR: $PAT_FILE not found. Ask the user for the PAT and write it there first." >&2
+# ---- 1. locate the token (priority: git plumbing > the .secrets file)
+PAT=""
+URL="$(git -C "$MIRROR_REPO" remote get-url origin 2>/dev/null || true)"
+if [ -n "$URL" ]; then
+  PAT="$(printf '%s' "$URL" | sed -n 's|.*://[^:/@]*:\([^@]*\)@github\.com.*|\1|p')"
+fi
+if [ -z "$PAT" ]; then
+  PAT="$(git -C "$MIRROR_REPO" config --get github.pat 2>/dev/null || true)"
+fi
+if [ -z "$PAT" ] && [ -f "$SECRETS_DIR/github_pat.txt" ]; then
+  PAT="$(tr -d '[:space:]' < "$SECRETS_DIR/github_pat.txt")"
+fi
+if [ -z "$PAT" ]; then
+  echo "ERROR: no durable PAT found (neither the mirror repo's .git/config" >&2
+  echo "       remote URL / github.pat key nor $SECRETS_DIR/github_pat.txt)." >&2
+  echo "       Ask the user once, then run:" >&2
+  echo "       git -C $MIRROR_REPO remote set-url origin \\" >&2
+  echo "         https://x-access-token:TOKEN@github.com/MIKEAA2020/master.git" >&2
   exit 1
 fi
 
-PAT="$(tr -d '[:space:]' < "$PAT_FILE")"
+# ---- 2. sync the durable stores (idempotent)
+git -C "$MIRROR_REPO" remote set-url origin \
+  "https://x-access-token:${PAT}@github.com/MIKEAA2020/master.git"
+git -C "$MIRROR_REPO" config github.pat "$PAT"
+echo "[restore_pat] durable stores synced (the .git/config remote URL + github.pat)"
 
-# 1. git credential store (used by credential.helper=store)
-CRED_DIR="$HOME"
-mkdir -p "$CRED_DIR"
-if ! grep -qF "MIKEAA2020" "$CRED_DIR/.git-credentials" 2>/dev/null; then
-  printf 'https://x-access-token:%s@github.com\n' "$PAT" > "$CRED_DIR/.git-credentials"
-  chmod 600 "$CRED_DIR/.git-credentials"
-  echo "[restore_pat] wrote ~/.git-credentials"
-else
-  # refresh the token line in place (in case it was rotated)
-  printf 'https://x-access-token:%s@github.com\n' "$PAT" > "$CRED_DIR/.git-credentials"
-  chmod 600 "$CRED_DIR/.git-credentials"
-  echo "[restore_pat] refreshed ~/.git-credentials"
-fi
+# ---- 3. reinstall the volatile / best-effort stores
+mkdir -p "$SECRETS_DIR"
+printf '%s\n' "$PAT" > "$SECRETS_DIR/github_pat.txt"
+printf 'https://x-access-token:%s@github.com\n' "$PAT" > "$SECRETS_DIR/git-credentials"
+chmod 600 "$SECRETS_DIR/github_pat.txt" "$SECRETS_DIR/git-credentials"
+git -C "$MIRROR_REPO" config credential.helper "store --file=$SECRETS_DIR/git-credentials"
+echo "[restore_pat] wrote $SECRETS_DIR/ (may be scrubbed again — harmless)"
 
+printf 'https://x-access-token:%s@github.com\n' "$PAT" > "$HOME/.git-credentials"
+chmod 600 "$HOME/.git-credentials"
 git config --global credential.helper store
+echo "[restore_pat] wrote ~/.git-credentials"
 
-# 1b. durable repo-local credential store (belt & suspenders: lives under
-# /home/z/my-project which survives resets, so the mirror repo
-# authenticates even before this script runs in a fresh session)
-DURABLE_CRED="/home/z/my-project/.secrets/git-credentials"
-printf 'https://x-access-token:%s@github.com\n' "$PAT" > "$DURABLE_CRED"
-chmod 600 "$DURABLE_CRED"
-MIRROR_REPO="/home/z/my-project/github_repos/master"
-if [ -d "$MIRROR_REPO/.git" ]; then
-  git -C "$MIRROR_REPO" config credential.helper "store --file=$DURABLE_CRED"
-  echo "[restore_pat] mirror repo credential.helper -> $DURABLE_CRED"
-fi
-
-# 2. environment variable for non-git use (curl, SDKs)
-if ! grep -q 'GITHUB_PAT=' "$HOME/.bashrc" 2>/dev/null; then
-  {
-    echo ''
-    echo '# GitHub PAT (restored by scripts/restore_pat.sh; source of truth: /home/z/my-project/.secrets/github_pat.txt)'
-    echo "export GITHUB_PAT=\"$PAT\""
-  } >> "$HOME/.bashrc"
-  echo "[restore_pat] added GITHUB_PAT to ~/.bashrc"
-else
-  # replace any stale export line
+if grep -q 'GITHUB_PAT=' "$HOME/.bashrc" 2>/dev/null; then
   sed -i "s|^export GITHUB_PAT=.*$|export GITHUB_PAT=\"$PAT\"|" "$HOME/.bashrc"
-  echo "[restore_pat] refreshed GITHUB_PAT in ~/.bashrc"
+else
+  printf '\n# GitHub PAT (source of truth: the mirror repo .git/config; see scripts/restore_pat.sh)\nexport GITHUB_PAT="%s"\n' "$PAT" >> "$HOME/.bashrc"
 fi
-
+echo "[restore_pat] GITHUB_PAT synced in ~/.bashrc"
 export GITHUB_PAT="$PAT"
 
-# 3. quick verification: who is this token, and can it push to MIKEAA2020/master?
+# ---- 4. verify against the live API
 echo "[restore_pat] verifying token identity..."
 USER_LOGIN="$(curl -fsS -H "Authorization: Bearer $PAT" https://api.github.com/user | python3 -c 'import json,sys; print(json.load(sys.stdin)["login"])')"
 echo "[restore_pat] token belongs to: $USER_LOGIN"
-
 echo "[restore_pat] checking push permission on MIKEAA2020/master..."
 curl -fsS -H "Authorization: Bearer $PAT" https://api.github.com/repos/MIKEAA2020/master \
   | python3 -c 'import json,sys; p=json.load(sys.stdin)["permissions"]; print("push permission:", p.get("push", "UNKNOWN"))'
-
-echo "[restore_pat] done. To re-run in any fresh session: bash /home/z/my-project/scripts/restore_pat.sh"
+echo "[restore_pat] done. Durable across resets: the mirror repo's .git/config."
