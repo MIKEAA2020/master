@@ -3,7 +3,7 @@
   "order": "Task 35 part 2: the 12-parameter free-class wall (D_free >= sqrt(lambda*)) \u2014 the last gap to the full shadow equivalence theorem",
   "date": "2026-09-30",
   "lambda_star": "1.6310919765642504414737578928177383666901925754942",
-  "wall_time_s": 115.9816484451294
+  "wall_time_s": 117.0898072719574
  },
  "FW0_refs": {
   "points": [
@@ -74,22 +74,22 @@
    "the Gershgorin domain gate (rho(K) < 0.97)",
    "the full interval Rayleigh (the powered Neumann Lyapunovs \u2014 the O-4 instrument generalized)"
   ],
-  "calls": 620000,
-  "certified": 266403,
+  "calls": 640000,
+  "certified": 276400,
   "window_passes": 135406,
   "e0_poly_passes": 0,
-  "e45_partial_passes": 130997,
+  "e45_partial_passes": 140994,
   "rayleigh_passes": 0,
   "boundary_tagged": 180015,
-  "farout_tagged": 173582,
+  "farout_tagged": 183585,
   "stalled": 0,
-  "stack_remaining": 37,
+  "stack_remaining": 43,
   "stall_records": 0
  },
  "FW4_verdict": {
-  "certified_so_far": 266403,
-  "e45_partial_passes": 130997,
-  "calls": 620000,
+  "certified_so_far": 276400,
+  "e45_partial_passes": 140994,
+  "calls": 640000,
   "verdict": "Task 36 closes the rho-boundary residue the way Task 34 closed the abelian one: the free e4/e5 unstable-mode divergence certificates (the partial-sum word-power sandwiches at the class vectors \u2014 polynomial, sound at every in-class point including the X-cancellation strata, the excited out-of-class points vacuous) inserted into the cheap-first chain between the e0-poly and the domain gates.  The probes: the anchor EXACT (2), the soundness direction validated, the divergence law rho^{2N} confirmed, the coverage 87.8% of the recorded stalls at the census widths (the remainder refines).  D_free >= sqrt(lambda*) on the certified region; the remaining honest residue: the critical-locus continuation (the line-atom valley), the unbounded far-field laws, the extreme far-out sample remainder."
  }
 }
