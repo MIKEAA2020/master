@@ -271,6 +271,20 @@ halting physics and automata, to metabolic curvature and sustainability governan
    grind (the drain driver, the standing order) and the seed-level
    boundary.
 
+14. **The_Resolution_Programme_XIV_Outline.md** (Vol XIV, the OUTLINE —
+   the post-far-field state, committed before the volume is built) —
+   the plan for the programme's next volume: the premise (no named
+   mathematical obstruction left; the two remaining items are the
+   grind and the seed-level boundary); seven chapters (the ledger's
+   new shape with the completion conditions, the grind formalized as
+   the termination structure, the certificates' coverage and the
+   completion certificate's form, the seed-level evidence design,
+   the method itself measured, the synthesis statement in final
+   form, the ledger forward); the named batteries the volume will
+   build (grind_census.py, the projection instrument,
+   seed_boundary.py, the final unification figure); the protocol
+   restated.
+
 ## The computation record (exact scans, anchor-first discipline)
 
 | Scan | Script | Result |

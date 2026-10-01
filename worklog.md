@@ -2530,3 +2530,54 @@ Stage Summary:
 - All three queue items delivered (the second edition, the grind,
   the far-field closure); both frontiers open and advancing; the
   continuation protocol stands (re-run the fg driver).
+
+---
+Task ID: 43
+Agent: main (Super Z)
+Task: The user's order: "do all that is merited, and always push:
+re-run the fg driver to keep grinding both frontiers (the FW-4 named
+residue is now exhausted; what remains is the grind itself plus the
+seed-level boundary).  Fold Addendum 7 into a third printing of the
+volume, then start a Vol XIV outline for the post-far-field state."
+
+Work Log:
+- THE STATE RESTORED (PAT heal verified: MIKEAA2020, push True; the
+  mirror clean at 1a3029c, local == remote; the checkpoints at the
+  session-0009 close: cover4d 56M/27.94M, the wall 740k/326,402).
+- THE DRAIN (the fg driver, 2 loops, zero stalls): cover4d 56M -> 57M
+  calls (28,436,871 leaves certified, all BDC: 10,317,272 e0 +
+  7,835,914 e4 + 10,283,685 e5; the frontier 32); the wall 740k ->
+  760k calls (336,400 certified: 135,406 window + 200,994 e4/e5
+  partial-sum; 243,585 far-out tags; the stack 43).  The checkpoint
+  commit 1cf14db pushed.
+- THE VOL XIII THIRD PRINTING (Addendum 7 folded in — the record
+  complete through Task 42): vol13_content.py extended with Chapter 9
+  ("The Unbounded Far Field — the Laws Beyond Every Box": the
+  commission, the growth laws, the shells' two-region map, the valley
+  cross-validation, the post-far-field ledger, the honest footnote)
+  + Table 11 (the six laws/regions, measurements, tiers); the cover
+  re-titled and re-rendered (794px, poster_validate +
+  cover_validate PASS); the body regenerated; the merge metadata
+  current; 30 pp, 9 chapters, 11 tables; pdf_qa 12 PASS (the 2
+  intentional bracket-table dashes), TOC clean, VLM 3/3 PASS; the
+  README row 13 current; delivered mirror + local download.  The
+  commit b18ed0d pushed.
+- THE VOL XIV OUTLINE (the post-far-field state, committed before the
+  volume is built): download/The_Resolution_Programme_XIV_Outline.md
+  — the premise (the two remaining items, different in kind: the
+  grind, the seed-level boundary); seven chapters (the ledger's new
+  shape + the completion conditions; the grind formalized as the
+  termination structure; the certificates' coverage + the completion
+  certificate's form; the seed-level evidence design; the method
+  itself measured; the synthesis statement; the ledger forward); the
+  named batteries (grind_census.py, the projection instrument,
+  seed_boundary.py, the final unification figure); the protocol
+  restated; the README volume list item 14.
+- THE RECORD: session summary 0010; this worklog entry (both copies).
+
+Stage Summary:
+- The third printing banked (the record through Task 42, all QA
+  green); the Vol XIV plan committed (the post-far-field state: the
+  grind certified, the boundary named, the method itself measured);
+  the grind advancing (zero stalls, both frontiers open); the
+  continuation protocol stands (re-run the fg driver).
