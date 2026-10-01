@@ -1,0 +1,205 @@
+{
+ "meta": {
+  "order": "TL-6: the gradient-prioritized split A/B \u2014 Task 38's actionable corollary, validated before the engine edit",
+  "date": "2026-10-01",
+  "budget_calls_per_arm": 4000,
+  "lambda_star": "1.6310919765642504414737578928177383666901925754942"
+ },
+ "AB0_profile": [
+  {
+   "idx": 30,
+   "depth": 57,
+   "V0": 21931594391.71907,
+   "top4": [
+    [
+     "Ab10",
+     5569904997.329712
+    ],
+    [
+     "Ab01",
+     4158659521.0421085
+    ],
+    [
+     "Aa10",
+     3316049987.017512
+    ],
+    [
+     "Ab00",
+     2799189910.404681
+    ]
+   ]
+  },
+  {
+   "idx": 26,
+   "depth": 40,
+   "V0": 42640973937.652435,
+   "top4": [
+    [
+     "Aa10",
+     23480073385.658264
+    ],
+    [
+     "Ab10",
+     19837172490.725517
+    ],
+    [
+     "Ab01",
+     15157169691.867828
+    ],
+    [
+     "Aa01",
+     14472063779.320717
+    ]
+   ]
+  },
+  {
+   "idx": 32,
+   "depth": 29,
+   "V0": 402033795688.0929,
+   "top4": [
+    [
+     "Aa10",
+     354864689657.66907
+    ],
+    [
+     "Ab10",
+     306402091083.52655
+    ],
+    [
+     "Ab01",
+     257807959005.73727
+    ],
+    [
+     "Aa01",
+     248907449139.862
+    ]
+   ]
+  },
+  {
+   "idx": 20,
+   "depth": 21,
+   "V0": 60431738421.96693,
+   "top4": [
+    [
+     "Ab01",
+     114258851028.90015
+    ],
+    [
+     "Aa10",
+     92379656818.71413
+    ],
+    [
+     "Ab10",
+     90893962578.79256
+    ],
+    [
+     "Aa01",
+     52613902230.60608
+    ]
+   ]
+  },
+  {
+   "idx": 14,
+   "depth": 15,
+   "V0": 7630035330.525263,
+   "top4": [
+    [
+     "C1",
+     20346974828.794003
+    ],
+    [
+     "Aa01",
+     14840006671.760082
+    ],
+    [
+     "Ab01",
+     14840006671.760082
+    ],
+    [
+     "Aa10",
+     12310233513.908384
+    ]
+   ]
+  },
+  {
+   "idx": 8,
+   "depth": 9,
+   "V0": 69992942.23359789,
+   "top4": [
+    [
+     "Ab01",
+     738147367.7418381
+    ],
+    [
+     "Ab10",
+     409657409.76482624
+    ],
+    [
+     "Aa01",
+     332704833.13541853
+    ],
+    [
+     "Aa10",
+     321740149.64811504
+    ]
+   ]
+  }
+ ],
+ "AB_A": {
+  "calls": 4000,
+  "wall_s": 23.1,
+  "results": {
+   "farout": 2001,
+   "pass": 1999
+  },
+  "conversions": 1999,
+  "median_conv_depth": 46,
+  "stalls": 0,
+  "counter_deltas": {
+   "F_PASS": 0,
+   "F_WIN": 0,
+   "F_E0": 0,
+   "F_E45": 1999,
+   "F_RAYL": 0,
+   "F_BOUND": 0,
+   "F_FAROUT": 2001,
+   "F_STALL": 0,
+   "F_CALLS": 0
+  },
+  "stack_remaining": 41
+ },
+ "AB_B": {
+  "calls": 4000,
+  "wall_s": 24.8,
+  "results": {
+   "farout": 2326,
+   "pass": 1674
+  },
+  "conversions": 1674,
+  "median_conv_depth": 48,
+  "stalls": 324,
+  "counter_deltas": {
+   "F_PASS": 0,
+   "F_WIN": 0,
+   "F_E0": 0,
+   "F_E45": 1674,
+   "F_RAYL": 0,
+   "F_BOUND": 0,
+   "F_FAROUT": 2326,
+   "F_STALL": 0,
+   "F_CALLS": 0
+  },
+  "stack_remaining": 43
+ },
+ "AB_V_verdict": {
+  "e45_rate_stock": 0.49975,
+  "e45_rate_gradient": 0.4185,
+  "ratio": 0.8374187093546772,
+  "conversions_ratio": 0.8374187093546773,
+  "median_conv_depth_stock": 46,
+  "median_conv_depth_gradient": 48,
+  "stalls_stock": 0,
+  "stalls_gradient": 324,
+  "decision": "HOLD (the evidence insufficient or the stalls regressed \u2014 no engine edit)"
+ }
+}
