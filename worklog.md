@@ -2510,3 +2510,23 @@ Stage Summary:
   mathematics' boundary.  The honest residue: the continuation
   grind itself.  With this, the wall's named FW-4 residue items are
   ALL closed or measured; the remaining work is the drain.
+
+---
+Task ID: 42 (drain continuation note)
+Agent: main (Super Z)
+Task: The drain round 2 (the standing order) + the session close.
+
+Work Log:
+- The fg-driver round 2: cover4d 55.5M -> 56M calls (27,936,871
+  leaves certified, all BDC: 10,188,038 e0 + 7,818,582 e4 +
+  9,930,251 e5; ZERO stalls; the frontier 32); the wall 720k ->
+  740k calls (326,402 certified: 135,406 window + 190,996 e4/e5
+  partial-sum; 233,583 far-out tags; ZERO stalls; the stack 41 ->
+  39).
+- The session summary 0009 written; the checkpoints + the summary
+  committed and pushed.
+
+Stage Summary:
+- All three queue items delivered (the second edition, the grind,
+  the far-field closure); both frontiers open and advancing; the
+  continuation protocol stands (re-run the fg driver).

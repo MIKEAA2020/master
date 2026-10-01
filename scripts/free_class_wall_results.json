@@ -3,7 +3,7 @@
   "order": "Task 35 part 2: the 12-parameter free-class wall (D_free >= sqrt(lambda*)) \u2014 the last gap to the full shadow equivalence theorem",
   "date": "2026-09-30",
   "lambda_star": "1.6310919765642504414737578928177383666901925754942",
-  "wall_time_s": 0.024603605270385742
+  "wall_time_s": 116.30097079277039
  },
  "FW0_refs": {
   "points": [
@@ -45,10 +45,51 @@
   "measured": "the off-block penalty ~1e-9 at the near-optimal points; the power-sum floor at sqrt(lambda*) (probe P-A/P-B')",
   "role": "the structural frame \u2014 the engine certifies the full ||M||^2 >= lambda* directly (the compression is not used as a certificate: the kernel's mu-weighted class sums have no rational closed form)"
  },
+ "FW2_validations": {
+  "arb_vs_float": true,
+  "corner_anchor_2": true,
+  "window_far_field": true,
+  "note": "the O-4 instrument generalized: the interval 6x6 with the Gershgorin-enclosed Neumann Lyapunovs + the Rayleigh quotient (v'GCmatGv)/(v'Gv) \u2014 sound for ANY v"
+ },
+ "FW3_engine": {
+  "domain": {
+   "B_C_box": [
+    -120,
+    120
+   ],
+   "A_diag_box": [
+    -0.98,
+    0.98
+   ],
+   "coupling_box": [
+    -1.5,
+    1.5
+   ],
+   "note": "the bounded root (the abelian P_ROOT convention); the unbounded far fields: the window/e0-poly polynomial laws (measured) + the named residue"
+  },
+  "instruments": [
+   "the window (O-2's cut-web, polynomial, the fixed + corpus vectors)",
+   "the e0-poly (the NEW free corner-anchor: the Lc-PSD-dropped polynomial form, the zero-WFA anchor = 2)",
+   "THE e4/e5 PARTIAL-SUM UNSTABLE-MODE FORMS (Task 36: the word-power sandwiches at the N-ladder, the fixed + adaptive unstable-mode carriers, the PSD-clamped poison control \u2014 the rho-boundary layer's divergence certificates, the Task-34 BDC mirror)",
+   "the Gershgorin domain gate (rho(K) < 0.97)",
+   "the full interval Rayleigh (the powered Neumann Lyapunovs \u2014 the O-4 instrument generalized)"
+  ],
+  "calls": 740000,
+  "certified": 326402,
+  "window_passes": 135406,
+  "e0_poly_passes": 0,
+  "e45_partial_passes": 190996,
+  "rayleigh_passes": 0,
+  "boundary_tagged": 180015,
+  "farout_tagged": 233583,
+  "stalled": 0,
+  "stack_remaining": 39,
+  "stall_records": 0
+ },
  "FW4_verdict": {
-  "certified_so_far": 0,
-  "e45_partial_passes": 0,
-  "calls": 0,
+  "certified_so_far": 326402,
+  "e45_partial_passes": 190996,
+  "calls": 740000,
   "verdict": "Task 36 closes the rho-boundary residue the way Task 34 closed the abelian one: the free e4/e5 unstable-mode divergence certificates (the partial-sum word-power sandwiches at the class vectors \u2014 polynomial, sound at every in-class point including the X-cancellation strata, the excited out-of-class points vacuous) inserted into the cheap-first chain between the e0-poly and the domain gates.  The probes: the anchor EXACT (2), the soundness direction validated, the divergence law rho^{2N} confirmed, the coverage 87.8% of the recorded stalls at the census widths (the remainder refines).  D_free >= sqrt(lambda*) on the certified region; the remaining honest residue: the critical-locus continuation (the line-atom valley), the unbounded far-field laws, the extreme far-out sample remainder."
  }
 }
