@@ -2197,3 +2197,33 @@ Stage Summary:
 - The honest open ledger: the two frontiers (the continuation
   protocol), the critical-locus tail law, the far-field laws, the
   seed-level boundary, the third-order remainder.
+
+---
+Task ID: 38
+Agent: main (Super Z)
+Task: The tail's structural law (the FW-4 residue item) — measured
+and closed.
+
+Work Log:
+- The grind: cover4d 53M calls (26.44M leaves, frontier 34); the
+  wall 660k (286,401 certified, 41 stack) — commits 29d78c6,
+  808c23d.
+- tail_law.py (the AST-filter machinery loader + the 59-case
+  center-path conversion probe): the fuel law (81.3% far-out,
+  m ~ rho^{31.46}, R^2 0.97); the race law (d* = ceil(log2(eps0)/
+  rate), eps0 median 5.41, rate median 0.135 bits/level, median
+  prediction error 1.0 LEVEL, n=35); the N* law (every conversion
+  at N*=2 — the degree-8 form carries the tail); the censored 21
+  predicted d* in [28,54] — slow, not stuck; the gradient
+  carriers (the A-off-diag couplings ~50% of the radius top-4,
+  diluted by the round-robin split).
+- The first pass's aggregation bug (best-midpoint instead of
+  per-candidate) found and fixed — the "all censored" artifact.
+
+Stage Summary:
+- The tail's structural law: five measured parts, the race law
+  predictive to one level.  No structural wall in the far-out
+  tail — the drain's cost is the geometric radius race.  The
+  gradient-aware split (~2x projected) banked as the engine
+  optimization.  Results: scripts/tail_law_results.json; commit
+  f11c641.
