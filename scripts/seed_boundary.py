@@ -622,11 +622,87 @@ def analyze(done, gate_worst_dE):
                 matched.append({"a": geos[i]["name"], "b": geos[j]["name"],
                                 "dE": dE, "dOOD": dO})
     max_dOOD_matched = max([m["dOOD"] for m in matched], default=0.0)
+    h2_rule_fired = (h2_stat["perm_p"] >= 0.05 or
+                     max_dOOD_matched > 0.15)
     h2 = ("HOLDS — geometry-level Spearman %.3f, perm p=%.4f; "
           "matched-energy pairs max |dOOD| %.3f (< 0.15)"
           % (h2_stat["spearman"], h2_stat["perm_p"], max_dOOD_matched))
-    if h2_stat["perm_p"] >= 0.05 or max_dOOD_matched > 0.15:
-        h2 = ("REFUTED — " + h2)
+    if h2_rule_fired:
+        h2 = ("REFUTED (rule as pre-registered) — geometry-level "
+              "Spearman %.3f, perm p=%.4f"
+              % (h2_stat["spearman"], h2_stat["perm_p"]))
+
+    # ------------- POST-HOC (labeled; no rule changes) -------------
+    # the pool's honest anatomy: floor saturation + the instrument's
+    # degenerate-E threshold + the family-tier E separation
+    geo_new = [g for g in geos if g["kind"] == "geo"]
+    floor_sat = [g for g in geo_new if g["err"] >= 0.99]
+    degen_E = [g["name"] for g in geo_new if g["E"] < 0.01]
+
+    def tier(sp):
+        return [r["coboundary_energy"] for r in
+                sel({"GATE", "A", "CTRL"}, sp, 64)]
+
+    def welch_t(a, b):
+        a, b = np.array(a), np.array(b)
+        va, vb = a.var(ddof=1) / len(a), b.var(ddof=1) / len(b)
+        t = (a.mean() - b.mean()) / math.sqrt(va + vb)
+        df = (va + vb) ** 2 / (va ** 2 / (len(a) - 1) +
+                               vb ** 2 / (len(b) - 1))
+        return float(t), float(df)
+
+    t_full_partial, df1 = welch_t(tier("full_49"),
+                                   tier("compositional_16"))
+    t_comp_interm, df2 = welch_t(tier("compositional_16"),
+                                  tier("intermediate_36"))
+    partial_E = [r["coboundary_energy"] for r in all_recs
+                 if r["battery"] in ("GATE", "A", "CTRL") and
+                 r["split"] in ("compositional_16", "intermediate_36",
+                                 "random_60")]
+    scattered_E = [g["E"] for g in geo_new if g["E"] >= 0.01]
+    post_hoc = {
+        "floor_saturation": "%d/%d new geometries at OOD err>=0.99 "
+                            "(even rand44: 44/49 pairs trained, 0/5 OOD "
+                            "across 12 seeds — scattered-split failure "
+                            "is catastrophic, not graded)"
+                            % (len(floor_sat), len(geo_new)),
+        "instrument_degeneracy": "E=0.0 fallback cells (some token has "
+                                 "<k+1=4 examples): %s" % (degen_E or
+                                                           "none"),
+        "family_tier_E": {
+            "full_49": float(np.mean(tier("full_49"))),
+            "quadrant_partial": float(np.mean(partial_E)),
+            "scattered_geo": float(np.mean(scattered_E))},
+        "full_vs_partial_welch_t": {"t": t_full_partial, "df": df1},
+        "comp_vs_interm_welch_t": {"t": t_comp_interm, "df": df2},
+        "comp_vs_interm_reading": "the banked n=12 'perfect ordering' "
+                                  "fails at n=96: comp_16 E=0.598 vs "
+                                  "interm_36 E=0.592 (order flipped, "
+                                  "t=%.2f) while their errors differ "
+                                  "(0.934 vs 0.984) — E resolves the "
+                                  "full-vs-partial COHERENCE tier, not "
+                                  "fine-grained difficulty"
+                                  % t_comp_interm,
+        "h2_interpretation": "the pre-registered rule fires REFUTED, but "
+                             "the pool is floor-saturated (nearly zero "
+                             "OOD variance within the scattered family), "
+                             "so the within-family dose-response is "
+                             "UNTESTED, not disproven; the tier-level "
+                             "law (full < partial in E, decisively) "
+                             "stands; redesign named: token-coverage-"
+                             "matched sizes 44-48",
+        "h4_power_diagnosis": "the class flips are TOST-power artifacts "
+                              "at n=48 (the class rule passes only for "
+                              "|r_hat|<0.065 there): all six point "
+                              "estimates lie in [-0.125, +0.097] with "
+                              "CIs crossing zero at every width — no "
+                              "evidence of actual width dependence",
+        "secondary_reading": "E vs wrong-OOD confidence: comp_16 "
+                             "r=-0.180 (p=0.08, TOST 0.109: neither "
+                             "significant nor equivalent — the honest "
+                             "NARROWED zone); interm_36 and random_24 "
+                             "equivalent to zero",
+    }
 
     # ---------------- H4: family invariance -----------------------
     fam = {}
@@ -694,6 +770,7 @@ def analyze(done, gate_worst_dE):
                       "verdict": h4},
         "pooled_confound": pooled,
         "controls": ctrl,
+        "post_hoc": post_hoc,
     }
     with open(OUT_JSON, "w") as f:
         json.dump(out, f, indent=1, default=float)
@@ -709,6 +786,9 @@ def analyze(done, gate_worst_dE):
     print("   replication block: r=%+.3f (p=%.4f, n=%d)"
           % (rep["pearson"], rep["perm_p"], rep["n"]))
     print("H2 THE TASK-LEVEL LAW: %s" % h2)
+    print("   post-hoc: %s | %s"
+          % (post_hoc["floor_saturation"],
+             post_hoc["comp_vs_interm_reading"]))
     print("H3 THE COVARIATE PANEL: %s" % h3)
     for sp in SCOPE_SPLITS:
         top = sorted(cov[sp], key=lambda s: -abs(s["pearson"]))[:3]
@@ -716,6 +796,7 @@ def analyze(done, gate_worst_dE):
             "%s r=%+.3f (q=%.3f)" % (s["label"], s["pearson"],
                                      s["bh_q"]) for s in top)))
     print("H4 FAMILY INVARIANCE: %s" % h4)
+    print("   post-hoc: %s" % post_hoc["h4_power_diagnosis"])
     print("   pooled (the confound): r=%.3f (n=%d)"
           % (pooled["pearson"], pooled["n"]))
     print("results written:", OUT_JSON)

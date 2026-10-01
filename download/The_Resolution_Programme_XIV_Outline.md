@@ -8,6 +8,25 @@ a Vol XIV outline for the post-far-field state."*
 **Reading order**: after the Vol XIII third printing (the record
 complete through Task 42 — the FW-4 residue exhausted).
 
+**POST-EXECUTION NOTE (2026-10-01, session 0011 — appended, not
+rewritten)**: Chapter 4's battery (`seed_boundary.py`) has been
+EXECUTED under full pre-registration
+(`download/seed_boundary_preregistration.md`, committed at 3a108d8
+before the data). **The seed-level boundary is CLOSED AS A LAW**
+(TOST-equivalence to |ρ|<0.30 at n=96, replicated with an independent
+seed block; the banked n=12 null exposed as small-sample noise; the
+covariate panel banked as a negative; the "perfect 4-split ordering"
+honestly corrected to the coherence-tier law). The premise's item 2
+is therefore no longer "awaiting evidence" — Chapter 4 now carries a
+decided experiment, and the volume's remaining new work is the
+within-family dose-response pool (the token-coverage-matched redesign,
+named in the results) should it be commissioned. The premise's item 1
+(the grind) is now RULE-BOUND: `grind_census.py` measured the
+frontier dynamics — the wall arm STOPPED by the rule (the far-out
+replenishment; the completion face is Task 42's bookkeeping), the
+cover4d arm on its 3-window HOLD watch (the LIFO replenishment caught
+by the census's own next data points).
+
 ---
 
 ## 1. The premise — what "post-far-field" means

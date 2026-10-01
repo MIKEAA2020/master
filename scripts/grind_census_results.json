@@ -1,0 +1,171 @@
+{
+ "meta": {
+  "instrument": "grind_census.py \u2014 the stopping-rule census",
+  "log": "/home/z/my-project/scripts/drain_driver.log",
+  "rounds_parsed": {
+   "cover4d": 40,
+   "wall": 21
+  },
+  "the_rule": {
+   "cover4d": "CONTINUE while frontier>0 and trailing-3 net >= 1 branch/20M calls; COMPLETE at 0; HOLD below the floor 3 rounds running",
+   "wall": "CONTINUE while trailing-3 net stack reduction > 0; else STOP (the completion face is Task 42's far-field bookkeeping)"
+  }
+ },
+ "cover4d": {
+  "calls": 59500000,
+  "leaves_certified": 29678999,
+  "bdc_composition": {
+   "e0": 10727867,
+   "e4": 8203652,
+   "e5": 10747480
+  },
+  "stalls": 0,
+  "frontier_branches": 30,
+  "series_tail": [
+   [
+    55500000,
+    28
+   ],
+   [
+    56000000,
+    32
+   ],
+   [
+    56500000,
+    32
+   ],
+   [
+    57000000,
+    32
+   ],
+   [
+    57500000,
+    30
+   ],
+   [
+    58000000,
+    24
+   ],
+   [
+    58500000,
+    26
+   ],
+   [
+    59000000,
+    28
+   ],
+   [
+    59500000,
+    30
+   ]
+  ],
+  "projection": {
+   "trailing_series": [
+    [
+     58500000,
+     26
+    ],
+    [
+     59000000,
+     28
+    ],
+    [
+     59500000,
+     30
+    ]
+   ],
+   "net_over_window": 4,
+   "net_rate_branches_per_M": 4.0,
+   "projection_calls_to_zero": null,
+   "projection_lo_calls": null,
+   "projection_hi_calls": null
+  },
+  "verdict": "HOLD-CANDIDATE (2 of 3 consecutive below-floor windows) \u2014 trailing closure -4.000 below the floor: the branch-count trend does not close; the oscillation band and the depth structure (the race law's d*) are the honest account, the next rounds decide"
+ },
+ "wall": {
+  "calls": 780000,
+  "certified": 346400,
+  "window": 135406,
+  "e45_partial_sum": 210994,
+  "farout_tags": 253585,
+  "stalls": 0,
+  "stack_entries": 43,
+  "series_tail": [
+   [
+    620000,
+    37
+   ],
+   [
+    640000,
+    43
+   ],
+   [
+    660000,
+    41
+   ],
+   [
+    680000,
+    39
+   ],
+   [
+    700000,
+    41
+   ],
+   [
+    720000,
+    41
+   ],
+   [
+    740000,
+    39
+   ],
+   [
+    760000,
+    43
+   ],
+   [
+    780000,
+    43
+   ]
+  ],
+  "projection": {
+   "trailing_series": [
+    [
+     740000,
+     39
+    ],
+    [
+     760000,
+     43
+    ],
+    [
+     780000,
+     43
+    ]
+   ],
+   "net_over_window": 4,
+   "net_rate_branches_per_M": 100.0,
+   "projection_calls_to_zero": null,
+   "projection_lo_calls": null,
+   "projection_hi_calls": null
+  },
+  "steady_state_conversion": {
+   "certified_per_10k_calls": 5022.675,
+   "farout_tags_per_10k_calls": 5202.3
+  },
+  "verdict": "STOP \u2014 the stack trend is non-descending (net 4 over the trailing window; the observed oscillation 39-45 with the far-out replenishment): exhaustion is not this arm's endpoint.  The completion face: Task 42's bookkeeping \u2014 the far field beyond the ROOT cap certified by the growth laws + the sound shells; the certified region stands as certified"
+ },
+ "completion_conditions": {
+  "cover4d": [
+   "the frontier's 30 stack branches -> 0 (the LIFO closure, the BDC trio per leaf)",
+   "the B-exit segment (x < 1.65e-3) \u2014 covered analytically (Task 40's bookkeeping, already stated)",
+   "the 10 symmetry-covered quadrant images \u2014 certified (the orbit reduction V-E/V-F exact)",
+   "the unbounded far field \u2014 Task 42's map (the growth laws + the one-shot strict-sound shells + the valley tail's plateau law)"
+  ],
+  "wall": [
+   "the certified region (346,400: the window + the e45 partial-sum chain) \u2014 stands as certified",
+   "the stack's remaining entries \u2014 the STOP rule's face: the far-out replenishment has no exhaustion endpoint; the beyond is Task 42's, not the grind's",
+   "the completion certificate's FORM: the domain = the certified region + the analytic B-exit + the far-field laws; the grind's residue is bookkeeping"
+  ]
+ }
+}
