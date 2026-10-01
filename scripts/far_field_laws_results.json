@@ -1,0 +1,849 @@
+{
+ "meta": {
+  "order": "the unbounded far-field laws (the last FW-4 residue item): the polynomial certificates' growth laws beyond the ROOT box, measured on the wall's own machinery",
+  "date": "2026-10-01",
+  "lambda_star": "1.6310919765642504414737578928177383666901925754942",
+  "wall_time_s": 4.7
+ },
+ "FF0": {
+  "pd_reproduction": [
+   {
+    "ray": "X_SYM",
+    "scale": 2.0,
+    "win2": 3.1715471105999153
+   },
+   {
+    "ray": "X_FREE",
+    "scale": 2.0,
+    "win2": 3.17155695318272
+   },
+   {
+    "ray": "X_SYM",
+    "scale": 4.0,
+    "win2": 98.12693231441838
+   },
+   {
+    "ray": "X_FREE",
+    "scale": 4.0,
+    "win2": 98.12716453883849
+   },
+   {
+    "ray": "X_SYM",
+    "scale": 8.0,
+    "win2": 1845.0209324738494
+   },
+   {
+    "ray": "X_FREE",
+    "scale": 8.0,
+    "win2": 1845.0249229999063
+   },
+   {
+    "zero_wfa": 2.0000000000000004
+   }
+  ],
+  "corner_anchor": 2.0000000000000004,
+  "x_sym_bc_base": [
+   3.4455422829835207,
+   -3.1957356235274172,
+   2.7241546706698823,
+   2.9370984364531623
+  ],
+  "comparison_convention": {
+   "strad_mid_above_gt_lambda": false,
+   "strad_mid_above_overlaps": true,
+   "wide_gt_lambda": false,
+   "wide_overlaps": true
+  }
+ },
+ "FF1": {
+  "X_SYM": {
+   "scales": [
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0,
+    256.0,
+    512.0,
+    1024.0
+   ],
+   "win2": [
+    1.5640873220550895,
+    3.1715471105999153,
+    98.12693231441838,
+    1845.0209324738494,
+    30696.134080102765,
+    495916.90526596876,
+    7953861.0523509635,
+    127338614.6310476,
+    2037725260.789865,
+    32604833954.929234,
+    521682262483.5516
+   ],
+   "fit_exp": 3.9774729416875267,
+   "per_doubling": [
+    1.0198657126311121,
+    4.9513904812709635,
+    4.232844215379292,
+    4.056347882307687,
+    4.013969529245806,
+    4.003485048422835,
+    4.000870803899897,
+    4.000217672339886,
+    4.000054416295324,
+    4.000013603961975
+   ]
+  },
+  "X_SYM_Ascale": {
+   "scales": [
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "win2": [
+    1.5640873220550895,
+    11.628068135025273,
+    2043.3182778977107,
+    446688.3123217667,
+    109755833.51914354,
+    27811612883.28866,
+    7101624987874.138
+   ],
+   "fit_exp": 7.291492057137248,
+   "per_doubling": [
+    2.894218465324451,
+    7.457158702915709,
+    7.772210753271516,
+    7.940813398891574,
+    7.985245982333311,
+    7.996317954881981
+   ]
+  },
+  "X_FREE": {
+   "scales": [
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0,
+    256.0,
+    512.0,
+    1024.0
+   ],
+   "win2": [
+    1.564087457638577,
+    3.17155695318272,
+    98.12716453883849,
+    1845.0249229999063,
+    30696.199027415536,
+    495917.94881690416,
+    7953877.766739798,
+    127338882.13156265,
+    2037729541.0792775,
+    32604902440.684505,
+    521683358260.13513
+   ],
+   "fit_exp": 3.977473008843153,
+   "per_doubling": [
+    1.0198700648250003,
+    4.951389418253731,
+    4.232843921489304,
+    4.056347814431728,
+    4.013969512614141,
+    4.003485044285757,
+    4.0008708028669275,
+    4.000217672081725,
+    4.000054416230789,
+    4.000013603945845
+   ]
+  },
+  "X_FREE_Ascale": {
+   "scales": [
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "win2": [
+    1.564087457638577,
+    11.628080195002921,
+    2043.3195127956437,
+    446688.51901525573,
+    109755880.44349939,
+    27811624531.101036,
+    7101627946669.092
+   ],
+   "fit_exp": 7.291492035309447,
+   "per_doubling": [
+    2.894219836545205,
+    7.457158078539976,
+    7.772210548935691,
+    7.940813348122951,
+    7.985245969748771,
+    7.9963179517444445
+   ]
+  }
+ },
+ "FF2": {
+  "X_SYM": {
+   "scales": [
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0,
+    256.0,
+    512.0,
+    1024.0
+   ],
+   "e0_fixed": [
+    0.9574792952458371,
+    -1.0850414095084608,
+    -7.340165638033844,
+    -32.36066255213537,
+    -132.4426502085415,
+    -532.770600834166,
+    -2134.0824033366644,
+    -8539.329613346656,
+    -34160.31845338662,
+    -136644.2738135465,
+    -546580.0952541858
+   ],
+   "fit_exp_degradation": 2.0003034361293546
+  },
+  "X_SYM_Ascale": {
+   "scales": [
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "e0_fixed": [
+    0.9574792952458371,
+    -1.085041409508461,
+    -7.340165638033844,
+    -32.36066255213538,
+    -132.4426502085415,
+    -532.770600834166,
+    -2134.082403336664
+   ]
+  },
+  "X_FREE": {
+   "scales": [
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0,
+    256.0,
+    512.0,
+    1024.0
+   ],
+   "e0_fixed": [
+    0.9574789289132666,
+    -1.085043713271877,
+    -7.340174853087511,
+    -32.36069941235004,
+    -132.44279764940012,
+    -532.7711905976008,
+    -2134.0847623904024,
+    -8539.339049561608,
+    -34160.35619824643,
+    -136644.4247929858,
+    -546580.6991719429
+   ],
+   "fit_exp_degradation": 2.0003034733378326
+  },
+  "X_FREE_Ascale": {
+   "scales": [
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "e0_fixed": [
+    0.9574789289132666,
+    -1.0850437132718789,
+    -7.340174853087506,
+    -32.36069941235002,
+    -132.44279764940012,
+    -532.7711905976005,
+    -2134.0847623904015
+   ]
+  }
+ },
+ "FF3": {
+  "ascale": {
+   "X_SYM": {
+    "rows": [
+     {
+      "t": 1.0,
+      "rho": 0.43120652996105174,
+      "e45_N2": 1.2510294066800942,
+      "e45_N4": 1.3892285485501532
+     },
+     {
+      "t": 2.0,
+      "rho": 1.724826119844207,
+      "e45_N2": 11.065381849363991,
+      "e45_N4": 53.19262557478833
+     },
+     {
+      "t": 4.0,
+      "rho": 6.899304479376828,
+      "e45_N2": 1971.9451249068045,
+      "e45_N4": 94748.0964163436
+     },
+     {
+      "t": 8.0,
+      "rho": 27.59721791750731,
+      "e45_N2": 442254.8005741042,
+      "e45_N4": 336198880.3889193
+     },
+     {
+      "t": 16.0,
+      "rho": 110.38887167002925,
+      "e45_N2": 109477557.77511404,
+      "e45_N4": 1331305387135.6626
+     },
+     {
+      "t": 32.0,
+      "rho": 441.555486680117,
+      "e45_N2": 27793904875.25602,
+      "e45_N4": 5407800485677410.0
+     },
+     {
+      "t": 64.0,
+      "rho": 1766.221946720468,
+      "e45_N2": 7100493358957.247,
+      "e45_N4": 2.21044432165935e+19
+     }
+    ],
+    "rho_exp_N2": 3.666368118874942
+   },
+   "X_FREE": {
+    "rows": [
+     {
+      "t": 1.0,
+      "rho": 0.43120605146905416,
+      "e45_N2": 1.251029418383547,
+      "e45_N4": 1.3892284519614124
+     },
+     {
+      "t": 2.0,
+      "rho": 1.7248242058762167,
+      "e45_N2": 11.065374747260158,
+      "e45_N4": 53.192525948293415
+     },
+     {
+      "t": 4.0,
+      "rho": 6.899296823504867,
+      "e45_N2": 1971.94333562823,
+      "e45_N4": 94747.84389729118
+     },
+     {
+      "t": 8.0,
+      "rho": 27.597187294019466,
+      "e45_N2": 442254.34430236835,
+      "e45_N4": 336197936.37581897
+     },
+     {
+      "t": 16.0,
+      "rho": 110.38874917607787,
+      "e45_N2": 109477441.384827,
+      "e45_N4": 1331301606616.4456
+     },
+     {
+      "t": 32.0,
+      "rho": 441.55499670431146,
+      "e45_N2": 27793875111.6434,
+      "e45_N4": 5407785087284693.0
+     },
+     {
+      "t": 64.0,
+      "rho": 1766.2199868172459,
+      "e45_N2": 7100485741634.592,
+      "e45_N4": 2.210438023305843e+19
+     }
+    ],
+    "rho_exp_N2": 3.6663680091198145
+   }
+  },
+  "valley": [
+   {
+    "x": 0.002,
+    "B_over_c_half": 99.29181423607587,
+    "rho": 0.4307663474760975,
+    "true_norm2": 1.6310919820616732,
+    "win2": 1.5640697032007955,
+    "e0": 0.9573169917479873,
+    "e45_ladder": [
+     1.250957303698833,
+     1.389200839166598,
+     1.4409219219150786,
+     1.4441202399369177,
+     1.4441271553636346
+    ],
+    "rayleigh": 1.631091982064016,
+    "rayleigh_margin": 5.49976553188003e-09
+   },
+   {
+    "x": 0.001,
+    "B_over_c_half": 198.58362847215173,
+    "rho": 0.43076334747609746,
+    "true_norm2": 1.6310919820614258,
+    "win2": 1.5640697032006994,
+    "e0": 0.9573169917479873,
+    "e45_ladder": [
+     1.250957303698833,
+     1.389200839160155,
+     1.4409219218956457,
+     1.4441202399144075,
+     1.4441271553410993
+    ],
+    "rayleigh": 1.6310919820545966,
+    "rayleigh_margin": 5.490346177694505e-09
+   },
+   {
+    "x": 0.0003,
+    "B_over_c_half": 661.9454282405059,
+    "rho": 0.4307624374760975,
+    "true_norm2": 1.6310919821797376,
+    "win2": 1.5640697032006923,
+    "e0": 0.9573169917479872,
+    "e45_ladder": [
+     1.250957303698833,
+     1.3892008391597288,
+     1.4409219218943607,
+     1.444120239912919,
+     1.4441271553396091
+    ],
+    "rayleigh": 1.6310919820539738,
+    "rayleigh_margin": 5.48972334257769e-09
+   },
+   {
+    "x": 0.0001,
+    "B_over_c_half": 1985.8362847215174,
+    "rho": 0.4307623574760975,
+    "true_norm2": 1.6310919824511418,
+    "win2": 1.5640697032006923,
+    "e0": 0.9573169917479872,
+    "e45_ladder": [
+     1.250957303698833,
+     1.3892008391597255,
+     1.4409219218943505,
+     1.444120239912907,
+     1.4441271553395971
+    ],
+    "rayleigh": 1.6310919820539687,
+    "rayleigh_margin": 5.489718235551777e-09
+   },
+   {
+    "x": 1e-05,
+    "B_over_c_half": 19858.362847215172,
+    "rho": 0.4307623475760975,
+    "true_norm2": 1.631092005165649,
+    "win2": 1.5640697032006923,
+    "e0": 0.9573169917479872,
+    "e45_ladder": [
+     1.250957303698833,
+     1.3892008391597255,
+     1.4409219218943503,
+     1.4441202399129067,
+     1.444127155339597
+    ],
+    "rayleigh": 1.6310919820539649,
+    "rayleigh_margin": 5.489714460793493e-09
+   },
+   {
+    "x": 1e-06,
+    "B_over_c_half": 198583.62847215176,
+    "rho": 0.43076234747709746,
+    "true_norm2": 1.6310903006772226,
+    "win2": 1.5640697032006923,
+    "e0": 0.9573169917479872,
+    "e45_ladder": [
+     1.250957303698833,
+     1.3892008391597253,
+     1.4409219218943503,
+     1.4441202399129067,
+     1.444127155339597
+    ],
+    "rayleigh": 1.6310919820489453,
+    "rayleigh_margin": 5.484694920454558e-09
+   }
+  ]
+ },
+ "FF4": {
+  "samesign": [
+   {
+    "s": 1.0,
+    "signs": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "strict": 207359989.45312512
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     -1,
+     -1,
+     -1,
+     -1
+    ],
+    "strict": 207359989.45312512
+   },
+   {
+    "s": 2.0,
+    "signs": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "strict": 3317759831.250002
+   },
+   {
+    "s": 2.0,
+    "signs": [
+     -1,
+     -1,
+     -1,
+     -1
+    ],
+    "strict": 3317759831.250002
+   },
+   {
+    "s": 4.0,
+    "signs": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "strict": 53084157300.00003
+   },
+   {
+    "s": 4.0,
+    "signs": [
+     -1,
+     -1,
+     -1,
+     -1
+    ],
+    "strict": 53084157300.00003
+   }
+  ],
+  "mixed": [
+   {
+    "s": 1.0,
+    "signs": [
+     1,
+     1,
+     1,
+     -1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     1,
+     1,
+     -1,
+     1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     1,
+     1,
+     -1,
+     -1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     1,
+     -1,
+     1,
+     1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     1,
+     -1,
+     1,
+     -1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     1,
+     -1,
+     -1,
+     1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     1,
+     -1,
+     -1,
+     -1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     -1,
+     1,
+     1,
+     1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     -1,
+     1,
+     1,
+     -1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     -1,
+     1,
+     -1,
+     1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     -1,
+     1,
+     -1,
+     -1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     -1,
+     -1,
+     1,
+     1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     -1,
+     -1,
+     1,
+     -1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 1.0,
+    "signs": [
+     -1,
+     -1,
+     -1,
+     1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   }
+  ],
+  "families": [
+   {
+    "family": "B_pair",
+    "signs": [
+     1,
+     1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "family": "B_pair",
+    "signs": [
+     1,
+     -1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "family": "B_pair",
+    "signs": [
+     -1,
+     1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "family": "B_pair",
+    "signs": [
+     -1,
+     -1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "family": "B_single",
+    "signs": [
+     1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "family": "B_single",
+    "signs": [
+     -1
+    ],
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   }
+  ],
+  "depth_scale": [
+   {
+    "s": 1.0,
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 2.0,
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   },
+   {
+    "s": 4.0,
+    "gate": "censored",
+    "depth": 22,
+    "value": null
+   }
+  ],
+  "a_away": [
+   {
+    "signs": [
+     1,
+     -1,
+     1,
+     1
+    ],
+    "e45": null,
+    "N": null
+   },
+   {
+    "signs": [
+     -1,
+     1,
+     -1,
+     -1
+    ],
+    "e45": null,
+    "N": null
+   }
+  ]
+ },
+ "FF5_verdict": {
+  "window_law": "sigma2(window) ~ s^3.98 (the B/C scale, the asymptotic pencil M_cell - s^2 M_BC; the cells degree 0, the entries degree 2)",
+  "e0_law": "the e0-poly DEGRADES in the far field (the cross term ~ -s^2; the form is z-quadratic, sign-invariant \u2014 structural): the certificate's far-field carrier is the window (s^4) and the e45 (the divergence), never the e0",
+  "e45_law": "the e4/e5 partial sums grow at rho^(2N) on the A-scale (the excited law) and dominate the far field at every N on the ladder",
+  "samesign": "the same-sign annulus quadrants certify ONE SHOT by the identity entry (B.C >= 2*(120s)^2, A-blind, strict-sound) \u2014 6/6 measured",
+  "mixed": "the mixed quadrants' CENTER PATH censors (22 levels: the A-box straddles zero along it, the powered Gershgorin upper stays >= 12, the domain gate never opens) \u2014 the far-field mixed quadrants carry the root's own grind structure (the near-boundary A-layer + the far-out refinement), NOT a new obstacle; the growth laws guarantee the grind terminates (the race law's far-field instance)",
+  "depth_scale": "the center-path censoring at every scale s in [1.0, 2.0, 4.0] \u2014 the same straddle structure, scale-invariant (the certificates' relative widths are homogeneous in s; the absolute margins grow s^4 but so do the widths)",
+  "a_away": "the A-away one-shot (|A| >= 0.05, the word powers non-degenerate) FAILS at the census widths \u2014 the PSD-clamp's interval pessimism (the same far-out pattern: 87.8% of the RECORDED stall boxes pass at N=2, the fresh census widths need the ~6-10-level refinement, the race law's guarantee)",
+  "valley": "the valley tail (B = c*/2x unbounded): the cheap chain does NOT see it (the window 1.564, the e0 0.957, the e45 1.444 \u2014 all below lambda*), but the FULL RAYLEIGH at the degenerate boxes resolves the plateau margin at EVERY x down to 1e-6 (B = 2e5): the margin 5.49e-9 = 2 sqrt(lambda*) * 2.1491e-9 EXACTLY (Task 40's plateau law cross-validated at the wall's own instrument \u2014 and the interval form MORE robust than the float, which breaks at x = 1e-6) \u2014 the wall's ROOT cap (the B-exit bookkeeping) exactly this division",
+  "closure": "THE LAST FW-4 ITEM CLOSED (measured + formalized): the unbounded far field = the one-shot growth region (the same-sign quadrants, the row-sound window, s^4 strict-sound) + the grind region (the mixed quadrants \u2014 the root's own near-boundary + far-out structure, terminating by the race law: NO new obstruction beyond the root's own) + the valley tail (the plateau law \u2014 Task 40's prec-120 certificate, cross-validated at the wall's own interval Rayleigh to B = 2e5, the margin matching to 0.1%).  The ROOT cap is the engine's bookkeeping, not the mathematics' boundary; the honest residue is the continuation grind itself (inside the ROOT and on the far-field mixed quadrants alike)."
+ }
+}

@@ -490,3 +490,94 @@ law), and Task 40 (the critical locus), the shadow-equivalence
 theorem's named residues are all closed or measured; the remaining
 work is the continuation grind itself (the cover4d frontier, the
 far-out cap-hitters, the unbounded far-field laws).
+
+---
+
+## Addendum 7 — Task 41: the unbounded far-field laws (the last
+FW-4 item, measured + formalized)
+
+**Date**: 2026-10-01 (session 0009).  **The user's order**: *"do all
+items in queue: the Vol XIII PDF regeneration (record content now
+complete through Task 40), more drain rounds, and the unbounded
+far-field laws — the last FW-4 item."*
+
+The instrument (`far_field_laws.py`, the wall's machinery via the
+AST-filter exec): FF-0 the references, FF-1/2/3 the growth ladders,
+FF-4 the sound shells, FF-5 the verdict.
+
+### The growth laws (measured)
+
+1. **THE WINDOW'S QUARTIC LAW**: sigma²(window) ~ s^3.977 on the
+   B/C-scale ladder (s = 1..1024; the per-doubling effective
+   exponents 4.00 4.00 4.00 4.00 — the asymptotic pencil
+   M_cell − s² M_BC, the cells degree 0, the entries degree 2); the
+   SOUND one-shot certificates grow exactly s⁴ (2.07e8 → 3.32e9 →
+   5.31e10 at s = 1/2/4).  On the A-scale ~t^7.29 measured (t ≤ 64),
+   approaching the degree-8 accounting (the window words |u+v| ≤ 4:
+   the entries degree 4 in t, sigma² degree 8).
+2. **THE e0-POLY'S DEGRADATION LAW** (the honest negative result):
+   the e0-poly DEGRADES in the far field — the cross term
+   −2zμ(Fv·fut) ~ −s², the |value| fit exponent 2.000 exact; the
+   form is z-quadratic (a Rayleigh-type quotient), hence
+   sign-invariant — no menu flip can recover it.  The e0 is NOT a
+   far-field carrier; the window (s⁴) and the e45 (the divergence)
+   carry the far field.
+3. **THE e4/e5 EXCITED GROWTH**: on the A-scale ladder (rho 0.431 →
+   1766) the partial sums at N = 2 grow at rho^3.666 measured (the
+   excited law rho^2N = 4 the asymptote; the N = 4 ladder grows
+   faster — the degree 2N+4 accounting), crossing lambda* between
+   rho 1 and 2 (11.07 at rho 1.7).
+
+### The sound shells (FF-4)
+
+4. **THE SAME-SIGN QUADRANTS CERTIFY ONE SHOT** (6/6,
+   strict-sound): the ROW-SOUND window bound — this battery's
+   instrument, the dependence-corrected square (each row's interval
+   contributes (inf|row|)²; the engine's interval product r·r treats
+   the two factors as independent and its enclosure straddles zero)
+   — at the identity entry B·C >= 2(120s)², A-BLIND, the bound
+   2.07e8 / 3.32e9 / 5.31e10 at s = 1/2/4 (the s⁴ law in the sound
+   bound itself).
+5. **THE MIXED QUADRANTS' HONEST MAP**: the center-path conversion
+   CENSORS at 22 levels at every scale — the A-box straddles zero
+   along the path, the powered Gershgorin upper stays >= 12, the
+   domain gate never opens; the A-away one-shot (|A| >= 0.05) fails
+   at the census widths (the PSD-clamp's interval pessimism — the
+   same far-out pattern).  The far-field mixed quadrants carry the
+   root's OWN grind structure (the near-boundary A-layer + the
+   far-out refinement), scale-invariantly (the certificates'
+   relative widths are homogeneous in s) — NO new obstruction; the
+   growth laws + the race law guarantee the grind terminates.
+6. **THE VALLEY TAIL CROSS-VALIDATED**: the cheap chain does NOT see
+   the valley (the window 1.564, the e0 0.957, the e45 1.444 — all
+   below lambda*), but the FULL RAYLEIGH at the degenerate boxes
+   resolves the plateau margin at EVERY x down to 1e-6 (B = 2e5):
+   the margin 5.49e-9 = 2·sqrt(lambda*)·2.1491e-9 EXACTLY — Task
+   40's plateau law cross-validated at the wall's own instrument,
+   with the interval form MORE robust than the float (the float
+   value² breaks at x = 1e-6: 1.6310903 vs the interval's clean
+   1.6310919820489).
+
+### The verdict
+
+**THE LAST FW-4 ITEM CLOSED (measured + formalized)**: the unbounded
+far field = the one-shot growth region (the same-sign quadrants —
+the row-sound window, s⁴, strict-sound) + the grind region (the
+mixed quadrants — the root's own near-boundary + far-out structure,
+terminating by the race law: no new obstruction beyond the root's
+own) + the valley tail (the plateau law — Task 40's prec-120
+certificate, cross-validated at the wall's own interval Rayleigh to
+B = 2e5, the margin matching to 0.1%).  The ROOT cap is the engine's
+bookkeeping, not the mathematics' boundary.  The honest residue: the
+continuation grind itself (inside the ROOT and on the far-field
+mixed quadrants alike).
+
+The flint gate semantics confirmed en route: the engine's interval
+comparisons are SOUND (the whole-interval `>` returns False on a
+straddling interval — verified directly on constructed balls).  The
+in-session honest record: the battery's first pass had three
+instrument errors (the flint comparison probe ill-constructed (a
+point, not an interval); the e0 "sign-flip" idea void (the form is
+z-quadratic); the shell chain omitting the engine's step 4 (the
+full Rayleigh) — all caught by the reproduction-first gates and
+fixed in place.

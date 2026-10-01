@@ -2454,3 +2454,59 @@ Stage Summary:
   40, all QA green); the drain advancing (zero stalls, both frontiers
   open).  Next: the unbounded far-field laws (the last FW-4 item),
   then the drain continuation.
+
+---
+Task ID: 42
+Agent: main (Super Z)
+Task: The user's third queue item — the unbounded far-field laws
+(the last FW-4 residue item), executed after the drain round and the
+Vol XIII second edition were banked.
+
+Work Log:
+- THE INSTRUMENT (far_field_laws.py, the wall's machinery via the
+  AST-filter exec — the tail_law pattern): FF-0 the references (the
+  P-D/V-c reproduction: the window 3.1715/98.13/1845.02 at the
+  X_SYM B/C x2/x4/x8 — V-c EXACT; the corner anchor 2 EXACT), FF-1/2
+  the growth ladders, FF-3 the e45 + the valley ray, FF-4 the sound
+  shells, FF-5 the verdict.
+- THE GROWTH LAWS: (1) THE WINDOW'S QUARTIC LAW — sigma2 ~ s^3.977
+  (the per-doubling exponents 4.00 exactly; the pencil M_cell -
+  s^2 M_BC), the sound one-shots growing exactly s^4; the A-scale
+  ~t^7.29 approaching the degree-8 accounting; (2) THE e0-POLY'S
+  DEGRADATION (the honest negative result): ~ -s^2 EXACTLY (the fit
+  2.000) — the form z-quadratic, sign-invariant: the e0 is NOT a
+  far-field carrier; (3) THE e45 EXCITED GROWTH: rho^3.666 at N=2
+  (the 2N=4 asymptote), crossing lambda* between rho 1 and 2.
+- THE SOUND SHELLS: the same-sign annulus quadrants ONE SHOT 6/6
+  strict-sound via THE ROW-SOUND WINDOW BOUND (the battery's new
+  instrument — the dependence-corrected square: each row's interval
+  contributes (inf|row|)^2; the engine's r*r independence pessimism
+  removed): 2.07e8/3.32e9/5.31e10 at s=1/2/4, A-BLIND; the mixed
+  quadrants' center path censors (the A-straddle, the Gershgorin
+  upper >= 12, the domain gate closed; the A-away one-shot fails at
+  the census widths — the far-out pattern) — the root's OWN grind
+  structure, scale-invariant, NO new obstruction; THE VALLEY TAIL:
+  the cheap chain blind (1.44-1.56 < lambda*) but the FULL RAYLEIGH
+  resolves the plateau margin at every x to 1e-6 (B = 2e5): 5.49e-9
+  = 2*sqrt(lambda*)*2.1491e-9 EXACTLY — Task 40's plateau law
+  cross-validated at the wall's own instrument (the interval form
+  MORE robust than the float, which breaks at x = 1e-6).
+- THE HONEST RECORD: the battery's first pass had three instrument
+  errors (the flint comparison probe ill-constructed; the e0
+  "sign-flip" idea void; the shell chain omitting the engine's step
+  4 — the full Rayleigh) — all caught by the reproduction-first
+  gates and fixed in place.  The flint gate semantics confirmed
+  SOUND en route (the whole-interval '>' returns False on
+  straddling).
+- THE RECORD: the Corrigendum's Addendum 7 (the growth laws, the
+  shells, the valley cross-validation, the verdict); the README
+  battery row; this worklog entry.
+
+Stage Summary:
+- THE LAST FW-4 ITEM CLOSED (measured + formalized): the unbounded
+  far field = the one-shot growth region + the grind region (the
+  root's own, terminating by the race law) + the valley tail (Task
+  40's plateau law) — the ROOT cap is bookkeeping, not the
+  mathematics' boundary.  The honest residue: the continuation
+  grind itself.  With this, the wall's named FW-4 residue items are
+  ALL closed or measured; the remaining work is the drain.
