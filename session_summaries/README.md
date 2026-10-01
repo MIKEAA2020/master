@@ -95,3 +95,14 @@ instead of re-deriving state from chat history (the token-saving protocol).
   Chapter 4 WRITTEN as a record around the decided experiment (the
   token-coverage-matched dose-response pool named as the one remaining
   nameable upgrade).
+- `0013_task46_47_vol14_text_complete_pool_decided.md` — Tasks 46/47:
+  Vol XIV's TEXT COMPLETE (chapters 1-3, 5-7 written as records
+  around the decided state) + the token-coverage-matched
+  dose-response pool COMMISSIONED and DECIDED (pre-registered at
+  cd42256 before the data; the gate 12/12 bit-identical through the
+  imported instrument; 720 runs; the verdict UNTESTED-saturation
+  with the CLIFF finding: err = 1.000 everywhere at matched 44-48
+  with train acc = 1.0000 and wrong-confidence 0.749, while E's
+  coverage dose is real and monotone — the dose-response axis does
+  not exist; the coherence-tier law's final form; the empirical
+  face's ledger fully decided).

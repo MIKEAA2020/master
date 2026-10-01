@@ -2867,3 +2867,93 @@ Stage Summary:
   gates) and the pool's verdict (Task 47, the commissioned
   addendum).  The premise's two items stand decided in the volume's
   own text.
+
+---
+Task ID: 47
+Agent: main (Super Z)
+Task: The user's order (the second half): "then commission the
+dose-response pool so even the last named item becomes a decided
+experiment."  Executed under the full Task-44 protocol: the
+pre-registration committed BEFORE the data, the gate before the pool,
+the verdict by the pre-registered rules.
+
+Work Log:
+- THE PRE-REGISTRATION (download/seed_dose_preregistration.md,
+  committed at cd42256 - the commit is the timestamp, pushed before
+  any pool data): the matched-pool construction (the 49-grid minus a
+  uniformly random partial matching; every token keeps 6 or 7
+  examples; the count profile identical within a size, +-1 across;
+  no degenerate-E cells); the pool (sizes 44-48 x gseeds
+  31/37/41/43/47/53 = 30 geometries x 12+12 model seeds); H5-a the
+  pooled dose-response (UPGRADE iff perm p<0.05 and rho>0 in BOTH
+  blocks), H5-b the within-size arrangement test (block-centered,
+  within-block permutation), H5-c the size-dose curve + the
+  saturation rule (TESTABLE iff >=2 of 5 size blocks with
+  within-block err std > 0.03) + the cliff test (adjacent step >=
+  0.50); the matched-pair guard (|dE|<0.01 vs |derr|>0.15); the
+  verdict classes UPGRADE / TIER-ONLY / UNTESTED (saturation) /
+  REFUTED (the guard); the honest power pre-statement (the
+  within-pool E spread unknown a priori - "that is what makes this
+  an experiment rather than a confirmation"); the gate (full_49
+  through the IMPORTED instrument path); the falsification
+  one-liners.
+- THE INSTRUMENT (scripts/seed_dose_response.py): seed_boundary.py
+  IMPORTED VERBATIM (the trainer, the projectors, the coboundary
+  energy, the stats machinery); build_matched_split with its
+  construction assertions (the matching, the count profile, the
+  >=4-examples threshold); resumable JSONL; the analysis by the
+  pre-registered rules only.  One in-session key-name bug in the
+  verdict block (perm_p vs perm_p_withinblock) caught by the
+  traceback, patched with Edit, re-run analysis-only (the 732 runs
+  checkpointed - zero recompute).
+- THE GATE: 12/12 full_49 runs reproduce the banked numbers through
+  the IMPORTED path, worst |dE| = 0.00e+00 - the import perturbs
+  nothing.
+- THE POOL: 720 runs (402 s).  THE VERDICT (the pre-registered
+  class): UNTESTED (saturation) - 0 of 5 size blocks carry
+  within-block error variance; the level reading is the finding,
+  exactly the honest outcome the prereg anticipated.
+- THE FINDINGS (the decided content, verified from the runs JSONL):
+  (1) THE CLIFF IS ABSOLUTE: err = 1.000 +- 0.000 at every size
+  44-48, every geometry, every seed - 2160/2160 held-out predictions
+  failed (720 pool runs, 0 with any OOD success); train accuracy =
+  1.0000 in ALL 720 runs (the minimum is 1.0000 - perfect
+  memorization); wrong-confidence on the failed pairs mean 0.749 /
+  median 0.756 (confident failure).  No interpolation regime exists
+  at the matched edge; the hypothesized graded-failure band does not
+  exist.  (2) E'S COVERAGE DOSE IS REAL: E monotone 0.5699 (44) ->
+  0.5645 -> 0.5600 -> 0.5554 -> 0.5491 (48), descriptive
+  Spearman(E, 49-size) = 0.899 over the 30 geometries, within-size
+  spreads 0.002-0.007 an order below the dose's span, per-geometry
+  seed-level E_std 0.014-0.022 - the diagnostic measures the dose,
+  and the error axis it was commissioned to order is constant
+  (H5-a rho_S = 0.000, p = 1.0, both blocks; H5-b centered 0.000;
+  the guard silent: 253 matched pairs, max |derr| = 0.000).  (3) THE
+  ERROR LANDSCAPE'S SHAPE: 49/49 vacuous-perfect; 44-48/49 total
+  confident failure; 36/49 0.984; 16/49 0.934; scattered >= 0.99 -
+  error NOT monotone in coverage, a function of the held-out set's
+  structure (pairs among partially-unseen tokens extrapolate
+  occasionally; a single missing fact among fully-seen tokens never
+  interpolates).  The coherence boundary is a cliff, not a slope.
+- THE LAST NAMED ITEM IS DECIDED - as a decisive negative with
+  located structure: the within-family dose-response axis does not
+  exist in this instrument's regime; the coherence-tier law stands
+  as the FINAL form with the tier boundary located absolutely.  The
+  empirical face's ledger is fully decided (every row closed by
+  experiment or banked as measured).
+- THE RECORDS: the Chapter 4 ADDENDUM (append-only: the
+  commissioning, the prereg, the gate, the pool, the verdict, the
+  three findings, the closing) - the chapter now 4473 words; the
+  README (the seed_dose_response.py row + item 14's update: the
+  volume's TEXT IS COMPLETE, the remaining work is the printing);
+  the outline's THIRD post-execution note; session summary 0013 +
+  the index; this worklog entry (both copies); the results JSON +
+  runs JSONL; the commit + push.
+
+Stage Summary:
+- Vol XIV's text is complete (seven chapters + the addendum) and the
+  last named item is decided: the pool's verdict UNTESTED-saturation
+  with the cliff finding - the decisive negative that completes the
+  empirical face's ledger.  The volume's remaining work is the
+  PRINTING (the unification figure, the PDF, the QA/VLM gates) -
+  the user's call.

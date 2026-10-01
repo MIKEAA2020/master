@@ -42,6 +42,24 @@ dose-response pool named as the one remaining nameable upgrade.  The
 premise's two items are both decided: the grind by rule, the boundary
 by experiment.
 
+**THIRD POST-EXECUTION NOTE (2026-10-02, session 0013 — appended,
+not rewritten)**: the volume's TEXT IS COMPLETE — chapters 1–3 and
+5–7 written as records around the decided state (Task 46), and
+§4.10's one remaining nameable upgrade COMMISSIONED and DECIDED
+(Task 47): the token-coverage-matched dose-response pool,
+pre-registered at `cd42256` before its data, gate 12/12
+bit-identical through the imported instrument, 720 runs — **the
+verdict UNTESTED (saturation) by the pre-registered class, and the
+finding is the cliff**: err ≡ 1.000 across every matched geometry
+44–48 (2160/2160 held-out predictions failed, train accuracy ≡
+1.0000, wrong-confidence 0.749 — perfect memorization, confident
+total failure), while E's own coverage dose is real and monotone
+(0.5699 → 0.5491, Spearman 0.899).  The within-family dose-response
+axis does not exist in this instrument's regime; the coherence-tier
+law stands as the final form with the tier boundary located
+absolutely.  The empirical face's ledger is fully decided.  The
+volume's remaining work is the printing.
+
 ---
 
 ## 1. The premise — what "post-far-field" means

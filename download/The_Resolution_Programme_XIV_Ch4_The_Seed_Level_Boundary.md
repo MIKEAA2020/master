@@ -413,3 +413,76 @@ day it is pre-registered and run.  The volume's premise — two items,
 different in kind from everything closed before — is now two items
 different in OUTCOME: both decided by instruments reporting honestly
 what they can carry.
+
+---
+
+## Addendum (session 0013, Task 47) — the pool commissioned, pre-registered, run, and decided
+
+§4.10's "one remaining nameable upgrade" was commissioned by the
+volume's closing order (*"then commission the dose-response pool so
+even the last named item becomes a decided experiment"*) and executed
+under the full Task-44 protocol: the pre-registration
+(`download/seed_dose_preregistration.md`) committed at `cd42256`
+BEFORE the data — the commit is the timestamp; the instrument
+IMPORTED from `seed_boundary.py` verbatim; the reproduction gate run
+first (12/12 full_49 runs reproduce the banked numbers through the
+imported path, worst |ΔE| = 0.0 — the import perturbed nothing); then
+the pool: 30 matched geometries (the 49-grid minus a uniformly random
+partial matching, sizes 44–48 × geometry seeds {31, 37, 41, 43, 47,
+53} — every token keeping 6 or 7 examples, the count profile identical
+within each size, no degenerate-E cells) × 24 model seeds in two
+12-blocks (1000–1011, 2000–2011) — 720 runs, 402 s.
+
+**THE VERDICT, by the pre-registered class: UNTESTED (saturation)**
+— 0 of the 5 size blocks carry within-block error variance; the level
+reading is the finding, exactly the honest outcome the
+pre-registration anticipated ("a real result — the coherence boundary
+located — not a failure").  The measured content:
+
+- **THE CLIFF IS ABSOLUTE.**  err ≡ 1.000 ± 0.000 at every size
+  44–48, every geometry, every seed: 2160 of 2160 held-out
+  predictions failed — not one seed, at any coverage from 44/49 to
+  48/49, ever solved a single held-out pair.  The failure is
+  CONFIDENT (wrong-confidence on the failed pairs: mean 0.749,
+  median 0.756) and the memorization is PERFECT (train accuracy
+  ≡ 1.0000 in all 720 runs — the minimum is 1.0000): the model learns
+  the 48 seen facts exactly and predicts the one missing fact wrongly
+  with three-quarters confidence.  There is no interpolation regime
+  at the matched edge — the graded-failure band §4.10 hypothesized
+  between full_49's 0.000 and the partial band's 0.93+ DOES NOT
+  EXIST in this instrument's regime.
+- **E'S COVERAGE DOSE IS REAL — AND HAS NOTHING TO PREDICT.**  E's
+  geometry means run monotone 0.5699 (size 44) → 0.5645 → 0.5600 →
+  0.5554 → 0.5491 (size 48), the descriptive Spearman against the
+  coverage dose (49 − size) = 0.899 over the 30 geometries, with
+  within-size spreads (0.002–0.007) an order below the dose's total
+  span and the per-geometry seed-level E spread 0.014–0.022.  The
+  diagnostic measures the coverage dose cleanly — and the error axis
+  it was commissioned to order is constant at 1.000: H5-a's pooled
+  Spearman is exactly 0.000 (p = 1.0, both blocks — the test's honest
+  degenerate value), H5-b's block-centered arrangement test likewise
+  0.000, and the matched-pair guard is silent (253 matched-energy
+  pairs, max |Δerr| = 0.000).  The dose-response cannot exist
+  because the response does not.
+- **THE ERROR LANDSCAPE'S SHAPE, ACROSS THE WHOLE RECORD.**  49/49 →
+  the vacuous perfect (nothing held out); 44–48/49 at matched
+  coverage → total confident failure (1.000); 36/49 → 0.984; 16/49 →
+  0.934; the scattered family → ≥ 0.99.  Error is NOT monotone in
+  coverage — it is a function of the held-out set's structure: pairs
+  among partially-unseen tokens extrapolate occasionally (the
+  coherent-partial band's mild grading), while a single missing fact
+  among fully-seen tokens never interpolates.  The coherence
+  boundary is a cliff at the top of the coverage axis, not a slope.
+
+**The last named item is thereby DECIDED — as a decisive negative
+with located structure**: the within-family dose-response axis does
+not exist in this instrument's regime (the error axis is constant at
+matched coverage; the graded band lives only in the
+coherent-partial family, on the other side of the cliff).  The
+coherence-tier law stands as the FINAL form of §4.8, its boundary now
+located absolutely: E's verified reach is the tier and the coverage
+dose; the error landscape's only transitions are the cliff at the
+matched edge and the catastrophic scatter below it.  The empirical
+face's ledger is now fully decided — every row closed by experiment,
+pre-registered, the rules honored, the negatives banked at the same
+tier as the laws.
