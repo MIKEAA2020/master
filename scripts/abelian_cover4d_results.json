@@ -4,7 +4,7 @@
   "date": "2026-09-30",
   "layers": "A: the stratum tube (the Task-26 TP patches, the exhaustive (w,x,y) sweep); B: the far field (the 6x6 true-norm ball instrument, the adaptive anisotropic bisection with the convex inner structure)",
   "lambda_star": "1.6310919765642504414737578928177383666901925754942",
-  "wall_time_s": 193.86728239059448
+  "wall_time_s": 190.66615915298462
  },
  "VA_6x6_vs_FX1": {
   "max_diff": 7.993605777301127e-15,
@@ -153,16 +153,16 @@
    ],
    "orbit_reduction": "6 reps of 16 quadrants; the group {1, R, S, RS} (V-E + V-F)"
   },
-  "leaves_certified": 27936871,
+  "leaves_certified": 28436871,
   "leaves_standard": 0,
-  "bdc_e0_passes": 10188038,
-  "bdc_e4_passes": 7818582,
-  "bdc_e5_passes": 9930251,
+  "bdc_e0_passes": 10317272,
+  "bdc_e4_passes": 7835914,
+  "bdc_e5_passes": 10283685,
   "symmetry_covered_quadrants": 10,
   "tube_skipped": 0,
   "stalled": 0,
   "stall_records": 0,
-  "calls": 56000000,
+  "calls": 57000000,
   "stack_remaining": 32,
   "complete": false,
   "stall_margins_min": null,
@@ -171,12 +171,12 @@
  },
  "CV4_verdict": {
   "patches": 1804,
-  "leaves_certified": 27936871,
+  "leaves_certified": 28436871,
   "leaves_standard": 0,
   "bdc_passes": {
-   "e0": 10188038,
-   "e4": 7818582,
-   "e5": 9930251
+   "e0": 10317272,
+   "e4": 7835914,
+   "e5": 10283685
   },
   "tube_skipped": 0,
   "stalled": 0,
