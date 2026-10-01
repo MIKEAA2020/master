@@ -2409,3 +2409,48 @@ Work Log:
 Stage Summary:
 - Both frontiers clean and advancing; the continuation protocol
   stands (re-run the fg driver).
+
+---
+Task ID: 41
+Agent: main (Super Z)
+Task: The user's order: "do all items in queue: your call — the Vol
+XIII PDF regeneration (record content now complete through Task 40),
+more drain rounds, and the unbounded far-field laws (the last FW-4
+item)".  Executed feasibility-first: the drain round + the PDF
+regeneration banked first, the far-field laws next.
+
+Work Log:
+- THE STATE RESTORED after the reset: restore_pat.sh (the git-plumbing
+  PAT heal, MIKEAA2020, push True) + the venv intact; the mirror clean
+  at d328406.
+- THE DRAIN ROUND 1 (the standing order): cover4d 54.5M -> 55.5M calls
+  (27,686,873 leaves certified, all BDC: 10,083,801 e0 + 7,771,946 e4 +
+  9,831,126 e5; ZERO stalls; the frontier 28); the wall 700k -> 720k
+  calls (316,401 certified: 135,406 window + 180,995 e4/e5 partial-sum;
+  223,584 far-out tags; ZERO stalls; 41 stack).
+- THE VOL XIII PDF REGENERATED (the carried write-up, the record
+  complete through Task 40): vol13_content.py extended with FOUR new
+  chapters (5: the corrigendum — the escape retracted, the valley
+  adjudicated; 6: the two walls, certified symmetric; 7: the tail's
+  law, the split refuted, the critical locus closed; 8: the regenerated
+  ledger) + FIVE new tables (the valley anatomy, the symmetric walls,
+  the critical-locus law, the corrigendum batteries, the regenerated
+  residue) — the first edition's 4 chapters stand as the historical
+  record.  The engine's no_dash_breaks extended to the stats labels,
+  the table captions and the figure captions (3 line-start-dash
+  warnings -> 2, the remainder the first edition's intentional "—"
+  placeholder cells in the brackets table).  The cover re-titled (the
+  second edition: "The Three Closures, the Escape Retracted, and the
+  Walls Certified Symmetric", October 2026; poster_validate +
+  cover_validate PASS, html2poster at 794px); the body regenerated
+  (27 pp total, 10 tables, 8 chapters; pdf_qa PASS, font.check 0
+  issues, toc clean); the merge metadata updated; the README's volume
+  list gains its missing Vol XIII row (item 13, the second edition).
+  Delivered: download/The_Resolution_Programme_XIII_..._Quantified.pdf
+  (mirror + the local download copy).
+
+Stage Summary:
+- The Vol XIII second edition banked (27 pp, the record through Task
+  40, all QA green); the drain advancing (zero stalls, both frontiers
+  open).  Next: the unbounded far-field laws (the last FW-4 item),
+  then the drain continuation.

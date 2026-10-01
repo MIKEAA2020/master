@@ -222,6 +222,42 @@ halting physics and automata, to metabolic curvature and sustainability governan
    map (the docking bays, the proved bridges solid, the open links
    dashed).
 
+13. **The_Resolution_Programme_XIII_The_Three_Closures_and_the_Escape_Quantified.pdf** (Vol XIII, 27 pp, SECOND EDITION — the record complete through Task 40) —
+   the three closures consolidated into the unification and the escape
+   quantified and re-adjudicated (the first edition: the continuum
+   Fisher-Rao/Leray upgrade of Task 28, the off-class nc-AAK package of
+   Task 29, the rank-aware synthesis of Task 30; the symmetric shadow
+   re-located, the 5.7266e-7 refutation decomposed into the abelian
+   basin hop plus the certified 8.2e-9 residual, H2's curvature read at
+   the flat ridge, the Sylvester brackets certifying the orderings and
+   the pairwise-double spectrum). **The second edition adds the
+   corrigendum record (Tasks 32-40)**: the boundary valley adjudicated
+   and THE ESCAPE RETRACTED (the parity-odd pairs descend to the
+   line-atom value; D_abelian(2) <= sqrt(lambda*) EXACTLY with the
+   charpoly a polynomial in x^4 only, K = 0.6277495385 in closed form;
+   kappa_ridge resolved +1.3654e-4 positive at precision 120; the
+   V-cone at the exact double; the p-convexity theorem halving the
+   box-count wall h^-6 -> h^-4 + a convex inner); THE TWO WALLS
+   CERTIFIED SYMMETRIC (the abelian face: the 4-D covering with the
+   BDC corner identities, the DPP patch mode, the orbit reduction —
+   27.7M leaves certified at ZERO stalls; the free face: the
+   12-parameter wall's engine with the word-power partial-sum
+   sandwiches, degree 2N+4, sound at every in-class point including
+   the X-cancellation strata — 316k leaves certified at ZERO stalls);
+   THE TAIL'S STRUCTURAL LAW (five parts: the fuel law rho^31.46, the
+   race law predictive to 1 level, the N*=2 law, the censored =
+   slow-not-stuck, the gradient carriers); THE GRADIENT-SPLIT
+   COROLLARY REFUTED by the controlled A/B (0.84x with 324 stalls —
+   the width-first rule validated near-optimal); and THE CRITICAL
+   LOCUS CLOSED (the plateau law at sqrt(lambda*) + 2.1491e-9 certified
+   at precision 120; the approach x^4; the K-tail exp(-0.805K); the
+   off-family floor +1.132e-11; THE TIGHTNESS: the compression
+   infimum consistent with sqrt(lambda*) EXACTLY — the
+   shadow-equivalence theorem's target confirmed sharp on both
+   sides). The regenerated open ledger: the continuation grind (the
+   drain driver, the standing order), the unbounded far-field laws
+   (the last FW-4 residue item), the seed-level boundary.
+
 ## The computation record (exact scans, anchor-first discipline)
 
 | Scan | Script | Result |

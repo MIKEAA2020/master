@@ -85,7 +85,7 @@ AVAIL_H = PAGE_H - 2 * MARGIN
 H1_ORPHAN_THRESHOLD = AVAIL_H * 0.25
 MAX_KEEP_HEIGHT = PAGE_H * 0.4
 
-DOC_TITLE = "The Three Closures, Consolidated — and the Escape, Quantified and Re-Adjudicated — The Resolution Programme, Volume XIII"
+DOC_TITLE = "The Three Closures, the Escape Retracted, and the Walls Certified Symmetric — The Resolution Programme, Volume XIII (Second Edition)"
 OUT_PATH = "/home/z/my-project/github_repos/master/scripts/body_vol13.pdf"
 
 # ---------------------------------------------------------------- styles
@@ -199,7 +199,7 @@ def callout(text):
 def stats_row(items):
     cell_w = AVAIL_W / 3.0
     row = [[Paragraph("<b>%s</b>" % val, stat_style),
-            Paragraph(label, stat_label_style)] for (val, label) in items]
+            Paragraph(no_dash_breaks(label), stat_label_style)] for (val, label) in items]
     t = Table([row], colWidths=[cell_w] * 3, hAlign="CENTER")
     t.setStyle(TableStyle([
         ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
@@ -226,7 +226,7 @@ def render_block(story, block):
     elif kind == "table":
         story.append(Spacer(1, 16))
         tbl = build_table(val)
-        cap = Paragraph(TABLES[val]["caption"], caption_style)
+        cap = Paragraph(no_dash_breaks(TABLES[val]["caption"]), caption_style)
         if len(TABLES[val]["rows"]) <= 8:
             story.extend(safe_keep_together([tbl, cap]))
         else:
@@ -241,7 +241,7 @@ def render_block(story, block):
     elif kind == "figure":
         path, capt = FIGURES[val]
         img = embed_image(path, max_width=AVAIL_W, max_height=400)
-        cap = Paragraph(capt, caption_style)
+        cap = Paragraph(no_dash_breaks(capt), caption_style)
         story.append(Spacer(1, 18))
         story.extend(safe_keep_together([img, Spacer(1, 8), cap]))
         story.append(Spacer(1, 16))
@@ -270,7 +270,7 @@ def page_decor(canvas, doc):
     canvas.line(MARGIN, 0.62 * inch, PAGE_W - MARGIN, 0.62 * inch)
     canvas.setFont("FreeSerif", 7.5)
     canvas.setFillColor(TEXT_MUTED)
-    canvas.drawString(MARGIN, 0.46 * inch, "Amin Abaee · The Three Closures Consolidated: the Ledger at Two — and the Escape, Quantified at the Shadow")
+    canvas.drawString(MARGIN, 0.46 * inch, "Amin Abaee · Volume XIII, Second Edition — the Escape Retracted, the Walls Certified Symmetric, the Locus Tight")
     if doc.page >= 2:
         canvas.drawRightString(PAGE_W - MARGIN, 0.46 * inch, str(doc.page))
     canvas.restoreState()
@@ -279,7 +279,7 @@ doc = TocDocTemplate(OUT_PATH, pagesize=A4,
                      leftMargin=MARGIN, rightMargin=MARGIN,
                      topMargin=MARGIN, bottomMargin=MARGIN,
                      title=DOC_TITLE, author="Z.ai", creator="Z.ai",
-                     subject="The consolidation of the three closures into the unification (the continuum Fisher-Rao/Leray upgrade of Task 28, the off-class nc-AAK package of Task 29, the rank-aware synthesis of Task 30) — the open ledger at two links (the box-count wall and the seed-level boundary) — and the escape quantified and re-adjudicated: the second-order coupling theory at the re-located symmetric shadow, the degenerate Rayleigh-Schrodinger law validated on a toy pencil, H2\'s curvature on the flat ridge (the pure curvatures positive, the mixed checkerboard, no infinitesimal escape), the decomposition of Task 29\'s 5.7266e-7 into the abelian basin hop 5.6447e-7 and the certified residual 8.2e-9, and the Sylvester brackets in flint/arb certifying the orderings and the pairwise-double spectrum.")
+                     subject="The consolidation of the three closures into the unification and the escape quantified and re-adjudicated (the first edition: the Fisher-Rao/Leray continuum upgrade of Task 28, the off-class nc-AAK package of Task 29, the rank-aware synthesis of Task 30, the symmetric shadow second-order theory and the certified 8.2e-9 residual) — and the corrigendum record through Task 40: the boundary valley adjudicated and the escape retracted (D_abelian(2) <= sqrt(lambda*) exactly, the structural quartic law, the shadow-equality restored in the closure sense), the two walls certified symmetric (the 4-D covering with the BDC corner identities, the DPP patches and the orbit reduction on the abelian face; the 12-parameter free-class wall with the word-power partial-sum sandwiches on the free face — both polynomial, both at zero stalls, 27.7M and 316k leaves certified), the tail structural law (the fuel, race, N-star, census and carrier parts), the gradient-split corollary refuted by the controlled A/B, and the critical locus closed (the plateau law certified at precision 120, the approach law, the K-tail, the off-family floor at +1.1e-11, the tightness: the compression infimum consistent with sqrt(lambda*) exactly).")
 doc.onFirstPage = page_decor
 doc.onLaterPages = page_decor
 

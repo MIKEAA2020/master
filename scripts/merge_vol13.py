@@ -26,10 +26,10 @@ def main():
     for page in PdfReader(BODY).pages:
         writer.add_page(normalize_page_to_a4(page))
     writer.add_metadata({
-        "/Title": "The Three Closures, Consolidated — and the Escape, Quantified and Re-Adjudicated — The Resolution Programme, Volume XIII",
+        "/Title": "The Three Closures, the Escape Retracted, and the Walls Certified Symmetric — The Resolution Programme, Volume XIII (Second Edition)",
         "/Author": "Z.ai",
         "/Creator": "Z.ai",
-        "/Subject": "The three closures consolidated into the unification (the ledger at two open links: the box-count wall and the seed-level boundary) and the escape quantified and re-adjudicated: the second-order coupling theory at the symmetric shadow, H2 curvature on the flat ridge, the decomposition into the abelian basin hop and the certified residual 8.2e-9, and the Sylvester brackets certifying the orderings and the pairwise-double spectrum.",
+        "/Subject": "The consolidation of the three closures and the escape quantified and re-adjudicated (the first edition) — and the corrigendum record through Task 40: the escape retracted (the shadow-equality restored in the closure sense), the two walls certified symmetric (the BDC corner identities on the abelian face, the word-power partial-sum sandwiches on the free face, both at zero stalls), the tail structural law, the gradient-split corollary refuted, and the critical locus closed tight at sqrt(lambda*).",
     })
     with open(OUT, "wb") as f:
         writer.write(f)
