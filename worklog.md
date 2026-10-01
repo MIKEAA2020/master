@@ -2694,3 +2694,92 @@ Stage Summary:
   write-up (the experiment's full account); the boundary-redesign
   pool (token-coverage-matched sizes 44-48) if the volume wants the
   within-family dose-response tested.
+
+---
+Task ID: 45
+Agent: main (Super Z)
+Task: The user's order: "run 1-2 cover4d slices + census to resolve
+the HOLD watch; then Vol XIV Chapter 4 writes itself around a decided
+experiment rather than a design - with the token-coverage-matched
+dose-response pool as the one remaining nameable upgrade."  Executed:
+the deciding slice run, the rule's verdict honored, the chapter
+written as a record.
+
+Work Log:
+- RESYNC: worklog Task 44 (the seed-level boundary CLOSED as a law; the
+  census's cover4d arm a HOLD-CANDIDATE at 2 of 3 below-floor windows,
+  series 24->26->28->30 at 59.5M calls); git 6c6ca75 (wrapper) /
+  63c1be7 (mirror) - nothing substantive uncommitted.  The environment
+  had been restored (16:37) - the venv alive but python-flint GONE:
+  reinstalled before any engine work (the engine imports `from flint
+  import arb`; the first slice attempt failed with ModuleNotFoundError,
+  caught and fixed).
+- THE DECIDING SLICE (census round 4, cover4d-only per the amended
+  protocol, 172.4 s): 60.0M calls, 29,924,011 leaves certified (BDC:
+  10,840,150 e0 + 8,324,792 e4 + 10,759,069 e5), 0 tube-skipped,
+  frontier 30.  THE THIRD BELOW-FLOOR WINDOW: the series 24 -> 26 ->
+  28 -> 30 -> 30 gives trailing closure -2.0 branches/M against the
+  +0.05 floor; the projection to zero NO-CLOSURE (the trend opens).
+  THE RULE FIRES HOLD - 3 consecutive below-floor windows, the LIFO
+  replenishment confirmed, exhaustion NOT the endpoint.  Both arms of
+  the grind are now RULE-STOPPED (the wall arm stopped in Task 44).
+  ONE slice sufficed (the user allowed 1-2; the rule itself says spend
+  no more compute once HOLD fires).
+- THE FIRST STALL LEAVES OF THE COVER4D ARC, in the deciding round:
+  1246 stall leaves, with the measured center margins min +1.125e+01 /
+  median +1.070e+02 (n=1099 with values) - every measured value >=
+  lambda* at float precision.  Read as the wall's far-out pattern
+  (interval-width effects at the frontier's depth: the centers pass
+  comfortably, the certificates at depth are width artifacts): residue,
+  not obstruction - and CORROBORATION of the HOLD (the remaining
+  frontier is deep refinement whose certificate cost grows while its
+  mathematical content is already accounted for by the analytic faces).
+  Banked in the census JSON + the README row.
+- VOL XIV CHAPTER 4 WRITTEN AS A RECORD
+  (download/The_Resolution_Programme_XIV_Ch4_The_Seed_Level_Boundary.md,
+  3812 words, both repo copies): the decided experiment's full account
+  - the pre-registration (3a108d8, the commit is the timestamp), the
+  instrument + the 48/48 bit-identical gate, H1's LAW with every
+  number (comp_16 +0.057 [CI -0.145, 0.255] TOST 0.0074; interm_36
+  -0.125 [CI -0.317, 0.078] TOST 0.0380; the floor control; the
+  independent block +0.011 TOST 0.002), H2's honest correction (the
+  order flip; the coherence-tier law full 0.5505 << partial 0.592-0.639
+  Welch t=-8.84; the catastrophic scatter; the floor saturation - and
+  the precision that the matched-pair clause NEVER fired: max |dOOD| =
+  0.066 among the 48 |dE|<0.01 pairs, under the 0.15 bar), H3's
+  negative (27 tests, max |r| 0.096, q 0.917-1.000), H4's class-rule
+  verdict + the labeled post-hoc power diagnosis, the secondary
+  endpoint's honest NARROWED zone, the boundary's scoped statement,
+  the census resolution (4.9), and 4.10 THE ONE REMAINING NAMEABLE
+  UPGRADE: the token-coverage-matched dose-response pool (sizes 44-48;
+  matched per-token example counts isolating arrangement from coverage;
+  the graded-error regime between full_49's 0.000 and the partial
+  band's 0.93+; 120-200 runs, one session's battery; named, priced,
+  UNCOMMISSIONED).  4.11 banks the methodological protocol the battery
+  sets for the volume's remaining chapters.
+- THE RECORDS: the README (item 14 updated with the chapter; the
+  grind_census row amended with the resolution - the HOLD fired, the
+  stall margins, both arms stopped; the latest-update date), the
+  outline's SECOND post-execution note (appended, not rewritten: the
+  watch resolved, the chapter written, the premise's two items both
+  decided), the census results copied to the wrapper, session summary
+  0012 + the summaries index, this worklog entry (both copies), the
+  chapter copied to the wrapper's download/.
+- THE GRIND'S STATE AFTER THIS TASK: both arms rule-stopped.  The
+  continuation protocol (re-run the fg driver) is SUPERSEDED - no
+  further drain rounds unless the user re-commissions them.  The
+  completion face: Task 42's bookkeeping (the far-field growth laws +
+  the sound shells + the valley plateau + the analytic B-exit) with
+  the certified regions standing (cover4d 29.92M leaves; wall 346,400).
+
+Stage Summary:
+- The HOLD watch resolved by the rule's own third window (one slice,
+  no more spend); the grind is fully rule-stopped with the honest
+  account (the oscillation band, the depth structure, the first stalls
+  as interval-width residue with margins).  Vol XIV Chapter 4 exists
+  as a written record around the DECIDED experiment - the volume's
+  first chapter, the premise's two items both decided, and exactly one
+  nameable upgrade left on the row (the token-coverage-matched pool,
+  named and priced in 4.10).  Next merited: the remaining Vol XIV
+  chapters (1-3, 5-7) around the decided state, or the commissioning
+  of the dose-response pool - the user's call.

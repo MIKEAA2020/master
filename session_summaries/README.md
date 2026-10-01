@@ -88,3 +88,10 @@ instead of re-deriving state from chat history (the token-saving protocol).
   grind's STOPPING RULE measured (grind_census.py: the wall arm
   STOPPED by the rule, the cover4d arm on its 3-window HOLD watch
   after catching its own projection error).
+- `0012_task45_hold_resolved_ch4_written.md` — Task 45: the HOLD watch
+  RESOLVED (census round 4: the third below-floor window, the rule
+  fires HOLD — both grind arms rule-stopped; the arc's first stall
+  leaves banked as interval-width residue with margins) + Vol XIV
+  Chapter 4 WRITTEN as a record around the decided experiment (the
+  token-coverage-matched dose-response pool named as the one remaining
+  nameable upgrade).

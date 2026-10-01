@@ -27,6 +27,21 @@ replenishment; the completion face is Task 42's bookkeeping), the
 cover4d arm on its 3-window HOLD watch (the LIFO replenishment caught
 by the census's own next data points).
 
+**SECOND POST-EXECUTION NOTE (2026-10-02, session 0012 — appended,
+not rewritten)**: the cover4d HOLD watch is RESOLVED — the census's
+round 4 (60M calls, 29,924,011 leaves) gave the third consecutive
+below-floor window (24→26→28→30→30; closure −2 branches/M; projection
+NO-CLOSURE), **the rule fires HOLD: both arms of the grind are now
+rule-stopped**, and the arc's first stall leaves (1246, every measured
+center margin ≥ +11.25 above λ*, median +107) are recorded as
+interval-width residue, not obstruction.  Chapter 4 is now WRITTEN as
+a record — `The_Resolution_Programme_XIV_Ch4_The_Seed_Level_Boundary.md`
+— around the decided experiment (the law, the corrections, the
+controls, the census resolution), with the token-coverage-matched
+dose-response pool named as the one remaining nameable upgrade.  The
+premise's two items are both decided: the grind by rule, the boundary
+by experiment.
+
 ---
 
 ## 1. The premise — what "post-far-field" means

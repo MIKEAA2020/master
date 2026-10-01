@@ -3,7 +3,7 @@
   "instrument": "grind_census.py \u2014 the stopping-rule census",
   "log": "/home/z/my-project/scripts/drain_driver.log",
   "rounds_parsed": {
-   "cover4d": 40,
+   "cover4d": 41,
    "wall": 21
   },
   "the_rule": {
@@ -12,20 +12,16 @@
   }
  },
  "cover4d": {
-  "calls": 59500000,
-  "leaves_certified": 29678999,
+  "calls": 60000000,
+  "leaves_certified": 29924011,
   "bdc_composition": {
-   "e0": 10727867,
-   "e4": 8203652,
-   "e5": 10747480
+   "e0": 10840150,
+   "e4": 8324792,
+   "e5": 10759069
   },
-  "stalls": 0,
+  "stalls": 1246,
   "frontier_branches": 30,
   "series_tail": [
-   [
-    55500000,
-    28
-   ],
    [
     56000000,
     32
@@ -57,14 +53,14 @@
    [
     59500000,
     30
+   ],
+   [
+    60000000,
+    30
    ]
   ],
   "projection": {
    "trailing_series": [
-    [
-     58500000,
-     26
-    ],
     [
      59000000,
      28
@@ -72,15 +68,19 @@
     [
      59500000,
      30
+    ],
+    [
+     60000000,
+     30
     ]
    ],
-   "net_over_window": 4,
-   "net_rate_branches_per_M": 4.0,
+   "net_over_window": 2,
+   "net_rate_branches_per_M": 2.0,
    "projection_calls_to_zero": null,
    "projection_lo_calls": null,
    "projection_hi_calls": null
   },
-  "verdict": "HOLD-CANDIDATE (2 of 3 consecutive below-floor windows) \u2014 trailing closure -4.000 below the floor: the branch-count trend does not close; the oscillation band and the depth structure (the race law's d*) are the honest account, the next rounds decide"
+  "verdict": "HOLD \u2014 3 consecutive below-floor windows: the frontier oscillates (the LIFO replenishment), exhaustion is not the endpoint; report the structure, spend no more compute"
  },
  "wall": {
   "calls": 780000,
